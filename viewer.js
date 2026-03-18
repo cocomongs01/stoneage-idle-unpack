@@ -1326,10 +1326,10 @@
   const WEAPON_DISPLAY_SEQUENCE = Object.freeze([
     "220000007", // Woody
     "220000010", // Lucy
-    "220000011", // Uba
     "220000009", // Pobi
-    "220000008", // Sara
-    "220000012", // Ann
+    "220000011", // Uba
+    "220000012", // Sara
+    "220000008", // Ann
   ]);
   const WEAPON_DISPLAY_ORDER_BY_ID = Object.freeze(
     WEAPON_DISPLAY_SEQUENCE.reduce((accumulator, id, index) => {
