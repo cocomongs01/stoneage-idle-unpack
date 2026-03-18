@@ -35,11 +35,11 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Gothic+A1:wght@400;500;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="viewer.css?v=20260318-file-live-fix-84">
-  <link rel="stylesheet" href="viewer-mobile.css?v=20260318-mobile-14">
+  <link rel="stylesheet" href="viewer-mobile.css?v=20260318-mobile-15">
   <script defer src="data.js?v=20260318-file-live-fix-43"></script>
   <script defer src="spine_manifest.js?v=20260318-file-live-fix-43"></script>
   <script defer src="spine_manifest_weapon.js?v=20260318-file-live-fix-43"></script>
-  <script defer src="viewer.js?v=20260318-mobile-15"></script>
+  <script defer src="viewer.js?v=20260318-mobile-17"></script>
 </head>
 <body>
   <script>
@@ -55,6 +55,10 @@
       document.documentElement.classList.remove("mobile-layout-preboot");
     })();
   </script>
+  <div class="mobile-loading-indicator" id="mobileLoadingIndicator" hidden aria-live="polite" aria-atomic="true">
+    <span class="mobile-loading-track"><span class="mobile-loading-bar"></span></span>
+    <span class="mobile-loading-label">불러오는 중</span>
+  </div>
   <div class="app-shell" id="appShell">
     <aside class="pet-rail" id="petRail">
       <div class="rail-head">

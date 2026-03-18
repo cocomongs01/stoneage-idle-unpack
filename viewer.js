@@ -81,6 +81,7 @@
     mobileNextPet: document.getElementById("mobileNextPet"),
     mobileDetailToolbar: document.getElementById("mobileDetailToolbar"),
     mobileSkillAccordion: document.getElementById("mobileSkillAccordion"),
+    mobileLoadingIndicator: document.getElementById("mobileLoadingIndicator"),
   };
 
   const state = {
@@ -108,6 +109,8 @@
   let sceneLayoutRaf = 0;
   let mobileViewportScrollRaf = 0;
   let railSelectionScrollRaf = 0;
+  let mobileLoadingHideTimer = 0;
+  let mobileLoadingVisibleSince = 0;
   const mobileViewportQuery = window.matchMedia("(max-width: 900px)");
   const KOREA_TIME_ZONE = "Asia/Seoul";
   const KR1_RESET_HOUR = 9;
@@ -135,6 +138,19 @@
   let wasMobileLayout = false;
   let lastScheduleStatusTickKey = "";
   let spineRuntimePromise = null;
+  const activeMobileLoadingTasks = new Set();
+  const activePressTargetByPointerId = new Map();
+  const MOBILE_PRESSABLE_SELECTOR = [
+    ".collection-tab",
+    ".pet-item",
+    ".mobile-menu-toggle",
+    ".mobile-inline-arrow",
+    ".equipment-set-entry",
+    ".mobile-skill-button",
+    ".mobile-variant-chip",
+    ".skill-button",
+    ".variant-preview-entry",
+  ].join(", ");
 
   function isMobileLayout() {
     return Boolean(mobileViewportQuery && mobileViewportQuery.matches);
@@ -143,6 +159,81 @@
   function scrollContainerToTop(element) {
     if (!element || typeof element.scrollTo !== "function") return;
     element.scrollTo({ top: 0, left: 0, behavior: "auto" });
+  }
+
+  function updateMobileLoadingVisibility() {
+    const active = isMobileLayout() && activeMobileLoadingTasks.size > 0;
+    if (document.body) {
+      document.body.classList.toggle("is-mobile-loading", active);
+    }
+    if (elements.mobileLoadingIndicator) {
+      elements.mobileLoadingIndicator.hidden = !active;
+    }
+    if (active && !mobileLoadingVisibleSince) {
+      mobileLoadingVisibleSince = (window.performance && typeof window.performance.now === "function")
+        ? window.performance.now()
+        : Date.now();
+    }
+    if (!active) {
+      mobileLoadingVisibleSince = 0;
+    }
+  }
+
+  function setMobileLoading(taskKey, active) {
+    if (!taskKey) return;
+
+    if (active) {
+      if (mobileLoadingHideTimer) {
+        window.clearTimeout(mobileLoadingHideTimer);
+        mobileLoadingHideTimer = 0;
+      }
+      activeMobileLoadingTasks.add(taskKey);
+      updateMobileLoadingVisibility();
+      return;
+    }
+
+    activeMobileLoadingTasks.delete(taskKey);
+    if (activeMobileLoadingTasks.size > 0) {
+      updateMobileLoadingVisibility();
+      return;
+    }
+
+    const now = (window.performance && typeof window.performance.now === "function")
+      ? window.performance.now()
+      : Date.now();
+    const elapsed = mobileLoadingVisibleSince ? (now - mobileLoadingVisibleSince) : 0;
+    const remaining = Math.max(0, 180 - elapsed);
+    if (mobileLoadingHideTimer) {
+      window.clearTimeout(mobileLoadingHideTimer);
+    }
+    mobileLoadingHideTimer = window.setTimeout(() => {
+      mobileLoadingHideTimer = 0;
+      updateMobileLoadingVisibility();
+    }, remaining);
+  }
+
+  function finishMobileLoadingSoon(taskKey) {
+    window.requestAnimationFrame(() => {
+      window.requestAnimationFrame(() => {
+        setMobileLoading(taskKey, false);
+      });
+    });
+  }
+
+  function clearMobilePressState(pointerId) {
+    const target = activePressTargetByPointerId.get(pointerId);
+    if (!target) return;
+    target.classList.remove("is-pressed");
+    activePressTargetByPointerId.delete(pointerId);
+  }
+
+  function clearAllMobilePressStates() {
+    activePressTargetByPointerId.forEach((target) => {
+      if (target && target.classList) {
+        target.classList.remove("is-pressed");
+      }
+    });
+    activePressTargetByPointerId.clear();
   }
 
   function padNumber(value) {
@@ -293,6 +384,7 @@
       document.body.classList.toggle("mobile-layout", mobile);
       document.body.dataset.mobileView = mobile ? state.mobileView : "desktop";
     }
+    updateMobileLoadingVisibility();
 
     if (elements.petRail) {
       elements.petRail.setAttribute("aria-hidden", mobile && state.mobileView !== "rail" ? "true" : "false");
@@ -319,8 +411,19 @@
       return;
     }
 
-    state.mobileViewportScrollByView[state.mobileView] = currentViewportScrollTop();
-    state.mobileView = nextView === "rail" ? "rail" : "detail";
+    const previousView = state.mobileView;
+    const previousScrollTop = currentViewportScrollTop();
+    const targetView = nextView === "rail" ? "rail" : "detail";
+
+    state.mobileViewportScrollByView[previousView] = previousScrollTop;
+    state.mobileView = targetView;
+
+    if (targetView === "detail" && options.resetStageScroll !== false) {
+      state.mobileViewportScrollByView.detail = 0;
+      setViewportScrollTop(0);
+      scrollContainerToTop(elements.stage);
+    }
+
     applyMobileLayoutState();
 
     if (state.mobileView === "detail") {
@@ -329,9 +432,10 @@
         document.activeElement.blur();
       }
       if (options.resetStageScroll !== false) {
-        scrollContainerToTop(elements.stage);
+        setViewportScrollTop(0);
         scheduleViewportScrollTop(0);
       } else {
+        setViewportScrollTop(state.mobileViewportScrollByView.detail || 0);
         scheduleViewportScrollTop(state.mobileViewportScrollByView.detail || 0);
       }
       return;
@@ -339,8 +443,10 @@
 
     if (options.resetRailScroll) {
       scrollContainerToTop(elements.petRail);
+      setViewportScrollTop(0);
       scheduleViewportScrollTop(0);
     } else {
+      setViewportScrollTop(state.mobileViewportScrollByView.rail || 0);
       scheduleViewportScrollTop(state.mobileViewportScrollByView.rail || 0);
     }
     syncSelectedRailItemIntoView();
@@ -2196,6 +2302,9 @@
       button.className = `collection-tab${category.key === activeCategory.key ? " active" : ""}`;
       button.textContent = category.label || category.key;
       button.addEventListener("click", () => {
+        if (isMobileLayout()) {
+          setMobileLoading("view-transition", true);
+        }
         state.activeCategoryKey = category.key;
         if (typeof state.selectedIndexByCategory[category.key] !== "number") {
           state.selectedIndexByCategory[category.key] = findPreferredIndex(getItems(category));
@@ -2204,6 +2313,9 @@
           state.mobileView = "rail";
         }
         render();
+        if (isMobileLayout()) {
+          finishMobileLoadingSoon("view-transition");
+        }
       });
       elements.collectionTabs.appendChild(button);
     });
@@ -2241,11 +2353,17 @@
       button.dataset.kind = pet.kind || "pet";
       button.dataset.status = status.tone || "past";
       button.addEventListener("click", () => {
+        if (isMobileLayout()) {
+          setMobileLoading("view-transition", true);
+        }
         state.selectedIndexByCategory[category.key] = index;
         if (isMobileLayout()) {
           setMobileView("detail");
         }
         render();
+        if (isMobileLayout()) {
+          finishMobileLoadingSoon("view-transition");
+        }
       });
 
       button.innerHTML = `
@@ -2615,10 +2733,14 @@
     if (!items.length) {
       return;
     }
+    if (isMobileLayout()) {
+      setMobileLoading("view-transition", true);
+    }
     state.selectedIndexByCategory[category.key] = (getCurrentIndex(category) + delta + items.length) % items.length;
     render();
     if (isMobileLayout()) {
       setMobileView("detail");
+      finishMobileLoadingSoon("view-transition");
     }
   }
 
@@ -2713,6 +2835,7 @@
         elements.bannerImage.hidden = hideStaticBannerOnLive || Boolean(sceneDefinition) || !Boolean(mediaBanner);
         requestSpineLayout();
       }
+      setMobileLoading("spine-preview", false);
       return;
     }
 
@@ -2726,9 +2849,11 @@
     }
 
     if (!manifestEntry) {
+      setMobileLoading("spine-preview", false);
       return;
     }
 
+    setMobileLoading("spine-preview", true);
     Promise.resolve(ensureSpineRuntimeLoaded())
       .then(() => mountSpinePreview(entityId, manifestEntry, spineState.loadToken))
       .catch((error) => {
@@ -2739,8 +2864,40 @@
         if (elements.spotlightMedia) {
           elements.spotlightMedia.classList.remove("has-live-spine");
         }
+      })
+      .finally(() => {
+        setMobileLoading("spine-preview", false);
       });
   }
+
+  document.addEventListener("pointerdown", (event) => {
+    if (!isMobileLayout() || event.pointerType === "mouse" || !(event.target instanceof Element)) {
+      return;
+    }
+    const target = event.target.closest(MOBILE_PRESSABLE_SELECTOR);
+    if (!target) return;
+    clearMobilePressState(event.pointerId);
+    target.classList.add("is-pressed");
+    activePressTargetByPointerId.set(event.pointerId, target);
+  }, { passive: true });
+
+  document.addEventListener("pointermove", (event) => {
+    const target = activePressTargetByPointerId.get(event.pointerId);
+    if (!target) return;
+    const hovered = document.elementFromPoint(event.clientX, event.clientY);
+    const insideTarget = hovered instanceof Element && (hovered === target || target.contains(hovered));
+    target.classList.toggle("is-pressed", insideTarget);
+  }, { passive: true });
+
+  document.addEventListener("pointerup", (event) => {
+    clearMobilePressState(event.pointerId);
+  }, { passive: true });
+
+  document.addEventListener("pointercancel", (event) => {
+    clearMobilePressState(event.pointerId);
+  }, { passive: true });
+
+  window.addEventListener("blur", clearAllMobilePressStates);
 
   if (elements.prevPet) {
     elements.prevPet.addEventListener("click", () => {
@@ -2756,7 +2913,9 @@
 
   if (elements.mobileOpenDetail) {
     elements.mobileOpenDetail.addEventListener("click", () => {
+      setMobileLoading("view-transition", true);
       setMobileView("detail");
+      finishMobileLoadingSoon("view-transition");
     });
   }
 
