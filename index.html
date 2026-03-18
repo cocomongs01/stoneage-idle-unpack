@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Gacha Viewer</title>
   <script>
-    window.GACHA_VIEWER_ASSET_VERSION = "20260318-app-01";
+    window.GACHA_VIEWER_ASSET_VERSION = "20260318-app-02";
   </script>
   <script>
     (function () {
@@ -34,12 +34,12 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Gothic+A1:wght@400;500;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="viewer.css?v=20260318-file-live-fix-84">
-  <link rel="stylesheet" href="viewer-mobile.css?v=20260318-mobile-23">
+  <link rel="stylesheet" href="viewer.css?v=20260318-file-live-fix-85">
+  <link rel="stylesheet" href="viewer-mobile.css?v=20260318-mobile-24">
   <script defer src="data.js?v=20260318-file-live-fix-43"></script>
   <script defer src="spine_manifest.js?v=20260318-file-live-fix-43"></script>
   <script defer src="spine_manifest_weapon.js?v=20260318-file-live-fix-43"></script>
-  <script defer src="viewer.js?v=20260318-mobile-24"></script>
+  <script defer src="viewer.js?v=20260318-mobile-25"></script>
 </head>
 <body>
   <script>
@@ -103,7 +103,25 @@
             <div class="schedule-block">
               <h3 class="schedule-block-heading">
                 <span id="scheduleBlockTitle">오픈 일정</span>
-                <span class="schedule-block-subtext">KR1 서버 기준</span>
+                <span class="schedule-block-heading-meta">
+                  <span class="schedule-block-subtext" id="scheduleBlockSubtext">
+                    <span class="schedule-reference-label">KR 1 서버 오픈일 :</span>
+                    <span class="schedule-reference-date">2026.03.03 09:00</span>
+                  </span>
+                  <button
+                    class="schedule-adjust-button"
+                    id="scheduleAdjustButton"
+                    type="button"
+                    aria-label="서버 오픈 일정 보정"
+                    data-tooltip="현재 진행중인 이벤트의 남은 시간을 기준으로&#10;서버 오픈일을 계산합니다."
+                  >
+                    <span class="schedule-adjust-icon" aria-hidden="true">
+                      <span class="schedule-adjust-line line-top"></span>
+                      <span class="schedule-adjust-line line-mid"></span>
+                      <span class="schedule-adjust-line line-bot"></span>
+                    </span>
+                  </button>
+                </span>
               </h3>
               <div class="schedule-list" id="scheduleList"></div>
             </div>
@@ -220,6 +238,79 @@
         </div>
       </section>
     </main>
+  </div>
+
+  <div class="schedule-adjust-modal" id="scheduleAdjustModal" hidden>
+    <div class="schedule-adjust-modal-backdrop" id="scheduleAdjustBackdrop"></div>
+    <section
+      class="schedule-adjust-dialog"
+      id="scheduleAdjustDialog"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="scheduleAdjustTitle"
+    >
+      <div class="schedule-adjust-head">
+        <div class="schedule-adjust-head-copy">
+          <p class="section-label">일정 보정</p>
+          <h3 id="scheduleAdjustTitle">서버 오픈일 계산</h3>
+          <p class="section-note" id="scheduleAdjustCurrentLabel">
+            <span class="schedule-reference-label">현재 서버 오픈일 :</span>
+            <span class="schedule-reference-date">2026.03.03 09:00</span>
+          </p>
+        </div>
+        <button class="schedule-adjust-close" id="scheduleAdjustClose" type="button" aria-label="일정 보정 닫기">
+          <span class="schedule-adjust-close-icon" aria-hidden="true"></span>
+        </button>
+      </div>
+
+      <div class="schedule-adjust-body">
+        <label class="schedule-adjust-field">
+          <span class="schedule-adjust-label">기준 항목 선택</span>
+          <select class="schedule-adjust-select" id="scheduleAdjustSelect"></select>
+        </label>
+
+        <div class="schedule-adjust-helper" id="scheduleAdjustSelectedSummary">
+          현재 진행중인 이벤트의 남은 시간을 기준으로 서버 오픈일을 계산합니다.
+        </div>
+
+        <div class="schedule-adjust-field">
+          <span class="schedule-adjust-label">현재 게임에 보이는 남은 시간</span>
+          <div class="schedule-adjust-duration">
+            <label class="schedule-adjust-duration-field">
+              <span class="schedule-adjust-input-row">
+                <input class="schedule-adjust-input" id="scheduleAdjustDays" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="2" value="0" aria-label="남은 일">
+                <span class="schedule-adjust-input-suffix">일</span>
+              </span>
+            </label>
+            <label class="schedule-adjust-duration-field">
+              <span class="schedule-adjust-input-row">
+                <input class="schedule-adjust-input" id="scheduleAdjustHours" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="2" value="0" aria-label="남은 시간">
+                <span class="schedule-adjust-input-suffix">시간</span>
+              </span>
+            </label>
+            <label class="schedule-adjust-duration-field">
+              <span class="schedule-adjust-input-row">
+                <input class="schedule-adjust-input" id="scheduleAdjustMinutes" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="2" value="0" aria-label="남은 분">
+                <span class="schedule-adjust-input-suffix">분</span>
+              </span>
+            </label>
+          </div>
+        </div>
+
+        <div class="schedule-adjust-preview" id="scheduleAdjustPreview">
+          <p class="section-label">계산 결과</p>
+          <div class="schedule-adjust-preview-copy" id="scheduleAdjustPreviewCopy">
+            현재 입력값으로 서버 오픈일을 계산합니다.
+          </div>
+        </div>
+      </div>
+
+      <div class="schedule-adjust-actions">
+        <button class="schedule-adjust-secondary" id="scheduleAdjustReset" type="button">KR 1 서버 오픈일 기준으로 되돌리기</button>
+        <button class="schedule-adjust-secondary" id="scheduleAdjustCancel" type="button">취소</button>
+        <button class="schedule-adjust-primary" id="scheduleAdjustConfirm" type="button">확인</button>
+      </div>
+    </section>
   </div>
 
   <noscript>이 페이지는 JavaScript가 필요합니다.</noscript>

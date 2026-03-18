@@ -25,7 +25,24 @@
     petDesc: document.getElementById("petDesc"),
     scheduleSummary: document.getElementById("scheduleSummary"),
     scheduleBlockTitle: document.getElementById("scheduleBlockTitle"),
+    scheduleBlockSubtext: document.getElementById("scheduleBlockSubtext"),
     scheduleList: document.getElementById("scheduleList"),
+    scheduleAdjustButton: document.getElementById("scheduleAdjustButton"),
+    scheduleAdjustModal: document.getElementById("scheduleAdjustModal"),
+    scheduleAdjustBackdrop: document.getElementById("scheduleAdjustBackdrop"),
+    scheduleAdjustDialog: document.getElementById("scheduleAdjustDialog"),
+    scheduleAdjustClose: document.getElementById("scheduleAdjustClose"),
+    scheduleAdjustCancel: document.getElementById("scheduleAdjustCancel"),
+    scheduleAdjustReset: document.getElementById("scheduleAdjustReset"),
+    scheduleAdjustConfirm: document.getElementById("scheduleAdjustConfirm"),
+    scheduleAdjustCurrentLabel: document.getElementById("scheduleAdjustCurrentLabel"),
+    scheduleAdjustSelect: document.getElementById("scheduleAdjustSelect"),
+    scheduleAdjustSelectedSummary: document.getElementById("scheduleAdjustSelectedSummary"),
+    scheduleAdjustDays: document.getElementById("scheduleAdjustDays"),
+    scheduleAdjustHours: document.getElementById("scheduleAdjustHours"),
+    scheduleAdjustMinutes: document.getElementById("scheduleAdjustMinutes"),
+    scheduleAdjustPreview: document.getElementById("scheduleAdjustPreview"),
+    scheduleAdjustPreviewCopy: document.getElementById("scheduleAdjustPreviewCopy"),
     equipmentSetDesktopSlot: document.getElementById("equipmentSetDesktopSlot"),
     equipmentSetBlock: document.getElementById("equipmentSetBlock"),
     equipmentSetTitle: document.getElementById("equipmentSetTitle"),
@@ -91,6 +108,7 @@
     selectedSkillKeyByPet: {},
     selectedVariantBySkillKey: {},
     selectedWeaponEquipmentSetKeyByEntityId: {},
+    scheduleCalibration: null,
     mobileView: "detail",
     mobileVariantScrollBySkillKey: {},
     mobileViewportScrollByView: { rail: 0, detail: 0 },
@@ -113,10 +131,16 @@
   let mobileViewSwitchRaf = 0;
   let mobileLoadingHideTimer = 0;
   let mobileLoadingVisibleSince = 0;
+  let mobileScheduleTooltipHoldTimer = 0;
+  let mobileScheduleTooltipHideTimer = 0;
+  let mobileScheduleTooltipSuppressClickUntil = 0;
   const mobileViewportQuery = window.matchMedia("(max-width: 900px)");
   const KOREA_TIME_ZONE = "Asia/Seoul";
+  const DAY_MS = 24 * 60 * 60 * 1000;
   const KR1_RESET_HOUR = 9;
   const KR1_SERVER_OPEN_DATE_TIME_KEY = "2026-03-03 09:00:00";
+  const SCHEDULE_CALIBRATION_STORAGE_KEY = "gachaViewer.scheduleCalibration.v1";
+  const SCHEDULE_CALIBRATION_PROMPT_STORAGE_KEY = "gachaViewer.scheduleCalibrationPromptSeen.v2";
   const koreaDateFormatter = typeof Intl !== "undefined" && typeof Intl.DateTimeFormat === "function"
     ? new Intl.DateTimeFormat("en-US", {
       timeZone: KOREA_TIME_ZONE,
@@ -140,6 +164,7 @@
     : null;
   let wasMobileLayout = false;
   let lastScheduleStatusTickKey = "";
+  let scheduleCalibrationOptionsCache = null;
   let spineRuntimePromise = null;
   const activeMobileLoadingTasks = new Set();
   const activePressTargetByPointerId = new Map();
@@ -221,6 +246,35 @@
         setMobileLoading(taskKey, false);
       });
     });
+  }
+
+  function clearMobileScheduleTooltipTimers() {
+    if (mobileScheduleTooltipHoldTimer) {
+      window.clearTimeout(mobileScheduleTooltipHoldTimer);
+      mobileScheduleTooltipHoldTimer = 0;
+    }
+    if (mobileScheduleTooltipHideTimer) {
+      window.clearTimeout(mobileScheduleTooltipHideTimer);
+      mobileScheduleTooltipHideTimer = 0;
+    }
+  }
+
+  function hideMobileScheduleAdjustTooltip() {
+    if (elements.scheduleAdjustButton) {
+      elements.scheduleAdjustButton.classList.remove("is-mobile-tooltip-visible");
+    }
+  }
+
+  function showMobileScheduleAdjustTooltip() {
+    if (!isMobileLayout() || !elements.scheduleAdjustButton) return;
+    elements.scheduleAdjustButton.classList.add("is-mobile-tooltip-visible");
+    if (mobileScheduleTooltipHideTimer) {
+      window.clearTimeout(mobileScheduleTooltipHideTimer);
+    }
+    mobileScheduleTooltipHideTimer = window.setTimeout(() => {
+      mobileScheduleTooltipHideTimer = 0;
+      hideMobileScheduleAdjustTooltip();
+    }, 2200);
   }
 
   function clearMobilePressState(pointerId) {
@@ -315,6 +369,44 @@
     return match ? `${match[1]}-${match[2]}-${match[3]}` : "";
   }
 
+  function normalizeDateTimeKey(value) {
+    const raw = String(value || "").trim().replace("T", " ");
+    const match = raw.match(/(\d{4})-(\d{2})-(\d{2})\s+(\d{2}):(\d{2})(?::(\d{2}))?/);
+    return match ? `${match[1]}-${match[2]}-${match[3]} ${match[4]}:${match[5]}:${match[6] || "00"}` : "";
+  }
+
+  function splitDateTimeKeyParts(dateTimeKey) {
+    const normalized = normalizeDateTimeKey(dateTimeKey);
+    if (!normalized) return null;
+    const match = normalized.match(/^(\d{4})-(\d{2})-(\d{2}) (\d{2}):(\d{2}):(\d{2})$/);
+    if (!match) return null;
+    return {
+      year: Number(match[1]),
+      month: Number(match[2]),
+      day: Number(match[3]),
+      hour: Number(match[4]),
+      minute: Number(match[5]),
+      second: Number(match[6]),
+    };
+  }
+
+  function dateTimeKeyToTimestamp(dateTimeKey) {
+    const parts = splitDateTimeKeyParts(dateTimeKey);
+    if (!parts) return Number.NaN;
+    return Date.UTC(parts.year, parts.month - 1, parts.day, parts.hour, parts.minute, parts.second);
+  }
+
+  function timestampToDateTimeKey(timestamp) {
+    if (!Number.isFinite(timestamp)) return "";
+    const date = new Date(timestamp);
+    return `${date.getUTCFullYear()}-${padNumber(date.getUTCMonth() + 1)}-${padNumber(date.getUTCDate())} ${padNumber(date.getUTCHours())}:${padNumber(date.getUTCMinutes())}:${padNumber(date.getUTCSeconds())}`;
+  }
+
+  function dateTimeKeyToDateKey(dateTimeKey) {
+    const normalized = normalizeDateTimeKey(dateTimeKey);
+    return normalized ? normalized.slice(0, 10) : "";
+  }
+
   function addDaysToDateKey(dateKey, dayOffset) {
     const match = String(dateKey || "").match(/^(\d{4})-(\d{2})-(\d{2})$/);
     if (!match) return "";
@@ -322,24 +414,173 @@
     return `${shifted.getUTCFullYear()}-${padNumber(shifted.getUTCMonth() + 1)}-${padNumber(shifted.getUTCDate())}`;
   }
 
-  function scheduleStartDateTimeKey(schedule) {
+  function addDaysToDateTimeKey(dateTimeKey, dayOffset) {
+    const timestamp = dateTimeKeyToTimestamp(dateTimeKey);
+    if (!Number.isFinite(timestamp)) return "";
+    return timestampToDateTimeKey(timestamp + (Number(dayOffset || 0) * DAY_MS));
+  }
+
+  function dateKeyDayOffset(baseDateKey, targetDateKey) {
+    const normalizedBase = normalizeScheduleDateKey(baseDateKey);
+    const normalizedTarget = normalizeScheduleDateKey(targetDateKey);
+    if (!normalizedBase || !normalizedTarget) return Number.NaN;
+    const baseParts = normalizedBase.split("-").map(Number);
+    const targetParts = normalizedTarget.split("-").map(Number);
+    const baseTimestamp = Date.UTC(baseParts[0], baseParts[1] - 1, baseParts[2]);
+    const targetTimestamp = Date.UTC(targetParts[0], targetParts[1] - 1, targetParts[2]);
+    return Math.round((targetTimestamp - baseTimestamp) / DAY_MS);
+  }
+
+  function getBaselineServerOpenDateKey() {
+    return dateTimeKeyToDateKey(KR1_SERVER_OPEN_DATE_TIME_KEY);
+  }
+
+  function scheduleOffsetInfo(schedule) {
     const startKey = normalizeScheduleDateKey(schedule?.start);
-    return startKey ? `${startKey} ${padNumber(KR1_RESET_HOUR)}:00:00` : "";
-  }
-
-  function scheduleEndExclusiveDateTimeKey(schedule) {
     const endKey = normalizeScheduleDateKey(schedule?.end);
-    if (!endKey) return "";
-    const nextDateKey = addDaysToDateKey(endKey, 1);
-    return nextDateKey ? `${nextDateKey} ${padNumber(KR1_RESET_HOUR)}:00:00` : "";
+    const endExclusiveKey = endKey ? addDaysToDateKey(endKey, 1) : "";
+    const baselineOpenDateKey = getBaselineServerOpenDateKey();
+    return {
+      startKey,
+      endKey,
+      endExclusiveKey,
+      startOffsetDays: startKey ? dateKeyDayOffset(baselineOpenDateKey, startKey) : Number.NaN,
+      endExclusiveOffsetDays: endExclusiveKey ? dateKeyDayOffset(baselineOpenDateKey, endExclusiveKey) : Number.NaN,
+    };
   }
 
-  function resolveScheduleStatus(schedule, currentDateTimeKey = getTimeZoneDateTimeKey()) {
+  function defaultScheduleCalibration() {
+    return {
+      mode: "kr1",
+      serverOpenDateTimeKey: KR1_SERVER_OPEN_DATE_TIME_KEY,
+      optionId: "",
+    };
+  }
+
+  function loadScheduleCalibration() {
+    const fallback = defaultScheduleCalibration();
+    try {
+      const raw = window.localStorage.getItem(SCHEDULE_CALIBRATION_STORAGE_KEY);
+      if (!raw) return fallback;
+      const parsed = JSON.parse(raw);
+      const serverOpenDateTimeKey = normalizeDateTimeKey(parsed?.serverOpenDateTimeKey);
+      if (parsed?.mode === "custom" && serverOpenDateTimeKey) {
+        return {
+          mode: "custom",
+          serverOpenDateTimeKey,
+          optionId: String(parsed.optionId || ""),
+        };
+      }
+    } catch (error) {}
+    return fallback;
+  }
+
+  function persistScheduleCalibration(calibration) {
+    state.scheduleCalibration = calibration?.mode === "custom"
+      ? {
+        mode: "custom",
+        serverOpenDateTimeKey: normalizeDateTimeKey(calibration.serverOpenDateTimeKey) || KR1_SERVER_OPEN_DATE_TIME_KEY,
+        optionId: String(calibration.optionId || ""),
+      }
+      : defaultScheduleCalibration();
+
+    try {
+      if (state.scheduleCalibration.mode === "custom") {
+        window.localStorage.setItem(SCHEDULE_CALIBRATION_STORAGE_KEY, JSON.stringify(state.scheduleCalibration));
+      } else {
+        window.localStorage.removeItem(SCHEDULE_CALIBRATION_STORAGE_KEY);
+      }
+    } catch (error) {}
+  }
+
+  function markScheduleCalibrationPromptSeen() {
+    try {
+      window.localStorage.setItem(SCHEDULE_CALIBRATION_PROMPT_STORAGE_KEY, "1");
+    } catch (error) {}
+  }
+
+  function shouldAutoOpenScheduleCalibration() {
+    if (isMobileLayout()) return false;
+    if (state.scheduleCalibration && state.scheduleCalibration.mode === "custom") return false;
+    try {
+      return window.localStorage.getItem(SCHEDULE_CALIBRATION_PROMPT_STORAGE_KEY) !== "1";
+    } catch (error) {
+      return true;
+    }
+  }
+
+  function getActiveServerOpenDateTimeKey() {
+    const customKey = normalizeDateTimeKey(state.scheduleCalibration?.serverOpenDateTimeKey);
+    if (state.scheduleCalibration?.mode === "custom" && customKey) {
+      return customKey;
+    }
+    return KR1_SERVER_OPEN_DATE_TIME_KEY;
+  }
+
+  function formatDisplayDateTimeKey(dateTimeKey) {
+    const normalized = normalizeDateTimeKey(dateTimeKey);
+    if (!normalized) return "";
+    return `${normalized.slice(0, 10).replace(/-/g, ".")} ${normalized.slice(11, 16)}`;
+  }
+
+  function currentScheduleReferenceParts() {
+    if (state.scheduleCalibration?.mode === "custom") {
+      return {
+        label: "계산된 서버 오픈일 :",
+        dateTime: formatDisplayDateTimeKey(getActiveServerOpenDateTimeKey()),
+      };
+    }
+    return {
+      label: "KR 1 서버 오픈일 :",
+      dateTime: formatDisplayDateTimeKey(KR1_SERVER_OPEN_DATE_TIME_KEY),
+    };
+  }
+
+  function currentScheduleReferenceLabel() {
+    const reference = currentScheduleReferenceParts();
+    return `${reference.label} ${reference.dateTime}`.trim();
+  }
+
+  function currentScheduleAdjustmentParts() {
+    return {
+      label: "현재 서버 오픈일 :",
+      dateTime: formatDisplayDateTimeKey(getActiveServerOpenDateTimeKey()),
+    };
+  }
+
+  function resolveScheduleWindow(schedule, serverOpenDateTimeKey = getActiveServerOpenDateTimeKey()) {
     const fallbackStatus = schedule?.status === "current" || schedule?.status === "upcoming"
       ? schedule.status
       : "past";
-    const startDateTimeKey = scheduleStartDateTimeKey(schedule);
-    const endExclusiveDateTimeKey = scheduleEndExclusiveDateTimeKey(schedule);
+    const offsetInfo = scheduleOffsetInfo(schedule);
+    const normalizedServerOpenKey = normalizeDateTimeKey(serverOpenDateTimeKey) || KR1_SERVER_OPEN_DATE_TIME_KEY;
+    const resolvedStartDateTimeKey = Number.isFinite(offsetInfo.startOffsetDays)
+      ? addDaysToDateTimeKey(normalizedServerOpenKey, offsetInfo.startOffsetDays)
+      : "";
+    const resolvedEndExclusiveDateTimeKey = Number.isFinite(offsetInfo.endExclusiveOffsetDays)
+      ? addDaysToDateTimeKey(normalizedServerOpenKey, offsetInfo.endExclusiveOffsetDays)
+      : "";
+    const resolvedStartDateKey = dateTimeKeyToDateKey(resolvedStartDateTimeKey);
+    const resolvedEndExclusiveDateKey = dateTimeKeyToDateKey(resolvedEndExclusiveDateTimeKey);
+    const resolvedEndDateKey = resolvedEndExclusiveDateKey ? addDaysToDateKey(resolvedEndExclusiveDateKey, -1) : "";
+
+    return {
+      ...offsetInfo,
+      fallbackStatus,
+      resolvedStartDateTimeKey,
+      resolvedEndExclusiveDateTimeKey,
+      resolvedStartDateKey,
+      resolvedEndDateKey,
+      visible: resolvedEndExclusiveDateTimeKey
+        ? resolvedEndExclusiveDateTimeKey > normalizedServerOpenKey
+        : (resolvedStartDateTimeKey ? resolvedStartDateTimeKey >= normalizedServerOpenKey : true),
+    };
+  }
+
+  function resolveScheduleStatus(scheduleWindow, currentDateTimeKey = getTimeZoneDateTimeKey()) {
+    const fallbackStatus = scheduleWindow?.fallbackStatus || "past";
+    const startDateTimeKey = scheduleWindow?.resolvedStartDateTimeKey || "";
+    const endExclusiveDateTimeKey = scheduleWindow?.resolvedEndExclusiveDateTimeKey || "";
 
     if (!startDateTimeKey && !endExclusiveDateTimeKey) {
       return fallbackStatus;
@@ -353,27 +594,393 @@
     return "current";
   }
 
-  function isKr1VisibleSchedule(schedule) {
-    const startDateTimeKey = scheduleStartDateTimeKey(schedule);
-    const endExclusiveDateTimeKey = scheduleEndExclusiveDateTimeKey(schedule);
-
-    if (endExclusiveDateTimeKey) {
-      return endExclusiveDateTimeKey > KR1_SERVER_OPEN_DATE_TIME_KEY;
-    }
-    if (startDateTimeKey) {
-      return startDateTimeKey >= KR1_SERVER_OPEN_DATE_TIME_KEY;
-    }
-    return true;
-  }
-
   function getResolvedSchedules(pet, currentDateTimeKey = getTimeZoneDateTimeKey()) {
     const schedules = Array.isArray(pet?.schedules) ? pet.schedules : [];
+    const activeServerOpenDateTimeKey = getActiveServerOpenDateTimeKey();
     return schedules
-      .filter((item) => isKr1VisibleSchedule(item))
+      .map((item) => ({
+        ...item,
+        ...resolveScheduleWindow(item, activeServerOpenDateTimeKey),
+      }))
+      .filter((item) => item.visible)
       .map((item) => ({
         ...item,
         resolvedStatus: resolveScheduleStatus(item, currentDateTimeKey),
       }));
+  }
+
+  function scheduleCategoryLabel(category) {
+    return String(category?.label || category?.key || "항목");
+  }
+
+  function scheduleCategoryPriority(categoryKey) {
+    switch (String(categoryKey || "")) {
+      case "pet":
+        return 0;
+      case "weapon":
+        return 1;
+      case "ride":
+        return 2;
+      default:
+        return 99;
+    }
+  }
+
+  function scheduleCalibrationGroupMeta(category, item) {
+    const isEventItem = String(item?.listMetaLabel || "").trim() === "이벤트"
+      || String(item?.detailMetaLabel || "").includes("누적소비")
+      || String(item?.scheduleTitleOverride || "").includes("누적소비");
+
+    if (isEventItem) {
+      return {
+        key: "event",
+        label: "누적소비 이벤트",
+        order: 3,
+      };
+    }
+
+    return {
+      key: String(category?.key || "other"),
+      label: scheduleCategoryLabel(category),
+      order: scheduleCategoryPriority(category?.key),
+    };
+  }
+
+  function buildScheduleCalibrationOptions() {
+    const options = [];
+    getCategories().forEach((category) => {
+      getItems(category).forEach((item, itemIndex) => {
+        const schedules = Array.isArray(item?.schedules) ? item.schedules : [];
+        schedules.forEach((schedule, scheduleIndex) => {
+          const scheduleWindow = resolveScheduleWindow(schedule, KR1_SERVER_OPEN_DATE_TIME_KEY);
+          if (!scheduleWindow.resolvedStartDateTimeKey || !scheduleWindow.resolvedEndExclusiveDateTimeKey) {
+            return;
+          }
+          const itemOrder = displayOrderValue(category, item) || (itemIndex + 1);
+          const groupMeta = scheduleCalibrationGroupMeta(category, item);
+          const optionName = String(item?.name || "");
+          options.push({
+            id: `${category.key}:${getEntityId(item)}:${scheduleIndex}`,
+            categoryKey: category.key,
+            categoryLabel: scheduleCategoryLabel(category),
+            groupKey: groupMeta.key,
+            groupLabel: groupMeta.label,
+            groupOrder: groupMeta.order,
+            itemId: getEntityId(item),
+            itemName: String(item?.name || ""),
+            scheduleIndex,
+            startOffsetDays: scheduleWindow.startOffsetDays,
+            endExclusiveOffsetDays: scheduleWindow.endExclusiveOffsetDays,
+            summary: formatScheduleDisplayRange(
+              schedule.start,
+              schedule.end,
+              scheduleWindow.resolvedStartDateTimeKey,
+              scheduleWindow.resolvedEndExclusiveDateTimeKey,
+            ),
+            label: `${scheduleIndex + 1}차 · ${optionName}`,
+            sortOrder: itemOrder,
+            cycleOrder: scheduleIndex,
+            durationDays: Math.max(1, Number(scheduleWindow.endExclusiveOffsetDays) - Number(scheduleWindow.startOffsetDays)),
+          });
+        });
+      });
+    });
+
+    return options.sort((left, right) => {
+      if (left.groupOrder !== right.groupOrder) {
+        return left.groupOrder - right.groupOrder;
+      }
+      if (left.cycleOrder !== right.cycleOrder) {
+        return left.cycleOrder - right.cycleOrder;
+      }
+      if (left.sortOrder !== right.sortOrder) {
+        return left.sortOrder - right.sortOrder;
+      }
+      return left.scheduleIndex - right.scheduleIndex;
+    });
+  }
+
+  function getScheduleCalibrationOptions() {
+    if (!scheduleCalibrationOptionsCache) {
+      scheduleCalibrationOptionsCache = buildScheduleCalibrationOptions();
+    }
+    return scheduleCalibrationOptionsCache;
+  }
+
+  function findScheduleCalibrationOptionById(optionId) {
+    return getScheduleCalibrationOptions().find((option) => option.id === optionId) || null;
+  }
+
+  function getSelectedScheduleCalibrationOption() {
+    return findScheduleCalibrationOptionById(String(elements.scheduleAdjustSelect?.value || ""));
+  }
+
+  function preferredScheduleCalibrationOptionId() {
+    const currentPet = getCurrentItem();
+    const activeCategory = getActiveCategory();
+    if (!currentPet) {
+      return getScheduleCalibrationOptions()[0]?.id || "";
+    }
+
+    const currentEntityId = getEntityId(currentPet);
+    const currentSchedules = getResolvedSchedules(currentPet);
+    const preferredSchedule = currentSchedules.find((item) => item.resolvedStatus === "current")
+      || currentSchedules.find((item) => item.resolvedStatus === "upcoming")
+      || currentSchedules[0]
+      || null;
+    const rawSchedules = Array.isArray(currentPet?.schedules) ? currentPet.schedules : [];
+    const preferredScheduleIndex = preferredSchedule
+      ? rawSchedules.findIndex((item) => item.start === preferredSchedule.start && item.end === preferredSchedule.end)
+      : 0;
+    const preferredOptionId = `${activeCategory.key}:${currentEntityId}:${preferredScheduleIndex}`;
+    return findScheduleCalibrationOptionById(preferredOptionId)?.id
+      || getScheduleCalibrationOptions().find((option) => option.itemId === currentEntityId)?.id
+      || getScheduleCalibrationOptions()[0]?.id
+      || "";
+  }
+
+  function sanitizeScheduleAdjustmentValue(rawValue, max) {
+    const digits = String(rawValue || "").replace(/\D+/g, "");
+    if (!digits) return "0";
+    return String(clamp(Number.parseInt(digits, 10) || 0, 0, max));
+  }
+
+  function scheduleAdjustmentMaxDurationMinutes(option) {
+    const durationDays = Math.max(1, Number(option?.durationDays) || 7);
+    return durationDays * 24 * 60;
+  }
+
+  function scheduleAdjustmentMaxDayValue(option) {
+    return Math.max(1, Number(option?.durationDays) || 7);
+  }
+
+  function scheduleAdjustmentMaxLabel(option) {
+    const maxMinutes = scheduleAdjustmentMaxDurationMinutes(option);
+    const days = Math.floor(maxMinutes / (24 * 60));
+    const hours = Math.floor((maxMinutes % (24 * 60)) / 60);
+    const minutes = maxMinutes % 60;
+    const parts = [];
+    if (days > 0) parts.push(`${days}일`);
+    if (hours > 0) parts.push(`${hours}시간`);
+    if (minutes > 0 || parts.length === 0) parts.push(`${minutes}분`);
+    return parts.join(" ");
+  }
+
+  function writeScheduleAdjustmentDraft(draft) {
+    if (elements.scheduleAdjustDays) elements.scheduleAdjustDays.value = String(draft.days);
+    if (elements.scheduleAdjustHours) elements.scheduleAdjustHours.value = String(draft.hours);
+    if (elements.scheduleAdjustMinutes) elements.scheduleAdjustMinutes.value = String(draft.minutes);
+  }
+
+  function normalizeScheduleAdjustmentInputs() {
+    const option = getSelectedScheduleCalibrationOption();
+    const maxDayValue = scheduleAdjustmentMaxDayValue(option);
+    const dayValue = sanitizeScheduleAdjustmentValue(elements.scheduleAdjustDays?.value || "0", maxDayValue);
+    const hourValue = sanitizeScheduleAdjustmentValue(elements.scheduleAdjustHours?.value || "0", 23);
+    const minuteValue = sanitizeScheduleAdjustmentValue(elements.scheduleAdjustMinutes?.value || "0", 59);
+
+    let totalMinutes = (Number.parseInt(dayValue, 10) || 0) * 24 * 60;
+    totalMinutes += (Number.parseInt(hourValue, 10) || 0) * 60;
+    totalMinutes += Number.parseInt(minuteValue, 10) || 0;
+
+    const maxMinutes = scheduleAdjustmentMaxDurationMinutes(option);
+    totalMinutes = clamp(totalMinutes, 0, maxMinutes);
+
+    const normalizedDraft = {
+      days: Math.floor(totalMinutes / (24 * 60)),
+      hours: Math.floor((totalMinutes % (24 * 60)) / 60),
+      minutes: totalMinutes % 60,
+    };
+    writeScheduleAdjustmentDraft(normalizedDraft);
+    return normalizedDraft;
+  }
+
+  function readScheduleCalibrationDraft() {
+    const option = getSelectedScheduleCalibrationOption();
+    const maxDayValue = scheduleAdjustmentMaxDayValue(option);
+    return {
+      optionId: String(elements.scheduleAdjustSelect?.value || ""),
+      days: clamp(Number.parseInt(elements.scheduleAdjustDays?.value || "0", 10) || 0, 0, maxDayValue),
+      hours: clamp(Number.parseInt(elements.scheduleAdjustHours?.value || "0", 10) || 0, 0, 23),
+      minutes: clamp(Number.parseInt(elements.scheduleAdjustMinutes?.value || "0", 10) || 0, 0, 59),
+    };
+  }
+
+  function draftDurationMinutes(draft) {
+    return (draft.days * 24 * 60) + (draft.hours * 60) + draft.minutes;
+  }
+
+  function durationLabelFromDraft(draft) {
+    const parts = [];
+    if (draft.days > 0) parts.push(`${draft.days}일`);
+    if (draft.hours > 0) parts.push(`${draft.hours}시간`);
+    if (draft.minutes > 0 || parts.length === 0) parts.push(`${draft.minutes}분`);
+    return parts.join(" ");
+  }
+
+  function inferScheduleCalibrationResult(draft, currentDateTimeKey = getTimeZoneDateTimeKey()) {
+    const option = findScheduleCalibrationOptionById(draft.optionId);
+    if (!option || !Number.isFinite(option.endExclusiveOffsetDays)) {
+      return null;
+    }
+    const durationMinutes = draftDurationMinutes(draft);
+    if (durationMinutes <= 0) {
+      return null;
+    }
+
+    const currentTimestamp = dateTimeKeyToTimestamp(currentDateTimeKey);
+    if (!Number.isFinite(currentTimestamp)) {
+      return null;
+    }
+    const approximateCloseTimestamp = currentTimestamp + (durationMinutes * 60 * 1000);
+    let inferredEndExclusiveDateTimeKey = `${timestampToDateTimeKey(approximateCloseTimestamp).slice(0, 10)} ${padNumber(KR1_RESET_HOUR)}:00:00`;
+    if (dateTimeKeyToTimestamp(inferredEndExclusiveDateTimeKey) < approximateCloseTimestamp) {
+      inferredEndExclusiveDateTimeKey = addDaysToDateTimeKey(inferredEndExclusiveDateTimeKey, 1);
+    }
+
+    const inferredServerOpenTimestamp = dateTimeKeyToTimestamp(inferredEndExclusiveDateTimeKey) - (option.endExclusiveOffsetDays * DAY_MS);
+    const serverOpenDateTimeKey = normalizeDateTimeKey(timestampToDateTimeKey(inferredServerOpenTimestamp));
+    if (!serverOpenDateTimeKey) {
+      return null;
+    }
+
+    return {
+      option,
+      durationMinutes,
+      inferredEndExclusiveDateTimeKey,
+      serverOpenDateTimeKey,
+      currentDateTimeKey,
+    };
+  }
+
+  function updateScheduleAdjustSelectionSummary() {
+    if (!elements.scheduleAdjustSelectedSummary) return;
+    const option = findScheduleCalibrationOptionById(String(elements.scheduleAdjustSelect?.value || ""));
+    if (!option) {
+      elements.scheduleAdjustSelectedSummary.textContent = "기준 항목을 선택해 주세요.";
+      return;
+    }
+    elements.scheduleAdjustSelectedSummary.innerHTML = `
+      <strong>선택 기준</strong>
+      <span>${escapeHtml(option.label)}</span>
+      <small>${escapeHtml(option.summary)}</small>
+      <small>최대 입력 ${escapeHtml(scheduleAdjustmentMaxLabel(option))}</small>
+    `;
+  }
+
+  function updateScheduleAdjustmentPreview() {
+    normalizeScheduleAdjustmentInputs();
+    updateScheduleAdjustSelectionSummary();
+    if (!elements.scheduleAdjustPreviewCopy) return;
+
+    const result = inferScheduleCalibrationResult(readScheduleCalibrationDraft());
+    if (!result) {
+      elements.scheduleAdjustPreviewCopy.textContent = "기준 항목을 고르고 남은 시간을 입력하면 서버 오픈일을 계산합니다.";
+      if (elements.scheduleAdjustConfirm) {
+        elements.scheduleAdjustConfirm.disabled = true;
+      }
+      return;
+    }
+
+    elements.scheduleAdjustPreviewCopy.innerHTML = `
+      <strong>계산된 서버 오픈:</strong> ${escapeHtml(formatDisplayDateTimeKey(result.serverOpenDateTimeKey))}<br>
+      <strong>선택 기준:</strong> ${escapeHtml(result.option.label)}<br>
+      <strong>입력 남은 시간:</strong> ${escapeHtml(durationLabelFromDraft(readScheduleCalibrationDraft()))}<br>
+      <strong>기준 종료 시각:</strong> ${escapeHtml(formatDisplayDateTimeKey(result.inferredEndExclusiveDateTimeKey))}
+    `;
+    if (elements.scheduleAdjustConfirm) {
+      elements.scheduleAdjustConfirm.disabled = false;
+    }
+  }
+
+  function populateScheduleAdjustmentOptions(preferredOptionId = "") {
+    if (!elements.scheduleAdjustSelect) return;
+    const options = getScheduleCalibrationOptions();
+    const selectedOptionId = findScheduleCalibrationOptionById(state.scheduleCalibration?.optionId || "")?.id
+      || findScheduleCalibrationOptionById(preferredOptionId)?.id
+      || preferredScheduleCalibrationOptionId();
+    const groupedOptions = options.reduce((accumulator, option) => {
+      const key = String(option.groupKey || "other");
+      if (!accumulator[key]) {
+        accumulator[key] = {
+          label: option.groupLabel || option.categoryLabel || "기타",
+          order: Number(option.groupOrder ?? 99),
+          options: [],
+        };
+      }
+      accumulator[key].options.push(option);
+      return accumulator;
+    }, {});
+
+    const orderedGroups = Object.values(groupedOptions)
+      .sort((left, right) => left.order - right.order);
+
+    elements.scheduleAdjustSelect.innerHTML = orderedGroups.map((group) => `
+      <optgroup label="${escapeHtml(group.label)}">
+        ${group.options.map((option) => {
+          const selected = option.id === selectedOptionId ? " selected" : "";
+          return `<option value="${escapeHtml(option.id)}"${selected}>${escapeHtml(option.label)}</option>`;
+        }).join("")}
+      </optgroup>
+    `).join("");
+  }
+
+  function syncScheduleAdjustmentCurrentLabel() {
+    if (elements.scheduleAdjustCurrentLabel) {
+      const reference = currentScheduleAdjustmentParts();
+      elements.scheduleAdjustCurrentLabel.innerHTML = `
+        <span class="schedule-reference-label">${escapeHtml(reference.label)}</span>
+        <span class="schedule-reference-date">${escapeHtml(reference.dateTime)}</span>
+      `;
+    }
+  }
+
+  function openScheduleAdjustmentDialog(options = {}) {
+    if (!elements.scheduleAdjustModal) return;
+    clearMobileScheduleTooltipTimers();
+    hideMobileScheduleAdjustTooltip();
+    const preferredOptionId = options.preferredOptionId || preferredScheduleCalibrationOptionId();
+    populateScheduleAdjustmentOptions(preferredOptionId);
+    syncScheduleAdjustmentCurrentLabel();
+    if (elements.scheduleAdjustDays) elements.scheduleAdjustDays.value = "0";
+    if (elements.scheduleAdjustHours) elements.scheduleAdjustHours.value = "0";
+    if (elements.scheduleAdjustMinutes) elements.scheduleAdjustMinutes.value = "0";
+    updateScheduleAdjustmentPreview();
+    elements.scheduleAdjustModal.hidden = false;
+    document.body.classList.add("is-schedule-adjust-open");
+    if (elements.scheduleAdjustSelect) {
+      window.setTimeout(() => elements.scheduleAdjustSelect.focus(), 0);
+    }
+  }
+
+  function closeScheduleAdjustmentDialog(markSeen = false) {
+    if (!elements.scheduleAdjustModal) return;
+    elements.scheduleAdjustModal.hidden = true;
+    document.body.classList.remove("is-schedule-adjust-open");
+    if (markSeen) {
+      markScheduleCalibrationPromptSeen();
+    }
+  }
+
+  function applyScheduleAdjustment() {
+    const result = inferScheduleCalibrationResult(readScheduleCalibrationDraft());
+    if (!result) return;
+
+    persistScheduleCalibration({
+      mode: "custom",
+      serverOpenDateTimeKey: result.serverOpenDateTimeKey,
+      optionId: result.option.id,
+    });
+    markScheduleCalibrationPromptSeen();
+    closeScheduleAdjustmentDialog(false);
+    refreshScheduleStatuses(true);
+  }
+
+  function resetScheduleAdjustment() {
+    persistScheduleCalibration(defaultScheduleCalibration());
+    markScheduleCalibrationPromptSeen();
+    closeScheduleAdjustmentDialog(false);
+    refreshScheduleStatuses(true);
   }
 
   function currentViewportScrollTop() {
@@ -1694,17 +2301,15 @@
     return `${padNumber(endHour)}:59`;
   }
 
-  function formatScheduleDisplayRange(start, end) {
-    const startKey = normalizeScheduleDateKey(start);
-    const endKey = normalizeScheduleDateKey(end);
+  function formatScheduleDisplayRange(start, end, startDateTimeKey = "", endExclusiveDateTimeKey = "") {
+    const resolvedStartDateKey = dateTimeKeyToDateKey(startDateTimeKey);
+    const resolvedEndExclusiveDateKey = dateTimeKeyToDateKey(endExclusiveDateTimeKey);
+    const startKey = resolvedStartDateKey || normalizeScheduleDateKey(start);
+    const endKey = resolvedEndExclusiveDateKey || addDaysToDateKey(normalizeScheduleDateKey(end), 1);
     if (!startKey || !endKey) {
       return formatDateRange(start, end);
     }
-    const visibleEndDateKey = addDaysToDateKey(endKey, 1);
-    if (!visibleEndDateKey) {
-      return formatDateRange(start, end);
-    }
-    return `${formatDisplayDateKey(startKey)} ${scheduleDisplayStartTimeLabel()} - ${formatDisplayDateKey(visibleEndDateKey)} ${scheduleDisplayEndTimeLabel()}`;
+    return `${formatDisplayDateKey(startKey)} ${scheduleDisplayStartTimeLabel()} - ${formatDisplayDateKey(endKey)} ${scheduleDisplayEndTimeLabel()}`;
   }
 
   function cooldownLabel(value) {
@@ -1764,17 +2369,44 @@
     const schedules = getResolvedSchedules(pet);
     const current = schedules.find((item) => item.resolvedStatus === "current");
     if (current) {
-      return { tone: "current", label: "진행 중", summary: formatScheduleDisplayRange(current.start, current.end) };
+      return {
+        tone: "current",
+        label: "진행 중",
+        summary: formatScheduleDisplayRange(
+          current.start,
+          current.end,
+          current.resolvedStartDateTimeKey,
+          current.resolvedEndExclusiveDateTimeKey,
+        ),
+      };
     }
 
     const upcoming = schedules.find((item) => item.resolvedStatus === "upcoming");
     if (upcoming) {
-      return { tone: "upcoming", label: "다음 일정", summary: formatScheduleDisplayRange(upcoming.start, upcoming.end) };
+      return {
+        tone: "upcoming",
+        label: "다음 일정",
+        summary: formatScheduleDisplayRange(
+          upcoming.start,
+          upcoming.end,
+          upcoming.resolvedStartDateTimeKey,
+          upcoming.resolvedEndExclusiveDateTimeKey,
+        ),
+      };
     }
 
     const last = schedules[schedules.length - 1];
     if (last) {
-      return { tone: "past", label: "종료", summary: formatScheduleDisplayRange(last.start, last.end) };
+      return {
+        tone: "past",
+        label: "종료",
+        summary: formatScheduleDisplayRange(
+          last.start,
+          last.end,
+          last.resolvedStartDateTimeKey,
+          last.resolvedEndExclusiveDateTimeKey,
+        ),
+      };
     }
 
     if (pet.statusLabel || pet.statusSummary) {
@@ -2465,7 +3097,7 @@
       const label = status === "current" ? "진행 중" : status === "upcoming" ? "예정" : "종료";
       const block = document.createElement("div");
       block.className = `schedule-item ${status}`;
-      block.innerHTML = `<strong>${escapeHtml(formatScheduleDisplayRange(item.start, item.end))}</strong><span>${escapeHtml(label)}</span>`;
+      block.innerHTML = `<strong>${escapeHtml(formatScheduleDisplayRange(item.start, item.end, item.resolvedStartDateTimeKey, item.resolvedEndExclusiveDateTimeKey))}</strong><span>${escapeHtml(label)}</span>`;
       elements.scheduleList.appendChild(block);
     });
   }
@@ -2487,6 +3119,14 @@
 
     if (elements.scheduleBlockTitle) {
       elements.scheduleBlockTitle.textContent = scheduleBlockTitleForPet(pet);
+    }
+    if (elements.scheduleBlockSubtext) {
+      const reference = currentScheduleReferenceParts();
+      elements.scheduleBlockSubtext.innerHTML = `
+        <span class="schedule-reference-label">${escapeHtml(reference.label)}</span>
+        <span class="schedule-reference-date">${escapeHtml(reference.dateTime)}</span>
+      `;
+      elements.scheduleBlockSubtext.title = currentScheduleReferenceLabel();
     }
 
     elements.orderBadge.textContent = `NO.${String(displayOrderValue(category, pet)).padStart(2, "0")}`;
@@ -3083,6 +3723,91 @@
     });
   }
 
+  if (elements.scheduleAdjustButton) {
+    elements.scheduleAdjustButton.addEventListener("click", (event) => {
+      if (isMobileLayout() && Date.now() < mobileScheduleTooltipSuppressClickUntil) {
+        event.preventDefault();
+        event.stopPropagation();
+        return;
+      }
+      openScheduleAdjustmentDialog({ preferredOptionId: preferredScheduleCalibrationOptionId() });
+    });
+
+    elements.scheduleAdjustButton.addEventListener("touchstart", () => {
+      if (!isMobileLayout()) return;
+      clearMobileScheduleTooltipTimers();
+      mobileScheduleTooltipHoldTimer = window.setTimeout(() => {
+        mobileScheduleTooltipHoldTimer = 0;
+        mobileScheduleTooltipSuppressClickUntil = Date.now() + 900;
+        showMobileScheduleAdjustTooltip();
+      }, 420);
+    }, { passive: true });
+
+    const cancelScheduleAdjustLongPress = () => {
+      if (!isMobileLayout()) return;
+      if (mobileScheduleTooltipHoldTimer) {
+        window.clearTimeout(mobileScheduleTooltipHoldTimer);
+        mobileScheduleTooltipHoldTimer = 0;
+      }
+    };
+
+    elements.scheduleAdjustButton.addEventListener("touchend", cancelScheduleAdjustLongPress, { passive: true });
+    elements.scheduleAdjustButton.addEventListener("touchcancel", cancelScheduleAdjustLongPress, { passive: true });
+  }
+
+  if (elements.scheduleAdjustSelect) {
+    elements.scheduleAdjustSelect.addEventListener("change", updateScheduleAdjustmentPreview);
+  }
+
+  [elements.scheduleAdjustDays, elements.scheduleAdjustHours, elements.scheduleAdjustMinutes]
+    .filter(Boolean)
+    .forEach((input) => {
+      input.addEventListener("focus", () => {
+        input.select();
+      });
+      input.addEventListener("input", () => {
+        updateScheduleAdjustmentPreview();
+      });
+      input.addEventListener("change", () => {
+        updateScheduleAdjustmentPreview();
+      });
+      input.addEventListener("blur", () => {
+        normalizeScheduleAdjustmentInputs();
+      });
+    });
+
+  if (elements.scheduleAdjustConfirm) {
+    elements.scheduleAdjustConfirm.addEventListener("click", applyScheduleAdjustment);
+  }
+
+  if (elements.scheduleAdjustReset) {
+    elements.scheduleAdjustReset.addEventListener("click", resetScheduleAdjustment);
+  }
+
+  if (elements.scheduleAdjustCancel) {
+    elements.scheduleAdjustCancel.addEventListener("click", () => {
+      closeScheduleAdjustmentDialog(false);
+    });
+  }
+
+  if (elements.scheduleAdjustClose) {
+    elements.scheduleAdjustClose.addEventListener("click", () => {
+      closeScheduleAdjustmentDialog(false);
+    });
+  }
+
+  if (elements.scheduleAdjustBackdrop) {
+    elements.scheduleAdjustBackdrop.addEventListener("click", () => {
+      closeScheduleAdjustmentDialog(false);
+    });
+  }
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && elements.scheduleAdjustModal && !elements.scheduleAdjustModal.hidden) {
+      closeScheduleAdjustmentDialog(false);
+    }
+  });
+
   window.addEventListener("resize", () => {
     requestSpineLayout();
     requestSceneLayout();
@@ -3114,6 +3839,7 @@
     elements.sceneStageBack.addEventListener("load", requestSceneLayout);
   }
 
+  state.scheduleCalibration = loadScheduleCalibration();
   const initialSelection = findInitialSelection();
   state.activeCategoryKey = initialSelection.categoryKey;
   getCategories().forEach((category) => {
@@ -3123,4 +3849,7 @@
   lastScheduleStatusTickKey = getTimeZoneDateTimeKey().slice(0, 16);
   syncMobileLayout(true);
   render();
+  if (shouldAutoOpenScheduleCalibration()) {
+    openScheduleAdjustmentDialog({ preferredOptionId: preferredScheduleCalibrationOptionId() });
+  }
 })();
