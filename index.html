@@ -1,0 +1,168 @@
+﻿<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gacha Viewer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Gothic+A1:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="viewer.css?v=20260318-file-live-fix-83">
+  <script defer src="vendor/pixi.min.js"></script>
+  <script defer src="vendor/pixi-spine-3.8.js"></script>
+  <script defer src="data.js?v=20260318-file-live-fix-43"></script>
+  <script defer src="spine_manifest.js?v=20260318-file-live-fix-43"></script>
+  <script defer src="spine_manifest_weapon.js?v=20260318-file-live-fix-43"></script>
+  <script defer src="viewer.js?v=20260318-file-live-fix-83"></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="pet-rail">
+      <div class="rail-head">
+        <p class="eyebrow">Gacha Viewer</p>
+        <h1 id="railTitle">가챠 펫 뷰어</h1>
+        <p class="rail-copy" id="railCopy">출시 순서, 라이브 일정, 스킬 계수를 한 화면에서 비교하기 쉽게 정리했습니다.</p>
+      </div>
+      <div class="collection-tabs" id="collectionTabs"></div>
+      <div class="pet-list" id="petList"></div>
+    </aside>
+
+    <main class="stage">
+      <section class="hero-panel" id="heroPanel">
+        <div class="hero-backdrop" id="heroBackdrop"></div>
+        <div class="hero-overlay"></div>
+
+        <button class="nav-arrow left" id="prevPet" aria-label="이전 항목"></button>
+        <button class="nav-arrow right" id="nextPet" aria-label="다음 항목"></button>
+
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <div class="title-row">
+              <span class="order-badge" id="orderBadge"></span>
+              <span class="status-badge" id="statusBadge"></span>
+            </div>
+            <p class="eyebrow" id="petTitle"></p>
+            <h2 id="petName"></h2>
+            <p class="pet-desc" id="petDesc"></p>
+            <div class="schedule-block">
+              <h3 class="schedule-block-heading">
+                <span id="scheduleBlockTitle">라이브 일정</span>
+                <span class="schedule-block-subtext">KR1 서버 기준</span>
+              </h3>
+              <div class="schedule-list" id="scheduleList"></div>
+            </div>
+            <section class="equipment-set-block" id="equipmentSetBlock" hidden>
+              <div class="section-stack">
+                <p class="section-label" id="equipmentSetTitle">장비 세트</p>
+                <p class="section-note" id="equipmentSetNote">장비/탑승 보유 효과가 있는 항목만 별도로 정리합니다.</p>
+              </div>
+              <div class="equipment-set-list" id="equipmentSetList"></div>
+            </section>
+          </div>
+
+          <div class="focus-column">
+            <div class="focus-top-row">
+              <div class="portrait-stage compact">
+                <div class="portrait-frame">
+                  <div class="portrait-head">
+                    <span class="portrait-icon-stack">
+                      <img class="gacha-icon" id="gachaIcon" alt="">
+                      <span class="portrait-icon-element" id="portraitElementBadge" hidden>
+                        <img id="portraitElementIcon" alt="">
+                      </span>
+                    </span>
+                    <div class="portrait-copy">
+                      <p class="portrait-kicker" id="portraitPetTitle"></p>
+                      <p class="portrait-name" id="portraitPetName"></p>
+                    </div>
+                  </div>
+                  <img class="portrait-image" id="portraitImage" alt="">
+                  <section class="portrait-owned-effect" id="ownedEffectCard" hidden>
+                    <div class="portrait-owned-effect-head">
+                      <p class="section-label" id="ownedEffectTitle"></p>
+                      <p class="section-note" id="ownedEffectNote" hidden></p>
+                    </div>
+                    <div class="portrait-owned-effect-list" id="ownedEffectList"></div>
+                  </section>
+                </div>
+              </div>
+
+              <div class="spotlight-card">
+                <div class="spotlight-copy spotlight-stage-panel">
+                  <div class="spotlight-title-block">
+                    <p class="spotlight-kicker" id="spotlightTitleText"></p>
+                    <h3 class="spotlight-name" id="spotlightPetBannerName"></h3>
+                  </div>
+                  <div class="spotlight-stage-strip">
+                    <div class="spotlight-stage-tile" id="spotlightStageTile"></div>
+                    <div class="spotlight-stage-meta">
+                      <p class="spotlight-stage-label" id="spotlightStageLabel"></p>
+                      <p class="spotlight-stage-skill" id="spotlightStageSkill"></p>
+                      <p class="spotlight-stage-option" id="spotlightStageOption"></p>
+                    </div>
+                  </div>
+                  <div class="spotlight-info-list" id="spotlightInfoList"></div>
+                </div>
+                <div class="spotlight-media" id="spotlightMedia">
+                  <img class="scene-background" id="sceneBackgroundImage" alt="">
+                  <img class="scene-side-asset scene-far-left" id="sceneFarLeft" alt="">
+                  <img class="scene-side-asset scene-far-right" id="sceneFarRight" alt="">
+                  <img class="scene-cloud-back" id="sceneCloudBack" alt="">
+                  <img class="scene-light-asset scene-light-left" id="sceneBeamLeft" alt="">
+                  <img class="scene-light-asset scene-light-right" id="sceneBeamRight" alt="">
+                  <img class="banner-ribbon" id="bannerImage" alt="">
+                  <div class="spotlight-fog" aria-hidden="true"></div>
+                  <div class="scene-stage-aura" id="sceneStageAura" aria-hidden="true"></div>
+                  <img class="scene-stage stage-back" id="sceneStageBack" alt="">
+                  <img class="scene-stage stage-front" id="sceneStageFront" alt="">
+                  <img class="scene-stage stage-zone" id="sceneStageZone" alt="">
+                  <div class="scene-embers" id="sceneEmbers" aria-hidden="true"></div>
+                  <div class="spine-preview" id="spinePreview" hidden></div>
+                </div>
+              </div>
+            </div>
+
+            <article class="skill-focus-card">
+              <div class="skill-focus-head">
+                <div class="skill-badge large" id="focusSkillBadge"></div>
+                <div class="skill-focus-copy">
+                  <p class="modal-eyebrow" id="focusSkillType"></p>
+                  <h3 id="focusSkillName"></h3>
+                  <div class="modal-meta">
+                    <span class="meta-pill" id="focusVariantLevel"></span>
+                    <span class="meta-pill" id="focusSkillRange"></span>
+                    <span class="meta-pill" id="focusCooldown"></span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="skill-dock" id="skillDock"></div>
+
+              <div class="desc-card focus-desc-card">
+                <p class="section-label">스킬 설명</p>
+                <div class="skill-desc" id="focusSkillDesc"></div>
+              </div>
+            </article>
+          </div>
+
+          <aside class="detail-rail">
+            <div class="variant-preview-card">
+              <div class="section-row">
+                <div class="section-stack">
+                  <p class="section-label">단계 변화</p>
+                  <p class="section-note">선택한 스킬의 단계별 추가 옵션만 빠르게 비교합니다.</p>
+                </div>
+                <p class="detail-rail-current" id="selectedSkillSummary"></p>
+              </div>
+              <div class="variant-preview-list" id="variantPreviewList"></div>
+            </div>
+          </aside>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <noscript>이 페이지는 JavaScript가 필요합니다.</noscript>
+</body>
+</html>
+
