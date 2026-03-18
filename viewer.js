@@ -115,6 +115,7 @@
   const mobileViewportQuery = window.matchMedia("(max-width: 900px)");
   const KOREA_TIME_ZONE = "Asia/Seoul";
   const KR1_RESET_HOUR = 9;
+  const KR1_SERVER_OPEN_DATE_TIME_KEY = "2026-03-03 09:00:00";
   const koreaDateFormatter = typeof Intl !== "undefined" && typeof Intl.DateTimeFormat === "function"
     ? new Intl.DateTimeFormat("en-US", {
       timeZone: KOREA_TIME_ZONE,
@@ -351,12 +352,27 @@
     return "current";
   }
 
+  function isKr1VisibleSchedule(schedule) {
+    const startDateTimeKey = scheduleStartDateTimeKey(schedule);
+    const endExclusiveDateTimeKey = scheduleEndExclusiveDateTimeKey(schedule);
+
+    if (endExclusiveDateTimeKey) {
+      return endExclusiveDateTimeKey > KR1_SERVER_OPEN_DATE_TIME_KEY;
+    }
+    if (startDateTimeKey) {
+      return startDateTimeKey >= KR1_SERVER_OPEN_DATE_TIME_KEY;
+    }
+    return true;
+  }
+
   function getResolvedSchedules(pet, currentDateTimeKey = getTimeZoneDateTimeKey()) {
     const schedules = Array.isArray(pet?.schedules) ? pet.schedules : [];
-    return schedules.map((item) => ({
-      ...item,
-      resolvedStatus: resolveScheduleStatus(item, currentDateTimeKey),
-    }));
+    return schedules
+      .filter((item) => isKr1VisibleSchedule(item))
+      .map((item) => ({
+        ...item,
+        resolvedStatus: resolveScheduleStatus(item, currentDateTimeKey),
+      }));
   }
 
   function currentViewportScrollTop() {
