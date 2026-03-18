@@ -7,33 +7,46 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Gothic+A1:wght@400;500;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="viewer.css?v=20260318-file-live-fix-83">
+  <link rel="stylesheet" href="viewer.css?v=20260318-file-live-fix-84">
+  <link rel="stylesheet" href="viewer-mobile.css?v=20260318-mobile-14">
   <script defer src="vendor/pixi.min.js"></script>
   <script defer src="vendor/pixi-spine-3.8.js"></script>
   <script defer src="data.js?v=20260318-file-live-fix-43"></script>
   <script defer src="spine_manifest.js?v=20260318-file-live-fix-43"></script>
   <script defer src="spine_manifest_weapon.js?v=20260318-file-live-fix-43"></script>
-  <script defer src="viewer.js?v=20260318-file-live-fix-83"></script>
+  <script defer src="viewer.js?v=20260318-mobile-13"></script>
 </head>
 <body>
-  <div class="app-shell">
-    <aside class="pet-rail">
+  <div class="app-shell" id="appShell">
+    <aside class="pet-rail" id="petRail">
       <div class="rail-head">
+        <button class="mobile-menu-toggle mobile-menu-toggle-rail" id="mobileOpenDetail" type="button" aria-label="현재 항목 보기" hidden>
+          <span class="mobile-menu-toggle-bars" aria-hidden="true"></span>
+        </button>
         <p class="eyebrow">Gacha Viewer</p>
         <h1 id="railTitle">가챠 펫 뷰어</h1>
-        <p class="rail-copy" id="railCopy">출시 순서, 라이브 일정, 스킬 계수를 한 화면에서 비교하기 쉽게 정리했습니다.</p>
+        <p class="rail-copy" id="railCopy">출시 순서, 오픈 일정, 스킬 계수를 한 화면에서 비교하기 쉽게 정리했습니다.</p>
       </div>
       <div class="collection-tabs" id="collectionTabs"></div>
       <div class="pet-list" id="petList"></div>
     </aside>
 
-    <main class="stage">
+    <main class="stage" id="stagePanel">
       <section class="hero-panel" id="heroPanel">
         <div class="hero-backdrop" id="heroBackdrop"></div>
         <div class="hero-overlay"></div>
 
         <button class="nav-arrow left" id="prevPet" aria-label="이전 항목"></button>
         <button class="nav-arrow right" id="nextPet" aria-label="다음 항목"></button>
+        <div class="mobile-detail-toolbar" id="mobileDetailToolbar" hidden>
+          <button class="mobile-menu-toggle mobile-menu-toggle-detail" id="mobileShowRail" type="button" aria-label="목록 열기">
+            <span class="mobile-menu-toggle-bars" aria-hidden="true"></span>
+          </button>
+          <div class="mobile-inline-nav" aria-label="항목 이동">
+            <button class="mobile-inline-arrow prev" id="mobilePrevPet" type="button" aria-label="이전 항목"></button>
+            <button class="mobile-inline-arrow next" id="mobileNextPet" type="button" aria-label="다음 항목"></button>
+          </div>
+        </div>
 
         <div class="hero-grid">
           <div class="hero-copy">
@@ -46,22 +59,24 @@
             <p class="pet-desc" id="petDesc"></p>
             <div class="schedule-block">
               <h3 class="schedule-block-heading">
-                <span id="scheduleBlockTitle">라이브 일정</span>
+                <span id="scheduleBlockTitle">오픈 일정</span>
                 <span class="schedule-block-subtext">KR1 서버 기준</span>
               </h3>
               <div class="schedule-list" id="scheduleList"></div>
             </div>
-            <section class="equipment-set-block" id="equipmentSetBlock" hidden>
-              <div class="section-stack">
-                <p class="section-label" id="equipmentSetTitle">장비 세트</p>
-                <p class="section-note" id="equipmentSetNote">장비/탑승 보유 효과가 있는 항목만 별도로 정리합니다.</p>
-              </div>
-              <div class="equipment-set-list" id="equipmentSetList"></div>
-            </section>
+            <div id="equipmentSetDesktopSlot">
+              <section class="equipment-set-block" id="equipmentSetBlock" hidden>
+                <div class="section-stack">
+                  <p class="section-label" id="equipmentSetTitle">장비 세트</p>
+                  <p class="section-note" id="equipmentSetNote">장비/탑승 보유 효과가 있는 항목만 별도로 정리합니다.</p>
+                </div>
+                <div class="equipment-set-list" id="equipmentSetList"></div>
+              </section>
+            </div>
           </div>
 
           <div class="focus-column">
-            <div class="focus-top-row">
+            <div class="focus-top-row" id="focusTopRow">
               <div class="portrait-stage compact">
                 <div class="portrait-frame">
                   <div class="portrait-head">
@@ -121,6 +136,7 @@
                 </div>
               </div>
             </div>
+            <div class="mobile-equipment-set-host" id="mobileEquipmentSetHost"></div>
 
             <article class="skill-focus-card">
               <div class="skill-focus-head">
@@ -136,6 +152,7 @@
                 </div>
               </div>
 
+              <div class="mobile-skill-accordion" id="mobileSkillAccordion" hidden></div>
               <div class="skill-dock" id="skillDock"></div>
 
               <div class="desc-card focus-desc-card">
@@ -165,4 +182,3 @@
   <noscript>이 페이지는 JavaScript가 필요합니다.</noscript>
 </body>
 </html>
-
