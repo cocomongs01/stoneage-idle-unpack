@@ -475,6 +475,13 @@
     const targetView = nextView === "rail" ? "rail" : "detail";
 
     state.mobileViewportScrollByView[previousView] = previousScrollTop;
+    if (previousView === "detail" && targetView === "rail") {
+      state.mobileViewportScrollByView.detail = 0;
+      if (elements.stage) {
+        elements.stage.scrollTop = 0;
+      }
+      scrollContainerToTop(elements.stage);
+    }
     state.mobileView = targetView;
 
     if (targetView === "detail" && options.resetStageScroll !== false) {
@@ -2422,9 +2429,11 @@
         }
         state.selectedIndexByCategory[category.key] = index;
         if (isMobileLayout()) {
+          render();
           setMobileView("detail");
+        } else {
+          render();
         }
-        render();
         if (isMobileLayout()) {
           finishMobileLoadingSoon("view-transition");
         }
@@ -2575,6 +2584,31 @@
     });
   }
 
+  function scrollHorizontalRailToChild(container, child, padding = 12) {
+    if (!container || !child) return;
+    const containerWidth = container.clientWidth || 0;
+    if (!containerWidth) return;
+
+    const targetPadding = Math.max(0, Number(padding) || 0);
+    const childStart = child.offsetLeft;
+    const childEnd = childStart + child.offsetWidth;
+    const viewStart = container.scrollLeft || 0;
+    const viewEnd = viewStart + containerWidth;
+
+    let nextScrollLeft = viewStart;
+    if (childStart < (viewStart + targetPadding)) {
+      nextScrollLeft = childStart - targetPadding;
+    } else if (childEnd > (viewEnd - targetPadding)) {
+      nextScrollLeft = childEnd - containerWidth + targetPadding;
+    }
+
+    const clampedScrollLeft = Math.max(0, nextScrollLeft);
+    if (typeof container.scrollTo === "function") {
+      container.scrollTo({ left: clampedScrollLeft, top: 0, behavior: "auto" });
+    }
+    container.scrollLeft = clampedScrollLeft;
+  }
+
   function restoreMobileVariantRailScroll() {
     if (!elements.mobileSkillAccordion) return;
     elements.mobileSkillAccordion.querySelectorAll(".mobile-variant-rail").forEach((rail) => {
@@ -2585,8 +2619,8 @@
         return;
       }
       const activeChip = rail.querySelector(".mobile-variant-chip.is-active");
-      if (activeChip && typeof activeChip.scrollIntoView === "function") {
-        activeChip.scrollIntoView({ block: "nearest", inline: "nearest" });
+      if (activeChip) {
+        scrollHorizontalRailToChild(rail, activeChip, 12);
       }
     });
   }
