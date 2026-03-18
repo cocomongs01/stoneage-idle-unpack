@@ -134,6 +134,7 @@
     : null;
   let wasMobileLayout = false;
   let lastScheduleStatusTickKey = "";
+  let spineRuntimePromise = null;
 
   function isMobileLayout() {
     return Boolean(mobileViewportQuery && mobileViewportQuery.matches);
@@ -287,6 +288,7 @@
 
   function applyMobileLayoutState() {
     const mobile = isMobileLayout();
+    document.documentElement.classList.remove("mobile-layout-preboot");
     if (document.body) {
       document.body.classList.toggle("mobile-layout", mobile);
       document.body.dataset.mobileView = mobile ? state.mobileView : "desktop";
@@ -580,7 +582,7 @@
     { x: 88, size: 9, delay: -5.4, duration: 10.8, drift: 20, travel: 214, opacity: 0.5 },
   ];
 
-  const assetVersion = encodeURIComponent(String(Date.now()));
+  const assetVersion = encodeURIComponent(String(window.GACHA_VIEWER_ASSET_VERSION || "20260318-app-01"));
   const ELEMENT_ICON_BY_KEY = {
     leaf: "assets/ui/HeroType04.png",
     fire: "assets/ui/HeroType02.png",
@@ -766,6 +768,52 @@
 
   function getSpineApi() {
     return window.PIXI && window.PIXI.spine ? window.PIXI.spine : null;
+  }
+
+  function loadRuntimeScript(src) {
+    return new Promise((resolve, reject) => {
+      const existing = document.querySelector(`script[data-runtime-src="${src}"]`);
+      if (existing) {
+        if (existing.dataset.loaded === "true") {
+          resolve();
+          return;
+        }
+        existing.addEventListener("load", () => resolve(), { once: true });
+        existing.addEventListener("error", () => reject(new Error(`Script load failed: ${src}`)), { once: true });
+        return;
+      }
+
+      const script = document.createElement("script");
+      script.src = src;
+      script.async = true;
+      script.defer = true;
+      script.dataset.runtimeSrc = src;
+      script.addEventListener("load", () => {
+        script.dataset.loaded = "true";
+        resolve();
+      }, { once: true });
+      script.addEventListener("error", () => {
+        reject(new Error(`Script load failed: ${src}`));
+      }, { once: true });
+      (document.head || document.body || document.documentElement).appendChild(script);
+    });
+  }
+
+  function ensureSpineRuntimeLoaded() {
+    if (window.PIXI && getSpineApi()) {
+      return Promise.resolve(true);
+    }
+    if (spineRuntimePromise) {
+      return spineRuntimePromise;
+    }
+    spineRuntimePromise = loadRuntimeScript("vendor/pixi.min.js")
+      .then(() => loadRuntimeScript("vendor/pixi-spine-3.8.js"))
+      .then(() => true)
+      .catch((error) => {
+        spineRuntimePromise = null;
+        throw error;
+      });
+    return spineRuntimePromise;
   }
 
   function decodeBase64ToBytes(base64) {
@@ -2183,7 +2231,7 @@
       const thumbMarkup = thumb
         ? `
           <span class="pet-item-thumb" data-kind="${escapeHtml(pet.kind || "pet")}">
-            <img class="pet-item-thumb-image" data-kind="${escapeHtml(pet.kind || "pet")}" src="${escapeHtml(assetUrl(thumb))}" alt="${escapeHtml(pet.name)}">
+            <img class="pet-item-thumb-image" data-kind="${escapeHtml(pet.kind || "pet")}" src="${escapeHtml(assetUrl(thumb))}" alt="${escapeHtml(pet.name)}" loading="lazy" decoding="async">
           </span>
         `
         : '<div class="pet-item-fallback"></div>';
@@ -2324,7 +2372,7 @@
       button.className = `skill-button${key === selectedSkillKey ? " active" : ""}`;
       button.addEventListener("click", () => {
         state.selectedSkillKeyByPet[getEntityId(pet)] = key;
-        render();
+        renderSkillPanels(pet);
       });
 
       const badge = createSkillBadge(skill, variant, false, false);
@@ -2391,7 +2439,7 @@
       summaryButton.addEventListener("click", () => {
         if (state.selectedSkillKeyByPet[getEntityId(pet)] === key) return;
         state.selectedSkillKeyByPet[getEntityId(pet)] = key;
-        render();
+        renderSkillPanels(pet);
       });
 
       const badge = createSkillBadge(skill, variant, isActive, false);
@@ -2490,6 +2538,13 @@
     });
   }
 
+  function renderSkillPanels(pet) {
+    renderFocusSkill(pet);
+    renderSkillDock(pet);
+    renderMobileSkillAccordion(pet);
+    renderVariantPreviewList(pet);
+  }
+
   function renderEquipmentSetBlock(pet) {
     if (!elements.equipmentSetBlock || !elements.equipmentSetList) {
       return;
@@ -2569,7 +2624,7 @@
 
   function selectVariant(pet, skill, index) {
     state.selectedVariantBySkillKey[getSkillKey(pet, skill)] = clamp(index, 0, skill.variants.length - 1);
-    render();
+    renderSkillPanels(pet);
   }
 
   function render() {
@@ -2583,10 +2638,7 @@
     renderPetList();
     renderHero(pet);
     renderEquipmentSetBlock(pet);
-    renderFocusSkill(pet);
-    renderSkillDock(pet);
-    renderMobileSkillAccordion(pet);
-    renderVariantPreviewList(pet);
+    renderSkillPanels(pet);
     if (isMobileLayout() && state.mobileView === "rail") {
       cancelPendingRailSelectionScroll();
       railSelectionScrollRaf = window.requestAnimationFrame(() => {
@@ -2677,7 +2729,8 @@
       return;
     }
 
-    Promise.resolve(mountSpinePreview(entityId, manifestEntry, spineState.loadToken))
+    Promise.resolve(ensureSpineRuntimeLoaded())
+      .then(() => mountSpinePreview(entityId, manifestEntry, spineState.loadToken))
       .catch((error) => {
         console.warn(`Spine preview failed for ${entityId}.`, error);
         destroySpinePreview();
