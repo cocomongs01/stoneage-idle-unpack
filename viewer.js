@@ -857,11 +857,11 @@
     if (!elements.scheduleAdjustSelectedSummary) return;
     const option = findScheduleCalibrationOptionById(String(elements.scheduleAdjustSelect?.value || ""));
     if (!option) {
-      elements.scheduleAdjustSelectedSummary.textContent = "기준 항목을 선택해 주세요.";
+      elements.scheduleAdjustSelectedSummary.textContent = "진행중 이벤트를 선택해 주세요.";
       return;
     }
     elements.scheduleAdjustSelectedSummary.innerHTML = `
-      <strong>선택 기준</strong>
+      <strong>진행중 이벤트</strong>
       <span>${escapeHtml(option.label)}</span>
       <small>${escapeHtml(option.summary)}</small>
       <small>최대 입력 ${escapeHtml(scheduleAdjustmentMaxLabel(option))}</small>
@@ -875,7 +875,7 @@
 
     const result = inferScheduleCalibrationResult(readScheduleCalibrationDraft());
     if (!result) {
-      elements.scheduleAdjustPreviewCopy.textContent = "기준 항목을 고르고 남은 시간을 입력하면 서버 오픈일을 계산합니다.";
+      elements.scheduleAdjustPreviewCopy.textContent = "진행중 이벤트를 고르고 남은 시간을 입력하면 서버 오픈일을 계산합니다.";
       if (elements.scheduleAdjustConfirm) {
         elements.scheduleAdjustConfirm.disabled = true;
       }
@@ -884,7 +884,7 @@
 
     elements.scheduleAdjustPreviewCopy.innerHTML = `
       <strong>계산된 서버 오픈:</strong> ${escapeHtml(formatDisplayDateTimeKey(result.serverOpenDateTimeKey))}<br>
-      <strong>선택 기준:</strong> ${escapeHtml(result.option.label)}<br>
+      <strong>진행중 이벤트:</strong> ${escapeHtml(result.option.label)}<br>
       <strong>입력 남은 시간:</strong> ${escapeHtml(durationLabelFromDraft(readScheduleCalibrationDraft()))}<br>
       <strong>기준 종료 시각:</strong> ${escapeHtml(formatDisplayDateTimeKey(result.inferredEndExclusiveDateTimeKey))}
     `;
