@@ -21,6 +21,7 @@
     statusBadge: document.getElementById("statusBadge"),
     petTitle: document.getElementById("petTitle"),
     petName: document.getElementById("petName"),
+    petMetaLabel: document.getElementById("petMetaLabel"),
     petDesc: document.getElementById("petDesc"),
     scheduleSummary: document.getElementById("scheduleSummary"),
     scheduleBlockTitle: document.getElementById("scheduleBlockTitle"),
@@ -1787,6 +1788,10 @@
     return { tone: "past", label: "일정 없음", summary: "등록된 일정 없음" };
   }
 
+  function scheduleBlockTitleForPet(pet) {
+    return pet?.scheduleTitleOverride || "오픈 일정";
+  }
+
   function findPreferredIndex(items) {
     if (!items.length) return 0;
     const currentDateTimeKey = getTimeZoneDateTimeKey();
@@ -2436,6 +2441,7 @@
         <span class="pet-item-title">
           <strong>${escapeHtml(pet.name)}</strong>
           <span>${escapeHtml(pet.title || pet.description || "")}</span>
+          ${pet.listMetaLabel ? `<small class="pet-item-meta-badge">${escapeHtml(pet.listMetaLabel)}</small>` : ""}
         </span>
         <span class="pet-item-order ${escapeHtml(status.tone || "past")}">${escapeHtml(status.label)}</span>
       `;
@@ -2480,7 +2486,7 @@
     }
 
     if (elements.scheduleBlockTitle) {
-      elements.scheduleBlockTitle.textContent = "오픈 일정";
+      elements.scheduleBlockTitle.textContent = scheduleBlockTitleForPet(pet);
     }
 
     elements.orderBadge.textContent = `NO.${String(displayOrderValue(category, pet)).padStart(2, "0")}`;
@@ -2488,6 +2494,11 @@
     elements.statusBadge.className = `status-badge ${status.tone}`;
     elements.petTitle.textContent = pet.title || (category.label || "");
     elements.petName.textContent = pet.name || "";
+    if (elements.petMetaLabel) {
+      const metaLabel = String(pet.detailMetaLabel || "").trim();
+      elements.petMetaLabel.textContent = metaLabel;
+      elements.petMetaLabel.hidden = !metaLabel;
+    }
     elements.petDesc.textContent = pet.description || "";
     if (elements.scheduleSummary) {
       elements.scheduleSummary.textContent = status.summary || "";
