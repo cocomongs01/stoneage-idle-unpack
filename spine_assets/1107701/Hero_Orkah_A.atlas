@@ -1,0 +1,244 @@
+
+Hero_Orkah_A.png
+size: 1442,1442
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+A/arm l_1
+  rotate: true
+  xy: 0, 12
+  size: 129, 186
+  orig: 1026, 1026
+  offset: 319, 189
+  index: -1
+A/arm l_2
+  rotate: false
+  xy: 691, 47
+  size: 122, 207
+  orig: 1026, 1026
+  offset: 287, 69
+  index: -1
+A/arm l_3
+  rotate: true
+  xy: 979, 8
+  size: 118, 140
+  orig: 1026, 1026
+  offset: 291, 316
+  index: -1
+A/arm r_1
+  rotate: true
+  xy: 813, 7
+  size: 119, 166
+  orig: 1026, 1026
+  offset: 216, 209
+  index: -1
+A/arm r_2
+  rotate: false
+  xy: 408, 989
+  size: 131, 192
+  orig: 1026, 1026
+  offset: 185, 89
+  index: -1
+A/arm r_3
+  rotate: true
+  xy: 386, 96
+  size: 135, 146
+  orig: 1026, 1026
+  offset: 199, 308
+  index: -1
+A/body
+  rotate: true
+  xy: 386, 231
+  size: 371, 305
+  orig: 1026, 1026
+  offset: 175, 245
+  index: -1
+A/body_acc
+  rotate: true
+  xy: 813, 126
+  size: 128, 103
+  orig: 1026, 1026
+  offset: 242, 455
+  index: -1
+A/chest
+  rotate: true
+  xy: 920, 126
+  size: 190, 356
+  orig: 1026, 1026
+  offset: 167, 225
+  index: -1
+A/ear l
+  rotate: false
+  xy: 691, 254
+  size: 229, 348
+  orig: 1026, 1026
+  offset: 259, 644
+  index: -1
+A/ear r
+  rotate: true
+  xy: 920, 316
+  size: 171, 360
+  orig: 1026, 1026
+  offset: 96, 629
+  index: -1
+A/eye l
+  rotate: true
+  xy: 408, 944
+  size: 45, 51
+  orig: 1026, 1026
+  offset: 225, 592
+  index: -1
+A/eye r
+  rotate: true
+  xy: 459, 962
+  size: 27, 35
+  orig: 1026, 1026
+  offset: 147, 588
+  index: -1
+A/eyeball 1
+  rotate: false
+  xy: 1238, 24
+  size: 81, 78
+  orig: 1026, 1026
+  offset: 207, 577
+  index: -1
+A/eyeball 2
+  rotate: false
+  xy: 1309, 637
+  size: 57, 61
+  orig: 1026, 1026
+  offset: 136, 579
+  index: -1
+A/hair
+  rotate: true
+  xy: 1238, 966
+  size: 232, 174
+  orig: 1026, 1026
+  offset: 75, 620
+  index: -1
+A/hair2
+  rotate: false
+  xy: 1119, 8
+  size: 119, 118
+  orig: 1026, 1026
+  offset: 303, 539
+  index: -1
+A/head_lower
+  rotate: true
+  xy: 1280, 102
+  size: 224, 148
+  orig: 1026, 1026
+  offset: 134, 503
+  index: -1
+A/head_upper
+  rotate: true
+  xy: 1238, 1198
+  size: 244, 192
+  orig: 1026, 1026
+  offset: 117, 527
+  index: -1
+A/leg l_1
+  rotate: true
+  xy: 186, 14
+  size: 127, 144
+  orig: 1026, 1026
+  offset: 431, 298
+  index: -1
+A/leg l_2
+  rotate: false
+  xy: 1280, 326
+  size: 155, 161
+  orig: 1026, 1026
+  offset: 438, 223
+  index: -1
+A/leg l_3
+  rotate: false
+  xy: 1309, 801
+  size: 77, 165
+  orig: 1026, 1026
+  offset: 537, 113
+  index: -1
+A/leg l_4
+  rotate: false
+  xy: 1319, 29
+  size: 105, 73
+  orig: 1026, 1026
+  offset: 512, 93
+  index: -1
+A/leg r 1
+  rotate: true
+  xy: 532, 97
+  size: 134, 133
+  orig: 1026, 1026
+  offset: 360, 299
+  index: -1
+A/leg r 2
+  rotate: true
+  xy: 532, 0
+  size: 97, 152
+  orig: 1026, 1026
+  offset: 369, 231
+  index: -1
+A/leg r 3
+  rotate: true
+  xy: 330, 2
+  size: 94, 147
+  orig: 1026, 1026
+  offset: 385, 132
+  index: -1
+A/leg r 4
+  rotate: true
+  xy: 1309, 698
+  size: 103, 75
+  orig: 1026, 1026
+  offset: 361, 121
+  index: -1
+A/rope
+  rotate: true
+  xy: 540, 938
+  size: 504, 411
+  orig: 522, 522
+  offset: 9, 56
+  index: -1
+A/tail 1
+  rotate: false
+  xy: 408, 602
+  size: 537, 336
+  orig: 1026, 1026
+  offset: 444, 241
+  index: -1
+A/tail 2
+  rotate: false
+  xy: 0, 1181
+  size: 540, 261
+  orig: 1026, 1026
+  offset: 459, 386
+  index: -1
+A/tail 3
+  rotate: true
+  xy: 0, 141
+  size: 518, 386
+  orig: 1026, 1026
+  offset: 437, 435
+  index: -1
+A/tail 4
+  rotate: false
+  xy: 0, 659
+  size: 408, 522
+  orig: 1026, 1026
+  offset: 369, 430
+  index: -1
+A/tail 5
+  rotate: false
+  xy: 951, 980
+  size: 287, 462
+  orig: 1026, 1026
+  offset: 289, 440
+  index: -1
+A/tail 6
+  rotate: true
+  xy: 945, 487
+  size: 451, 364
+  orig: 1026, 1026
+  offset: 480, 129
+  index: -1
