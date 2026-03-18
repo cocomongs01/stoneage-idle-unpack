@@ -1090,8 +1090,9 @@ img {
 }
 
 .schedule-item strong {
-  font-size: 1rem;
-  line-height: 1.24;
+  font-size: 0.875rem;
+  line-height: 1.18;
+  letter-spacing: -0.01em;
 }
 
 .schedule-item span {

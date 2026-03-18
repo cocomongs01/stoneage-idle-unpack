@@ -8,6 +8,9 @@
   const pageParams = new URLSearchParams(window.location.search);
 
   const elements = {
+    appShell: document.getElementById("appShell"),
+    petRail: document.getElementById("petRail"),
+    stage: document.getElementById("stagePanel"),
     collectionTabs: document.getElementById("collectionTabs"),
     petList: document.getElementById("petList"),
     railTitle: document.getElementById("railTitle"),
@@ -22,10 +25,13 @@
     scheduleSummary: document.getElementById("scheduleSummary"),
     scheduleBlockTitle: document.getElementById("scheduleBlockTitle"),
     scheduleList: document.getElementById("scheduleList"),
+    equipmentSetDesktopSlot: document.getElementById("equipmentSetDesktopSlot"),
     equipmentSetBlock: document.getElementById("equipmentSetBlock"),
     equipmentSetTitle: document.getElementById("equipmentSetTitle"),
     equipmentSetNote: document.getElementById("equipmentSetNote"),
     equipmentSetList: document.getElementById("equipmentSetList"),
+    mobileEquipmentSetHost: document.getElementById("mobileEquipmentSetHost"),
+    focusTopRow: document.getElementById("focusTopRow"),
     spotlightTitleText: document.getElementById("spotlightTitleText"),
     spotlightPetBannerName: document.getElementById("spotlightPetBannerName"),
     spotlightStageTile: document.getElementById("spotlightStageTile"),
@@ -69,6 +75,12 @@
     variantPreviewList: document.getElementById("variantPreviewList"),
     prevPet: document.getElementById("prevPet"),
     nextPet: document.getElementById("nextPet"),
+    mobileOpenDetail: document.getElementById("mobileOpenDetail"),
+    mobileShowRail: document.getElementById("mobileShowRail"),
+    mobilePrevPet: document.getElementById("mobilePrevPet"),
+    mobileNextPet: document.getElementById("mobileNextPet"),
+    mobileDetailToolbar: document.getElementById("mobileDetailToolbar"),
+    mobileSkillAccordion: document.getElementById("mobileSkillAccordion"),
   };
 
   const state = {
@@ -77,6 +89,9 @@
     selectedSkillKeyByPet: {},
     selectedVariantBySkillKey: {},
     selectedWeaponEquipmentSetKeyByEntityId: {},
+    mobileView: "detail",
+    mobileVariantScrollBySkillKey: {},
+    mobileViewportScrollByView: { rail: 0, detail: 0 },
   };
 
   const spineState = {
@@ -91,6 +106,256 @@
   };
 
   let sceneLayoutRaf = 0;
+  let mobileViewportScrollRaf = 0;
+  let railSelectionScrollRaf = 0;
+  const mobileViewportQuery = window.matchMedia("(max-width: 900px)");
+  const KOREA_TIME_ZONE = "Asia/Seoul";
+  const KR1_RESET_HOUR = 9;
+  const koreaDateFormatter = typeof Intl !== "undefined" && typeof Intl.DateTimeFormat === "function"
+    ? new Intl.DateTimeFormat("en-US", {
+      timeZone: KOREA_TIME_ZONE,
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit",
+    })
+    : null;
+  const koreaDateTimeFormatter = typeof Intl !== "undefined" && typeof Intl.DateTimeFormat === "function"
+    ? new Intl.DateTimeFormat("en-US", {
+      timeZone: KOREA_TIME_ZONE,
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit",
+      hour: "2-digit",
+      minute: "2-digit",
+      second: "2-digit",
+      hour12: false,
+      hourCycle: "h23",
+    })
+    : null;
+  let wasMobileLayout = false;
+  let lastScheduleStatusTickKey = "";
+
+  function isMobileLayout() {
+    return Boolean(mobileViewportQuery && mobileViewportQuery.matches);
+  }
+
+  function scrollContainerToTop(element) {
+    if (!element || typeof element.scrollTo !== "function") return;
+    element.scrollTo({ top: 0, left: 0, behavior: "auto" });
+  }
+
+  function padNumber(value) {
+    return String(value).padStart(2, "0");
+  }
+
+  function extractFormatterParts(date, formatter) {
+    if (!formatter || typeof formatter.formatToParts !== "function") {
+      return null;
+    }
+    const parts = formatter.formatToParts(date);
+    const getValue = (type, fallback) => parts.find((part) => part.type === type)?.value || fallback;
+    return {
+      year: getValue("year", String(date.getFullYear())),
+      month: getValue("month", padNumber(date.getMonth() + 1)),
+      day: getValue("day", padNumber(date.getDate())),
+      hour: getValue("hour", padNumber(date.getHours())),
+      minute: getValue("minute", padNumber(date.getMinutes())),
+      second: getValue("second", padNumber(date.getSeconds())),
+    };
+  }
+
+  function getTimeZoneDateKey(date = new Date()) {
+    const parts = extractFormatterParts(date, koreaDateFormatter);
+    if (!parts) {
+      return `${date.getFullYear()}-${padNumber(date.getMonth() + 1)}-${padNumber(date.getDate())}`;
+    }
+    return `${parts.year}-${parts.month}-${parts.day}`;
+  }
+
+  function getTimeZoneDateTimeKey(date = new Date()) {
+    const parts = extractFormatterParts(date, koreaDateTimeFormatter);
+    if (!parts) {
+      return `${getTimeZoneDateKey(date)} ${padNumber(date.getHours())}:${padNumber(date.getMinutes())}:${padNumber(date.getSeconds())}`;
+    }
+    return `${parts.year}-${parts.month}-${parts.day} ${parts.hour}:${parts.minute}:${parts.second}`;
+  }
+
+  function normalizeScheduleDateKey(value) {
+    const raw = String(value || "").trim().replace(/\./g, "-");
+    const match = raw.match(/(\d{4})-(\d{2})-(\d{2})/);
+    return match ? `${match[1]}-${match[2]}-${match[3]}` : "";
+  }
+
+  function addDaysToDateKey(dateKey, dayOffset) {
+    const match = String(dateKey || "").match(/^(\d{4})-(\d{2})-(\d{2})$/);
+    if (!match) return "";
+    const shifted = new Date(Date.UTC(Number(match[1]), Number(match[2]) - 1, Number(match[3]) + dayOffset));
+    return `${shifted.getUTCFullYear()}-${padNumber(shifted.getUTCMonth() + 1)}-${padNumber(shifted.getUTCDate())}`;
+  }
+
+  function scheduleStartDateTimeKey(schedule) {
+    const startKey = normalizeScheduleDateKey(schedule?.start);
+    return startKey ? `${startKey} ${padNumber(KR1_RESET_HOUR)}:00:00` : "";
+  }
+
+  function scheduleEndExclusiveDateTimeKey(schedule) {
+    const endKey = normalizeScheduleDateKey(schedule?.end);
+    if (!endKey) return "";
+    const nextDateKey = addDaysToDateKey(endKey, 1);
+    return nextDateKey ? `${nextDateKey} ${padNumber(KR1_RESET_HOUR)}:00:00` : "";
+  }
+
+  function resolveScheduleStatus(schedule, currentDateTimeKey = getTimeZoneDateTimeKey()) {
+    const fallbackStatus = schedule?.status === "current" || schedule?.status === "upcoming"
+      ? schedule.status
+      : "past";
+    const startDateTimeKey = scheduleStartDateTimeKey(schedule);
+    const endExclusiveDateTimeKey = scheduleEndExclusiveDateTimeKey(schedule);
+
+    if (!startDateTimeKey && !endExclusiveDateTimeKey) {
+      return fallbackStatus;
+    }
+    if (startDateTimeKey && currentDateTimeKey < startDateTimeKey) {
+      return "upcoming";
+    }
+    if (endExclusiveDateTimeKey && currentDateTimeKey >= endExclusiveDateTimeKey) {
+      return "past";
+    }
+    return "current";
+  }
+
+  function getResolvedSchedules(pet, currentDateTimeKey = getTimeZoneDateTimeKey()) {
+    const schedules = Array.isArray(pet?.schedules) ? pet.schedules : [];
+    return schedules.map((item) => ({
+      ...item,
+      resolvedStatus: resolveScheduleStatus(item, currentDateTimeKey),
+    }));
+  }
+
+  function currentViewportScrollTop() {
+    return window.pageYOffset
+      || document.documentElement.scrollTop
+      || document.body.scrollTop
+      || 0;
+  }
+
+  function setViewportScrollTop(value) {
+    const next = Math.max(0, Number(value) || 0);
+    window.scrollTo({ top: next, left: 0, behavior: "auto" });
+    if (document.documentElement) {
+      document.documentElement.scrollTop = next;
+    }
+    if (document.body) {
+      document.body.scrollTop = next;
+    }
+  }
+
+  function scheduleViewportScrollTop(value) {
+    if (mobileViewportScrollRaf) {
+      window.cancelAnimationFrame(mobileViewportScrollRaf);
+      mobileViewportScrollRaf = 0;
+    }
+    mobileViewportScrollRaf = window.requestAnimationFrame(() => {
+      setViewportScrollTop(value);
+      mobileViewportScrollRaf = window.requestAnimationFrame(() => {
+        setViewportScrollTop(value);
+        mobileViewportScrollRaf = 0;
+      });
+    });
+  }
+
+  function scheduleViewportScrollToElement(element, offset = 0) {
+    if (!element || !isMobileLayout()) return;
+    const targetOffset = Math.max(0, Number(offset) || 0);
+    const scrollTarget = currentViewportScrollTop() + element.getBoundingClientRect().top - targetOffset;
+    scheduleViewportScrollTop(scrollTarget);
+  }
+
+  function syncSelectedRailItemIntoView() {
+    if (!elements.petList) return;
+    const activeItem = elements.petList.querySelector(".pet-item.active");
+    if (activeItem && typeof activeItem.scrollIntoView === "function") {
+      activeItem.scrollIntoView({ block: "nearest", inline: "nearest" });
+    }
+  }
+
+  function cancelPendingRailSelectionScroll() {
+    if (!railSelectionScrollRaf) return;
+    window.cancelAnimationFrame(railSelectionScrollRaf);
+    railSelectionScrollRaf = 0;
+  }
+
+  function applyMobileLayoutState() {
+    const mobile = isMobileLayout();
+    if (document.body) {
+      document.body.classList.toggle("mobile-layout", mobile);
+      document.body.dataset.mobileView = mobile ? state.mobileView : "desktop";
+    }
+
+    if (elements.petRail) {
+      elements.petRail.setAttribute("aria-hidden", mobile && state.mobileView !== "rail" ? "true" : "false");
+    }
+    if (elements.stage) {
+      elements.stage.setAttribute("aria-hidden", mobile && state.mobileView !== "detail" ? "true" : "false");
+    }
+
+    if (elements.mobileOpenDetail) {
+      elements.mobileOpenDetail.hidden = !mobile;
+    }
+    if (elements.mobileDetailToolbar) {
+      elements.mobileDetailToolbar.hidden = !mobile;
+    }
+    if (elements.mobileSkillAccordion) {
+      elements.mobileSkillAccordion.hidden = !mobile;
+    }
+  }
+
+  function setMobileView(nextView, options = {}) {
+    if (!isMobileLayout()) {
+      state.mobileView = "detail";
+      applyMobileLayoutState();
+      return;
+    }
+
+    state.mobileViewportScrollByView[state.mobileView] = currentViewportScrollTop();
+    state.mobileView = nextView === "rail" ? "rail" : "detail";
+    applyMobileLayoutState();
+
+    if (state.mobileView === "detail") {
+      cancelPendingRailSelectionScroll();
+      if (document.activeElement && typeof document.activeElement.blur === "function") {
+        document.activeElement.blur();
+      }
+      if (options.resetStageScroll !== false) {
+        scrollContainerToTop(elements.stage);
+        scheduleViewportScrollTop(0);
+      } else {
+        scheduleViewportScrollTop(state.mobileViewportScrollByView.detail || 0);
+      }
+      return;
+    }
+
+    if (options.resetRailScroll) {
+      scrollContainerToTop(elements.petRail);
+      scheduleViewportScrollTop(0);
+    } else {
+      scheduleViewportScrollTop(state.mobileViewportScrollByView.rail || 0);
+    }
+    syncSelectedRailItemIntoView();
+  }
+
+  function syncMobileLayout(forceReset = false) {
+    const mobile = isMobileLayout();
+    if (mobile) {
+      if (!wasMobileLayout || forceReset || (state.mobileView !== "rail" && state.mobileView !== "detail")) {
+        state.mobileView = "rail";
+      }
+    } else {
+      state.mobileView = "detail";
+    }
+    wasMobileLayout = mobile;
+    applyMobileLayoutState();
+  }
 
   const HERO_INFO_SCENE_CONFIG = {
     water: { typeId: 2, backCloud: "10", midCloud: "07", frontCloud: "01", farLeft: "08", farRight: "09", beamLeft: "", beamRight: "", particles: "water" },
@@ -496,9 +761,6 @@
   function selectedSkillIconPath(path, explicitPath = "") {
     if (explicitPath) return explicitPath;
     if (!path) return "";
-    if (path.includes("assets/skills/")) {
-      return path.replace("assets/skills/", "assets/skills-selected/");
-    }
     return path;
   }
 
@@ -1201,6 +1463,32 @@
     return `${String(start || "").replace(/-/g, ".")} - ${String(end || "").replace(/-/g, ".")}`;
   }
 
+  function formatDisplayDateKey(dateKey) {
+    return String(dateKey || "").replace(/-/g, ".");
+  }
+
+  function scheduleDisplayStartTimeLabel() {
+    return `${padNumber(KR1_RESET_HOUR)}:00`;
+  }
+
+  function scheduleDisplayEndTimeLabel() {
+    const endHour = (KR1_RESET_HOUR + 23) % 24;
+    return `${padNumber(endHour)}:59`;
+  }
+
+  function formatScheduleDisplayRange(start, end) {
+    const startKey = normalizeScheduleDateKey(start);
+    const endKey = normalizeScheduleDateKey(end);
+    if (!startKey || !endKey) {
+      return formatDateRange(start, end);
+    }
+    const visibleEndDateKey = addDaysToDateKey(endKey, 1);
+    if (!visibleEndDateKey) {
+      return formatDateRange(start, end);
+    }
+    return `${formatDisplayDateKey(startKey)} ${scheduleDisplayStartTimeLabel()} - ${formatDisplayDateKey(visibleEndDateKey)} ${scheduleDisplayEndTimeLabel()}`;
+  }
+
   function cooldownLabel(value) {
     const number = Number.parseFloat(value || "0");
     if (!Number.isFinite(number) || number === 0) return "쿨타임 0초";
@@ -1255,20 +1543,20 @@
   }
 
   function getPetStatus(pet) {
-    const schedules = Array.isArray(pet.schedules) ? pet.schedules : [];
-    const current = schedules.find((item) => item.status === "current");
+    const schedules = getResolvedSchedules(pet);
+    const current = schedules.find((item) => item.resolvedStatus === "current");
     if (current) {
-      return { tone: "current", label: "진행 중", summary: formatDateRange(current.start, current.end) };
+      return { tone: "current", label: "진행 중", summary: formatScheduleDisplayRange(current.start, current.end) };
     }
 
-    const upcoming = schedules.find((item) => item.status === "upcoming");
+    const upcoming = schedules.find((item) => item.resolvedStatus === "upcoming");
     if (upcoming) {
-      return { tone: "upcoming", label: "다음 일정", summary: formatDateRange(upcoming.start, upcoming.end) };
+      return { tone: "upcoming", label: "다음 일정", summary: formatScheduleDisplayRange(upcoming.start, upcoming.end) };
     }
 
     const last = schedules[schedules.length - 1];
     if (last) {
-      return { tone: "past", label: "종료", summary: formatDateRange(last.start, last.end) };
+      return { tone: "past", label: "종료", summary: formatScheduleDisplayRange(last.start, last.end) };
     }
 
     if (pet.statusLabel || pet.statusSummary) {
@@ -1284,9 +1572,10 @@
 
   function findPreferredIndex(items) {
     if (!items.length) return 0;
-    const currentIndex = items.findIndex((item) => Array.isArray(item.schedules) && item.schedules.some((schedule) => schedule.status === "current"));
+    const currentDateTimeKey = getTimeZoneDateTimeKey();
+    const currentIndex = items.findIndex((item) => getResolvedSchedules(item, currentDateTimeKey).some((schedule) => schedule.resolvedStatus === "current"));
     if (currentIndex >= 0) return currentIndex;
-    const upcomingIndex = items.findIndex((item) => Array.isArray(item.schedules) && item.schedules.some((schedule) => schedule.status === "upcoming"));
+    const upcomingIndex = items.findIndex((item) => getResolvedSchedules(item, currentDateTimeKey).some((schedule) => schedule.resolvedStatus === "upcoming"));
     return upcomingIndex >= 0 ? upcomingIndex : 0;
   }
 
@@ -1784,8 +2073,10 @@
   function buildSkillBadgeInner(skill, variant, includeLevel, isSelected) {
     const iconSrc = isSelected ? selectedSkillIconPath(variant.iconImage, variant.selectedIconImage) : variant.iconImage;
     if (variant.iconImage) {
+      const fallbackIconSrc = assetUrl(variant.iconImage);
+      const resolvedIconSrc = assetUrl(iconSrc || variant.iconImage);
       return `
-        <img class="skill-badge-image" src="${escapeHtml(assetUrl(iconSrc))}" alt="${escapeHtml(skill.name)}">
+        <img class="skill-badge-image" src="${escapeHtml(resolvedIconSrc)}" alt="${escapeHtml(skill.name)}" data-fallback-src="${escapeHtml(fallbackIconSrc)}" onerror="if(this.dataset.fallbackSrc&&this.src!==this.dataset.fallbackSrc){this.src=this.dataset.fallbackSrc;return;}this.removeAttribute('onerror');">
         ${includeLevel ? `<span class="skill-badge-level">${escapeHtml(stageLevelLabel(variant))}</span>` : ""}
       `;
     }
@@ -1861,6 +2152,9 @@
         if (typeof state.selectedIndexByCategory[category.key] !== "number") {
           state.selectedIndexByCategory[category.key] = findPreferredIndex(getItems(category));
         }
+        if (isMobileLayout()) {
+          state.mobileView = "rail";
+        }
         render();
       });
       elements.collectionTabs.appendChild(button);
@@ -1900,6 +2194,9 @@
       button.dataset.status = status.tone || "past";
       button.addEventListener("click", () => {
         state.selectedIndexByCategory[category.key] = index;
+        if (isMobileLayout()) {
+          setMobileView("detail");
+        }
         render();
       });
 
@@ -1918,7 +2215,7 @@
 
   function renderScheduleList(pet) {
     elements.scheduleList.innerHTML = "";
-    const schedules = Array.isArray(pet.schedules) ? pet.schedules : [];
+    const schedules = getResolvedSchedules(pet);
 
     if (!schedules.length) {
       const summary = pet.statusSummary || "등록된 일정이 없습니다.";
@@ -1927,10 +2224,11 @@
     }
 
     schedules.slice(0, 6).forEach((item) => {
-      const label = item.status === "current" ? "진행 중" : item.status === "upcoming" ? "예정" : "종료";
+      const status = item.resolvedStatus || "past";
+      const label = status === "current" ? "진행 중" : status === "upcoming" ? "예정" : "종료";
       const block = document.createElement("div");
-      block.className = `schedule-item ${item.status}`;
-      block.innerHTML = `<strong>${escapeHtml(formatDateRange(item.start, item.end))}</strong><span>${escapeHtml(label)}</span>`;
+      block.className = `schedule-item ${status}`;
+      block.innerHTML = `<strong>${escapeHtml(formatScheduleDisplayRange(item.start, item.end))}</strong><span>${escapeHtml(label)}</span>`;
       elements.scheduleList.appendChild(block);
     });
   }
@@ -1951,7 +2249,7 @@
     }
 
     if (elements.scheduleBlockTitle) {
-      elements.scheduleBlockTitle.textContent = category.key === "pet" ? "라이브 일정" : "오픈 일정";
+      elements.scheduleBlockTitle.textContent = "오픈 일정";
     }
 
     elements.orderBadge.textContent = `NO.${String(displayOrderValue(category, pet)).padStart(2, "0")}`;
@@ -2047,6 +2345,129 @@
     });
   }
 
+  function restoreMobileVariantRailScroll() {
+    if (!elements.mobileSkillAccordion) return;
+    elements.mobileSkillAccordion.querySelectorAll(".mobile-variant-rail").forEach((rail) => {
+      const skillKey = rail.dataset.skillKey || "";
+      if (!skillKey) return;
+      if (typeof state.mobileVariantScrollBySkillKey[skillKey] === "number") {
+        rail.scrollLeft = state.mobileVariantScrollBySkillKey[skillKey];
+        return;
+      }
+      const activeChip = rail.querySelector(".mobile-variant-chip.is-active");
+      if (activeChip && typeof activeChip.scrollIntoView === "function") {
+        activeChip.scrollIntoView({ block: "nearest", inline: "nearest" });
+      }
+    });
+  }
+
+  function renderMobileSkillAccordion(pet) {
+    if (!elements.mobileSkillAccordion) {
+      return;
+    }
+    if (!isMobileLayout()) {
+      elements.mobileSkillAccordion.hidden = true;
+      elements.mobileSkillAccordion.innerHTML = "";
+      return;
+    }
+
+    elements.mobileSkillAccordion.hidden = false;
+    elements.mobileSkillAccordion.innerHTML = "";
+
+    const selectedSkill = getSelectedSkill(pet);
+    const selectedSkillKey = getSkillKey(pet, selectedSkill);
+
+    pet.skills.forEach((skill) => {
+      const key = getSkillKey(pet, skill);
+      const { index: selectedVariantIndex, data: variant } = getSelectedVariant(pet, skill);
+      const isActive = key === selectedSkillKey;
+      const skillCard = document.createElement("section");
+      skillCard.className = `mobile-skill-item${isActive ? " is-active" : ""}`;
+
+      const summaryButton = document.createElement("button");
+      summaryButton.type = "button";
+      summaryButton.className = "mobile-skill-button";
+      summaryButton.setAttribute("aria-expanded", isActive ? "true" : "false");
+      summaryButton.addEventListener("click", () => {
+        if (state.selectedSkillKeyByPet[getEntityId(pet)] === key) return;
+        state.selectedSkillKeyByPet[getEntityId(pet)] = key;
+        render();
+      });
+
+      const badge = createSkillBadge(skill, variant, isActive, false);
+      const summaryCopy = document.createElement("div");
+      summaryCopy.className = "mobile-skill-button-copy";
+      summaryCopy.innerHTML = `
+        <p class="mobile-skill-slot">${escapeHtml(skill.slotLabel)}</p>
+        <strong class="mobile-skill-name">${escapeHtml(skill.name)}</strong>
+        <span class="mobile-skill-meta">
+          <span>${escapeHtml(stageDisplayLabel(variant))}</span>
+          <span>${escapeHtml(skillRangeLabel(pet, skill, variant))}</span>
+          <span>${escapeHtml(cooldownLabel(variant.coolTime))}</span>
+        </span>
+      `;
+      summaryButton.appendChild(badge);
+      summaryButton.appendChild(summaryCopy);
+      skillCard.appendChild(summaryButton);
+
+      if (isActive) {
+        const panel = document.createElement("div");
+        panel.className = "mobile-skill-panel";
+
+        const variantRail = document.createElement("div");
+        variantRail.className = "mobile-variant-rail";
+        variantRail.dataset.skillKey = key;
+        variantRail.addEventListener("scroll", () => {
+          state.mobileVariantScrollBySkillKey[key] = variantRail.scrollLeft;
+        }, { passive: true });
+
+        skill.variants.forEach((skillVariant, variantIndex) => {
+          const chip = document.createElement("button");
+          chip.type = "button";
+          chip.className = `mobile-variant-chip${variantIndex === selectedVariantIndex ? " is-active" : ""}`;
+          chip.innerHTML = `
+            <span class="mobile-variant-chip-tile">${renderTierTile(pet, skillVariant)}</span>
+            <span class="mobile-variant-chip-copy">
+              <strong>${escapeHtml(skillVariant.stageLabel || "-")}</strong>
+              <span>${escapeHtml(stageLevelLabel(skillVariant))}</span>
+            </span>
+          `;
+          chip.addEventListener("click", () => {
+            state.mobileVariantScrollBySkillKey[key] = variantRail.scrollLeft;
+            selectVariant(pet, skill, variantIndex);
+          });
+          variantRail.appendChild(chip);
+        });
+
+        panel.appendChild(variantRail);
+
+        const optionHtml = upgradePreviewHtml(variant);
+        if (optionHtml) {
+          const optionCard = document.createElement("div");
+          optionCard.className = "mobile-inline-card mobile-stage-option-card";
+          optionCard.innerHTML = `
+            <p class="section-label">현재 단계 옵션</p>
+            <div class="mobile-inline-copy">${optionHtml}</div>
+          `;
+          panel.appendChild(optionCard);
+        }
+
+        const descCard = document.createElement("div");
+        descCard.className = "mobile-inline-card mobile-skill-desc-card";
+        descCard.innerHTML = `
+          <p class="section-label">스킬 설명</p>
+          <div class="skill-desc mobile-skill-desc-body">${richTextToHtml(buildSkillDescription(variant))}</div>
+        `;
+        panel.appendChild(descCard);
+        skillCard.appendChild(panel);
+      }
+
+      elements.mobileSkillAccordion.appendChild(skillCard);
+    });
+
+    window.requestAnimationFrame(restoreMobileVariantRailScroll);
+  }
+
   function renderVariantPreviewList(pet) {
     const selectedSkill = getSelectedSkill(pet);
     const skillKey = getSkillKey(pet, selectedSkill);
@@ -2072,6 +2493,15 @@
   function renderEquipmentSetBlock(pet) {
     if (!elements.equipmentSetBlock || !elements.equipmentSetList) {
       return;
+    }
+
+    const shouldUseMobileHost = isMobileLayout()
+      && pet
+      && pet.kind === "weapon"
+      && elements.mobileEquipmentSetHost;
+    const targetHost = shouldUseMobileHost ? elements.mobileEquipmentSetHost : elements.equipmentSetDesktopSlot;
+    if (targetHost && elements.equipmentSetBlock.parentElement !== targetHost) {
+      targetHost.appendChild(elements.equipmentSetBlock);
     }
 
     const shouldShow = pet && pet.kind === "weapon";
@@ -2115,9 +2545,26 @@
           spineState.currentCharacterId = "";
         }
         render();
+        if (isMobileLayout() && state.mobileView === "detail") {
+          const scrollTarget = elements.spotlightMedia || elements.focusTopRow;
+          scheduleViewportScrollToElement(scrollTarget, 56);
+        }
       });
       elements.equipmentSetList.appendChild(entry);
     });
+  }
+
+  function stepCurrentItem(delta) {
+    const category = getActiveCategory();
+    const items = getItems(category);
+    if (!items.length) {
+      return;
+    }
+    state.selectedIndexByCategory[category.key] = (getCurrentIndex(category) + delta + items.length) % items.length;
+    render();
+    if (isMobileLayout()) {
+      setMobileView("detail");
+    }
   }
 
   function selectVariant(pet, skill, index) {
@@ -2126,6 +2573,7 @@
   }
 
   function render() {
+    syncMobileLayout();
     const pet = getCurrentItem();
     if (!pet) {
       return;
@@ -2137,7 +2585,25 @@
     renderEquipmentSetBlock(pet);
     renderFocusSkill(pet);
     renderSkillDock(pet);
+    renderMobileSkillAccordion(pet);
     renderVariantPreviewList(pet);
+    if (isMobileLayout() && state.mobileView === "rail") {
+      cancelPendingRailSelectionScroll();
+      railSelectionScrollRaf = window.requestAnimationFrame(() => {
+        railSelectionScrollRaf = 0;
+        if (!isMobileLayout() || state.mobileView !== "rail") return;
+        syncSelectedRailItemIntoView();
+      });
+    }
+  }
+
+  function refreshScheduleStatuses(force = false) {
+    const nextTickKey = getTimeZoneDateTimeKey().slice(0, 16);
+    if (!force && nextTickKey === lastScheduleStatusTickKey) {
+      return;
+    }
+    lastScheduleStatusTickKey = nextTickKey;
+    render();
   }
 
   function renderSpotlightMedia(pet) {
@@ -2225,25 +2691,37 @@
 
   if (elements.prevPet) {
     elements.prevPet.addEventListener("click", () => {
-      const category = getActiveCategory();
-      const items = getItems(category);
-      if (!items.length) {
-        return;
-      }
-      state.selectedIndexByCategory[category.key] = (getCurrentIndex(category) - 1 + items.length) % items.length;
-      render();
+      stepCurrentItem(-1);
     });
   }
 
   if (elements.nextPet) {
     elements.nextPet.addEventListener("click", () => {
-      const category = getActiveCategory();
-      const items = getItems(category);
-      if (!items.length) {
-        return;
-      }
-      state.selectedIndexByCategory[category.key] = (getCurrentIndex(category) + 1) % items.length;
-      render();
+      stepCurrentItem(1);
+    });
+  }
+
+  if (elements.mobileOpenDetail) {
+    elements.mobileOpenDetail.addEventListener("click", () => {
+      setMobileView("detail");
+    });
+  }
+
+  if (elements.mobileShowRail) {
+    elements.mobileShowRail.addEventListener("click", () => {
+      setMobileView("rail");
+    });
+  }
+
+  if (elements.mobilePrevPet) {
+    elements.mobilePrevPet.addEventListener("click", () => {
+      stepCurrentItem(-1);
+    });
+  }
+
+  if (elements.mobileNextPet) {
+    elements.mobileNextPet.addEventListener("click", () => {
+      stepCurrentItem(1);
     });
   }
 
@@ -2251,6 +2729,28 @@
     requestSpineLayout();
     requestSceneLayout();
   });
+
+  window.setInterval(() => {
+    refreshScheduleStatuses(false);
+  }, 60000);
+
+  document.addEventListener("visibilitychange", () => {
+    if (!document.hidden) {
+      refreshScheduleStatuses(false);
+    }
+  });
+
+  if (typeof mobileViewportQuery.addEventListener === "function") {
+    mobileViewportQuery.addEventListener("change", () => {
+      syncMobileLayout(true);
+      render();
+    });
+  } else if (typeof mobileViewportQuery.addListener === "function") {
+    mobileViewportQuery.addListener(() => {
+      syncMobileLayout(true);
+      render();
+    });
+  }
 
   if (elements.sceneStageBack) {
     elements.sceneStageBack.addEventListener("load", requestSceneLayout);
@@ -2262,5 +2762,7 @@
     state.selectedIndexByCategory[category.key] = findPreferredIndex(getItems(category));
   });
   state.selectedIndexByCategory[initialSelection.categoryKey] = initialSelection.index;
+  lastScheduleStatusTickKey = getTimeZoneDateTimeKey().slice(0, 16);
+  syncMobileLayout(true);
   render();
 })();
