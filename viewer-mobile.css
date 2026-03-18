@@ -11,10 +11,12 @@
   }
 
   body.mobile-layout {
+    height: 100vh;
+    height: 100dvh;
     min-height: 100vh;
     min-height: 100dvh;
     overflow-x: hidden;
-    overflow-y: auto;
+    overflow-y: hidden;
     background:
       radial-gradient(circle at top left, rgba(var(--pet-accent-rgb), 0.14), transparent 24%),
       radial-gradient(circle at top right, rgba(246, 204, 116, 0.12), transparent 28%),
@@ -135,9 +137,11 @@
     position: relative;
     inset: auto;
     display: block;
-    min-height: auto;
-    height: auto;
-    overflow: visible;
+    min-height: 100vh;
+    min-height: 100dvh;
+    height: 100vh;
+    height: 100dvh;
+    overflow: hidden;
   }
 
   body.mobile-layout .pet-rail,
@@ -147,29 +151,31 @@
     width: 100%;
     min-width: 0;
     max-width: none;
-    height: auto;
-    min-height: auto;
+    height: 100vh;
+    height: 100dvh;
+    min-height: 100vh;
+    min-height: 100dvh;
     transition: none;
     will-change: auto;
     transform: none;
     opacity: 1;
+    overflow-x: hidden;
+    overflow-y: auto;
+    overscroll-behavior-y: contain;
+    -webkit-overflow-scrolling: touch;
   }
 
   body.mobile-layout .pet-rail {
     z-index: auto;
     padding: calc(1rem + env(safe-area-inset-top)) 1rem calc(1.5rem + env(safe-area-inset-bottom));
-    overflow: visible;
   }
 
   body.mobile-layout .stage {
     z-index: auto;
-    overflow: visible;
   }
 
   body.mobile-layout[data-mobile-view="rail"] .pet-rail {
     display: block;
-    min-height: 100vh;
-    min-height: 100dvh;
   }
 
   body.mobile-layout[data-mobile-view="rail"] .stage {
@@ -182,7 +188,6 @@
 
   body.mobile-layout[data-mobile-view="detail"] .stage {
     display: block;
-    min-height: auto;
   }
 
   body.mobile-layout[data-mobile-view="detail"] .app-shell,
@@ -222,6 +227,7 @@
     gap: 0.75rem;
     margin-top: 1rem;
     padding: 0.125rem 0 1rem;
+    overflow: visible;
   }
 
   body.mobile-layout .pet-item {
