@@ -376,12 +376,6 @@
   }
 
   function currentViewportScrollTop() {
-    const mobileScrollContainer = isMobileLayout()
-      ? (state.mobileView === "rail" ? elements.petRail : elements.stage)
-      : null;
-    if (mobileScrollContainer) {
-      return mobileScrollContainer.scrollTop || 0;
-    }
     return window.pageYOffset
       || document.documentElement.scrollTop
       || document.body.scrollTop
@@ -390,16 +384,6 @@
 
   function setViewportScrollTop(value) {
     const next = Math.max(0, Number(value) || 0);
-    const mobileScrollContainer = isMobileLayout()
-      ? (state.mobileView === "rail" ? elements.petRail : elements.stage)
-      : null;
-    if (mobileScrollContainer) {
-      if (typeof mobileScrollContainer.scrollTo === "function") {
-        mobileScrollContainer.scrollTo({ top: next, left: 0, behavior: "auto" });
-      }
-      mobileScrollContainer.scrollTop = next;
-      return;
-    }
     window.scrollTo({ top: next, left: 0, behavior: "auto" });
     if (document.documentElement) {
       document.documentElement.scrollTop = next;
@@ -426,14 +410,6 @@
   function scheduleViewportScrollToElement(element, offset = 0) {
     if (!element || !isMobileLayout()) return;
     const targetOffset = Math.max(0, Number(offset) || 0);
-    const scrollContainer = state.mobileView === "rail" ? elements.petRail : elements.stage;
-    if (scrollContainer) {
-      const containerRect = scrollContainer.getBoundingClientRect();
-      const elementRect = element.getBoundingClientRect();
-      const scrollTarget = scrollContainer.scrollTop + elementRect.top - containerRect.top - targetOffset;
-      scheduleViewportScrollTop(scrollTarget);
-      return;
-    }
     const scrollTarget = currentViewportScrollTop() + element.getBoundingClientRect().top - targetOffset;
     scheduleViewportScrollTop(scrollTarget);
   }
@@ -2625,19 +2601,45 @@
     container.scrollLeft = clampedScrollLeft;
   }
 
+  function updateMobileVariantRailAffordance(shell) {
+    if (!shell) return;
+    const rail = shell.querySelector(".mobile-variant-rail");
+    if (!rail) return;
+
+    const maxScrollLeft = Math.max(0, rail.scrollWidth - rail.clientWidth);
+    const hasOverflow = maxScrollLeft > 6;
+    const currentScrollLeft = rail.scrollLeft || 0;
+    const hasLeftOverflow = hasOverflow && currentScrollLeft > 6;
+    const hasRightOverflow = hasOverflow && currentScrollLeft < (maxScrollLeft - 6);
+
+    shell.classList.toggle("is-overflowing", hasOverflow);
+    shell.classList.toggle("has-left-overflow", hasLeftOverflow);
+    shell.classList.toggle("has-right-overflow", hasRightOverflow);
+  }
+
+  function syncMobileVariantRailAffordances() {
+    if (!elements.mobileSkillAccordion) return;
+    elements.mobileSkillAccordion.querySelectorAll(".mobile-variant-rail-shell").forEach((shell) => {
+      updateMobileVariantRailAffordance(shell);
+    });
+  }
+
   function restoreMobileVariantRailScroll() {
     if (!elements.mobileSkillAccordion) return;
     elements.mobileSkillAccordion.querySelectorAll(".mobile-variant-rail").forEach((rail) => {
       const skillKey = rail.dataset.skillKey || "";
+      const railShell = rail.closest(".mobile-variant-rail-shell");
       if (!skillKey) return;
       if (typeof state.mobileVariantScrollBySkillKey[skillKey] === "number") {
         rail.scrollLeft = state.mobileVariantScrollBySkillKey[skillKey];
+        updateMobileVariantRailAffordance(railShell);
         return;
       }
       const activeChip = rail.querySelector(".mobile-variant-chip.is-active");
       if (activeChip) {
         scrollHorizontalRailToChild(rail, activeChip, 12);
       }
+      updateMobileVariantRailAffordance(railShell);
     });
   }
 
@@ -2694,11 +2696,20 @@
         const panel = document.createElement("div");
         panel.className = "mobile-skill-panel";
 
+        const variantRailShell = document.createElement("div");
+        variantRailShell.className = "mobile-variant-rail-shell";
+
+        const variantRailCuePrev = document.createElement("span");
+        variantRailCuePrev.className = "mobile-variant-rail-cue prev";
+        variantRailCuePrev.setAttribute("aria-hidden", "true");
+        variantRailShell.appendChild(variantRailCuePrev);
+
         const variantRail = document.createElement("div");
         variantRail.className = "mobile-variant-rail";
         variantRail.dataset.skillKey = key;
         variantRail.addEventListener("scroll", () => {
           state.mobileVariantScrollBySkillKey[key] = variantRail.scrollLeft;
+          updateMobileVariantRailAffordance(variantRailShell);
         }, { passive: true });
 
         skill.variants.forEach((skillVariant, variantIndex) => {
@@ -2719,7 +2730,14 @@
           variantRail.appendChild(chip);
         });
 
-        panel.appendChild(variantRail);
+        variantRailShell.appendChild(variantRail);
+
+        const variantRailCueNext = document.createElement("span");
+        variantRailCueNext.className = "mobile-variant-rail-cue next";
+        variantRailCueNext.setAttribute("aria-hidden", "true");
+        variantRailShell.appendChild(variantRailCueNext);
+
+        panel.appendChild(variantRailShell);
 
         const optionHtml = upgradePreviewHtml(variant);
         if (optionHtml) {
@@ -2745,7 +2763,10 @@
       elements.mobileSkillAccordion.appendChild(skillCard);
     });
 
-    window.requestAnimationFrame(restoreMobileVariantRailScroll);
+    window.requestAnimationFrame(() => {
+      restoreMobileVariantRailScroll();
+      syncMobileVariantRailAffordances();
+    });
   }
 
   function renderVariantPreviewList(pet) {
