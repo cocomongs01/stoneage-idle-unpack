@@ -109,6 +109,7 @@
   let sceneLayoutRaf = 0;
   let mobileViewportScrollRaf = 0;
   let railSelectionScrollRaf = 0;
+  let mobileViewSwitchRaf = 0;
   let mobileLoadingHideTimer = 0;
   let mobileLoadingVisibleSince = 0;
   const mobileViewportQuery = window.matchMedia("(max-width: 900px)");
@@ -236,6 +237,40 @@
     activePressTargetByPointerId.clear();
   }
 
+  function setMobileViewSwitching(active) {
+    if (!document.body) return;
+    document.body.classList.toggle("is-mobile-view-switching", Boolean(active) && isMobileLayout());
+  }
+
+  function finishMobileViewSwitch(targetScrollTop = 0) {
+    if (!isMobileLayout()) {
+      setMobileViewSwitching(false);
+      return;
+    }
+
+    if (mobileViewSwitchRaf) {
+      window.cancelAnimationFrame(mobileViewSwitchRaf);
+      mobileViewSwitchRaf = 0;
+    }
+
+    setMobileViewSwitching(true);
+    let framesRemaining = 2;
+    const step = () => {
+      if (state.mobileView === "detail") {
+        setViewportScrollTop(targetScrollTop);
+        scrollContainerToTop(elements.stage);
+      }
+      framesRemaining -= 1;
+      if (framesRemaining > 0) {
+        mobileViewSwitchRaf = window.requestAnimationFrame(step);
+        return;
+      }
+      mobileViewSwitchRaf = 0;
+      setMobileViewSwitching(false);
+    };
+    mobileViewSwitchRaf = window.requestAnimationFrame(step);
+  }
+
   function padNumber(value) {
     return String(value).padStart(2, "0");
   }
@@ -325,6 +360,12 @@
   }
 
   function currentViewportScrollTop() {
+    const mobileScrollContainer = isMobileLayout()
+      ? (state.mobileView === "rail" ? elements.petRail : elements.stage)
+      : null;
+    if (mobileScrollContainer) {
+      return mobileScrollContainer.scrollTop || 0;
+    }
     return window.pageYOffset
       || document.documentElement.scrollTop
       || document.body.scrollTop
@@ -333,6 +374,16 @@
 
   function setViewportScrollTop(value) {
     const next = Math.max(0, Number(value) || 0);
+    const mobileScrollContainer = isMobileLayout()
+      ? (state.mobileView === "rail" ? elements.petRail : elements.stage)
+      : null;
+    if (mobileScrollContainer) {
+      if (typeof mobileScrollContainer.scrollTo === "function") {
+        mobileScrollContainer.scrollTo({ top: next, left: 0, behavior: "auto" });
+      }
+      mobileScrollContainer.scrollTop = next;
+      return;
+    }
     window.scrollTo({ top: next, left: 0, behavior: "auto" });
     if (document.documentElement) {
       document.documentElement.scrollTop = next;
@@ -359,6 +410,14 @@
   function scheduleViewportScrollToElement(element, offset = 0) {
     if (!element || !isMobileLayout()) return;
     const targetOffset = Math.max(0, Number(offset) || 0);
+    const scrollContainer = state.mobileView === "rail" ? elements.petRail : elements.stage;
+    if (scrollContainer) {
+      const containerRect = scrollContainer.getBoundingClientRect();
+      const elementRect = element.getBoundingClientRect();
+      const scrollTarget = scrollContainer.scrollTop + elementRect.top - containerRect.top - targetOffset;
+      scheduleViewportScrollTop(scrollTarget);
+      return;
+    }
     const scrollTarget = currentViewportScrollTop() + element.getBoundingClientRect().top - targetOffset;
     scheduleViewportScrollTop(scrollTarget);
   }
@@ -420,6 +479,7 @@
 
     if (targetView === "detail" && options.resetStageScroll !== false) {
       state.mobileViewportScrollByView.detail = 0;
+      setMobileViewSwitching(true);
       setViewportScrollTop(0);
       scrollContainerToTop(elements.stage);
     }
@@ -434,12 +494,16 @@
       if (options.resetStageScroll !== false) {
         setViewportScrollTop(0);
         scheduleViewportScrollTop(0);
+        finishMobileViewSwitch(0);
       } else {
         setViewportScrollTop(state.mobileViewportScrollByView.detail || 0);
         scheduleViewportScrollTop(state.mobileViewportScrollByView.detail || 0);
+        finishMobileViewSwitch(state.mobileViewportScrollByView.detail || 0);
       }
       return;
     }
+
+    setMobileViewSwitching(false);
 
     if (options.resetRailScroll) {
       scrollContainerToTop(elements.petRail);
