@@ -617,6 +617,7 @@
     const startTimestamp = dateTimeKeyToTimestamp(startDateTimeKey);
     const currentDateKey = dateTimeKeyToDateKey(currentDateTimeKey);
     const startDateKey = dateTimeKeyToDateKey(startDateTimeKey);
+    const tomorrowDateKey = currentDateKey ? addDaysToDateKey(currentDateKey, 1) : "";
     if (Number.isFinite(currentTimestamp) && Number.isFinite(startTimestamp)) {
       const diffMs = Math.max(0, startTimestamp - currentTimestamp);
       if (startDateKey && currentDateKey && startDateKey === currentDateKey) {
@@ -626,7 +627,7 @@
           scheduleLabel: "오늘 오픈",
         };
       }
-      if (diffMs <= DAY_MS) {
+      if (startDateKey && tomorrowDateKey && startDateKey === tomorrowDateKey) {
         return {
           tone: "soon",
           listLabel: "내일 오픈",
