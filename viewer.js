@@ -594,6 +594,61 @@
     return "current";
   }
 
+  function resolveScheduleToneMeta(scheduleWindow, currentDateTimeKey = getTimeZoneDateTimeKey()) {
+    const resolvedStatus = scheduleWindow?.resolvedStatus || resolveScheduleStatus(scheduleWindow, currentDateTimeKey);
+    if (resolvedStatus === "current") {
+      return {
+        tone: "current",
+        listLabel: "진행 중",
+        scheduleLabel: "진행 중",
+      };
+    }
+
+    if (resolvedStatus === "past") {
+      return {
+        tone: "past",
+        listLabel: "종료",
+        scheduleLabel: "종료",
+      };
+    }
+
+    const startDateTimeKey = scheduleWindow?.resolvedStartDateTimeKey || "";
+    const currentTimestamp = dateTimeKeyToTimestamp(currentDateTimeKey);
+    const startTimestamp = dateTimeKeyToTimestamp(startDateTimeKey);
+    const currentDateKey = dateTimeKeyToDateKey(currentDateTimeKey);
+    const startDateKey = dateTimeKeyToDateKey(startDateTimeKey);
+    if (Number.isFinite(currentTimestamp) && Number.isFinite(startTimestamp)) {
+      const diffMs = Math.max(0, startTimestamp - currentTimestamp);
+      if (startDateKey && currentDateKey && startDateKey === currentDateKey) {
+        return {
+          tone: "today",
+          listLabel: "오늘 오픈",
+          scheduleLabel: "오늘 오픈",
+        };
+      }
+      if (diffMs <= DAY_MS) {
+        return {
+          tone: "soon",
+          listLabel: "내일 오픈",
+          scheduleLabel: "내일 오픈",
+        };
+      }
+      if (diffMs <= DAY_MS * 3) {
+        return {
+          tone: "imminent",
+          listLabel: "오픈 임박",
+          scheduleLabel: "오픈 임박",
+        };
+      }
+    }
+
+    return {
+      tone: "upcoming",
+      listLabel: "다음 일정",
+      scheduleLabel: "예정",
+    };
+  }
+
   function getResolvedSchedules(pet, currentDateTimeKey = getTimeZoneDateTimeKey()) {
     const schedules = Array.isArray(pet?.schedules) ? pet.schedules : [];
     const activeServerOpenDateTimeKey = getActiveServerOpenDateTimeKey();
@@ -2366,12 +2421,14 @@
   }
 
   function getPetStatus(pet) {
-    const schedules = getResolvedSchedules(pet);
+    const currentDateTimeKey = getTimeZoneDateTimeKey();
+    const schedules = getResolvedSchedules(pet, currentDateTimeKey);
     const current = schedules.find((item) => item.resolvedStatus === "current");
     if (current) {
+      const statusMeta = resolveScheduleToneMeta(current, currentDateTimeKey);
       return {
-        tone: "current",
-        label: "진행 중",
+        tone: statusMeta.tone,
+        label: statusMeta.listLabel,
         summary: formatScheduleDisplayRange(
           current.start,
           current.end,
@@ -2383,9 +2440,10 @@
 
     const upcoming = schedules.find((item) => item.resolvedStatus === "upcoming");
     if (upcoming) {
+      const statusMeta = resolveScheduleToneMeta(upcoming, currentDateTimeKey);
       return {
-        tone: "upcoming",
-        label: "다음 일정",
+        tone: statusMeta.tone,
+        label: statusMeta.listLabel,
         summary: formatScheduleDisplayRange(
           upcoming.start,
           upcoming.end,
@@ -3092,12 +3150,12 @@
       return;
     }
 
+    const currentDateTimeKey = getTimeZoneDateTimeKey();
     schedules.slice(0, 6).forEach((item) => {
-      const status = item.resolvedStatus || "past";
-      const label = status === "current" ? "진행 중" : status === "upcoming" ? "예정" : "종료";
+      const statusMeta = resolveScheduleToneMeta(item, currentDateTimeKey);
       const block = document.createElement("div");
-      block.className = `schedule-item ${status}`;
-      block.innerHTML = `<strong>${escapeHtml(formatScheduleDisplayRange(item.start, item.end, item.resolvedStartDateTimeKey, item.resolvedEndExclusiveDateTimeKey))}</strong><span>${escapeHtml(label)}</span>`;
+      block.className = `schedule-item ${statusMeta.tone}`;
+      block.innerHTML = `<strong>${escapeHtml(formatScheduleDisplayRange(item.start, item.end, item.resolvedStartDateTimeKey, item.resolvedEndExclusiveDateTimeKey))}</strong><span>${escapeHtml(statusMeta.scheduleLabel)}</span>`;
       elements.scheduleList.appendChild(block);
     });
   }

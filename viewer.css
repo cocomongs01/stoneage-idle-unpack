@@ -718,6 +718,18 @@ img {
   color: #bfe3ff;
 }
 
+.pet-item-order.imminent {
+  color: #f0cf8a;
+}
+
+.pet-item-order.soon {
+  color: #f2ba68;
+}
+
+.pet-item-order.today {
+  color: #ffd96f;
+}
+
 .pet-item-order.past {
   color: #dfb7a7;
 }
@@ -728,6 +740,18 @@ img {
 
 .pet-item[data-status="upcoming"] .pet-item-title strong {
   color: #f3f8ff;
+}
+
+.pet-item[data-status="imminent"] .pet-item-title strong {
+  color: #fff2d1;
+}
+
+.pet-item[data-status="soon"] .pet-item-title strong {
+  color: #fff0ca;
+}
+
+.pet-item[data-status="today"] .pet-item-title strong {
+  color: #fff6d9;
 }
 
 .pet-item[data-status="past"] .pet-item-title strong {
@@ -933,6 +957,24 @@ img {
   background: rgba(86, 166, 255, 0.28);
   border-color: rgba(142, 205, 255, 0.56);
   color: #eaf8ff;
+}
+
+.status-badge.imminent {
+  background: rgba(201, 151, 57, 0.34);
+  border-color: rgba(240, 202, 128, 0.5);
+  color: #fff1cf;
+}
+
+.status-badge.soon {
+  background: rgba(214, 139, 53, 0.42);
+  border-color: rgba(244, 191, 113, 0.62);
+  color: #fff3d6;
+}
+
+.status-badge.today {
+  background: rgba(247, 200, 84, 0.68);
+  border-color: rgba(255, 229, 154, 0.82);
+  color: #3a2408;
 }
 
 .status-badge.past {
@@ -1654,6 +1696,24 @@ img {
   background: linear-gradient(180deg, rgba(41, 90, 148, 0.28), rgba(18, 16, 11, 0.86));
 }
 
+.schedule-item.imminent {
+  border-color: rgba(223, 182, 97, 0.44);
+  box-shadow: inset 0 0 0 1px rgba(223, 182, 97, 0.14);
+  background: linear-gradient(180deg, rgba(126, 88, 30, 0.28), rgba(18, 16, 11, 0.86));
+}
+
+.schedule-item.soon {
+  border-color: rgba(235, 164, 78, 0.5);
+  box-shadow: inset 0 0 0 1px rgba(235, 164, 78, 0.16);
+  background: linear-gradient(180deg, rgba(140, 78, 19, 0.32), rgba(18, 16, 11, 0.86));
+}
+
+.schedule-item.today {
+  border-color: rgba(250, 213, 99, 0.62);
+  box-shadow: inset 0 0 0 1px rgba(250, 213, 99, 0.2);
+  background: linear-gradient(180deg, rgba(154, 111, 18, 0.38), rgba(18, 16, 11, 0.86));
+}
+
 .schedule-item.past {
   border-color: rgba(197, 142, 116, 0.34);
   box-shadow: inset 0 0 0 1px rgba(197, 142, 116, 0.1);
@@ -1678,6 +1738,18 @@ img {
 
 .schedule-item.upcoming span {
   color: #cbe9ff;
+}
+
+.schedule-item.imminent span {
+  color: #f6dfae;
+}
+
+.schedule-item.soon span {
+  color: #ffe1b3;
+}
+
+.schedule-item.today span {
+  color: #ffeebf;
 }
 
 .schedule-item.past span {
