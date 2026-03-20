@@ -1,0 +1,195 @@
+
+Hero_Cawooger_A.png
+size: 710,710
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+A/arml_1
+  rotate: false
+  xy: 0, 14
+  size: 112, 70
+  orig: 513, 513
+  offset: 190, 42
+  index: -1
+A/arml_2
+  rotate: false
+  xy: 486, 292
+  size: 135, 157
+  orig: 513, 513
+  offset: 243, 120
+  index: -1
+A/arml_3
+  rotate: false
+  xy: 517, 454
+  size: 119, 119
+  orig: 513, 513
+  offset: 236, 61
+  index: -1
+A/armr_1
+  rotate: false
+  xy: 258, 23
+  size: 102, 60
+  orig: 513, 513
+  offset: 24, 46
+  index: -1
+A/armr_2
+  rotate: false
+  xy: 150, 26
+  size: 108, 126
+  orig: 513, 513
+  offset: 102, 148
+  index: -1
+A/armr_3
+  rotate: false
+  xy: 517, 573
+  size: 120, 137
+  orig: 513, 513
+  offset: 67, 67
+  index: -1
+A/body
+  rotate: false
+  xy: 0, 466
+  size: 310, 244
+  orig: 513, 513
+  offset: 104, 113
+  index: -1
+A/body2
+  rotate: true
+  xy: 0, 258
+  size: 208, 198
+  orig: 513, 513
+  offset: 130, 279
+  index: -1
+A/ear l
+  rotate: false
+  xy: 198, 181
+  size: 61, 146
+  orig: 513, 513
+  offset: 141, 112
+  index: -1
+A/ear r
+  rotate: false
+  xy: 601, 152
+  size: 56, 140
+  orig: 513, 513
+  offset: 64, 110
+  index: -1
+A/eye
+  rotate: true
+  xy: 177, 193
+  size: 20, 18
+  orig: 513, 513
+  offset: 125, 213
+  index: -1
+A/eyeball
+  rotate: true
+  xy: 150, 213
+  size: 45, 41
+  orig: 513, 513
+  offset: 117, 201
+  index: -1
+A/hair1
+  rotate: true
+  xy: 309, 249
+  size: 200, 177
+  orig: 513, 513
+  offset: 97, 213
+  index: -1
+A/hair2
+  rotate: false
+  xy: 259, 83
+  size: 104, 166
+  orig: 513, 513
+  offset: 64, 227
+  index: -1
+A/head_lower
+  rotate: true
+  xy: 198, 327
+  size: 139, 111
+  orig: 513, 513
+  offset: 58, 139
+  index: -1
+A/head_upper1
+  rotate: false
+  xy: 637, 578
+  size: 65, 53
+  orig: 513, 513
+  offset: 141, 211
+  index: -1
+A/head_upper2
+  rotate: false
+  xy: 636, 491
+  size: 74, 82
+  orig: 513, 513
+  offset: 162, 169
+  index: -1
+A/head_upper3
+  rotate: false
+  xy: 0, 84
+  size: 150, 174
+  orig: 513, 513
+  offset: 46, 132
+  index: -1
+A/legl_1
+  rotate: false
+  xy: 621, 309
+  size: 86, 145
+  orig: 513, 513
+  offset: 349, 98
+  index: -1
+A/legl_2
+  rotate: true
+  xy: 637, 631
+  size: 79, 73
+  orig: 513, 513
+  offset: 369, 105
+  index: -1
+A/legl_3
+  rotate: false
+  xy: 363, 124
+  size: 102, 125
+  orig: 513, 513
+  offset: 377, 53
+  index: -1
+A/legr_1
+  rotate: true
+  xy: 465, 52
+  size: 100, 131
+  orig: 513, 513
+  offset: 207, 122
+  index: -1
+A/legr_2
+  rotate: true
+  xy: 596, 40
+  size: 112, 68
+  orig: 513, 513
+  offset: 209, 124
+  index: -1
+A/legr_3
+  rotate: false
+  xy: 486, 152
+  size: 115, 140
+  orig: 513, 513
+  offset: 210, 54
+  index: -1
+A/rope
+  rotate: true
+  xy: 310, 449
+  size: 261, 207
+  orig: 261, 261
+  offset: 0, 31
+  index: -1
+A/tail
+  rotate: false
+  xy: 363, 7
+  size: 98, 117
+  orig: 513, 513
+  offset: 366, 202
+  index: -1
+A/teeth2
+  rotate: false
+  xy: 150, 152
+  size: 27, 61
+  orig: 513, 513
+  offset: 53, 129
+  index: -1

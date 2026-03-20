@@ -1,0 +1,146 @@
+
+Hero_Guppy_A.png
+size: 882,662
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+A/arm l_1
+  rotate: true
+  xy: 764, 506
+  size: 154, 105
+  orig: 641, 641
+  offset: 351, 96
+  index: -1
+A/arm l_2
+  rotate: false
+  xy: 762, 125
+  size: 72, 127
+  orig: 641, 641
+  offset: 355, 123
+  index: -1
+A/arm r_1
+  rotate: false
+  xy: 424, 11
+  size: 161, 99
+  orig: 641, 641
+  offset: 123, 100
+  index: -1
+A/arm r_2
+  rotate: true
+  xy: 563, 318
+  size: 88, 119
+  orig: 641, 641
+  offset: 203, 140
+  index: -1
+A/body
+  rotate: false
+  xy: 2, 399
+  size: 356, 261
+  orig: 641, 641
+  offset: 164, 101
+  index: -1
+A/ear l
+  rotate: false
+  xy: 187, 198
+  size: 171, 199
+  orig: 641, 641
+  offset: 295, 358
+  index: -1
+A/ear r
+  rotate: false
+  xy: 762, 254
+  size: 118, 152
+  orig: 641, 641
+  offset: 164, 399
+  index: -1
+A/eye 1
+  rotate: true
+  xy: 684, 346
+  size: 60, 59
+  orig: 641, 641
+  offset: 223, 366
+  index: -1
+A/eye 2
+  rotate: false
+  xy: 764, 429
+  size: 94, 75
+  orig: 641, 641
+  offset: 223, 369
+  index: -1
+A/eye 3
+  rotate: false
+  xy: 113, 5
+  size: 72, 78
+  orig: 513, 513
+  offset: 175, 281
+  index: -1
+A/eyeball
+  rotate: false
+  xy: 319, 9
+  size: 103, 101
+  orig: 641, 641
+  offset: 208, 344
+  index: -1
+A/fin
+  rotate: true
+  xy: 563, 408
+  size: 252, 199
+  orig: 641, 641
+  offset: 261, 257
+  index: -1
+A/head
+  rotate: true
+  xy: 360, 318
+  size: 342, 201
+  orig: 641, 641
+  offset: 44, 284
+  index: -1
+A/leg l
+  rotate: false
+  xy: 618, 2
+  size: 150, 117
+  orig: 641, 641
+  offset: 459, 108
+  index: -1
+A/leg r
+  rotate: true
+  xy: 770, 5
+  size: 118, 103
+  orig: 641, 641
+  offset: 252, 125
+  index: -1
+A/mouth
+  rotate: true
+  xy: 2, 85
+  size: 312, 183
+  orig: 641, 641
+  offset: 58, 219
+  index: -1
+A/rope
+  rotate: false
+  xy: 360, 112
+  size: 256, 204
+  orig: 261, 261
+  offset: 5, 31
+  index: -1
+A/tail_1
+  rotate: true
+  xy: 187, 9
+  size: 187, 130
+  orig: 641, 641
+  offset: 439, 153
+  index: -1
+A/tail_2
+  rotate: false
+  xy: 618, 121
+  size: 142, 195
+  orig: 641, 641
+  offset: 439, 142
+  index: -1
+A/tongue_2
+  rotate: false
+  xy: 2, 7
+  size: 109, 76
+  orig: 513, 513
+  offset: 129, 233
+  index: -1

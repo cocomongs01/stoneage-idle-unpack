@@ -1,0 +1,468 @@
+
+Hero_Noho_A.png
+size: 1858,1039
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+A/arm L_1
+  rotate: true
+  xy: 1826, 126
+  size: 42, 30
+  orig: 513, 513
+  offset: 161, 224
+  index: -1
+A/arm L_2
+  rotate: false
+  xy: 1708, 772
+  size: 52, 105
+  orig: 513, 513
+  offset: 181, 221
+  index: -1
+B/arm L_2
+  rotate: false
+  xy: 1708, 772
+  size: 52, 105
+  orig: 513, 513
+  offset: 181, 221
+  index: -1
+A/arm R_1
+  rotate: false
+  xy: 1716, 563
+  size: 75, 36
+  orig: 513, 513
+  offset: 115, 217
+  index: -1
+A/arm R_2
+  rotate: false
+  xy: 1536, 49
+  size: 44, 108
+  orig: 513, 513
+  offset: 154, 217
+  index: -1
+B/arm R_2
+  rotate: false
+  xy: 1536, 49
+  size: 44, 108
+  orig: 513, 513
+  offset: 154, 217
+  index: -1
+A/body
+  rotate: false
+  xy: 1612, 360
+  size: 188, 192
+  orig: 513, 513
+  offset: 129, 150
+  index: -1
+A/eye
+  rotate: false
+  xy: 1832, 49
+  size: 24, 31
+  orig: 513, 513
+  offset: 119, 390
+  index: -1
+B/eye
+  rotate: false
+  xy: 1832, 49
+  size: 24, 31
+  orig: 513, 513
+  offset: 119, 390
+  index: -1
+A/eyeball
+  rotate: false
+  xy: 1802, 402
+  size: 51, 50
+  orig: 513, 513
+  offset: 112, 378
+  index: -1
+B/eyeball
+  rotate: false
+  xy: 1802, 402
+  size: 51, 50
+  orig: 513, 513
+  offset: 112, 378
+  index: -1
+A/foot L
+  rotate: true
+  xy: 698, 2
+  size: 67, 130
+  orig: 513, 513
+  offset: 300, 34
+  index: -1
+A/hand L
+  rotate: false
+  xy: 1112, 121
+  size: 53, 68
+  orig: 513, 513
+  offset: 138, 183
+  index: -1
+A/hand R
+  rotate: true
+  xy: 517, 2
+  size: 50, 68
+  orig: 513, 513
+  offset: 103, 184
+  index: -1
+A/head
+  rotate: true
+  xy: 846, 2
+  size: 187, 131
+  orig: 513, 513
+  offset: 39, 355
+  index: -1
+A/leg L_1
+  rotate: false
+  xy: 1767, 889
+  size: 89, 148
+  orig: 513, 513
+  offset: 236, 140
+  index: -1
+A/leg L_2
+  rotate: false
+  xy: 754, 395
+  size: 66, 74
+  orig: 513, 513
+  offset: 266, 113
+  index: -1
+A/leg L_3
+  rotate: true
+  xy: 1714, 4
+  size: 70, 116
+  orig: 513, 513
+  offset: 293, 28
+  index: -1
+A/leg L_4
+  rotate: true
+  xy: 1321, 489
+  size: 87, 68
+  orig: 513, 513
+  offset: 257, 126
+  index: -1
+A/leg R_1
+  rotate: false
+  xy: 1414, 13
+  size: 120, 144
+  orig: 513, 513
+  offset: 129, 143
+  index: -1
+B/leg R_1
+  rotate: false
+  xy: 1414, 13
+  size: 120, 144
+  orig: 513, 513
+  offset: 129, 143
+  index: -1
+A/leg R_2
+  rotate: false
+  xy: 1716, 670
+  size: 118, 67
+  orig: 513, 513
+  offset: 131, 127
+  index: -1
+A/leg R_3
+  rotate: true
+  xy: 1582, 76
+  size: 77, 120
+  orig: 513, 513
+  offset: 188, 61
+  index: -1
+A/mouth
+  rotate: false
+  xy: 1112, 2
+  size: 149, 114
+  orig: 513, 513
+  offset: 45, 320
+  index: -1
+A/neck
+  rotate: false
+  xy: 1787, 259
+  size: 65, 99
+  orig: 513, 513
+  offset: 121, 285
+  index: -1
+B/neck
+  rotate: false
+  xy: 1787, 259
+  size: 65, 99
+  orig: 513, 513
+  offset: 121, 285
+  index: -1
+A/rope
+  rotate: true
+  xy: 1185, 201
+  size: 256, 204
+  orig: 261, 261
+  offset: 2, 32
+  index: -1
+B/rope
+  rotate: true
+  xy: 1185, 201
+  size: 256, 204
+  orig: 261, 261
+  offset: 2, 32
+  index: -1
+A/tail_1
+  rotate: false
+  xy: 1046, 459
+  size: 273, 117
+  orig: 513, 513
+  offset: 240, 186
+  index: -1
+A/wing L_1
+  rotate: false
+  xy: 1096, 578
+  size: 299, 118
+  orig: 513, 513
+  offset: 174, 285
+  index: -1
+B/wing L_1
+  rotate: false
+  xy: 1096, 578
+  size: 299, 118
+  orig: 513, 513
+  offset: 174, 285
+  index: -1
+A/wing L_2
+  rotate: false
+  xy: 517, 395
+  size: 235, 322
+  orig: 513, 513
+  offset: 160, 191
+  index: -1
+A/wing L_3
+  rotate: true
+  xy: 1096, 862
+  size: 175, 335
+  orig: 513, 513
+  offset: 198, 1
+  index: -1
+B/wing L_3
+  rotate: true
+  xy: 1096, 862
+  size: 175, 335
+  orig: 513, 513
+  offset: 198, 1
+  index: -1
+A/wing R_1
+  rotate: true
+  xy: 772, 654
+  size: 146, 322
+  orig: 513, 513
+  offset: 79, 181
+  index: -1
+A/wing R_2
+  rotate: true
+  xy: 1633, 554
+  size: 204, 81
+  orig: 513, 513
+  offset: 1, 182
+  index: -1
+A/wing R_3
+  rotate: false
+  xy: 846, 191
+  size: 186, 278
+  orig: 513, 513
+  offset: 1, 33
+  index: -1
+B/wing R_3
+  rotate: false
+  xy: 846, 191
+  size: 186, 278
+  orig: 513, 513
+  offset: 1, 33
+  index: -1
+B/arm L_1
+  rotate: true
+  xy: 1826, 82
+  size: 42, 30
+  orig: 513, 513
+  offset: 161, 224
+  index: -1
+B/arm R_1
+  rotate: true
+  xy: 1802, 524
+  size: 75, 36
+  orig: 513, 513
+  offset: 115, 217
+  index: -1
+B/body
+  rotate: false
+  xy: 1597, 155
+  size: 188, 192
+  orig: 513, 513
+  offset: 129, 150
+  index: -1
+B/body_armor
+  rotate: false
+  xy: 1391, 349
+  size: 219, 211
+  orig: 513, 513
+  offset: 98, 131
+  index: -1
+B/body_back_armor
+  rotate: true
+  xy: 1391, 159
+  size: 188, 204
+  orig: 513, 513
+  offset: 129, 150
+  index: -1
+B/foot L
+  rotate: true
+  xy: 1582, 7
+  size: 67, 130
+  orig: 513, 513
+  offset: 300, 34
+  index: -1
+B/hand L
+  rotate: false
+  xy: 1802, 454
+  size: 53, 68
+  orig: 513, 513
+  offset: 138, 183
+  index: -1
+B/hand R
+  rotate: true
+  xy: 587, 2
+  size: 50, 68
+  orig: 513, 513
+  offset: 103, 184
+  index: -1
+B/head
+  rotate: true
+  xy: 979, 2
+  size: 187, 131
+  orig: 513, 513
+  offset: 39, 355
+  index: -1
+B/head_armor
+  rotate: false
+  xy: 1410, 562
+  size: 221, 196
+  orig: 513, 513
+  offset: 30, 306
+  index: -1
+B/leg L_1
+  rotate: false
+  xy: 1767, 739
+  size: 89, 148
+  orig: 513, 513
+  offset: 236, 140
+  index: -1
+B/leg L_2
+  rotate: false
+  xy: 2, 524
+  size: 513, 513
+  orig: 513, 513
+  offset: 0, 0
+  index: -1
+B/leg L_3
+  rotate: false
+  xy: 2, 9
+  size: 513, 513
+  orig: 513, 513
+  offset: 0, 0
+  index: -1
+B/leg L_4
+  rotate: true
+  xy: 1787, 170
+  size: 87, 68
+  orig: 513, 513
+  offset: 257, 126
+  index: -1
+B/leg R_2
+  rotate: false
+  xy: 1716, 601
+  size: 118, 67
+  orig: 513, 513
+  offset: 131, 127
+  index: -1
+B/leg R_3
+  rotate: true
+  xy: 1704, 76
+  size: 77, 120
+  orig: 513, 513
+  offset: 188, 61
+  index: -1
+B/mouth
+  rotate: false
+  xy: 1263, 2
+  size: 149, 114
+  orig: 513, 513
+  offset: 45, 320
+  index: -1
+B/tail_1
+  rotate: false
+  xy: 1433, 760
+  size: 273, 117
+  orig: 513, 513
+  offset: 240, 186
+  index: -1
+B/tail_armor
+  rotate: true
+  xy: 1034, 191
+  size: 266, 149
+  orig: 513, 513
+  offset: 240, 171
+  index: -1
+B/wing L_1_armor
+  rotate: false
+  xy: 1096, 698
+  size: 312, 162
+  orig: 513, 513
+  offset: 174, 285
+  index: -1
+B/wing L_2
+  rotate: true
+  xy: 772, 802
+  size: 235, 322
+  orig: 513, 513
+  offset: 160, 191
+  index: -1
+B/wing L_2 armor
+  rotate: false
+  xy: 517, 719
+  size: 253, 318
+  orig: 513, 513
+  offset: 160, 191
+  index: -1
+B/wing L_3_armor
+  rotate: false
+  xy: 517, 54
+  size: 179, 339
+  orig: 513, 513
+  offset: 194, 0
+  index: -1
+B/wing R_1
+  rotate: false
+  xy: 698, 71
+  size: 146, 322
+  orig: 513, 513
+  offset: 79, 181
+  index: -1
+B/wing R_1_armor
+  rotate: true
+  xy: 1433, 879
+  size: 158, 332
+  orig: 513, 513
+  offset: 67, 181
+  index: -1
+B/wing R_2
+  rotate: false
+  xy: 1185, 118
+  size: 204, 81
+  orig: 513, 513
+  offset: 1, 182
+  index: -1
+B/wing R_2_armor
+  rotate: false
+  xy: 1185, 118
+  size: 204, 81
+  orig: 513, 513
+  offset: 1, 182
+  index: -1
+B/wing R_3_armor
+  rotate: true
+  xy: 754, 471
+  size: 181, 290
+  orig: 513, 513
+  offset: 6, 21
+  index: -1

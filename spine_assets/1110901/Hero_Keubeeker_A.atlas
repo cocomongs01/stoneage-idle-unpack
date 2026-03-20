@@ -1,0 +1,153 @@
+
+Hero_Keubeeker_A.png
+size: 630,630
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+arml_2
+  rotate: false
+  xy: 250, 118
+  size: 121, 112
+  orig: 513, 513
+  offset: 244, 191
+  index: -1
+arml_3
+  rotate: true
+  xy: 371, 33
+  size: 108, 132
+  orig: 513, 513
+  offset: 205, 122
+  index: -1
+arml_4
+  rotate: true
+  xy: 399, 381
+  size: 121, 139
+  orig: 513, 513
+  offset: 242, 261
+  index: -1
+armr_1
+  rotate: true
+  xy: 0, 8
+  size: 69, 102
+  orig: 513, 513
+  offset: 59, 133
+  index: -1
+armr_2
+  rotate: false
+  xy: 538, 388
+  size: 92, 126
+  orig: 513, 513
+  offset: 74, 205
+  index: -1
+armr_3
+  rotate: true
+  xy: 458, 514
+  size: 116, 134
+  orig: 513, 513
+  offset: 94, 275
+  index: -1
+body
+  rotate: false
+  xy: 0, 280
+  size: 207, 350
+  orig: 513, 513
+  offset: 112, 113
+  index: -1
+eye
+  rotate: true
+  xy: 207, 328
+  size: 22, 20
+  orig: 513, 513
+  offset: 143, 347
+  index: -1
+eyeball
+  rotate: true
+  xy: 102, 28
+  size: 49, 53
+  orig: 513, 513
+  offset: 140, 328
+  index: -1
+head
+  rotate: false
+  xy: 207, 350
+  size: 192, 152
+  orig: 513, 513
+  offset: 45, 256
+  index: -1
+head_lower
+  rotate: false
+  xy: 250, 230
+  size: 170, 120
+  orig: 513, 513
+  offset: 59, 254
+  index: -1
+legl_1
+  rotate: true
+  xy: 371, 141
+  size: 89, 140
+  orig: 513, 513
+  offset: 227, 101
+  index: -1
+legl_2
+  rotate: true
+  xy: 545, 295
+  size: 93, 84
+  orig: 513, 513
+  offset: 245, 98
+  index: -1
+legl_3
+  rotate: true
+  xy: 250, 11
+  size: 107, 119
+  orig: 513, 513
+  offset: 247, 32
+  index: -1
+legr_1
+  rotate: false
+  xy: 420, 272
+  size: 125, 109
+  orig: 513, 513
+  offset: 114, 118
+  index: -1
+legr_2
+  rotate: true
+  xy: 511, 149
+  size: 123, 57
+  orig: 513, 513
+  offset: 116, 114
+  index: -1
+legr_3
+  rotate: true
+  xy: 503, 10
+  size: 131, 105
+  orig: 513, 513
+  offset: 108, 49
+  index: -1
+rope
+  rotate: false
+  xy: 0, 77
+  size: 250, 203
+  orig: 261, 261
+  offset: 6, 33
+  index: -1
+tail
+  rotate: false
+  xy: 207, 502
+  size: 251, 128
+  orig: 513, 513
+  offset: 214, 106
+  index: -1
+teeth1
+  rotate: false
+  xy: 207, 305
+  size: 14, 23
+  orig: 513, 513
+  offset: 156, 298
+  index: -1
+teeth2
+  rotate: true
+  xy: 207, 292
+  size: 13, 16
+  orig: 513, 513
+  offset: 138, 292
+  index: -1

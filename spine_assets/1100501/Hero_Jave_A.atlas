@@ -1,0 +1,279 @@
+
+Hero_Jave_A.png
+size: 1009,724
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+A/arm L_1
+  rotate: true
+  xy: 383, 355
+  size: 164, 157
+  orig: 513, 513
+  offset: 248, 49
+  index: -1
+A/arm L_2
+  rotate: true
+  xy: 538, 571
+  size: 151, 209
+  orig: 513, 513
+  offset: 253, 143
+  index: -1
+A/arm R_1
+  rotate: false
+  xy: 542, 391
+  size: 137, 178
+  orig: 513, 513
+  offset: 67, 162
+  index: -1
+A/arm R_2
+  rotate: false
+  xy: 176, 4
+  size: 132, 151
+  orig: 513, 513
+  offset: 62, 59
+  index: -1
+A/arm deco L_1
+  rotate: false
+  xy: 681, 410
+  size: 163, 144
+  orig: 513, 513
+  offset: 262, 58
+  index: -1
+A/arm deco L_2
+  rotate: false
+  xy: 351, 521
+  size: 185, 201
+  orig: 513, 513
+  offset: 247, 182
+  index: -1
+A/arm deco R
+  rotate: false
+  xy: 235, 165
+  size: 90, 145
+  orig: 513, 513
+  offset: 64, 231
+  index: -1
+A/arm deco_R
+  rotate: true
+  xy: 677, 95
+  size: 128, 103
+  orig: 513, 513
+  offset: 68, 89
+  index: -1
+A/body_1
+  rotate: false
+  xy: 2, 517
+  size: 347, 205
+  orig: 512, 512
+  offset: 81, 165
+  index: -1
+A/body_2
+  rotate: false
+  xy: 2, 157
+  size: 231, 153
+  orig: 512, 512
+  offset: 201, 132
+  index: -1
+A/eye L
+  rotate: false
+  xy: 455, 81
+  size: 17, 23
+  orig: 513, 513
+  offset: 189, 197
+  index: -1
+A/eye R
+  rotate: false
+  xy: 542, 378
+  size: 10, 11
+  orig: 513, 513
+  offset: 135, 187
+  index: -1
+A/eyeball L
+  rotate: false
+  xy: 864, 110
+  size: 44, 44
+  orig: 513, 513
+  offset: 182, 190
+  index: -1
+A/eyeball R
+  rotate: false
+  xy: 955, 214
+  size: 25, 32
+  orig: 513, 513
+  offset: 128, 176
+  index: -1
+A/foot
+  rotate: false
+  xy: 689, 9
+  size: 133, 84
+  orig: 513, 513
+  offset: 352, 44
+  index: -1
+A/foot R
+  rotate: false
+  xy: 560, 9
+  size: 127, 74
+  orig: 513, 513
+  offset: 209, 54
+  index: -1
+A/hair
+  rotate: false
+  xy: 912, 248
+  size: 90, 146
+  orig: 513, 513
+  offset: 113, 219
+  index: -1
+A/hair_2
+  rotate: true
+  xy: 383, 250
+  size: 103, 169
+  orig: 513, 513
+  offset: 151, 268
+  index: -1
+A/hair_3
+  rotate: true
+  xy: 689, 225
+  size: 183, 100
+  orig: 513, 513
+  offset: 188, 319
+  index: -1
+A/hand
+  rotate: true
+  xy: 493, 80
+  size: 168, 59
+  orig: 513, 513
+  offset: 20, 45
+  index: -1
+A/hand L
+  rotate: true
+  xy: 918, 547
+  size: 175, 84
+  orig: 513, 513
+  offset: 199, 24
+  index: -1
+A/head
+  rotate: true
+  xy: 749, 556
+  size: 166, 167
+  orig: 513, 513
+  offset: 113, 143
+  index: -1
+A/head deco
+  rotate: true
+  xy: 846, 396
+  size: 149, 157
+  orig: 513, 513
+  offset: 107, 184
+  index: -1
+A/horn L_1
+  rotate: true
+  xy: 327, 146
+  size: 102, 164
+  orig: 513, 513
+  offset: 201, 160
+  index: -1
+A/horn L_2
+  rotate: false
+  xy: 554, 85
+  size: 121, 143
+  orig: 513, 513
+  offset: 199, 167
+  index: -1
+A/horn R
+  rotate: false
+  xy: 554, 230
+  size: 133, 159
+  orig: 513, 513
+  offset: 46, 153
+  index: -1
+A/horn deco L
+  rotate: true
+  xy: 898, 168
+  size: 65, 55
+  orig: 513, 513
+  offset: 205, 198
+  index: -1
+A/horn deco R
+  rotate: false
+  xy: 910, 109
+  size: 61, 57
+  orig: 513, 513
+  offset: 45, 212
+  index: -1
+A/leg L_1
+  rotate: false
+  xy: 252, 328
+  size: 129, 187
+  orig: 513, 513
+  offset: 348, 94
+  index: -1
+A/leg L_2
+  rotate: false
+  xy: 455, 2
+  size: 103, 76
+  orig: 513, 513
+  offset: 371, 77
+  index: -1
+A/leg R_1
+  rotate: false
+  xy: 791, 235
+  size: 119, 159
+  orig: 513, 513
+  offset: 207, 100
+  index: -1
+A/leg R_2
+  rotate: true
+  xy: 824, 5
+  size: 98, 66
+  orig: 513, 513
+  offset: 227, 84
+  index: -1
+A/leg deco L
+  rotate: true
+  xy: 791, 156
+  size: 77, 105
+  orig: 513, 513
+  offset: 402, 126
+  index: -1
+A/mouth
+  rotate: false
+  xy: 310, 17
+  size: 143, 127
+  orig: 513, 513
+  offset: 137, 106
+  index: -1
+A/nose
+  rotate: false
+  xy: 782, 105
+  size: 80, 49
+  orig: 513, 513
+  offset: 136, 145
+  index: -1
+A/rope
+  rotate: false
+  xy: 2, 312
+  size: 248, 203
+  orig: 261, 261
+  offset: 6, 32
+  index: -1
+A/tail2
+  rotate: false
+  xy: 2, 5
+  size: 172, 150
+  orig: 513, 513
+  offset: 341, 154
+  index: -1
+A/tooth L
+  rotate: false
+  xy: 455, 106
+  size: 35, 38
+  orig: 513, 513
+  offset: 208, 149
+  index: -1
+A/tooth R
+  rotate: false
+  xy: 982, 218
+  size: 25, 28
+  orig: 513, 513
+  offset: 142, 140
+  index: -1

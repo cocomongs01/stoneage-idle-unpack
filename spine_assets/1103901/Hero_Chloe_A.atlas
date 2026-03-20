@@ -1,0 +1,132 @@
+
+Hero_Chloe_A.png
+size: 613,613
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+A/arm l
+  rotate: true
+  xy: 285, 9
+  size: 79, 116
+  orig: 513, 513
+  offset: 236, 87
+  index: -1
+A/arm r
+  rotate: false
+  xy: 527, 287
+  size: 86, 107
+  orig: 513, 513
+  offset: 101, 109
+  index: -1
+A/body
+  rotate: true
+  xy: 251, 375
+  size: 238, 191
+  orig: 513, 513
+  offset: 155, 118
+  index: -1
+A/eye l
+  rotate: true
+  xy: 178, 138
+  size: 57, 24
+  orig: 513, 513
+  offset: 158, 306
+  index: -1
+A/hair
+  rotate: false
+  xy: 386, 88
+  size: 119, 92
+  orig: 513, 513
+  offset: 156, 342
+  index: -1
+A/head 1
+  rotate: true
+  xy: 0, 169
+  size: 237, 178
+  orig: 513, 513
+  offset: 58, 194
+  index: -1
+A/head 2
+  rotate: true
+  xy: 442, 394
+  size: 219, 121
+  orig: 513, 513
+  offset: 61, 142
+  index: -1
+A/horn 1
+  rotate: false
+  xy: 505, 70
+  size: 91, 110
+  orig: 513, 513
+  offset: 224, 297
+  index: -1
+A/horn 2
+  rotate: false
+  xy: 178, 323
+  size: 67, 83
+  orig: 513, 513
+  offset: 114, 315
+  index: -1
+A/leg l
+  rotate: false
+  xy: 164, 17
+  size: 121, 81
+  orig: 513, 513
+  offset: 337, 103
+  index: -1
+A/leg r
+  rotate: true
+  xy: 527, 203
+  size: 84, 76
+  orig: 513, 513
+  offset: 221, 118
+  index: -1
+A/nose
+  rotate: false
+  xy: 178, 252
+  size: 57, 71
+  orig: 513, 513
+  offset: 85, 283
+  index: -1
+A/rope
+  rotate: false
+  xy: 0, 406
+  size: 251, 207
+  orig: 261, 261
+  offset: 6, 31
+  index: -1
+A/tail
+  rotate: false
+  xy: 178, 195
+  size: 50, 57
+  orig: 513, 513
+  offset: 366, 198
+  index: -1
+A/wing l
+  rotate: true
+  xy: 245, 193
+  size: 182, 155
+  orig: 513, 513
+  offset: 276, 264
+  index: -1
+A/wing l3
+  rotate: true
+  xy: 400, 180
+  size: 195, 127
+  orig: 513, 513
+  offset: 275, 169
+  index: -1
+A/wing r
+  rotate: true
+  xy: 0, 8
+  size: 161, 164
+  orig: 513, 513
+  offset: 123, 254
+  index: -1
+A/wing r3
+  rotate: false
+  xy: 202, 98
+  size: 184, 95
+  orig: 513, 513
+  offset: 88, 213
+  index: -1
