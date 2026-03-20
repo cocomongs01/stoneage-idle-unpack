@@ -78,6 +78,7 @@
   }
 
   body.mobile-layout .collection-tab,
+  body.mobile-layout .pet-subfilter,
   body.mobile-layout .pet-item,
   body.mobile-layout .mobile-menu-toggle,
   body.mobile-layout .mobile-inline-arrow,
@@ -93,6 +94,8 @@
 
   body.mobile-layout .collection-tab.is-pressed,
   body.mobile-layout .collection-tab:active,
+  body.mobile-layout .pet-subfilter.is-pressed,
+  body.mobile-layout .pet-subfilter:active,
   body.mobile-layout .pet-item.is-pressed,
   body.mobile-layout .pet-item:active,
   body.mobile-layout .mobile-menu-toggle.is-pressed,
@@ -115,6 +118,8 @@
 
   body.mobile-layout .collection-tab.is-pressed,
   body.mobile-layout .collection-tab:active,
+  body.mobile-layout .pet-subfilter.is-pressed,
+  body.mobile-layout .pet-subfilter:active,
   body.mobile-layout .pet-item.is-pressed,
   body.mobile-layout .pet-item:active,
   body.mobile-layout .equipment-set-entry.is-pressed,
@@ -215,6 +220,22 @@
     min-height: 2.625rem;
     padding-inline: 0.75rem;
     font-size: 0.75rem;
+  }
+
+  body.mobile-layout .pet-subfilters {
+    gap: 0.375rem;
+    margin-top: 0.75rem;
+    padding: 0.1875rem;
+  }
+
+  body.mobile-layout .pet-subfilters[hidden] {
+    display: none !important;
+  }
+
+  body.mobile-layout .pet-subfilter {
+    min-height: 2rem;
+    padding-inline: 0.625rem;
+    font-size: 0.6875rem;
   }
 
   body.mobile-layout .pet-list {

@@ -1,0 +1,209 @@
+
+Hero_Dellons_A.png
+size: 984,583
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+A/Arm_L
+  rotate: false
+  xy: 525, 427
+  size: 264, 154
+  orig: 513, 513
+  offset: 136, 75
+  index: -1
+A/Armor_R
+  rotate: true
+  xy: 415, 77
+  size: 155, 124
+  orig: 513, 513
+  offset: 26, 104
+  index: -1
+A/Foot_L
+  rotate: true
+  xy: 722, 3
+  size: 90, 92
+  orig: 513, 513
+  offset: 342, 58
+  index: -1
+A/Foot_R
+  rotate: true
+  xy: 775, 182
+  size: 103, 84
+  orig: 513, 513
+  offset: 227, 71
+  index: -1
+A/L_arm_1
+  rotate: false
+  xy: 861, 119
+  size: 99, 99
+  orig: 513, 513
+  offset: 240, 238
+  index: -1
+A/L_arm_2
+  rotate: true
+  xy: 541, 66
+  size: 98, 108
+  orig: 513, 513
+  offset: 240, 180
+  index: -1
+A/L_arm_3
+  rotate: false
+  xy: 273, 234
+  size: 217, 152
+  orig: 513, 513
+  offset: 169, 109
+  index: -1
+A/L_hand
+  rotate: false
+  xy: 680, 287
+  size: 146, 138
+  orig: 513, 513
+  offset: 128, 21
+  index: -1
+A/L_shoulder_armor
+  rotate: false
+  xy: 828, 325
+  size: 151, 118
+  orig: 513, 513
+  offset: 228, 231
+  index: -1
+A/arm_R
+  rotate: false
+  xy: 791, 445
+  size: 191, 136
+  orig: 513, 513
+  offset: 60, 117
+  index: -1
+A/arm_R_2
+  rotate: true
+  xy: 525, 296
+  size: 129, 153
+  orig: 513, 513
+  offset: 151, 186
+  index: -1
+A/body
+  rotate: false
+  xy: 273, 388
+  size: 250, 193
+  orig: 513, 513
+  offset: 154, 172
+  index: -1
+A/eye
+  rotate: true
+  xy: 816, 2
+  size: 13, 14
+  orig: 513, 513
+  offset: 153, 267
+  index: -1
+A/eyeball
+  rotate: false
+  xy: 467, 31
+  size: 43, 44
+  orig: 513, 513
+  offset: 133, 256
+  index: -1
+A/face
+  rotate: false
+  xy: 2, 314
+  size: 269, 267
+  orig: 513, 513
+  offset: 84, 203
+  index: -1
+A/foot_Armor_L
+  rotate: false
+  xy: 770, 120
+  size: 89, 60
+  orig: 513, 513
+  offset: 365, 95
+  index: -1
+A/foot_Armor_R
+  rotate: true
+  xy: 916, 19
+  size: 98, 52
+  orig: 513, 513
+  offset: 253, 95
+  index: -1
+A/hair1
+  rotate: false
+  xy: 861, 220
+  size: 96, 103
+  orig: 513, 513
+  offset: 276, 316
+  index: -1
+A/hair2
+  rotate: false
+  xy: 816, 17
+  size: 98, 100
+  orig: 513, 513
+  offset: 303, 255
+  index: -1
+A/hamd_R
+  rotate: false
+  xy: 541, 166
+  size: 122, 128
+  orig: 513, 513
+  offset: 21, 56
+  index: -1
+A/helmet
+  rotate: false
+  xy: 2, 2
+  size: 128, 97
+  orig: 513, 513
+  offset: 90, 258
+  index: -1
+A/leg_L_1
+  rotate: true
+  xy: 251, 11
+  size: 88, 129
+  orig: 513, 513
+  offset: 330, 126
+  index: -1
+A/leg_L_2
+  rotate: false
+  xy: 382, 20
+  size: 83, 55
+  orig: 513, 513
+  offset: 345, 114
+  index: -1
+A/leg_R_1
+  rotate: false
+  xy: 665, 95
+  size: 103, 90
+  orig: 513, 513
+  offset: 231, 137
+  index: -1
+A/leg_R_2
+  rotate: true
+  xy: 651, 2
+  size: 91, 69
+  orig: 513, 513
+  offset: 238, 118
+  index: -1
+A/mouth
+  rotate: false
+  xy: 665, 187
+  size: 108, 98
+  orig: 513, 513
+  offset: 113, 178
+  index: -1
+A/pants
+  rotate: false
+  xy: 132, 12
+  size: 117, 95
+  orig: 513, 513
+  offset: 324, 172
+  index: -1
+A/rope
+  rotate: false
+  xy: 2, 109
+  size: 248, 203
+  orig: 261, 261
+  offset: 6, 33
+  index: -1
+A/tail_2
+  rotate: true
+  xy: 252, 101
+  size: 131, 161
+  orig: 513, 513
+  offset: 373, 207
+  index: -1

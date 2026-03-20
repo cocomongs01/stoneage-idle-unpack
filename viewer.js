@@ -12,6 +12,7 @@
     petRail: document.getElementById("petRail"),
     stage: document.getElementById("stagePanel"),
     collectionTabs: document.getElementById("collectionTabs"),
+    petSubfilters: document.getElementById("petSubfilters"),
     petList: document.getElementById("petList"),
     railTitle: document.getElementById("railTitle"),
     railCopy: document.getElementById("railCopy"),
@@ -52,6 +53,7 @@
     focusTopRow: document.getElementById("focusTopRow"),
     spotlightTitleText: document.getElementById("spotlightTitleText"),
     spotlightPetBannerName: document.getElementById("spotlightPetBannerName"),
+    spotlightStageStrip: document.querySelector(".spotlight-stage-strip"),
     spotlightStageTile: document.getElementById("spotlightStageTile"),
     spotlightStageLabel: document.getElementById("spotlightStageLabel"),
     spotlightStageSkill: document.getElementById("spotlightStageSkill"),
@@ -100,10 +102,13 @@
     mobileDetailToolbar: document.getElementById("mobileDetailToolbar"),
     mobileSkillAccordion: document.getElementById("mobileSkillAccordion"),
     mobileLoadingIndicator: document.getElementById("mobileLoadingIndicator"),
+    skillFocusCard: document.querySelector(".skill-focus-card"),
+    detailRail: document.querySelector(".detail-rail"),
   };
 
   const state = {
     activeCategoryKey: "",
+    activePetSubgroupKey: "gacha",
     selectedIndexByCategory: {},
     selectedSkillKeyByPet: {},
     selectedVariantBySkillKey: {},
@@ -170,6 +175,7 @@
   const activePressTargetByPointerId = new Map();
   const MOBILE_PRESSABLE_SELECTOR = [
     ".collection-tab",
+    ".pet-subfilter",
     ".pet-item",
     ".mobile-menu-toggle",
     ".mobile-inline-arrow",
@@ -179,6 +185,9 @@
     ".skill-button",
     ".variant-preview-entry",
   ].join(", ");
+  const PLACEHOLDER_PET_ICON = "assets/pets/ss-pet-placeholder.svg";
+  const PLACEHOLDER_PET_BANNER = "assets/banners/ss-pet-placeholder-banner.svg";
+  const EXTRA_PET_DETAIL_META_LABEL = "기본 정보만 우선 수록";
 
   function isMobileLayout() {
     return Boolean(mobileViewportQuery && mobileViewportQuery.matches);
@@ -578,6 +587,9 @@
   }
 
   function resolveScheduleStatus(scheduleWindow, currentDateTimeKey = getTimeZoneDateTimeKey()) {
+    if (scheduleWindow?.cancelled) {
+      return "cancelled";
+    }
     const fallbackStatus = scheduleWindow?.fallbackStatus || "past";
     const startDateTimeKey = scheduleWindow?.resolvedStartDateTimeKey || "";
     const endExclusiveDateTimeKey = scheduleWindow?.resolvedEndExclusiveDateTimeKey || "";
@@ -596,6 +608,13 @@
 
   function resolveScheduleToneMeta(scheduleWindow, currentDateTimeKey = getTimeZoneDateTimeKey()) {
     const resolvedStatus = scheduleWindow?.resolvedStatus || resolveScheduleStatus(scheduleWindow, currentDateTimeKey);
+    if (resolvedStatus === "cancelled") {
+      return {
+        tone: "cancelled",
+        listLabel: "취소",
+        scheduleLabel: String(scheduleWindow?.cancelledLabel || "03.19 패치로 취소"),
+      };
+    }
     if (resolvedStatus === "current") {
       return {
         tone: "current",
@@ -708,7 +727,10 @@
       getItems(category).forEach((item, itemIndex) => {
         const schedules = Array.isArray(item?.schedules) ? item.schedules : [];
         schedules.forEach((schedule, scheduleIndex) => {
-          const scheduleWindow = resolveScheduleWindow(schedule, KR1_SERVER_OPEN_DATE_TIME_KEY);
+        const scheduleWindow = resolveScheduleWindow(schedule, KR1_SERVER_OPEN_DATE_TIME_KEY);
+          if (schedule?.cancelled) {
+            return;
+          }
           if (!scheduleWindow.resolvedStartDateTimeKey || !scheduleWindow.resolvedEndExclusiveDateTimeKey) {
             return;
           }
@@ -1439,10 +1461,466 @@
     "\uB290\uB9BC": "assets/ui/SpeedType01.png",
     "\uBCF4\uD1B5": "assets/ui/SpeedType03.png",
   };
+  const EXTRA_PET_ENRICHMENTS = new Map(
+    (Array.isArray(window.GACHA_VIEWER_EXTRA_PETS) ? window.GACHA_VIEWER_EXTRA_PETS : [])
+      .map((entry) => [String(entry?.characterId || entry?.viewerId || ""), entry])
+      .filter(([key]) => Boolean(key))
+  );
+
+  function isExtraPetPlaceholderAsset(path) {
+    const normalized = String(path || "").trim();
+    if (!normalized) return true;
+    return normalized === PLACEHOLDER_PET_ICON || normalized === PLACEHOLDER_PET_BANNER;
+  }
+
+  function extraPetAssetPath(characterId, kind) {
+    const id = String(characterId || "").trim();
+    if (!id) return "";
+    if (kind === "stage") return `assets/pets/stage/${id}-stage.png`;
+    if (kind === "heroicon") return `assets/pets/${id}-heroicon.png`;
+    if (kind === "portrait") return `assets/pets/${id}-portrait.png`;
+    if (kind === "banner") return `assets/banners/${id}-banner.png`;
+    return "";
+  }
 
   if (!data || !Array.isArray(data.categories) || data.categories.length === 0) {
     document.body.innerHTML = "<p style='padding:24px;color:#fff'>데이터를 불러올 수 없습니다.</p>";
     return;
+  }
+
+  function replaceLucySeaSpearCopy(text) {
+    const raw = String(text || "");
+    if (!raw || !raw.includes("대해의 창") || !raw.includes("추가 공격")) {
+      return raw;
+    }
+    return raw.replace(/추가 공격(?=\()/g, "추가 피해");
+  }
+
+  function replaceLucySeaSpearUpgradeCopy(text) {
+    const raw = String(text || "");
+    if (!raw || !raw.includes("추가 공격")) {
+      return raw;
+    }
+    return raw.replace(/추가 공격/g, "추가 피해");
+  }
+
+  function patchEntitySkillTexts(entity) {
+    if (!entity || !Array.isArray(entity.skills)) return;
+    entity.skills.forEach((skill) => {
+      if (!skill || !Array.isArray(skill.variants)) return;
+      const seaSpearFamily = String(skill.name || "").includes("대해의 창")
+        || skill.variants.some((variant) => {
+          const rawDesc = String(variant?.rawDesc || "");
+          const formattedDesc = String(variant?.formattedDesc || "");
+          return rawDesc.includes("대해의 창") || formattedDesc.includes("대해의 창");
+        });
+      skill.variants.forEach((variant) => {
+        if (!variant) return;
+        variant.rawDesc = replaceLucySeaSpearCopy(variant.rawDesc);
+        variant.formattedDesc = replaceLucySeaSpearCopy(variant.formattedDesc);
+        if (seaSpearFamily) {
+          variant.upgradeDescFormatted = replaceLucySeaSpearUpgradeCopy(variant.upgradeDescFormatted);
+        }
+      });
+    });
+  }
+
+  function applyRuntimeSkillTextPatches() {
+    (Array.isArray(data.categories) ? data.categories : []).forEach((category) => {
+      (category.items || []).forEach((item) => patchEntitySkillTexts(item));
+    });
+    (Array.isArray(window.GACHA_VIEWER_EXTRA_PETS) ? window.GACHA_VIEWER_EXTRA_PETS : []).forEach((item) => patchEntitySkillTexts(item));
+  }
+
+  applyRuntimeSkillTextPatches();
+
+  function buildExtraPetPlaceholder(config) {
+    const enrichment = EXTRA_PET_ENRICHMENTS.get(String(config.characterId || "")) || {};
+    const detailMetaLabel = String(
+      enrichment.detailMetaLabel
+      || config.detailMetaLabel
+      || config.description
+      || ""
+    ).trim();
+    const derivedStageImage = extraPetAssetPath(config.characterId, "stage");
+    const derivedHeroIconImage = extraPetAssetPath(config.characterId, "heroicon");
+    const derivedPortraitImage = extraPetAssetPath(config.characterId, "portrait");
+    const derivedBannerImage = extraPetAssetPath(config.characterId, "banner");
+    const resolvedStageImage = isExtraPetPlaceholderAsset(enrichment.stageImage)
+      ? derivedStageImage
+      : enrichment.stageImage;
+    const resolvedHeroIconImage = isExtraPetPlaceholderAsset(enrichment.heroIconImage)
+      ? derivedHeroIconImage
+      : enrichment.heroIconImage;
+    const resolvedGachaIconImage = isExtraPetPlaceholderAsset(enrichment.gachaIconImage)
+      ? (resolvedHeroIconImage || derivedHeroIconImage)
+      : enrichment.gachaIconImage;
+    const resolvedPortraitImage = isExtraPetPlaceholderAsset(enrichment.portraitImage)
+      ? derivedPortraitImage
+      : enrichment.portraitImage;
+    const resolvedBannerImage = isExtraPetPlaceholderAsset(enrichment.bannerImage)
+      ? derivedBannerImage
+      : enrichment.bannerImage;
+    const resolvedBackdropImage = isExtraPetPlaceholderAsset(enrichment.backdropImage)
+      ? (resolvedBannerImage || derivedBannerImage)
+      : enrichment.backdropImage;
+    return {
+      ...enrichment,
+      kind: "pet",
+      viewerId: config.characterId,
+      characterId: config.characterId,
+      name: config.name,
+      title: config.title,
+      description: config.description,
+      elementKey: config.elementKey || "",
+      attackTypeKey: config.attackTypeKey || "",
+      order: config.order,
+      skills: Array.isArray(enrichment.skills) ? enrichment.skills : [],
+      schedules: [],
+      scheduleTitleOverride: "획득 정보",
+      statusLabel: config.statusLabel,
+      statusSummary: config.statusSummary,
+      statusTone: config.statusTone || "upcoming",
+      acquisitionEntries: Array.isArray(config.acquisitionEntries)
+        ? config.acquisitionEntries
+        : [],
+      detailMetaLabel,
+      stageImage: resolvedStageImage || PLACEHOLDER_PET_ICON,
+      heroIconImage: resolvedHeroIconImage || PLACEHOLDER_PET_ICON,
+      gachaIconImage: resolvedGachaIconImage || resolvedHeroIconImage || PLACEHOLDER_PET_ICON,
+      portraitImage: resolvedPortraitImage || resolvedBannerImage || PLACEHOLDER_PET_ICON,
+      bannerImage: resolvedBannerImage || resolvedPortraitImage || PLACEHOLDER_PET_BANNER,
+      backdropImage: resolvedBackdropImage || resolvedBannerImage || resolvedPortraitImage || PLACEHOLDER_PET_BANNER,
+    };
+  }
+
+  const EXTRA_PET_PLACEHOLDERS = [
+    buildExtraPetPlaceholder({
+      order: 14,
+      characterId: "1102801",
+      name: "고대군주 쟈쟈코",
+      title: "고대의 군주",
+      description: "천공의 탑 연계 SS 펫",
+      elementKey: "leaf",
+      attackTypeKey: "support",
+      statusLabel: "상점형",
+      statusSummary: "천공의 탑 영웅의 증표 상점",
+      acquisitionEntries: [
+        {
+          title: "천공의 탑 영웅의 증표 상점",
+          summary: "상시 상품",
+          tone: "content",
+        },
+      ],
+    }),
+    buildExtraPetPlaceholder({
+      order: 15,
+      characterId: "1107901",
+      name: "도라비스",
+      title: "바람을 타는 전사",
+      description: "상점·이벤트 연계 SS 펫",
+      elementKey: "wind",
+      attackTypeKey: "support",
+      statusLabel: "특수 획득",
+      statusSummary: "부족 상점 / 영웅의 증표 상점 / 룰렛 티켓 특가",
+      acquisitionEntries: [
+        {
+          title: "부족 상점",
+          summary: "상시 상품",
+          tone: "content",
+        },
+        {
+          title: "천공의 탑 영웅의 증표 상점",
+          summary: "기간·상시 상품",
+          tone: "content",
+        },
+        {
+          title: "도라비스 룰렛 티켓 특가",
+          summary: "특가 패키지 I·II·III",
+          tone: "event",
+        },
+      ],
+    }),
+    buildExtraPetPlaceholder({
+      order: 16,
+      characterId: "1100501",
+      name: "성기사 바우트",
+      title: "금강불괴",
+      description: "고급 진주 상점 SS 펫",
+      elementKey: "fire",
+      attackTypeKey: "defence",
+      statusLabel: "상점형",
+      statusSummary: "원시왕 고급 진주 상점",
+      acquisitionEntries: [
+        {
+          title: "원시왕 고급 진주 상점",
+          summary: "상시 상품 2종",
+          tone: "content",
+        },
+      ],
+    }),
+    buildExtraPetPlaceholder({
+      order: 17,
+      characterId: "1101401",
+      name: "성기사 포베이",
+      title: "성스러운 기사단",
+      description: "고급 진주 상점 SS 펫",
+      elementKey: "leaf",
+      attackTypeKey: "melee",
+      statusLabel: "상점형",
+      statusSummary: "원시왕 고급 진주 상점",
+      acquisitionEntries: [
+        {
+          title: "원시왕 고급 진주 상점",
+          summary: "상시 상품 2종",
+          tone: "content",
+        },
+      ],
+    }),
+    buildExtraPetPlaceholder({
+      order: 18,
+      characterId: "1104001",
+      name: "베이보",
+      title: "하늘 위 딜러",
+      description: "부화장/패키지형 SS 펫",
+      elementKey: "wind",
+      attackTypeKey: "ranged",
+      statusLabel: "부화장형",
+      statusSummary: "부화장 선택 부화 / 전용 패키지",
+      acquisitionEntries: [
+        {
+          title: "부화장",
+          summary: "무지개 알 선택 부화",
+          tone: "content",
+        },
+        {
+          title: "베이보 획득 기념 패키지",
+          summary: "★1 즉시 승급",
+          tone: "package",
+        },
+        {
+          title: "베이보 승급 지원 패키지 I·II·III",
+          summary: "★4·7·10 승급 지원",
+          tone: "package",
+        },
+      ],
+    }),
+    buildExtraPetPlaceholder({
+      order: 19,
+      characterId: "1110701",
+      name: "카우거",
+      title: "폭풍을 부르는 늑대",
+      description: "부화장/축제형 SS 펫",
+      elementKey: "wind",
+      attackTypeKey: "melee",
+      statusLabel: "축제형",
+      statusSummary: "부화장 선택 부화 / 앵콜! 축제 1일차 / 전용 패키지",
+      acquisitionEntries: [
+        {
+          title: "부화장",
+          summary: "무지개 알 선택 부화",
+          tone: "content",
+        },
+        {
+          title: "앵콜! 축제 1일차",
+          summary: "획득 50% 도전 I·II·III",
+          tone: "event",
+        },
+        {
+          title: "카우거 획득 기념 패키지",
+          summary: "★1 즉시 승급",
+          tone: "package",
+        },
+        {
+          title: "카우거 승급 지원 패키지 I·II·III",
+          summary: "★4·7·10 승급 지원",
+          tone: "package",
+        },
+      ],
+    }),
+    buildExtraPetPlaceholder({
+      order: 20,
+      characterId: "1110901",
+      name: "크비커",
+      title: "늪지대의 사냥꾼",
+      description: "부화장/축제형 SS 펫",
+      elementKey: "water",
+      attackTypeKey: "ranged",
+      statusLabel: "축제형",
+      statusSummary: "부화장 선택 부화 / 앵콜! 축제 4일차 / 전용 패키지",
+      acquisitionEntries: [
+        {
+          title: "부화장",
+          summary: "무지개 알 선택 부화",
+          tone: "content",
+        },
+        {
+          title: "앵콜! 축제 4일차",
+          summary: "획득 50% 도전 I·II·III",
+          tone: "event",
+        },
+        {
+          title: "크비커 획득 기념 패키지",
+          summary: "★1 즉시 승급",
+          tone: "package",
+        },
+        {
+          title: "크비커 승급 지원 패키지 I·II",
+          summary: "★4·7 승급 지원",
+          tone: "package",
+        },
+      ],
+    }),
+    buildExtraPetPlaceholder({
+      order: 21,
+      characterId: "1107001",
+      name: "킹꼬미",
+      title: "하늘의 붉은 불꽃",
+      description: "부화장/축제형 SS 펫",
+      elementKey: "fire",
+      attackTypeKey: "ranged",
+      statusLabel: "축제형",
+      statusSummary: "부화장 선택 부화 / 앵콜! 축제 2일차 / 전용 패키지",
+      acquisitionEntries: [
+        {
+          title: "부화장",
+          summary: "무지개 알 선택 부화",
+          tone: "content",
+        },
+        {
+          title: "앵콜! 축제 2일차",
+          summary: "획득 50% 도전 I·II·III",
+          tone: "event",
+        },
+        {
+          title: "킹꼬미 획득 기념 패키지",
+          summary: "★1 즉시 승급",
+          tone: "package",
+        },
+        {
+          title: "킹꼬미 승급 지원 패키지 I·II",
+          summary: "★4·7 승급 지원",
+          tone: "package",
+        },
+      ],
+    }),
+    buildExtraPetPlaceholder({
+      order: 22,
+      characterId: "1103901",
+      name: "파아란",
+      title: "순수한 물의 요정",
+      description: "부화장/축제형 SS 펫",
+      elementKey: "water",
+      attackTypeKey: "support",
+      statusLabel: "축제형",
+      statusSummary: "부화장 선택 부화 / 앵콜! 축제 3일차 / 전용 패키지",
+      acquisitionEntries: [
+        {
+          title: "부화장",
+          summary: "무지개 알 선택 부화",
+          tone: "content",
+        },
+        {
+          title: "앵콜! 축제 3일차",
+          summary: "획득 50% 도전 I·II·III",
+          tone: "event",
+        },
+        {
+          title: "파아란 획득 기념 패키지",
+          summary: "★1 즉시 승급",
+          tone: "package",
+        },
+        {
+          title: "파아란 승급 지원 패키지 I·II",
+          summary: "★4·7 승급 지원",
+          tone: "package",
+        },
+      ],
+    }),
+    buildExtraPetPlaceholder({
+      order: 23,
+      characterId: "1103801",
+      name: "플라티",
+      title: "아기 수장룡",
+      description: "픽업 연계 특수 SS 펫",
+      elementKey: "water",
+      attackTypeKey: "ranged",
+      statusLabel: "패키지형",
+      statusSummary: "플라티우스 픽업 / 전용 패키지",
+      acquisitionEntries: [
+        {
+          title: "픽업 상점",
+          summary: "획득 50% 도전",
+          tone: "event",
+        },
+        {
+          title: "플라티 획득 기념 패키지",
+          summary: "★1 즉시 승급",
+          tone: "package",
+        },
+        {
+          title: "플라티 승급 지원 패키지 I·II",
+          summary: "★4·7 승급 지원",
+          tone: "package",
+        },
+      ],
+    }),
+    // buildExtraPetPlaceholder({
+    //   order: 24,
+    //   characterId: "1100201",
+    //   name: "극호",
+    //   title: "산군의 위엄",
+    //   description: "미확인/숨김 SS 펫",
+    //   attackTypeKey: "melee",
+    //   statusLabel: "미확인",
+    //   statusSummary: "미확인 또는 숨김 처리된 SS 펫입니다.",
+    //   statusTone: "past",
+    // }),
+    // buildExtraPetPlaceholder({
+    //   order: 25,
+    //   characterId: "1112401",
+    //   name: "킹우리",
+    //   title: "꼬마 돼지들의 왕",
+    //   description: "미확인/숨김 SS 펫",
+    //   attackTypeKey: "support",
+    //   statusLabel: "미확인",
+    //   statusSummary: "미확인 또는 숨김 처리된 SS 펫입니다.",
+    //   statusTone: "past",
+    // }),
+  ];
+
+  const PET_SUBGROUPS = [
+    { key: "gacha", label: "가챠·이벤트" },
+    { key: "content", label: "콘텐츠·상점" },
+  ];
+
+  const CONTENT_SHOP_PET_IDS = new Set([
+    "1102801",
+    "1107901",
+    "1100501",
+    "1101401",
+    "1104001",
+    "1110701",
+    "1110901",
+    "1107001",
+    "1103901",
+    "1103801",
+  ]);
+
+  function injectExtraPetPlaceholders() {
+    const petCategory = data.categories.find((category) => category && category.key === "pet");
+    if (!petCategory || !Array.isArray(petCategory.items)) return;
+
+    const existingIds = new Set(
+      petCategory.items.map((item) => String(item?.viewerId || item?.characterId || item?.id || item?.name || ""))
+    );
+
+    EXTRA_PET_PLACEHOLDERS.forEach((entry) => {
+      const entryId = String(entry.characterId || entry.viewerId || entry.name || "");
+      if (!entryId || existingIds.has(entryId)) return;
+      petCategory.items.push(entry);
+      existingIds.add(entryId);
+    });
   }
 
   function clamp(value, min, max) {
@@ -1480,6 +1958,40 @@
 
   function getEntityId(pet) {
     return String(pet?.viewerId || pet?.characterId || pet?.weaponId || pet?.id || pet?.name || "");
+  }
+
+  function getPetSubgroupKeyForItem(pet) {
+    return CONTENT_SHOP_PET_IDS.has(getEntityId(pet)) ? "content" : "gacha";
+  }
+
+  function getDisplayItems(category = getActiveCategory(), petSubgroupKey = state.activePetSubgroupKey) {
+    const items = getItems(category);
+    if (category?.key !== "pet") {
+      return items;
+    }
+    const filteredItems = items.filter((item) => getPetSubgroupKeyForItem(item) === petSubgroupKey);
+    return filteredItems.length ? filteredItems : items;
+  }
+
+  function syncPetSubgroupSelection(category = getActiveCategory()) {
+    if (category?.key !== "pet") {
+      return;
+    }
+    const allItems = getItems(category);
+    const displayItems = getDisplayItems(category);
+    if (!allItems.length || !displayItems.length) {
+      return;
+    }
+    const currentItem = getCurrentItem(category);
+    if (currentItem && getPetSubgroupKeyForItem(currentItem) === state.activePetSubgroupKey) {
+      return;
+    }
+    const preferredIndex = clamp(findPreferredIndex(displayItems), 0, displayItems.length - 1);
+    const nextItem = displayItems[preferredIndex] || displayItems[0];
+    const nextIndex = allItems.findIndex((item) => getEntityId(item) === getEntityId(nextItem));
+    if (nextIndex >= 0) {
+      state.selectedIndexByCategory[category.key] = nextIndex;
+    }
   }
 
   function getCurrentIndex(category = getActiveCategory()) {
@@ -2284,6 +2796,10 @@
     return value.toFixed(3).replace(/0+$/g, "").replace(/\.$/g, "");
   }
 
+  function hasBrokenGeneratedText(value) {
+    return /\?/.test(String(value || ""));
+  }
+
   function parseDescValues(descValues) {
     return String(descValues || "")
       .split("|")
@@ -2316,24 +2832,85 @@
     });
   }
 
+  function normalizedSkillKind(skill) {
+    const raw = String(skill?.slotLabel || "").trim();
+    const firstSkillType = String(skill?.variants?.[0]?.skillType || "");
+    if (/오오라\s*스킬|오라\s*스킬/i.test(raw)) {
+      return "aura";
+    }
+    if (skill?.slotType === "Basic" || skill?.tone === "basic" || Number(skill?.slotIndex) === 0) {
+      return "basic";
+    }
+    if (firstSkillType === "7") {
+      return "aura";
+    }
+    if (skill?.tone === "passive" || firstSkillType === "4" || firstSkillType === "5" || Number(skill?.slotIndex) >= 3) {
+      return "passive";
+    }
+    return "active";
+  }
+
+  function resolvedSkillSlotLabel(skill) {
+    switch (normalizedSkillKind(skill)) {
+      case "basic":
+        return "일반 공격";
+      case "passive":
+        return "패시브 스킬";
+      case "aura":
+        return "오오라 스킬";
+      default:
+        return "액티브 스킬";
+    }
+  }
+
+  function resolvedStageLabel(variant) {
+    const raw = String(variant?.stageLabel || "").trim();
+    if (raw && !hasBrokenGeneratedText(raw)) {
+      return raw;
+    }
+    const tier = Number(variant?.frameTier || variant?.groupTier || 0);
+    const grade = Number(variant?.groupGrade || 0);
+    const prefix = tier >= 5 ? "SSS" : "SS";
+    return `${prefix} ${Number.isFinite(grade) ? grade : 0}성`;
+  }
+
+  function resolvedUpgradeDescription(variant) {
+    const raw = String(variant?.upgradeDescFormatted || "").trim();
+    if (!raw) {
+      return "";
+    }
+    if (!hasBrokenGeneratedText(raw)) {
+      return raw;
+    }
+    const desc = String(buildSkillDescription(variant) || variant?.formattedDesc || "").trim();
+    if (!desc) {
+      return raw;
+    }
+    return `${resolvedStageLabel(variant)} : ${desc}`;
+  }
+
   function getUpgradeOnlyText(variant) {
-    const rawUpgrade = String(variant.upgradeDescFormatted || "").trim();
+    const rawUpgrade = resolvedUpgradeDescription(variant);
     if (!rawUpgrade) return "기본 단계";
     const splitIndex = rawUpgrade.indexOf(":");
     return splitIndex >= 0 ? rawUpgrade.slice(splitIndex + 1).trim() : rawUpgrade;
   }
 
+  function normalizeUpgradePreviewText(text) {
+    return String(text || "").replace(/\s+\/\s+/g, "\n");
+  }
+
   function spotlightStageOptionHtml(pet, variant) {
     const raw = String(getUpgradeOnlyText(variant) || "").trim();
     if (!raw || raw === "기본 단계") return "";
-    const normalized = raw.replace(/\s*\/\s*/g, "\n");
+    const normalized = normalizeUpgradePreviewText(raw);
     return richTextToHtml(normalized);
   }
 
   function upgradePreviewHtml(variant) {
     const raw = String(getUpgradeOnlyText(variant) || "").trim();
     if (!raw) return "";
-    return richTextToHtml(raw.replace(/\s*\/\s*/g, "\n"));
+    return richTextToHtml(normalizeUpgradePreviewText(raw));
   }
 
   function getSkillKey(pet, skill) {
@@ -2470,7 +3047,7 @@
 
     if (pet.statusLabel || pet.statusSummary) {
       return {
-        tone: "past",
+        tone: pet.statusTone || "past",
         label: pet.statusLabel || "정보",
         summary: pet.statusSummary || pet.statusLabel || "정보 없음",
       };
@@ -2518,6 +3095,9 @@
   }
 
   function ensurePetState(pet) {
+    if (!Array.isArray(pet?.skills) || pet.skills.length === 0) {
+      return;
+    }
     const entityId = getEntityId(pet);
     if (!state.selectedSkillKeyByPet[entityId]) {
       const defaultSkill = pet.skills.find((skill) => skill.slotType === "Active" && skill.slotIndex === 1) || pet.skills[0];
@@ -2533,6 +3113,9 @@
   }
 
   function getSelectedSkill(pet) {
+    if (!Array.isArray(pet?.skills) || pet.skills.length === 0) {
+      return null;
+    }
     ensurePetState(pet);
     const entityId = getEntityId(pet);
     const selectedKey = state.selectedSkillKeyByPet[entityId];
@@ -2540,6 +3123,9 @@
   }
 
   function getSelectedVariant(pet, skill) {
+    if (!skill || !Array.isArray(skill.variants) || skill.variants.length === 0) {
+      return { index: 0, data: null };
+    }
     const key = getSkillKey(pet, skill);
     const index = clamp(state.selectedVariantBySkillKey[key] || 0, 0, skill.variants.length - 1);
     return { index, data: skill.variants[index] };
@@ -2723,7 +3309,7 @@
   }
 
   function stageDisplayLabel(variant) {
-    return `${variant.stageLabel || "-"} / ${stageLevelLabel(variant)}`;
+    return `${resolvedStageLabel(variant)} / ${stageLevelLabel(variant)}`;
   }
 
   function stageBackgroundAsset(pet) {
@@ -2790,6 +3376,7 @@
   }
 
   function petStageThumbAsset(pet) {
+    if (pet.stageImage) return pet.stageImage;
     const id = pet.viewerId || pet.characterId || "";
     return id ? `assets/pets/stage/${id}-stage.png` : "";
   }
@@ -2927,25 +3514,31 @@
   }
 
   function renderSpotlightSummaryDisplay(pet, selectedSkill, variant) {
+    const hasSkillSelection = Boolean(selectedSkill && variant);
     if (elements.spotlightTitleText) {
       elements.spotlightTitleText.textContent = pet.title || "";
     }
     if (elements.spotlightPetBannerName) {
       elements.spotlightPetBannerName.textContent = pet.name;
     }
+    if (elements.spotlightStageStrip) {
+      elements.spotlightStageStrip.hidden = !hasSkillSelection;
+    }
     if (elements.spotlightStageTile) {
-      elements.spotlightStageTile.innerHTML = pet.kind === "pet"
-        ? renderSpotlightGradeBadge(variant)
-        : renderTierTile(pet, variant);
+      elements.spotlightStageTile.innerHTML = hasSkillSelection
+        ? (pet.kind === "pet"
+          ? renderSpotlightGradeBadge(variant)
+          : renderTierTile(pet, variant))
+        : "";
     }
     if (elements.spotlightStageLabel) {
-      elements.spotlightStageLabel.textContent = stageDisplayLabel(variant);
+      elements.spotlightStageLabel.textContent = hasSkillSelection ? stageDisplayLabel(variant) : "";
     }
     if (elements.spotlightStageSkill) {
-      elements.spotlightStageSkill.textContent = selectedSkill.name || "-";
+      elements.spotlightStageSkill.textContent = hasSkillSelection ? (selectedSkill.name || "-") : "";
     }
     if (elements.spotlightStageOption) {
-      const optionHtml = spotlightStageOptionHtml(pet, variant);
+      const optionHtml = hasSkillSelection ? spotlightStageOptionHtml(pet, variant) : "";
       elements.spotlightStageOption.innerHTML = optionHtml;
       elements.spotlightStageOption.hidden = !optionHtml;
     }
@@ -2974,13 +3567,20 @@
   }
 
   function stageMetaMarkup(variant) {
-    return `<span>${escapeHtml(variant.stageLabel || "-")}</span>`;
+    return `<span>${escapeHtml(resolvedStageLabel(variant))}</span>`;
   }
 
   function skillToneLabel(skill) {
-    if (skill.slotType === "Basic") return "기본";
-    if (skill.tone === "passive") return "패시브";
-    return "액티브";
+    switch (normalizedSkillKind(skill)) {
+      case "basic":
+        return "기본";
+      case "passive":
+        return "패시브";
+      case "aura":
+        return "오오라";
+      default:
+        return "액티브";
+    }
   }
 
   function buildSkillBadgeInner(skill, variant, includeLevel, isSelected) {
@@ -2999,7 +3599,7 @@
   function createSkillBadge(skill, variant, isSelected, includeLevel) {
     const badge = document.createElement("div");
     const hasImage = Boolean(variant.iconImage);
-    badge.className = `skill-badge ${skill.tone}${hasImage ? " has-image" : ""}`;
+    badge.className = `skill-badge ${normalizedSkillKind(skill)}${hasImage ? " has-image" : ""}`;
     badge.innerHTML = buildSkillBadgeInner(skill, variant, includeLevel, isSelected);
     return badge;
   }
@@ -3089,14 +3689,52 @@
     }
   }
 
+  function renderPetSubfilters(category) {
+    if (!elements.petSubfilters) {
+      return;
+    }
+    if (category?.key !== "pet") {
+      elements.petSubfilters.hidden = true;
+      elements.petSubfilters.innerHTML = "";
+      return;
+    }
+    elements.petSubfilters.hidden = false;
+    elements.petSubfilters.innerHTML = "";
+    PET_SUBGROUPS.forEach((subgroup) => {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = `pet-subfilter${state.activePetSubgroupKey === subgroup.key ? " active" : ""}`;
+      button.textContent = subgroup.label;
+      button.setAttribute("aria-pressed", state.activePetSubgroupKey === subgroup.key ? "true" : "false");
+      button.addEventListener("click", () => {
+        if (state.activePetSubgroupKey === subgroup.key) {
+          return;
+        }
+        if (isMobileLayout()) {
+          setMobileLoading("view-transition", true);
+        }
+        state.activePetSubgroupKey = subgroup.key;
+        syncPetSubgroupSelection(category);
+        render();
+        if (isMobileLayout()) {
+          finishMobileLoadingSoon("view-transition");
+        }
+      });
+      elements.petSubfilters.appendChild(button);
+    });
+  }
+
   function renderPetList() {
     const category = getActiveCategory();
-    const items = getItems(category);
+    const allItems = getItems(category);
+    const items = getDisplayItems(category);
     const currentIndex = getCurrentIndex(category);
     renderRailHeader(category);
+    renderPetSubfilters(category);
     elements.petList.innerHTML = "";
 
-    items.forEach((pet, index) => {
+    items.forEach((pet) => {
+      const actualIndex = allItems.findIndex((item) => getEntityId(item) === getEntityId(pet));
       const status = getPetStatus(pet);
       const thumb = listThumbAsset(pet);
       const thumbMarkup = thumb
@@ -3108,14 +3746,14 @@
         : '<div class="pet-item-fallback"></div>';
       const button = document.createElement("button");
       button.type = "button";
-      button.className = `pet-item${index === currentIndex ? " active" : ""}`;
+      button.className = `pet-item${actualIndex === currentIndex ? " active" : ""}`;
       button.dataset.kind = pet.kind || "pet";
       button.dataset.status = status.tone || "past";
       button.addEventListener("click", () => {
         if (isMobileLayout()) {
           setMobileLoading("view-transition", true);
         }
-        state.selectedIndexByCategory[category.key] = index;
+        state.selectedIndexByCategory[category.key] = actualIndex >= 0 ? actualIndex : 0;
         if (isMobileLayout()) {
           render();
           setMobileView("detail");
@@ -3144,8 +3782,21 @@
   function renderScheduleList(pet) {
     elements.scheduleList.innerHTML = "";
     const schedules = getResolvedSchedules(pet);
+    const acquisitionEntries = Array.isArray(pet?.acquisitionEntries)
+      ? pet.acquisitionEntries.filter((entry) => entry && (entry.title || entry.summary))
+      : [];
 
     if (!schedules.length) {
+      if (acquisitionEntries.length) {
+        acquisitionEntries.slice(0, 6).forEach((entry) => {
+          const block = document.createElement("div");
+          const toneClass = String(entry.tone || "").trim();
+          block.className = `schedule-item acquisition-item${toneClass ? ` acquisition-${toneClass}` : ""}`;
+          block.innerHTML = `<strong>${escapeHtml(String(entry.title || "").trim())}</strong><span>${escapeHtml(String(entry.summary || "").trim())}</span>`;
+          elements.scheduleList.appendChild(block);
+        });
+        return;
+      }
       const summary = pet.statusSummary || "등록된 일정이 없습니다.";
       elements.scheduleList.innerHTML = `<div class='schedule-item'><span>${escapeHtml(summary)}</span></div>`;
       return;
@@ -3179,6 +3830,7 @@
     if (elements.scheduleBlockTitle) {
       elements.scheduleBlockTitle.textContent = scheduleBlockTitleForPet(pet);
     }
+    const hasScheduleEntries = Array.isArray(pet?.schedules) && pet.schedules.length > 0;
     if (elements.scheduleBlockSubtext) {
       const reference = currentScheduleReferenceParts();
       elements.scheduleBlockSubtext.innerHTML = `
@@ -3186,6 +3838,13 @@
         <span class="schedule-reference-date">${escapeHtml(reference.dateTime)}</span>
       `;
       elements.scheduleBlockSubtext.title = currentScheduleReferenceLabel();
+      elements.scheduleBlockSubtext.hidden = !hasScheduleEntries;
+    }
+    if (elements.scheduleAdjustButton) {
+      elements.scheduleAdjustButton.hidden = !hasScheduleEntries;
+      if (!hasScheduleEntries) {
+        elements.scheduleAdjustButton.classList.remove("is-mobile-tooltip-visible");
+      }
     }
 
     elements.orderBadge.textContent = `NO.${String(displayOrderValue(category, pet)).padStart(2, "0")}`;
@@ -3233,12 +3892,14 @@
 
   function renderFocusSkill(pet) {
     const selectedSkill = getSelectedSkill(pet);
+    if (!selectedSkill) return;
     const { data: variant } = getSelectedVariant(pet, selectedSkill);
+    if (!variant) return;
     const hasImage = Boolean(variant.iconImage);
 
-    elements.focusSkillBadge.className = `skill-badge large ${selectedSkill.tone}${hasImage ? " has-image" : ""}`;
+    elements.focusSkillBadge.className = `skill-badge large ${normalizedSkillKind(selectedSkill)}${hasImage ? " has-image" : ""}`;
     elements.focusSkillBadge.innerHTML = buildSkillBadgeInner(selectedSkill, variant, false, false);
-    elements.focusSkillType.textContent = selectedSkill.slotLabel;
+    elements.focusSkillType.textContent = resolvedSkillSlotLabel(selectedSkill);
     elements.focusSkillName.textContent = selectedSkill.name;
     elements.focusVariantLevel.className = "meta-pill tier-meta";
     elements.focusVariantLevel.innerHTML = stageMetaMarkup(variant);
@@ -3253,7 +3914,12 @@
   }
 
   function renderSkillDock(pet) {
+    if (!elements.skillDock) return;
     const selectedSkill = getSelectedSkill(pet);
+    if (!selectedSkill) {
+      elements.skillDock.innerHTML = "";
+      return;
+    }
     const selectedSkillKey = getSkillKey(pet, selectedSkill);
     elements.skillDock.innerHTML = "";
 
@@ -3272,7 +3938,7 @@
       const copy = document.createElement("div");
       copy.className = "skill-button-copy";
       copy.innerHTML = `
-        <span class="skill-slot">${escapeHtml(skill.slotLabel)}</span>
+          <span class="skill-slot">${escapeHtml(resolvedSkillSlotLabel(skill))}</span>
         <strong class="skill-name">${escapeHtml(skill.name)}</strong>
         <span class="skill-meta">
           <span>${escapeHtml(stageDisplayLabel(variant))}</span>
@@ -3390,7 +4056,7 @@
       const summaryCopy = document.createElement("div");
       summaryCopy.className = "mobile-skill-button-copy";
       summaryCopy.innerHTML = `
-        <p class="mobile-skill-slot">${escapeHtml(skill.slotLabel)}</p>
+        <p class="mobile-skill-slot">${escapeHtml(resolvedSkillSlotLabel(skill))}</p>
         <strong class="mobile-skill-name">${escapeHtml(skill.name)}</strong>
         <span class="mobile-skill-meta">
           <span>${escapeHtml(stageDisplayLabel(variant))}</span>
@@ -3429,7 +4095,7 @@
           chip.innerHTML = `
             <span class="mobile-variant-chip-tile">${renderTierTile(pet, skillVariant)}</span>
             <span class="mobile-variant-chip-copy">
-              <strong>${escapeHtml(skillVariant.stageLabel || "-")}</strong>
+              <strong>${escapeHtml(resolvedStageLabel(skillVariant))}</strong>
               <span>${escapeHtml(stageLevelLabel(skillVariant))}</span>
             </span>
           `;
@@ -3480,7 +4146,12 @@
   }
 
   function renderVariantPreviewList(pet) {
+    if (!elements.variantPreviewList) return;
     const selectedSkill = getSelectedSkill(pet);
+    if (!selectedSkill) {
+      elements.variantPreviewList.innerHTML = "";
+      return;
+    }
     const skillKey = getSkillKey(pet, selectedSkill);
     const selectedIndex = clamp(state.selectedVariantBySkillKey[skillKey] || 0, 0, selectedSkill.variants.length - 1);
     elements.variantPreviewList.innerHTML = "";
@@ -3502,6 +4173,30 @@
   }
 
   function renderSkillPanels(pet) {
+    const hasSkills = Array.isArray(pet?.skills) && pet.skills.length > 0;
+    if (elements.skillFocusCard) {
+      elements.skillFocusCard.hidden = !hasSkills;
+    }
+    if (elements.detailRail) {
+      elements.detailRail.hidden = !hasSkills;
+    }
+    if (!hasSkills) {
+      renderSpotlightSummaryDisplay(pet, null, null);
+      if (elements.skillDock) {
+        elements.skillDock.innerHTML = "";
+      }
+      if (elements.mobileSkillAccordion) {
+        elements.mobileSkillAccordion.hidden = true;
+        elements.mobileSkillAccordion.innerHTML = "";
+      }
+      if (elements.variantPreviewList) {
+        elements.variantPreviewList.innerHTML = "";
+      }
+      if (elements.selectedSkillSummary) {
+        elements.selectedSkillSummary.textContent = "";
+      }
+      return;
+    }
     renderFocusSkill(pet);
     renderSkillDock(pet);
     renderMobileSkillAccordion(pet);
@@ -3574,14 +4269,19 @@
 
   function stepCurrentItem(delta) {
     const category = getActiveCategory();
-    const items = getItems(category);
+    const allItems = getItems(category);
+    const items = getDisplayItems(category);
     if (!items.length) {
       return;
     }
     if (isMobileLayout()) {
       setMobileLoading("view-transition", true);
     }
-    state.selectedIndexByCategory[category.key] = (getCurrentIndex(category) + delta + items.length) % items.length;
+    const currentItem = getCurrentItem(category);
+    const currentVisibleIndex = Math.max(0, items.findIndex((item) => getEntityId(item) === getEntityId(currentItem)));
+    const nextItem = items[(currentVisibleIndex + delta + items.length) % items.length];
+    const nextIndex = allItems.findIndex((item) => getEntityId(item) === getEntityId(nextItem));
+    state.selectedIndexByCategory[category.key] = nextIndex >= 0 ? nextIndex : 0;
     render();
     if (isMobileLayout()) {
       setMobileView("detail");
@@ -3596,6 +4296,7 @@
 
   function render() {
     syncMobileLayout();
+    syncPetSubgroupSelection();
     const pet = getCurrentItem();
     if (!pet) {
       return;
@@ -3898,6 +4599,7 @@
     elements.sceneStageBack.addEventListener("load", requestSceneLayout);
   }
 
+  injectExtraPetPlaceholders();
   state.scheduleCalibration = loadScheduleCalibration();
   const initialSelection = findInitialSelection();
   state.activeCategoryKey = initialSelection.categoryKey;
@@ -3905,6 +4607,12 @@
     state.selectedIndexByCategory[category.key] = findPreferredIndex(getItems(category));
   });
   state.selectedIndexByCategory[initialSelection.categoryKey] = initialSelection.index;
+  if (state.activeCategoryKey === "pet") {
+    const initialPet = getCurrentItem(getActiveCategory());
+    if (initialPet) {
+      state.activePetSubgroupKey = getPetSubgroupKeyForItem(initialPet);
+    }
+  }
   lastScheduleStatusTickKey = getTimeZoneDateTimeKey().slice(0, 16);
   syncMobileLayout(true);
   render();

@@ -1,0 +1,286 @@
+
+Hero_Yui_A.png
+size: 929,929
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+A/Layer 211
+  rotate: false
+  xy: 599, 239
+  size: 76, 188
+  orig: 513, 513
+  offset: 197, 186
+  index: -1
+A/arm l_1
+  rotate: false
+  xy: 250, 244
+  size: 185, 184
+  orig: 513, 513
+  offset: 200, 21
+  index: -1
+A/arm l_2
+  rotate: false
+  xy: 0, 44
+  size: 178, 194
+  orig: 513, 513
+  offset: 204, 184
+  index: -1
+A/arm l_3
+  rotate: false
+  xy: 253, 62
+  size: 152, 182
+  orig: 513, 513
+  offset: 218, 178
+  index: -1
+A/arm l_4
+  rotate: false
+  xy: 789, 764
+  size: 140, 165
+  orig: 513, 513
+  offset: 227, 71
+  index: -1
+A/arm l_5
+  rotate: true
+  xy: 752, 451
+  size: 123, 117
+  orig: 513, 513
+  offset: 220, 22
+  index: -1
+A/arm r_1
+  rotate: false
+  xy: 435, 263
+  size: 164, 164
+  orig: 513, 513
+  offset: 14, 57
+  index: -1
+A/arm r_2
+  rotate: false
+  xy: 675, 256
+  size: 132, 174
+  orig: 513, 513
+  offset: 36, 221
+  index: -1
+A/arm r_3
+  rotate: true
+  xy: 480, 427
+  size: 147, 179
+  orig: 513, 513
+  offset: 54, 191
+  index: -1
+A/arm r_4
+  rotate: false
+  xy: 559, 106
+  size: 133, 133
+  orig: 513, 513
+  offset: 38, 101
+  index: -1
+A/arm r_5
+  rotate: false
+  xy: 807, 337
+  size: 114, 114
+  orig: 513, 513
+  offset: 35, 49
+  index: -1
+A/belt
+  rotate: false
+  xy: 532, 574
+  size: 193, 135
+  orig: 513, 513
+  offset: 268, 147
+  index: -1
+A/body 1
+  rotate: false
+  xy: 0, 440
+  size: 290, 218
+  orig: 513, 513
+  offset: 109, 185
+  index: -1
+A/body 2
+  rotate: false
+  xy: 292, 721
+  size: 263, 208
+  orig: 513, 513
+  offset: 188, 150
+  index: -1
+A/cloak_1
+  rotate: false
+  xy: 292, 610
+  size: 240, 111
+  orig: 513, 513
+  offset: 273, 264
+  index: -1
+A/cloak_2
+  rotate: false
+  xy: 555, 709
+  size: 225, 79
+  orig: 513, 513
+  offset: 170, 333
+  index: -1
+A/cloak_3
+  rotate: true
+  xy: 178, 44
+  size: 194, 75
+  orig: 513, 513
+  offset: 293, 314
+  index: -1
+A/cloak_4
+  rotate: true
+  xy: 659, 430
+  size: 144, 93
+  orig: 513, 513
+  offset: 295, 278
+  index: -1
+A/ear l
+  rotate: true
+  xy: 813, 576
+  size: 40, 46
+  orig: 513, 513
+  offset: 146, 320
+  index: -1
+A/ear r
+  rotate: true
+  xy: 480, 581
+  size: 29, 49
+  orig: 513, 513
+  offset: 81, 320
+  index: -1
+A/eye_L
+  rotate: false
+  xy: 250, 429
+  size: 11, 11
+  orig: 513, 513
+  offset: 122, 283
+  index: -1
+A/eye_R
+  rotate: false
+  xy: 780, 780
+  size: 9, 8
+  orig: 513, 513
+  offset: 87, 281
+  index: -1
+A/eyeball
+  rotate: true
+  xy: 887, 50
+  size: 71, 41
+  orig: 513, 513
+  offset: 86, 271
+  index: -1
+A/head
+  rotate: true
+  xy: 555, 788
+  size: 141, 234
+  orig: 513, 513
+  offset: 72, 208
+  index: -1
+A/head_under
+  rotate: false
+  xy: 692, 128
+  size: 112, 128
+  orig: 513, 513
+  offset: 95, 176
+  index: -1
+A/hear
+  rotate: false
+  xy: 807, 244
+  size: 109, 93
+  orig: 513, 513
+  offset: 155, 342
+  index: -1
+A/helmet
+  rotate: false
+  xy: 0, 658
+  size: 292, 271
+  orig: 513, 513
+  offset: 6, 219
+  index: -1
+A/helmet_1
+  rotate: true
+  xy: 559, 66
+  size: 40, 145
+  orig: 513, 513
+  offset: 168, 136
+  index: -1
+A/helmet_2
+  rotate: true
+  xy: 290, 428
+  size: 182, 190
+  orig: 513, 513
+  offset: 71, 252
+  index: -1
+A/helmet_3
+  rotate: true
+  xy: 405, 72
+  size: 172, 154
+  orig: 513, 513
+  offset: 113, 316
+  index: -1
+A/helmet_4
+  rotate: true
+  xy: 725, 574
+  size: 135, 88
+  orig: 513, 513
+  offset: 184, 364
+  index: -1
+A/helmet_5
+  rotate: true
+  xy: 253, 28
+  size: 34, 122
+  orig: 513, 513
+  offset: 72, 144
+  index: -1
+A/leg l_1
+  rotate: false
+  xy: 813, 616
+  size: 114, 148
+  orig: 513, 513
+  offset: 338, 105
+  index: -1
+A/leg l_2
+  rotate: false
+  xy: 704, 25
+  size: 92, 103
+  orig: 513, 513
+  offset: 342, 70
+  index: -1
+A/leg l_3
+  rotate: true
+  xy: 869, 519
+  size: 97, 60
+  orig: 513, 513
+  offset: 329, 49
+  index: -1
+A/leg r_1
+  rotate: false
+  xy: 804, 121
+  size: 123, 123
+  orig: 513, 513
+  offset: 209, 133
+  index: -1
+A/leg r_2
+  rotate: false
+  xy: 796, 30
+  size: 91, 91
+  orig: 513, 513
+  offset: 212, 86
+  index: -1
+A/leg r_3
+  rotate: false
+  xy: 405, 13
+  size: 95, 59
+  orig: 513, 513
+  offset: 204, 65
+  index: -1
+A/rope
+  rotate: false
+  xy: 0, 238
+  size: 250, 202
+  orig: 261, 261
+  offset: 6, 33
+  index: -1
+A/tail
+  rotate: true
+  xy: 0, 0
+  size: 44, 234
+  orig: 513, 513
+  offset: 454, 207
+  index: -1

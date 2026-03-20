@@ -1,0 +1,223 @@
+
+Hero_Alice_A.png
+size: 567,567
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+A/arm l_1
+  rotate: true
+  xy: 265, 9
+  size: 72, 85
+  orig: 513, 390
+  offset: 243, 17
+  index: -1
+A/arm l_2
+  rotate: false
+  xy: 356, 122
+  size: 59, 85
+  orig: 513, 390
+  offset: 256, 62
+  index: -1
+A/arm r_1
+  rotate: true
+  xy: 415, 125
+  size: 60, 74
+  orig: 513, 390
+  offset: 190, 33
+  index: -1
+A/arm r_2
+  rotate: true
+  xy: 490, 316
+  size: 58, 77
+  orig: 513, 390
+  offset: 189, 72
+  index: -1
+A/body
+  rotate: false
+  xy: 0, 209
+  size: 177, 156
+  orig: 513, 390
+  offset: 188, 99
+  index: -1
+A/body fur 1
+  rotate: true
+  xy: 462, 185
+  size: 54, 103
+  orig: 513, 390
+  offset: 205, 217
+  index: -1
+A/body fur 2
+  rotate: false
+  xy: 371, 209
+  size: 91, 94
+  orig: 513, 390
+  offset: 249, 224
+  index: -1
+A/body fur 3
+  rotate: false
+  xy: 380, 303
+  size: 110, 71
+  orig: 513, 390
+  offset: 281, 213
+  index: -1
+A/ear l
+  rotate: false
+  xy: 261, 207
+  size: 110, 102
+  orig: 513, 390
+  offset: 202, 126
+  index: -1
+A/ear r
+  rotate: false
+  xy: 182, 0
+  size: 83, 76
+  orig: 513, 390
+  offset: 124, 144
+  index: -1
+A/eye 1
+  rotate: false
+  xy: 250, 394
+  size: 11, 13
+  orig: 513, 390
+  offset: 199, 185
+  index: -1
+A/eye 2
+  rotate: false
+  xy: 532, 374
+  size: 31, 30
+  orig: 513, 390
+  offset: 191, 173
+  index: -1
+A/face
+  rotate: false
+  xy: 261, 309
+  size: 119, 98
+  orig: 513, 390
+  offset: 140, 130
+  index: -1
+A/face 2
+  rotate: false
+  xy: 411, 442
+  size: 143, 125
+  orig: 513, 390
+  offset: 131, 77
+  index: -1
+A/face 3
+  rotate: false
+  xy: 532, 404
+  size: 35, 38
+  orig: 513, 390
+  offset: 152, 186
+  index: -1
+A/head fur
+  rotate: true
+  xy: 241, 81
+  size: 45, 90
+  orig: 513, 390
+  offset: 169, 191
+  index: -1
+A/leg l_1
+  rotate: true
+  xy: 411, 374
+  size: 68, 121
+  orig: 513, 390
+  offset: 314, 88
+  index: -1
+A/leg l_2
+  rotate: false
+  xy: 489, 134
+  size: 58, 51
+  orig: 513, 390
+  offset: 324, 90
+  index: -1
+A/leg l_3
+  rotate: false
+  xy: 350, 39
+  size: 56, 83
+  orig: 513, 390
+  offset: 333, 55
+  index: -1
+A/leg r_1
+  rotate: true
+  xy: 462, 239
+  size: 64, 105
+  orig: 513, 390
+  offset: 267, 99
+  index: -1
+A/leg r_2
+  rotate: true
+  xy: 459, 71
+  size: 54, 49
+  orig: 513, 390
+  offset: 278, 101
+  index: -1
+A/leg r_3
+  rotate: false
+  xy: 406, 40
+  size: 53, 82
+  orig: 513, 390
+  offset: 284, 66
+  index: -1
+A/rope
+  rotate: false
+  xy: 0, 365
+  size: 250, 202
+  orig: 261, 261
+  offset: 5, 33
+  index: -1
+A/tail
+  rotate: false
+  xy: 241, 126
+  size: 115, 81
+  orig: 513, 390
+  offset: 340, 113
+  index: -1
+A/tail1
+  rotate: true
+  xy: 182, 76
+  size: 141, 59
+  orig: 513, 390
+  offset: 338, 144
+  index: -1
+A/teeth 1
+  rotate: false
+  xy: 380, 374
+  size: 23, 33
+  orig: 513, 390
+  offset: 216, 145
+  index: -1
+A/teeth 2
+  rotate: false
+  xy: 547, 156
+  size: 20, 29
+  orig: 513, 390
+  offset: 142, 147
+  index: -1
+A/wing l_1
+  rotate: false
+  xy: 250, 407
+  size: 161, 160
+  orig: 513, 390
+  offset: 262, 193
+  index: -1
+A/wing l_3
+  rotate: true
+  xy: 0, 7
+  size: 202, 89
+  orig: 513, 390
+  offset: 265, 125
+  index: -1
+A/wing r_1
+  rotate: false
+  xy: 89, 44
+  size: 93, 165
+  orig: 513, 390
+  offset: 128, 190
+  index: -1
+A/wing r_3
+  rotate: true
+  xy: 177, 217
+  size: 148, 84
+  orig: 513, 390
+  offset: 72, 122
+  index: -1

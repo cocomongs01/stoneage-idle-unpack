@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" role="img" aria-label="SS pet banner placeholder">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#5a3927"/>
+      <stop offset="55%" stop-color="#2d1a11"/>
+      <stop offset="100%" stop-color="#120b07"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="42%" r="44%">
+      <stop offset="0%" stop-color="#f1c26a" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#f1c26a" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="700" fill="url(#bg)"/>
+  <circle cx="600" cy="310" r="300" fill="url(#glow)"/>
+  <circle cx="196" cy="122" r="92" fill="#f1c26a" opacity="0.07"/>
+  <circle cx="1020" cy="562" r="118" fill="#f1c26a" opacity="0.06"/>
+  <path d="M395 482c24-95 88-160 205-160s181 65 205 160" fill="#f7ecd8" opacity="0.9"/>
+  <circle cx="600" cy="252" r="96" fill="#f7ecd8" opacity="0.9"/>
+  <text x="600" y="620" font-family="Verdana, sans-serif" font-size="66" font-weight="700" letter-spacing="8" text-anchor="middle" fill="#f2c97a">SS PET</text>
+</svg>

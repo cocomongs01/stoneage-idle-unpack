@@ -1,0 +1,160 @@
+
+Hero_Ariel_A.png
+size: 989,788
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+A/arm l_1
+  rotate: true
+  xy: 830, 160
+  size: 98, 88
+  orig: 770, 770
+  offset: 284, 429
+  index: -1
+A/arm l_2
+  rotate: false
+  xy: 484, 10
+  size: 80, 116
+  orig: 770, 770
+  offset: 327, 479
+  index: -1
+A/arm l_2_1
+  rotate: true
+  xy: 868, 392
+  size: 132, 116
+  orig: 770, 770
+  offset: 309, 383
+  index: -1
+A/arm l_2_2
+  rotate: false
+  xy: 868, 304
+  size: 108, 86
+  orig: 770, 770
+  offset: 315, 301
+  index: -1
+A/arm r_3
+  rotate: false
+  xy: 868, 526
+  size: 116, 168
+  orig: 770, 770
+  offset: 173, 296
+  index: -1
+A/body
+  rotate: true
+  xy: 784, 10
+  size: 147, 169
+  orig: 770, 770
+  offset: 247, 307
+  index: -1
+A/eye
+  rotate: true
+  xy: 422, 2
+  size: 13, 19
+  orig: 770, 770
+  offset: 200, 475
+  index: -1
+A/eyeball
+  rotate: true
+  xy: 422, 17
+  size: 63, 60
+  orig: 770, 770
+  offset: 181, 460
+  index: -1
+A/head_lower_2
+  rotate: false
+  xy: 657, 2
+  size: 125, 155
+  orig: 770, 770
+  offset: 164, 361
+  index: -1
+A/head_upper_2
+  rotate: true
+  xy: 220, 82
+  size: 268, 212
+  orig: 770, 770
+  offset: 125, 415
+  index: -1
+A/leg l_1
+  rotate: true
+  xy: 868, 696
+  size: 90, 119
+  orig: 770, 770
+  offset: 289, 253
+  index: -1
+A/leg l_2
+  rotate: false
+  xy: 566, 15
+  size: 89, 111
+  orig: 770, 770
+  offset: 302, 280
+  index: -1
+A/leg r_1
+  rotate: false
+  xy: 220, 5
+  size: 116, 75
+  orig: 770, 770
+  offset: 132, 271
+  index: -1
+A/leg r_2
+  rotate: true
+  xy: 338, 16
+  size: 64, 82
+  orig: 770, 770
+  offset: 189, 282
+  index: -1
+A/leg r_3
+  rotate: true
+  xy: 784, 260
+  size: 132, 82
+  orig: 770, 770
+  offset: 189, 307
+  index: -1
+A/rope
+  rotate: false
+  xy: 474, 394
+  size: 392, 392
+  orig: 392, 392
+  offset: 0, 0
+  index: -1
+A/tail
+  rotate: false
+  xy: 434, 128
+  size: 153, 261
+  orig: 770, 770
+  offset: 268, 173
+  index: -1
+A/tongue
+  rotate: false
+  xy: 766, 159
+  size: 62, 99
+  orig: 770, 770
+  offset: 179, 373
+  index: -1
+A/wing l_1
+  rotate: true
+  xy: 2, 352
+  size: 434, 289
+  orig: 770, 770
+  offset: 310, 380
+  index: -1
+A/wing l_3_1
+  rotate: true
+  xy: 589, 159
+  size: 231, 175
+  orig: 770, 770
+  offset: 285, 301
+  index: -1
+A/wing l_3_2
+  rotate: false
+  xy: 2, 4
+  size: 216, 346
+  orig: 770, 770
+  offset: 364, 26
+  index: -1
+A/wing r_3
+  rotate: false
+  xy: 293, 391
+  size: 179, 395
+  orig: 770, 770
+  offset: 177, 81
+  index: -1
