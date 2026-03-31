@@ -42,6 +42,7 @@
     scheduleAdjustDays: document.getElementById("scheduleAdjustDays"),
     scheduleAdjustHours: document.getElementById("scheduleAdjustHours"),
     scheduleAdjustMinutes: document.getElementById("scheduleAdjustMinutes"),
+    scheduleAdjustManualDate: document.getElementById("scheduleAdjustManualDate"),
     scheduleAdjustPreview: document.getElementById("scheduleAdjustPreview"),
     scheduleAdjustPreviewCopy: document.getElementById("scheduleAdjustPreviewCopy"),
     equipmentSetDesktopSlot: document.getElementById("equipmentSetDesktopSlot"),
@@ -429,6 +430,73 @@
     return timestampToDateTimeKey(timestamp + (Number(dayOffset || 0) * DAY_MS));
   }
 
+  function dateKeyToDateTimeKey(dateKey, sourceDateTimeKey = KR1_SERVER_OPEN_DATE_TIME_KEY) {
+    const normalizedDateKey = normalizeScheduleDateKey(dateKey);
+    const normalizedSourceDateTimeKey = normalizeDateTimeKey(sourceDateTimeKey) || KR1_SERVER_OPEN_DATE_TIME_KEY;
+    if (!normalizedDateKey) return "";
+    return `${normalizedDateKey} ${normalizedSourceDateTimeKey.slice(11)}`;
+  }
+
+  function dateKeyDayOfWeek(dateKey) {
+    const normalizedDateKey = normalizeScheduleDateKey(dateKey);
+    if (!normalizedDateKey) return Number.NaN;
+    const [year, month, day] = normalizedDateKey.split("-").map(Number);
+    return new Date(Date.UTC(year, month - 1, day)).getUTCDay();
+  }
+
+  function alignDateKeyOnOrAfter(dateKey, targetDayOfWeek) {
+    const normalizedDateKey = normalizeScheduleDateKey(dateKey);
+    if (!normalizedDateKey) return "";
+    const currentDayOfWeek = dateKeyDayOfWeek(normalizedDateKey);
+    if (!Number.isFinite(currentDayOfWeek)) return "";
+    const dayOffset = (targetDayOfWeek - currentDayOfWeek + 7) % 7;
+    return addDaysToDateKey(normalizedDateKey, dayOffset);
+  }
+
+  function alignDateKeyOnOrBefore(dateKey, targetDayOfWeek) {
+    const normalizedDateKey = normalizeScheduleDateKey(dateKey);
+    if (!normalizedDateKey) return "";
+    const currentDayOfWeek = dateKeyDayOfWeek(normalizedDateKey);
+    if (!Number.isFinite(currentDayOfWeek)) return "";
+    const dayOffset = (currentDayOfWeek - targetDayOfWeek + 7) % 7;
+    return addDaysToDateKey(normalizedDateKey, -dayOffset);
+  }
+
+  function syncCohortStartDateKey(serverOpenDateKey) {
+    return alignDateKeyOnOrBefore(serverOpenDateKey, 2);
+  }
+
+  function syncCohortEndDateKey(serverOpenDateKey) {
+    const cohortStartDateKey = syncCohortStartDateKey(serverOpenDateKey);
+    return cohortStartDateKey ? addDaysToDateKey(cohortStartDateKey, 6) : "";
+  }
+
+  function normalizeScheduleRule(scheduleRule) {
+    if (!scheduleRule || typeof scheduleRule !== "object") return null;
+    const parsedTimeType = Number.parseInt(scheduleRule.timeType, 10);
+    if (!Number.isFinite(parsedTimeType)) return null;
+
+    const normalizedRule = { timeType: parsedTimeType };
+    const parsedOpenDay = Number.parseInt(scheduleRule.openDay, 10);
+    const parsedPeriod = Number.parseInt(scheduleRule.period, 10);
+    const normalizedStart = normalizeScheduleDateKey(scheduleRule.start);
+    const normalizedEnd = normalizeScheduleDateKey(scheduleRule.end);
+
+    if (Number.isFinite(parsedOpenDay)) {
+      normalizedRule.openDay = parsedOpenDay;
+    }
+    if (Number.isFinite(parsedPeriod)) {
+      normalizedRule.period = Math.max(1, parsedPeriod);
+    }
+    if (normalizedStart) {
+      normalizedRule.start = normalizedStart;
+    }
+    if (normalizedEnd) {
+      normalizedRule.end = normalizedEnd;
+    }
+    return normalizedRule;
+  }
+
   function dateKeyDayOffset(baseDateKey, targetDateKey) {
     const normalizedBase = normalizeScheduleDateKey(baseDateKey);
     const normalizedTarget = normalizeScheduleDateKey(targetDateKey);
@@ -466,8 +534,31 @@
     };
   }
 
+  function pageParamServerOpenDateTimeKey() {
+    const rawValue = pageParams.get("serverOpen")
+      || pageParams.get("server_open")
+      || pageParams.get("openDate")
+      || "";
+    const normalizedDateTimeKey = normalizeDateTimeKey(rawValue);
+    if (normalizedDateTimeKey) {
+      return normalizedDateTimeKey;
+    }
+    const normalizedDateKey = normalizeScheduleDateKey(rawValue);
+    return normalizedDateKey
+      ? dateKeyToDateTimeKey(normalizedDateKey, KR1_SERVER_OPEN_DATE_TIME_KEY)
+      : "";
+  }
+
   function loadScheduleCalibration() {
     const fallback = defaultScheduleCalibration();
+    const pageParamKey = pageParamServerOpenDateTimeKey();
+    if (pageParamKey) {
+      return {
+        mode: "custom",
+        serverOpenDateTimeKey: pageParamKey,
+        optionId: "",
+      };
+    }
     try {
       const raw = window.localStorage.getItem(SCHEDULE_CALIBRATION_STORAGE_KEY);
       if (!raw) return fallback;
@@ -563,18 +654,63 @@
       : "past";
     const offsetInfo = scheduleOffsetInfo(schedule);
     const normalizedServerOpenKey = normalizeDateTimeKey(serverOpenDateTimeKey) || KR1_SERVER_OPEN_DATE_TIME_KEY;
-    const resolvedStartDateTimeKey = Number.isFinite(offsetInfo.startOffsetDays)
-      ? addDaysToDateTimeKey(normalizedServerOpenKey, offsetInfo.startOffsetDays)
-      : "";
-    const resolvedEndExclusiveDateTimeKey = Number.isFinite(offsetInfo.endExclusiveOffsetDays)
+    const normalizedScheduleRule = normalizeScheduleRule(schedule?.scheduleRule);
+    const normalizedServerOpenDateKey = dateTimeKeyToDateKey(normalizedServerOpenKey);
+
+    let resolvedStartDateKey = "";
+    let resolvedEndExclusiveDateKey = "";
+
+    if (normalizedScheduleRule && normalizedServerOpenDateKey) {
+      if (
+        [2, 4, 8].includes(normalizedScheduleRule.timeType)
+        && Number.isFinite(normalizedScheduleRule.openDay)
+      ) {
+        const dynamicBaselineDateKey = [4, 8].includes(normalizedScheduleRule.timeType)
+          ? (syncCohortEndDateKey(normalizedServerOpenDateKey) || normalizedServerOpenDateKey)
+          : normalizedServerOpenDateKey;
+        const thresholdDateKey = addDaysToDateKey(dynamicBaselineDateKey, normalizedScheduleRule.openDay);
+        if (normalizedScheduleRule.timeType === 2) {
+          resolvedStartDateKey = thresholdDateKey;
+        } else if (normalizedScheduleRule.timeType === 4) {
+          resolvedStartDateKey = alignDateKeyOnOrAfter(thresholdDateKey, 2);
+        } else if (normalizedScheduleRule.timeType === 8) {
+          resolvedStartDateKey = alignDateKeyOnOrAfter(thresholdDateKey, 6);
+        }
+        if (resolvedStartDateKey) {
+          resolvedEndExclusiveDateKey = addDaysToDateKey(
+            resolvedStartDateKey,
+            Math.max(1, normalizedScheduleRule.period || 1),
+          );
+        }
+      } else if (
+        [5, 9].includes(normalizedScheduleRule.timeType)
+        && normalizedScheduleRule.start
+        && normalizedScheduleRule.end
+      ) {
+        resolvedStartDateKey = normalizedScheduleRule.start;
+        resolvedEndExclusiveDateKey = addDaysToDateKey(normalizedScheduleRule.end, 1);
+      }
+    }
+
+    const resolvedStartDateTimeKey = resolvedStartDateKey
+      ? dateKeyToDateTimeKey(resolvedStartDateKey, normalizedServerOpenKey)
+      : (Number.isFinite(offsetInfo.startOffsetDays)
+        ? addDaysToDateTimeKey(normalizedServerOpenKey, offsetInfo.startOffsetDays)
+        : "");
+    const fallbackEndExclusiveDateTimeKey = Number.isFinite(offsetInfo.endExclusiveOffsetDays)
       ? addDaysToDateTimeKey(normalizedServerOpenKey, offsetInfo.endExclusiveOffsetDays)
       : "";
-    const resolvedStartDateKey = dateTimeKeyToDateKey(resolvedStartDateTimeKey);
-    const resolvedEndExclusiveDateKey = dateTimeKeyToDateKey(resolvedEndExclusiveDateTimeKey);
+    const resolvedEndExclusiveDateTimeKey = resolvedEndExclusiveDateKey
+      ? dateKeyToDateTimeKey(resolvedEndExclusiveDateKey, normalizedServerOpenKey)
+      : fallbackEndExclusiveDateTimeKey;
+
+    resolvedStartDateKey = dateTimeKeyToDateKey(resolvedStartDateTimeKey);
+    resolvedEndExclusiveDateKey = dateTimeKeyToDateKey(resolvedEndExclusiveDateTimeKey);
     const resolvedEndDateKey = resolvedEndExclusiveDateKey ? addDaysToDateKey(resolvedEndExclusiveDateKey, -1) : "";
 
     return {
       ...offsetInfo,
+      scheduleRule: normalizedScheduleRule,
       fallbackStatus,
       resolvedStartDateTimeKey,
       resolvedEndExclusiveDateTimeKey,
@@ -727,7 +863,8 @@
       getItems(category).forEach((item, itemIndex) => {
         const schedules = Array.isArray(item?.schedules) ? item.schedules : [];
         schedules.forEach((schedule, scheduleIndex) => {
-        const scheduleWindow = resolveScheduleWindow(schedule, KR1_SERVER_OPEN_DATE_TIME_KEY);
+          const scheduleWindow = resolveScheduleWindow(schedule, KR1_SERVER_OPEN_DATE_TIME_KEY);
+          const scheduleRule = normalizeScheduleRule(schedule?.scheduleRule);
           if (schedule?.cancelled) {
             return;
           }
@@ -749,6 +886,11 @@
             scheduleIndex,
             startOffsetDays: scheduleWindow.startOffsetDays,
             endExclusiveOffsetDays: scheduleWindow.endExclusiveOffsetDays,
+            ruleTimeType: scheduleRule?.timeType || 0,
+            ruleOpenDay: Number.isFinite(scheduleRule?.openDay) ? scheduleRule.openDay : Number.NaN,
+            autoInferenceSupported: !scheduleRule || scheduleRule.timeType === 2,
+            resolvedStartDateKey: scheduleWindow.resolvedStartDateKey || "",
+            resolvedEndDateKey: scheduleWindow.resolvedEndDateKey || "",
             summary: formatScheduleDisplayRange(
               schedule.start,
               schedule.end,
@@ -884,6 +1026,13 @@
     };
   }
 
+  function getManualScheduleAdjustmentDateTimeKey() {
+    const normalizedDateKey = normalizeScheduleDateKey(elements.scheduleAdjustManualDate?.value || "");
+    return normalizedDateKey
+      ? dateKeyToDateTimeKey(normalizedDateKey, KR1_SERVER_OPEN_DATE_TIME_KEY)
+      : "";
+  }
+
   function draftDurationMinutes(draft) {
     return (draft.days * 24 * 60) + (draft.hours * 60) + draft.minutes;
   }
@@ -896,9 +1045,47 @@
     return parts.join(" ");
   }
 
-  function inferScheduleCalibrationResult(draft, currentDateTimeKey = getTimeZoneDateTimeKey()) {
+  function inferEndExclusiveDateTimeKeyFromDuration(durationMinutes, currentDateTimeKey = getTimeZoneDateTimeKey()) {
+    if (!Number.isFinite(durationMinutes) || durationMinutes <= 0) {
+      return "";
+    }
+    const currentTimestamp = dateTimeKeyToTimestamp(currentDateTimeKey);
+    if (!Number.isFinite(currentTimestamp)) {
+      return "";
+    }
+    const approximateCloseTimestamp = currentTimestamp + (durationMinutes * 60 * 1000);
+    let inferredEndExclusiveDateTimeKey = `${timestampToDateTimeKey(approximateCloseTimestamp).slice(0, 10)} ${padNumber(KR1_RESET_HOUR)}:00:00`;
+    if (dateTimeKeyToTimestamp(inferredEndExclusiveDateTimeKey) < approximateCloseTimestamp) {
+      inferredEndExclusiveDateTimeKey = addDaysToDateTimeKey(inferredEndExclusiveDateTimeKey, 1);
+    }
+    return inferredEndExclusiveDateTimeKey;
+  }
+
+  function inferSyncCohortRange(option, resolvedStartDateKeyOverride = "") {
+    const ruleTimeType = Number(option?.ruleTimeType);
+    const openDay = Number(option?.ruleOpenDay);
+    const resolvedStartDateKey = normalizeScheduleDateKey(resolvedStartDateKeyOverride || option?.resolvedStartDateKey || "");
+    if (![4, 8].includes(ruleTimeType) || !Number.isFinite(openDay) || !resolvedStartDateKey) {
+      return null;
+    }
+
+    const targetDayOfWeek = ruleTimeType === 4 ? 2 : 6;
+    const thresholdDayOfWeek = (1 + ((openDay % 7) + 7)) % 7;
+    const alignmentDelta = (targetDayOfWeek - thresholdDayOfWeek + 7) % 7;
+    const cohortEndDateKey = addDaysToDateKey(resolvedStartDateKey, -(openDay + alignmentDelta));
+    const cohortStartDateKey = addDaysToDateKey(cohortEndDateKey, -6);
+    if (!cohortStartDateKey || !cohortEndDateKey) {
+      return null;
+    }
+    return {
+      startDateKey: cohortStartDateKey,
+      endDateKey: cohortEndDateKey,
+    };
+  }
+
+  function inferExactScheduleCalibrationResult(draft, currentDateTimeKey = getTimeZoneDateTimeKey()) {
     const option = findScheduleCalibrationOptionById(draft.optionId);
-    if (!option || !Number.isFinite(option.endExclusiveOffsetDays)) {
+    if (!option || !Number.isFinite(option.endExclusiveOffsetDays) || option.autoInferenceSupported === false) {
       return null;
     }
     const durationMinutes = draftDurationMinutes(draft);
@@ -906,14 +1093,9 @@
       return null;
     }
 
-    const currentTimestamp = dateTimeKeyToTimestamp(currentDateTimeKey);
-    if (!Number.isFinite(currentTimestamp)) {
+    const inferredEndExclusiveDateTimeKey = inferEndExclusiveDateTimeKeyFromDuration(durationMinutes, currentDateTimeKey);
+    if (!inferredEndExclusiveDateTimeKey) {
       return null;
-    }
-    const approximateCloseTimestamp = currentTimestamp + (durationMinutes * 60 * 1000);
-    let inferredEndExclusiveDateTimeKey = `${timestampToDateTimeKey(approximateCloseTimestamp).slice(0, 10)} ${padNumber(KR1_RESET_HOUR)}:00:00`;
-    if (dateTimeKeyToTimestamp(inferredEndExclusiveDateTimeKey) < approximateCloseTimestamp) {
-      inferredEndExclusiveDateTimeKey = addDaysToDateTimeKey(inferredEndExclusiveDateTimeKey, 1);
     }
 
     const inferredServerOpenTimestamp = dateTimeKeyToTimestamp(inferredEndExclusiveDateTimeKey) - (option.endExclusiveOffsetDays * DAY_MS);
@@ -923,12 +1105,55 @@
     }
 
     return {
+      mode: "exact",
       option,
       durationMinutes,
       inferredEndExclusiveDateTimeKey,
       serverOpenDateTimeKey,
       currentDateTimeKey,
     };
+  }
+
+  function inferSyncScheduleCalibrationResult(draft, currentDateTimeKey = getTimeZoneDateTimeKey()) {
+    const option = findScheduleCalibrationOptionById(draft.optionId);
+    const ruleTimeType = Number(option?.ruleTimeType);
+    const durationDays = Number(option?.durationDays);
+    if (![4, 8].includes(ruleTimeType) || !Number.isFinite(durationDays) || durationDays <= 0) {
+      return null;
+    }
+
+    const durationMinutes = draftDurationMinutes(draft);
+    if (durationMinutes <= 0) {
+      return null;
+    }
+
+    const inferredEndExclusiveDateTimeKey = inferEndExclusiveDateTimeKeyFromDuration(durationMinutes, currentDateTimeKey);
+    if (!inferredEndExclusiveDateTimeKey) {
+      return null;
+    }
+
+    const inferredResolvedStartDateTimeKey = addDaysToDateTimeKey(inferredEndExclusiveDateTimeKey, -durationDays);
+    const inferredResolvedStartDateKey = dateTimeKeyToDateKey(inferredResolvedStartDateTimeKey);
+    const syncCohortRange = inferSyncCohortRange(option, inferredResolvedStartDateKey);
+    if (!inferredResolvedStartDateKey || !syncCohortRange?.startDateKey) {
+      return null;
+    }
+
+    return {
+      mode: "sync-first-open",
+      option,
+      durationMinutes,
+      inferredEndExclusiveDateTimeKey,
+      inferredResolvedStartDateKey,
+      syncCohortRange,
+      serverOpenDateTimeKey: dateKeyToDateTimeKey(syncCohortRange.startDateKey, KR1_SERVER_OPEN_DATE_TIME_KEY),
+      currentDateTimeKey,
+    };
+  }
+
+  function inferScheduleCalibrationResult(draft, currentDateTimeKey = getTimeZoneDateTimeKey()) {
+    return inferExactScheduleCalibrationResult(draft, currentDateTimeKey)
+      || inferSyncScheduleCalibrationResult(draft, currentDateTimeKey);
   }
 
   function updateScheduleAdjustSelectionSummary() {
@@ -938,11 +1163,18 @@
       elements.scheduleAdjustSelectedSummary.textContent = "진행중 이벤트를 선택해 주세요.";
       return;
     }
+    const syncCohortRange = inferSyncCohortRange(option);
+    const inferenceCopy = option.autoInferenceSupported
+      ? "오픈 초기 일정은 남은 시간 기준 자동 계산이 가능합니다."
+      : (syncCohortRange
+        ? `동기화 일정이라 정확한 서버 오픈일은 확정하기 어렵지만, 남은 시간으로 같은 주차의 첫 오픈일 ${formatDisplayDateKey(syncCohortRange.startDateKey)} 부터 계산할 수 있습니다.`
+        : "동기화 일정은 남은 시간 기준으로 같은 주차 첫 오픈일만 계산할 수 있습니다.");
     elements.scheduleAdjustSelectedSummary.innerHTML = `
       <strong>진행중 이벤트</strong>
       <span>${escapeHtml(option.label)}</span>
       <small>${escapeHtml(option.summary)}</small>
       <small>최대 입력 ${escapeHtml(scheduleAdjustmentMaxLabel(option))}</small>
+      <small>${escapeHtml(inferenceCopy)}</small>
     `;
   }
 
@@ -951,11 +1183,50 @@
     updateScheduleAdjustSelectionSummary();
     if (!elements.scheduleAdjustPreviewCopy) return;
 
+    const manualDateTimeKey = getManualScheduleAdjustmentDateTimeKey();
+    if (manualDateTimeKey) {
+      elements.scheduleAdjustPreviewCopy.innerHTML = `
+        <strong>직접 적용 서버 오픈:</strong> ${escapeHtml(formatDisplayDateTimeKey(manualDateTimeKey))}<br>
+        <strong>적용 방식:</strong> 직접 입력<br>
+        <strong>기준 시각:</strong> ${escapeHtml(`${formatDisplayDateTimeKey(manualDateTimeKey).slice(0, 10)} 09:00`)}
+      `;
+      if (elements.scheduleAdjustConfirm) {
+        elements.scheduleAdjustConfirm.disabled = false;
+      }
+      return;
+    }
+
     const result = inferScheduleCalibrationResult(readScheduleCalibrationDraft());
     if (!result) {
-      elements.scheduleAdjustPreviewCopy.textContent = "진행중 이벤트를 고르고 남은 시간을 입력하면 서버 오픈일을 계산합니다.";
+      const option = findScheduleCalibrationOptionById(String(elements.scheduleAdjustSelect?.value || ""));
+      const syncCohortRange = inferSyncCohortRange(option);
+      if (option && option.autoInferenceSupported === false && syncCohortRange) {
+        elements.scheduleAdjustPreviewCopy.innerHTML = `
+          <strong>추정 첫 오픈일:</strong> ${escapeHtml(formatDisplayDateKey(syncCohortRange.startDateKey))}<br>
+          <strong>추정 오픈 주차:</strong> ${escapeHtml(`${formatDisplayDateKey(syncCohortRange.startDateKey)} - ${formatDisplayDateKey(syncCohortRange.endDateKey)}`)}<br>
+          <strong>안내:</strong> 남은 시간을 입력하면 같은 주차의 첫 오픈일을 기준으로 적용합니다.
+        `;
+      } else {
+        elements.scheduleAdjustPreviewCopy.textContent = option && option.autoInferenceSupported === false
+          ? "선택한 일정은 동기화 규칙입니다. 남은 시간을 입력하면 같은 주차의 첫 오픈일을 계산합니다."
+          : "진행중 이벤트를 고르고 남은 시간을 입력하면 서버 오픈일을 계산합니다.";
+      }
       if (elements.scheduleAdjustConfirm) {
         elements.scheduleAdjustConfirm.disabled = true;
+      }
+      return;
+    }
+
+    if (result.mode === "sync-first-open") {
+      elements.scheduleAdjustPreviewCopy.innerHTML = `
+        <strong>계산된 첫 오픈일:</strong> ${escapeHtml(formatDisplayDateTimeKey(result.serverOpenDateTimeKey))}<br>
+        <strong>추정 오픈 주차:</strong> ${escapeHtml(`${formatDisplayDateKey(result.syncCohortRange.startDateKey)} - ${formatDisplayDateKey(result.syncCohortRange.endDateKey)}`)}<br>
+        <strong>진행중 이벤트:</strong> ${escapeHtml(result.option.label)}<br>
+        <strong>입력 남은 시간:</strong> ${escapeHtml(durationLabelFromDraft(readScheduleCalibrationDraft()))}<br>
+        <strong>기준 종료 시각:</strong> ${escapeHtml(formatDisplayDateTimeKey(result.inferredEndExclusiveDateTimeKey))}
+      `;
+      if (elements.scheduleAdjustConfirm) {
+        elements.scheduleAdjustConfirm.disabled = false;
       }
       return;
     }
@@ -1023,6 +1294,11 @@
     if (elements.scheduleAdjustDays) elements.scheduleAdjustDays.value = "0";
     if (elements.scheduleAdjustHours) elements.scheduleAdjustHours.value = "0";
     if (elements.scheduleAdjustMinutes) elements.scheduleAdjustMinutes.value = "0";
+    if (elements.scheduleAdjustManualDate) {
+      elements.scheduleAdjustManualDate.value = state.scheduleCalibration?.mode === "custom"
+        ? (dateTimeKeyToDateKey(state.scheduleCalibration.serverOpenDateTimeKey) || "")
+        : "";
+    }
     updateScheduleAdjustmentPreview();
     elements.scheduleAdjustModal.hidden = false;
     document.body.classList.add("is-schedule-adjust-open");
@@ -1041,6 +1317,19 @@
   }
 
   function applyScheduleAdjustment() {
+    const manualDateTimeKey = getManualScheduleAdjustmentDateTimeKey();
+    if (manualDateTimeKey) {
+      persistScheduleCalibration({
+        mode: "custom",
+        serverOpenDateTimeKey: manualDateTimeKey,
+        optionId: String(elements.scheduleAdjustSelect?.value || ""),
+      });
+      markScheduleCalibrationPromptSeen();
+      closeScheduleAdjustmentDialog(false);
+      refreshScheduleStatuses(true);
+      return;
+    }
+
     const result = inferScheduleCalibrationResult(readScheduleCalibrationDraft());
     if (!result) return;
 
@@ -1461,6 +1750,10 @@
     "\uB290\uB9BC": "assets/ui/SpeedType01.png",
     "\uBCF4\uD1B5": "assets/ui/SpeedType03.png",
   };
+  const SKILL_TEXT_PLACEHOLDER_OVERRIDES = new Map([
+    ["1107901:\uC21C\uD48D \uAC00\uB974\uAE30:2", "\uBC14\uB78C \uC18D\uC131"],
+    ["1103901:\uBC29\uC6B8\uAC10\uC625:2", "\uBB3C \uC18D\uC131"],
+  ]);
   const EXTRA_PET_ENRICHMENTS = new Map(
     (Array.isArray(window.GACHA_VIEWER_EXTRA_PETS) ? window.GACHA_VIEWER_EXTRA_PETS : [])
       .map((entry) => [String(entry?.characterId || entry?.viewerId || ""), entry])
@@ -1525,11 +1818,41 @@
     });
   }
 
+  function attachEntitySkillContext(entity) {
+    if (!entity || !Array.isArray(entity.skills)) return;
+    const baseContext = {
+      characterId: String(entity.characterId || entity.viewerId || entity.id || ""),
+      entityName: String(entity.name || entity.title || ""),
+      elementKey: String(entity.elementKey || ""),
+      attackTypeKey: String(entity.attackTypeKey || ""),
+    };
+
+    entity.skills.forEach((skill) => {
+      if (!skill || !Array.isArray(skill.variants)) return;
+      const skillName = String(skill.name || "");
+      const slotIndex = Number(skill.slotIndex);
+      skill.variants.forEach((variant) => {
+        if (!variant || typeof variant !== "object") return;
+        variant.entityContext = {
+          ...baseContext,
+          skillName,
+          slotIndex: Number.isFinite(slotIndex) ? slotIndex : -1,
+        };
+      });
+    });
+  }
+
   function applyRuntimeSkillTextPatches() {
     (Array.isArray(data.categories) ? data.categories : []).forEach((category) => {
-      (category.items || []).forEach((item) => patchEntitySkillTexts(item));
+      (category.items || []).forEach((item) => {
+        patchEntitySkillTexts(item);
+        attachEntitySkillContext(item);
+      });
     });
-    (Array.isArray(window.GACHA_VIEWER_EXTRA_PETS) ? window.GACHA_VIEWER_EXTRA_PETS : []).forEach((item) => patchEntitySkillTexts(item));
+    (Array.isArray(window.GACHA_VIEWER_EXTRA_PETS) ? window.GACHA_VIEWER_EXTRA_PETS : []).forEach((item) => {
+      patchEntitySkillTexts(item);
+      attachEntitySkillContext(item);
+    });
   }
 
   applyRuntimeSkillTextPatches();
@@ -2800,6 +3123,11 @@
     return /\?/.test(String(value || ""));
   }
 
+  function countSkillDescPlaceholders(value) {
+    const matches = String(value || "").match(/\{\d+\}/g);
+    return matches ? matches.length : 0;
+  }
+
   function parseDescValues(descValues) {
     return String(descValues || "")
       .split("|")
@@ -2807,8 +3135,7 @@
       .filter((value) => Number.isFinite(value));
   }
 
-  function buildSkillDescription(variant) {
-    const template = variant.rawDesc || variant.formattedDesc || "";
+  function replaceSkillDescNumericPlaceholders(template, variant) {
     if (!template) return "";
 
     const values = new Map();
@@ -2830,6 +3157,84 @@
       const index = Number.parseInt(rawIndex, 10);
       return values.has(index) ? formatSkillNumber(values.get(index)) : match;
     });
+  }
+
+  function replaceKnownSkillDescTextPlaceholders(text, variant) {
+    let resolved = String(text || "");
+    if (!resolved || !/\{\d+\}/.test(resolved)) {
+      return resolved;
+    }
+    const entityContext = variant?.entityContext || null;
+
+    const context = [
+      resolved,
+      String(variant?.formattedDesc || ""),
+      String(variant?.upgradeDescFormatted || ""),
+    ].join("\n");
+
+    if (/\{2\}/.test(resolved) && entityContext) {
+      const overrideKey = `${entityContext.characterId}:${entityContext.skillName}:2`;
+      const overrideValue = SKILL_TEXT_PLACEHOLDER_OVERRIDES.get(overrideKey);
+      if (overrideValue) {
+        resolved = resolved.replace(/\{2\}/g, overrideValue);
+      }
+    }
+
+    if (
+      /\{2\}/.test(resolved)
+      && (
+        /피격 대상이[\s\S]*\{2\}[\s\S]*이 아닌 경우/.test(context)
+        || /방어형이 아닌 대상/.test(context)
+        || /방어형을 제외한 대상/.test(context)
+      )
+    ) {
+      resolved = resolved.replace(/\{2\}/g, "방어형");
+    }
+
+    return resolved;
+  }
+
+  function preferredSkillDescription(primary, fallback) {
+    const primaryText = String(primary || "").trim();
+    const fallbackText = String(fallback || "").trim();
+    if (!primaryText) return fallbackText;
+    if (!fallbackText) return primaryText;
+
+    const primaryPlaceholderCount = countSkillDescPlaceholders(primaryText);
+    const fallbackPlaceholderCount = countSkillDescPlaceholders(fallbackText);
+    if (fallbackPlaceholderCount < primaryPlaceholderCount) {
+      return fallbackText;
+    }
+
+    const primaryBroken = hasBrokenGeneratedText(primaryText);
+    const fallbackBroken = hasBrokenGeneratedText(fallbackText);
+    if (primaryBroken !== fallbackBroken) {
+      return fallbackBroken ? primaryText : fallbackText;
+    }
+
+    return primaryText;
+  }
+
+  function buildSkillDescription(variant) {
+    const rawTemplate = String(variant?.rawDesc || "").trim();
+    const formattedTemplate = String(variant?.formattedDesc || "").trim();
+    const preferredTemplate = rawTemplate && !hasBrokenGeneratedText(rawTemplate)
+      ? rawTemplate
+      : formattedTemplate;
+    if (!preferredTemplate) return "";
+
+    const primaryDescription = replaceKnownSkillDescTextPlaceholders(
+      replaceSkillDescNumericPlaceholders(preferredTemplate, variant),
+      variant,
+    );
+    const fallbackDescription = preferredTemplate !== formattedTemplate && formattedTemplate
+      ? replaceKnownSkillDescTextPlaceholders(
+        replaceSkillDescNumericPlaceholders(formattedTemplate, variant),
+        variant,
+      )
+      : "";
+
+    return preferredSkillDescription(primaryDescription, fallbackDescription);
   }
 
   function normalizedSkillKind(skill) {
@@ -4535,6 +4940,10 @@
         normalizeScheduleAdjustmentInputs();
       });
     });
+  if (elements.scheduleAdjustManualDate) {
+    elements.scheduleAdjustManualDate.addEventListener("input", updateScheduleAdjustmentPreview);
+    elements.scheduleAdjustManualDate.addEventListener("change", updateScheduleAdjustmentPreview);
+  }
 
   if (elements.scheduleAdjustConfirm) {
     elements.scheduleAdjustConfirm.addEventListener("click", applyScheduleAdjustment);
