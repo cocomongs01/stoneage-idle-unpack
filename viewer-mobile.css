@@ -584,6 +584,11 @@
     gap: 0.375rem;
   }
 
+  body.mobile-layout .schedule-adjust-field-note {
+    font-size: 0.6875rem;
+    line-height: 1.4;
+  }
+
   body.mobile-layout .schedule-adjust-label {
     font-size: 0.625rem;
     letter-spacing: 0.07em;
@@ -637,10 +642,19 @@
     padding-right: 0.6875rem;
   }
 
+  body.mobile-layout .schedule-adjust-input-row-wide {
+    padding-right: 0;
+  }
+
   body.mobile-layout .schedule-adjust-input {
     min-height: 2.375rem;
     padding-left: 0.6875rem;
     font-size: 0.9375rem;
+  }
+
+  body.mobile-layout .schedule-adjust-date-input {
+    padding-right: 0.6875rem;
+    text-align: left;
   }
 
   body.mobile-layout .schedule-adjust-input-suffix {
