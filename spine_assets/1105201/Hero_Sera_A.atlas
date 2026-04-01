@@ -1,0 +1,160 @@
+
+Hero_Sera_A.png
+size: 993,993
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+A/armL_1
+  rotate: true
+  xy: 672, 521
+  size: 116, 179
+  orig: 770, 770
+  offset: 370, 172
+  index: -1
+A/armL_2
+  rotate: false
+  xy: 487, 19
+  size: 171, 204
+  orig: 770, 770
+  offset: 335, 42
+  index: -1
+A/armR_1
+  rotate: true
+  xy: 680, 221
+  size: 110, 170
+  orig: 770, 770
+  offset: 229, 187
+  index: -1
+A/armR_2
+  rotate: false
+  xy: 680, 331
+  size: 161, 190
+  orig: 770, 770
+  offset: 193, 68
+  index: -1
+A/beard
+  rotate: true
+  xy: 396, 497
+  size: 212, 276
+  orig: 770, 770
+  offset: 144, 168
+  index: -1
+A/body1
+  rotate: false
+  xy: 0, 595
+  size: 396, 398
+  orig: 770, 770
+  offset: 160, 139
+  index: -1
+A/body2
+  rotate: false
+  xy: 684, 739
+  size: 275, 254
+  orig: 770, 770
+  offset: 348, 195
+  index: -1
+A/ear
+  rotate: true
+  xy: 851, 514
+  size: 123, 80
+  orig: 770, 770
+  offset: 227, 371
+  index: -1
+A/eye
+  rotate: false
+  xy: 959, 961
+  size: 23, 32
+  orig: 770, 770
+  offset: 206, 341
+  index: -1
+A/eyeball
+  rotate: false
+  xy: 563, 230
+  size: 56, 60
+  orig: 770, 770
+  offset: 196, 327
+  index: -1
+A/head
+  rotate: true
+  xy: 0, 3
+  size: 200, 320
+  orig: 770, 770
+  offset: 120, 212
+  index: -1
+A/head_under
+  rotate: false
+  xy: 814, 52
+  size: 150, 169
+  orig: 770, 770
+  offset: 155, 219
+  index: -1
+A/hornL
+  rotate: false
+  xy: 396, 709
+  size: 288, 284
+  orig: 770, 770
+  offset: 234, 382
+  index: -1
+A/hornR
+  rotate: false
+  xy: 392, 223
+  size: 171, 274
+  orig: 770, 770
+  offset: 84, 384
+  index: -1
+A/legL_1
+  rotate: false
+  xy: 563, 290
+  size: 117, 207
+  orig: 770, 770
+  offset: 521, 197
+  index: -1
+A/legL_2
+  rotate: false
+  xy: 875, 662
+  size: 118, 77
+  orig: 770, 770
+  offset: 525, 197
+  index: -1
+A/legL_3
+  rotate: false
+  xy: 320, 5
+  size: 167, 198
+  orig: 770, 770
+  offset: 515, 68
+  index: -1
+A/legR_1
+  rotate: true
+  xy: 684, 637
+  size: 102, 191
+  orig: 770, 770
+  offset: 395, 219
+  index: -1
+A/legR_2
+  rotate: false
+  xy: 841, 337
+  size: 100, 69
+  orig: 770, 770
+  offset: 406, 219
+  index: -1
+A/legR_3
+  rotate: false
+  xy: 658, 39
+  size: 156, 182
+  orig: 770, 770
+  offset: 386, 99
+  index: -1
+A/rope
+  rotate: false
+  xy: 0, 203
+  size: 392, 392
+  orig: 392, 392
+  offset: 0, 0
+  index: -1
+A/tail
+  rotate: false
+  xy: 841, 406
+  size: 104, 108
+  orig: 770, 770
+  offset: 560, 360
+  index: -1

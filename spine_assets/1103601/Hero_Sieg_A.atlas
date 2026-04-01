@@ -1,0 +1,153 @@
+
+Hero_Sieg_A.png
+size: 595,595
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+A/arm L_1
+  rotate: false
+  xy: 447, 385
+  size: 142, 93
+  orig: 513, 513
+  offset: 212, 17
+  index: -1
+A/arm L_2
+  rotate: false
+  xy: 499, 62
+  size: 84, 83
+  orig: 513, 513
+  offset: 187, 70
+  index: -1
+A/arm R_1
+  rotate: true
+  xy: 330, 179
+  size: 117, 61
+  orig: 513, 513
+  offset: 0, 58
+  index: -1
+A/arm R_2
+  rotate: false
+  xy: 420, 116
+  size: 79, 87
+  orig: 513, 513
+  offset: 75, 77
+  index: -1
+A/body
+  rotate: false
+  xy: 0, 296
+  size: 273, 299
+  orig: 513, 513
+  offset: 79, 54
+  index: -1
+A/eye
+  rotate: true
+  xy: 0, 0
+  size: 9, 16
+  orig: 513, 513
+  offset: 106, 342
+  index: -1
+A/eyeball
+  rotate: true
+  xy: 400, 369
+  size: 46, 47
+  orig: 513, 513
+  offset: 88, 331
+  index: -1
+A/fin_1
+  rotate: true
+  xy: 273, 296
+  size: 104, 127
+  orig: 513, 513
+  offset: 117, 302
+  index: -1
+A/fin_2
+  rotate: true
+  xy: 400, 249
+  size: 120, 172
+  orig: 513, 513
+  offset: 76, 325
+  index: -1
+A/fin_3
+  rotate: true
+  xy: 330, 5
+  size: 58, 101
+  orig: 513, 513
+  offset: 58, 313
+  index: -1
+A/head_2
+  rotate: true
+  xy: 389, 415
+  size: 63, 58
+  orig: 513, 513
+  offset: 55, 333
+  index: -1
+A/head_lower
+  rotate: false
+  xy: 501, 145
+  size: 90, 104
+  orig: 513, 513
+  offset: 67, 270
+  index: -1
+A/head_upper
+  rotate: true
+  xy: 330, 63
+  size: 116, 90
+  orig: 513, 513
+  offset: 43, 302
+  index: -1
+A/leg  R_2
+  rotate: false
+  xy: 273, 532
+  size: 57, 63
+  orig: 513, 513
+  offset: 168, 105
+  index: -1
+A/leg L_1
+  rotate: true
+  xy: 273, 400
+  size: 132, 55
+  orig: 513, 513
+  offset: 321, 71
+  index: -1
+A/leg L_2
+  rotate: true
+  xy: 328, 409
+  size: 69, 61
+  orig: 513, 513
+  offset: 297, 81
+  index: -1
+A/leg R_1
+  rotate: false
+  xy: 391, 203
+  size: 110, 46
+  orig: 513, 513
+  offset: 97, 95
+  index: -1
+A/neck
+  rotate: false
+  xy: 0, 36
+  size: 118, 260
+  orig: 513, 513
+  offset: 73, 101
+  index: -1
+A/rope
+  rotate: true
+  xy: 118, 40
+  size: 256, 212
+  orig: 261, 261
+  offset: 5, 27
+  index: -1
+A/tail
+  rotate: false
+  xy: 330, 478
+  size: 247, 117
+  orig: 513, 513
+  offset: 266, 108
+  index: -1
+A/teeth
+  rotate: false
+  xy: 0, 9
+  size: 22, 27
+  orig: 513, 513
+  offset: 59, 303
+  index: -1

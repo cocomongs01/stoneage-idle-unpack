@@ -1,0 +1,237 @@
+
+platius_pickup.png
+size: 1349,1349
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+A/P2 teeth
+  rotate: true
+  xy: 279, 207
+  size: 43, 35
+  orig: 1025, 1025
+  offset: 492, 798
+  index: -1
+A/arm l
+  rotate: false
+  xy: 317, 5
+  size: 337, 262
+  orig: 1025, 1025
+  offset: 664, 61
+  index: -1
+A/arm r
+  rotate: true
+  xy: 279, 267
+  size: 459, 250
+  orig: 1025, 1025
+  offset: 148, 50
+  index: -1
+A/body
+  rotate: false
+  xy: 0, 726
+  size: 525, 623
+  orig: 1025, 1025
+  offset: 266, 64
+  index: -1
+A/ear l_1
+  rotate: true
+  xy: 1062, 197
+  size: 167, 216
+  orig: 1025, 1025
+  offset: 698, 714
+  index: -1
+A/ear l_2
+  rotate: true
+  xy: 917, 206
+  size: 149, 143
+  orig: 1025, 1025
+  offset: 714, 663
+  index: -1
+A/ear r
+  rotate: true
+  xy: 1078, 868
+  size: 141, 225
+  orig: 1025, 1025
+  offset: 477, 635
+  index: -1
+A/eye
+  rotate: true
+  xy: 279, 250
+  size: 17, 37
+  orig: 1025, 1025
+  offset: 660, 703
+  index: -1
+A/eyeball
+  rotate: false
+  xy: 529, 271
+  size: 82, 84
+  orig: 1025, 1025
+  offset: 634, 682
+  index: -1
+A/fin
+  rotate: true
+  xy: 1066, 492
+  size: 192, 282
+  orig: 1025, 1025
+  offset: 563, 702
+  index: -1
+A/head_lower
+  rotate: true
+  xy: 1078, 1009
+  size: 214, 234
+  orig: 1025, 1025
+  offset: 548, 537
+  index: -1
+A/head_upper
+  rotate: false
+  xy: 529, 358
+  size: 221, 216
+  orig: 1025, 1025
+  offset: 514, 592
+  index: -1
+A/leg l
+  rotate: false
+  xy: 750, 355
+  size: 312, 177
+  orig: 1025, 1025
+  offset: 469, 112
+  index: -1
+A/leg r
+  rotate: false
+  xy: 752, 532
+  size: 314, 164
+  orig: 1025, 1025
+  offset: 54, 110
+  index: -1
+A/neck
+  rotate: false
+  xy: 0, 147
+  size: 279, 579
+  orig: 1025, 1025
+  offset: 538, 177
+  index: -1
+A/p2 arm l
+  rotate: false
+  xy: 1078, 1223
+  size: 250, 126
+  orig: 1025, 1025
+  offset: 619, 315
+  index: -1
+A/p2 arm r
+  rotate: false
+  xy: 525, 732
+  size: 252, 226
+  orig: 1025, 1025
+  offset: 316, 189
+  index: -1
+A/p2 body
+  rotate: false
+  xy: 745, 999
+  size: 333, 350
+  orig: 1025, 1025
+  offset: 377, 184
+  index: -1
+A/p2 ear l
+  rotate: true
+  xy: 1164, 55
+  size: 142, 159
+  orig: 1025, 1025
+  offset: 399, 608
+  index: -1
+A/p2 ear r
+  rotate: false
+  xy: 161, 4
+  size: 156, 143
+  orig: 1025, 1025
+  offset: 514, 648
+  index: -1
+A/p2 eye
+  rotate: false
+  xy: 279, 194
+  size: 26, 13
+  orig: 1025, 1025
+  offset: 451, 788
+  index: -1
+A/p2 eyeball
+  rotate: false
+  xy: 611, 287
+  size: 49, 68
+  orig: 1025, 1025
+  offset: 440, 755
+  index: -1
+A/p2 fin
+  rotate: true
+  xy: 1068, 684
+  size: 184, 279
+  orig: 1025, 1025
+  offset: 328, 345
+  index: -1
+A/p2 fin1
+  rotate: false
+  xy: 0, 1
+  size: 161, 146
+  orig: 1025, 1025
+  offset: 355, 652
+  index: -1
+A/p2 fin2
+  rotate: false
+  xy: 654, 574
+  size: 98, 158
+  orig: 1025, 1025
+  offset: 465, 562
+  index: -1
+A/p2 head_lower
+  rotate: true
+  xy: 727, 203
+  size: 152, 190
+  orig: 1025, 1025
+  offset: 476, 698
+  index: -1
+A/p2 head_upper
+  rotate: false
+  xy: 818, 0
+  size: 166, 203
+  orig: 1025, 1025
+  offset: 430, 712
+  index: -1
+A/p2 leg l
+  rotate: true
+  xy: 984, 16
+  size: 181, 180
+  orig: 1025, 1025
+  offset: 535, 137
+  index: -1
+A/p2 leg r
+  rotate: false
+  xy: 654, 5
+  size: 164, 192
+  orig: 1025, 1025
+  offset: 320, 92
+  index: -1
+A/p2 neck
+  rotate: false
+  xy: 525, 958
+  size: 220, 391
+  orig: 1025, 1025
+  offset: 465, 412
+  index: -1
+A/p2 tail
+  rotate: false
+  xy: 1062, 364
+  size: 273, 128
+  orig: 1025, 1025
+  offset: 201, 141
+  index: -1
+A/tail
+  rotate: false
+  xy: 777, 696
+  size: 291, 303
+  orig: 1025, 1025
+  offset: 649, 144
+  index: -1
+A/teeth
+  rotate: true
+  xy: 660, 302
+  size: 56, 67
+  orig: 1025, 1025
+  offset: 534, 589
+  index: -1

@@ -1,0 +1,223 @@
+
+Hero_Kamir_A.png
+size: 787,787
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+A/body
+  rotate: true
+  xy: 231, 232
+  size: 263, 227
+  orig: 601, 513
+  offset: 176, 80
+  index: -1
+A/eye L
+  rotate: false
+  xy: 0, 0
+  size: 12, 13
+  orig: 601, 513
+  offset: 215, 377
+  index: -1
+A/eye R
+  rotate: false
+  xy: 219, 8
+  size: 14, 14
+  orig: 601, 513
+  offset: 124, 390
+  index: -1
+A/eyeball L
+  rotate: false
+  xy: 696, 0
+  size: 52, 52
+  orig: 601, 513
+  offset: 201, 348
+  index: -1
+A/eyeball R
+  rotate: false
+  xy: 644, 47
+  size: 52, 53
+  orig: 601, 513
+  offset: 112, 363
+  index: -1
+A/foot
+  rotate: false
+  xy: 663, 100
+  size: 116, 72
+  orig: 601, 513
+  offset: 192, 45
+  index: -1
+A/foot L
+  rotate: true
+  xy: 458, 388
+  size: 110, 85
+  orig: 601, 513
+  offset: 296, 30
+  index: -1
+A/head L
+  rotate: false
+  xy: 400, 498
+  size: 143, 96
+  orig: 601, 513
+  offset: 143, 313
+  index: -1
+A/head R
+  rotate: true
+  xy: 458, 245
+  size: 143, 96
+  orig: 601, 513
+  offset: 54, 327
+  index: -1
+A/horn L_1
+  rotate: false
+  xy: 582, 4
+  size: 62, 96
+  orig: 601, 513
+  offset: 172, 383
+  index: -1
+A/horn L_2
+  rotate: false
+  xy: 400, 706
+  size: 58, 81
+  orig: 601, 513
+  offset: 207, 375
+  index: -1
+A/horn L_3
+  rotate: true
+  xy: 582, 110
+  size: 54, 49
+  orig: 601, 513
+  offset: 223, 370
+  index: -1
+A/horn R_1
+  rotate: true
+  xy: 231, 167
+  size: 65, 97
+  orig: 601, 513
+  offset: 80, 396
+  index: -1
+A/horn R_2
+  rotate: true
+  xy: 582, 210
+  size: 62, 83
+  orig: 601, 513
+  offset: 115, 388
+  index: -1
+A/horn R_3
+  rotate: false
+  xy: 696, 52
+  size: 53, 48
+  orig: 601, 513
+  offset: 134, 384
+  index: -1
+A/leg L_1
+  rotate: false
+  xy: 667, 286
+  size: 118, 127
+  orig: 601, 513
+  offset: 311, 70
+  index: -1
+A/leg L_2
+  rotate: false
+  xy: 582, 164
+  size: 81, 46
+  orig: 601, 513
+  offset: 322, 74
+  index: -1
+A/leg R_1
+  rotate: true
+  xy: 667, 172
+  size: 114, 116
+  orig: 601, 513
+  offset: 211, 81
+  index: -1
+A/leg R_2
+  rotate: true
+  xy: 400, 616
+  size: 90, 56
+  orig: 601, 513
+  offset: 219, 79
+  index: -1
+A/mouth L
+  rotate: true
+  xy: 554, 272
+  size: 141, 113
+  orig: 601, 513
+  offset: 141, 275
+  index: -1
+A/mouth R
+  rotate: true
+  xy: 219, 22
+  size: 143, 116
+  orig: 601, 513
+  offset: 52, 287
+  index: -1
+A/neck L
+  rotate: false
+  xy: 458, 594
+  size: 122, 193
+  orig: 601, 513
+  offset: 167, 164
+  index: -1
+A/neck R
+  rotate: true
+  xy: 0, 13
+  size: 152, 219
+  orig: 601, 513
+  offset: 102, 168
+  index: -1
+A/rope
+  rotate: true
+  xy: 582, 535
+  size: 252, 201
+  orig: 261, 261
+  offset: 5, 32
+  index: -1
+A/tail_1
+  rotate: false
+  xy: 543, 413
+  size: 233, 120
+  orig: 601, 513
+  offset: 327, 109
+  index: -1
+A/teeth L
+  rotate: false
+  xy: 543, 533
+  size: 31, 30
+  orig: 601, 513
+  offset: 233, 323
+  index: -1
+A/teeth R
+  rotate: false
+  xy: 543, 563
+  size: 31, 31
+  orig: 601, 513
+  offset: 144, 336
+  index: -1
+A/wing L_1
+  rotate: false
+  xy: 193, 495
+  size: 207, 292
+  orig: 601, 513
+  offset: 246, 6
+  index: -1
+A/wing L_3
+  rotate: true
+  xy: 0, 165
+  size: 307, 231
+  orig: 601, 513
+  offset: 266, 197
+  index: -1
+A/wing R_1
+  rotate: false
+  xy: 335, 2
+  size: 247, 230
+  orig: 601, 513
+  offset: 32, 30
+  index: -1
+A/wing R_3
+  rotate: false
+  xy: 0, 472
+  size: 193, 315
+  orig: 601, 513
+  offset: 137, 198
+  index: -1

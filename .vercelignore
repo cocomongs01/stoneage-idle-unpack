@@ -1,0 +1,9 @@
+.git/
+.gitignore
+.vercel/
+README.md
+*.zip
+*.sln
+analysis_tools/
+ui_assets/
+backups/

@@ -1,0 +1,202 @@
+
+NPC_Kyrielle_A.png
+size: 803,803
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+A/arm  r_1
+  rotate: false
+  xy: 491, 469
+  size: 87, 93
+  orig: 681, 513
+  offset: 207, 223
+  index: -1
+A/arm  r_2
+  rotate: true
+  xy: 451, 719
+  size: 84, 75
+  orig: 681, 513
+  offset: 132, 134
+  index: -1
+A/arm  r_3
+  rotate: false
+  xy: 349, 713
+  size: 90, 90
+  orig: 681, 513
+  offset: 160, 183
+  index: -1
+A/arm l_1
+  rotate: false
+  xy: 348, 585
+  size: 103, 106
+  orig: 681, 513
+  offset: 376, 147
+  index: -1
+A/arm l_2
+  rotate: true
+  xy: 119, 6
+  size: 122, 112
+  orig: 681, 513
+  offset: 330, 211
+  index: -1
+A/arm l_3
+  rotate: false
+  xy: 404, 469
+  size: 87, 93
+  orig: 681, 513
+  offset: 337, 107
+  index: -1
+A/body
+  rotate: true
+  xy: 578, 390
+  size: 172, 220
+  orig: 681, 513
+  offset: 233, 118
+  index: -1
+A/eye
+  rotate: false
+  xy: 327, 0
+  size: 13, 13
+  orig: 681, 513
+  offset: 255, 253
+  index: -1
+A/eyebrow_l
+  rotate: false
+  xy: 260, 582
+  size: 88, 109
+  orig: 681, 513
+  offset: 239, 251
+  index: -1
+A/eyebrow_r
+  rotate: false
+  xy: 260, 462
+  size: 42, 100
+  orig: 681, 513
+  offset: 211, 255
+  index: -1
+A/head_1
+  rotate: true
+  xy: 327, 13
+  size: 119, 182
+  orig: 681, 513
+  offset: 213, 210
+  index: -1
+A/head_2
+  rotate: false
+  xy: 231, 8
+  size: 96, 120
+  orig: 681, 513
+  offset: 225, 154
+  index: -1
+A/head_3
+  rotate: false
+  xy: 516, 209
+  size: 153, 181
+  orig: 681, 513
+  offset: 236, 180
+  index: -1
+A/leg l_1
+  rotate: false
+  xy: 260, 691
+  size: 89, 112
+  orig: 681, 513
+  offset: 319, 84
+  index: -1
+A/leg l_2
+  rotate: true
+  xy: 311, 132
+  size: 63, 54
+  orig: 681, 513
+  offset: 332, 88
+  index: -1
+A/leg l_3
+  rotate: true
+  xy: 57, 4
+  size: 124, 62
+  orig: 681, 513
+  offset: 303, 14
+  index: -1
+A/leg l_4
+  rotate: true
+  xy: 448, 145
+  size: 50, 86
+  orig: 681, 513
+  offset: 360, 48
+  index: -1
+A/leg r _1
+  rotate: false
+  xy: 302, 464
+  size: 102, 98
+  orig: 681, 513
+  offset: 258, 97
+  index: -1
+A/leg r _2
+  rotate: true
+  xy: 255, 128
+  size: 67, 56
+  orig: 681, 513
+  offset: 263, 97
+  index: -1
+A/leg r _3
+  rotate: true
+  xy: 0, 0
+  size: 128, 57
+  orig: 681, 513
+  offset: 213, 34
+  index: -1
+A/leg r _4
+  rotate: true
+  xy: 365, 137
+  size: 58, 83
+  orig: 681, 513
+  offset: 277, 54
+  index: -1
+A/leyeball
+  rotate: false
+  xy: 516, 442
+  size: 28, 27
+  orig: 681, 513
+  offset: 249, 250
+  index: -1
+A/rope
+  rotate: false
+  xy: 534, 4
+  size: 252, 205
+  orig: 261, 261
+  offset: 5, 30
+  index: -1
+A/tail
+  rotate: true
+  xy: 669, 218
+  size: 172, 108
+  orig: 681, 513
+  offset: 311, 73
+  index: -1
+A/wing 2_ l
+  rotate: false
+  xy: 0, 461
+  size: 260, 342
+  orig: 681, 513
+  offset: 334, 8
+  index: -1
+A/wing 2_ r
+  rotate: false
+  xy: 255, 195
+  size: 261, 266
+  orig: 681, 513
+  offset: 68, 62
+  index: -1
+A/wing 3_ l
+  rotate: true
+  xy: 534, 562
+  size: 241, 261
+  orig: 681, 513
+  offset: 89, 244
+  index: -1
+A/wing 3_ r
+  rotate: true
+  xy: 0, 128
+  size: 333, 255
+  orig: 681, 513
+  offset: 324, 240
+  index: -1

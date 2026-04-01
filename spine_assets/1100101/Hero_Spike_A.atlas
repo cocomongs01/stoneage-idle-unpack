@@ -1,0 +1,195 @@
+
+Hero_Spike_A.png
+size: 568,568
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+A/arm L_1
+  rotate: false
+  xy: 252, 139
+  size: 100, 110
+  orig: 513, 513
+  offset: 282, 231
+  index: -1
+A/arm L_2
+  rotate: false
+  xy: 352, 62
+  size: 77, 63
+  orig: 513, 513
+  offset: 305, 204
+  index: -1
+A/arm R_1
+  rotate: false
+  xy: 424, 144
+  size: 64, 105
+  orig: 513, 513
+  offset: 188, 228
+  index: -1
+A/arm R_2
+  rotate: true
+  xy: 492, 118
+  size: 73, 60
+  orig: 513, 513
+  offset: 162, 205
+  index: -1
+A/body
+  rotate: false
+  xy: 0, 99
+  size: 155, 264
+  orig: 513, 513
+  offset: 193, 126
+  index: -1
+A/eye
+  rotate: false
+  xy: 458, 23
+  size: 15, 18
+  orig: 513, 513
+  offset: 246, 386
+  index: -1
+A/eyeball
+  rotate: false
+  xy: 133, 62
+  size: 35, 37
+  orig: 513, 513
+  offset: 241, 374
+  index: -1
+A/foot
+  rotate: false
+  xy: 212, 3
+  size: 107, 64
+  orig: 513, 513
+  offset: 225, 10
+  index: -1
+A/foot R
+  rotate: true
+  xy: 429, 41
+  size: 103, 63
+  orig: 513, 513
+  offset: 141, 25
+  index: -1
+A/hair_1
+  rotate: true
+  xy: 0, 2
+  size: 97, 133
+  orig: 513, 513
+  offset: 194, 356
+  index: -1
+A/hair_2
+  rotate: true
+  xy: 251, 350
+  size: 112, 185
+  orig: 513, 513
+  offset: 209, 326
+  index: -1
+A/hair_3
+  rotate: false
+  xy: 133, 0
+  size: 79, 62
+  orig: 513, 513
+  offset: 253, 327
+  index: -1
+A/hand L
+  rotate: false
+  xy: 488, 191
+  size: 60, 77
+  orig: 513, 513
+  offset: 285, 147
+  index: -1
+A/hand R
+  rotate: false
+  xy: 511, 289
+  size: 54, 79
+  orig: 513, 513
+  offset: 145, 150
+  index: -1
+A/head
+  rotate: false
+  xy: 251, 249
+  size: 140, 101
+  orig: 513, 513
+  offset: 163, 329
+  index: -1
+A/horn
+  rotate: true
+  xy: 400, 0
+  size: 41, 58
+  orig: 513, 513
+  offset: 303, 319
+  index: -1
+A/leg L_1
+  rotate: false
+  xy: 439, 268
+  size: 72, 100
+  orig: 513, 513
+  offset: 250, 101
+  index: -1
+A/leg L_2
+  rotate: true
+  xy: 492, 47
+  size: 71, 52
+  orig: 513, 513
+  offset: 253, 99
+  index: -1
+A/leg L_3
+  rotate: true
+  xy: 252, 67
+  size: 72, 100
+  orig: 513, 513
+  offset: 260, 42
+  index: -1
+A/leg R_1
+  rotate: false
+  xy: 436, 368
+  size: 90, 94
+  orig: 513, 513
+  offset: 165, 111
+  index: -1
+A/leg R_2
+  rotate: false
+  xy: 319, 2
+  size: 81, 60
+  orig: 513, 513
+  offset: 167, 107
+  index: -1
+A/leg R_3
+  rotate: false
+  xy: 352, 125
+  size: 72, 124
+  orig: 513, 513
+  offset: 180, 30
+  index: -1
+A/mouth
+  rotate: true
+  xy: 155, 113
+  size: 130, 97
+  orig: 513, 513
+  offset: 170, 305
+  index: -1
+A/neck
+  rotate: true
+  xy: 155, 243
+  size: 120, 96
+  orig: 513, 513
+  offset: 201, 302
+  index: -1
+A/rope
+  rotate: false
+  xy: 0, 363
+  size: 251, 205
+  orig: 261, 261
+  offset: 4, 31
+  index: -1
+A/tail
+  rotate: false
+  xy: 251, 462
+  size: 275, 106
+  orig: 513, 513
+  offset: 219, 123
+  index: -1
+A/teeth
+  rotate: true
+  xy: 391, 249
+  size: 101, 48
+  orig: 513, 513
+  offset: 172, 327
+  index: -1

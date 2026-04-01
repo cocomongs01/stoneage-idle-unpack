@@ -1,0 +1,286 @@
+
+prachitos_pickup.png
+size: 1381,1381
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+A/Big_foot
+  rotate: false
+  xy: 0, 304
+  size: 595, 1077
+  orig: 1025, 1132
+  offset: 145, 50
+  index: -1
+A/D_arm r_1
+  rotate: false
+  xy: 152, 11
+  size: 134, 293
+  orig: 1025, 1132
+  offset: 344, 107
+  index: -1
+A/D_eye l
+  rotate: true
+  xy: 635, 14
+  size: 20, 19
+  orig: 1025, 1132
+  offset: 821, 206
+  index: -1
+A/D_eye r
+  rotate: true
+  xy: 557, 0
+  size: 22, 20
+  orig: 1025, 1132
+  offset: 793, 150
+  index: -1
+A/D_eyeball
+  rotate: true
+  xy: 595, 304
+  size: 67, 90
+  orig: 1025, 1132
+  offset: 789, 142
+  index: -1
+A/D_head_lower
+  rotate: false
+  xy: 828, 1044
+  size: 172, 156
+  orig: 1025, 1132
+  offset: 698, 141
+  index: -1
+A/D_head_upper
+  rotate: false
+  xy: 595, 1213
+  size: 216, 168
+  orig: 1025, 1132
+  offset: 759, 107
+  index: -1
+A/D_neck
+  rotate: false
+  xy: 1001, 860
+  size: 353, 325
+  orig: 1025, 1132
+  offset: 490, 207
+  index: -1
+A/D_teeth l
+  rotate: false
+  xy: 610, 0
+  size: 25, 25
+  orig: 1025, 1132
+  offset: 811, 218
+  index: -1
+A/D_teeth r_1
+  rotate: true
+  xy: 557, 22
+  size: 36, 23
+  orig: 1025, 1132
+  offset: 735, 135
+  index: -1
+A/D_teeth r_2
+  rotate: true
+  xy: 580, 23
+  size: 35, 27
+  orig: 1025, 1132
+  offset: 752, 134
+  index: -1
+A/U2_eye l
+  rotate: true
+  xy: 152, 0
+  size: 11, 14
+  orig: 1025, 1132
+  offset: 426, 880
+  index: -1
+A/U2_eye r
+  rotate: false
+  xy: 324, 1
+  size: 12, 16
+  orig: 1025, 1132
+  offset: 481, 891
+  index: -1
+A/U2_eyeball
+  rotate: false
+  xy: 468, 16
+  size: 89, 42
+  orig: 1025, 1132
+  offset: 414, 872
+  index: -1
+A/U2_head_lower
+  rotate: true
+  xy: 1001, 12
+  size: 155, 151
+  orig: 1025, 1132
+  offset: 375, 754
+  index: -1
+A/U2_head_upper
+  rotate: true
+  xy: 828, 877
+  size: 167, 170
+  orig: 1025, 1132
+  offset: 361, 853
+  index: -1
+A/U_neck
+  rotate: true
+  xy: 468, 58
+  size: 246, 533
+  orig: 1025, 1132
+  offset: 365, 372
+  index: -1
+A/arm l_1
+  rotate: false
+  xy: 0, 8
+  size: 152, 296
+  orig: 1025, 1025
+  offset: 636, 63
+  index: -1
+A/arm r_1
+  rotate: false
+  xy: 828, 737
+  size: 170, 140
+  orig: 1025, 1025
+  offset: 414, 261
+  index: -1
+A/arm r_2
+  rotate: true
+  xy: 998, 739
+  size: 121, 193
+  orig: 1025, 1025
+  offset: 468, 193
+  index: -1
+A/body
+  rotate: false
+  xy: 812, 306
+  size: 443, 431
+  orig: 1025, 1025
+  offset: 336, 102
+  index: -1
+A/body_horn1
+  rotate: true
+  xy: 595, 1036
+  size: 177, 211
+  orig: 1025, 1025
+  offset: 473, 504
+  index: -1
+A/body_horn2
+  rotate: false
+  xy: 286, 17
+  size: 182, 287
+  orig: 1025, 1025
+  offset: 344, 433
+  index: -1
+A/body_horn3
+  rotate: false
+  xy: 1255, 179
+  size: 95, 142
+  orig: 1025, 1025
+  offset: 327, 362
+  index: -1
+A/eye l
+  rotate: true
+  xy: 306, 1
+  size: 16, 18
+  orig: 1025, 1025
+  offset: 583, 796
+  index: -1
+A/eye r
+  rotate: true
+  xy: 286, 1
+  size: 16, 20
+  orig: 1025, 1025
+  offset: 516, 777
+  index: -1
+A/eyeball
+  rotate: false
+  xy: 685, 310
+  size: 101, 61
+  orig: 1025, 1025
+  offset: 507, 773
+  index: -1
+A/head_lower
+  rotate: false
+  xy: 812, 1200
+  size: 183, 181
+  orig: 1025, 1025
+  offset: 496, 661
+  index: -1
+A/head_upper
+  rotate: true
+  xy: 595, 862
+  size: 174, 233
+  orig: 1025, 1025
+  offset: 487, 741
+  index: -1
+A/leg l_1
+  rotate: true
+  xy: 1152, 23
+  size: 144, 181
+  orig: 1025, 1025
+  offset: 524, 121
+  index: -1
+A/leg l_2
+  rotate: true
+  xy: 1255, 592
+  size: 137, 117
+  orig: 1025, 1025
+  offset: 532, 106
+  index: -1
+A/leg l_3
+  rotate: false
+  xy: 1255, 465
+  size: 116, 127
+  orig: 1025, 1025
+  offset: 525, 64
+  index: -1
+A/leg r_1
+  rotate: true
+  xy: 1001, 167
+  size: 139, 243
+  orig: 1025, 1025
+  offset: 299, 106
+  index: -1
+A/leg r_2
+  rotate: true
+  xy: 1255, 321
+  size: 144, 107
+  orig: 1025, 1025
+  offset: 283, 106
+  index: -1
+A/leg r_3
+  rotate: false
+  xy: 1255, 729
+  size: 125, 131
+  orig: 1025, 1025
+  offset: 277, 53
+  index: -1
+A/neck
+  rotate: false
+  xy: 595, 371
+  size: 217, 489
+  orig: 1025, 1025
+  offset: 554, 327
+  index: -1
+A/tail
+  rotate: true
+  xy: 1001, 1185
+  size: 196, 369
+  orig: 1025, 1025
+  offset: 239, 211
+  index: -1
+A/teeth l
+  rotate: false
+  xy: 630, 34
+  size: 24, 24
+  orig: 1025, 1025
+  offset: 594, 783
+  index: -1
+A/teeth r_1
+  rotate: true
+  xy: 577, 2
+  size: 20, 33
+  orig: 1025, 1025
+  offset: 491, 718
+  index: -1
+A/teeth r_2
+  rotate: false
+  xy: 607, 25
+  size: 23, 33
+  orig: 1025, 1025
+  offset: 491, 735
+  index: -1

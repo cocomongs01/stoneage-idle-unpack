@@ -1,0 +1,230 @@
+
+Hero_Misha_A.png
+size: 740,740
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+A/arm l_1
+  rotate: false
+  xy: 518, 308
+  size: 144, 169
+  orig: 513, 513
+  offset: 206, 186
+  index: -1
+A/arm l_2
+  rotate: true
+  xy: 643, 26
+  size: 122, 89
+  orig: 513, 513
+  offset: 207, 34
+  index: -1
+A/arm l_3
+  rotate: true
+  xy: 269, 460
+  size: 127, 175
+  orig: 513, 513
+  offset: 236, 69
+  index: -1
+A/arm r_1
+  rotate: true
+  xy: 455, 477
+  size: 144, 177
+  orig: 513, 513
+  offset: 59, 177
+  index: -1
+A/arm r_2
+  rotate: true
+  xy: 155, 31
+  size: 98, 55
+  orig: 513, 513
+  offset: 70, 53
+  index: -1
+A/arm r_3
+  rotate: true
+  xy: 257, 125
+  size: 125, 175
+  orig: 513, 513
+  offset: 100, 56
+  index: -1
+A/body 1
+  rotate: false
+  xy: 0, 457
+  size: 269, 283
+  orig: 513, 513
+  offset: 65, 136
+  index: -1
+A/body2
+  rotate: true
+  xy: 269, 587
+  size: 153, 186
+  orig: 513, 513
+  offset: 240, 154
+  index: -1
+A/ear l
+  rotate: true
+  xy: 210, 84
+  size: 57, 45
+  orig: 513, 513
+  offset: 136, 313
+  index: -1
+A/ear r
+  rotate: false
+  xy: 210, 19
+  size: 38, 65
+  orig: 513, 513
+  offset: 70, 308
+  index: -1
+A/eye l
+  rotate: true
+  xy: 444, 464
+  size: 13, 14
+  orig: 513, 513
+  offset: 107, 284
+  index: -1
+A/eye r
+  rotate: false
+  xy: 444, 578
+  size: 7, 9
+  orig: 513, 513
+  offset: 63, 286
+  index: -1
+A/eyeball
+  rotate: true
+  xy: 222, 155
+  size: 81, 34
+  orig: 513, 513
+  offset: 59, 273
+  index: -1
+A/eyebrow l
+  rotate: false
+  xy: 662, 310
+  size: 48, 41
+  orig: 513, 513
+  offset: 98, 285
+  index: -1
+A/eyebrow r
+  rotate: true
+  xy: 155, 7
+  size: 24, 46
+  orig: 513, 513
+  offset: 56, 289
+  index: -1
+A/hair
+  rotate: true
+  xy: 257, 250
+  size: 207, 261
+  orig: 513, 513
+  offset: 56, 156
+  index: -1
+A/head 1
+  rotate: false
+  xy: 0, 12
+  size: 155, 117
+  orig: 513, 513
+  offset: 50, 186
+  index: -1
+A/head 2
+  rotate: false
+  xy: 0, 129
+  size: 160, 107
+  orig: 513, 513
+  offset: 47, 241
+  index: -1
+A/head 3
+  rotate: true
+  xy: 338, 38
+  size: 87, 48
+  orig: 513, 513
+  offset: 61, 285
+  index: -1
+A/leg l_1
+  rotate: true
+  xy: 455, 621
+  size: 119, 204
+  orig: 513, 513
+  offset: 311, 128
+  index: -1
+A/leg l_2
+  rotate: true
+  xy: 432, 68
+  size: 87, 67
+  orig: 513, 513
+  offset: 362, 140
+  index: -1
+A/leg l_3
+  rotate: true
+  xy: 160, 141
+  size: 95, 62
+  orig: 513, 513
+  offset: 380, 51
+  index: -1
+A/leg l_4
+  rotate: false
+  xy: 662, 351
+  size: 76, 127
+  orig: 513, 513
+  offset: 398, 66
+  index: -1
+A/leg r_1
+  rotate: false
+  xy: 255, 69
+  size: 83, 56
+  orig: 513, 513
+  offset: 214, 66
+  index: -1
+A/leg r_2
+  rotate: false
+  xy: 518, 119
+  size: 125, 189
+  orig: 513, 513
+  offset: 220, 131
+  index: -1
+A/leg r_3
+  rotate: false
+  xy: 248, 21
+  size: 67, 48
+  orig: 513, 513
+  offset: 239, 135
+  index: -1
+A/leg r_4
+  rotate: false
+  xy: 432, 155
+  size: 69, 95
+  orig: 513, 513
+  offset: 236, 85
+  index: -1
+A/rope
+  rotate: false
+  xy: 0, 236
+  size: 257, 221
+  orig: 261, 261
+  offset: 0, 23
+  index: -1
+A/tail 1
+  rotate: true
+  xy: 632, 478
+  size: 143, 108
+  orig: 513, 513
+  offset: 346, 207
+  index: -1
+A/tail 2
+  rotate: true
+  xy: 643, 148
+  size: 160, 95
+  orig: 513, 513
+  offset: 353, 199
+  index: -1
+A/teeth 1
+  rotate: false
+  xy: 659, 625
+  size: 61, 115
+  orig: 513, 513
+  offset: 21, 179
+  index: -1
+A/teeth 2
+  rotate: true
+  xy: 499, 66
+  size: 53, 121
+  orig: 513, 513
+  offset: 100, 159
+  index: -1

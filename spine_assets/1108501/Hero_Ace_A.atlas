@@ -1,0 +1,195 @@
+
+Hero_Ace_A.png
+size: 724,724
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+A/arm l_1
+  rotate: true
+  xy: 420, 28
+  size: 67, 87
+  orig: 801, 513
+  offset: 305, 149
+  index: -1
+A/arm l_2
+  rotate: true
+  xy: 620, 91
+  size: 103, 42
+  orig: 801, 513
+  offset: 337, 197
+  index: -1
+A/arm l_3
+  rotate: true
+  xy: 231, 0
+  size: 65, 93
+  orig: 801, 513
+  offset: 374, 205
+  index: -1
+A/arm r_1
+  rotate: true
+  xy: 507, 40
+  size: 58, 80
+  orig: 801, 513
+  offset: 239, 160
+  index: -1
+A/arm r_2
+  rotate: true
+  xy: 328, 36
+  size: 59, 92
+  orig: 801, 513
+  offset: 278, 216
+  index: -1
+A/arm r_3
+  rotate: false
+  xy: 324, 6
+  size: 83, 30
+  orig: 801, 513
+  offset: 254, 209
+  index: -1
+A/body
+  rotate: false
+  xy: 0, 112
+  size: 222, 230
+  orig: 801, 513
+  offset: 306, 175
+  index: -1
+A/body 1
+  rotate: true
+  xy: 359, 355
+  size: 165, 199
+  orig: 801, 513
+  offset: 265, 234
+  index: -1
+A/eye
+  rotate: false
+  xy: 339, 465
+  size: 14, 17
+  orig: 801, 513
+  offset: 291, 382
+  index: -1
+A/eyeball
+  rotate: false
+  xy: 669, 8
+  size: 42, 42
+  orig: 801, 513
+  offset: 286, 373
+  index: -1
+A/head
+  rotate: false
+  xy: 348, 95
+  size: 145, 85
+  orig: 801, 513
+  offset: 204, 359
+  index: -1
+A/horn 1
+  rotate: false
+  xy: 587, 41
+  size: 82, 50
+  orig: 801, 513
+  offset: 338, 292
+  index: -1
+A/horn 2
+  rotate: false
+  xy: 348, 180
+  size: 143, 175
+  orig: 801, 513
+  offset: 314, 335
+  index: -1
+A/horn 3
+  rotate: false
+  xy: 669, 50
+  size: 55, 72
+  orig: 801, 513
+  offset: 228, 412
+  index: -1
+A/leg l_1
+  rotate: false
+  xy: 222, 135
+  size: 126, 207
+  orig: 801, 513
+  offset: 429, 127
+  index: -1
+A/leg l_2
+  rotate: false
+  xy: 231, 65
+  size: 97, 70
+  orig: 801, 513
+  offset: 454, 129
+  index: -1
+A/leg l_3
+  rotate: false
+  xy: 0, 23
+  size: 150, 89
+  orig: 801, 513
+  offset: 414, 32
+  index: -1
+A/leg l_4
+  rotate: true
+  xy: 493, 98
+  size: 96, 127
+  orig: 801, 513
+  offset: 471, 57
+  index: -1
+A/leg r_1
+  rotate: false
+  xy: 558, 362
+  size: 143, 158
+  orig: 801, 513
+  offset: 290, 145
+  index: -1
+A/leg r_2
+  rotate: true
+  xy: 662, 122
+  size: 103, 51
+  orig: 801, 513
+  offset: 311, 149
+  index: -1
+A/leg r_3
+  rotate: true
+  xy: 646, 225
+  size: 137, 71
+  orig: 801, 513
+  offset: 275, 57
+  index: -1
+A/leg r_4
+  rotate: false
+  xy: 150, 9
+  size: 81, 103
+  orig: 801, 513
+  offset: 331, 81
+  index: -1
+A/mouth 1
+  rotate: true
+  xy: 612, 523
+  size: 201, 99
+  orig: 801, 513
+  offset: 179, 307
+  index: -1
+A/mouth 2
+  rotate: true
+  xy: 491, 194
+  size: 161, 155
+  orig: 801, 513
+  offset: 205, 233
+  index: -1
+A/rope
+  rotate: false
+  xy: 359, 520
+  size: 253, 204
+  orig: 261, 261
+  offset: 4, 32
+  index: -1
+A/tail 1
+  rotate: false
+  xy: 0, 482
+  size: 359, 242
+  orig: 801, 513
+  offset: 442, 172
+  index: -1
+A/tail 2
+  rotate: false
+  xy: 0, 342
+  size: 339, 140
+  orig: 801, 513
+  offset: 435, 190
+  index: -1

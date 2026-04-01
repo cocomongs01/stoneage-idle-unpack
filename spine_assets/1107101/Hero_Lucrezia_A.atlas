@@ -1,0 +1,167 @@
+
+Hero_Lucrezia_A.png
+size: 773,773
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+A/arm r2_1
+  rotate: true
+  xy: 490, 417
+  size: 95, 86
+  orig: 576, 513
+  offset: 251, 114
+  index: -1
+A/arm r2_2
+  rotate: false
+  xy: 375, 6
+  size: 113, 122
+  orig: 576, 513
+  offset: 235, 46
+  index: -1
+A/arm r_1
+  rotate: true
+  xy: 576, 142
+  size: 97, 84
+  orig: 576, 513
+  offset: 181, 131
+  index: -1
+A/arm r_2
+  rotate: true
+  xy: 252, 8
+  size: 120, 123
+  orig: 576, 513
+  offset: 158, 60
+  index: -1
+A/body
+  rotate: false
+  xy: 0, 517
+  size: 312, 256
+  orig: 576, 513
+  offset: 154, 95
+  index: -1
+A/ear_l
+  rotate: false
+  xy: 660, 170
+  size: 48, 74
+  orig: 576, 513
+  offset: 190, 261
+  index: -1
+A/ear_r
+  rotate: false
+  xy: 707, 261
+  size: 58, 67
+  orig: 576, 513
+  offset: 109, 266
+  index: -1
+A/eye
+  rotate: false
+  xy: 407, 134
+  size: 16, 19
+  orig: 576, 513
+  offset: 189, 210
+  index: -1
+A/eyeball
+  rotate: false
+  xy: 587, 87
+  size: 61, 55
+  orig: 576, 513
+  offset: 174, 195
+  index: -1
+A/hair
+  rotate: true
+  xy: 587, 46
+  size: 41, 58
+  orig: 576, 513
+  offset: 219, 141
+  index: -1
+A/hair 2
+  rotate: false
+  xy: 260, 240
+  size: 230, 272
+  orig: 576, 513
+  offset: 139, 163
+  index: -1
+A/hair 3
+  rotate: false
+  xy: 0, 213
+  size: 260, 304
+  orig: 576, 513
+  offset: 184, 147
+  index: -1
+A/hair 4
+  rotate: true
+  xy: 576, 418
+  size: 234, 191
+  orig: 576, 513
+  offset: 228, 225
+  index: -1
+A/head
+  rotate: true
+  xy: 312, 512
+  size: 261, 264
+  orig: 576, 513
+  offset: 51, 99
+  index: -1
+A/head 2
+  rotate: true
+  xy: 260, 128
+  size: 112, 147
+  orig: 576, 513
+  offset: 147, 107
+  index: -1
+A/leg l_1
+  rotate: true
+  xy: 576, 652
+  size: 121, 197
+  orig: 576, 513
+  offset: 348, 103
+  index: -1
+A/leg l_2
+  rotate: true
+  xy: 707, 328
+  size: 90, 58
+  orig: 576, 513
+  offset: 377, 106
+  index: -1
+A/leg l_3
+  rotate: false
+  xy: 467, 134
+  size: 109, 105
+  orig: 576, 513
+  offset: 383, 57
+  index: -1
+A/leg r_1
+  rotate: false
+  xy: 592, 244
+  size: 115, 174
+  orig: 576, 513
+  offset: 271, 112
+  index: -1
+A/leg r_2
+  rotate: true
+  xy: 407, 153
+  size: 87, 60
+  orig: 576, 513
+  offset: 298, 111
+  index: -1
+A/leg r_3
+  rotate: true
+  xy: 488, 30
+  size: 104, 99
+  orig: 576, 513
+  offset: 304, 67
+  index: -1
+A/rope
+  rotate: false
+  xy: 0, 11
+  size: 252, 202
+  orig: 261, 261
+  offset: 4, 32
+  index: -1
+A/tail
+  rotate: true
+  xy: 490, 239
+  size: 178, 102
+  orig: 576, 513
+  offset: 391, 173
+  index: -1

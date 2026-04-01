@@ -1,0 +1,160 @@
+
+Mogaros_pickup.png
+size: 1933,1933
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+A/arm l_1
+  rotate: true
+  xy: 1634, 465
+  size: 210, 259
+  orig: 1538, 1556
+  offset: 698, 300
+  index: -1
+A/arm l_2
+  rotate: true
+  xy: 1792, 1391
+  size: 157, 141
+  orig: 1538, 1556
+  offset: 765, 453
+  index: -1
+A/arm l_3
+  rotate: true
+  xy: 0, 66
+  size: 235, 371
+  orig: 1538, 1556
+  offset: 715, 471
+  index: -1
+A/arm r_1
+  rotate: false
+  xy: 983, 224
+  size: 182, 242
+  orig: 1538, 1556
+  offset: 337, 305
+  index: -1
+A/arm r_2
+  rotate: false
+  xy: 847, 52
+  size: 113, 121
+  orig: 1538, 1556
+  offset: 397, 475
+  index: -1
+A/arm r_3
+  rotate: false
+  xy: 847, 173
+  size: 136, 275
+  orig: 1538, 1556
+  offset: 376, 525
+  index: -1
+A/body
+  rotate: false
+  xy: 0, 1055
+  size: 825, 878
+  orig: 1538, 1556
+  offset: 280, 483
+  index: -1
+A/ear l
+  rotate: false
+  xy: 0, 301
+  size: 406, 754
+  orig: 1538, 1556
+  offset: 580, 569
+  index: -1
+A/ear r
+  rotate: false
+  xy: 870, 466
+  size: 342, 592
+  orig: 1538, 1556
+  offset: 165, 616
+  index: -1
+A/eye l
+  rotate: false
+  xy: 1271, 1327
+  size: 48, 65
+  orig: 1538, 1556
+  offset: 586, 943
+  index: -1
+A/eye r
+  rotate: false
+  xy: 1212, 1007
+  size: 40, 51
+  orig: 1538, 1556
+  offset: 305, 917
+  index: -1
+A/eyeball
+  rotate: true
+  xy: 1792, 1548
+  size: 385, 140
+  orig: 1538, 1556
+  offset: 295, 893
+  index: -1
+A/head_1
+  rotate: true
+  xy: 406, 448
+  size: 607, 464
+  orig: 1538, 1556
+  offset: 224, 661
+  index: -1
+A/head_2
+  rotate: false
+  xy: 825, 1392
+  size: 566, 541
+  orig: 1538, 1556
+  offset: 268, 396
+  index: -1
+A/leg l_1
+  rotate: false
+  xy: 1604, 141
+  size: 318, 324
+  orig: 1538, 1556
+  offset: 874, 412
+  index: -1
+A/leg l_2
+  rotate: false
+  xy: 1212, 152
+  size: 392, 371
+  orig: 1538, 1556
+  offset: 992, 188
+  index: -1
+A/leg l_3
+  rotate: true
+  xy: 1271, 978
+  size: 345, 526
+  orig: 1538, 1556
+  offset: 840, 491
+  index: -1
+A/leg r_1
+  rotate: true
+  xy: 1634, 675
+  size: 303, 268
+  orig: 1538, 1556
+  offset: 176, 413
+  index: -1
+A/leg r_2
+  rotate: false
+  xy: 825, 1058
+  size: 446, 334
+  orig: 1538, 1556
+  offset: 49, 201
+  index: -1
+A/leg r_3
+  rotate: false
+  xy: 1212, 523
+  size: 422, 455
+  orig: 1538, 1556
+  offset: 191, 517
+  index: -1
+A/tail
+  rotate: true
+  xy: 406, 26
+  size: 422, 441
+  orig: 1538, 1556
+  offset: 813, 851
+  index: -1
+A/tail 2
+  rotate: true
+  xy: 1391, 1323
+  size: 610, 401
+  orig: 1538, 1556
+  offset: 798, 843
+  index: -1

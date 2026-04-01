@@ -2,6 +2,7 @@
   const data = window.GACHA_PET_VIEWER_DATA;
   const spineManifest = Object.assign(
     {},
+    window.GACHA_PET_SPINE_MANIFEST_INDEX || {},
     window.GACHA_PET_SPINE_MANIFEST || {},
     window.GACHA_PET_WEAPON_SPINE_MANIFEST || {},
   );
@@ -172,6 +173,8 @@
   let lastScheduleStatusTickKey = "";
   let scheduleCalibrationOptionsCache = null;
   let spineRuntimePromise = null;
+  const spineManifestLoadPromises = new Map();
+  const legacyManifestLoadPromises = new Map();
   const activeMobileLoadingTasks = new Set();
   const activePressTargetByPointerId = new Map();
   const MOBILE_PRESSABLE_SELECTOR = [
@@ -1509,11 +1512,20 @@
     fire: { typeId: 3, backCloud: "12", midCloud: "07", frontCloud: "01", farLeft: "08", farRight: "09", beamLeft: "11", beamRight: "10", particles: "fire" },
     leaf: { typeId: 1, backCloud: "07", midCloud: "05", frontCloud: "01", farLeft: "", farRight: "", beamLeft: "", beamRight: "", particles: "leaf" },
   };
+  const SPECIAL_HERO_SCENE_SPINE_MANIFEST_OVERRIDES = Object.freeze({
+    "1103401": Object.freeze({
+      assetKind: "pickup",
+      assetName: "verga_pickup",
+      chunkSrc: "spine_manifest_pickup_entries/1103401.js",
+      hideStaticBanner: false,
+    }),
+  });
 
   const HERO_ANIMATION_PHASE_OVERRIDES = {};
   const HERO_ANIMATION_NAME_OVERRIDES = {
-    "1103401": "Idle_Big",
+    "1103401": "Idle",
   };
+  const HERO_BONE_ROTATION_CORRECTIONS = {};
   const RIDE_SKIN_NAME_OVERRIDES = {};
   // Dump sources:
   // - rides: ride_level_data.csv linked states + ride_grade.csv GradeStatusSummary
@@ -1633,6 +1645,7 @@
       stageAnchorOffsetRatio: 0,
     },
   };
+  Object.assign(spineManifest, SPECIAL_HERO_SCENE_SPINE_MANIFEST_OVERRIDES);
   const WEAPON_SKIN_NAME_BY_ID = Object.freeze({
     "220000007": "Weapon/W10007",
     "220000008": "Weapon/W10008",
@@ -1705,12 +1718,12 @@
     }, {})
   );
   const WEAPON_BACKGROUND_ASSET_BY_ID = Object.freeze({
-    "220000007": "assets/backgrounds/weapons/weapons_bg_fire.png",
-    "220000008": "assets/backgrounds/weapons/weapons_bg_leaf.png",
-    "220000009": "assets/backgrounds/weapons/weapons_bg_wind.png",
-    "220000010": "assets/backgrounds/weapons/weapons_bg_water.png",
-    "220000011": "assets/backgrounds/weapons/weapons_bg_leaf.png",
-    "220000012": "assets/backgrounds/weapons/weapons_bg_fire.png",
+    "220000007": "assets/backgrounds/weapons/weapons_bg_fire.webp",
+    "220000008": "assets/backgrounds/weapons/weapons_bg_leaf.webp",
+    "220000009": "assets/backgrounds/weapons/weapons_bg_wind.webp",
+    "220000010": "assets/backgrounds/weapons/weapons_bg_water.webp",
+    "220000011": "assets/backgrounds/weapons/weapons_bg_leaf.webp",
+    "220000012": "assets/backgrounds/weapons/weapons_bg_fire.webp",
   });
 
   const SCENE_EMBER_LAYOUT = [
@@ -2337,8 +2350,24 @@
 
   function assetUrl(path) {
     if (!path) return "";
-    const separator = path.includes("?") ? "&" : "?";
-    return `${path}${separator}v=${assetVersion}`;
+    const resolvedPath = resolveOptimizedAssetPath(path);
+    const separator = resolvedPath.includes("?") ? "&" : "?";
+    return `${resolvedPath}${separator}v=${assetVersion}`;
+  }
+
+  function resolveOptimizedAssetPath(path) {
+    const normalizedPath = String(path || "").replace(/\\/g, "/");
+    if (!normalizedPath) return "";
+    if (/^assets\/pets\/[^/]+-portrait\.png$/i.test(normalizedPath)) {
+      return normalizedPath.replace(/\.png$/i, ".webp");
+    }
+    if (/^assets\/backgrounds\/weapons\/[^/]+\.png$/i.test(normalizedPath)) {
+      return normalizedPath.replace(/\.png$/i, ".webp");
+    }
+    if (/^assets\/backgrounds\/hero_info_full\/HeroInfo_Background_Type_[^/]+\.png$/i.test(normalizedPath)) {
+      return normalizedPath.replace(/\.png$/i, ".webp");
+    }
+    return normalizedPath;
   }
 
   function heroInfoSceneDefinition(elementKey) {
@@ -2348,15 +2377,15 @@
     const basePath = `assets/backgrounds/hero_info_full/HeroInfo_Background_Type_${config.typeId}_4`;
     return {
       key: `${elementKey}-${config.typeId}`,
-      background: `${basePath}.png`,
-      stageBack: `${basePath}_B.png`,
-      farLeft: config.farLeft ? `${basePath}_${config.farLeft}.png` : "",
-      farRight: config.farRight ? `${basePath}_${config.farRight}.png` : "",
-      backCloud: `${basePath}_${config.backCloud}.png`,
-      beamLeft: config.beamLeft ? `${basePath}_${config.beamLeft}.png` : "",
-      beamRight: config.beamRight ? `${basePath}_${config.beamRight}.png` : "",
-      midCloud: `${basePath}_${config.midCloud}.png`,
-      frontCloud: `${basePath}_${config.frontCloud}.png`,
+      background: `${basePath}.webp`,
+      stageBack: `${basePath}_B.webp`,
+      farLeft: config.farLeft ? `${basePath}_${config.farLeft}.webp` : "",
+      farRight: config.farRight ? `${basePath}_${config.farRight}.webp` : "",
+      backCloud: `${basePath}_${config.backCloud}.webp`,
+      beamLeft: config.beamLeft ? `${basePath}_${config.beamLeft}.webp` : "",
+      beamRight: config.beamRight ? `${basePath}_${config.beamRight}.webp` : "",
+      midCloud: `${basePath}_${config.midCloud}.webp`,
+      frontCloud: `${basePath}_${config.frontCloud}.webp`,
       particles: config.particles || "",
     };
   }
@@ -2365,7 +2394,7 @@
     if (!pet || pet.kind !== "ride") return "";
     const config = HERO_INFO_SCENE_CONFIG[pet.elementKey || ""];
     if (!config) return "";
-    return `assets/backgrounds/hero_info_full/HeroInfo_Background_Type_${config.typeId}_4.png`;
+    return `assets/backgrounds/hero_info_full/HeroInfo_Background_Type_${config.typeId}_4.webp`;
   }
 
   function weaponBannerBackgroundAsset(pet) {
@@ -2465,6 +2494,147 @@
       }, { once: true });
       (document.head || document.body || document.documentElement).appendChild(script);
     });
+  }
+
+  function getManifestEntry(entityId) {
+    const entryId = String(entityId || "");
+    return entryId ? (spineManifest[entryId] || null) : null;
+  }
+
+  function getGlobalManifestEntry(entityId) {
+    const entryId = String(entityId || "");
+    if (!entryId) return null;
+
+    const manifestSources = [
+      window.GACHA_PET_SPINE_MANIFEST,
+      window.GACHA_PET_PICKUP_SPINE_MANIFEST,
+      window.GACHA_PET_WEAPON_SPINE_MANIFEST,
+    ];
+
+    for (const source of manifestSources) {
+      if (source && source[entryId]) {
+        return source[entryId];
+      }
+    }
+
+    return null;
+  }
+
+  function getLoadedManifestEntry(entityId) {
+    const entryId = String(entityId || "");
+    if (!entryId) return null;
+
+    const baseEntry = getManifestEntry(entryId);
+    if (baseEntry && baseEntry.atlasText && baseEntry.skeletonBase64) {
+      return baseEntry;
+    }
+
+    const globalEntry = getGlobalManifestEntry(entryId);
+    if (globalEntry) {
+      const mergedGlobalEntry = Object.assign({}, baseEntry || {}, globalEntry);
+      spineManifest[entryId] = mergedGlobalEntry;
+      return mergedGlobalEntry;
+    }
+
+    const cacheSources = [];
+    if (baseEntry && baseEntry.assetKind === "pickup") {
+      cacheSources.push(window.GACHA_PET_PICKUP_SPINE_ENTRY_CACHE);
+    }
+    cacheSources.push(window.GACHA_PET_SPINE_ENTRY_CACHE, window.GACHA_PET_PICKUP_SPINE_ENTRY_CACHE);
+
+    for (const cache of cacheSources) {
+      if (!cache) continue;
+      const cachedEntry = cache[entryId];
+      if (!cachedEntry) continue;
+
+      const mergedEntry = Object.assign({}, baseEntry || {}, cachedEntry);
+      spineManifest[entryId] = mergedEntry;
+      return mergedEntry;
+    }
+
+    return baseEntry;
+  }
+
+  function legacyManifestSrcForEntry(manifestMeta) {
+    if (!manifestMeta) return "";
+    if (manifestMeta.assetKind === "weapon") {
+      return "spine_manifest_weapon.js";
+    }
+    if (manifestMeta.assetKind === "pickup") {
+      return "pet_pickup_spine_manifest.js";
+    }
+    return "spine_manifest.js";
+  }
+
+  function ensureLegacyManifestLoaded(entityId, manifestMeta) {
+    const entryId = String(entityId || "");
+    if (!entryId || !manifestMeta) {
+      return Promise.resolve(getLoadedManifestEntry(entryId));
+    }
+
+    const src = legacyManifestSrcForEntry(manifestMeta);
+    if (!src) {
+      return Promise.resolve(getLoadedManifestEntry(entryId));
+    }
+
+    const promiseKey = `${manifestMeta.assetKind || "unknown"}:${src}`;
+    const pendingLoad = legacyManifestLoadPromises.get(promiseKey);
+    if (pendingLoad) {
+      return pendingLoad.then(() => getLoadedManifestEntry(entryId));
+    }
+
+    const loadPromise = loadRuntimeScript(assetUrl(src))
+      .catch((error) => {
+        legacyManifestLoadPromises.delete(promiseKey);
+        throw error;
+      });
+
+    legacyManifestLoadPromises.set(promiseKey, loadPromise);
+    return loadPromise.then(() => getLoadedManifestEntry(entryId));
+  }
+
+  function ensureManifestEntryLoaded(entityId) {
+    const entryId = String(entityId || "");
+    if (!entryId) {
+      return Promise.resolve(null);
+    }
+
+    const loadedEntry = getLoadedManifestEntry(entryId);
+    if (loadedEntry && loadedEntry.atlasText && loadedEntry.skeletonBase64) {
+      return Promise.resolve(loadedEntry);
+    }
+
+    const manifestMeta = getManifestEntry(entryId);
+    if (!manifestMeta || !manifestMeta.chunkSrc) {
+      return Promise.resolve(loadedEntry || manifestMeta || null);
+    }
+
+    const pendingLoad = spineManifestLoadPromises.get(entryId);
+    if (pendingLoad) {
+      return pendingLoad;
+    }
+
+    const loadPromise = loadRuntimeScript(assetUrl(manifestMeta.chunkSrc))
+      .then(() => {
+        const nextEntry = getLoadedManifestEntry(entryId);
+        if (!nextEntry || !nextEntry.atlasText || !nextEntry.skeletonBase64) {
+          throw new Error(`Spine manifest chunk missing data: ${entryId}`);
+        }
+        return nextEntry;
+      })
+      .catch(() => ensureLegacyManifestLoaded(entryId, manifestMeta))
+      .then((nextEntry) => {
+        if (!nextEntry || !nextEntry.atlasText || !nextEntry.skeletonBase64) {
+          throw new Error(`Spine manifest data unavailable: ${entryId}`);
+        }
+        return nextEntry;
+      })
+      .finally(() => {
+        spineManifestLoadPromises.delete(entryId);
+      });
+
+    spineManifestLoadPromises.set(entryId, loadPromise);
+    return loadPromise;
   }
 
   function ensureSpineRuntimeLoaded() {
@@ -2730,6 +2900,53 @@
     return HERO_SCENE_LAYOUT_OVERRIDES[String(characterId)] || null;
   }
 
+  function getHeroBoneRotationCorrections(characterId) {
+    return HERO_BONE_ROTATION_CORRECTIONS[String(characterId)] || [];
+  }
+
+  function applyHeroBoneRotationCorrections(preview, characterId) {
+    const corrections = getHeroBoneRotationCorrections(characterId);
+    if (!preview || !preview.skeleton || !Array.isArray(corrections) || !corrections.length) {
+      return;
+    }
+
+    corrections.forEach((correction) => {
+      if (!correction || !correction.boneName || !Number.isFinite(correction.rotationOffset)) {
+        return;
+      }
+      const bone = Array.isArray(preview.skeleton.bones)
+        ? preview.skeleton.bones.find((item) => item && item.data && item.data.name === correction.boneName)
+        : null;
+      if (bone) {
+        if (Number.isFinite(bone.__viewerBoneRotationCorrectionApplied)) {
+          bone.rotation -= bone.__viewerBoneRotationCorrectionApplied;
+        }
+        bone.rotation += correction.rotationOffset;
+        bone.__viewerBoneRotationCorrectionApplied = correction.rotationOffset;
+      }
+    });
+  }
+
+  function clearHeroBoneRotationCorrections(preview, characterId) {
+    const corrections = getHeroBoneRotationCorrections(characterId);
+    if (!preview || !preview.skeleton || !Array.isArray(corrections) || !corrections.length) {
+      return;
+    }
+
+    corrections.forEach((correction) => {
+      if (!correction || !correction.boneName) {
+        return;
+      }
+      const bone = Array.isArray(preview.skeleton.bones)
+        ? preview.skeleton.bones.find((item) => item && item.data && item.data.name === correction.boneName)
+        : null;
+      if (bone && Number.isFinite(bone.__viewerBoneRotationCorrectionApplied)) {
+        bone.rotation -= bone.__viewerBoneRotationCorrectionApplied;
+        bone.__viewerBoneRotationCorrectionApplied = 0;
+      }
+    });
+  }
+
   function clearSpineResizeObserver() {
     if (!spineState.resizeObserver) return;
     spineState.resizeObserver.disconnect();
@@ -2810,7 +3027,7 @@
       return;
     }
 
-    const isHeroScene = spineState.assetKind === "hero";
+    const isHeroScene = spineState.assetKind === "hero" || spineState.assetKind === "pickup";
     const isWeaponVisual = spineState.assetKind === "weapon";
     const isRideVisual = spineState.assetKind === "ride";
     const liveLayoutOptions = isRideVisual
@@ -2999,6 +3216,8 @@
     const skeletonData = binary.readSkeletonData(decodeBase64ToBytes(manifestEntry.skeletonBase64));
     const preview = new spineApi.Spine(skeletonData);
     const useStableRideInitialLayout = manifestEntry.assetKind === "ride" && STABLE_RIDE_LAYOUT_IDS[characterId];
+    const useManualHeroBoneCorrectionTick = manifestEntry.assetKind === "hero"
+      && getHeroBoneRotationCorrections(characterId).length > 0;
     const animationName = resolveAnimationName(
       skeletonData,
       manifestEntry.assetKind || "",
@@ -3013,7 +3232,7 @@
       ? getSelectedWeaponEquipmentSet(characterId, skeletonData)
       : null;
 
-    preview.autoUpdate = !useStableRideInitialLayout;
+    preview.autoUpdate = !(useStableRideInitialLayout || useManualHeroBoneCorrectionTick);
     if (manifestEntry.assetKind === "weapon" && preview.skeleton && typeof preview.skeleton.setSkin === "function") {
       const compositeSkin = createWeaponCompositeSkin(spineApi, skeletonData, characterId);
       if (compositeSkin) {
@@ -3047,6 +3266,9 @@
     if (typeof preview.update === "function") {
       preview.update(0.016);
     }
+    if (useManualHeroBoneCorrectionTick) {
+      applyHeroBoneRotationCorrections(preview, characterId);
+    }
     if (preview.skeleton && typeof preview.skeleton.updateWorldTransform === "function") {
       preview.skeleton.updateWorldTransform();
     }
@@ -3064,13 +3286,27 @@
     elements.bannerImage.hidden = shouldHideStaticBanner(manifestEntry) || !Boolean(elements.bannerImage.getAttribute("src"));
     if (elements.spotlightMedia) {
       elements.spotlightMedia.classList.add("has-live-spine");
-      elements.spotlightMedia.classList.toggle("has-pet-scene", manifestEntry.assetKind === "hero");
+      elements.spotlightMedia.classList.toggle("has-pet-scene", manifestEntry.assetKind === "hero" || manifestEntry.assetKind === "pickup");
     }
 
     spineState.app = app;
     spineState.preview = preview;
     spineState.mode = "live";
     spineState.assetKind = manifestEntry.assetKind || "";
+
+    if (useManualHeroBoneCorrectionTick) {
+      app.ticker.add(() => {
+        if (!spineState.preview || spineState.currentCharacterId !== characterId) return;
+        clearHeroBoneRotationCorrections(preview, characterId);
+        if (typeof preview.update === "function") {
+          preview.update(app.ticker.deltaMS / 1000);
+        }
+        applyHeroBoneRotationCorrections(preview, characterId);
+        if (preview.skeleton && typeof preview.skeleton.updateWorldTransform === "function") {
+          preview.skeleton.updateWorldTransform();
+        }
+      });
+    }
 
     requestSpineLayout();
     if (!(manifestEntry.assetKind === "ride" && STABLE_RIDE_LAYOUT_IDS[characterId])) {
@@ -4638,7 +4874,7 @@
 
     elements.equipmentSetList.innerHTML = "";
     const entityId = getEntityId(pet);
-    const manifestEntry = spineManifest[entityId];
+    const manifestEntry = getManifestEntry(entityId);
     const availableSets = manifestEntry && spineState.preview && spineState.currentCharacterId === entityId
       ? getAvailableWeaponEquipmentSets(spineState.preview.skeleton && spineState.preview.skeleton.data)
       : WEAPON_EQUIPMENT_SETS;
@@ -4733,8 +4969,12 @@
 
   function renderSpotlightMedia(pet) {
     const entityId = getEntityId(pet);
-    const manifestEntry = spineManifest[entityId];
-    const hasHeroScene = Boolean(pet.kind === "pet" && manifestEntry && manifestEntry.assetKind === "hero");
+    const manifestEntry = getManifestEntry(entityId);
+    const hasHeroScene = Boolean(
+      pet.kind === "pet"
+      && manifestEntry
+      && (manifestEntry.assetKind === "hero" || manifestEntry.assetKind === "pickup")
+    );
     const sceneDefinition = hasHeroScene ? heroInfoSceneDefinition(pet.elementKey || "water") : null;
     const rideBannerBackground = rideBannerBackgroundAsset(pet);
     const weaponBannerBackground = weaponBannerBackgroundAsset(pet);
@@ -4805,8 +5045,16 @@
     }
 
     setMobileLoading("spine-preview", true);
-    Promise.resolve(ensureSpineRuntimeLoaded())
-      .then(() => mountSpinePreview(entityId, manifestEntry, spineState.loadToken))
+    Promise.all([
+      ensureManifestEntryLoaded(entityId),
+      ensureSpineRuntimeLoaded(),
+    ])
+      .then(([loadedManifestEntry]) => {
+        if (!loadedManifestEntry) {
+          return false;
+        }
+        return mountSpinePreview(entityId, loadedManifestEntry, spineState.loadToken);
+      })
       .catch((error) => {
         console.warn(`Spine preview failed for ${entityId}.`, error);
         destroySpinePreview();
