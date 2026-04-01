@@ -2506,7 +2506,10 @@
 
     const manifestSources = [
       window.GACHA_PET_SPINE_MANIFEST,
+      window.GACHA_PET_SPINE_MANIFEST_EMBEDDED,
+      window.GACHA_PET_PICKUP_SPINE_MANIFEST_EMBEDDED,
       window.GACHA_PET_WEAPON_SPINE_MANIFEST,
+      window.GACHA_PET_WEAPON_SPINE_MANIFEST_EMBEDDED,
     ];
 
     for (const source of manifestSources) {
@@ -2553,6 +2556,15 @@
     return baseEntry;
   }
 
+  function hasEmbeddedManifestPayload(manifestEntry) {
+    if (!manifestEntry) return false;
+    return Boolean(
+      manifestEntry.atlasText
+        && manifestEntry.skeletonBase64
+        && (manifestEntry.textureDataUri || manifestEntry.textureDataUris)
+    );
+  }
+
   function hasManifestSpinePayload(manifestEntry) {
     if (!manifestEntry) return false;
     const hasAtlas = Boolean(manifestEntry.atlasText || manifestEntry.atlasFile);
@@ -2562,6 +2574,48 @@
         || manifestEntry.skeletonBytes
     );
     return hasAtlas && hasSkeleton;
+  }
+
+  function legacyManifestSrcForEntry(manifestMeta) {
+    if (!manifestMeta) return "";
+    if (manifestMeta.assetKind === "weapon") {
+      return "spine_manifest_weapon.embedded.js";
+    }
+    if (manifestMeta.assetKind === "pickup") {
+      return "pet_pickup_spine_manifest.embedded.js";
+    }
+    return "spine_manifest.embedded.js";
+  }
+
+  function ensureLegacyManifestLoaded(entityId, manifestMeta) {
+    const entryId = String(entityId || "");
+    if (!entryId || !manifestMeta) {
+      return Promise.resolve(getLoadedManifestEntry(entryId));
+    }
+
+    const src = legacyManifestSrcForEntry(manifestMeta);
+    if (!src) {
+      return Promise.resolve(getLoadedManifestEntry(entryId));
+    }
+
+    const promiseKey = `${manifestMeta.assetKind || "unknown"}:${src}`;
+    const pendingLoad = spineManifestLoadPromises.get(promiseKey);
+    if (pendingLoad) {
+      return pendingLoad.then(() => getLoadedManifestEntry(entryId));
+    }
+
+    const loadPromise = loadRuntimeScript(assetUrl(src))
+      .catch((error) => {
+        spineManifestLoadPromises.delete(promiseKey);
+        throw error;
+      });
+
+    spineManifestLoadPromises.set(promiseKey, loadPromise);
+    return loadPromise
+      .then(() => getLoadedManifestEntry(entryId))
+      .finally(() => {
+        spineManifestLoadPromises.delete(promiseKey);
+      });
   }
 
   function fetchSpineTextAsset(assetPath) {
@@ -2674,9 +2728,13 @@
     if (!entryId) {
       return Promise.resolve(null);
     }
+    const preferEmbeddedPayload = isFileProtocol();
 
     const loadedEntry = getLoadedManifestEntry(entryId);
-    if (hasManifestSpinePayload(loadedEntry)) {
+    if (
+      (preferEmbeddedPayload && hasEmbeddedManifestPayload(loadedEntry))
+      || (!preferEmbeddedPayload && hasManifestSpinePayload(loadedEntry))
+    ) {
       return Promise.resolve(loadedEntry);
     }
 
@@ -2693,13 +2751,25 @@
     const loadPromise = loadRuntimeScript(assetUrl(manifestMeta.chunkSrc))
       .then(() => {
         const nextEntry = getLoadedManifestEntry(entryId);
-        if (!hasManifestSpinePayload(nextEntry)) {
+        if (
+          (preferEmbeddedPayload && !hasEmbeddedManifestPayload(nextEntry))
+          || (!preferEmbeddedPayload && !hasManifestSpinePayload(nextEntry))
+        ) {
           throw new Error(`Spine manifest chunk missing data: ${entryId}`);
         }
         return nextEntry;
       })
+      .catch((error) => {
+        if (!preferEmbeddedPayload) {
+          throw error;
+        }
+        return ensureLegacyManifestLoaded(entryId, manifestMeta);
+      })
       .then((nextEntry) => {
-        if (!hasManifestSpinePayload(nextEntry)) {
+        if (
+          (preferEmbeddedPayload && !hasEmbeddedManifestPayload(nextEntry))
+          || (!preferEmbeddedPayload && !hasManifestSpinePayload(nextEntry))
+        ) {
           throw new Error(`Spine manifest data unavailable: ${entryId}`);
         }
         return nextEntry;

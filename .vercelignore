@@ -10,3 +10,6 @@ backups/
 spine_manifest.js
 spine_manifest_weapon.js
 pet_pickup_spine_manifest.js
+spine_manifest.embedded.js
+spine_manifest_weapon.embedded.js
+pet_pickup_spine_manifest.embedded.js
