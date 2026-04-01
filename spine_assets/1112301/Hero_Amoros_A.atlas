@@ -1,0 +1,167 @@
+
+Hero_Amoros_A.png
+size: 723,723
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+A/body 1
+  rotate: true
+  xy: 0, 79
+  size: 144, 215
+  orig: 513, 513
+  offset: 235, 114
+  index: -1
+A/body 2
+  rotate: false
+  xy: 0, 394
+  size: 337, 329
+  orig: 513, 513
+  offset: 113, 76
+  index: -1
+A/ear l
+  rotate: false
+  xy: 436, 18
+  size: 87, 59
+  orig: 513, 513
+  offset: 216, 345
+  index: -1
+A/ear r
+  rotate: true
+  xy: 661, 102
+  size: 58, 56
+  orig: 513, 513
+  offset: 91, 337
+  index: -1
+A/eye 1
+  rotate: true
+  xy: 164, 238
+  size: 17, 18
+  orig: 513, 513
+  offset: 162, 327
+  index: -1
+A/eyeball l
+  rotate: false
+  xy: 672, 266
+  size: 47, 51
+  orig: 513, 513
+  offset: 154, 302
+  index: -1
+A/front leg l_1
+  rotate: true
+  xy: 215, 131
+  size: 124, 122
+  orig: 513, 513
+  offset: 239, 99
+  index: -1
+A/front leg l_2
+  rotate: true
+  xy: 565, 219
+  size: 98, 107
+  orig: 513, 513
+  offset: 229, 32
+  index: -1
+A/front leg r_1
+  rotate: false
+  xy: 598, 617
+  size: 97, 106
+  orig: 513, 513
+  offset: 148, 96
+  index: -1
+A/front leg r_2
+  rotate: true
+  xy: 598, 518
+  size: 99, 90
+  orig: 513, 513
+  offset: 136, 41
+  index: -1
+A/hair 1
+  rotate: true
+  xy: 661, 46
+  size: 56, 34
+  orig: 513, 513
+  offset: 151, 398
+  index: -1
+A/head_upper
+  rotate: false
+  xy: 0, 223
+  size: 164, 171
+  orig: 513, 513
+  offset: 91, 253
+  index: -1
+A/horn r
+  rotate: false
+  xy: 164, 255
+  size: 168, 139
+  orig: 513, 513
+  offset: 4, 131
+  index: -1
+A/hornㅣ
+  rotate: true
+  xy: 337, 214
+  size: 248, 228
+  orig: 513, 513
+  offset: 29, 130
+  index: -1
+A/leg l_1
+  rotate: false
+  xy: 565, 317
+  size: 113, 145
+  orig: 513, 513
+  offset: 342, 74
+  index: -1
+A/leg l_2
+  rotate: true
+  xy: 333, 1
+  size: 76, 103
+  orig: 513, 513
+  offset: 366, 40
+  index: -1
+A/leg r_1
+  rotate: false
+  xy: 215, 10
+  size: 118, 121
+  orig: 513, 513
+  offset: 246, 94
+  index: -1
+A/leg r_2
+  rotate: false
+  xy: 0, 0
+  size: 83, 79
+  orig: 513, 513
+  offset: 260, 49
+  index: -1
+A/nose 1
+  rotate: true
+  xy: 337, 77
+  size: 137, 215
+  orig: 513, 513
+  offset: 52, 142
+  index: -1
+A/nose 4
+  rotate: false
+  xy: 552, 18
+  size: 109, 196
+  orig: 513, 513
+  offset: 54, 26
+  index: -1
+A/rope
+  rotate: false
+  xy: 337, 462
+  size: 261, 261
+  orig: 261, 261
+  offset: 0, 0
+  index: -1
+A/tail 1
+  rotate: true
+  xy: 83, 3
+  size: 76, 107
+  orig: 513, 513
+  offset: 394, 122
+  index: -1
+A/tail 2
+  rotate: false
+  xy: 661, 160
+  size: 58, 59
+  orig: 513, 513
+  offset: 445, 121
+  index: -1

@@ -1,0 +1,216 @@
+
+Hero_Orly_A.png
+size: 535,535
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+A/arml_1
+  rotate: true
+  xy: 456, 470
+  size: 65, 76
+  orig: 513, 513
+  offset: 261, 92
+  index: -1
+A/arml_2
+  rotate: true
+  xy: 328, 170
+  size: 69, 104
+  orig: 513, 513
+  offset: 245, 128
+  index: -1
+A/arml_3
+  rotate: true
+  xy: 40, 181
+  size: 58, 81
+  orig: 513, 513
+  offset: 240, 32
+  index: -1
+A/arml_4
+  rotate: true
+  xy: 0, 179
+  size: 60, 40
+  orig: 513, 513
+  offset: 231, 18
+  index: -1
+A/armr_1
+  rotate: true
+  xy: 436, 315
+  size: 62, 99
+  orig: 513, 513
+  offset: 215, 129
+  index: -1
+A/armr_2
+  rotate: true
+  xy: 155, 182
+  size: 45, 80
+  orig: 513, 513
+  offset: 218, 90
+  index: -1
+A/armr_3
+  rotate: true
+  xy: 73, 267
+  size: 64, 82
+  orig: 513, 513
+  offset: 189, 36
+  index: -1
+A/armr_4
+  rotate: true
+  xy: 121, 185
+  size: 54, 34
+  orig: 513, 513
+  offset: 185, 26
+  index: -1
+A/body
+  rotate: false
+  xy: 258, 403
+  size: 198, 132
+  orig: 513, 513
+  offset: 220, 128
+  index: -1
+A/eye 1
+  rotate: false
+  xy: 436, 392
+  size: 12, 11
+  orig: 513, 513
+  offset: 176, 303
+  index: -1
+A/eyeball
+  rotate: false
+  xy: 92, 243
+  size: 23, 24
+  orig: 513, 513
+  offset: 173, 295
+  index: -1
+A/head_lower
+  rotate: false
+  xy: 256, 186
+  size: 72, 53
+  orig: 513, 513
+  offset: 147, 253
+  index: -1
+A/head_upper
+  rotate: false
+  xy: 328, 105
+  size: 100, 65
+  orig: 513, 513
+  offset: 138, 261
+  index: -1
+A/horn1
+  rotate: false
+  xy: 336, 42
+  size: 52, 63
+  orig: 513, 513
+  offset: 174, 306
+  index: -1
+A/horn2
+  rotate: false
+  xy: 388, 42
+  size: 30, 63
+  orig: 513, 513
+  offset: 167, 308
+  index: -1
+A/horn3
+  rotate: false
+  xy: 134, 19
+  size: 130, 159
+  orig: 513, 513
+  offset: 85, 307
+  index: -1
+A/horn4
+  rotate: false
+  xy: 258, 239
+  size: 178, 164
+  orig: 513, 513
+  offset: 171, 305
+  index: -1
+A/legl_1
+  rotate: false
+  xy: 264, 86
+  size: 64, 100
+  orig: 513, 513
+  offset: 356, 143
+  index: -1
+A/legl_2
+  rotate: false
+  xy: 0, 244
+  size: 73, 87
+  orig: 513, 513
+  offset: 354, 106
+  index: -1
+A/legl_3
+  rotate: true
+  xy: 432, 106
+  size: 72, 100
+  orig: 513, 513
+  offset: 368, 38
+  index: -1
+A/legl_4
+  rotate: false
+  xy: 336, 7
+  size: 52, 35
+  orig: 513, 513
+  offset: 365, 27
+  index: -1
+A/legr_1
+  rotate: true
+  xy: 436, 178
+  size: 67, 93
+  orig: 513, 513
+  offset: 316, 140
+  index: -1
+A/legr_2
+  rotate: false
+  xy: 456, 377
+  size: 73, 93
+  orig: 513, 513
+  offset: 316, 98
+  index: -1
+A/legr_3
+  rotate: true
+  xy: 436, 245
+  size: 70, 94
+  orig: 513, 513
+  offset: 327, 44
+  index: -1
+A/legr_4
+  rotate: false
+  xy: 388, 9
+  size: 52, 33
+  orig: 513, 513
+  offset: 324, 33
+  index: -1
+A/naeck_1
+  rotate: true
+  xy: 155, 227
+  size: 104, 101
+  orig: 513, 513
+  offset: 174, 220
+  index: -1
+A/naeck_2
+  rotate: false
+  xy: 0, 16
+  size: 134, 162
+  orig: 513, 513
+  offset: 162, 126
+  index: -1
+A/rope
+  rotate: false
+  xy: 0, 331
+  size: 258, 204
+  orig: 261, 261
+  offset: 0, 31
+  index: -1
+A/tail
+  rotate: true
+  xy: 264, 6
+  size: 80, 72
+  orig: 513, 513
+  offset: 353, 220
+  index: -1
+A/tooth
+  rotate: false
+  xy: 73, 240
+  size: 19, 27
+  orig: 513, 513
+  offset: 142, 261
+  index: -1

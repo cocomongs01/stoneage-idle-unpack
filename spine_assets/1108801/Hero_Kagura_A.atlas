@@ -1,0 +1,181 @@
+
+Hero_Kagura_A.png
+size: 913,913
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+A/arm l_1
+  rotate: true
+  xy: 738, 25
+  size: 100, 135
+  orig: 770, 770
+  offset: 291, 139
+  index: -1
+A/arm l_2
+  rotate: true
+  xy: 481, 20
+  size: 82, 121
+  orig: 770, 770
+  offset: 309, 62
+  index: -1
+A/arm l_3
+  rotate: true
+  xy: 559, 247
+  size: 137, 82
+  orig: 770, 770
+  offset: 224, 29
+  index: -1
+A/arm r_1
+  rotate: true
+  xy: 356, 3
+  size: 99, 125
+  orig: 770, 770
+  offset: 195, 186
+  index: -1
+A/arm r_2
+  rotate: true
+  xy: 169, 21
+  size: 77, 108
+  orig: 770, 770
+  offset: 219, 113
+  index: -1
+A/arm r_3
+  rotate: true
+  xy: 653, 276
+  size: 137, 86
+  orig: 770, 770
+  offset: 138, 63
+  index: -1
+A/body
+  rotate: false
+  xy: 389, 577
+  size: 359, 336
+  orig: 770, 770
+  offset: 236, 137
+  index: -1
+A/ear l
+  rotate: false
+  xy: 246, 279
+  size: 116, 161
+  orig: 770, 770
+  offset: 187, 339
+  index: -1
+A/ear r
+  rotate: false
+  xy: 653, 413
+  size: 90, 164
+  orig: 770, 770
+  offset: 94, 356
+  index: -1
+A/eye
+  rotate: false
+  xy: 883, 595
+  size: 20, 18
+  orig: 770, 770
+  offset: 146, 396
+  index: -1
+A/eyeball
+  rotate: true
+  xy: 277, 10
+  size: 88, 59
+  orig: 770, 770
+  offset: 125, 370
+  index: -1
+A/head_lower
+  rotate: true
+  xy: 201, 98
+  size: 181, 155
+  orig: 770, 770
+  offset: 48, 267
+  index: -1
+A/head_upper
+  rotate: true
+  xy: 739, 125
+  size: 216, 171
+  orig: 770, 770
+  offset: 25, 316
+  index: -1
+A/horn l
+  rotate: true
+  xy: 0, 379
+  size: 215, 246
+  orig: 770, 770
+  offset: 345, 300
+  index: -1
+A/horn r
+  rotate: false
+  xy: 748, 341
+  size: 135, 272
+  orig: 770, 770
+  offset: 273, 311
+  index: -1
+A/leg l_1
+  rotate: true
+  xy: 362, 225
+  size: 159, 197
+  orig: 770, 770
+  offset: 436, 122
+  index: -1
+A/leg l_2
+  rotate: false
+  xy: 602, 31
+  size: 134, 67
+  orig: 770, 770
+  offset: 454, 119
+  index: -1
+A/leg l_3
+  rotate: false
+  xy: 0, 70
+  size: 169, 151
+  orig: 770, 770
+  offset: 427, 29
+  index: -1
+A/leg r_1
+  rotate: true
+  xy: 0, 221
+  size: 158, 201
+  orig: 770, 770
+  offset: 333, 167
+  index: -1
+A/leg r_2
+  rotate: true
+  xy: 559, 102
+  size: 145, 71
+  orig: 770, 770
+  offset: 342, 164
+  index: -1
+A/leg r_3
+  rotate: true
+  xy: 246, 440
+  size: 154, 139
+  orig: 770, 770
+  offset: 339, 70
+  index: -1
+A/neck
+  rotate: false
+  xy: 748, 613
+  size: 165, 300
+  orig: 770, 770
+  offset: 156, 150
+  index: -1
+A/rope
+  rotate: false
+  xy: 0, 594
+  size: 389, 319
+  orig: 392, 392
+  offset: 3, 44
+  index: -1
+A/tail 1
+  rotate: false
+  xy: 641, 98
+  size: 97, 178
+  orig: 770, 770
+  offset: 660, 308
+  index: -1
+A/tail 2
+  rotate: false
+  xy: 385, 384
+  size: 268, 193
+  orig: 770, 770
+  offset: 483, 190
+  index: -1

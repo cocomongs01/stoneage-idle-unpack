@@ -1,6 +1,9 @@
 .vercel/
 backups/
+analysis_tools/
+ui_assets/
 *.zip
+*.sln
 *.log
 Thumbs.db
 .DS_Store
