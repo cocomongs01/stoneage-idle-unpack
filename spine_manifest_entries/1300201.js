@@ -1,0 +1,1 @@
+window.GACHA_PET_SPINE_ENTRY_CACHE = window.GACHA_PET_SPINE_ENTRY_CACHE || {};window.GACHA_PET_SPINE_ENTRY_CACHE["1300201"] = {"name":"","assetKind":"hero","assetName":"NPC_Kyrielle_A","atlasFile":"spine_assets/1300201/NPC_Kyrielle_A.atlas","skeletonFile":"spine_assets/1300201/NPC_Kyrielle_A.skel","textureFile":"spine_assets/1300201/NPC_Kyrielle_A.png"};

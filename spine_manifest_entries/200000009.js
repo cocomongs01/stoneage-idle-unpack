@@ -1,0 +1,1 @@
+window.GACHA_PET_SPINE_ENTRY_CACHE = window.GACHA_PET_SPINE_ENTRY_CACHE || {};window.GACHA_PET_SPINE_ENTRY_CACHE["200000009"] = {"name":"","assetKind":"ride","assetName":"E_doravis","atlasFile":"spine_assets/200000009/E_doravis.atlas","skeletonFile":"spine_assets/200000009/E_doravis.skel","textureFile":"spine_assets/200000009/E_doravis.png"};

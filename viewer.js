@@ -3,8 +3,6 @@
   const spineManifest = Object.assign(
     {},
     window.GACHA_PET_SPINE_MANIFEST_INDEX || {},
-    window.GACHA_PET_SPINE_MANIFEST || {},
-    window.GACHA_PET_WEAPON_SPINE_MANIFEST || {},
   );
   const pageParams = new URLSearchParams(window.location.search);
 
@@ -174,7 +172,8 @@
   let scheduleCalibrationOptionsCache = null;
   let spineRuntimePromise = null;
   const spineManifestLoadPromises = new Map();
-  const legacyManifestLoadPromises = new Map();
+  const spineResourceTextPromises = new Map();
+  const spineResourceBinaryPromises = new Map();
   const activeMobileLoadingTasks = new Set();
   const activePressTargetByPointerId = new Map();
   const MOBILE_PRESSABLE_SELECTOR = [
@@ -2507,7 +2506,6 @@
 
     const manifestSources = [
       window.GACHA_PET_SPINE_MANIFEST,
-      window.GACHA_PET_PICKUP_SPINE_MANIFEST,
       window.GACHA_PET_WEAPON_SPINE_MANIFEST,
     ];
 
@@ -2555,42 +2553,120 @@
     return baseEntry;
   }
 
-  function legacyManifestSrcForEntry(manifestMeta) {
-    if (!manifestMeta) return "";
-    if (manifestMeta.assetKind === "weapon") {
-      return "spine_manifest_weapon.js";
-    }
-    if (manifestMeta.assetKind === "pickup") {
-      return "pet_pickup_spine_manifest.js";
-    }
-    return "spine_manifest.js";
+  function hasManifestSpinePayload(manifestEntry) {
+    if (!manifestEntry) return false;
+    const hasAtlas = Boolean(manifestEntry.atlasText || manifestEntry.atlasFile);
+    const hasSkeleton = Boolean(
+      manifestEntry.skeletonBase64
+        || manifestEntry.skeletonFile
+        || manifestEntry.skeletonBytes
+    );
+    return hasAtlas && hasSkeleton;
   }
 
-  function ensureLegacyManifestLoaded(entityId, manifestMeta) {
-    const entryId = String(entityId || "");
-    if (!entryId || !manifestMeta) {
-      return Promise.resolve(getLoadedManifestEntry(entryId));
+  function fetchSpineTextAsset(assetPath) {
+    const normalizedPath = String(assetPath || "").replace(/\\/g, "/");
+    if (!normalizedPath) {
+      return Promise.resolve("");
     }
 
-    const src = legacyManifestSrcForEntry(manifestMeta);
-    if (!src) {
-      return Promise.resolve(getLoadedManifestEntry(entryId));
-    }
-
-    const promiseKey = `${manifestMeta.assetKind || "unknown"}:${src}`;
-    const pendingLoad = legacyManifestLoadPromises.get(promiseKey);
+    const promiseKey = `text:${normalizedPath}`;
+    const pendingLoad = spineResourceTextPromises.get(promiseKey);
     if (pendingLoad) {
-      return pendingLoad.then(() => getLoadedManifestEntry(entryId));
+      return pendingLoad;
     }
 
-    const loadPromise = loadRuntimeScript(assetUrl(src))
-      .catch((error) => {
-        legacyManifestLoadPromises.delete(promiseKey);
-        throw error;
+    const loadPromise = window.fetch(assetUrl(normalizedPath), { cache: "force-cache" })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`Spine text fetch failed: ${normalizedPath}`);
+        }
+        return response.text();
+      })
+      .finally(() => {
+        spineResourceTextPromises.delete(promiseKey);
       });
 
-    legacyManifestLoadPromises.set(promiseKey, loadPromise);
-    return loadPromise.then(() => getLoadedManifestEntry(entryId));
+    spineResourceTextPromises.set(promiseKey, loadPromise);
+    return loadPromise;
+  }
+
+  function fetchSpineBinaryAsset(assetPath) {
+    const normalizedPath = String(assetPath || "").replace(/\\/g, "/");
+    if (!normalizedPath) {
+      return Promise.resolve(null);
+    }
+
+    const promiseKey = `binary:${normalizedPath}`;
+    const pendingLoad = spineResourceBinaryPromises.get(promiseKey);
+    if (pendingLoad) {
+      return pendingLoad;
+    }
+
+    const loadPromise = window.fetch(assetUrl(normalizedPath), { cache: "force-cache" })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`Spine binary fetch failed: ${normalizedPath}`);
+        }
+        return response.arrayBuffer();
+      })
+      .then((buffer) => new Uint8Array(buffer))
+      .finally(() => {
+        spineResourceBinaryPromises.delete(promiseKey);
+      });
+
+    spineResourceBinaryPromises.set(promiseKey, loadPromise);
+    return loadPromise;
+  }
+
+  function getManifestAtlasText(manifestEntry) {
+    if (!manifestEntry) return Promise.resolve("");
+    if (manifestEntry.atlasText) {
+      return Promise.resolve(manifestEntry.atlasText);
+    }
+    if (!manifestEntry.atlasFile) {
+      return Promise.resolve("");
+    }
+    if (manifestEntry.atlasTextPromise) {
+      return manifestEntry.atlasTextPromise;
+    }
+
+    manifestEntry.atlasTextPromise = fetchSpineTextAsset(manifestEntry.atlasFile)
+      .then((text) => {
+        manifestEntry.atlasText = text || "";
+        return manifestEntry.atlasText;
+      })
+      .finally(() => {
+        manifestEntry.atlasTextPromise = null;
+      });
+    return manifestEntry.atlasTextPromise;
+  }
+
+  function getManifestSkeletonBytes(manifestEntry) {
+    if (!manifestEntry) return Promise.resolve(null);
+    if (manifestEntry.skeletonBytes instanceof Uint8Array) {
+      return Promise.resolve(manifestEntry.skeletonBytes);
+    }
+    if (manifestEntry.skeletonBase64) {
+      manifestEntry.skeletonBytes = decodeBase64ToBytes(manifestEntry.skeletonBase64);
+      return Promise.resolve(manifestEntry.skeletonBytes);
+    }
+    if (!manifestEntry.skeletonFile) {
+      return Promise.resolve(null);
+    }
+    if (manifestEntry.skeletonBytesPromise) {
+      return manifestEntry.skeletonBytesPromise;
+    }
+
+    manifestEntry.skeletonBytesPromise = fetchSpineBinaryAsset(manifestEntry.skeletonFile)
+      .then((bytes) => {
+        manifestEntry.skeletonBytes = bytes;
+        return bytes;
+      })
+      .finally(() => {
+        manifestEntry.skeletonBytesPromise = null;
+      });
+    return manifestEntry.skeletonBytesPromise;
   }
 
   function ensureManifestEntryLoaded(entityId) {
@@ -2600,7 +2676,7 @@
     }
 
     const loadedEntry = getLoadedManifestEntry(entryId);
-    if (loadedEntry && loadedEntry.atlasText && loadedEntry.skeletonBase64) {
+    if (hasManifestSpinePayload(loadedEntry)) {
       return Promise.resolve(loadedEntry);
     }
 
@@ -2617,14 +2693,13 @@
     const loadPromise = loadRuntimeScript(assetUrl(manifestMeta.chunkSrc))
       .then(() => {
         const nextEntry = getLoadedManifestEntry(entryId);
-        if (!nextEntry || !nextEntry.atlasText || !nextEntry.skeletonBase64) {
+        if (!hasManifestSpinePayload(nextEntry)) {
           throw new Error(`Spine manifest chunk missing data: ${entryId}`);
         }
         return nextEntry;
       })
-      .catch(() => ensureLegacyManifestLoaded(entryId, manifestMeta))
       .then((nextEntry) => {
-        if (!nextEntry || !nextEntry.atlasText || !nextEntry.skeletonBase64) {
+        if (!hasManifestSpinePayload(nextEntry)) {
           throw new Error(`Spine manifest data unavailable: ${entryId}`);
         }
         return nextEntry;
@@ -3128,7 +3203,7 @@
     const spineApi = getSpineApi();
     const textureUrl = resolveManifestTextureSource(manifestEntry, normalizeAtlasPageName(manifestEntry.textureFile || "")) || "";
 
-    return new Promise((resolve, reject) => {
+    return getManifestAtlasText(manifestEntry).then((atlasText) => new Promise((resolve, reject) => {
       let settled = false;
       const timeoutId = window.setTimeout(() => {
         finishReject(new Error(`Texture atlas load timed out: ${manifestEntry.assetName || textureUrl || "unknown texture"}`));
@@ -3149,7 +3224,7 @@
       };
 
       new spineApi.TextureAtlas(
-        manifestEntry.atlasText,
+        atlasText,
         (pageName, callback) => {
           const resolvedTextureUrl = resolveManifestTextureSource(manifestEntry, pageName) || textureUrl;
           const baseTexture = window.PIXI.BaseTexture.from(resolvedTextureUrl);
@@ -3185,7 +3260,7 @@
           finishResolve(atlas);
         },
       );
-    });
+    }));
   }
 
   async function mountSpinePreview(characterId, manifestEntry, token) {
@@ -3213,7 +3288,11 @@
 
     const attachmentLoader = new spineApi.AtlasAttachmentLoader(atlas);
     const binary = new spineApi.SkeletonBinary(attachmentLoader);
-    const skeletonData = binary.readSkeletonData(decodeBase64ToBytes(manifestEntry.skeletonBase64));
+    const skeletonBytes = await getManifestSkeletonBytes(manifestEntry);
+    if (!(skeletonBytes instanceof Uint8Array) || !skeletonBytes.length) {
+      throw new Error(`Spine skeleton data unavailable: ${manifestEntry.assetName || characterId}`);
+    }
+    const skeletonData = binary.readSkeletonData(skeletonBytes);
     const preview = new spineApi.Spine(skeletonData);
     const useStableRideInitialLayout = manifestEntry.assetKind === "ride" && STABLE_RIDE_LAYOUT_IDS[characterId];
     const useManualHeroBoneCorrectionTick = manifestEntry.assetKind === "hero"

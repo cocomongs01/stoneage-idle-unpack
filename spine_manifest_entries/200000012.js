@@ -1,0 +1,1 @@
+window.GACHA_PET_SPINE_ENTRY_CACHE = window.GACHA_PET_SPINE_ENTRY_CACHE || {};window.GACHA_PET_SPINE_ENTRY_CACHE["200000012"] = {"name":"","assetKind":"ride","assetName":"E_bugi_kingbugi","atlasFile":"spine_assets/200000012/E_bugi_kingbugi.atlas","skeletonFile":"spine_assets/200000012/E_bugi_kingbugi.skel","textureFile":"spine_assets/200000012/E_bugi_kingbugi.png"};

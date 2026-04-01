@@ -1,0 +1,223 @@
+
+E_spino_yakno.png
+size: 721,721
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+A/arml_1
+  rotate: true
+  xy: 157, 187
+  size: 79, 100
+  orig: 576, 513
+  offset: 243, 207
+  index: -1
+A/arml_2
+  rotate: true
+  xy: 654, 169
+  size: 95, 66
+  orig: 576, 513
+  offset: 227, 167
+  index: -1
+A/arml_3
+  rotate: true
+  xy: 581, 0
+  size: 95, 112
+  orig: 576, 513
+  offset: 179, 91
+  index: -1
+A/armr_1
+  rotate: false
+  xy: 190, 331
+  size: 74, 102
+  orig: 576, 513
+  offset: 151, 202
+  index: -1
+A/armr_2
+  rotate: false
+  xy: 402, 2
+  size: 83, 56
+  orig: 576, 513
+  offset: 133, 178
+  index: -1
+A/armr_3
+  rotate: false
+  xy: 440, 406
+  size: 80, 105
+  orig: 576, 513
+  offset: 101, 105
+  index: -1
+A/body
+  rotate: true
+  xy: 521, 518
+  size: 203, 197
+  orig: 576, 513
+  offset: 176, 145
+  index: -1
+A/eye l
+  rotate: true
+  xy: 157, 268
+  size: 29, 30
+  orig: 513, 513
+  offset: 137, 389
+  index: -1
+A/eyeball l
+  rotate: true
+  xy: 534, 208
+  size: 56, 53
+  orig: 576, 513
+  offset: 162, 378
+  index: -1
+A/head_lower
+  rotate: false
+  xy: 264, 322
+  size: 171, 99
+  orig: 576, 513
+  offset: 77, 316
+  index: -1
+A/head_upper
+  rotate: false
+  xy: 0, 468
+  size: 207, 122
+  orig: 576, 513
+  offset: 54, 347
+  index: -1
+A/horn
+  rotate: true
+  xy: 151, 17
+  size: 156, 146
+  orig: 576, 513
+  offset: 241, 249
+  index: -1
+A/leg l_1
+  rotate: true
+  xy: 0, 17
+  size: 156, 151
+  orig: 576, 513
+  offset: 255, 6
+  index: -1
+A/leg l_2
+  rotate: true
+  xy: 477, 92
+  size: 115, 68
+  orig: 576, 513
+  offset: 279, 101
+  index: -1
+A/leg l_3
+  rotate: false
+  xy: 434, 207
+  size: 100, 115
+  orig: 576, 513
+  offset: 279, 106
+  index: -1
+A/leg r_1
+  rotate: true
+  xy: 297, 21
+  size: 152, 105
+  orig: 576, 513
+  offset: 130, 36
+  index: -1
+A/leg r_2
+  rotate: false
+  xy: 485, 10
+  size: 96, 82
+  orig: 576, 513
+  offset: 169, 96
+  index: -1
+A/leg r_3
+  rotate: false
+  xy: 581, 264
+  size: 114, 95
+  orig: 576, 513
+  offset: 162, 132
+  index: -1
+A/neck
+  rotate: true
+  xy: 264, 421
+  size: 90, 176
+  orig: 576, 513
+  offset: 174, 239
+  index: -1
+A/rope
+  rotate: false
+  xy: 270, 511
+  size: 251, 210
+  orig: 261, 261
+  offset: 5, 29
+  index: -1
+A/tail
+  rotate: false
+  xy: 0, 590
+  size: 270, 131
+  orig: 576, 513
+  offset: 306, 188
+  index: -1
+B/arm L_1arm R_1_gear
+  rotate: false
+  xy: 435, 329
+  size: 84, 77
+  orig: 576, 551
+  offset: 233, 179
+  index: -1
+B/arm R_1_gear
+  rotate: false
+  xy: 190, 266
+  size: 69, 65
+  orig: 576, 551
+  offset: 141, 195
+  index: -1
+B/body_gear
+  rotate: true
+  xy: 0, 297
+  size: 171, 190
+  orig: 576, 551
+  offset: 218, 138
+  index: -1
+B/foot L_gear
+  rotate: false
+  xy: 259, 173
+  size: 118, 149
+  orig: 576, 551
+  offset: 301, 38
+  index: -1
+B/foot R_gear
+  rotate: true
+  xy: 545, 95
+  size: 113, 109
+  orig: 576, 551
+  offset: 176, 62
+  index: -1
+B/hair_1
+  rotate: false
+  xy: 207, 433
+  size: 57, 157
+  orig: 576, 551
+  offset: 218, 289
+  index: -1
+B/hair_2
+  rotate: false
+  xy: 377, 182
+  size: 57, 140
+  orig: 576, 551
+  offset: 136, 287
+  index: -1
+B/head_gear
+  rotate: false
+  xy: 521, 359
+  size: 196, 159
+  orig: 576, 551
+  offset: 104, 388
+  index: -1
+B/neck_gear
+  rotate: false
+  xy: 0, 173
+  size: 157, 124
+  orig: 576, 551
+  offset: 159, 231
+  index: -1
+B/tail_2_gear
+  rotate: true
+  xy: 402, 58
+  size: 124, 75
+  orig: 576, 551
+  offset: 411, 276
+  index: -1

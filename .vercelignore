@@ -7,3 +7,6 @@ README.md
 analysis_tools/
 ui_assets/
 backups/
+spine_manifest.js
+spine_manifest_weapon.js
+pet_pickup_spine_manifest.js

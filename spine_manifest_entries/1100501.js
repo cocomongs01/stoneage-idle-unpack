@@ -1,0 +1,1 @@
+window.GACHA_PET_SPINE_ENTRY_CACHE = window.GACHA_PET_SPINE_ENTRY_CACHE || {};window.GACHA_PET_SPINE_ENTRY_CACHE["1100501"] = {"name":"성기사 바우트","assetKind":"hero","assetName":"Hero_Jave_A","atlasFile":"spine_assets/1100501/Hero_Jave_A.atlas","skeletonFile":"spine_assets/1100501/Hero_Jave_A.skel","textureFile":"spine_assets/1100501/Hero_Jave_A.png"};

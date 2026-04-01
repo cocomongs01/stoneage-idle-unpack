@@ -1,0 +1,1 @@
+window.GACHA_PET_SPINE_ENTRY_CACHE = window.GACHA_PET_SPINE_ENTRY_CACHE || {};window.GACHA_PET_SPINE_ENTRY_CACHE["1107101"] = {"name":"","assetKind":"hero","assetName":"Hero_Lucrezia_A","atlasFile":"spine_assets/1107101/Hero_Lucrezia_A.atlas","skeletonFile":"spine_assets/1107101/Hero_Lucrezia_A.skel","textureFile":"spine_assets/1107101/Hero_Lucrezia_A.png"};
