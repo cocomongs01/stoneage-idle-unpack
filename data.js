@@ -841,7 +841,14 @@ window.GACHA_PET_VIEWER_DATA = {
               "scheduleRule": {
                 "timeType": 5,
                 "start": "2026-05-26",
-                "end": "2026-06-08"
+                "end": "2026-06-08",
+                "openDay": 83,
+                "syncAnchor": {
+                  "timeType": 4,
+                  "openDay": 27,
+                  "period": 7,
+                  "start": "2026-03-31"
+                }
               }
             }
           ],
@@ -1248,7 +1255,14 @@ window.GACHA_PET_VIEWER_DATA = {
               "scheduleRule": {
                 "timeType": 5,
                 "start": "2026-06-09",
-                "end": "2026-06-22"
+                "end": "2026-06-22",
+                "openDay": 83,
+                "syncAnchor": {
+                  "timeType": 4,
+                  "openDay": 27,
+                  "period": 7,
+                  "start": "2026-03-31"
+                }
               }
             }
           ],
@@ -1661,7 +1675,14 @@ window.GACHA_PET_VIEWER_DATA = {
               "scheduleRule": {
                 "timeType": 5,
                 "start": "2026-06-23",
-                "end": "2026-07-06"
+                "end": "2026-07-06",
+                "openDay": 83,
+                "syncAnchor": {
+                  "timeType": 4,
+                  "openDay": 27,
+                  "period": 7,
+                  "start": "2026-03-31"
+                }
               }
             }
           ],
@@ -2081,7 +2102,14 @@ window.GACHA_PET_VIEWER_DATA = {
               "scheduleRule": {
                 "timeType": 5,
                 "start": "2026-07-07",
-                "end": "2026-07-20"
+                "end": "2026-07-20",
+                "openDay": 83,
+                "syncAnchor": {
+                  "timeType": 4,
+                  "openDay": 27,
+                  "period": 7,
+                  "start": "2026-03-31"
+                }
               }
             }
           ],
@@ -2501,7 +2529,14 @@ window.GACHA_PET_VIEWER_DATA = {
               "scheduleRule": {
                 "timeType": 5,
                 "start": "2026-07-21",
-                "end": "2026-08-03"
+                "end": "2026-08-03",
+                "openDay": 83,
+                "syncAnchor": {
+                  "timeType": 4,
+                  "openDay": 27,
+                  "period": 7,
+                  "start": "2026-03-31"
+                }
               }
             }
           ],
@@ -2921,7 +2956,14 @@ window.GACHA_PET_VIEWER_DATA = {
               "scheduleRule": {
                 "timeType": 5,
                 "start": "2026-08-04",
-                "end": "2026-08-17"
+                "end": "2026-08-17",
+                "openDay": 83,
+                "syncAnchor": {
+                  "timeType": 4,
+                  "openDay": 27,
+                  "period": 7,
+                  "start": "2026-03-31"
+                }
               }
             }
           ],
@@ -3335,7 +3377,14 @@ window.GACHA_PET_VIEWER_DATA = {
               "scheduleRule": {
                 "timeType": 5,
                 "start": "2026-08-18",
-                "end": "2026-08-31"
+                "end": "2026-08-31",
+                "openDay": 83,
+                "syncAnchor": {
+                  "timeType": 4,
+                  "openDay": 27,
+                  "period": 7,
+                  "start": "2026-03-31"
+                }
               }
             }
           ],
@@ -3749,7 +3798,14 @@ window.GACHA_PET_VIEWER_DATA = {
               "scheduleRule": {
                 "timeType": 5,
                 "start": "2026-09-01",
-                "end": "2026-09-14"
+                "end": "2026-09-14",
+                "openDay": 83,
+                "syncAnchor": {
+                  "timeType": 4,
+                  "openDay": 27,
+                  "period": 7,
+                  "start": "2026-03-31"
+                }
               }
             }
           ],
@@ -4153,7 +4209,8 @@ window.GACHA_PET_VIEWER_DATA = {
               "scheduleRule": {
                 "timeType": 5,
                 "start": "2026-02-03",
-                "end": "2026-02-09"
+                "end": "2026-02-09",
+                "openDay": 83
               }
             },
             {
@@ -4173,7 +4230,14 @@ window.GACHA_PET_VIEWER_DATA = {
               "scheduleRule": {
                 "timeType": 5,
                 "start": "2026-09-15",
-                "end": "2026-09-28"
+                "end": "2026-09-28",
+                "openDay": 83,
+                "syncAnchor": {
+                  "timeType": 4,
+                  "openDay": 27,
+                  "period": 7,
+                  "start": "2026-03-31"
+                }
               }
             }
           ],
@@ -4570,7 +4634,8 @@ window.GACHA_PET_VIEWER_DATA = {
               "scheduleRule": {
                 "timeType": 5,
                 "start": "2026-02-10",
-                "end": "2026-02-16"
+                "end": "2026-02-16",
+                "openDay": 83
               }
             },
             {
@@ -4590,7 +4655,14 @@ window.GACHA_PET_VIEWER_DATA = {
               "scheduleRule": {
                 "timeType": 5,
                 "start": "2026-09-29",
-                "end": "2026-10-12"
+                "end": "2026-10-12",
+                "openDay": 83,
+                "syncAnchor": {
+                  "timeType": 4,
+                  "openDay": 27,
+                  "period": 7,
+                  "start": "2026-03-31"
+                }
               }
             }
           ],
@@ -5000,7 +5072,8 @@ window.GACHA_PET_VIEWER_DATA = {
               "scheduleRule": {
                 "timeType": 5,
                 "start": "2026-02-17",
-                "end": "2026-02-23"
+                "end": "2026-02-23",
+                "openDay": 83
               }
             },
             {
@@ -5020,7 +5093,14 @@ window.GACHA_PET_VIEWER_DATA = {
               "scheduleRule": {
                 "timeType": 5,
                 "start": "2026-10-13",
-                "end": "2026-10-26"
+                "end": "2026-10-26",
+                "openDay": 83,
+                "syncAnchor": {
+                  "timeType": 4,
+                  "openDay": 27,
+                  "period": 7,
+                  "start": "2026-03-31"
+                }
               }
             }
           ],
@@ -5430,7 +5510,8 @@ window.GACHA_PET_VIEWER_DATA = {
               "scheduleRule": {
                 "timeType": 5,
                 "start": "2026-02-24",
-                "end": "2026-03-02"
+                "end": "2026-03-02",
+                "openDay": 83
               }
             },
             {
@@ -5450,7 +5531,14 @@ window.GACHA_PET_VIEWER_DATA = {
               "scheduleRule": {
                 "timeType": 5,
                 "start": "2026-10-27",
-                "end": "2026-11-09"
+                "end": "2026-11-09",
+                "openDay": 83,
+                "syncAnchor": {
+                  "timeType": 4,
+                  "openDay": 27,
+                  "period": 7,
+                  "start": "2026-03-31"
+                }
               }
             }
           ],
@@ -5620,7 +5708,15 @@ window.GACHA_PET_VIEWER_DATA = {
               "scheduleRule": {
                 "timeType": 5,
                 "start": "2026-06-02",
-                "end": "2026-06-15"
+                "end": "2026-06-15",
+                "openDay": 90,
+                "period": 7,
+                "syncAnchor": {
+                  "timeType": 8,
+                  "openDay": 27,
+                  "period": 7,
+                  "start": "2026-04-04"
+                }
               }
             }
           ],
@@ -5783,7 +5879,15 @@ window.GACHA_PET_VIEWER_DATA = {
               "scheduleRule": {
                 "timeType": 5,
                 "start": "2026-06-30",
-                "end": "2026-07-13"
+                "end": "2026-07-13",
+                "openDay": 90,
+                "period": 7,
+                "syncAnchor": {
+                  "timeType": 8,
+                  "openDay": 27,
+                  "period": 7,
+                  "start": "2026-04-04"
+                }
               }
             }
           ],
@@ -5932,7 +6036,7 @@ window.GACHA_PET_VIEWER_DATA = {
             {
               "start": "2026-04-04",
               "end": "2026-04-10",
-              "status": "upcoming",
+              "status": "current",
               "scheduleRule": {
                 "timeType": 8,
                 "openDay": 27,
@@ -5946,7 +6050,15 @@ window.GACHA_PET_VIEWER_DATA = {
               "scheduleRule": {
                 "timeType": 5,
                 "start": "2026-07-28",
-                "end": "2026-08-10"
+                "end": "2026-08-10",
+                "openDay": 90,
+                "period": 7,
+                "syncAnchor": {
+                  "timeType": 8,
+                  "openDay": 27,
+                  "period": 7,
+                  "start": "2026-04-04"
+                }
               }
             }
           ],
@@ -6109,7 +6221,15 @@ window.GACHA_PET_VIEWER_DATA = {
               "scheduleRule": {
                 "timeType": 5,
                 "start": "2026-08-25",
-                "end": "2026-09-07"
+                "end": "2026-09-07",
+                "openDay": 90,
+                "period": 7,
+                "syncAnchor": {
+                  "timeType": 8,
+                  "openDay": 27,
+                  "period": 7,
+                  "start": "2026-04-04"
+                }
               }
             }
           ],
@@ -6272,7 +6392,15 @@ window.GACHA_PET_VIEWER_DATA = {
               "scheduleRule": {
                 "timeType": 5,
                 "start": "2026-09-22",
-                "end": "2026-10-05"
+                "end": "2026-10-05",
+                "openDay": 90,
+                "period": 7,
+                "syncAnchor": {
+                  "timeType": 8,
+                  "openDay": 27,
+                  "period": 7,
+                  "start": "2026-04-04"
+                }
               }
             }
           ],
@@ -6435,7 +6563,15 @@ window.GACHA_PET_VIEWER_DATA = {
               "scheduleRule": {
                 "timeType": 5,
                 "start": "2026-10-20",
-                "end": "2026-11-02"
+                "end": "2026-11-02",
+                "openDay": 90,
+                "period": 7,
+                "syncAnchor": {
+                  "timeType": 8,
+                  "openDay": 27,
+                  "period": 7,
+                  "start": "2026-04-04"
+                }
               }
             }
           ],
@@ -6770,7 +6906,15 @@ window.GACHA_PET_VIEWER_DATA = {
               "scheduleRule": {
                 "timeType": 5,
                 "start": "2026-06-16",
-                "end": "2026-06-29"
+                "end": "2026-06-29",
+                "openDay": 90,
+                "period": 7,
+                "syncAnchor": {
+                  "timeType": 8,
+                  "openDay": 34,
+                  "period": 7,
+                  "start": "2026-04-11"
+                }
               }
             }
           ],
@@ -7083,7 +7227,7 @@ window.GACHA_PET_VIEWER_DATA = {
             {
               "start": "2026-03-28",
               "end": "2026-04-03",
-              "status": "current",
+              "status": "past",
               "scheduleRule": {
                 "timeType": 2,
                 "openDay": 25,
@@ -7097,7 +7241,15 @@ window.GACHA_PET_VIEWER_DATA = {
               "scheduleRule": {
                 "timeType": 5,
                 "start": "2026-07-14",
-                "end": "2026-07-27"
+                "end": "2026-07-27",
+                "openDay": 90,
+                "period": 7,
+                "syncAnchor": {
+                  "timeType": 8,
+                  "openDay": 34,
+                  "period": 7,
+                  "start": "2026-04-11"
+                }
               }
             }
           ],
@@ -7424,7 +7576,15 @@ window.GACHA_PET_VIEWER_DATA = {
               "scheduleRule": {
                 "timeType": 5,
                 "start": "2026-08-11",
-                "end": "2026-08-24"
+                "end": "2026-08-24",
+                "openDay": 90,
+                "period": 7,
+                "syncAnchor": {
+                  "timeType": 8,
+                  "openDay": 34,
+                  "period": 7,
+                  "start": "2026-04-11"
+                }
               }
             }
           ],
@@ -8068,7 +8228,15 @@ window.GACHA_PET_VIEWER_DATA = {
               "scheduleRule": {
                 "timeType": 5,
                 "start": "2026-10-06",
-                "end": "2026-10-19"
+                "end": "2026-10-19",
+                "openDay": 90,
+                "period": 7,
+                "syncAnchor": {
+                  "timeType": 8,
+                  "openDay": 34,
+                  "period": 7,
+                  "start": "2026-04-11"
+                }
               }
             }
           ],
@@ -8395,7 +8563,15 @@ window.GACHA_PET_VIEWER_DATA = {
               "scheduleRule": {
                 "timeType": 5,
                 "start": "2026-11-03",
-                "end": "2026-11-16"
+                "end": "2026-11-16",
+                "openDay": 90,
+                "period": 7,
+                "syncAnchor": {
+                  "timeType": 8,
+                  "openDay": 34,
+                  "period": 7,
+                  "start": "2026-04-11"
+                }
               }
             }
           ],
@@ -8415,6 +8591,6 @@ window.GACHA_PET_VIEWER_DATA = {
       ]
     }
   ],
-  "generatedAt": "2026-04-01 00:32:22",
-  "today": "2026-04-01"
+  "generatedAt": "2026-04-04 00:37:16",
+  "today": "2026-04-04"
 };

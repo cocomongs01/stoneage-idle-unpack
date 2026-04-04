@@ -496,7 +496,49 @@
     if (normalizedEnd) {
       normalizedRule.end = normalizedEnd;
     }
+    if (scheduleRule.syncAnchor && typeof scheduleRule.syncAnchor === "object") {
+      const anchorTimeType = Number.parseInt(scheduleRule.syncAnchor.timeType, 10);
+      const anchorOpenDay = Number.parseInt(scheduleRule.syncAnchor.openDay, 10);
+      const anchorPeriod = Number.parseInt(scheduleRule.syncAnchor.period, 10);
+      const anchorStart = normalizeScheduleDateKey(scheduleRule.syncAnchor.start);
+      if (
+        Number.isFinite(anchorTimeType)
+        && Number.isFinite(anchorOpenDay)
+        && anchorStart
+      ) {
+        normalizedRule.syncAnchor = {
+          timeType: anchorTimeType,
+          openDay: anchorOpenDay,
+          period: Number.isFinite(anchorPeriod) ? Math.max(1, anchorPeriod) : 1,
+          start: anchorStart,
+        };
+      }
+    }
     return normalizedRule;
+  }
+
+  function resolveDynamicRuleStartDateKey(scheduleRule, serverOpenDateKey) {
+    if (!scheduleRule || !serverOpenDateKey) return "";
+    if (
+      ![2, 4, 8].includes(scheduleRule.timeType)
+      || !Number.isFinite(scheduleRule.openDay)
+    ) {
+      return "";
+    }
+    const dynamicBaselineDateKey = [4, 8].includes(scheduleRule.timeType)
+      ? (syncCohortEndDateKey(serverOpenDateKey) || serverOpenDateKey)
+      : serverOpenDateKey;
+    const thresholdDateKey = addDaysToDateKey(dynamicBaselineDateKey, scheduleRule.openDay);
+    if (scheduleRule.timeType === 2) {
+      return thresholdDateKey;
+    }
+    if (scheduleRule.timeType === 4) {
+      return alignDateKeyOnOrAfter(thresholdDateKey, 2);
+    }
+    if (scheduleRule.timeType === 8) {
+      return alignDateKeyOnOrAfter(thresholdDateKey, 6);
+    }
+    return "";
   }
 
   function dateKeyDayOffset(baseDateKey, targetDateKey) {
@@ -667,17 +709,10 @@
         [2, 4, 8].includes(normalizedScheduleRule.timeType)
         && Number.isFinite(normalizedScheduleRule.openDay)
       ) {
-        const dynamicBaselineDateKey = [4, 8].includes(normalizedScheduleRule.timeType)
-          ? (syncCohortEndDateKey(normalizedServerOpenDateKey) || normalizedServerOpenDateKey)
-          : normalizedServerOpenDateKey;
-        const thresholdDateKey = addDaysToDateKey(dynamicBaselineDateKey, normalizedScheduleRule.openDay);
-        if (normalizedScheduleRule.timeType === 2) {
-          resolvedStartDateKey = thresholdDateKey;
-        } else if (normalizedScheduleRule.timeType === 4) {
-          resolvedStartDateKey = alignDateKeyOnOrAfter(thresholdDateKey, 2);
-        } else if (normalizedScheduleRule.timeType === 8) {
-          resolvedStartDateKey = alignDateKeyOnOrAfter(thresholdDateKey, 6);
-        }
+        resolvedStartDateKey = resolveDynamicRuleStartDateKey(
+          normalizedScheduleRule,
+          normalizedServerOpenDateKey,
+        );
         if (resolvedStartDateKey) {
           resolvedEndExclusiveDateKey = addDaysToDateKey(
             resolvedStartDateKey,
@@ -691,6 +726,23 @@
       ) {
         resolvedStartDateKey = normalizedScheduleRule.start;
         resolvedEndExclusiveDateKey = addDaysToDateKey(normalizedScheduleRule.end, 1);
+        if (normalizedScheduleRule.syncAnchor?.start) {
+          const resolvedAnchorStartDateKey = resolveDynamicRuleStartDateKey(
+            normalizedScheduleRule.syncAnchor,
+            normalizedServerOpenDateKey,
+          );
+          const anchorShiftDays = dateKeyDayOffset(
+            normalizedScheduleRule.syncAnchor.start,
+            resolvedAnchorStartDateKey,
+          );
+          if (Number.isFinite(anchorShiftDays) && anchorShiftDays !== 0) {
+            resolvedStartDateKey = addDaysToDateKey(resolvedStartDateKey, anchorShiftDays);
+            resolvedEndExclusiveDateKey = addDaysToDateKey(
+              resolvedEndExclusiveDateKey,
+              anchorShiftDays,
+            );
+          }
+        }
       }
     }
 
@@ -1738,7 +1790,7 @@
     { x: 88, size: 9, delay: -5.4, duration: 10.8, drift: 20, travel: 214, opacity: 0.5 },
   ];
 
-  const assetVersion = encodeURIComponent(String(window.GACHA_VIEWER_ASSET_VERSION || "20260318-app-01"));
+  const assetVersion = encodeURIComponent(String(window.GACHA_VIEWER_ASSET_VERSION || "20260404-first-load-cachefix-01"));
   const ELEMENT_ICON_BY_KEY = {
     leaf: "assets/ui/HeroType04.png",
     fire: "assets/ui/HeroType02.png",
