@@ -268,6 +268,10 @@
     font-size: 0.71875rem;
   }
 
+  body.mobile-layout .pet-item-order-secondary {
+    font-size: 0.5625rem;
+  }
+
   body.mobile-layout .pet-item-meta-badge {
     font-size: 0.59375rem;
     padding: 0.18rem 0.45rem;
@@ -725,6 +729,11 @@
 
   body.mobile-layout .schedule-item span {
     font-size: 0.71875rem;
+  }
+
+  body.mobile-layout .schedule-item-note {
+    margin-top: 0.125rem;
+    font-size: 0.59375rem;
   }
 
   body.mobile-layout .focus-column {
