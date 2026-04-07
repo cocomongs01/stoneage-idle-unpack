@@ -146,6 +146,7 @@
   const KR1_SERVER_OPEN_DATE_TIME_KEY = "2026-03-03 09:00:00";
   const SCHEDULE_CALIBRATION_STORAGE_KEY = "gachaViewer.scheduleCalibration.v1";
   const SCHEDULE_CALIBRATION_PROMPT_STORAGE_KEY = "gachaViewer.scheduleCalibrationPromptSeen.v2";
+  const MOBILE_HISTORY_STATE_KEY = "__gachaViewerMobileState";
   const koreaDateFormatter = typeof Intl !== "undefined" && typeof Intl.DateTimeFormat === "function"
     ? new Intl.DateTimeFormat("en-US", {
       timeZone: KOREA_TIME_ZONE,
@@ -1490,6 +1491,92 @@
     }
   }
 
+  function isMobileViewerHistoryState(historyState) {
+    return Boolean(historyState && historyState[MOBILE_HISTORY_STATE_KEY]);
+  }
+
+  function findItemLocationByEntityId(entityId) {
+    const normalizedEntityId = String(entityId || "");
+    if (!normalizedEntityId) return null;
+    const categories = getCategories();
+    for (const category of categories) {
+      const items = getItems(category);
+      const index = items.findIndex((item) => getEntityId(item) === normalizedEntityId);
+      if (index >= 0) {
+        return { categoryKey: category.key, index };
+      }
+    }
+    return null;
+  }
+
+  function buildMobileViewerHistoryState() {
+    const category = getActiveCategory();
+    const currentItem = getCurrentItem(category);
+    return {
+      [MOBILE_HISTORY_STATE_KEY]: true,
+      categoryKey: category?.key || state.activeCategoryKey || "",
+      itemId: currentItem ? getEntityId(currentItem) : "",
+      petSubgroupKey: state.activePetSubgroupKey || "gacha",
+      mobileView: state.mobileView === "rail" ? "rail" : "detail",
+    };
+  }
+
+  function applyMobileViewerHistoryState(historyState) {
+    if (!isMobileViewerHistoryState(historyState)) return false;
+
+    const categories = getCategories();
+    const nextCategory = categories.find((category) => category.key === String(historyState.categoryKey || "")) || categories[0];
+    if (!nextCategory) return false;
+
+    state.activeCategoryKey = nextCategory.key;
+
+    const requestedItem = findItemLocationByEntityId(historyState.itemId);
+    if (requestedItem && requestedItem.categoryKey === nextCategory.key) {
+      state.selectedIndexByCategory[nextCategory.key] = requestedItem.index;
+    }
+
+    if (nextCategory.key === "pet") {
+      const currentPet = getCurrentItem(nextCategory);
+      if (currentPet) {
+        state.activePetSubgroupKey = getPetSubgroupKeyForItem(currentPet);
+      } else {
+        const subgroupKey = String(historyState.petSubgroupKey || "");
+        if (subgroupKey === "content" || subgroupKey === "gacha") {
+          state.activePetSubgroupKey = subgroupKey;
+        }
+      }
+    }
+
+    state.mobileView = historyState.mobileView === "rail" ? "rail" : "detail";
+    return true;
+  }
+
+  function syncMobileViewerHistory(mode = "replace") {
+    if (!isMobileLayout() || !window.history || typeof window.history.replaceState !== "function") {
+      return;
+    }
+
+    const nextState = buildMobileViewerHistoryState();
+    const currentState = window.history.state;
+    const sameState = isMobileViewerHistoryState(currentState)
+      && currentState.categoryKey === nextState.categoryKey
+      && currentState.itemId === nextState.itemId
+      && currentState.petSubgroupKey === nextState.petSubgroupKey
+      && currentState.mobileView === nextState.mobileView;
+
+    if (mode !== "push" && sameState) {
+      return;
+    }
+
+    try {
+      if (mode === "push" && typeof window.history.pushState === "function") {
+        window.history.pushState(nextState, "", window.location.href);
+      } else {
+        window.history.replaceState(nextState, "", window.location.href);
+      }
+    } catch (error) {}
+  }
+
   function setMobileView(nextView, options = {}) {
     if (!isMobileLayout()) {
       state.mobileView = "detail";
@@ -1519,6 +1606,12 @@
     }
 
     applyMobileLayoutState();
+
+    if (options.historyMode !== "skip") {
+      const historyMode = options.historyMode
+        || (previousView !== targetView && targetView === "detail" ? "push" : "replace");
+      syncMobileViewerHistory(historyMode);
+    }
 
     if (state.mobileView === "detail") {
       cancelPendingRailSelectionScroll();
@@ -2312,7 +2405,6 @@
     "1105201": 90, // 골드로비
     "1104701": 97, // 프라키토스
     "1103601": 104, // 플라티우스
-    "1103801": 104, // 플라티
   });
 
   function injectExtraPetPlaceholders() {
@@ -4741,6 +4833,8 @@
     const acquisitionEntries = Array.isArray(pet?.acquisitionEntries)
       ? pet.acquisitionEntries.filter((entry) => entry && (entry.title || entry.summary))
       : [];
+    const currentDateTimeKey = getTimeZoneDateTimeKey();
+    const generalSummonStatus = resolveGeneralSummonStatusMeta(pet, currentDateTimeKey);
 
     if (!schedules.length) {
       if (acquisitionEntries.length) {
@@ -4751,30 +4845,35 @@
           block.innerHTML = `<strong>${escapeHtml(String(entry.title || "").trim())}</strong><span>${escapeHtml(String(entry.summary || "").trim())}</span>`;
           elements.scheduleList.appendChild(block);
         });
-        return;
+      } else {
+        const summary = pet.statusSummary || "등록된 일정이 없습니다.";
+        elements.scheduleList.innerHTML = `<div class='schedule-item'><span>${escapeHtml(summary)}</span></div>`;
       }
-      const summary = pet.statusSummary || "등록된 일정이 없습니다.";
-      elements.scheduleList.innerHTML = `<div class='schedule-item'><span>${escapeHtml(summary)}</span></div>`;
-      return;
-    }
 
-      const currentDateTimeKey = getTimeZoneDateTimeKey();
-      schedules.slice(0, 6).forEach((item) => {
-        const statusMeta = resolveScheduleToneMeta(item, currentDateTimeKey);
-        const block = document.createElement("div");
-        block.className = `schedule-item ${statusMeta.tone}`;
-        block.innerHTML = `<strong>${escapeHtml(formatScheduleDisplayRange(item.start, item.end, item.resolvedStartDateTimeKey, item.resolvedEndExclusiveDateTimeKey))}</strong><span>${escapeHtml(statusMeta.scheduleLabel)}</span>`;
-        elements.scheduleList.appendChild(block);
-      });
-
-      const generalSummonStatus = resolveGeneralSummonStatusMeta(pet, currentDateTimeKey);
       if (generalSummonStatus) {
         const block = document.createElement("div");
         block.className = `schedule-item general-summon-item ${generalSummonStatus.tone}`;
         block.innerHTML = `<strong>상시 오픈 일정</strong><span>${escapeHtml(generalSummonStatus.sourceLabel || "일반 펫뽑기")} · ${escapeHtml(generalSummonStatus.summary)}</span>`;
         elements.scheduleList.appendChild(block);
       }
+      return;
     }
+
+    schedules.slice(0, 6).forEach((item) => {
+      const statusMeta = resolveScheduleToneMeta(item, currentDateTimeKey);
+      const block = document.createElement("div");
+      block.className = `schedule-item ${statusMeta.tone}`;
+      block.innerHTML = `<strong>${escapeHtml(formatScheduleDisplayRange(item.start, item.end, item.resolvedStartDateTimeKey, item.resolvedEndExclusiveDateTimeKey))}</strong><span>${escapeHtml(statusMeta.scheduleLabel)}</span>`;
+      elements.scheduleList.appendChild(block);
+    });
+
+    if (generalSummonStatus) {
+      const block = document.createElement("div");
+      block.className = `schedule-item general-summon-item ${generalSummonStatus.tone}`;
+      block.innerHTML = `<strong>상시 오픈 일정</strong><span>${escapeHtml(generalSummonStatus.sourceLabel || "일반 펫뽑기")} · ${escapeHtml(generalSummonStatus.summary)}</span>`;
+      elements.scheduleList.appendChild(block);
+    }
+  }
 
   function renderHero(pet) {
     const category = getActiveCategory();
@@ -5279,6 +5378,9 @@
         syncSelectedRailItemIntoView();
       });
     }
+    if (isMobileLayout()) {
+      syncMobileViewerHistory("replace");
+    }
   }
 
   function refreshScheduleStatuses(force = false) {
@@ -5443,6 +5545,16 @@
 
   if (elements.mobileShowRail) {
     elements.mobileShowRail.addEventListener("click", () => {
+      if (
+        isMobileLayout()
+        && state.mobileView === "detail"
+        && isMobileViewerHistoryState(window.history.state)
+        && window.history.state.mobileView === "detail"
+        && window.history.length > 1
+      ) {
+        window.history.back();
+        return;
+      }
       setMobileView("rail");
     });
   }
@@ -5579,6 +5691,17 @@
     elements.sceneStageBack.addEventListener("load", requestSceneLayout);
   }
 
+  window.addEventListener("popstate", (event) => {
+    if (!isMobileLayout() || !isMobileViewerHistoryState(event.state)) {
+      return;
+    }
+    if (!applyMobileViewerHistoryState(event.state)) {
+      return;
+    }
+    syncMobileLayout(false);
+    render();
+  });
+
   injectExtraPetPlaceholders();
   state.scheduleCalibration = loadScheduleCalibration();
   const initialSelection = findInitialSelection();
@@ -5593,8 +5716,9 @@
       state.activePetSubgroupKey = getPetSubgroupKeyForItem(initialPet);
     }
   }
+  const restoredMobileHistory = isMobileLayout() && applyMobileViewerHistoryState(window.history.state);
   lastScheduleStatusTickKey = getTimeZoneDateTimeKey().slice(0, 16);
-  syncMobileLayout(true);
+  syncMobileLayout(!restoredMobileHistory);
   render();
   if (shouldAutoOpenScheduleCalibration()) {
     openScheduleAdjustmentDialog({ preferredOptionId: preferredScheduleCalibrationOptionId() });
