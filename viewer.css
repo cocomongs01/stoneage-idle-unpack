@@ -743,8 +743,65 @@ img {
 .pet-item-order {
   min-width: 4rem;
   text-align: right;
-  white-space: nowrap;
   font-weight: 700;
+  display: grid;
+  gap: 0.1875rem;
+  justify-items: end;
+  white-space: normal;
+}
+
+.pet-item-order-primary {
+  white-space: nowrap;
+}
+
+.pet-item-order-secondary {
+  display: block;
+  font-size: 0.625rem;
+  line-height: 1.18;
+  letter-spacing: -0.01em;
+  opacity: 0.82;
+}
+
+.pet-item-order-secondary.general-summon {
+  color: #f1c96d;
+}
+
+.pet-item-order-secondary.current {
+  color: #d7f5a9;
+}
+
+.pet-item-order-secondary.upcoming {
+  color: #bfe3ff;
+}
+
+.pet-item-order-secondary.imminent {
+  color: #f0cf8a;
+}
+
+.pet-item-order-secondary.soon {
+  color: #f2ba68;
+}
+
+.pet-item-order-secondary.today {
+  color: #ffd96f;
+}
+
+.pet-item-order-secondary.past {
+  color: #dfb7a7;
+}
+
+.pet-item-order-secondary.general-summon.current,
+.pet-item-order-secondary.general-summon.today {
+  color: #ffe29a;
+}
+
+.pet-item-order-secondary.general-summon.imminent,
+.pet-item-order-secondary.general-summon.soon {
+  color: #f7d789;
+}
+
+.pet-item-order-secondary.general-summon.upcoming {
+  color: #efc86d;
 }
 
 .pet-item-order.current {
@@ -1813,6 +1870,29 @@ img {
   line-height: 1.3;
 }
 
+.schedule-item-note {
+  display: block;
+  margin-top: 0.1875rem;
+  font-size: 0.6875rem;
+  line-height: 1.18;
+  letter-spacing: -0.01em;
+  opacity: 0.84;
+}
+
+.schedule-item.general-summon-item {
+  border-color: rgba(242, 192, 84, 0.42);
+  box-shadow: inset 0 0 0 1px rgba(242, 192, 84, 0.14);
+  background: linear-gradient(180deg, rgba(134, 91, 16, 0.3), rgba(18, 16, 11, 0.86));
+}
+
+.schedule-item.general-summon-item strong {
+  color: #ffefc6;
+}
+
+.schedule-item.general-summon-item span {
+  color: #f3d796;
+}
+
 .schedule-item.current span {
   color: #dbf6b3;
 }
@@ -1858,6 +1938,15 @@ img {
 
 .schedule-item.acquisition-package span {
   color: #ead5c0;
+}
+
+.schedule-item.general-summon-item.current span,
+.schedule-item.general-summon-item.upcoming span,
+.schedule-item.general-summon-item.imminent span,
+.schedule-item.general-summon-item.soon span,
+.schedule-item.general-summon-item.today span,
+.schedule-item.general-summon-item.past span {
+  color: #f3d796;
 }
 
 .focus-column {

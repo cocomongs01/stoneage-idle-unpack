@@ -667,6 +667,12 @@
     return `${normalized.slice(0, 10).replace(/-/g, ".")} ${normalized.slice(11, 16)}`;
   }
 
+  function formatCompactDisplayDateTimeKey(dateTimeKey) {
+    const normalized = normalizeDateTimeKey(dateTimeKey);
+    if (!normalized) return "";
+    return `${normalized.slice(5, 10).replace(/-/g, ".")} ${normalized.slice(11, 16)}`;
+  }
+
   function currentScheduleReferenceParts() {
     if (state.scheduleCalibration?.mode === "custom") {
       return {
@@ -2293,6 +2299,21 @@
     "1103901",
     "1103801",
   ]);
+  const GENERAL_SUMMON_OPEN_DAY_BY_ID = Object.freeze({
+    "1108501": 27, // 모가로스
+    "1100101": 34, // 얀기로
+    "1112301": 41, // 아모로스
+    "1300201": 48, // 팔케온
+    "1105501": 55, // 디어룬
+    "1103401": 62, // 베르가
+    "1109901": 69, // 카미르
+    "1108801": 76, // 리나펠타
+    "1107101": 83, // 바라쿠스
+    "1105201": 90, // 골드로비
+    "1104701": 97, // 프라키토스
+    "1103601": 104, // 플라티우스
+    "1103801": 104, // 플라티
+  });
 
   function injectExtraPetPlaceholders() {
     const petCategory = data.categories.find((category) => category && category.key === "pet");
@@ -2345,6 +2366,95 @@
 
   function getEntityId(pet) {
     return String(pet?.viewerId || pet?.characterId || pet?.weaponId || pet?.id || pet?.name || "");
+  }
+
+  function getGeneralSummonOpenDateTimeKey(pet, serverOpenDateTimeKey = getActiveServerOpenDateTimeKey()) {
+    const openDay = GENERAL_SUMMON_OPEN_DAY_BY_ID[getEntityId(pet)];
+    if (!Number.isFinite(openDay)) return "";
+
+    const normalizedServerOpenKey = normalizeDateTimeKey(serverOpenDateTimeKey) || KR1_SERVER_OPEN_DATE_TIME_KEY;
+    const serverOpenDateKey = dateTimeKeyToDateKey(normalizedServerOpenKey);
+    if (!serverOpenDateKey) return "";
+
+    const resolvedOpenDateKey = resolveDynamicRuleStartDateKey(
+      { timeType: 4, openDay, period: 7 },
+      serverOpenDateKey,
+    );
+    return resolvedOpenDateKey
+      ? dateKeyToDateTimeKey(resolvedOpenDateKey, normalizedServerOpenKey)
+      : "";
+  }
+
+  function isGeneralSummonAlwaysOpen(pet, currentDateTimeKey = getTimeZoneDateTimeKey()) {
+    const generalOpenDateTimeKey = getGeneralSummonOpenDateTimeKey(pet);
+    const currentTimestamp = dateTimeKeyToTimestamp(currentDateTimeKey);
+    const generalOpenTimestamp = dateTimeKeyToTimestamp(generalOpenDateTimeKey);
+    return Number.isFinite(currentTimestamp)
+      && Number.isFinite(generalOpenTimestamp)
+      && currentTimestamp >= generalOpenTimestamp;
+  }
+
+  function resolveGeneralSummonStatusMeta(pet, currentDateTimeKey = getTimeZoneDateTimeKey()) {
+    const startDateTimeKey = getGeneralSummonOpenDateTimeKey(pet);
+    if (!startDateTimeKey) return null;
+    const sourceLabel = "일반 펫뽑기";
+
+    const currentTimestamp = dateTimeKeyToTimestamp(currentDateTimeKey);
+    const startTimestamp = dateTimeKeyToTimestamp(startDateTimeKey);
+    const currentDateKey = dateTimeKeyToDateKey(currentDateTimeKey);
+    const startDateKey = dateTimeKeyToDateKey(startDateTimeKey);
+    const tomorrowDateKey = currentDateKey ? addDaysToDateKey(currentDateKey, 1) : "";
+    const compactSummary = startDateTimeKey
+      ? `${formatCompactDisplayDateTimeKey(startDateTimeKey)} 시작`
+      : "";
+
+    if (Number.isFinite(currentTimestamp) && Number.isFinite(startTimestamp)) {
+      const diffMs = Math.max(0, startTimestamp - currentTimestamp);
+      if (currentTimestamp >= startTimestamp) {
+        return {
+          tone: "current",
+          label: "상시 오픈중",
+          summary: compactSummary,
+          startDateTimeKey,
+          sourceLabel,
+        };
+      }
+      if (startDateKey && currentDateKey && startDateKey === currentDateKey) {
+        return {
+          tone: "today",
+          label: "상시 오늘 오픈",
+          summary: compactSummary,
+          startDateTimeKey,
+          sourceLabel,
+        };
+      }
+      if (startDateKey && tomorrowDateKey && startDateKey === tomorrowDateKey) {
+        return {
+          tone: "soon",
+          label: "상시 내일 오픈",
+          summary: compactSummary,
+          startDateTimeKey,
+          sourceLabel,
+        };
+      }
+      if (diffMs <= DAY_MS * 3) {
+        return {
+          tone: "imminent",
+          label: "상시 오픈 임박",
+          summary: compactSummary,
+          startDateTimeKey,
+          sourceLabel,
+        };
+      }
+    }
+
+    return {
+      tone: "upcoming",
+      label: "상시 오픈 예정",
+      summary: compactSummary,
+      startDateTimeKey,
+      sourceLabel,
+    };
   }
 
   function getPetSubgroupKeyForItem(pet) {
@@ -4575,14 +4685,15 @@
     renderPetSubfilters(category);
     elements.petList.innerHTML = "";
 
-    items.forEach((pet) => {
-      const actualIndex = allItems.findIndex((item) => getEntityId(item) === getEntityId(pet));
-      const status = getPetStatus(pet);
-      const thumb = listThumbAsset(pet);
-      const thumbMarkup = thumb
-        ? `
-          <span class="pet-item-thumb" data-kind="${escapeHtml(pet.kind || "pet")}">
-            <img class="pet-item-thumb-image" data-kind="${escapeHtml(pet.kind || "pet")}" src="${escapeHtml(assetUrl(thumb))}" alt="${escapeHtml(pet.name)}" loading="lazy" decoding="async">
+      items.forEach((pet) => {
+        const actualIndex = allItems.findIndex((item) => getEntityId(item) === getEntityId(pet));
+        const status = getPetStatus(pet);
+        const generalSummonStatus = resolveGeneralSummonStatusMeta(pet);
+        const thumb = listThumbAsset(pet);
+        const thumbMarkup = thumb
+          ? `
+            <span class="pet-item-thumb" data-kind="${escapeHtml(pet.kind || "pet")}">
+              <img class="pet-item-thumb-image" data-kind="${escapeHtml(pet.kind || "pet")}" src="${escapeHtml(assetUrl(thumb))}" alt="${escapeHtml(pet.name)}" loading="lazy" decoding="async">
           </span>
         `
         : '<div class="pet-item-fallback"></div>';
@@ -4607,15 +4718,18 @@
         }
       });
 
-      button.innerHTML = `
-        ${thumbMarkup}
-        <span class="pet-item-title">
-          <strong>${escapeHtml(pet.name)}</strong>
-          <span>${escapeHtml(pet.title || pet.description || "")}</span>
-          ${pet.listMetaLabel ? `<small class="pet-item-meta-badge">${escapeHtml(pet.listMetaLabel)}</small>` : ""}
-        </span>
-        <span class="pet-item-order ${escapeHtml(status.tone || "past")}">${escapeHtml(status.label)}</span>
-      `;
+        button.innerHTML = `
+          ${thumbMarkup}
+          <span class="pet-item-title">
+            <strong>${escapeHtml(pet.name)}</strong>
+            <span>${escapeHtml(pet.title || pet.description || "")}</span>
+            ${pet.listMetaLabel ? `<small class="pet-item-meta-badge">${escapeHtml(pet.listMetaLabel)}</small>` : ""}
+          </span>
+          <span class="pet-item-order ${escapeHtml(status.tone || "past")}">
+            <span class="pet-item-order-primary">${escapeHtml(status.label)}</span>
+            ${generalSummonStatus ? `<small class="pet-item-order-secondary general-summon ${escapeHtml(generalSummonStatus.tone || "upcoming")}">${escapeHtml(generalSummonStatus.label)}</small>` : ""}
+          </span>
+        `;
 
       elements.petList.appendChild(button);
     });
@@ -4644,15 +4758,23 @@
       return;
     }
 
-    const currentDateTimeKey = getTimeZoneDateTimeKey();
-    schedules.slice(0, 6).forEach((item) => {
-      const statusMeta = resolveScheduleToneMeta(item, currentDateTimeKey);
-      const block = document.createElement("div");
-      block.className = `schedule-item ${statusMeta.tone}`;
-      block.innerHTML = `<strong>${escapeHtml(formatScheduleDisplayRange(item.start, item.end, item.resolvedStartDateTimeKey, item.resolvedEndExclusiveDateTimeKey))}</strong><span>${escapeHtml(statusMeta.scheduleLabel)}</span>`;
-      elements.scheduleList.appendChild(block);
-    });
-  }
+      const currentDateTimeKey = getTimeZoneDateTimeKey();
+      schedules.slice(0, 6).forEach((item) => {
+        const statusMeta = resolveScheduleToneMeta(item, currentDateTimeKey);
+        const block = document.createElement("div");
+        block.className = `schedule-item ${statusMeta.tone}`;
+        block.innerHTML = `<strong>${escapeHtml(formatScheduleDisplayRange(item.start, item.end, item.resolvedStartDateTimeKey, item.resolvedEndExclusiveDateTimeKey))}</strong><span>${escapeHtml(statusMeta.scheduleLabel)}</span>`;
+        elements.scheduleList.appendChild(block);
+      });
+
+      const generalSummonStatus = resolveGeneralSummonStatusMeta(pet, currentDateTimeKey);
+      if (generalSummonStatus) {
+        const block = document.createElement("div");
+        block.className = `schedule-item general-summon-item ${generalSummonStatus.tone}`;
+        block.innerHTML = `<strong>상시 오픈 일정</strong><span>${escapeHtml(generalSummonStatus.sourceLabel || "일반 펫뽑기")} · ${escapeHtml(generalSummonStatus.summary)}</span>`;
+        elements.scheduleList.appendChild(block);
+      }
+    }
 
   function renderHero(pet) {
     const category = getActiveCategory();
