@@ -1239,6 +1239,20 @@
     font-weight: 500;
   }
 
+  body.mobile-layout .skill-footnotes {
+    margin-top: 0.75rem;
+    padding-top: 0.75rem;
+  }
+
+  body.mobile-layout .skill-footnotes-label {
+    font-size: 0.625rem;
+  }
+
+  body.mobile-layout .skill-footnote {
+    font-size: 0.6875rem;
+    line-height: 1.45;
+  }
+
   @keyframes mobile-loading-progress {
     0% {
       transform: translateX(-110%);
