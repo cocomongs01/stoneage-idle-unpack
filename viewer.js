@@ -1889,7 +1889,7 @@
     { x: 88, size: 9, delay: -5.4, duration: 10.8, drift: 20, travel: 214, opacity: 0.5 },
   ];
 
-  const assetVersion = encodeURIComponent(String(window.GACHA_VIEWER_ASSET_VERSION || "20260404-first-load-cachefix-01"));
+  const assetVersion = encodeURIComponent(String(window.GACHA_VIEWER_ASSET_VERSION || "20260408-skill-footnotes-11"));
   const ELEMENT_ICON_BY_KEY = {
     leaf: "assets/ui/HeroType04.png",
     fire: "assets/ui/HeroType02.png",
@@ -3876,6 +3876,222 @@
     return preferredSkillDescription(primaryDescription, fallbackDescription);
   }
 
+  const SKILL_EFFECT_FOOTNOTE_DEFS = [
+    { term: "최대 체력 비례형 피해 면역", note: "최대 체력 비례형 피해에 면역" },
+    { term: "고정 피해 면역", note: "고정 피해에 면역" },
+    { term: "지속 피해 면역", note: "출혈, 화상, 맹독, 동결 면역" },
+    { term: "제어 효과 면역", note: "경직, 무력화, 기절, 수면, 속박, 침묵, 유혹, 띄우기, 제압, 밀어내기, 넘어트리기, 당기기, 넘기기 면역" },
+    { term: "군중제어 면역", note: "경직, 무력화, 기절, 수면, 속박, 침묵, 유혹, 띄우기 면역" },
+    { term: "이동제어 면역", note: "밀어내기, 넘어트리기, 당기기, 넘기기 면역" },
+    { term: "제압효과 면역", note: "물기, 잡기 면역" },
+    { term: "회복 불가 면역", note: "회복 불가 면역" },
+    { term: "고급 동결 면역", note: "고급 동결 면역" },
+    { term: "고급 출혈 면역", note: "고급 출혈 면역" },
+    { term: "고급 화상 면역", note: "고급 화상 면역" },
+    { term: "고급 맹독 면역", note: "고급 맹독 면역" },
+    { term: "동결 면역", note: "동결 면역" },
+    { term: "출혈 면역", note: "출혈 면역" },
+    { term: "화상 면역", note: "화상 면역" },
+    { term: "맹독 면역", note: "맹독 면역" },
+    { term: "경직 면역", note: "경직 면역" },
+    { term: "무력화 면역", note: "무력화 면역" },
+    { term: "기절 면역", note: "기절 면역" },
+    { term: "수면 면역", note: "수면 면역" },
+    { term: "속박 면역", note: "속박 면역" },
+    { term: "침묵 면역", note: "침묵 면역" },
+    { term: "유혹 면역", note: "유혹 면역" },
+    { term: "축축함 면역", note: "축축함 면역" },
+    { term: "도발 면역", note: "도발 면역" },
+    { term: "당기기 면역", note: "당기기 면역" },
+    { term: "밀어내기 면역", note: "밀어내기 면역" },
+    { term: "넘어트리기 면역", note: "넘어트리기 면역" },
+    { term: "띄우기 면역", note: "띄우기 면역" },
+    { term: "제압 면역", note: "물기, 잡기 면역" },
+    { term: "물기 면역", note: "물기 면역" },
+    { term: "잡기 면역", note: "잡기 면역" },
+    { term: "넘기기 면역", note: "넘기기 면역" },
+    { term: "현재 스킬 쿨타임 초기화", note: "현재 스킬 쿨타임을 초기화" },
+    { term: "최대 스킬 쿨타임 감소", note: "최대 스킬 쿨타임 감소" },
+    { term: "현재 스킬 쿨타임 감소", note: "현재 스킬 쿨타임 감소" },
+    { term: "최대 체력 비례형 피해", note: "대상의 최대 체력 비례 피해" },
+    { term: "피해 차단(방어형)", note: "방어형이 주는 피해 차단" },
+    { term: "피해 차단(근거리형)", note: "근거리형이 주는 피해 차단" },
+    { term: "피해 차단(원거리형)", note: "원거리형이 주는 피해 차단" },
+    { term: "피해 차단(지원형)", note: "지원형이 주는 피해 차단" },
+    { term: "땅 정령 보호막", note: "받는 피해를 정해진 횟수만큼 무효화하고, 공격한 대상에게 50% 확률로 2초 기절을 부여합니다." },
+    { term: "축축함 Lv.1", note: "회피, 이동 속도, 공격 속도를 감소. 그리고 기분이 나쁩니다." },
+    { term: "축축함 Lv.2", note: "회피, 이동 속도, 공격 속도를 감소. 그리고 기분이 나쁩니다." },
+    { term: "오한", note: "이동 속도, 공격 속도 감소" },
+    { term: "왕발자국", note: "공격 속도, 이동 속도, 명중 감소" },
+    { term: "거대화", note: "대상 거대화 및 최종 공격력, 방어력, 체력 증가" },
+    { term: "순발력", note: "회피, 공격 속도, 이동 속도 증가" },
+    { term: "할퀴기", note: "받는 지속 피해, 받는 치명타 피해 증가" },
+    { term: "그을림", note: "일정 간격마다 공격력 비례 지속 피해" },
+    { term: "혹한의 칼날", note: "공격 속도, 이동 속도 감소" },
+    { term: "부패한 대지", note: "1초마다 공격력의 20% 피해" },
+    { term: "뜨거운 기운", note: "1초마다 최대 체력의 3% 피해" },
+    { term: "화상(태양의 검)", note: "1초마다 공격력의 50% 피해" },
+    { term: "불새의 저주", note: "1초마다 공격력의 50% 피해, (무기) 공격력, 명중 감소" },
+    { term: "맹독(근원의 손톱)", note: "1초마다 공격력의 70% 피해" },
+    { term: "추가 피해", note: "추가 피해를 줍니다." },
+    { term: "체력 소모", note: "내 최대 체력의 일부를 소모" },
+    { term: "회복 불가", note: "회복 불가" },
+    { term: "침묵", note: "스킬 불가" },
+    { term: "수면", note: "공격 불가, 이동 불가, 스킬 불가. 피해를 받으면 수면이 해제됩니다." },
+    { term: "속박", note: "이동 불가" },
+    { term: "유혹", note: "적을 유혹하여 일정 시간 동안 아군으로 만드는 효과" },
+    { term: "축축함", note: "회피, 이동 속도, 공격 속도를 감소. 그리고 기분이 나쁩니다." },
+    { term: "경직", note: "짧은 시간 동안 공격 불가, 이동 불가, 스킬 불가" },
+    { term: "무력화", note: "공격 불가, 이동 불가, 스킬 불가" },
+    { term: "기절", note: "공격 불가, 이동 불가, 스킬 불가" },
+    { term: "띄우기", note: "적을 공중으로 띄워올리는 효과" },
+    { term: "도발", note: "지속시간 동안 도발을 사용한 대상을 우선 공격" },
+    { term: "의지", note: "현재 체력이 0이 되면, 지속시간 동안 전투불능 상태 면역" },
+    { term: "은신", note: "버프 지속시간 동안 공격의 대상이 되지 않음. 주변에 아군이 없으면 은신 해제" },
+    { term: "흡혈", note: "입힌 피해량의 일부만큼 체력 회복" },
+    { term: "반사", note: "피해를 입을 때마다 공격한 대상에게 받은 피해 일부를 되돌려 줌" },
+    { term: "보호막", note: "받는 피해를 정해진 횟수만큼 무효화" },
+    { term: "방어막", note: "시전자 체력 또는 공격력 비례로 피해를 흡수" },
+    { term: "수호", note: "시전자가 해당 효과를 받은 대상의 피해를 대신 받음" },
+    { term: "부활", note: "사망 상태가 되면 일정 시간 후 최대 체력 비율로 부활" },
+    { term: "고급 동결", note: "일정 간격마다 최대 체력 비례 지속 피해" },
+    { term: "고급 출혈", note: "일정 간격마다 최대 체력 비례 지속 피해" },
+    { term: "고급 화상", note: "일정 간격마다 최대 체력 비례 지속 피해" },
+    { term: "고급 맹독", note: "일정 간격마다 최대 체력 비례 지속 피해" },
+    { term: "동결", note: "일정 간격마다 공격력 비례 지속 피해" },
+    { term: "출혈", note: "일정 간격마다 공격력 비례 지속 피해" },
+    { term: "화상", note: "일정 간격마다 공격력 비례 지속 피해" },
+    { term: "맹독", note: "일정 간격마다 공격력 비례 지속 피해" },
+  ];
+
+  function isRedundantSkillFootnote(entry) {
+    const normalize = (value) => String(value || "").replace(/\s+/g, "").trim();
+    return normalize(entry.term) === normalize(entry.note);
+  }
+
+  function resolveSkillFootnoteNote(entry, source, index) {
+    const matchedPercent = String(source || "").slice(index).match(/^[^(]*\((\d+)%\)/);
+    if (entry.term === "오한") {
+      if (matchedPercent) {
+        return `이동 속도, 공격 속도 ${matchedPercent[1]}% 감소`;
+      }
+      return "이동 속도, 공격 속도 감소";
+    }
+    if (entry.term === "왕발자국") {
+      if (matchedPercent) {
+        return `공격 속도, 이동 속도, 명중 ${matchedPercent[1]}% 감소`;
+      }
+      return "공격 속도, 이동 속도, 명중 감소";
+    }
+    if (entry.term === "거대화") {
+      if (matchedPercent) {
+        return `대상 거대화 및 최종 공격력, 방어력, 체력 ${matchedPercent[1]}% 증가`;
+      }
+      return "대상 거대화 및 최종 공격력, 방어력, 체력 증가";
+    }
+    if (entry.term === "순발력") {
+      if (matchedPercent) {
+        return `회피, 공격 속도, 이동 속도 ${matchedPercent[1]}% 증가`;
+      }
+      return "회피, 공격 속도, 이동 속도 증가";
+    }
+    if (entry.term === "할퀴기") {
+      if (matchedPercent) {
+        return `받는 지속 피해, 받는 치명타 피해 ${matchedPercent[1]}% 증가`;
+      }
+      return "받는 지속 피해, 받는 치명타 피해 증가";
+    }
+    if (entry.term === "혹한의 칼날") {
+      if (matchedPercent) {
+        return `공격 속도, 이동 속도 ${matchedPercent[1]}% 감소`;
+      }
+      return "공격 속도, 이동 속도 감소";
+    }
+    if (entry.term === "불새의 저주") {
+      if (matchedPercent) {
+        return `1초마다 공격력의 50% 피해, (무기) 공격력, 명중 ${matchedPercent[1]}% 감소`;
+      }
+      return "1초마다 공격력의 50% 피해, (무기) 공격력, 명중 감소";
+    }
+    if (entry.term === "체력 소모") {
+      if (matchedPercent) {
+        return `내 최대 체력의 ${matchedPercent[1]}%를 소모`;
+      }
+      return "내 최대 체력의 일부를 소모";
+    }
+    return entry.note;
+  }
+
+  function extractSkillEffectFootnotes(desc) {
+    const source = String(desc || "");
+    if (!source) return [];
+
+    const matches = [];
+    SKILL_EFFECT_FOOTNOTE_DEFS.forEach((entry) => {
+      if (isRedundantSkillFootnote(entry)) return;
+      let fromIndex = 0;
+      while (fromIndex < source.length) {
+        const index = source.indexOf(entry.term, fromIndex);
+        if (index < 0) break;
+        matches.push({
+          ...entry,
+          note: resolveSkillFootnoteNote(entry, source, index),
+          index,
+          end: index + entry.term.length,
+        });
+        fromIndex = index + entry.term.length;
+      }
+    });
+
+    matches.sort((left, right) => {
+        if (left.index !== right.index) return left.index - right.index;
+        return right.term.length - left.term.length;
+      });
+
+    const deduped = [];
+    const seenTerms = new Set();
+    const coveredRanges = [];
+    matches.forEach((entry) => {
+      if (seenTerms.has(entry.term)) return;
+      const overlaps = coveredRanges.some(
+        (range) => entry.index < range.end && entry.end > range.start
+      );
+      if (overlaps) return;
+      seenTerms.add(entry.term);
+      coveredRanges.push({ start: entry.index, end: entry.end });
+      deduped.push(entry);
+    });
+    return deduped;
+  }
+
+  function skillDescriptionHtml(variant) {
+    const desc = String(buildSkillDescription(variant) || "").trim();
+    if (!desc) return "";
+
+    const footnotes = extractSkillEffectFootnotes(desc);
+    const descHtml = richTextToHtml(desc);
+    if (!footnotes.length) {
+      return descHtml;
+    }
+
+    const footnoteHtml = footnotes
+      .map((entry) => `
+        <li class="skill-footnote">
+          <strong class="skill-footnote-term">${escapeHtml(entry.term)}</strong>
+          <span class="skill-footnote-note">${escapeHtml(entry.note)}</span>
+        </li>
+      `)
+      .join("");
+
+    return `
+      ${descHtml}
+      <div class="skill-footnotes" aria-label="효과 참고">
+        <p class="skill-footnotes-label">효과 참고</p>
+        <ul class="skill-footnotes-list">${footnoteHtml}</ul>
+      </div>
+    `;
+  }
+
   function normalizedSkillKind(skill) {
     const raw = String(skill?.slotLabel || "").trim();
     const firstSkillType = String(skill?.variants?.[0]?.skillType || "");
@@ -4968,7 +5184,7 @@
     elements.focusVariantLevel.innerHTML = stageMetaMarkup(variant);
     elements.focusSkillRange.textContent = skillRangeLabel(pet, selectedSkill, variant);
     elements.focusCooldown.textContent = cooldownLabel(variant.coolTime);
-    elements.focusSkillDesc.innerHTML = richTextToHtml(buildSkillDescription(variant));
+    elements.focusSkillDesc.innerHTML = skillDescriptionHtml(variant);
     renderSpotlightSummaryDisplay(pet, selectedSkill, variant);
     elements.selectedSkillSummary.innerHTML = `
       <span class="summary-name">${escapeHtml(selectedSkill.name)}</span>
@@ -5193,7 +5409,7 @@
         descCard.className = "mobile-inline-card mobile-skill-desc-card";
         descCard.innerHTML = `
           <p class="section-label">스킬 설명</p>
-          <div class="skill-desc mobile-skill-desc-body">${richTextToHtml(buildSkillDescription(variant))}</div>
+          <div class="skill-desc mobile-skill-desc-body">${skillDescriptionHtml(variant)}</div>
         `;
         panel.appendChild(descCard);
         skillCard.appendChild(panel);
