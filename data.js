@@ -28,10 +28,13 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 23700,
                   "formattedDesc": "적 1명을 공격(피해량: <#CFFF71>237%</color> x <#CFFF71>공격력</color>) 적중 시, <#CFFF71>20%</color> 확률로 스킬 쿨타임 증가 <#CFFF71>1초</color> 부여.",
                   "stageLabel": "SS 0성",
-                  "descValues": "20|1"
+                  "descValues": "20|1",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11077010133"
                 },
                 {
-                  "upgradeDescFormatted": "SS ★1 : 스킬 쿨타임 증가 부여 확률 +5%",
+                  "upgradeDescFormatted": "SS ★1 : 스킬 쿨타임 증가 발동 확률 +5%",
                   "groupGrade": 1,
                   "skillType": "1",
                   "groupTier": 4,
@@ -42,10 +45,16 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 23700,
                   "formattedDesc": "적 1명을 공격(피해량: <#CFFF71>237%</color> x <#CFFF71>공격력</color>) 적중 시, <#CFFF71>25%</color> 확률로 스킬 쿨타임 증가 <#CFFF71>1초</color> 부여.",
                   "stageLabel": "SS 1성",
-                  "descValues": "25|1"
+                  "descValues": "25|1",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11077010134",
+                  "upgradeDescTemplate": "SS ★1 : 스킬 쿨타임 증가 발동 확률 +{0}%",
+                  "upgradeDescValues": "5",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11077010134"
                 },
                 {
-                  "upgradeDescFormatted": "SS ★3 : 피해량 +560%",
+                  "upgradeDescFormatted": "SS ★3 : 피해량 +56%",
                   "groupGrade": 3,
                   "skillType": "1",
                   "groupTier": 4,
@@ -56,10 +65,16 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 29300,
                   "formattedDesc": "적 1명을 공격(피해량: <#CFFF71>293%</color> x <#CFFF71>공격력</color>) 적중 시, <#CFFF71>25%</color> 확률로 스킬 쿨타임 증가 <#CFFF71>1초</color> 부여.",
                   "stageLabel": "SS 3성",
-                  "descValues": "25|1"
+                  "descValues": "25|1",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11077010136",
+                  "upgradeDescTemplate": "SS ★3 : 피해량 +{0}%",
+                  "upgradeDescValues": "56",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11077010136"
                 },
                 {
-                  "upgradeDescFormatted": "SS ★5 : 스킬 쿨타임 증가 부여 확률 +5%",
+                  "upgradeDescFormatted": "SS ★5 : 스킬 쿨타임 증가 발동 확률 +5%",
                   "groupGrade": 5,
                   "skillType": "1",
                   "groupTier": 4,
@@ -70,10 +85,16 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 29300,
                   "formattedDesc": "적 1명을 공격(피해량: <#CFFF71>293%</color> x <#CFFF71>공격력</color>) 적중 시, <#CFFF71>30%</color> 확률로 스킬 쿨타임 증가 <#CFFF71>1초</color> 부여.",
                   "stageLabel": "SS 5성",
-                  "descValues": "30|1"
+                  "descValues": "30|1",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11077010138",
+                  "upgradeDescTemplate": "SS ★5 : 스킬 쿨타임 증가 발동 확률 +{0}%",
+                  "upgradeDescValues": "5",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11077010138"
                 },
                 {
-                  "upgradeDescFormatted": "SS ★7 : 피해량 +750%",
+                  "upgradeDescFormatted": "SS ★7 : 피해량 +75%",
                   "groupGrade": 7,
                   "skillType": "1",
                   "groupTier": 4,
@@ -84,7 +105,13 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 36800,
                   "formattedDesc": "적 1명을 공격(피해량: <#CFFF71>368%</color> x <#CFFF71>공격력</color>) 적중 시, <#CFFF71>30%</color> 확률로 스킬 쿨타임 증가 <#CFFF71>1초</color> 부여.",
                   "stageLabel": "SS 7성",
-                  "descValues": "30|1"
+                  "descValues": "30|1",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11077010140",
+                  "upgradeDescTemplate": "SS ★7 : 피해량 +{0}%",
+                  "upgradeDescValues": "75",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11077010140"
                 },
                 {
                   "upgradeDescFormatted": "SSS ★0 : 스킬 쿨타임 증가 +1초",
@@ -98,7 +125,13 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 36800,
                   "formattedDesc": "적 1명을 공격(피해량: <#CFFF71>368%</color> x <#CFFF71>공격력</color>) 적중 시, <#CFFF71>30%</color> 확률로 스킬 쿨타임 증가 <#CFFF71>2초</color> 부여.",
                   "stageLabel": "SSS 0성",
-                  "descValues": "30|2"
+                  "descValues": "30|2",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11077010144",
+                  "upgradeDescTemplate": "SSS ★0 : 스킬 쿨타임 증가 +{0}초",
+                  "upgradeDescValues": "1",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11077010144"
                 }
               ]
             },
@@ -121,7 +154,10 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 126000,
                   "formattedDesc": "적 1명에게 사랑의 선물 <#CFFF71>2회</color> 발사(피해량: <#CFFF71>1260%</color> x <#CFFF71>공격력</color>). 적중 시마다 대상을 공중으로 띄우고 마지막 공격 적중 시, <#CFFF71>이로운 효과</color> <#CFFF71>2개</color> 제거하고, <#CFFF71>제거한 이로운 효과를 자신에게 부여</color>.",
                   "stageLabel": "SS 0성",
-                  "descValues": "2|2"
+                  "descValues": "2|2",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11077011133"
                 },
                 {
                   "upgradeDescFormatted": "SS ★1 : 이로운 효과 제거 +1개",
@@ -135,7 +171,13 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 126000,
                   "formattedDesc": "적 1명에게 사랑의 선물 <#CFFF71>2회</color> 발사(피해량: <#CFFF71>1260%</color> x <#CFFF71>공격력</color>). 적중 시마다 대상을 공중으로 띄우고 마지막 공격 적중 시, <#CFFF71>이로운 효과</color> <#CFFF71>3개</color> 제거하고, <#CFFF71>제거한 이로운 효과를 자신에게 부여</color>.",
                   "stageLabel": "SS 1성",
-                  "descValues": "2|3"
+                  "descValues": "2|3",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11077011134",
+                  "upgradeDescTemplate": "SS ★1 : 이로운 효과 제거 +{0}개",
+                  "upgradeDescValues": "1",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11077011134"
                 },
                 {
                   "upgradeDescFormatted": "SS ★3 : 피해량 +300%",
@@ -149,7 +191,13 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 156000,
                   "formattedDesc": "적 1명에게 사랑의 선물 <#CFFF71>2회</color> 발사(피해량: <#CFFF71>1560%</color> x <#CFFF71>공격력</color>). 적중 시마다 대상을 공중으로 띄우고 마지막 공격 적중 시, <#CFFF71>이로운 효과</color> <#CFFF71>3개</color> 제거하고, <#CFFF71>제거한 이로운 효과를 자신에게 부여</color>.",
                   "stageLabel": "SS 3성",
-                  "descValues": "2|3"
+                  "descValues": "2|3",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11077011136",
+                  "upgradeDescTemplate": "SS ★3 : 피해량 +{0}%",
+                  "upgradeDescValues": "300",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11077011136"
                 },
                 {
                   "upgradeDescFormatted": "SS ★5 : 피해량 +350%",
@@ -163,7 +211,13 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 191000,
                   "formattedDesc": "적 1명에게 사랑의 선물 <#CFFF71>2회</color> 발사(피해량: <#CFFF71>1910%</color> x <#CFFF71>공격력</color>). 적중 시마다 대상을 공중으로 띄우고 마지막 공격 적중 시, <#CFFF71>이로운 효과</color> <#CFFF71>3개</color> 제거하고, <#CFFF71>제거한 이로운 효과를 자신에게 부여</color>.",
                   "stageLabel": "SS 5성",
-                  "descValues": "2|3"
+                  "descValues": "2|3",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11077011138",
+                  "upgradeDescTemplate": "SS ★5 : 피해량 +{0}%",
+                  "upgradeDescValues": "350",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11077011138"
                 },
                 {
                   "upgradeDescFormatted": "SS ★7 : 이로운 효과 제거 +1개",
@@ -177,7 +231,13 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 191000,
                   "formattedDesc": "적 1명에게 사랑의 선물 <#CFFF71>2회</color> 발사(피해량: <#CFFF71>1910%</color> x <#CFFF71>공격력</color>). 적중 시마다 대상을 공중으로 띄우고 마지막 공격 적중 시, <#CFFF71>이로운 효과</color> <#CFFF71>4개</color> 제거하고, <#CFFF71>제거한 이로운 효과를 자신에게 부여</color>.",
                   "stageLabel": "SS 7성",
-                  "descValues": "2|4"
+                  "descValues": "2|4",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11077011140",
+                  "upgradeDescTemplate": "SS ★7 : 이로운 효과 제거 +{0}개",
+                  "upgradeDescValues": "1",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11077011140"
                 },
                 {
                   "upgradeDescFormatted": "SS ★10 : 피해량 +450%",
@@ -191,21 +251,33 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 236000,
                   "formattedDesc": "적 1명에게 사랑의 선물 <#CFFF71>2회</color> 발사(피해량: <#CFFF71>2360%</color> x <#CFFF71>공격력</color>). 적중 시마다 대상을 공중으로 띄우고 마지막 공격 적중 시, <#CFFF71>이로운 효과</color> <#CFFF71>4개</color> 제거하고, <#CFFF71>제거한 이로운 효과를 자신에게 부여</color>.",
                   "stageLabel": "SS 10성",
-                  "descValues": "2|4"
+                  "descValues": "2|4",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11077011143",
+                  "upgradeDescTemplate": "SS ★10 : 피해량 +{0}%",
+                  "upgradeDescValues": "450",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11077011143"
                 },
                 {
-                  "upgradeDescFormatted": "SSS ★0 : 대상에게 침묵 4초 추가",
+                  "upgradeDescFormatted": "SSS ★0 : 6초간 침묵 부여 추가",
                   "groupGrade": 0,
                   "skillType": "3",
                   "groupTier": 5,
                   "skillLevel": 7,
                   "coolTime": "4.5",
                   "iconImage": "assets/skills/SP0015_2.png",
-                  "rawDesc": "적 1명에게 사랑의 선물 <#CFFF71>{3}회</color> 발사(피해량: <#CFFF71>{0}%</color> x <#CFFF71>공격력</color>). 적중 시마다 대상을 공중으로 띄우고 마지막 공격 적중 시, <#CFFF71>이로운 효과</color> <#CFFF71>{3}개</color> 제거하고, <#CFFF71>제거한 이로운 효과를 자신에게 부여</color>. 추가로 대상에게 <#CFFF71>{4}초</color> 간 침묵 부여.",
+                  "rawDesc": "적 1명에게 사랑의 선물 <#CFFF71>{3}회</color> 발사(피해량: <#CFFF71>{0}%</color> x <#CFFF71>공격력</color>). 적중 시마다 대상을 공중으로 띄우고 마지막 공격 적중 시, <#CFFF71>이로운 효과</color> <#CFFF71>{4}개</color> 제거하고, <#CFFF71>제거한 이로운 효과를 자신에게 부여</color>. 추가로 대상에게 <#CFFF71>{5}초</color> 간 침묵 부여.",
                   "factorAttk": 236000,
-                  "formattedDesc": "적 1명에게 사랑의 선물 <#CFFF71>2회</color> 발사(피해량: <#CFFF71>2360%</color> x <#CFFF71>공격력</color>). 적중 시마다 대상을 공중으로 띄우고 마지막 공격 적중 시, <#CFFF71>이로운 효과</color> <#CFFF71>2개</color> 제거하고, <#CFFF71>제거한 이로운 효과를 자신에게 부여</color>. 추가로 대상에게 <#CFFF71>4초</color> 간 침묵 부여.",
+                  "formattedDesc": "적 1명에게 사랑의 선물 <#CFFF71>2회</color> 발사(피해량: <#CFFF71>2360%</color> x <#CFFF71>공격력</color>). 적중 시마다 대상을 공중으로 띄우고 마지막 공격 적중 시, <#CFFF71>이로운 효과</color> <#CFFF71>4개</color> 제거하고, <#CFFF71>제거한 이로운 효과를 자신에게 부여</color>. 추가로 대상에게 <#CFFF71>6초</color> 간 침묵 부여.",
                   "stageLabel": "SSS 0성",
-                  "descValues": "2|4|4"
+                  "descValues": "2|4|6",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11077011144",
+                  "upgradeDescTemplate": "SSS ★0 : {0}초간 침묵 부여 추가",
+                  "upgradeDescValues": "6",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11077011144"
                 }
               ]
             },
@@ -228,7 +300,10 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 266000,
                   "formattedDesc": "일반 공격 <#CFFF71>8회</color> 후, 체력이 가장 높은 적 1명을 공격(피해량: <#CFFF71>2660%</color> x <#CFFF71>공격력</color>). 적중 시, 대상을 넘어트리고 <#CFFF71>5초</color>간 <#CFFF71>유혹</color> 부여.",
                   "stageLabel": "SS 0성",
-                  "descValues": "8|5"
+                  "descValues": "8|5",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11077012133"
                 },
                 {
                   "upgradeDescFormatted": "SS ★1 : 유혹 +1초",
@@ -242,7 +317,13 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 266000,
                   "formattedDesc": "일반 공격 <#CFFF71>8회</color> 후, 체력이 가장 높은 적 1명을 공격(피해량: <#CFFF71>2660%</color> x <#CFFF71>공격력</color>). 적중 시, 대상을 넘어트리고 <#CFFF71>6초</color>간 <#CFFF71>유혹</color> 부여.",
                   "stageLabel": "SS 1성",
-                  "descValues": "8|6"
+                  "descValues": "8|6",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11077012134",
+                  "upgradeDescTemplate": "SS ★1 : 유혹 +{0}초",
+                  "upgradeDescValues": "1",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11077012134"
                 },
                 {
                   "upgradeDescFormatted": "SS ★5 : 피해량 +635%",
@@ -256,7 +337,13 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 329500,
                   "formattedDesc": "일반 공격 <#CFFF71>8회</color> 후, 체력이 가장 높은 적 1명을 공격(피해량: <#CFFF71>3295%</color> x <#CFFF71>공격력</color>). 적중 시, 대상을 넘어트리고 <#CFFF71>6초</color>간 <#CFFF71>유혹</color> 부여.",
                   "stageLabel": "SS 5성",
-                  "descValues": "8|6"
+                  "descValues": "8|6",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11077012138",
+                  "upgradeDescTemplate": "SS ★5 : 피해량 +{0}%",
+                  "upgradeDescValues": "635",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11077012138"
                 },
                 {
                   "upgradeDescFormatted": "SS ★7 : 유혹 +1초",
@@ -270,7 +357,13 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 329500,
                   "formattedDesc": "일반 공격 <#CFFF71>8회</color> 후, 체력이 가장 높은 적 1명을 공격(피해량: <#CFFF71>3295%</color> x <#CFFF71>공격력</color>). 적중 시, 대상을 넘어트리고 <#CFFF71>7초</color>간 <#CFFF71>유혹</color> 부여.",
                   "stageLabel": "SS 7성",
-                  "descValues": "8|7"
+                  "descValues": "8|7",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11077012140",
+                  "upgradeDescTemplate": "SS ★7 : 유혹 +{0}초",
+                  "upgradeDescValues": "1",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11077012140"
                 },
                 {
                   "upgradeDescFormatted": "SS ★10 : 피해량 +850%",
@@ -284,21 +377,33 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 414500,
                   "formattedDesc": "일반 공격 <#CFFF71>8회</color> 후, 체력이 가장 높은 적 1명을 공격(피해량: <#CFFF71>4145%</color> x <#CFFF71>공격력</color>). 적중 시, 대상을 넘어트리고 <#CFFF71>7초</color>간 <#CFFF71>유혹</color> 부여.",
                   "stageLabel": "SS 10성",
-                  "descValues": "8|7"
+                  "descValues": "8|7",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11077012143",
+                  "upgradeDescTemplate": "SS ★10 : 피해량 +{0}%",
+                  "upgradeDescValues": "850",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11077012143"
                 },
                 {
-                  "upgradeDescFormatted": "SSS ★0 : 유혹 시간 동안 대상 거대화(30%) 추가",
+                  "upgradeDescFormatted": "SSS ★0 : 유혹 당한 대상에게 폭주(30%) 부여 추가",
                   "groupGrade": 0,
                   "skillType": "6",
                   "groupTier": 5,
                   "skillLevel": 6,
                   "coolTime": "0",
                   "iconImage": "assets/skills/SP0060_2.png",
-                  "rawDesc": "일반 공격 <#CFFF71>{3}회</color> 후, 체력이 가장 높은 적 1명을 공격(피해량: <#CFFF71>{0}%</color> x <#CFFF71>공격력</color>). 적중 시, 대상을 넘어트리고 <#CFFF71>{4}초</color>간 <#CFFF71>유혹</color> 부여. <#CFFF71>유혹 시간 동안 유혹 당한 대상을 거대화({5}%)</color>.",
+                  "rawDesc": "일반 공격 <#CFFF71>{3}회</color> 후, 체력이 가장 높은 적 1명을 공격(피해량: <#CFFF71>{0}%</color> x <#CFFF71>공격력</color>). 적중 시, 대상을 넘어트리고 <#CFFF71>{4}초</color>간 <#CFFF71>유혹</color> 부여. <#CFFF71>유혹 시간 동안 유혹 당한 대상에게 폭주({5}%) 부여</color>.",
                   "factorAttk": 414500,
-                  "formattedDesc": "일반 공격 <#CFFF71>8회</color> 후, 체력이 가장 높은 적 1명을 공격(피해량: <#CFFF71>4145%</color> x <#CFFF71>공격력</color>). 적중 시, 대상을 넘어트리고 <#CFFF71>7초</color>간 <#CFFF71>유혹</color> 부여. <#CFFF71>유혹 시간 동안 유혹 당한 대상을 거대화(30%)</color>.",
+                  "formattedDesc": "일반 공격 <#CFFF71>8회</color> 후, 체력이 가장 높은 적 1명을 공격(피해량: <#CFFF71>4145%</color> x <#CFFF71>공격력</color>). 적중 시, 대상을 넘어트리고 <#CFFF71>7초</color>간 <#CFFF71>유혹</color> 부여. <#CFFF71>유혹 시간 동안 유혹 당한 대상에게 폭주(30%) 부여</color>.",
                   "stageLabel": "SSS 0성",
-                  "descValues": "8|7|30"
+                  "descValues": "8|7|30",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11077012144",
+                  "upgradeDescTemplate": "SSS ★0 : 유혹 당한 대상에게 폭주({0}%) 부여 추가",
+                  "upgradeDescValues": "30",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11077012144"
                 }
               ]
             },
@@ -321,7 +426,10 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 0,
                   "formattedDesc": "자신에게 <#CFFF71>(타입)공격력 증가(10%)</color>, <#CFFF71>(타입)명중 증가(20%)</color> 적용.",
                   "stageLabel": "SS 0성",
-                  "descValues": "10|20"
+                  "descValues": "10|20",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "33100"
                 },
                 {
                   "upgradeDescFormatted": "SS ★2 : (타입) 명중 증가 +2%",
@@ -335,7 +443,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 0,
                   "formattedDesc": "자신에게 <#CFFF71>(타입)공격력 증가(10%)</color>, <#CFFF71>(타입)명중 증가(22%)</color> 적용.",
                   "stageLabel": "SS 2성",
-                  "descValues": "10|22"
+                  "descValues": "10|22",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "33135",
+                  "upgradeDescTemplate": "SS ★2 : (타입) 명중 증가 +2%",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_33135"
                 },
                 {
                   "upgradeDescFormatted": "SS ★4 : (타입) 공격력 증가 +2%",
@@ -349,7 +462,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 0,
                   "formattedDesc": "자신에게 <#CFFF71>(타입)공격력 증가(12%)</color>, <#CFFF71>(타입)명중 증가(22%)</color> 적용.",
                   "stageLabel": "SS 4성",
-                  "descValues": "12|22"
+                  "descValues": "12|22",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "33137",
+                  "upgradeDescTemplate": "SS ★4 : (타입) 공격력 증가 +2%",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_33137"
                 },
                 {
                   "upgradeDescFormatted": "SS ★6 : (타입) 명중 증가 +2%",
@@ -363,7 +481,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 0,
                   "formattedDesc": "자신에게 <#CFFF71>(타입)공격력 증가(12%)</color>, <#CFFF71>(타입)명중 증가(24%)</color> 적용.",
                   "stageLabel": "SS 6성",
-                  "descValues": "12|24"
+                  "descValues": "12|24",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "33139",
+                  "upgradeDescTemplate": "SS ★6 : (타입) 명중 증가 +2%",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_33139"
                 },
                 {
                   "upgradeDescFormatted": "SS ★8 : (타입) 공격력 증가 +2%",
@@ -377,7 +500,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 0,
                   "formattedDesc": "자신에게 <#CFFF71>(타입)공격력 증가(14%)</color>, <#CFFF71>(타입)명중 증가(24%)</color> 적용.",
                   "stageLabel": "SS 8성",
-                  "descValues": "14|24"
+                  "descValues": "14|24",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "33141",
+                  "upgradeDescTemplate": "SS ★8 : (타입) 공격력 증가 +2%",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_33141"
                 },
                 {
                   "upgradeDescFormatted": "SSS ★1 : (타입) 공격력 증가 +1% / (타입) 명중 증가 +1%",
@@ -391,7 +519,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 0,
                   "formattedDesc": "자신에게 <#CFFF71>(타입)공격력 증가(15%)</color>, <#CFFF71>(타입)명중 증가(25%)</color> 적용.",
                   "stageLabel": "SSS 1성",
-                  "descValues": "15|25"
+                  "descValues": "15|25",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "33145",
+                  "upgradeDescTemplate": "SSS ★1 : (타입) 공격력 증가 +1% / (타입) 명중 증가 +1%",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_33145"
                 }
               ]
             }
@@ -408,23 +541,16 @@ window.GACHA_PET_VIEWER_DATA = {
             {
               "start": "2026-03-19",
               "end": "2026-03-25",
-              "status": "upcoming"
+              "status": "past"
             },
             {
               "start": "2026-04-02",
               "end": "2026-04-08",
-              "status": "upcoming"
+              "status": "past"
             },
             {
-              "start": "2026-04-16",
-              "end": "2026-04-22",
-              "status": "upcoming",
-              "cancelled": true,
-              "cancelledLabel": "03.19 패치로 취소"
-            },
-            {
-              "start": "2026-04-30",
-              "end": "2026-05-06",
+              "start": "2026-04-20",
+              "end": "2026-04-26",
               "status": "upcoming"
             }
           ],
@@ -463,7 +589,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "적 1명을 공격(피해량: <#CFFF71>{0}%</color> x <#CFFF71>공격력</color>)",
                   "factorAttk": 15400,
                   "formattedDesc": "적 1명을 공격(피해량: <#CFFF71>154%</color> x <#CFFF71>공격력</color>)",
-                  "stageLabel": "SS 0성"
+                  "stageLabel": "SS 0성",
+                  "descValues": "",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11085010133"
                 },
                 {
                   "upgradeDescFormatted": "SS ★1 : 피해량 +30%",
@@ -476,7 +606,14 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "적 1명을 공격(피해량: <#CFFF71>{0}%</color> x <#CFFF71>공격력</color>)",
                   "factorAttk": 18400,
                   "formattedDesc": "적 1명을 공격(피해량: <#CFFF71>184%</color> x <#CFFF71>공격력</color>)",
-                  "stageLabel": "SS 1성"
+                  "stageLabel": "SS 1성",
+                  "descValues": "",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11085010134",
+                  "upgradeDescTemplate": "SS ★1 : 피해량 +{0}%",
+                  "upgradeDescValues": "30",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11085010134"
                 },
                 {
                   "upgradeDescFormatted": "SS ★3 : 피해량 +36%",
@@ -489,7 +626,14 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "적 1명을 공격(피해량: <#CFFF71>{0}%</color> x <#CFFF71>공격력</color>)",
                   "factorAttk": 22000,
                   "formattedDesc": "적 1명을 공격(피해량: <#CFFF71>220%</color> x <#CFFF71>공격력</color>)",
-                  "stageLabel": "SS 3성"
+                  "stageLabel": "SS 3성",
+                  "descValues": "",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11085010136",
+                  "upgradeDescTemplate": "SS ★3 : 피해량 +{0}%",
+                  "upgradeDescValues": "36",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11085010136"
                 },
                 {
                   "upgradeDescFormatted": "SS ★5 : 피해량 +43%",
@@ -502,7 +646,14 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "적 1명을 공격(피해량: <#CFFF71>{0}%</color> x <#CFFF71>공격력</color>)",
                   "factorAttk": 26300,
                   "formattedDesc": "적 1명을 공격(피해량: <#CFFF71>263%</color> x <#CFFF71>공격력</color>)",
-                  "stageLabel": "SS 5성"
+                  "stageLabel": "SS 5성",
+                  "descValues": "",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11085010138",
+                  "upgradeDescTemplate": "SS ★5 : 피해량 +{0}%",
+                  "upgradeDescValues": "43",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11085010138"
                 },
                 {
                   "upgradeDescFormatted": "SS ★7 : 피해량 +49%",
@@ -515,7 +666,14 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "적 1명을 공격(피해량: <#CFFF71>{0}%</color> x <#CFFF71>공격력</color>)",
                   "factorAttk": 31200,
                   "formattedDesc": "적 1명을 공격(피해량: <#CFFF71>312%</color> x <#CFFF71>공격력</color>)",
-                  "stageLabel": "SS 7성"
+                  "stageLabel": "SS 7성",
+                  "descValues": "",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11085010140",
+                  "upgradeDescTemplate": "SS ★7 : 피해량 +{0}%",
+                  "upgradeDescValues": "49",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11085010140"
                 },
                 {
                   "upgradeDescFormatted": "SSS ★0 : 피해량 +55%",
@@ -528,7 +686,14 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "적 1명을 공격(피해량: <#CFFF71>{0}%</color> x <#CFFF71>공격력</color>)",
                   "factorAttk": 36700,
                   "formattedDesc": "적 1명을 공격(피해량: <#CFFF71>367%</color> x <#CFFF71>공격력</color>)",
-                  "stageLabel": "SSS 0성"
+                  "stageLabel": "SSS 0성",
+                  "descValues": "",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11085010144",
+                  "upgradeDescTemplate": "SSS ★0 : 피해량 +{0}%",
+                  "upgradeDescValues": "55",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11085010144"
                 }
               ]
             },
@@ -551,7 +716,10 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 178000,
                   "formattedDesc": "적 1명을 <#CFFF71>5회</color>에 걸쳐 물고 흔들기 공격(피해량: <#CFFF71>1780%</color> x <#CFFF71>공격력</color>). 추가로 <#CFFF71>3초</color>간 <#CFFF71>(자신) 공격력 증가(35%)</color> 획득.",
                   "stageLabel": "SS 0성",
-                  "descValues": "5|3|35"
+                  "descValues": "5|3|35",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11085011133"
                 },
                 {
                   "upgradeDescFormatted": "SS ★1 : (자신) 공격력 증가 +5%",
@@ -565,7 +733,13 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 178000,
                   "formattedDesc": "적 1명을 <#CFFF71>5회</color>에 걸쳐 물고 흔들기 공격(피해량: <#CFFF71>1780%</color> x <#CFFF71>공격력</color>). 추가로 <#CFFF71>3초</color>간 <#CFFF71>(자신) 공격력 증가(40%)</color> 획득.",
                   "stageLabel": "SS 1성",
-                  "descValues": "5|3|40"
+                  "descValues": "5|3|40",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11085011134",
+                  "upgradeDescTemplate": "SS ★1 : (자신) 공격력 증가 +{0}%",
+                  "upgradeDescValues": "5",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11085011134"
                 },
                 {
                   "upgradeDescFormatted": "SS ★3 : 피해량 +510%",
@@ -579,7 +753,13 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 229000,
                   "formattedDesc": "적 1명을 <#CFFF71>5회</color>에 걸쳐 물고 흔들기 공격(피해량: <#CFFF71>2290%</color> x <#CFFF71>공격력</color>). 추가로 <#CFFF71>3초</color>간 <#CFFF71>(자신) 공격력 증가(40%)</color> 획득.",
                   "stageLabel": "SS 3성",
-                  "descValues": "5|3|40"
+                  "descValues": "5|3|40",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11085011136",
+                  "upgradeDescTemplate": "SS ★3 : 피해량 +{0}%",
+                  "upgradeDescValues": "510",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11085011136"
                 },
                 {
                   "upgradeDescFormatted": "SS ★5 : (자신) 공격력 증가 +1초",
@@ -593,7 +773,13 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 229000,
                   "formattedDesc": "적 1명을 <#CFFF71>5회</color>에 걸쳐 물고 흔들기 공격(피해량: <#CFFF71>2290%</color> x <#CFFF71>공격력</color>). 추가로 <#CFFF71>4초</color>간 <#CFFF71>(자신) 공격력 증가(40%)</color> 획득.",
                   "stageLabel": "SS 5성",
-                  "descValues": "5|4|40"
+                  "descValues": "5|4|40",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11085011138",
+                  "upgradeDescTemplate": "SS ★5 : (자신) 공격력 증가 +{0}초",
+                  "upgradeDescValues": "1",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11085011138"
                 },
                 {
                   "upgradeDescFormatted": "SS ★7 : 피해량 +680%",
@@ -607,7 +793,13 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 297000,
                   "formattedDesc": "적 1명을 <#CFFF71>5회</color>에 걸쳐 물고 흔들기 공격(피해량: <#CFFF71>2970%</color> x <#CFFF71>공격력</color>). 추가로 <#CFFF71>4초</color>간 <#CFFF71>(자신) 공격력 증가(40%)</color> 획득.",
                   "stageLabel": "SS 7성",
-                  "descValues": "5|4|40"
+                  "descValues": "5|4|40",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11085011140",
+                  "upgradeDescTemplate": "SS ★7 : 피해량 +{0}%",
+                  "upgradeDescValues": "680",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11085011140"
                 },
                 {
                   "upgradeDescFormatted": "SS ★10 : (자신) 공격력 증가 +10%",
@@ -621,7 +813,13 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 297000,
                   "formattedDesc": "적 1명을 <#CFFF71>5회</color>에 걸쳐 물고 흔들기 공격(피해량: <#CFFF71>2970%</color> x <#CFFF71>공격력</color>). 추가로 <#CFFF71>4초</color>간 <#CFFF71>(자신) 공격력 증가(50%)</color> 획득.",
                   "stageLabel": "SS 10성",
-                  "descValues": "5|4|50"
+                  "descValues": "5|4|50",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11085011143",
+                  "upgradeDescTemplate": "SS ★10 : (자신) 공격력 증가 +{0}%",
+                  "upgradeDescValues": "10",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11085011143"
                 },
                 {
                   "upgradeDescFormatted": "SSS ★0 : 적중 시, 화상(50%) 부여 추가",
@@ -635,7 +833,13 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 297000,
                   "formattedDesc": "적 1명을 <#CFFF71>5회</color>에 걸쳐 물고 흔들기 공격(피해량: <#CFFF71>2970%</color> x <#CFFF71>공격력</color>). 적중 시, 대상에게 <#CFFF71>4초</color>간 <#CFFF71>화상</color> 부여. 추가로 <#CFFF71>4초</color>간 <#CFFF71>(자신) 공격력 증가(50%)</color> 획득.",
                   "stageLabel": "SSS 0성",
-                  "descValues": "5|4|50|4"
+                  "descValues": "5|4|50|4",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11085011144",
+                  "upgradeDescTemplate": "SSS ★0 : 적중 시, 화상({0}%) 부여 추가",
+                  "upgradeDescValues": "50",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11085011144"
                 }
               ]
             },
@@ -658,7 +862,10 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 111000,
                   "formattedDesc": "자신의 전방 폭 <#CFFF71>2m</color>, 길이 <#CFFF71>3m</color> 범위에 <#CFFF71>3회</color>에 걸쳐 분노한 모가로스 공격(피해량: <#CFFF71>1110%</color> x <#CFFF71>공격력</color>). 적중 시마다 대상을 넘어트리고 공격 대상의 <#CFFF71>방어력</color>을 <#CFFF71>35%</color> 무시. (전투 시작 <#CFFF71>4초</color> 후 최초 시전)",
                   "stageLabel": "SS 0성",
-                  "descValues": "2|3|3|35|4"
+                  "descValues": "2|3|3|35|4",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11085012133"
                 },
                 {
                   "upgradeDescFormatted": "SS ★1 : 방어력 무시 +5%",
@@ -672,7 +879,13 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 111000,
                   "formattedDesc": "자신의 전방 폭 <#CFFF71>2m</color>, 길이 <#CFFF71>3m</color> 범위에 <#CFFF71>3회</color>에 걸쳐 분노한 모가로스 공격(피해량: <#CFFF71>1110%</color> x <#CFFF71>공격력</color>). 적중 시마다 대상을 넘어트리고 공격 대상의 <#CFFF71>방어력</color>을 <#CFFF71>40%</color> 무시. (전투 시작 <#CFFF71>4초</color> 후 최초 시전)",
                   "stageLabel": "SS 1성",
-                  "descValues": "2|3|3|40|4"
+                  "descValues": "2|3|3|40|4",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11085012134",
+                  "upgradeDescTemplate": "SS ★1 : 방어력 무시 +{0}%",
+                  "upgradeDescValues": "5",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11085012134"
                 },
                 {
                   "upgradeDescFormatted": "SS ★5 : 공격 범위의 길이 +1m",
@@ -686,7 +899,13 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 111000,
                   "formattedDesc": "자신의 전방 폭 <#CFFF71>2m</color>, 길이 <#CFFF71>4m</color> 범위에 <#CFFF71>3회</color>에 걸쳐 분노한 모가로스 공격(피해량: <#CFFF71>1110%</color> x <#CFFF71>공격력</color>). 적중 시마다 대상을 넘어트리고 공격 대상의 <#CFFF71>방어력</color>을 <#CFFF71>40%</color> 무시. (전투 시작 <#CFFF71>4초</color> 후 최초 시전)",
                   "stageLabel": "SS 5성",
-                  "descValues": "2|4|3|40|4"
+                  "descValues": "2|4|3|40|4",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11085012138",
+                  "upgradeDescTemplate": "SS ★5 : 공격 범위의 길이 +{0}m",
+                  "upgradeDescValues": "1",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11085012138"
                 },
                 {
                   "upgradeDescFormatted": "SS ★7 : 피해량 +310%",
@@ -700,7 +919,13 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 142000,
                   "formattedDesc": "자신의 전방 폭 <#CFFF71>2m</color>, 길이 <#CFFF71>4m</color> 범위에 <#CFFF71>3회</color>에 걸쳐 분노한 모가로스 공격(피해량: <#CFFF71>1420%</color> x <#CFFF71>공격력</color>). 적중 시마다 대상을 넘어트리고 공격 대상의 <#CFFF71>방어력</color>을 <#CFFF71>40%</color> 무시. (전투 시작 <#CFFF71>4초</color> 후 최초 시전)",
                   "stageLabel": "SS 7성",
-                  "descValues": "2|4|3|40|4"
+                  "descValues": "2|4|3|40|4",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11085012140",
+                  "upgradeDescTemplate": "SS ★7 : 피해량 +{0}%",
+                  "upgradeDescValues": "310",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11085012140"
                 },
                 {
                   "upgradeDescFormatted": "SS ★10 : 방어력 무시 +10%",
@@ -714,7 +939,13 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 142000,
                   "formattedDesc": "자신의 전방 폭 <#CFFF71>2m</color>, 길이 <#CFFF71>4m</color> 범위에 <#CFFF71>3회</color>에 걸쳐 분노한 모가로스 공격(피해량: <#CFFF71>1420%</color> x <#CFFF71>공격력</color>). 적중 시마다 대상을 넘어트리고 공격 대상의 <#CFFF71>방어력</color>을 <#CFFF71>50%</color> 무시. (전투 시작 <#CFFF71>4초</color> 후 최초 시전)",
                   "stageLabel": "SS 10성",
-                  "descValues": "2|4|3|50|4"
+                  "descValues": "2|4|3|50|4",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11085012143",
+                  "upgradeDescTemplate": "SS ★10 : 방어력 무시 +{0}%",
+                  "upgradeDescValues": "10",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11085012143"
                 },
                 {
                   "upgradeDescFormatted": "SSS ★0 : 공격 범위의 폭 +1m",
@@ -728,7 +959,13 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 142000,
                   "formattedDesc": "자신의 전방 폭 <#CFFF71>3m</color>, 길이 <#CFFF71>4m</color> 범위에 <#CFFF71>3회</color>에 걸쳐 분노한 모가로스 공격(피해량: <#CFFF71>1420%</color> x <#CFFF71>공격력</color>). 적중 시마다 대상을 넘어트리고 공격 대상의 <#CFFF71>방어력</color>을 <#CFFF71>50%</color> 무시. (전투 시작 <#CFFF71>4초</color> 후 최초 시전)",
                   "stageLabel": "SSS 0성",
-                  "descValues": "3|4|3|50|4"
+                  "descValues": "3|4|3|50|4",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11085012144",
+                  "upgradeDescTemplate": "SSS ★0 : 공격 범위의 폭 +{0}m",
+                  "upgradeDescValues": "1",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11085012144"
                 }
               ]
             },
@@ -750,7 +987,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "자신에게 <#CFFF71>(타입)받는 피해 감소({3}%)</color>, <#CFFF71>(타입)치명타 확률 증가({4}%)</color> 적용.",
                   "formattedDesc": "자신에게 <#CFFF71>(타입)받는 피해 감소(20%)</color>, <#CFFF71>(타입)치명타 확률 증가(10%)</color> 적용.",
                   "stageLabel": "SS 0성",
-                  "descValues": "20|10"
+                  "descValues": "20|10",
+                  "factorAttk": 0,
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "23100"
                 },
                 {
                   "upgradeDescFormatted": "SS ★2 : (타입) 치명타 확률 증가 +2%",
@@ -763,7 +1004,13 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "자신에게 <#CFFF71>(타입)받는 피해 감소({3}%)</color>, <#CFFF71>(타입)치명타 확률 증가({4}%)</color> 적용.",
                   "formattedDesc": "자신에게 <#CFFF71>(타입)받는 피해 감소(20%)</color>, <#CFFF71>(타입)치명타 확률 증가(12%)</color> 적용.",
                   "stageLabel": "SS 2성",
-                  "descValues": "20|12"
+                  "descValues": "20|12",
+                  "factorAttk": 0,
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "23135",
+                  "upgradeDescTemplate": "SS ★2 : (타입) 치명타 확률 증가 +2%",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_23135"
                 },
                 {
                   "upgradeDescFormatted": "SS ★4 : (타입) 받는 피해 감소 +2%",
@@ -776,7 +1023,13 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "자신에게 <#CFFF71>(타입)받는 피해 감소({3}%)</color>, <#CFFF71>(타입)치명타 확률 증가({4}%)</color> 적용.",
                   "formattedDesc": "자신에게 <#CFFF71>(타입)받는 피해 감소(22%)</color>, <#CFFF71>(타입)치명타 확률 증가(12%)</color> 적용.",
                   "stageLabel": "SS 4성",
-                  "descValues": "22|12"
+                  "descValues": "22|12",
+                  "factorAttk": 0,
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "23137",
+                  "upgradeDescTemplate": "SS ★4 : (타입) 받는 피해 감소 +2%",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_23137"
                 },
                 {
                   "upgradeDescFormatted": "SS ★6 : (타입) 치명타 확률 증가 +2%",
@@ -789,7 +1042,13 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "자신에게 <#CFFF71>(타입)받는 피해 감소({3}%)</color>, <#CFFF71>(타입)치명타 확률 증가({4}%)</color> 적용.",
                   "formattedDesc": "자신에게 <#CFFF71>(타입)받는 피해 감소(22%)</color>, <#CFFF71>(타입)치명타 확률 증가(14%)</color> 적용.",
                   "stageLabel": "SS 6성",
-                  "descValues": "22|14"
+                  "descValues": "22|14",
+                  "factorAttk": 0,
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "23139",
+                  "upgradeDescTemplate": "SS ★6 : (타입) 치명타 확률 증가 +2%",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_23139"
                 },
                 {
                   "upgradeDescFormatted": "SS ★8 : (타입) 받는 피해 감소 +2%",
@@ -802,7 +1061,13 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "자신에게 <#CFFF71>(타입)받는 피해 감소({3}%)</color>, <#CFFF71>(타입)치명타 확률 증가({4}%)</color> 적용.",
                   "formattedDesc": "자신에게 <#CFFF71>(타입)받는 피해 감소(24%)</color>, <#CFFF71>(타입)치명타 확률 증가(14%)</color> 적용.",
                   "stageLabel": "SS 8성",
-                  "descValues": "24|14"
+                  "descValues": "24|14",
+                  "factorAttk": 0,
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "23141",
+                  "upgradeDescTemplate": "SS ★8 : (타입) 받는 피해 감소 +2%",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_23141"
                 },
                 {
                   "upgradeDescFormatted": "SSS ★1 : (타입) 받는 피해 감소 +1% / (타입) 치명타 확률 증가 +1%",
@@ -815,7 +1080,13 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "자신에게 <#CFFF71>(타입)받는 피해 감소({3}%)</color>, <#CFFF71>(타입)치명타 확률 증가({4}%)</color> 적용.",
                   "formattedDesc": "자신에게 <#CFFF71>(타입)받는 피해 감소(25%)</color>, <#CFFF71>(타입)치명타 확률 증가(15%)</color> 적용.",
                   "stageLabel": "SSS 1성",
-                  "descValues": "25|15"
+                  "descValues": "25|15",
+                  "factorAttk": 0,
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "23145",
+                  "upgradeDescTemplate": "SSS ★1 : (타입) 받는 피해 감소 +1% / (타입) 치명타 확률 증가 +1%",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_23145"
                 }
               ]
             }
@@ -885,7 +1156,10 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 33500,
                   "formattedDesc": "적 주위 폭 <#CFFF71>1m</color> 길이 <#CFFF71>2m</color> 범위에 <#CFFF71>3회</color>에 걸쳐 날카로운 발톱 공격(피해량: <#CFFF71>335%</color> x <#CFFF71>공격력</color>). 적중 시마다, <#CFFF71>25%</color> 확률로 대상을 <#CFFF71>1초</color>간 <#CFFF71>기절</color>.",
                   "stageLabel": "SS 0성",
-                  "descValues": "1|2|3|25|1"
+                  "descValues": "1|2|3|25|1",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11001010133"
                 },
                 {
                   "upgradeDescFormatted": "SS ★1 : 피해량 +40%",
@@ -899,7 +1173,13 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 37500,
                   "formattedDesc": "적 주위 폭 <#CFFF71>1m</color> 길이 <#CFFF71>2m</color> 범위에 <#CFFF71>3회</color>에 걸쳐 날카로운 발톱 공격(피해량: <#CFFF71>375%</color> x <#CFFF71>공격력</color>). 적중 시마다, <#CFFF71>25%</color> 확률로 대상을 <#CFFF71>1초</color>간 <#CFFF71>기절</color>.",
                   "stageLabel": "SS 1성",
-                  "descValues": "1|2|3|25|1"
+                  "descValues": "1|2|3|25|1",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11001010134",
+                  "upgradeDescTemplate": "SS ★1 : 피해량 +{0}%",
+                  "upgradeDescValues": "40",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11001010134"
                 },
                 {
                   "upgradeDescFormatted": "SS ★3 : 기절 확률 +10%",
@@ -913,7 +1193,13 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 37500,
                   "formattedDesc": "적 주위 폭 <#CFFF71>1m</color> 길이 <#CFFF71>2m</color> 범위에 <#CFFF71>3회</color>에 걸쳐 날카로운 발톱 공격(피해량: <#CFFF71>375%</color> x <#CFFF71>공격력</color>). 적중 시마다, <#CFFF71>35%</color> 확률로 대상을 <#CFFF71>1초</color>간 <#CFFF71>기절</color>.",
                   "stageLabel": "SS 3성",
-                  "descValues": "1|2|3|35|1"
+                  "descValues": "1|2|3|35|1",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11001010136",
+                  "upgradeDescTemplate": "SS ★3 : 기절 확률 +{0}%",
+                  "upgradeDescValues": "10",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11001010136"
                 },
                 {
                   "upgradeDescFormatted": "SS ★5 : 피해량 +55%",
@@ -927,7 +1213,13 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 43000,
                   "formattedDesc": "적 주위 폭 <#CFFF71>1m</color> 길이 <#CFFF71>2m</color> 범위에 <#CFFF71>3회</color>에 걸쳐 날카로운 발톱 공격(피해량: <#CFFF71>430%</color> x <#CFFF71>공격력</color>). 적중 시마다, <#CFFF71>35%</color> 확률로 대상을 <#CFFF71>1초</color>간 <#CFFF71>기절</color>.",
                   "stageLabel": "SS 5성",
-                  "descValues": "1|2|3|35|1"
+                  "descValues": "1|2|3|35|1",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11001010138",
+                  "upgradeDescTemplate": "SS ★5 : 피해량 +{0}%",
+                  "upgradeDescValues": "55",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11001010138"
                 },
                 {
                   "upgradeDescFormatted": "SS ★7 : 기절 확률 +15%",
@@ -941,7 +1233,13 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 43000,
                   "formattedDesc": "적 주위 폭 <#CFFF71>1m</color> 길이 <#CFFF71>2m</color> 범위에 <#CFFF71>3회</color>에 걸쳐 날카로운 발톱 공격(피해량: <#CFFF71>430%</color> x <#CFFF71>공격력</color>). 적중 시마다, <#CFFF71>50%</color> 확률로 대상을 <#CFFF71>1초</color>간 <#CFFF71>기절</color>.",
                   "stageLabel": "SS 7성",
-                  "descValues": "1|2|3|50|1"
+                  "descValues": "1|2|3|50|1",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11001010140",
+                  "upgradeDescTemplate": "SS ★7 : 기절 확률 +{0}%",
+                  "upgradeDescValues": "15",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11001010140"
                 },
                 {
                   "upgradeDescFormatted": "SSS ★0 : 피해량 +70%",
@@ -955,7 +1253,13 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 50000,
                   "formattedDesc": "적 주위 폭 <#CFFF71>2m</color> 길이 <#CFFF71>2m</color> 범위에 <#CFFF71>3회</color>에 걸쳐 날카로운 발톱 공격(피해량: <#CFFF71>500%</color> x <#CFFF71>공격력</color>). 적중 시마다, <#CFFF71>50%</color> 확률로 대상을 <#CFFF71>1초</color>간 <#CFFF71>기절</color>.",
                   "stageLabel": "SSS 0성",
-                  "descValues": "2|2|3|50|1"
+                  "descValues": "2|2|3|50|1",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11001010144",
+                  "upgradeDescTemplate": "SSS ★0 : 피해량 +{0}%",
+                  "upgradeDescValues": "70",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11001010144"
                 }
               ]
             },
@@ -977,7 +1281,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "날카로운 발톱 공격 <#CFFF71>{3}회</color> 후, <#CFFF71>{4}초</color>간 숨 고르기 휴식 상태로 진입. 숨 고르기 종료 후 <#CFFF71>{5}초</color>간 해제되지 않는 <#CFFF71>(자신) 공격 속도 증가({6}%)</color> 획득.",
                   "formattedDesc": "날카로운 발톱 공격 <#CFFF71>3회</color> 후, <#CFFF71>2초</color>간 숨 고르기 휴식 상태로 진입. 숨 고르기 종료 후 <#CFFF71>6초</color>간 해제되지 않는 <#CFFF71>(자신) 공격 속도 증가(50%)</color> 획득.",
                   "stageLabel": "SS 0성",
-                  "descValues": "3|2|6|50"
+                  "descValues": "3|2|6|50",
+                  "factorAttk": 0,
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11001011133"
                 },
                 {
                   "upgradeDescFormatted": "SS ★1 : (자신) 공격 속도 증가 +5%",
@@ -990,7 +1298,14 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "날카로운 발톱 공격 <#CFFF71>{3}회</color> 후, <#CFFF71>{4}초</color>간 숨 고르기 휴식 상태로 진입. 숨 고르기 종료 후 <#CFFF71>{5}초</color>간 해제되지 않는 <#CFFF71>(자신) 공격 속도 증가({6}%)</color> 획득.",
                   "formattedDesc": "날카로운 발톱 공격 <#CFFF71>3회</color> 후, <#CFFF71>2초</color>간 숨 고르기 휴식 상태로 진입. 숨 고르기 종료 후 <#CFFF71>6초</color>간 해제되지 않는 <#CFFF71>(자신) 공격 속도 증가(55%)</color> 획득.",
                   "stageLabel": "SS 1성",
-                  "descValues": "3|2|6|55"
+                  "descValues": "3|2|6|55",
+                  "factorAttk": 0,
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11001011134",
+                  "upgradeDescTemplate": "SS ★1 : (자신) 공격 속도 증가 +{0}%",
+                  "upgradeDescValues": "5",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11001011134"
                 },
                 {
                   "upgradeDescFormatted": "SS ★3 : (자신) 공격 속도 증가 +1초",
@@ -1003,7 +1318,14 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "날카로운 발톱 공격 <#CFFF71>{3}회</color> 후, <#CFFF71>{4}초</color>간 숨 고르기 휴식 상태로 진입. 숨 고르기 종료 후 <#CFFF71>{5}초</color>간 해제되지 않는 <#CFFF71>(자신) 공격 속도 증가({6}%)</color> 획득.",
                   "formattedDesc": "날카로운 발톱 공격 <#CFFF71>3회</color> 후, <#CFFF71>2초</color>간 숨 고르기 휴식 상태로 진입. 숨 고르기 종료 후 <#CFFF71>7초</color>간 해제되지 않는 <#CFFF71>(자신) 공격 속도 증가(55%)</color> 획득.",
                   "stageLabel": "SS 3성",
-                  "descValues": "3|2|7|55"
+                  "descValues": "3|2|7|55",
+                  "factorAttk": 0,
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11001011136",
+                  "upgradeDescTemplate": "SS ★3 : (자신) 공격 속도 증가 +{0}초",
+                  "upgradeDescValues": "1",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11001011136"
                 },
                 {
                   "upgradeDescFormatted": "SS ★5 : 숨 고르기 시간 -1초",
@@ -1016,7 +1338,14 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "날카로운 발톱 공격 <#CFFF71>{3}회</color> 후, <#CFFF71>{4}초</color>간 숨 고르기 휴식 상태로 진입. 숨 고르기 종료 후 <#CFFF71>{5}초</color>간 해제되지 않는 <#CFFF71>(자신) 공격 속도 증가({6}%)</color> 획득.",
                   "formattedDesc": "날카로운 발톱 공격 <#CFFF71>3회</color> 후, <#CFFF71>1초</color>간 숨 고르기 휴식 상태로 진입. 숨 고르기 종료 후 <#CFFF71>7초</color>간 해제되지 않는 <#CFFF71>(자신) 공격 속도 증가(55%)</color> 획득.",
                   "stageLabel": "SS 5성",
-                  "descValues": "3|1|7|55"
+                  "descValues": "3|1|7|55",
+                  "factorAttk": 0,
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11001011138",
+                  "upgradeDescTemplate": "SS ★5 : 숨 고르기 시간 -{0}초",
+                  "upgradeDescValues": "1",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11001011138"
                 },
                 {
                   "upgradeDescFormatted": "SS ★7 : (자신) 공격 속도 증가 +5%",
@@ -1029,7 +1358,14 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "날카로운 발톱 공격 <#CFFF71>{3}회</color> 후, <#CFFF71>{4}초</color>간 숨 고르기 휴식 상태로 진입. 숨 고르기 종료 후 <#CFFF71>{5}초</color>간 해제되지 않는 <#CFFF71>(자신) 공격 속도 증가({6}%)</color> 획득.",
                   "formattedDesc": "날카로운 발톱 공격 <#CFFF71>3회</color> 후, <#CFFF71>1초</color>간 숨 고르기 휴식 상태로 진입. 숨 고르기 종료 후 <#CFFF71>7초</color>간 해제되지 않는 <#CFFF71>(자신) 공격 속도 증가(60%)</color> 획득.",
                   "stageLabel": "SS 7성",
-                  "descValues": "3|1|7|60"
+                  "descValues": "3|1|7|60",
+                  "factorAttk": 0,
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11001011140",
+                  "upgradeDescTemplate": "SS ★7 : (자신) 공격 속도 증가 +{0}%",
+                  "upgradeDescValues": "5",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11001011140"
                 },
                 {
                   "upgradeDescFormatted": "SS ★10 : (자신) 이동 속도 증가 +12% 추가",
@@ -1042,7 +1378,14 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "날카로운 발톱 공격 <#CFFF71>{3}회</color> 후, <#CFFF71>{4}초</color>간 숨 고르기 휴식 상태로 진입. 숨 고르기 종료 후 <#CFFF71>{5}초</color>간 해제되지 않는 <#CFFF71>(자신) 공격 속도 증가({6}%)</color>, <#CFFF71>(자신) 이동 속도 증가({7}%)</color> 획득.",
                   "formattedDesc": "날카로운 발톱 공격 <#CFFF71>3회</color> 후, <#CFFF71>1초</color>간 숨 고르기 휴식 상태로 진입. 숨 고르기 종료 후 <#CFFF71>7초</color>간 해제되지 않는 <#CFFF71>(자신) 공격 속도 증가(60%)</color>, <#CFFF71>(자신) 이동 속도 증가(12%)</color> 획득.",
                   "stageLabel": "SS 10성",
-                  "descValues": "3|1|7|60|12"
+                  "descValues": "3|1|7|60|12",
+                  "factorAttk": 0,
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11001011143",
+                  "upgradeDescTemplate": "SS ★10 : (자신) 이동 속도 증가 +{0}% 추가",
+                  "upgradeDescValues": "12",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11001011143"
                 },
                 {
                   "upgradeDescFormatted": "SSS ★0 : 날카로운 발톱의 공격 폭 +1m",
@@ -1055,7 +1398,14 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "날카로운 발톱 공격 <#CFFF71>{3}회</color> 후, <#CFFF71>{4}초</color>간 숨 고르기 휴식 상태로 진입. 숨 고르기 종료 후 <#CFFF71>{5}초</color>간 해제되지 않는 <#CFFF71>(자신) 공격 속도 증가({6}%)</color>, <#CFFF71>(자신) 이동 속도 증가({7}%)</color> 획득.",
                   "formattedDesc": "날카로운 발톱 공격 <#CFFF71>3회</color> 후, <#CFFF71>1초</color>간 숨 고르기 휴식 상태로 진입. 숨 고르기 종료 후 <#CFFF71>7초</color>간 해제되지 않는 <#CFFF71>(자신) 공격 속도 증가(60%)</color>, <#CFFF71>(자신) 이동 속도 증가(12%)</color> 획득.",
                   "stageLabel": "SSS 0성",
-                  "descValues": "3|1|7|60|12"
+                  "descValues": "3|1|7|60|12",
+                  "factorAttk": 0,
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11001011144",
+                  "upgradeDescTemplate": "SSS ★0 : 날카로운 발톱의 공격 폭 +{0}m",
+                  "upgradeDescValues": "1",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11001011144"
                 }
               ]
             },
@@ -1077,7 +1427,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "전투 시작 시, 멈추지 않아 효과로 <#CFFF71>(자신) 공격력 증가({3}%)</color> 부여. 그리고 사망 직전 <#CFFF71>{4}초</color>간 <#CFFF71>의지</color>를 획득.",
                   "formattedDesc": "전투 시작 시, 멈추지 않아 효과로 <#CFFF71>(자신) 공격력 증가(30%)</color> 부여. 그리고 사망 직전 <#CFFF71>3초</color>간 <#CFFF71>의지</color>를 획득.",
                   "stageLabel": "SS 0성",
-                  "descValues": "30|3"
+                  "descValues": "30|3",
+                  "factorAttk": 0,
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11001012133"
                 },
                 {
                   "upgradeDescFormatted": "SS ★1 : (자신) 공격력 증가 +5%",
@@ -1090,7 +1444,14 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "전투 시작 시, 멈추지 않아 효과로 <#CFFF71>(자신) 공격력 증가({3}%)</color> 부여. 그리고 사망 직전 <#CFFF71>{4}초</color>간 <#CFFF71>의지</color>를 획득.",
                   "formattedDesc": "전투 시작 시, 멈추지 않아 효과로 <#CFFF71>(자신) 공격력 증가(35%)</color> 부여. 그리고 사망 직전 <#CFFF71>3초</color>간 <#CFFF71>의지</color>를 획득.",
                   "stageLabel": "SS 1성",
-                  "descValues": "35|3"
+                  "descValues": "35|3",
+                  "factorAttk": 0,
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11001012134",
+                  "upgradeDescTemplate": "SS ★1 : (자신) 공격력 증가 +{0}%",
+                  "upgradeDescValues": "5",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11001012134"
                 },
                 {
                   "upgradeDescFormatted": "SS ★5 : 의지 +2초",
@@ -1103,7 +1464,14 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "전투 시작 시, 멈추지 않아 효과로 <#CFFF71>(자신) 공격력 증가({3}%)</color> 부여. 그리고 사망 직전 <#CFFF71>{4}초</color>간 <#CFFF71>의지</color>를 획득.",
                   "formattedDesc": "전투 시작 시, 멈추지 않아 효과로 <#CFFF71>(자신) 공격력 증가(35%)</color> 부여. 그리고 사망 직전 <#CFFF71>5초</color>간 <#CFFF71>의지</color>를 획득.",
                   "stageLabel": "SS 5성",
-                  "descValues": "35|5"
+                  "descValues": "35|5",
+                  "factorAttk": 0,
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11001012138",
+                  "upgradeDescTemplate": "SS ★5 : 의지 +{0}초",
+                  "upgradeDescValues": "2",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11001012138"
                 },
                 {
                   "upgradeDescFormatted": "SS ★7 : (자신) 공격력 증가 +5%",
@@ -1116,7 +1484,14 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "전투 시작 시, 멈추지 않아 효과로 <#CFFF71>(자신) 공격력 증가({3}%)</color> 부여. 그리고 사망 직전 <#CFFF71>{4}초</color>간 <#CFFF71>의지</color>를 획득.",
                   "formattedDesc": "전투 시작 시, 멈추지 않아 효과로 <#CFFF71>(자신) 공격력 증가(40%)</color> 부여. 그리고 사망 직전 <#CFFF71>5초</color>간 <#CFFF71>의지</color>를 획득.",
                   "stageLabel": "SS 7성",
-                  "descValues": "40|5"
+                  "descValues": "40|5",
+                  "factorAttk": 0,
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11001012140",
+                  "upgradeDescTemplate": "SS ★7 : (자신) 공격력 증가 +{0}%",
+                  "upgradeDescValues": "5",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11001012140"
                 },
                 {
                   "upgradeDescFormatted": "SS ★10 : (자신) 공격력 증가 +10%",
@@ -1129,7 +1504,14 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "전투 시작 시, 멈추지 않아 효과로 <#CFFF71>(자신) 공격력 증가({3}%)</color> 부여. 그리고 사망 직전 <#CFFF71>{4}초</color>간 <#CFFF71>의지</color>를 획득.",
                   "formattedDesc": "전투 시작 시, 멈추지 않아 효과로 <#CFFF71>(자신) 공격력 증가(50%)</color> 부여. 그리고 사망 직전 <#CFFF71>5초</color>간 <#CFFF71>의지</color>를 획득.",
                   "stageLabel": "SS 10성",
-                  "descValues": "50|5"
+                  "descValues": "50|5",
+                  "factorAttk": 0,
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11001012143",
+                  "upgradeDescTemplate": "SS ★10 : (자신) 공격력 증가 +{0}%",
+                  "upgradeDescValues": "10",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11001012143"
                 },
                 {
                   "upgradeDescFormatted": "SSS ★0 : 의지 +2초",
@@ -1142,7 +1524,14 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "전투 시작 시, 멈추지 않아 효과로 <#CFFF71>(자신) 공격력 증가({3}%)</color> 부여. 그리고 사망 직전 <#CFFF71>{4}초</color>간 <#CFFF71>의지</color>를 획득.",
                   "formattedDesc": "전투 시작 시, 멈추지 않아 효과로 <#CFFF71>(자신) 공격력 증가(50%)</color> 부여. 그리고 사망 직전 <#CFFF71>7초</color>간 <#CFFF71>의지</color>를 획득.",
                   "stageLabel": "SSS 0성",
-                  "descValues": "50|7"
+                  "descValues": "50|7",
+                  "factorAttk": 0,
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11001012144",
+                  "upgradeDescTemplate": "SSS ★0 : 의지 +{0}초",
+                  "upgradeDescValues": "2",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11001012144"
                 }
               ]
             },
@@ -1164,7 +1553,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "자신에게 <#CFFF71>(타입)받는 피해 감소({3}%)</color>, <#CFFF71>(타입)치명타 확률 증가({4}%)</color> 적용.",
                   "formattedDesc": "자신에게 <#CFFF71>(타입)받는 피해 감소(20%)</color>, <#CFFF71>(타입)치명타 확률 증가(10%)</color> 적용.",
                   "stageLabel": "SS 0성",
-                  "descValues": "20|10"
+                  "descValues": "20|10",
+                  "factorAttk": 0,
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "23100"
                 },
                 {
                   "upgradeDescFormatted": "SS ★2 : (타입) 치명타 확률 증가 +2%",
@@ -1177,7 +1570,13 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "자신에게 <#CFFF71>(타입)받는 피해 감소({3}%)</color>, <#CFFF71>(타입)치명타 확률 증가({4}%)</color> 적용.",
                   "formattedDesc": "자신에게 <#CFFF71>(타입)받는 피해 감소(20%)</color>, <#CFFF71>(타입)치명타 확률 증가(12%)</color> 적용.",
                   "stageLabel": "SS 2성",
-                  "descValues": "20|12"
+                  "descValues": "20|12",
+                  "factorAttk": 0,
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "23135",
+                  "upgradeDescTemplate": "SS ★2 : (타입) 치명타 확률 증가 +2%",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_23135"
                 },
                 {
                   "upgradeDescFormatted": "SS ★4 : (타입) 받는 피해 감소 +2%",
@@ -1190,7 +1589,13 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "자신에게 <#CFFF71>(타입)받는 피해 감소({3}%)</color>, <#CFFF71>(타입)치명타 확률 증가({4}%)</color> 적용.",
                   "formattedDesc": "자신에게 <#CFFF71>(타입)받는 피해 감소(22%)</color>, <#CFFF71>(타입)치명타 확률 증가(12%)</color> 적용.",
                   "stageLabel": "SS 4성",
-                  "descValues": "22|12"
+                  "descValues": "22|12",
+                  "factorAttk": 0,
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "23137",
+                  "upgradeDescTemplate": "SS ★4 : (타입) 받는 피해 감소 +2%",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_23137"
                 },
                 {
                   "upgradeDescFormatted": "SS ★6 : (타입) 치명타 확률 증가 +2%",
@@ -1203,7 +1608,13 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "자신에게 <#CFFF71>(타입)받는 피해 감소({3}%)</color>, <#CFFF71>(타입)치명타 확률 증가({4}%)</color> 적용.",
                   "formattedDesc": "자신에게 <#CFFF71>(타입)받는 피해 감소(22%)</color>, <#CFFF71>(타입)치명타 확률 증가(14%)</color> 적용.",
                   "stageLabel": "SS 6성",
-                  "descValues": "22|14"
+                  "descValues": "22|14",
+                  "factorAttk": 0,
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "23139",
+                  "upgradeDescTemplate": "SS ★6 : (타입) 치명타 확률 증가 +2%",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_23139"
                 },
                 {
                   "upgradeDescFormatted": "SS ★8 : (타입) 받는 피해 감소 +2%",
@@ -1216,7 +1627,13 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "자신에게 <#CFFF71>(타입)받는 피해 감소({3}%)</color>, <#CFFF71>(타입)치명타 확률 증가({4}%)</color> 적용.",
                   "formattedDesc": "자신에게 <#CFFF71>(타입)받는 피해 감소(24%)</color>, <#CFFF71>(타입)치명타 확률 증가(14%)</color> 적용.",
                   "stageLabel": "SS 8성",
-                  "descValues": "24|14"
+                  "descValues": "24|14",
+                  "factorAttk": 0,
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "23141",
+                  "upgradeDescTemplate": "SS ★8 : (타입) 받는 피해 감소 +2%",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_23141"
                 },
                 {
                   "upgradeDescFormatted": "SSS ★1 : (타입) 받는 피해 감소 +1% / (타입) 치명타 확률 증가 +1%",
@@ -1229,7 +1646,13 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "자신에게 <#CFFF71>(타입)받는 피해 감소({3}%)</color>, <#CFFF71>(타입)치명타 확률 증가({4}%)</color> 적용.",
                   "formattedDesc": "자신에게 <#CFFF71>(타입)받는 피해 감소(25%)</color>, <#CFFF71>(타입)치명타 확률 증가(15%)</color> 적용.",
                   "stageLabel": "SSS 1성",
-                  "descValues": "25|15"
+                  "descValues": "25|15",
+                  "factorAttk": 0,
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "23145",
+                  "upgradeDescTemplate": "SSS ★1 : (타입) 받는 피해 감소 +1% / (타입) 치명타 확률 증가 +1%",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_23145"
                 }
               ]
             }
@@ -1299,7 +1722,10 @@ window.GACHA_PET_VIEWER_DATA = {
                   "formattedDesc": "적 1명을 공격(피해량: <#CFFF71>45%</color> x <#CFFF71>방어력</color>) 적중 시, <#CFFF71>30%</color> 확률로 <#CFFF71>3초</color> 간 <#CFFF71>(자신) 방어력 증가 100%</color> 획득.",
                   "factorDef": 4500,
                   "stageLabel": "SS 0성",
-                  "descValues": "30|3|100"
+                  "descValues": "30|3|100",
+                  "factorAttk": 0,
+                  "factorHp": 0,
+                  "skillId": "11123010133"
                 },
                 {
                   "upgradeDescFormatted": "SS ★1 : (자신) 방어력 증가 +20%",
@@ -1313,7 +1739,13 @@ window.GACHA_PET_VIEWER_DATA = {
                   "formattedDesc": "적 1명을 공격(피해량: <#CFFF71>45%</color> x <#CFFF71>방어력</color>) 적중 시, <#CFFF71>30%</color> 확률로 <#CFFF71>3초</color> 간 <#CFFF71>(자신) 방어력 증가 120%</color> 획득.",
                   "factorDef": 4500,
                   "stageLabel": "SS 1성",
-                  "descValues": "30|3|120"
+                  "descValues": "30|3|120",
+                  "factorAttk": 0,
+                  "factorHp": 0,
+                  "skillId": "11123010134",
+                  "upgradeDescTemplate": "SS ★1 : (자신) 방어력 증가 +{0}%",
+                  "upgradeDescValues": "20",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11123010134"
                 },
                 {
                   "upgradeDescFormatted": "SS ★3 : 피해량 +10%",
@@ -1327,7 +1759,13 @@ window.GACHA_PET_VIEWER_DATA = {
                   "formattedDesc": "적 1명을 공격(피해량: <#CFFF71>55%</color> x <#CFFF71>방어력</color>) 적중 시, <#CFFF71>30%</color> 확률로 <#CFFF71>3초</color> 간 <#CFFF71>(자신) 방어력 증가 120%</color> 획득.",
                   "factorDef": 5500,
                   "stageLabel": "SS 3성",
-                  "descValues": "30|3|120"
+                  "descValues": "30|3|120",
+                  "factorAttk": 0,
+                  "factorHp": 0,
+                  "skillId": "11123010136",
+                  "upgradeDescTemplate": "SS ★3 : 피해량 +{0}%",
+                  "upgradeDescValues": "10",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11123010136"
                 },
                 {
                   "upgradeDescFormatted": "SS ★5 : (자신) 방어력 증가 발동 확률 +20%",
@@ -1341,7 +1779,13 @@ window.GACHA_PET_VIEWER_DATA = {
                   "formattedDesc": "적 1명을 공격(피해량: <#CFFF71>55%</color> x <#CFFF71>방어력</color>) 적중 시, <#CFFF71>50%</color> 확률로 <#CFFF71>3초</color> 간 <#CFFF71>(자신) 방어력 증가 120%</color> 획득.",
                   "factorDef": 5500,
                   "stageLabel": "SS 5성",
-                  "descValues": "50|3|120"
+                  "descValues": "50|3|120",
+                  "factorAttk": 0,
+                  "factorHp": 0,
+                  "skillId": "11123010138",
+                  "upgradeDescTemplate": "SS ★5 : (자신) 방어력 증가 발동 확률 +{0}%",
+                  "upgradeDescValues": "20",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11123010138"
                 },
                 {
                   "upgradeDescFormatted": "SS ★7 : 피해량 +14%",
@@ -1355,7 +1799,13 @@ window.GACHA_PET_VIEWER_DATA = {
                   "formattedDesc": "적 1명을 공격(피해량: <#CFFF71>69%</color> x <#CFFF71>방어력</color>) 적중 시, <#CFFF71>50%</color> 확률로 <#CFFF71>3초</color> 간 <#CFFF71>(자신) 방어력 증가 120%</color> 획득.",
                   "factorDef": 6900,
                   "stageLabel": "SS 7성",
-                  "descValues": "50|3|120"
+                  "descValues": "50|3|120",
+                  "factorAttk": 0,
+                  "factorHp": 0,
+                  "skillId": "11123010140",
+                  "upgradeDescTemplate": "SS ★7 : 피해량 +{0}%",
+                  "upgradeDescValues": "14",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11123010140"
                 },
                 {
                   "upgradeDescFormatted": "SSS ★0 : (자신) 방어력 증가 +30%",
@@ -1369,7 +1819,13 @@ window.GACHA_PET_VIEWER_DATA = {
                   "formattedDesc": "적 1명을 공격(피해량: <#CFFF71>69%</color> x <#CFFF71>방어력</color>) 적중 시, <#CFFF71>50%</color> 확률로 <#CFFF71>3초</color> 간 <#CFFF71>(자신) 방어력 증가 150%</color> 획득.",
                   "factorDef": 6900,
                   "stageLabel": "SSS 0성",
-                  "descValues": "50|3|150"
+                  "descValues": "50|3|150",
+                  "factorAttk": 0,
+                  "factorHp": 0,
+                  "skillId": "11123010144",
+                  "upgradeDescTemplate": "SSS ★0 : (자신) 방어력 증가 +{0}%",
+                  "upgradeDescValues": "30",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11123010144"
                 }
               ]
             },
@@ -1391,7 +1847,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "자신에게 <#CFFF71>{3}초 </color>간 <#CFFF71>땅 정령 보호막 ({4}회)</color> 획득. 추가로 <#CFFF71>{5}초</color> 간 <#CFFF71>(자신) 받는 피해 감소 {6}%</color> 와 <#CFFF71>이동제어 면역</color> 획득. (전투 시작 <#CFFF71>{7}초</color> 후 최초 시전)",
                   "formattedDesc": "자신에게 <#CFFF71>3초 </color>간 <#CFFF71>땅 정령 보호막 (5회)</color> 획득. 추가로 <#CFFF71>3초</color> 간 <#CFFF71>(자신) 받는 피해 감소 35%</color> 와 <#CFFF71>이동제어 면역</color> 획득. (전투 시작 <#CFFF71>4초</color> 후 최초 시전)",
                   "stageLabel": "SS 0성",
-                  "descValues": "3|5|3|35|4"
+                  "descValues": "3|5|3|35|4",
+                  "factorAttk": 0,
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11123011133"
                 },
                 {
                   "upgradeDescFormatted": "SS ★1 : (자신) 받는 피해 감소 및 이동제어 면역 +2초",
@@ -1404,7 +1864,14 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "자신에게 <#CFFF71>{3}초 </color>간 <#CFFF71>땅 정령 보호막 ({4}회)</color> 획득. 추가로 <#CFFF71>{5}초</color> 간 <#CFFF71>(자신) 받는 피해 감소 {6}%</color> 와 <#CFFF71>이동제어 면역</color> 획득. (전투 시작 <#CFFF71>{7}초</color> 후 최초 시전)",
                   "formattedDesc": "자신에게 <#CFFF71>3초 </color>간 <#CFFF71>땅 정령 보호막 (5회)</color> 획득. 추가로 <#CFFF71>5초</color> 간 <#CFFF71>(자신) 받는 피해 감소 35%</color> 와 <#CFFF71>이동제어 면역</color> 획득. (전투 시작 <#CFFF71>4초</color> 후 최초 시전)",
                   "stageLabel": "SS 1성",
-                  "descValues": "3|5|5|35|4"
+                  "descValues": "3|5|5|35|4",
+                  "factorAttk": 0,
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11123011134",
+                  "upgradeDescTemplate": "SS ★1 : (자신) 받는 피해 감소 및 이동제어 면역 +{0}초",
+                  "upgradeDescValues": "2",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11123011134"
                 },
                 {
                   "upgradeDescFormatted": "SS ★3 : 땅 정령 보호막 +2초",
@@ -1417,7 +1884,14 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "자신에게 <#CFFF71>{3}초 </color>간 <#CFFF71>땅 정령 보호막 ({4}회)</color> 획득. 추가로 <#CFFF71>{5}초</color> 간 <#CFFF71>(자신) 받는 피해 감소 {6}%</color> 와 <#CFFF71>이동제어 면역</color> 획득. (전투 시작 <#CFFF71>{7}초</color> 후 최초 시전)",
                   "formattedDesc": "자신에게 <#CFFF71>5초 </color>간 <#CFFF71>땅 정령 보호막 (5회)</color> 획득. 추가로 <#CFFF71>5초</color> 간 <#CFFF71>(자신) 받는 피해 감소 35%</color> 와 <#CFFF71>이동제어 면역</color> 획득. (전투 시작 <#CFFF71>4초</color> 후 최초 시전)",
                   "stageLabel": "SS 3성",
-                  "descValues": "5|5|5|35|4"
+                  "descValues": "5|5|5|35|4",
+                  "factorAttk": 0,
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11123011136",
+                  "upgradeDescTemplate": "SS ★3 : 땅 정령 보호막 +{0}초",
+                  "upgradeDescValues": "2",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11123011136"
                 },
                 {
                   "upgradeDescFormatted": "SS ★5 : 땅 정령 보호막 +5회",
@@ -1430,7 +1904,14 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "자신에게 <#CFFF71>{3}초 </color>간 <#CFFF71>땅 정령 보호막 ({4}회)</color> 획득. 추가로 <#CFFF71>{5}초</color> 간 <#CFFF71>(자신) 받는 피해 감소 {6}%</color> 와 <#CFFF71>이동제어 면역</color> 획득. (전투 시작 <#CFFF71>{7}초</color> 후 최초 시전)",
                   "formattedDesc": "자신에게 <#CFFF71>5초 </color>간 <#CFFF71>땅 정령 보호막 (10회)</color> 획득. 추가로 <#CFFF71>5초</color> 간 <#CFFF71>(자신) 받는 피해 감소 35%</color> 와 <#CFFF71>이동제어 면역</color> 획득. (전투 시작 <#CFFF71>4초</color> 후 최초 시전)",
                   "stageLabel": "SS 5성",
-                  "descValues": "5|10|5|35|4"
+                  "descValues": "5|10|5|35|4",
+                  "factorAttk": 0,
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11123011138",
+                  "upgradeDescTemplate": "SS ★5 : 땅 정령 보호막 +{0}회",
+                  "upgradeDescValues": "5",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11123011138"
                 },
                 {
                   "upgradeDescFormatted": "SS ★7 : (자신) 받는 피해 감소 +10%",
@@ -1443,7 +1924,14 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "자신에게 <#CFFF71>{3}초 </color>간 <#CFFF71>땅 정령 보호막 ({4}회)</color> 획득. 추가로 <#CFFF71>{5}초</color> 간 <#CFFF71>(자신) 받는 피해 감소 {6}%</color> 와 <#CFFF71>이동제어 면역</color> 획득. (전투 시작 <#CFFF71>{7}초</color> 후 최초 시전)",
                   "formattedDesc": "자신에게 <#CFFF71>5초 </color>간 <#CFFF71>땅 정령 보호막 (10회)</color> 획득. 추가로 <#CFFF71>5초</color> 간 <#CFFF71>(자신) 받는 피해 감소 45%</color> 와 <#CFFF71>이동제어 면역</color> 획득. (전투 시작 <#CFFF71>4초</color> 후 최초 시전)",
                   "stageLabel": "SS 7성",
-                  "descValues": "5|10|5|45|4"
+                  "descValues": "5|10|5|45|4",
+                  "factorAttk": 0,
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11123011140",
+                  "upgradeDescTemplate": "SS ★7 : (자신) 받는 피해 감소 +{0}%",
+                  "upgradeDescValues": "10",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11123011140"
                 },
                 {
                   "upgradeDescFormatted": "SS ★10 : 이동제어 면역을 제어 면역으로 변경",
@@ -1456,7 +1944,13 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "자신에게 <#CFFF71>{3}초 </color>간 <#CFFF71>땅 정령 보호막 ({4}회)</color> 획득. 추가로 <#CFFF71>{5}초</color> 간 <#CFFF71>(자신) 받는 피해 감소 {6}%</color> 와 <#CFFF71>제어 면역</color> 획득. (전투 시작 <#CFFF71>{7}초</color> 후 최초 시전)",
                   "formattedDesc": "자신에게 <#CFFF71>5초 </color>간 <#CFFF71>땅 정령 보호막 (10회)</color> 획득. 추가로 <#CFFF71>5초</color> 간 <#CFFF71>(자신) 받는 피해 감소 45%</color> 와 <#CFFF71>제어 면역</color> 획득. (전투 시작 <#CFFF71>4초</color> 후 최초 시전)",
                   "stageLabel": "SS 10성",
-                  "descValues": "5|10|5|45|4"
+                  "descValues": "5|10|5|45|4",
+                  "factorAttk": 0,
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11123011143",
+                  "upgradeDescTemplate": "SS ★10 : 이동제어 면역을 제어 면역으로 변경",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11123011143"
                 },
                 {
                   "upgradeDescFormatted": "SSS ★0 : (자신) 받는 피해 감소 +15%",
@@ -1469,7 +1963,14 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "자신에게 <#CFFF71>{3}초 </color>간 <#CFFF71>땅 정령 보호막 ({4}회)</color> 획득. 추가로 <#CFFF71>{5}초</color> 간 <#CFFF71>(자신) 받는 피해 감소 {6}%</color> 와 <#CFFF71>제어 면역</color> 획득. (전투 시작 <#CFFF71>{7}초</color> 후 최초 시전)",
                   "formattedDesc": "자신에게 <#CFFF71>5초 </color>간 <#CFFF71>땅 정령 보호막 (10회)</color> 획득. 추가로 <#CFFF71>5초</color> 간 <#CFFF71>(자신) 받는 피해 감소 60%</color> 와 <#CFFF71>제어 면역</color> 획득. (전투 시작 <#CFFF71>4초</color> 후 최초 시전)",
                   "stageLabel": "SSS 0성",
-                  "descValues": "5|10|5|60|4"
+                  "descValues": "5|10|5|60|4",
+                  "factorAttk": 0,
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11123011144",
+                  "upgradeDescTemplate": "SSS ★0 : (자신) 받는 피해 감소 +{0}%",
+                  "upgradeDescValues": "15",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11123011144"
                 }
               ]
             },
@@ -1492,7 +1993,10 @@ window.GACHA_PET_VIEWER_DATA = {
                   "formattedDesc": "자신의 주변 <#CFFF71>2m</color> 범위에 공격(피해량: <#CFFF71>220%</color> x <#CFFF71>방어력</color>). 적중 시, 대상을 공중으로 띄우고 <#CFFF71>3초 </color>간 <#CFFF71>도발</color> 부여. 추가로 즉시 회복(회복량: <#CFFF71>500%</color> x <#CFFF71>방어력</color>) 하고 <#CFFF71>3초 </color>동안 1초마다 체력의 <#CFFF71>5%</color> 회복.",
                   "factorDef": 22000,
                   "stageLabel": "SS 0성",
-                  "descValues": "2|3|500|3|5"
+                  "descValues": "2|3|500|3|5",
+                  "factorAttk": 0,
+                  "factorHp": 0,
+                  "skillId": "11123012133"
                 },
                 {
                   "upgradeDescFormatted": "SS ★1 : 지속 회복량 +2%",
@@ -1506,7 +2010,13 @@ window.GACHA_PET_VIEWER_DATA = {
                   "formattedDesc": "자신의 주변 <#CFFF71>2m</color> 범위에 공격(피해량: <#CFFF71>220%</color> x <#CFFF71>방어력</color>). 적중 시, 대상을 공중으로 띄우고 <#CFFF71>3초 </color>간 <#CFFF71>도발</color> 부여. 추가로 즉시 회복(회복량: <#CFFF71>500%</color> x <#CFFF71>방어력</color>) 하고 <#CFFF71>3초 </color>동안 1초마다 체력의 <#CFFF71>7%</color> 회복.",
                   "factorDef": 22000,
                   "stageLabel": "SS 1성",
-                  "descValues": "2|3|500|3|7"
+                  "descValues": "2|3|500|3|7",
+                  "factorAttk": 0,
+                  "factorHp": 0,
+                  "skillId": "11123012134",
+                  "upgradeDescTemplate": "SS ★1 : 지속 회복량 +{0}%",
+                  "upgradeDescValues": "2",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11123012134"
                 },
                 {
                   "upgradeDescFormatted": "SS ★5 : 피해량 +50%",
@@ -1520,7 +2030,13 @@ window.GACHA_PET_VIEWER_DATA = {
                   "formattedDesc": "자신의 주변 <#CFFF71>2m</color> 범위에 공격(피해량: <#CFFF71>270%</color> x <#CFFF71>방어력</color>). 적중 시, 대상을 공중으로 띄우고 <#CFFF71>3초 </color>간 <#CFFF71>도발</color> 부여. 추가로 즉시 회복(회복량: <#CFFF71>500%</color> x <#CFFF71>방어력</color>) 하고 <#CFFF71>3초 </color>동안 1초마다 체력의 <#CFFF71>7%</color> 회복.",
                   "factorDef": 27000,
                   "stageLabel": "SS 5성",
-                  "descValues": "2|3|500|3|7"
+                  "descValues": "2|3|500|3|7",
+                  "factorAttk": 0,
+                  "factorHp": 0,
+                  "skillId": "11123012138",
+                  "upgradeDescTemplate": "SS ★5 : 피해량 +{0}%",
+                  "upgradeDescValues": "50",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11123012138"
                 },
                 {
                   "upgradeDescFormatted": "SS ★7 : 도발 및 회복 지속시간 +2초",
@@ -1534,10 +2050,16 @@ window.GACHA_PET_VIEWER_DATA = {
                   "formattedDesc": "자신의 주변 <#CFFF71>2m</color> 범위에 공격(피해량: <#CFFF71>270%</color> x <#CFFF71>방어력</color>). 적중 시, 대상을 공중으로 띄우고 <#CFFF71>5초 </color>간 <#CFFF71>도발</color> 부여. 추가로 즉시 회복(회복량: <#CFFF71>500%</color> x <#CFFF71>방어력</color>) 하고 <#CFFF71>5초 </color>동안 1초마다 체력의 <#CFFF71>7%</color> 회복.",
                   "factorDef": 27000,
                   "stageLabel": "SS 7성",
-                  "descValues": "2|5|500|5|7"
+                  "descValues": "2|5|500|5|7",
+                  "factorAttk": 0,
+                  "factorHp": 0,
+                  "skillId": "11123012140",
+                  "upgradeDescTemplate": "SS ★7 : 도발 및 회복 지속시간 +{0}초",
+                  "upgradeDescValues": "2",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11123012140"
                 },
                 {
-                  "upgradeDescFormatted": "SS ★10 : 회복량 +300초",
+                  "upgradeDescFormatted": "SS ★10 : 회복량 +300%",
                   "groupGrade": 10,
                   "skillType": "3",
                   "groupTier": 4,
@@ -1548,7 +2070,13 @@ window.GACHA_PET_VIEWER_DATA = {
                   "formattedDesc": "자신의 주변 <#CFFF71>2m</color> 범위에 공격(피해량: <#CFFF71>270%</color> x <#CFFF71>방어력</color>). 적중 시, 대상을 공중으로 띄우고 <#CFFF71>5초 </color>간 <#CFFF71>도발</color> 부여. 추가로 즉시 회복(회복량: <#CFFF71>800%</color> x <#CFFF71>방어력</color>) 하고 <#CFFF71>5초 </color>동안 1초마다 체력의 <#CFFF71>7%</color> 회복.",
                   "factorDef": 27000,
                   "stageLabel": "SS 10성",
-                  "descValues": "2|5|800|5|7"
+                  "descValues": "2|5|800|5|7",
+                  "factorAttk": 0,
+                  "factorHp": 0,
+                  "skillId": "11123012143",
+                  "upgradeDescTemplate": "SS ★10 : 회복량 +{0}%",
+                  "upgradeDescValues": "300",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11123012143"
                 },
                 {
                   "upgradeDescFormatted": "SSS ★0 : 공격 범위 +1m",
@@ -1562,7 +2090,13 @@ window.GACHA_PET_VIEWER_DATA = {
                   "formattedDesc": "자신의 주변 <#CFFF71>3m</color> 범위에 공격(피해량: <#CFFF71>270%</color> x <#CFFF71>방어력</color>). 적중 시, 대상을 공중으로 띄우고 <#CFFF71>5초 </color>간 <#CFFF71>도발</color> 부여. 추가로 즉시 회복(회복량: <#CFFF71>800%</color> x <#CFFF71>방어력</color>) 하고 <#CFFF71>5초 </color>동안 1초마다 체력의 <#CFFF71>7%</color> 회복.",
                   "factorDef": 27000,
                   "stageLabel": "SSS 0성",
-                  "descValues": "3|5|800|5|7"
+                  "descValues": "3|5|800|5|7",
+                  "factorAttk": 0,
+                  "factorHp": 0,
+                  "skillId": "11123012144",
+                  "upgradeDescTemplate": "SSS ★0 : 공격 범위 +{0}m",
+                  "upgradeDescValues": "1",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11123012144"
                 }
               ]
             },
@@ -1584,7 +2118,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "자신에게 <#CFFF71>(타입)받는 피해 감소({3}%)</color>, <#CFFF71>(타입)방어력 증가({4}%)</color> 적용.",
                   "formattedDesc": "자신에게 <#CFFF71>(타입)받는 피해 감소(30%)</color>, <#CFFF71>(타입)방어력 증가(300%)</color> 적용.",
                   "stageLabel": "SS 0성",
-                  "descValues": "30|300"
+                  "descValues": "30|300",
+                  "factorAttk": 0,
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "13100"
                 },
                 {
                   "upgradeDescFormatted": "SS ★2 : (타입) 방어력 증가 +30%",
@@ -1597,7 +2135,14 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "자신에게 <#CFFF71>(타입)받는 피해 감소({3}%)</color>, <#CFFF71>(타입)방어력 증가({4}%)</color> 적용.",
                   "formattedDesc": "자신에게 <#CFFF71>(타입)받는 피해 감소(30%)</color>, <#CFFF71>(타입)방어력 증가(330%)</color> 적용.",
                   "stageLabel": "SS 2성",
-                  "descValues": "30|330"
+                  "descValues": "30|330",
+                  "factorAttk": 0,
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "13135",
+                  "upgradeDescTemplate": "SS ★2 : (타입) 방어력 증가 +{0}%",
+                  "upgradeDescValues": "30",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_13135"
                 },
                 {
                   "upgradeDescFormatted": "SS ★4 : (타입) 받는 피해 감소 +2%",
@@ -1610,7 +2155,14 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "자신에게 <#CFFF71>(타입)받는 피해 감소({3}%)</color>, <#CFFF71>(타입)방어력 증가({4}%)</color> 적용.",
                   "formattedDesc": "자신에게 <#CFFF71>(타입)받는 피해 감소(32%)</color>, <#CFFF71>(타입)방어력 증가(330%)</color> 적용.",
                   "stageLabel": "SS 4성",
-                  "descValues": "32|330"
+                  "descValues": "32|330",
+                  "factorAttk": 0,
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "13137",
+                  "upgradeDescTemplate": "SS ★4 : (타입) 받는 피해 감소 +{0}%",
+                  "upgradeDescValues": "2",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_13137"
                 },
                 {
                   "upgradeDescFormatted": "SS ★6 : (타입) 방어력 증가 +30%",
@@ -1623,7 +2175,14 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "자신에게 <#CFFF71>(타입)받는 피해 감소({3}%)</color>, <#CFFF71>(타입)방어력 증가({4}%)</color> 적용.",
                   "formattedDesc": "자신에게 <#CFFF71>(타입)받는 피해 감소(32%)</color>, <#CFFF71>(타입)방어력 증가(360%)</color> 적용.",
                   "stageLabel": "SS 6성",
-                  "descValues": "32|360"
+                  "descValues": "32|360",
+                  "factorAttk": 0,
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "13139",
+                  "upgradeDescTemplate": "SS ★6 : (타입) 방어력 증가 +{0}%",
+                  "upgradeDescValues": "30",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_13139"
                 },
                 {
                   "upgradeDescFormatted": "SS ★8 : (타입) 받는 피해 감소 +2%",
@@ -1636,7 +2195,14 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "자신에게 <#CFFF71>(타입)받는 피해 감소({3}%)</color>, <#CFFF71>(타입)방어력 증가({4}%)</color> 적용.",
                   "formattedDesc": "자신에게 <#CFFF71>(타입)받는 피해 감소(34%)</color>, <#CFFF71>(타입)방어력 증가(360%)</color> 적용.",
                   "stageLabel": "SS 8성",
-                  "descValues": "34|360"
+                  "descValues": "34|360",
+                  "factorAttk": 0,
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "13141",
+                  "upgradeDescTemplate": "SS ★8 : (타입) 받는 피해 감소 +{0}%",
+                  "upgradeDescValues": "2",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_13141"
                 },
                 {
                   "upgradeDescFormatted": "SSS ★1 : (타입) 받는 피해 감소 +1% / (타입) 방어력 증가 +40%",
@@ -1649,7 +2215,14 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "자신에게 <#CFFF71>(타입)받는 피해 감소({3}%)</color>, <#CFFF71>(타입)방어력 증가({4}%)</color> 적용.",
                   "formattedDesc": "자신에게 <#CFFF71>(타입)받는 피해 감소(35%)</color>, <#CFFF71>(타입)방어력 증가(400%)</color> 적용.",
                   "stageLabel": "SSS 1성",
-                  "descValues": "35|400"
+                  "descValues": "35|400",
+                  "factorAttk": 0,
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "13145",
+                  "upgradeDescTemplate": "SSS ★1 : (타입) 받는 피해 감소 +{0}% / (타입) 방어력 증가 +{1}%",
+                  "upgradeDescValues": "1|40",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_13145"
                 }
               ]
             }
@@ -1719,7 +2292,10 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 15200,
                   "formattedDesc": "적 1명을 공격(피해량: <#CFFF71>152%</color> x <#CFFF71>공격력</color>) 적중 시, <#CFFF71>10%</color> 확률로 <#CFFF71>2초</color> 간 <#CFFF71>출혈</color> 부여.",
                   "stageLabel": "SS 0성",
-                  "descValues": "10|2"
+                  "descValues": "10|2",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "13002010133"
                 },
                 {
                   "upgradeDescFormatted": "SS ★1 : 피해량 +30%",
@@ -1733,7 +2309,13 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 18200,
                   "formattedDesc": "적 1명을 공격(피해량: <#CFFF71>182%</color> x <#CFFF71>공격력</color>) 적중 시, <#CFFF71>10%</color> 확률로 <#CFFF71>2초</color> 간 <#CFFF71>출혈</color> 부여.",
                   "stageLabel": "SS 1성",
-                  "descValues": "10|2"
+                  "descValues": "10|2",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "13002010134",
+                  "upgradeDescTemplate": "SS ★1 : 피해량 +{0}%",
+                  "upgradeDescValues": "30",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_13002010134"
                 },
                 {
                   "upgradeDescFormatted": "SS ★3 : 출혈 확률 증가 +10%",
@@ -1747,7 +2329,13 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 18200,
                   "formattedDesc": "적 1명을 공격(피해량: <#CFFF71>182%</color> x <#CFFF71>공격력</color>) 적중 시, <#CFFF71>20%</color> 확률로 <#CFFF71>2초</color> 간 <#CFFF71>출혈</color> 부여.",
                   "stageLabel": "SS 3성",
-                  "descValues": "20|2"
+                  "descValues": "20|2",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "13002010136",
+                  "upgradeDescTemplate": "SS ★3 : 출혈 확률 증가 +{0}%",
+                  "upgradeDescValues": "10",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_13002010136"
                 },
                 {
                   "upgradeDescFormatted": "SS ★5 : 피해량 +42%",
@@ -1761,7 +2349,13 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 22400,
                   "formattedDesc": "적 1명을 공격(피해량: <#CFFF71>224%</color> x <#CFFF71>공격력</color>) 적중 시, <#CFFF71>20%</color> 확률로 <#CFFF71>2초</color> 간 <#CFFF71>출혈</color> 부여.",
                   "stageLabel": "SS 5성",
-                  "descValues": "20|2"
+                  "descValues": "20|2",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "13002010138",
+                  "upgradeDescTemplate": "SS ★5 : 피해량 +{0}%",
+                  "upgradeDescValues": "42",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_13002010138"
                 },
                 {
                   "upgradeDescFormatted": "SS ★7 : 출혈 +1초",
@@ -1775,7 +2369,13 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 22400,
                   "formattedDesc": "적 1명을 공격(피해량: <#CFFF71>224%</color> x <#CFFF71>공격력</color>) 적중 시, <#CFFF71>20%</color> 확률로 <#CFFF71>3초</color> 간 <#CFFF71>출혈</color> 부여.",
                   "stageLabel": "SS 7성",
-                  "descValues": "20|3"
+                  "descValues": "20|3",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "13002010140",
+                  "upgradeDescTemplate": "SS ★7 : 출혈 +{0}초",
+                  "upgradeDescValues": "1",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_13002010140"
                 },
                 {
                   "upgradeDescFormatted": "SSS ★0 : 피해량 +54%",
@@ -1789,7 +2389,13 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 27800,
                   "formattedDesc": "적 1명을 공격(피해량: <#CFFF71>278%</color> x <#CFFF71>공격력</color>) 적중 시, <#CFFF71>20%</color> 확률로 <#CFFF71>3초</color> 간 <#CFFF71>출혈</color> 부여.",
                   "stageLabel": "SSS 0성",
-                  "descValues": "20|3"
+                  "descValues": "20|3",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "13002010144",
+                  "upgradeDescTemplate": "SSS ★0 : 피해량 +{0}%",
+                  "upgradeDescValues": "54",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_13002010144"
                 }
               ]
             },
@@ -1812,7 +2418,10 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 107000,
                   "formattedDesc": "적 1명을 공격(피해량: <#CFFF71>1070%</color> x <#CFFF71>공격력</color>) 적중 시, 대상을 공중으로 띄우고 주변 <#CFFF71>2m</color> 범위 내 적에게 <#CFFF71>2초</color> 간 <#CFFF71>침묵</color> 부여, 추가로 <#CFFF71>2초</color> 간 <#CFFF71>(자신) 공격력 증가(30%)</color>.",
                   "stageLabel": "SS 0성",
-                  "descValues": "2|2|2|30"
+                  "descValues": "2|2|2|30",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "13002011133"
                 },
                 {
                   "upgradeDescFormatted": "SS ★1 : (자신) 공격력 증가 +5%",
@@ -1826,7 +2435,13 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 107000,
                   "formattedDesc": "적 1명을 공격(피해량: <#CFFF71>1070%</color> x <#CFFF71>공격력</color>) 적중 시, 대상을 공중으로 띄우고 주변 <#CFFF71>2m</color> 범위 내 적에게 <#CFFF71>2초</color> 간 <#CFFF71>침묵</color> 부여, 추가로 <#CFFF71>2초</color> 간 <#CFFF71>(자신) 공격력 증가(35%)</color>.",
                   "stageLabel": "SS 1성",
-                  "descValues": "2|2|2|35"
+                  "descValues": "2|2|2|35",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "13002011134",
+                  "upgradeDescTemplate": "SS ★1 : (자신) 공격력 증가 +{0}%",
+                  "upgradeDescValues": "5",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_13002011134"
                 },
                 {
                   "upgradeDescFormatted": "SS ★3 : 피해량 +255%",
@@ -1840,7 +2455,13 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 132500,
                   "formattedDesc": "적 1명을 공격(피해량: <#CFFF71>1325%</color> x <#CFFF71>공격력</color>) 적중 시, 대상을 공중으로 띄우고 주변 <#CFFF71>2m</color> 범위 내 적에게 <#CFFF71>2초</color> 간 <#CFFF71>침묵</color> 부여, 추가로 <#CFFF71>2초</color> 간 <#CFFF71>(자신) 공격력 증가(35%)</color>.",
                   "stageLabel": "SS 3성",
-                  "descValues": "2|2|2|35"
+                  "descValues": "2|2|2|35",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "13002011136",
+                  "upgradeDescTemplate": "SS ★3 : 피해량 +{0}%",
+                  "upgradeDescValues": "255",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_13002011136"
                 },
                 {
                   "upgradeDescFormatted": "SS ★5 : (자신) 공격력 증가 +1초 / 침묵 +1초",
@@ -1854,7 +2475,13 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 132500,
                   "formattedDesc": "적 1명을 공격(피해량: <#CFFF71>1325%</color> x <#CFFF71>공격력</color>) 적중 시, 대상을 공중으로 띄우고 주변 <#CFFF71>2m</color> 범위 내 적에게 <#CFFF71>3초</color> 간 <#CFFF71>침묵</color> 부여, 추가로 <#CFFF71>3초</color> 간 <#CFFF71>(자신) 공격력 증가(35%)</color>.",
                   "stageLabel": "SS 5성",
-                  "descValues": "2|3|3|35"
+                  "descValues": "2|3|3|35",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "13002011138",
+                  "upgradeDescTemplate": "SS ★5 : (자신) 공격력 증가 +{0}초 / 침묵 +{1}초",
+                  "upgradeDescValues": "1|1",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_13002011138"
                 },
                 {
                   "upgradeDescFormatted": "SS ★7 : 피해량 +340%",
@@ -1868,7 +2495,13 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 166500,
                   "formattedDesc": "적 1명을 공격(피해량: <#CFFF71>1665%</color> x <#CFFF71>공격력</color>) 적중 시, 대상을 공중으로 띄우고 주변 <#CFFF71>2m</color> 범위 내 적에게 <#CFFF71>3초</color> 간 <#CFFF71>침묵</color> 부여, 추가로 <#CFFF71>3초</color> 간 <#CFFF71>(자신) 공격력 증가(35%)</color>.",
                   "stageLabel": "SS 7성",
-                  "descValues": "2|3|3|35"
+                  "descValues": "2|3|3|35",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "13002011140",
+                  "upgradeDescTemplate": "SS ★7 : 피해량 +{0}%",
+                  "upgradeDescValues": "340",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_13002011140"
                 },
                 {
                   "upgradeDescFormatted": "SS ★10 : 3초간 순발력(20%) 획득 추가",
@@ -1882,7 +2515,13 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 166500,
                   "formattedDesc": "적 1명을 공격(피해량: <#CFFF71>1665%</color> x <#CFFF71>공격력</color>) 적중 시, 대상을 공중으로 띄우고 주변 <#CFFF71>2m</color> 범위 내 적에게 <#CFFF71>3초</color> 간 <#CFFF71>침묵</color> 부여, 추가로 <#CFFF71>3초</color> 간 <#CFFF71>(자신) 공격력 증가(35%)</color> 와 <#CFFF71>순발력(20%)</color> 획득.",
                   "stageLabel": "SS 10성",
-                  "descValues": "2|3|3|35|20"
+                  "descValues": "2|3|3|35|20",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "13002011143",
+                  "upgradeDescTemplate": "SS ★10 : {0}초간 순발력({1}%) 획득 추가",
+                  "upgradeDescValues": "3|20",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_13002011143"
                 },
                 {
                   "upgradeDescFormatted": "SSS ★0 : (자신) 공격력 증가 +10%",
@@ -1896,7 +2535,13 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 166500,
                   "formattedDesc": "적 1명을 공격(피해량: <#CFFF71>1665%</color> x <#CFFF71>공격력</color>) 적중 시, 대상을 공중으로 띄우고 주변 <#CFFF71>2m</color> 범위 내 적에게 <#CFFF71>3초</color> 간 <#CFFF71>침묵</color> 부여, 추가로 <#CFFF71>3초</color> 간 <#CFFF71>(자신) 공격력 증가(45%)</color> 와 <#CFFF71>순발력(20%)</color> 획득.",
                   "stageLabel": "SSS 0성",
-                  "descValues": "2|3|3|45|20"
+                  "descValues": "2|3|3|45|20",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "13002011144",
+                  "upgradeDescTemplate": "SSS ★0 : (자신) 공격력 증가 +{0}%",
+                  "upgradeDescValues": "10",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_13002011144"
                 }
               ]
             },
@@ -1915,11 +2560,14 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillLevel": 1,
                   "coolTime": "6.5",
                   "iconImage": "assets/skills/SP0062_4.png",
-                  "rawDesc": "전방 폭 <#CFFF71>{3}m</color>, 길이 <#CFFF71>{4}m</color> 범위에 돌진 비행하여 공격 (피해량: <#CFFF71>{0}%</color> x <#CFFF71>공격력</color>). 적중 시, <#CFFF71>{5}%</color> 확률로 대상을 넘어트리고 <#CFFF71>{6}초</color> 간 <#CFFF71>할퀴기({7}%)</color> 부여. 이후 제자리로 돌진 비행하여 동일한 범위에 공격.",
+                  "rawDesc": "전방 폭 <#CFFF71>{3}m</color>, 길이 <#CFFF71>{4}m</color> 범위에 돌진 비행하여 공격(피해량: <#CFFF71>{0}%</color> x <#CFFF71>공격력</color>). 적중 시, <#CFFF71>{5}%</color> 확률로 대상을 넘어트리고 <#CFFF71>{6}초</color> 간 <#CFFF71>할퀴기({7}%)</color> 부여. 이후 제자리로 돌진 비행하여 동일한 범위에 추가 피해(피해량: <#CFFF71>{0}%</color> x <#CFFF71>공격력</color>).",
                   "factorAttk": 73000,
-                  "formattedDesc": "전방 폭 <#CFFF71>3m</color>, 길이 <#CFFF71>8m</color> 범위에 돌진 비행하여 공격 (피해량: <#CFFF71>730%</color> x <#CFFF71>공격력</color>). 적중 시, <#CFFF71>40%</color> 확률로 대상을 넘어트리고 <#CFFF71>3초</color> 간 <#CFFF71>할퀴기(10%)</color> 부여. 이후 제자리로 돌진 비행하여 동일한 범위에 공격.",
+                  "formattedDesc": "전방 폭 <#CFFF71>3m</color>, 길이 <#CFFF71>8m</color> 범위에 돌진 비행하여 공격(피해량: <#CFFF71>730%</color> x <#CFFF71>공격력</color>). 적중 시, <#CFFF71>40%</color> 확률로 대상을 넘어트리고 <#CFFF71>3초</color> 간 <#CFFF71>할퀴기(10%)</color> 부여. 이후 제자리로 돌진 비행하여 동일한 범위에 추가 피해(피해량: <#CFFF71>730%</color> x <#CFFF71>공격력</color>).",
                   "stageLabel": "SS 0성",
-                  "descValues": "3|8|40|3|10"
+                  "descValues": "3|8|40|3|10",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "13002012133"
                 },
                 {
                   "upgradeDescFormatted": "SS ★1 : 할퀴기 효과 증가 +10%",
@@ -1929,11 +2577,17 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillLevel": 2,
                   "coolTime": "6.5",
                   "iconImage": "assets/skills/SP0062_4.png",
-                  "rawDesc": "전방 폭 <#CFFF71>{3}m</color>, 길이 <#CFFF71>{4}m</color> 범위에 돌진 비행하여 공격 (피해량: <#CFFF71>{0}%</color> x <#CFFF71>공격력</color>). 적중 시, <#CFFF71>{5}%</color> 확률로 대상을 넘어트리고 <#CFFF71>{6}초</color> 간 <#CFFF71>할퀴기({7}%)</color> 부여. 이후 제자리로 돌진 비행하여 동일한 범위에 공격.",
+                  "rawDesc": "전방 폭 <#CFFF71>{3}m</color>, 길이 <#CFFF71>{4}m</color> 범위에 돌진 비행하여 공격(피해량: <#CFFF71>{0}%</color> x <#CFFF71>공격력</color>). 적중 시, <#CFFF71>{5}%</color> 확률로 대상을 넘어트리고 <#CFFF71>{6}초</color> 간 <#CFFF71>할퀴기({7}%)</color> 부여. 이후 제자리로 돌진 비행하여 동일한 범위에 추가 피해(피해량: <#CFFF71>{0}%</color> x <#CFFF71>공격력</color>).",
                   "factorAttk": 73000,
-                  "formattedDesc": "전방 폭 <#CFFF71>3m</color>, 길이 <#CFFF71>8m</color> 범위에 돌진 비행하여 공격 (피해량: <#CFFF71>730%</color> x <#CFFF71>공격력</color>). 적중 시, <#CFFF71>40%</color> 확률로 대상을 넘어트리고 <#CFFF71>3초</color> 간 <#CFFF71>할퀴기(20%)</color> 부여. 이후 제자리로 돌진 비행하여 동일한 범위에 공격.",
+                  "formattedDesc": "전방 폭 <#CFFF71>3m</color>, 길이 <#CFFF71>8m</color> 범위에 돌진 비행하여 공격(피해량: <#CFFF71>730%</color> x <#CFFF71>공격력</color>). 적중 시, <#CFFF71>40%</color> 확률로 대상을 넘어트리고 <#CFFF71>3초</color> 간 <#CFFF71>할퀴기(20%)</color> 부여. 이후 제자리로 돌진 비행하여 동일한 범위에 추가 피해(피해량: <#CFFF71>730%</color> x <#CFFF71>공격력</color>).",
                   "stageLabel": "SS 1성",
-                  "descValues": "3|8|40|3|20"
+                  "descValues": "3|8|40|3|20",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "13002012134",
+                  "upgradeDescTemplate": "SS ★1 : 할퀴기 효과 증가 +{0}%",
+                  "upgradeDescValues": "10",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_13002012134"
                 },
                 {
                   "upgradeDescFormatted": "SS ★5 : 피해량 +175%",
@@ -1943,11 +2597,17 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillLevel": 3,
                   "coolTime": "6.5",
                   "iconImage": "assets/skills/SP0062_4.png",
-                  "rawDesc": "전방 폭 <#CFFF71>{3}m</color>, 길이 <#CFFF71>{4}m</color> 범위에 돌진 비행하여 공격 (피해량: <#CFFF71>{0}%</color> x <#CFFF71>공격력</color>). 적중 시, <#CFFF71>{5}%</color> 확률로 대상을 넘어트리고 <#CFFF71>{6}초</color> 간 <#CFFF71>할퀴기({7}%)</color> 부여. 이후 제자리로 돌진 비행하여 동일한 범위에 공격.",
+                  "rawDesc": "전방 폭 <#CFFF71>{3}m</color>, 길이 <#CFFF71>{4}m</color> 범위에 돌진 비행하여 공격(피해량: <#CFFF71>{0}%</color> x <#CFFF71>공격력</color>). 적중 시, <#CFFF71>{5}%</color> 확률로 대상을 넘어트리고 <#CFFF71>{6}초</color> 간 <#CFFF71>할퀴기({7}%)</color> 부여. 이후 제자리로 돌진 비행하여 동일한 범위에 추가 피해(피해량: <#CFFF71>{0}%</color> x <#CFFF71>공격력</color>).",
                   "factorAttk": 90500,
-                  "formattedDesc": "전방 폭 <#CFFF71>3m</color>, 길이 <#CFFF71>8m</color> 범위에 돌진 비행하여 공격 (피해량: <#CFFF71>905%</color> x <#CFFF71>공격력</color>). 적중 시, <#CFFF71>40%</color> 확률로 대상을 넘어트리고 <#CFFF71>3초</color> 간 <#CFFF71>할퀴기(20%)</color> 부여. 이후 제자리로 돌진 비행하여 동일한 범위에 공격.",
+                  "formattedDesc": "전방 폭 <#CFFF71>3m</color>, 길이 <#CFFF71>8m</color> 범위에 돌진 비행하여 공격(피해량: <#CFFF71>905%</color> x <#CFFF71>공격력</color>). 적중 시, <#CFFF71>40%</color> 확률로 대상을 넘어트리고 <#CFFF71>3초</color> 간 <#CFFF71>할퀴기(20%)</color> 부여. 이후 제자리로 돌진 비행하여 동일한 범위에 추가 피해(피해량: <#CFFF71>905%</color> x <#CFFF71>공격력</color>).",
                   "stageLabel": "SS 5성",
-                  "descValues": "3|8|40|3|20"
+                  "descValues": "3|8|40|3|20",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "13002012138",
+                  "upgradeDescTemplate": "SS ★5 : 피해량 +{0}%",
+                  "upgradeDescValues": "175",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_13002012138"
                 },
                 {
                   "upgradeDescFormatted": "SS ★7 : 할퀴기 효과 증가 +10%",
@@ -1957,11 +2617,17 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillLevel": 4,
                   "coolTime": "6.5",
                   "iconImage": "assets/skills/SP0062_4.png",
-                  "rawDesc": "전방 폭 <#CFFF71>{3}m</color>, 길이 <#CFFF71>{4}m</color> 범위에 돌진 비행하여 공격 (피해량: <#CFFF71>{0}%</color> x <#CFFF71>공격력</color>). 적중 시, <#CFFF71>{5}%</color> 확률로 대상을 넘어트리고 <#CFFF71>{6}초</color> 간 <#CFFF71>할퀴기({7}%)</color> 부여. 이후 제자리로 돌진 비행하여 동일한 범위에 공격.",
+                  "rawDesc": "전방 폭 <#CFFF71>{3}m</color>, 길이 <#CFFF71>{4}m</color> 범위에 돌진 비행하여 공격(피해량: <#CFFF71>{0}%</color> x <#CFFF71>공격력</color>). 적중 시, <#CFFF71>{5}%</color> 확률로 대상을 넘어트리고 <#CFFF71>{6}초</color> 간 <#CFFF71>할퀴기({7}%)</color> 부여. 이후 제자리로 돌진 비행하여 동일한 범위에 추가 피해(피해량: <#CFFF71>{0}%</color> x <#CFFF71>공격력</color>).",
                   "factorAttk": 90500,
-                  "formattedDesc": "전방 폭 <#CFFF71>3m</color>, 길이 <#CFFF71>8m</color> 범위에 돌진 비행하여 공격 (피해량: <#CFFF71>905%</color> x <#CFFF71>공격력</color>). 적중 시, <#CFFF71>40%</color> 확률로 대상을 넘어트리고 <#CFFF71>3초</color> 간 <#CFFF71>할퀴기(30%)</color> 부여. 이후 제자리로 돌진 비행하여 동일한 범위에 공격.",
+                  "formattedDesc": "전방 폭 <#CFFF71>3m</color>, 길이 <#CFFF71>8m</color> 범위에 돌진 비행하여 공격(피해량: <#CFFF71>905%</color> x <#CFFF71>공격력</color>). 적중 시, <#CFFF71>40%</color> 확률로 대상을 넘어트리고 <#CFFF71>3초</color> 간 <#CFFF71>할퀴기(30%)</color> 부여. 이후 제자리로 돌진 비행하여 동일한 범위에 추가 피해(피해량: <#CFFF71>905%</color> x <#CFFF71>공격력</color>).",
                   "stageLabel": "SS 7성",
-                  "descValues": "3|8|40|3|30"
+                  "descValues": "3|8|40|3|30",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "13002012140",
+                  "upgradeDescTemplate": "SS ★7 : 할퀴기 효과 증가 +{0}%",
+                  "upgradeDescValues": "10",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_13002012140"
                 },
                 {
                   "upgradeDescFormatted": "SS ★10 : 피해량 +230%",
@@ -1971,11 +2637,17 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillLevel": 5,
                   "coolTime": "6.5",
                   "iconImage": "assets/skills/SP0062_4.png",
-                  "rawDesc": "전방 폭 <#CFFF71>{3}m</color>, 길이 <#CFFF71>{4}m</color> 범위에 돌진 비행하여 공격 (피해량: <#CFFF71>{0}%</color> x <#CFFF71>공격력</color>). 적중 시, <#CFFF71>{5}%</color> 확률로 대상을 넘어트리고 <#CFFF71>{6}초</color> 간 <#CFFF71>할퀴기({7}%)</color> 부여. 이후 제자리로 돌진 비행하여 동일한 범위에 공격.",
+                  "rawDesc": "전방 폭 <#CFFF71>{3}m</color>, 길이 <#CFFF71>{4}m</color> 범위에 돌진 비행하여 공격(피해량: <#CFFF71>{0}%</color> x <#CFFF71>공격력</color>). 적중 시, <#CFFF71>{5}%</color> 확률로 대상을 넘어트리고 <#CFFF71>{6}초</color> 간 <#CFFF71>할퀴기({7}%)</color> 부여. 이후 제자리로 돌진 비행하여 동일한 범위에 추가 피해(피해량: <#CFFF71>{0}%</color> x <#CFFF71>공격력</color>).",
                   "factorAttk": 113500,
-                  "formattedDesc": "전방 폭 <#CFFF71>3m</color>, 길이 <#CFFF71>8m</color> 범위에 돌진 비행하여 공격 (피해량: <#CFFF71>1135%</color> x <#CFFF71>공격력</color>). 적중 시, <#CFFF71>40%</color> 확률로 대상을 넘어트리고 <#CFFF71>3초</color> 간 <#CFFF71>할퀴기(30%)</color> 부여. 이후 제자리로 돌진 비행하여 동일한 범위에 공격.",
+                  "formattedDesc": "전방 폭 <#CFFF71>3m</color>, 길이 <#CFFF71>8m</color> 범위에 돌진 비행하여 공격(피해량: <#CFFF71>1135%</color> x <#CFFF71>공격력</color>). 적중 시, <#CFFF71>40%</color> 확률로 대상을 넘어트리고 <#CFFF71>3초</color> 간 <#CFFF71>할퀴기(30%)</color> 부여. 이후 제자리로 돌진 비행하여 동일한 범위에 추가 피해(피해량: <#CFFF71>1135%</color> x <#CFFF71>공격력</color>).",
                   "stageLabel": "SS 10성",
-                  "descValues": "3|8|40|3|30"
+                  "descValues": "3|8|40|3|30",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "13002012143",
+                  "upgradeDescTemplate": "SS ★10 : 피해량 +{0}%",
+                  "upgradeDescValues": "230",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_13002012143"
                 },
                 {
                   "upgradeDescFormatted": "SSS ★0 : 넘어트리기 및 할퀴기 확률 증가 +40%",
@@ -1985,11 +2657,17 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillLevel": 6,
                   "coolTime": "6.5",
                   "iconImage": "assets/skills/SP0062_4.png",
-                  "rawDesc": "전방 폭 <#CFFF71>{3}m</color>, 길이 <#CFFF71>{4}m</color> 범위에 돌진 비행하여 공격 (피해량: <#CFFF71>{0}%</color> x <#CFFF71>공격력</color>). 적중 시, <#CFFF71>{5}%</color> 확률로 대상을 넘어트리고 <#CFFF71>{6}초</color> 간 <#CFFF71>할퀴기({7}%)</color> 부여. 이후 제자리로 돌진 비행하여 동일한 범위에 공격.",
+                  "rawDesc": "전방 폭 <#CFFF71>{3}m</color>, 길이 <#CFFF71>{4}m</color> 범위에 돌진 비행하여 공격(피해량: <#CFFF71>{0}%</color> x <#CFFF71>공격력</color>). 적중 시, <#CFFF71>{5}%</color> 확률로 대상을 넘어트리고 <#CFFF71>{6}초</color> 간 <#CFFF71>할퀴기({7}%)</color> 부여. 이후 제자리로 돌진 비행하여 동일한 범위에 추가 피해(피해량: <#CFFF71>{0}%</color> x <#CFFF71>공격력</color>).",
                   "factorAttk": 113500,
-                  "formattedDesc": "전방 폭 <#CFFF71>3m</color>, 길이 <#CFFF71>8m</color> 범위에 돌진 비행하여 공격 (피해량: <#CFFF71>1135%</color> x <#CFFF71>공격력</color>). 적중 시, <#CFFF71>80%</color> 확률로 대상을 넘어트리고 <#CFFF71>3초</color> 간 <#CFFF71>할퀴기(30%)</color> 부여. 이후 제자리로 돌진 비행하여 동일한 범위에 공격.",
+                  "formattedDesc": "전방 폭 <#CFFF71>3m</color>, 길이 <#CFFF71>8m</color> 범위에 돌진 비행하여 공격(피해량: <#CFFF71>1135%</color> x <#CFFF71>공격력</color>). 적중 시, <#CFFF71>80%</color> 확률로 대상을 넘어트리고 <#CFFF71>3초</color> 간 <#CFFF71>할퀴기(30%)</color> 부여. 이후 제자리로 돌진 비행하여 동일한 범위에 추가 피해(피해량: <#CFFF71>1135%</color> x <#CFFF71>공격력</color>).",
                   "stageLabel": "SSS 0성",
-                  "descValues": "3|8|80|3|30"
+                  "descValues": "3|8|80|3|30",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "13002012144",
+                  "upgradeDescTemplate": "SSS ★0 : 넘어트리기 및 할퀴기 확률 증가 +{0}%",
+                  "upgradeDescValues": "40",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_13002012144"
                 }
               ]
             },
@@ -2011,7 +2689,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "자신에게 <#CFFF71>(타입)공격력 증가({3}%)</color>, <#CFFF71>(타입)명중 증가({4}%)</color> 적용.",
                   "formattedDesc": "자신에게 <#CFFF71>(타입)공격력 증가(10%)</color>, <#CFFF71>(타입)명중 증가(20%)</color> 적용.",
                   "stageLabel": "SS 0성",
-                  "descValues": "10|20"
+                  "descValues": "10|20",
+                  "factorAttk": 0,
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "33100"
                 },
                 {
                   "upgradeDescFormatted": "SS ★2 : (타입) 명중 증가 +2%",
@@ -2024,7 +2706,13 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "자신에게 <#CFFF71>(타입)공격력 증가({3}%)</color>, <#CFFF71>(타입)명중 증가({4}%)</color> 적용.",
                   "formattedDesc": "자신에게 <#CFFF71>(타입)공격력 증가(10%)</color>, <#CFFF71>(타입)명중 증가(22%)</color> 적용.",
                   "stageLabel": "SS 2성",
-                  "descValues": "10|22"
+                  "descValues": "10|22",
+                  "factorAttk": 0,
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "33135",
+                  "upgradeDescTemplate": "SS ★2 : (타입) 명중 증가 +2%",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_33135"
                 },
                 {
                   "upgradeDescFormatted": "SS ★4 : (타입) 공격력 증가 +2%",
@@ -2037,7 +2725,13 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "자신에게 <#CFFF71>(타입)공격력 증가({3}%)</color>, <#CFFF71>(타입)명중 증가({4}%)</color> 적용.",
                   "formattedDesc": "자신에게 <#CFFF71>(타입)공격력 증가(12%)</color>, <#CFFF71>(타입)명중 증가(22%)</color> 적용.",
                   "stageLabel": "SS 4성",
-                  "descValues": "12|22"
+                  "descValues": "12|22",
+                  "factorAttk": 0,
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "33137",
+                  "upgradeDescTemplate": "SS ★4 : (타입) 공격력 증가 +2%",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_33137"
                 },
                 {
                   "upgradeDescFormatted": "SS ★6 : (타입) 명중 증가 +2%",
@@ -2050,7 +2744,13 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "자신에게 <#CFFF71>(타입)공격력 증가({3}%)</color>, <#CFFF71>(타입)명중 증가({4}%)</color> 적용.",
                   "formattedDesc": "자신에게 <#CFFF71>(타입)공격력 증가(12%)</color>, <#CFFF71>(타입)명중 증가(24%)</color> 적용.",
                   "stageLabel": "SS 6성",
-                  "descValues": "12|24"
+                  "descValues": "12|24",
+                  "factorAttk": 0,
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "33139",
+                  "upgradeDescTemplate": "SS ★6 : (타입) 명중 증가 +2%",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_33139"
                 },
                 {
                   "upgradeDescFormatted": "SS ★8 : (타입) 공격력 증가 +2%",
@@ -2063,7 +2763,13 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "자신에게 <#CFFF71>(타입)공격력 증가({3}%)</color>, <#CFFF71>(타입)명중 증가({4}%)</color> 적용.",
                   "formattedDesc": "자신에게 <#CFFF71>(타입)공격력 증가(14%)</color>, <#CFFF71>(타입)명중 증가(24%)</color> 적용.",
                   "stageLabel": "SS 8성",
-                  "descValues": "14|24"
+                  "descValues": "14|24",
+                  "factorAttk": 0,
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "33141",
+                  "upgradeDescTemplate": "SS ★8 : (타입) 공격력 증가 +2%",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_33141"
                 },
                 {
                   "upgradeDescFormatted": "SSS ★1 : (타입) 공격력 증가 +1% / (타입) 명중 증가 +1%",
@@ -2076,7 +2782,13 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "자신에게 <#CFFF71>(타입)공격력 증가({3}%)</color>, <#CFFF71>(타입)명중 증가({4}%)</color> 적용.",
                   "formattedDesc": "자신에게 <#CFFF71>(타입)공격력 증가(15%)</color>, <#CFFF71>(타입)명중 증가(25%)</color> 적용.",
                   "stageLabel": "SSS 1성",
-                  "descValues": "15|25"
+                  "descValues": "15|25",
+                  "factorAttk": 0,
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "33145",
+                  "upgradeDescTemplate": "SSS ★1 : (타입) 공격력 증가 +1% / (타입) 명중 증가 +1%",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_33145"
                 }
               ]
             }
@@ -2142,11 +2854,14 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillLevel": 1,
                   "coolTime": "1.9",
                   "iconImage": "assets/skills/SPN0002_2.png",
-                  "rawDesc": "적 1명을 공격(피해량: <#CFFF71>{0}%</color> x <#CFFF71>공격력</color>) 적중 시, <#CFFF71>{3}%</color>확률로 <#CFFF71>{4}초</color> 간 <#CFFF71>오한({5}%)</color> 부여.",
+                  "rawDesc": "적 1명을 공격(피해량: <#CFFF71>{0}%</color> x <#CFFF71>공격력</color>) 적중 시, <#CFFF71>{3}%</color> 확률로 <#CFFF71>{4}초</color> 간 <#CFFF71>오한({5}%)</color> 부여.",
                   "factorAttk": 15000,
-                  "formattedDesc": "적 1명을 공격(피해량: <#CFFF71>150%</color> x <#CFFF71>공격력</color>) 적중 시, <#CFFF71>20%</color>확률로 <#CFFF71>2초</color> 간 <#CFFF71>오한(10%)</color> 부여.",
+                  "formattedDesc": "적 1명을 공격(피해량: <#CFFF71>150%</color> x <#CFFF71>공격력</color>) 적중 시, <#CFFF71>20%</color> 확률로 <#CFFF71>2초</color> 간 <#CFFF71>오한(10%)</color> 부여.",
                   "stageLabel": "SS 0성",
-                  "descValues": "20|2|10"
+                  "descValues": "20|2|10",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11055010133"
                 },
                 {
                   "upgradeDescFormatted": "SS ★1 : 피해량 +30%",
@@ -2156,11 +2871,17 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillLevel": 2,
                   "coolTime": "1.9",
                   "iconImage": "assets/skills/SPN0002_2.png",
-                  "rawDesc": "적 1명을 공격(피해량: <#CFFF71>{0}%</color> x <#CFFF71>공격력</color>) 적중 시, <#CFFF71>{3}%</color>확률로 <#CFFF71>{4}초</color> 간 <#CFFF71>오한({5}%)</color> 부여.",
+                  "rawDesc": "적 1명을 공격(피해량: <#CFFF71>{0}%</color> x <#CFFF71>공격력</color>) 적중 시, <#CFFF71>{3}%</color> 확률로 <#CFFF71>{4}초</color> 간 <#CFFF71>오한({5}%)</color> 부여.",
                   "factorAttk": 18000,
-                  "formattedDesc": "적 1명을 공격(피해량: <#CFFF71>180%</color> x <#CFFF71>공격력</color>) 적중 시, <#CFFF71>20%</color>확률로 <#CFFF71>2초</color> 간 <#CFFF71>오한(10%)</color> 부여.",
+                  "formattedDesc": "적 1명을 공격(피해량: <#CFFF71>180%</color> x <#CFFF71>공격력</color>) 적중 시, <#CFFF71>20%</color> 확률로 <#CFFF71>2초</color> 간 <#CFFF71>오한(10%)</color> 부여.",
                   "stageLabel": "SS 1성",
-                  "descValues": "20|2|10"
+                  "descValues": "20|2|10",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11055010134",
+                  "upgradeDescTemplate": "SS ★1 : 피해량 +{0}%",
+                  "upgradeDescValues": "30",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11055010134"
                 },
                 {
                   "upgradeDescFormatted": "SS ★3 : 오한 확률 +10%",
@@ -2170,11 +2891,17 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillLevel": 3,
                   "coolTime": "1.9",
                   "iconImage": "assets/skills/SPN0002_2.png",
-                  "rawDesc": "적 1명을 공격(피해량: <#CFFF71>{0}%</color> x <#CFFF71>공격력</color>) 적중 시, <#CFFF71>{3}%</color>확률로 <#CFFF71>{4}초</color> 간 <#CFFF71>오한({5}%)</color> 부여.",
+                  "rawDesc": "적 1명을 공격(피해량: <#CFFF71>{0}%</color> x <#CFFF71>공격력</color>) 적중 시, <#CFFF71>{3}%</color> 확률로 <#CFFF71>{4}초</color> 간 <#CFFF71>오한({5}%)</color> 부여.",
                   "factorAttk": 18000,
-                  "formattedDesc": "적 1명을 공격(피해량: <#CFFF71>180%</color> x <#CFFF71>공격력</color>) 적중 시, <#CFFF71>30%</color>확률로 <#CFFF71>2초</color> 간 <#CFFF71>오한(10%)</color> 부여.",
+                  "formattedDesc": "적 1명을 공격(피해량: <#CFFF71>180%</color> x <#CFFF71>공격력</color>) 적중 시, <#CFFF71>30%</color> 확률로 <#CFFF71>2초</color> 간 <#CFFF71>오한(10%)</color> 부여.",
                   "stageLabel": "SS 3성",
-                  "descValues": "30|2|10"
+                  "descValues": "30|2|10",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11055010136",
+                  "upgradeDescTemplate": "SS ★3 : 오한 확률 +{0}%",
+                  "upgradeDescValues": "10",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11055010136"
                 },
                 {
                   "upgradeDescFormatted": "SS ★5 : 오한 증가 +10%",
@@ -2184,11 +2911,17 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillLevel": 4,
                   "coolTime": "1.9",
                   "iconImage": "assets/skills/SPN0002_2.png",
-                  "rawDesc": "적 1명을 공격(피해량: <#CFFF71>{0}%</color> x <#CFFF71>공격력</color>) 적중 시, <#CFFF71>{3}%</color>확률로 <#CFFF71>{4}초</color> 간 <#CFFF71>오한({5}%)</color> 부여.",
+                  "rawDesc": "적 1명을 공격(피해량: <#CFFF71>{0}%</color> x <#CFFF71>공격력</color>) 적중 시, <#CFFF71>{3}%</color> 확률로 <#CFFF71>{4}초</color> 간 <#CFFF71>오한({5}%)</color> 부여.",
                   "factorAttk": 18000,
-                  "formattedDesc": "적 1명을 공격(피해량: <#CFFF71>180%</color> x <#CFFF71>공격력</color>) 적중 시, <#CFFF71>30%</color>확률로 <#CFFF71>2초</color> 간 <#CFFF71>오한(20%)</color> 부여.",
+                  "formattedDesc": "적 1명을 공격(피해량: <#CFFF71>180%</color> x <#CFFF71>공격력</color>) 적중 시, <#CFFF71>30%</color> 확률로 <#CFFF71>2초</color> 간 <#CFFF71>오한(20%)</color> 부여.",
                   "stageLabel": "SS 5성",
-                  "descValues": "30|2|20"
+                  "descValues": "30|2|20",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11055010138",
+                  "upgradeDescTemplate": "SS ★5 : 오한 증가 +{0}%",
+                  "upgradeDescValues": "10",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11055010138"
                 },
                 {
                   "upgradeDescFormatted": "SS ★7 : 피해량 +48%",
@@ -2198,11 +2931,17 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillLevel": 5,
                   "coolTime": "1.9",
                   "iconImage": "assets/skills/SPN0002_2.png",
-                  "rawDesc": "적 1명을 공격(피해량: <#CFFF71>{0}%</color> x <#CFFF71>공격력</color>) 적중 시, <#CFFF71>{3}%</color>확률로 <#CFFF71>{4}초</color> 간 <#CFFF71>오한({5}%)</color> 부여.",
+                  "rawDesc": "적 1명을 공격(피해량: <#CFFF71>{0}%</color> x <#CFFF71>공격력</color>) 적중 시, <#CFFF71>{3}%</color> 확률로 <#CFFF71>{4}초</color> 간 <#CFFF71>오한({5}%)</color> 부여.",
                   "factorAttk": 22800,
-                  "formattedDesc": "적 1명을 공격(피해량: <#CFFF71>228%</color> x <#CFFF71>공격력</color>) 적중 시, <#CFFF71>30%</color>확률로 <#CFFF71>2초</color> 간 <#CFFF71>오한(20%)</color> 부여.",
+                  "formattedDesc": "적 1명을 공격(피해량: <#CFFF71>228%</color> x <#CFFF71>공격력</color>) 적중 시, <#CFFF71>30%</color> 확률로 <#CFFF71>2초</color> 간 <#CFFF71>오한(20%)</color> 부여.",
                   "stageLabel": "SS 7성",
-                  "descValues": "30|2|20"
+                  "descValues": "30|2|20",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11055010140",
+                  "upgradeDescTemplate": "SS ★7 : 피해량 +{0}%",
+                  "upgradeDescValues": "48",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11055010140"
                 },
                 {
                   "upgradeDescFormatted": "SSS ★0 : 오한 확률 +20%",
@@ -2212,11 +2951,17 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillLevel": 6,
                   "coolTime": "1.9",
                   "iconImage": "assets/skills/SPN0002_2.png",
-                  "rawDesc": "적 1명을 공격(피해량: <#CFFF71>{0}%</color> x <#CFFF71>공격력</color>) 적중 시, <#CFFF71>{3}%</color>확률로 <#CFFF71>{4}초</color> 간 <#CFFF71>오한({5}%)</color> 부여.",
+                  "rawDesc": "적 1명을 공격(피해량: <#CFFF71>{0}%</color> x <#CFFF71>공격력</color>) 적중 시, <#CFFF71>{3}%</color> 확률로 <#CFFF71>{4}초</color> 간 <#CFFF71>오한({5}%)</color> 부여.",
                   "factorAttk": 22800,
-                  "formattedDesc": "적 1명을 공격(피해량: <#CFFF71>228%</color> x <#CFFF71>공격력</color>) 적중 시, <#CFFF71>50%</color>확률로 <#CFFF71>2초</color> 간 <#CFFF71>오한(20%)</color> 부여.",
+                  "formattedDesc": "적 1명을 공격(피해량: <#CFFF71>228%</color> x <#CFFF71>공격력</color>) 적중 시, <#CFFF71>50%</color> 확률로 <#CFFF71>2초</color> 간 <#CFFF71>오한(20%)</color> 부여.",
                   "stageLabel": "SSS 0성",
-                  "descValues": "50|2|20"
+                  "descValues": "50|2|20",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11055010144",
+                  "upgradeDescTemplate": "SSS ★0 : 오한 확률 +{0}%",
+                  "upgradeDescValues": "20",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11055010144"
                 }
               ]
             },
@@ -2235,11 +2980,14 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillLevel": 1,
                   "coolTime": "4.5",
                   "iconImage": "assets/skills/SP0012_2.png",
-                  "rawDesc": "적 1명을 공격 후 적중 시, <#CFFF71>3m</color> 범위 내 적과 아군을 구분하지 않고 최대 <#CFFF71>{3}회</color> 연쇄하는 물줄기를 발사(피해량: <#CFFF71>{0}%</color> x <#CFFF71>공격력</color>). 적중 시, 적에게는 <#CFFF71>{4}%</color> 확률로 <#CFFF71>{5}초</color> 간 <#CFFF71>동결</color> 부여하고 아군에게는 체력 <#CFFF71>{6}%</color> 회복.",
+                  "rawDesc": "적 1명을 공격 후 적중 시, <#CFFF71>3m</color> 범위 내 적과 아군을 구분하지 않고 최대 <#CFFF71>{3}회</color> 연쇄하는 물줄기를 발사. 적중 시, 적에게는 피해(피해량: <#CFFF71>{0}%</color> x <#CFFF71>공격력</color>)를 입히고 <#CFFF71>{4}%</color> 확률로 <#CFFF71>{5}초</color>간 <#CFFF71>동결</color> 부여. 아군에게는 체력 <#CFFF71>{6}%</color> 회복.",
                   "factorAttk": 44500,
-                  "formattedDesc": "적 1명을 공격 후 적중 시, <#CFFF71>3m</color> 범위 내 적과 아군을 구분하지 않고 최대 <#CFFF71>4회</color> 연쇄하는 물줄기를 발사(피해량: <#CFFF71>445%</color> x <#CFFF71>공격력</color>). 적중 시, 적에게는 <#CFFF71>30%</color> 확률로 <#CFFF71>3초</color> 간 <#CFFF71>동결</color> 부여하고 아군에게는 체력 <#CFFF71>20%</color> 회복.",
+                  "formattedDesc": "적 1명을 공격 후 적중 시, <#CFFF71>3m</color> 범위 내 적과 아군을 구분하지 않고 최대 <#CFFF71>4회</color> 연쇄하는 물줄기를 발사. 적중 시, 적에게는 피해(피해량: <#CFFF71>445%</color> x <#CFFF71>공격력</color>)를 입히고 <#CFFF71>30%</color> 확률로 <#CFFF71>3초</color>간 <#CFFF71>동결</color> 부여. 아군에게는 체력 <#CFFF71>20%</color> 회복.",
                   "stageLabel": "SS 0성",
-                  "descValues": "4|30|3|20"
+                  "descValues": "4|30|3|20",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11055011133"
                 },
                 {
                   "upgradeDescFormatted": "SS ★1 : 동결 확률 +20%",
@@ -2249,11 +2997,17 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillLevel": 2,
                   "coolTime": "4.5",
                   "iconImage": "assets/skills/SP0012_2.png",
-                  "rawDesc": "적 1명을 공격 후 적중 시, <#CFFF71>3m</color> 범위 내 적과 아군을 구분하지 않고 최대 <#CFFF71>{3}회</color> 연쇄하는 물줄기를 발사(피해량: <#CFFF71>{0}%</color> x <#CFFF71>공격력</color>). 적중 시, 적에게는 <#CFFF71>{4}%</color> 확률로 <#CFFF71>{5}초</color> 간 <#CFFF71>동결</color> 부여하고 아군에게는 체력 <#CFFF71>{6}%</color> 회복.",
+                  "rawDesc": "적 1명을 공격 후 적중 시, <#CFFF71>3m</color> 범위 내 적과 아군을 구분하지 않고 최대 <#CFFF71>{3}회</color> 연쇄하는 물줄기를 발사. 적중 시, 적에게는 피해(피해량: <#CFFF71>{0}%</color> x <#CFFF71>공격력</color>)를 입히고 <#CFFF71>{4}%</color> 확률로 <#CFFF71>{5}초</color>간 <#CFFF71>동결</color> 부여. 아군에게는 체력 <#CFFF71>{6}%</color> 회복.",
                   "factorAttk": 44500,
-                  "formattedDesc": "적 1명을 공격 후 적중 시, <#CFFF71>3m</color> 범위 내 적과 아군을 구분하지 않고 최대 <#CFFF71>4회</color> 연쇄하는 물줄기를 발사(피해량: <#CFFF71>445%</color> x <#CFFF71>공격력</color>). 적중 시, 적에게는 <#CFFF71>50%</color> 확률로 <#CFFF71>3초</color> 간 <#CFFF71>동결</color> 부여하고 아군에게는 체력 <#CFFF71>20%</color> 회복.",
+                  "formattedDesc": "적 1명을 공격 후 적중 시, <#CFFF71>3m</color> 범위 내 적과 아군을 구분하지 않고 최대 <#CFFF71>4회</color> 연쇄하는 물줄기를 발사. 적중 시, 적에게는 피해(피해량: <#CFFF71>445%</color> x <#CFFF71>공격력</color>)를 입히고 <#CFFF71>50%</color> 확률로 <#CFFF71>3초</color>간 <#CFFF71>동결</color> 부여. 아군에게는 체력 <#CFFF71>20%</color> 회복.",
                   "stageLabel": "SS 1성",
-                  "descValues": "4|50|3|20"
+                  "descValues": "4|50|3|20",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11055011134",
+                  "upgradeDescTemplate": "SS ★1 : 동결 확률 +{0}%",
+                  "upgradeDescValues": "20",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11055011134"
                 },
                 {
                   "upgradeDescFormatted": "SS ★3 : 피해량 +105%",
@@ -2263,11 +3017,17 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillLevel": 3,
                   "coolTime": "4.5",
                   "iconImage": "assets/skills/SP0012_2.png",
-                  "rawDesc": "적 1명을 공격 후 적중 시, <#CFFF71>3m</color> 범위 내 적과 아군을 구분하지 않고 최대 <#CFFF71>{3}회</color> 연쇄하는 물줄기를 발사(피해량: <#CFFF71>{0}%</color> x <#CFFF71>공격력</color>). 적중 시, 적에게는 <#CFFF71>{4}%</color> 확률로 <#CFFF71>{5}초</color> 간 <#CFFF71>동결</color> 부여하고 아군에게는 체력 <#CFFF71>{6}%</color> 회복.",
+                  "rawDesc": "적 1명을 공격 후 적중 시, <#CFFF71>3m</color> 범위 내 적과 아군을 구분하지 않고 최대 <#CFFF71>{3}회</color> 연쇄하는 물줄기를 발사. 적중 시, 적에게는 피해(피해량: <#CFFF71>{0}%</color> x <#CFFF71>공격력</color>)를 입히고 <#CFFF71>{4}%</color> 확률로 <#CFFF71>{5}초</color>간 <#CFFF71>동결</color> 부여. 아군에게는 체력 <#CFFF71>{6}%</color> 회복.",
                   "factorAttk": 55000,
-                  "formattedDesc": "적 1명을 공격 후 적중 시, <#CFFF71>3m</color> 범위 내 적과 아군을 구분하지 않고 최대 <#CFFF71>4회</color> 연쇄하는 물줄기를 발사(피해량: <#CFFF71>550%</color> x <#CFFF71>공격력</color>). 적중 시, 적에게는 <#CFFF71>50%</color> 확률로 <#CFFF71>3초</color> 간 <#CFFF71>동결</color> 부여하고 아군에게는 체력 <#CFFF71>20%</color> 회복.",
+                  "formattedDesc": "적 1명을 공격 후 적중 시, <#CFFF71>3m</color> 범위 내 적과 아군을 구분하지 않고 최대 <#CFFF71>4회</color> 연쇄하는 물줄기를 발사. 적중 시, 적에게는 피해(피해량: <#CFFF71>550%</color> x <#CFFF71>공격력</color>)를 입히고 <#CFFF71>50%</color> 확률로 <#CFFF71>3초</color>간 <#CFFF71>동결</color> 부여. 아군에게는 체력 <#CFFF71>20%</color> 회복.",
                   "stageLabel": "SS 3성",
-                  "descValues": "4|50|3|20"
+                  "descValues": "4|50|3|20",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11055011136",
+                  "upgradeDescTemplate": "SS ★3 : 피해량 +{0}%",
+                  "upgradeDescValues": "105",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11055011136"
                 },
                 {
                   "upgradeDescFormatted": "SS ★5 : 체력 회복 +10%",
@@ -2277,11 +3037,17 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillLevel": 4,
                   "coolTime": "4.5",
                   "iconImage": "assets/skills/SP0012_2.png",
-                  "rawDesc": "적 1명을 공격 후 적중 시, <#CFFF71>3m</color> 범위 내 적과 아군을 구분하지 않고 최대 <#CFFF71>{3}회</color> 연쇄하는 물줄기를 발사(피해량: <#CFFF71>{0}%</color> x <#CFFF71>공격력</color>). 적중 시, 적에게는 <#CFFF71>{4}%</color> 확률로 <#CFFF71>{5}초</color> 간 <#CFFF71>동결</color> 부여하고 아군에게는 체력 <#CFFF71>{6}%</color> 회복.",
+                  "rawDesc": "적 1명을 공격 후 적중 시, <#CFFF71>3m</color> 범위 내 적과 아군을 구분하지 않고 최대 <#CFFF71>{3}회</color> 연쇄하는 물줄기를 발사. 적중 시, 적에게는 피해(피해량: <#CFFF71>{0}%</color> x <#CFFF71>공격력</color>)를 입히고 <#CFFF71>{4}%</color> 확률로 <#CFFF71>{5}초</color>간 <#CFFF71>동결</color> 부여. 아군에게는 체력 <#CFFF71>{6}%</color> 회복.",
                   "factorAttk": 55000,
-                  "formattedDesc": "적 1명을 공격 후 적중 시, <#CFFF71>3m</color> 범위 내 적과 아군을 구분하지 않고 최대 <#CFFF71>4회</color> 연쇄하는 물줄기를 발사(피해량: <#CFFF71>550%</color> x <#CFFF71>공격력</color>). 적중 시, 적에게는 <#CFFF71>50%</color> 확률로 <#CFFF71>3초</color> 간 <#CFFF71>동결</color> 부여하고 아군에게는 체력 <#CFFF71>30%</color> 회복.",
+                  "formattedDesc": "적 1명을 공격 후 적중 시, <#CFFF71>3m</color> 범위 내 적과 아군을 구분하지 않고 최대 <#CFFF71>4회</color> 연쇄하는 물줄기를 발사. 적중 시, 적에게는 피해(피해량: <#CFFF71>550%</color> x <#CFFF71>공격력</color>)를 입히고 <#CFFF71>50%</color> 확률로 <#CFFF71>3초</color>간 <#CFFF71>동결</color> 부여. 아군에게는 체력 <#CFFF71>30%</color> 회복.",
                   "stageLabel": "SS 5성",
-                  "descValues": "4|50|3|30"
+                  "descValues": "4|50|3|30",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11055011138",
+                  "upgradeDescTemplate": "SS ★5 : 체력 회복 +{0}%",
+                  "upgradeDescValues": "10",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11055011138"
                 },
                 {
                   "upgradeDescFormatted": "SS ★7 : 연쇄 횟수 +1회",
@@ -2291,11 +3057,17 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillLevel": 5,
                   "coolTime": "4.5",
                   "iconImage": "assets/skills/SP0012_2.png",
-                  "rawDesc": "적 1명을 공격 후 적중 시, <#CFFF71>3m</color> 범위 내 적과 아군을 구분하지 않고 최대 <#CFFF71>{3}회</color> 연쇄하는 물줄기를 발사(피해량: <#CFFF71>{0}%</color> x <#CFFF71>공격력</color>). 적중 시, 적에게는 <#CFFF71>{4}%</color> 확률로 <#CFFF71>{5}초</color> 간 <#CFFF71>동결</color> 부여하고 아군에게는 체력 <#CFFF71>{6}%</color> 회복.",
+                  "rawDesc": "적 1명을 공격 후 적중 시, <#CFFF71>3m</color> 범위 내 적과 아군을 구분하지 않고 최대 <#CFFF71>{3}회</color> 연쇄하는 물줄기를 발사. 적중 시, 적에게는 피해(피해량: <#CFFF71>{0}%</color> x <#CFFF71>공격력</color>)를 입히고 <#CFFF71>{4}%</color> 확률로 <#CFFF71>{5}초</color>간 <#CFFF71>동결</color> 부여. 아군에게는 체력 <#CFFF71>{6}%</color> 회복.",
                   "factorAttk": 55000,
-                  "formattedDesc": "적 1명을 공격 후 적중 시, <#CFFF71>3m</color> 범위 내 적과 아군을 구분하지 않고 최대 <#CFFF71>5회</color> 연쇄하는 물줄기를 발사(피해량: <#CFFF71>550%</color> x <#CFFF71>공격력</color>). 적중 시, 적에게는 <#CFFF71>50%</color> 확률로 <#CFFF71>3초</color> 간 <#CFFF71>동결</color> 부여하고 아군에게는 체력 <#CFFF71>30%</color> 회복.",
+                  "formattedDesc": "적 1명을 공격 후 적중 시, <#CFFF71>3m</color> 범위 내 적과 아군을 구분하지 않고 최대 <#CFFF71>5회</color> 연쇄하는 물줄기를 발사. 적중 시, 적에게는 피해(피해량: <#CFFF71>550%</color> x <#CFFF71>공격력</color>)를 입히고 <#CFFF71>50%</color> 확률로 <#CFFF71>3초</color>간 <#CFFF71>동결</color> 부여. 아군에게는 체력 <#CFFF71>30%</color> 회복.",
                   "stageLabel": "SS 7성",
-                  "descValues": "5|50|3|30"
+                  "descValues": "5|50|3|30",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11055011140",
+                  "upgradeDescTemplate": "SS ★7 : 연쇄 횟수 +{0}회",
+                  "upgradeDescValues": "1",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11055011140"
                 },
                 {
                   "upgradeDescFormatted": "SS ★10 : 해로운 효과 2개 제거 추가",
@@ -2305,11 +3077,17 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillLevel": 6,
                   "coolTime": "4.5",
                   "iconImage": "assets/skills/SP0012_2.png",
-                  "rawDesc": "적 1명을 공격 후 적중 시, <#CFFF71>3m</color> 범위 내 적과 아군을 구분하지 않고 최대 <#CFFF71>{3}회</color> 연쇄하는 물줄기를 발사(피해량: <#CFFF71>{0}%</color> x <#CFFF71>공격력</color>). 적중 시, 적에게는 <#CFFF71>{4}%</color> 확률로 <#CFFF71>{5}초</color> 간 <#CFFF71>동결</color> 부여하고 아군에게는 체력 <#CFFF71>{6}%</color> 회복과 <#CFFF71>해로운 효과 {7}개</color> 제거.",
+                  "rawDesc": "적 1명을 공격 후 적중 시, <#CFFF71>3m</color> 범위 내 적과 아군을 구분하지 않고 최대 <#CFFF71>{3}회</color> 연쇄하는 물줄기를 발사. 적중 시, 적에게는 피해(피해량: <#CFFF71>{0}%</color> x <#CFFF71>공격력</color>)를 입히고 <#CFFF71>{4}%</color> 확률로 <#CFFF71>{5}초</color>간 <#CFFF71>동결</color> 부여. 아군에게는 체력 <#CFFF71>{6}%</color> 회복하고 <#CFFF71>해로운 효과 {7}개</color> 제거.",
                   "factorAttk": 55000,
-                  "formattedDesc": "적 1명을 공격 후 적중 시, <#CFFF71>3m</color> 범위 내 적과 아군을 구분하지 않고 최대 <#CFFF71>5회</color> 연쇄하는 물줄기를 발사(피해량: <#CFFF71>550%</color> x <#CFFF71>공격력</color>). 적중 시, 적에게는 <#CFFF71>50%</color> 확률로 <#CFFF71>3초</color> 간 <#CFFF71>동결</color> 부여하고 아군에게는 체력 <#CFFF71>30%</color> 회복과 <#CFFF71>해로운 효과 2개</color> 제거.",
+                  "formattedDesc": "적 1명을 공격 후 적중 시, <#CFFF71>3m</color> 범위 내 적과 아군을 구분하지 않고 최대 <#CFFF71>5회</color> 연쇄하는 물줄기를 발사. 적중 시, 적에게는 피해(피해량: <#CFFF71>550%</color> x <#CFFF71>공격력</color>)를 입히고 <#CFFF71>50%</color> 확률로 <#CFFF71>3초</color>간 <#CFFF71>동결</color> 부여. 아군에게는 체력 <#CFFF71>30%</color> 회복하고 <#CFFF71>해로운 효과 2개</color> 제거.",
                   "stageLabel": "SS 10성",
-                  "descValues": "5|50|3|30|2"
+                  "descValues": "5|50|3|30|2",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11055011143",
+                  "upgradeDescTemplate": "SS ★10 : 해로운 효과 {0}개 제거 추가",
+                  "upgradeDescValues": "2",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11055011143"
                 },
                 {
                   "upgradeDescFormatted": "SSS ★0 : 연쇄 횟수 +2회",
@@ -2319,11 +3097,17 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillLevel": 7,
                   "coolTime": "4.5",
                   "iconImage": "assets/skills/SP0012_2.png",
-                  "rawDesc": "적 1명을 공격 후 적중 시, <#CFFF71>3m</color> 범위 내 적과 아군을 구분하지 않고 최대 <#CFFF71>{3}회</color> 연쇄하는 물줄기를 발사(피해량: <#CFFF71>{0}%</color> x <#CFFF71>공격력</color>). 적중 시, 적에게는 <#CFFF71>{4}%</color> 확률로 <#CFFF71>{5}초</color> 간 <#CFFF71>동결</color> 부여하고 아군에게는 체력 <#CFFF71>{6}%</color> 회복과 <#CFFF71>해로운 효과 {7}개</color> 제거.",
+                  "rawDesc": "적 1명을 공격 후 적중 시, <#CFFF71>3m</color> 범위 내 적과 아군을 구분하지 않고 최대 <#CFFF71>{3}회</color> 연쇄하는 물줄기를 발사. 적중 시, 적에게는 피해(피해량: <#CFFF71>{0}%</color> x <#CFFF71>공격력</color>)를 입히고 <#CFFF71>{4}%</color> 확률로 <#CFFF71>{5}초</color>간 <#CFFF71>동결</color> 부여. 아군에게는 체력 <#CFFF71>{6}%</color> 회복하고 <#CFFF71>해로운 효과 {7}개</color> 제거.",
                   "factorAttk": 55000,
-                  "formattedDesc": "적 1명을 공격 후 적중 시, <#CFFF71>3m</color> 범위 내 적과 아군을 구분하지 않고 최대 <#CFFF71>7회</color> 연쇄하는 물줄기를 발사(피해량: <#CFFF71>550%</color> x <#CFFF71>공격력</color>). 적중 시, 적에게는 <#CFFF71>50%</color> 확률로 <#CFFF71>3초</color> 간 <#CFFF71>동결</color> 부여하고 아군에게는 체력 <#CFFF71>30%</color> 회복과 <#CFFF71>해로운 효과 2개</color> 제거.",
+                  "formattedDesc": "적 1명을 공격 후 적중 시, <#CFFF71>3m</color> 범위 내 적과 아군을 구분하지 않고 최대 <#CFFF71>7회</color> 연쇄하는 물줄기를 발사. 적중 시, 적에게는 피해(피해량: <#CFFF71>550%</color> x <#CFFF71>공격력</color>)를 입히고 <#CFFF71>50%</color> 확률로 <#CFFF71>3초</color>간 <#CFFF71>동결</color> 부여. 아군에게는 체력 <#CFFF71>30%</color> 회복하고 <#CFFF71>해로운 효과 2개</color> 제거.",
                   "stageLabel": "SSS 0성",
-                  "descValues": "7|50|3|30|2"
+                  "descValues": "7|50|3|30|2",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11055011144",
+                  "upgradeDescTemplate": "SSS ★0 : 연쇄 횟수 +{0}회",
+                  "upgradeDescValues": "2",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11055011144"
                 }
               ]
             },
@@ -2342,11 +3126,14 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillLevel": 1,
                   "coolTime": "6.5",
                   "iconImage": "assets/skills/SP0030_2.png",
-                  "rawDesc": "전방 폭 <#CFFF71>4m</color>, 길이 <#CFFF71>6m</color> 범위에 파도를 소환하여 아군에게는 회복(회복량: <#CFFF71>{3}%</color> x <#CFFF71>공격력</color>)하고 <#CFFF71>{4}초</color> 간 보호막 <#CFFF71>{5}회</color> 와 <#CFFF71>당기기 면역</color> 부여, 적에게는 공격 (피해량: <#CFFF71>{0}%</color> x <#CFFF71>공격력</color>). 적중 시, 대상에게 공중으로 띄우기 부여.",
+                  "rawDesc": "전방 폭 <#CFFF71>4m</color>, 길이 <#CFFF71>6m</color> 범위에 파도를 소환하여 아군에게는 회복(회복량: <#CFFF71>{3}%</color> x <#CFFF71>공격력</color>)하고 <#CFFF71>{4}초</color> 간 보호막 <#CFFF71>{5}회</color>와 <#CFFF71>당기기 면역</color> 부여, 적에게는 공격 (피해량: <#CFFF71>{0}%</color> x <#CFFF71>공격력</color>). 적중 시, 대상에게 공중으로 띄우기 부여.",
                   "factorAttk": 60500,
-                  "formattedDesc": "전방 폭 <#CFFF71>4m</color>, 길이 <#CFFF71>6m</color> 범위에 파도를 소환하여 아군에게는 회복(회복량: <#CFFF71>300%</color> x <#CFFF71>공격력</color>)하고 <#CFFF71>3초</color> 간 보호막 <#CFFF71>2회</color> 와 <#CFFF71>당기기 면역</color> 부여, 적에게는 공격 (피해량: <#CFFF71>605%</color> x <#CFFF71>공격력</color>). 적중 시, 대상에게 공중으로 띄우기 부여.",
+                  "formattedDesc": "전방 폭 <#CFFF71>4m</color>, 길이 <#CFFF71>6m</color> 범위에 파도를 소환하여 아군에게는 회복(회복량: <#CFFF71>300%</color> x <#CFFF71>공격력</color>)하고 <#CFFF71>3초</color> 간 보호막 <#CFFF71>2회</color>와 <#CFFF71>당기기 면역</color> 부여, 적에게는 공격 (피해량: <#CFFF71>605%</color> x <#CFFF71>공격력</color>). 적중 시, 대상에게 공중으로 띄우기 부여.",
                   "stageLabel": "SS 0성",
-                  "descValues": "300|3|2"
+                  "descValues": "300|3|2",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11055012133"
                 },
                 {
                   "upgradeDescFormatted": "SS ★1 : 보호막 +1회",
@@ -2356,11 +3143,17 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillLevel": 2,
                   "coolTime": "6.5",
                   "iconImage": "assets/skills/SP0030_2.png",
-                  "rawDesc": "전방 폭 <#CFFF71>4m</color>, 길이 <#CFFF71>6m</color> 범위에 파도를 소환하여 아군에게는 회복(회복량: <#CFFF71>{3}%</color> x <#CFFF71>공격력</color>)하고 <#CFFF71>{4}초</color> 간 보호막 <#CFFF71>{5}회</color> 와 <#CFFF71>당기기 면역</color> 부여, 적에게는 공격 (피해량: <#CFFF71>{0}%</color> x <#CFFF71>공격력</color>). 적중 시, 대상에게 공중으로 띄우기 부여.",
+                  "rawDesc": "전방 폭 <#CFFF71>4m</color>, 길이 <#CFFF71>6m</color> 범위에 파도를 소환하여 아군에게는 회복(회복량: <#CFFF71>{3}%</color> x <#CFFF71>공격력</color>)하고 <#CFFF71>{4}초</color> 간 보호막 <#CFFF71>{5}회</color>와 <#CFFF71>당기기 면역</color> 부여, 적에게는 공격 (피해량: <#CFFF71>{0}%</color> x <#CFFF71>공격력</color>). 적중 시, 대상에게 공중으로 띄우기 부여.",
                   "factorAttk": 60500,
-                  "formattedDesc": "전방 폭 <#CFFF71>4m</color>, 길이 <#CFFF71>6m</color> 범위에 파도를 소환하여 아군에게는 회복(회복량: <#CFFF71>300%</color> x <#CFFF71>공격력</color>)하고 <#CFFF71>3초</color> 간 보호막 <#CFFF71>3회</color> 와 <#CFFF71>당기기 면역</color> 부여, 적에게는 공격 (피해량: <#CFFF71>605%</color> x <#CFFF71>공격력</color>). 적중 시, 대상에게 공중으로 띄우기 부여.",
+                  "formattedDesc": "전방 폭 <#CFFF71>4m</color>, 길이 <#CFFF71>6m</color> 범위에 파도를 소환하여 아군에게는 회복(회복량: <#CFFF71>300%</color> x <#CFFF71>공격력</color>)하고 <#CFFF71>3초</color> 간 보호막 <#CFFF71>3회</color>와 <#CFFF71>당기기 면역</color> 부여, 적에게는 공격 (피해량: <#CFFF71>605%</color> x <#CFFF71>공격력</color>). 적중 시, 대상에게 공중으로 띄우기 부여.",
                   "stageLabel": "SS 1성",
-                  "descValues": "300|3|3"
+                  "descValues": "300|3|3",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11055012134",
+                  "upgradeDescTemplate": "SS ★1 : 보호막 +{0}회",
+                  "upgradeDescValues": "1",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11055012134"
                 },
                 {
                   "upgradeDescFormatted": "SS ★5 : 피해량 +145%",
@@ -2370,11 +3163,17 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillLevel": 3,
                   "coolTime": "6.5",
                   "iconImage": "assets/skills/SP0030_2.png",
-                  "rawDesc": "전방 폭 <#CFFF71>4m</color>, 길이 <#CFFF71>6m</color> 범위에 파도를 소환하여 아군에게는 회복(회복량: <#CFFF71>{3}%</color> x <#CFFF71>공격력</color>)하고 <#CFFF71>{4}초</color> 간 보호막 <#CFFF71>{5}회</color> 와 <#CFFF71>당기기 면역</color> 부여, 적에게는 공격 (피해량: <#CFFF71>{0}%</color> x <#CFFF71>공격력</color>). 적중 시, 대상에게 공중으로 띄우기 부여.",
+                  "rawDesc": "전방 폭 <#CFFF71>4m</color>, 길이 <#CFFF71>6m</color> 범위에 파도를 소환하여 아군에게는 회복(회복량: <#CFFF71>{3}%</color> x <#CFFF71>공격력</color>)하고 <#CFFF71>{4}초</color> 간 보호막 <#CFFF71>{5}회</color>와 <#CFFF71>당기기 면역</color> 부여, 적에게는 공격 (피해량: <#CFFF71>{0}%</color> x <#CFFF71>공격력</color>). 적중 시, 대상에게 공중으로 띄우기 부여.",
                   "factorAttk": 75000,
-                  "formattedDesc": "전방 폭 <#CFFF71>4m</color>, 길이 <#CFFF71>6m</color> 범위에 파도를 소환하여 아군에게는 회복(회복량: <#CFFF71>300%</color> x <#CFFF71>공격력</color>)하고 <#CFFF71>3초</color> 간 보호막 <#CFFF71>3회</color> 와 <#CFFF71>당기기 면역</color> 부여, 적에게는 공격 (피해량: <#CFFF71>750%</color> x <#CFFF71>공격력</color>). 적중 시, 대상에게 공중으로 띄우기 부여.",
+                  "formattedDesc": "전방 폭 <#CFFF71>4m</color>, 길이 <#CFFF71>6m</color> 범위에 파도를 소환하여 아군에게는 회복(회복량: <#CFFF71>300%</color> x <#CFFF71>공격력</color>)하고 <#CFFF71>3초</color> 간 보호막 <#CFFF71>3회</color>와 <#CFFF71>당기기 면역</color> 부여, 적에게는 공격 (피해량: <#CFFF71>750%</color> x <#CFFF71>공격력</color>). 적중 시, 대상에게 공중으로 띄우기 부여.",
                   "stageLabel": "SS 5성",
-                  "descValues": "300|3|3"
+                  "descValues": "300|3|3",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11055012138",
+                  "upgradeDescTemplate": "SS ★5 : 피해량 +{0}%",
+                  "upgradeDescValues": "145",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11055012138"
                 },
                 {
                   "upgradeDescFormatted": "SS ★7 : 보호막 및 당기기 면역 +2초",
@@ -2384,11 +3183,17 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillLevel": 4,
                   "coolTime": "6.5",
                   "iconImage": "assets/skills/SP0030_2.png",
-                  "rawDesc": "전방 폭 <#CFFF71>4m</color>, 길이 <#CFFF71>6m</color> 범위에 파도를 소환하여 아군에게는 회복(회복량: <#CFFF71>{3}%</color> x <#CFFF71>공격력</color>)하고 <#CFFF71>{4}초</color> 간 보호막 <#CFFF71>{5}회</color> 와 <#CFFF71>당기기 면역</color> 부여, 적에게는 공격 (피해량: <#CFFF71>{0}%</color> x <#CFFF71>공격력</color>). 적중 시, 대상에게 공중으로 띄우기 부여.",
+                  "rawDesc": "전방 폭 <#CFFF71>4m</color>, 길이 <#CFFF71>6m</color> 범위에 파도를 소환하여 아군에게는 회복(회복량: <#CFFF71>{3}%</color> x <#CFFF71>공격력</color>)하고 <#CFFF71>{4}초</color> 간 보호막 <#CFFF71>{5}회</color>와 <#CFFF71>당기기 면역</color> 부여, 적에게는 공격 (피해량: <#CFFF71>{0}%</color> x <#CFFF71>공격력</color>). 적중 시, 대상에게 공중으로 띄우기 부여.",
                   "factorAttk": 75000,
-                  "formattedDesc": "전방 폭 <#CFFF71>4m</color>, 길이 <#CFFF71>6m</color> 범위에 파도를 소환하여 아군에게는 회복(회복량: <#CFFF71>300%</color> x <#CFFF71>공격력</color>)하고 <#CFFF71>5초</color> 간 보호막 <#CFFF71>3회</color> 와 <#CFFF71>당기기 면역</color> 부여, 적에게는 공격 (피해량: <#CFFF71>750%</color> x <#CFFF71>공격력</color>). 적중 시, 대상에게 공중으로 띄우기 부여.",
+                  "formattedDesc": "전방 폭 <#CFFF71>4m</color>, 길이 <#CFFF71>6m</color> 범위에 파도를 소환하여 아군에게는 회복(회복량: <#CFFF71>300%</color> x <#CFFF71>공격력</color>)하고 <#CFFF71>5초</color> 간 보호막 <#CFFF71>3회</color>와 <#CFFF71>당기기 면역</color> 부여, 적에게는 공격 (피해량: <#CFFF71>750%</color> x <#CFFF71>공격력</color>). 적중 시, 대상에게 공중으로 띄우기 부여.",
                   "stageLabel": "SS 7성",
-                  "descValues": "300|5|3"
+                  "descValues": "300|5|3",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11055012140",
+                  "upgradeDescTemplate": "SS ★7 : 보호막 및 당기기 면역 +{0}초",
+                  "upgradeDescValues": "2",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11055012140"
                 },
                 {
                   "upgradeDescFormatted": "SS ★10 : 7초간 명중 감소(20%) 추가",
@@ -2398,11 +3203,17 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillLevel": 5,
                   "coolTime": "6.5",
                   "iconImage": "assets/skills/SP0030_2.png",
-                  "rawDesc": "전방 폭 <#CFFF71>4m</color>, 길이 <#CFFF71>6m</color> 범위에 파도를 소환하여 아군에게는 회복(회복량: <#CFFF71>{3}%</color> x <#CFFF71>공격력</color>)하고 <#CFFF71>{4}초</color> 간 보호막 <#CFFF71>{5}회</color> 와 <#CFFF71>당기기 면역</color> 부여, 적에게는 공격 (피해량: <#CFFF71>{0}%</color> x <#CFFF71>공격력</color>). 적중 시, 대상을 공중으로 띄우고 <#CFFF71>{6}초</color> 간 <#CFFF71>(보조) 명중 감소({7}%)</color> 부여.",
+                  "rawDesc": "전방 폭 <#CFFF71>4m</color>, 길이 <#CFFF71>6m</color> 범위에 파도를 소환하여 아군에게는 회복(회복량: <#CFFF71>{3}%</color> x <#CFFF71>공격력</color>)하고 <#CFFF71>{4}초</color> 간 보호막 <#CFFF71>{5}회</color>와 <#CFFF71>당기기 면역</color> 부여, 적에게는 공격 (피해량: <#CFFF71>{0}%</color> x <#CFFF71>공격력</color>). 적중 시, 대상을 공중으로 띄우고 <#CFFF71>{6}초</color> 간 <#CFFF71>(보조) 명중 감소({7}%)</color> 부여.",
                   "factorAttk": 75000,
-                  "formattedDesc": "전방 폭 <#CFFF71>4m</color>, 길이 <#CFFF71>6m</color> 범위에 파도를 소환하여 아군에게는 회복(회복량: <#CFFF71>300%</color> x <#CFFF71>공격력</color>)하고 <#CFFF71>5초</color> 간 보호막 <#CFFF71>3회</color> 와 <#CFFF71>당기기 면역</color> 부여, 적에게는 공격 (피해량: <#CFFF71>750%</color> x <#CFFF71>공격력</color>). 적중 시, 대상을 공중으로 띄우고 <#CFFF71>5초</color> 간 <#CFFF71>(보조) 명중 감소(20%)</color> 부여.",
+                  "formattedDesc": "전방 폭 <#CFFF71>4m</color>, 길이 <#CFFF71>6m</color> 범위에 파도를 소환하여 아군에게는 회복(회복량: <#CFFF71>300%</color> x <#CFFF71>공격력</color>)하고 <#CFFF71>5초</color> 간 보호막 <#CFFF71>3회</color>와 <#CFFF71>당기기 면역</color> 부여, 적에게는 공격 (피해량: <#CFFF71>750%</color> x <#CFFF71>공격력</color>). 적중 시, 대상을 공중으로 띄우고 <#CFFF71>7초</color> 간 <#CFFF71>(보조) 명중 감소(20%)</color> 부여.",
                   "stageLabel": "SS 10성",
-                  "descValues": "300|5|3|5|20"
+                  "descValues": "300|5|3|7|20",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11055012143",
+                  "upgradeDescTemplate": "SS ★10 : {0}초간 명중 감소({1}%) 추가",
+                  "upgradeDescValues": "7|20",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11055012143"
                 },
                 {
                   "upgradeDescFormatted": "SSS ★0 : 회복량 +150%",
@@ -2412,11 +3223,17 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillLevel": 6,
                   "coolTime": "6.5",
                   "iconImage": "assets/skills/SP0030_2.png",
-                  "rawDesc": "전방 폭 <#CFFF71>4m</color>, 길이 <#CFFF71>6m</color> 범위에 파도를 소환하여 아군에게는 회복(회복량: <#CFFF71>{3}%</color> x <#CFFF71>공격력</color>)하고 <#CFFF71>{4}초</color> 간 보호막 <#CFFF71>{5}회</color> 와 <#CFFF71>당기기 면역</color> 부여, 적에게는 공격 (피해량: <#CFFF71>{0}%</color> x <#CFFF71>공격력</color>). 적중 시, 대상을 공중으로 띄우고 <#CFFF71>{6}초</color> 간 <#CFFF71>(보조) 명중 감소({7}%)</color> 부여.",
+                  "rawDesc": "전방 폭 <#CFFF71>4m</color>, 길이 <#CFFF71>6m</color> 범위에 파도를 소환하여 아군에게는 회복(회복량: <#CFFF71>{3}%</color> x <#CFFF71>공격력</color>)하고 <#CFFF71>{4}초</color> 간 보호막 <#CFFF71>{5}회</color>와 <#CFFF71>당기기 면역</color> 부여, 적에게는 공격 (피해량: <#CFFF71>{0}%</color> x <#CFFF71>공격력</color>). 적중 시, 대상을 공중으로 띄우고 <#CFFF71>{6}초</color> 간 <#CFFF71>(보조) 명중 감소({7}%)</color> 부여.",
                   "factorAttk": 75000,
-                  "formattedDesc": "전방 폭 <#CFFF71>4m</color>, 길이 <#CFFF71>6m</color> 범위에 파도를 소환하여 아군에게는 회복(회복량: <#CFFF71>450%</color> x <#CFFF71>공격력</color>)하고 <#CFFF71>5초</color> 간 보호막 <#CFFF71>3회</color> 와 <#CFFF71>당기기 면역</color> 부여, 적에게는 공격 (피해량: <#CFFF71>750%</color> x <#CFFF71>공격력</color>). 적중 시, 대상을 공중으로 띄우고 <#CFFF71>5초</color> 간 <#CFFF71>(보조) 명중 감소(20%)</color> 부여.",
+                  "formattedDesc": "전방 폭 <#CFFF71>4m</color>, 길이 <#CFFF71>6m</color> 범위에 파도를 소환하여 아군에게는 회복(회복량: <#CFFF71>450%</color> x <#CFFF71>공격력</color>)하고 <#CFFF71>5초</color> 간 보호막 <#CFFF71>3회</color>와 <#CFFF71>당기기 면역</color> 부여, 적에게는 공격 (피해량: <#CFFF71>750%</color> x <#CFFF71>공격력</color>). 적중 시, 대상을 공중으로 띄우고 <#CFFF71>7초</color> 간 <#CFFF71>(보조) 명중 감소(20%)</color> 부여.",
                   "stageLabel": "SSS 0성",
-                  "descValues": "450|5|3|5|20"
+                  "descValues": "450|5|3|7|20",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11055012144",
+                  "upgradeDescTemplate": "SSS ★0 : 회복량 +{0}%",
+                  "upgradeDescValues": "150",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11055012144"
                 }
               ]
             },
@@ -2438,7 +3255,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "자신에게 <#CFFF71>(타입)회피 증가({3}%)</color>, <#CFFF71>(타입)자연 체력회복 증가({4}%)</color> 적용.",
                   "formattedDesc": "자신에게 <#CFFF71>(타입)회피 증가(15%)</color>, <#CFFF71>(타입)자연 체력회복 증가(20%)</color> 적용.",
                   "stageLabel": "SS 0성",
-                  "descValues": "15|20"
+                  "descValues": "15|20",
+                  "factorAttk": 0,
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "43100"
                 },
                 {
                   "upgradeDescFormatted": "SS ★2 : (타입) 자연 체력회복 증가 +2%",
@@ -2451,7 +3272,13 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "자신에게 <#CFFF71>(타입)회피 증가({3}%)</color>, <#CFFF71>(타입)자연 체력회복 증가({4}%)</color> 적용.",
                   "formattedDesc": "자신에게 <#CFFF71>(타입)회피 증가(15%)</color>, <#CFFF71>(타입)자연 체력회복 증가(22%)</color> 적용.",
                   "stageLabel": "SS 2성",
-                  "descValues": "15|22"
+                  "descValues": "15|22",
+                  "factorAttk": 0,
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "43135",
+                  "upgradeDescTemplate": "SS ★2 : (타입) 자연 체력회복 증가 +2%",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_43135"
                 },
                 {
                   "upgradeDescFormatted": "SS ★4 : (타입) 회피 증가 +2%",
@@ -2464,7 +3291,13 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "자신에게 <#CFFF71>(타입)회피 증가({3}%)</color>, <#CFFF71>(타입)자연 체력회복 증가({4}%)</color> 적용.",
                   "formattedDesc": "자신에게 <#CFFF71>(타입)회피 증가(17%)</color>, <#CFFF71>(타입)자연 체력회복 증가(22%)</color> 적용.",
                   "stageLabel": "SS 4성",
-                  "descValues": "17|22"
+                  "descValues": "17|22",
+                  "factorAttk": 0,
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "43137",
+                  "upgradeDescTemplate": "SS ★4 : (타입) 회피 증가 +2%",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_43137"
                 },
                 {
                   "upgradeDescFormatted": "SS ★6 : (타입) 자연 체력회복 증가 +2%",
@@ -2477,7 +3310,13 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "자신에게 <#CFFF71>(타입)회피 증가({3}%)</color>, <#CFFF71>(타입)자연 체력회복 증가({4}%)</color> 적용.",
                   "formattedDesc": "자신에게 <#CFFF71>(타입)회피 증가(17%)</color>, <#CFFF71>(타입)자연 체력회복 증가(24%)</color> 적용.",
                   "stageLabel": "SS 6성",
-                  "descValues": "17|24"
+                  "descValues": "17|24",
+                  "factorAttk": 0,
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "43139",
+                  "upgradeDescTemplate": "SS ★6 : (타입) 자연 체력회복 증가 +2%",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_43139"
                 },
                 {
                   "upgradeDescFormatted": "SS ★8 : (타입) 회피 증가 +2%",
@@ -2490,7 +3329,13 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "자신에게 <#CFFF71>(타입)회피 증가({3}%)</color>, <#CFFF71>(타입)자연 체력회복 증가({4}%)</color> 적용.",
                   "formattedDesc": "자신에게 <#CFFF71>(타입)회피 증가(19%)</color>, <#CFFF71>(타입)자연 체력회복 증가(24%)</color> 적용.",
                   "stageLabel": "SS 8성",
-                  "descValues": "19|24"
+                  "descValues": "19|24",
+                  "factorAttk": 0,
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "43141",
+                  "upgradeDescTemplate": "SS ★8 : (타입) 회피 증가 +2%",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_43141"
                 },
                 {
                   "upgradeDescFormatted": "SSS ★1 : (타입) 회피 증가 +1% / (타입) 자연 체력회복 증가 +1%",
@@ -2503,7 +3348,13 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "자신에게 <#CFFF71>(타입)회피 증가({3}%)</color>, <#CFFF71>(타입)자연 체력회복 증가({4}%)</color> 적용.",
                   "formattedDesc": "자신에게 <#CFFF71>(타입)회피 증가(20%)</color>, <#CFFF71>(타입)자연 체력회복 증가(25%)</color> 적용.",
                   "stageLabel": "SSS 1성",
-                  "descValues": "20|25"
+                  "descValues": "20|25",
+                  "factorAttk": 0,
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "43145",
+                  "upgradeDescTemplate": "SSS ★1 : (타입) 회피 증가 +1% / (타입) 자연 체력회복 증가 +1%",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_43145"
                 }
               ]
             }
@@ -2515,7 +3366,7 @@ window.GACHA_PET_VIEWER_DATA = {
             {
               "start": "2026-03-31",
               "end": "2026-04-06",
-              "status": "current",
+              "status": "past",
               "scheduleRule": {
                 "timeType": 4,
                 "openDay": 27,
@@ -2573,7 +3424,10 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 20000,
                   "formattedDesc": "적 1명을 공격(피해량: <#CFFF71>200%</color> x <#CFFF71>공격력</color>). 적중 시, <#CFFF71>50%</color> 확률로 <#CFFF71>2초</color> 간 <#CFFF71>침묵</color> 부여.",
                   "stageLabel": "SS 0성",
-                  "descValues": "50|2"
+                  "descValues": "50|2",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11034010133"
                 },
                 {
                   "upgradeDescFormatted": "SS ★1 : 피해량 +40%",
@@ -2587,7 +3441,13 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 24000,
                   "formattedDesc": "적 1명을 공격(피해량: <#CFFF71>240%</color> x <#CFFF71>공격력</color>). 적중 시, <#CFFF71>50%</color> 확률로 <#CFFF71>2초</color> 간 <#CFFF71>침묵</color> 부여.",
                   "stageLabel": "SS 1성",
-                  "descValues": "50|2"
+                  "descValues": "50|2",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11034010134",
+                  "upgradeDescTemplate": "SS ★1 : 피해량 +{0}%",
+                  "upgradeDescValues": "40",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11034010134"
                 },
                 {
                   "upgradeDescFormatted": "SS ★3 : 피해량 +48%",
@@ -2601,10 +3461,16 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 28800,
                   "formattedDesc": "적 1명을 공격(피해량: <#CFFF71>288%</color> x <#CFFF71>공격력</color>). 적중 시, <#CFFF71>50%</color> 확률로 <#CFFF71>2초</color> 간 <#CFFF71>침묵</color> 부여.",
                   "stageLabel": "SS 3성",
-                  "descValues": "50|2"
+                  "descValues": "50|2",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11034010136",
+                  "upgradeDescTemplate": "SS ★3 : 피해량 +{0}%",
+                  "upgradeDescValues": "48",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11034010136"
                 },
                 {
-                  "upgradeDescFormatted": "SS ★5 : 침묵 확률 +20%",
+                  "upgradeDescFormatted": "SS ★5 : 침묵 확률 +30%",
                   "groupGrade": 5,
                   "skillType": "1",
                   "groupTier": 4,
@@ -2613,9 +3479,15 @@ window.GACHA_PET_VIEWER_DATA = {
                   "iconImage": "assets/skills/SPN0001_1.png",
                   "rawDesc": "적 1명을 공격(피해량: <#CFFF71>{0}%</color> x <#CFFF71>공격력</color>). 적중 시, <#CFFF71>{3}%</color> 확률로 <#CFFF71>{4}초</color> 간 <#CFFF71>침묵</color> 부여.",
                   "factorAttk": 28800,
-                  "formattedDesc": "적 1명을 공격(피해량: <#CFFF71>288%</color> x <#CFFF71>공격력</color>). 적중 시, <#CFFF71>70%</color> 확률로 <#CFFF71>2초</color> 간 <#CFFF71>침묵</color> 부여.",
+                  "formattedDesc": "적 1명을 공격(피해량: <#CFFF71>288%</color> x <#CFFF71>공격력</color>). 적중 시, <#CFFF71>80%</color> 확률로 <#CFFF71>2초</color> 간 <#CFFF71>침묵</color> 부여.",
                   "stageLabel": "SS 5성",
-                  "descValues": "70|2"
+                  "descValues": "80|2",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11034010138",
+                  "upgradeDescTemplate": "SS ★5 : 침묵 확률 +{0}%",
+                  "upgradeDescValues": "30",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11034010138"
                 },
                 {
                   "upgradeDescFormatted": "SS ★7 : 피해량 +64%",
@@ -2627,9 +3499,15 @@ window.GACHA_PET_VIEWER_DATA = {
                   "iconImage": "assets/skills/SPN0001_1.png",
                   "rawDesc": "적 1명을 공격(피해량: <#CFFF71>{0}%</color> x <#CFFF71>공격력</color>). 적중 시, <#CFFF71>{3}%</color> 확률로 <#CFFF71>{4}초</color> 간 <#CFFF71>침묵</color> 부여.",
                   "factorAttk": 35200,
-                  "formattedDesc": "적 1명을 공격(피해량: <#CFFF71>352%</color> x <#CFFF71>공격력</color>). 적중 시, <#CFFF71>70%</color> 확률로 <#CFFF71>2초</color> 간 <#CFFF71>침묵</color> 부여.",
+                  "formattedDesc": "적 1명을 공격(피해량: <#CFFF71>352%</color> x <#CFFF71>공격력</color>). 적중 시, <#CFFF71>80%</color> 확률로 <#CFFF71>2초</color> 간 <#CFFF71>침묵</color> 부여.",
                   "stageLabel": "SS 7성",
-                  "descValues": "70|2"
+                  "descValues": "80|2",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11034010140",
+                  "upgradeDescTemplate": "SS ★7 : 피해량 +{0}%",
+                  "upgradeDescValues": "64",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11034010140"
                 },
                 {
                   "upgradeDescFormatted": "SSS ★0 : 침묵 +1초",
@@ -2641,9 +3519,15 @@ window.GACHA_PET_VIEWER_DATA = {
                   "iconImage": "assets/skills/SPN0001_1.png",
                   "rawDesc": "적 1명을 공격(피해량: <#CFFF71>{0}%</color> x <#CFFF71>공격력</color>). 적중 시, <#CFFF71>{3}%</color> 확률로 <#CFFF71>{4}초</color> 간 <#CFFF71>침묵</color> 부여.",
                   "factorAttk": 35200,
-                  "formattedDesc": "적 1명을 공격(피해량: <#CFFF71>352%</color> x <#CFFF71>공격력</color>). 적중 시, <#CFFF71>70%</color> 확률로 <#CFFF71>3초</color> 간 <#CFFF71>침묵</color> 부여.",
+                  "formattedDesc": "적 1명을 공격(피해량: <#CFFF71>352%</color> x <#CFFF71>공격력</color>). 적중 시, <#CFFF71>80%</color> 확률로 <#CFFF71>3초</color> 간 <#CFFF71>침묵</color> 부여.",
                   "stageLabel": "SSS 0성",
-                  "descValues": "70|3"
+                  "descValues": "80|3",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11034010144",
+                  "upgradeDescTemplate": "SSS ★0 : 침묵 +{0}초",
+                  "upgradeDescValues": "1",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11034010144"
                 }
               ]
             },
@@ -2666,7 +3550,10 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 152500,
                   "formattedDesc": "사정거리 내의 가장 멀리 있는 적 1명을 우선하여, 대상의 후방으로 습격, <#CFFF71>5회</color>에 걸쳐 공격(피해량: <#CFFF71>1525%</color> x <#CFFF71>공격력</color>). <#CFFF71>4초</color>간 <#CFFF71>은신</color> 획득. 적중 시, 피격 대상이 <#CFFF71>{2}</color>이 아닌 경우, 스킬로 주는 피해량에 <#CFFF71>(자신) 피해량 증가(200%)</color> 효과 적용.",
                   "stageLabel": "SS 0성",
-                  "descValues": "5|4|200"
+                  "descValues": "5|4|200",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11034011133"
                 },
                 {
                   "upgradeDescFormatted": "SS ★1 : 은신 +1초",
@@ -2680,7 +3567,13 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 152500,
                   "formattedDesc": "사정거리 내의 가장 멀리 있는 적 1명을 우선하여, 대상의 후방으로 습격, <#CFFF71>5회</color>에 걸쳐 공격(피해량: <#CFFF71>1525%</color> x <#CFFF71>공격력</color>). <#CFFF71>5초</color>간 <#CFFF71>은신</color> 획득. 적중 시, 피격 대상이 <#CFFF71>{2}</color>이 아닌 경우, 스킬로 주는 피해량에 <#CFFF71>(자신) 피해량 증가(200%)</color> 효과 적용.",
                   "stageLabel": "SS 1성",
-                  "descValues": "5|5|200"
+                  "descValues": "5|5|200",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11034011134",
+                  "upgradeDescTemplate": "SS ★1 : 은신 +{0}초",
+                  "upgradeDescValues": "1",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11034011134"
                 },
                 {
                   "upgradeDescFormatted": "SS ★3 : 피해량 +365%",
@@ -2694,7 +3587,13 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 189000,
                   "formattedDesc": "사정거리 내의 가장 멀리 있는 적 1명을 우선하여, 대상의 후방으로 습격, <#CFFF71>5회</color>에 걸쳐 공격(피해량: <#CFFF71>1890%</color> x <#CFFF71>공격력</color>). <#CFFF71>5초</color>간 <#CFFF71>은신</color> 획득. 적중 시, 피격 대상이 <#CFFF71>{2}</color>이 아닌 경우, 스킬로 주는 피해량에 <#CFFF71>(자신) 피해량 증가(200%)</color> 효과 적용.",
                   "stageLabel": "SS 3성",
-                  "descValues": "5|5|200"
+                  "descValues": "5|5|200",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11034011136",
+                  "upgradeDescTemplate": "SS ★3 : 피해량 +{0}%",
+                  "upgradeDescValues": "365",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11034011136"
                 },
                 {
                   "upgradeDescFormatted": "SS ★5 : 방어형이 아닌 대상에게의 (자신) 피해량 증가 +50%",
@@ -2708,7 +3607,13 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 189000,
                   "formattedDesc": "사정거리 내의 가장 멀리 있는 적 1명을 우선하여, 대상의 후방으로 습격, <#CFFF71>5회</color>에 걸쳐 공격(피해량: <#CFFF71>1890%</color> x <#CFFF71>공격력</color>). <#CFFF71>5초</color>간 <#CFFF71>은신</color> 획득. 적중 시, 피격 대상이 <#CFFF71>{2}</color>이 아닌 경우, 스킬로 주는 피해량에 <#CFFF71>(자신) 피해량 증가(250%)</color> 효과 적용.",
                   "stageLabel": "SS 5성",
-                  "descValues": "5|5|250"
+                  "descValues": "5|5|250",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11034011138",
+                  "upgradeDescTemplate": "SS ★5 : 방어형이 아닌 대상에게의 (자신) 피해량 증가 +{0}%",
+                  "upgradeDescValues": "50",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11034011138"
                 },
                 {
                   "upgradeDescFormatted": "SS ★7 : 피해량 +485%",
@@ -2722,7 +3627,13 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 237500,
                   "formattedDesc": "사정거리 내의 가장 멀리 있는 적 1명을 우선하여, 대상의 후방으로 습격, <#CFFF71>5회</color>에 걸쳐 공격(피해량: <#CFFF71>2375%</color> x <#CFFF71>공격력</color>). <#CFFF71>5초</color>간 <#CFFF71>은신</color> 획득. 적중 시, 피격 대상이 <#CFFF71>{2}</color>이 아닌 경우, 스킬로 주는 피해량에 <#CFFF71>(자신) 피해량 증가(250%)</color> 효과 적용.",
                   "stageLabel": "SS 7성",
-                  "descValues": "5|5|250"
+                  "descValues": "5|5|250",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11034011140",
+                  "upgradeDescTemplate": "SS ★7 : 피해량 +{0}%",
+                  "upgradeDescValues": "485",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11034011140"
                 },
                 {
                   "upgradeDescFormatted": "SS ★10 : 은신 +1초",
@@ -2736,21 +3647,33 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 237500,
                   "formattedDesc": "사정거리 내의 가장 멀리 있는 적 1명을 우선하여, 대상의 후방으로 습격, <#CFFF71>5회</color>에 걸쳐 공격(피해량: <#CFFF71>2375%</color> x <#CFFF71>공격력</color>). <#CFFF71>6초</color>간 <#CFFF71>은신</color> 획득. 적중 시, 피격 대상이 <#CFFF71>{2}</color>이 아닌 경우, 스킬로 주는 피해량에 <#CFFF71>(자신) 피해량 증가(250%)</color> 효과 적용.",
                   "stageLabel": "SS 10성",
-                  "descValues": "5|6|250"
+                  "descValues": "5|6|250",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11034011143",
+                  "upgradeDescTemplate": "SS ★10 : 은신 +{0}초",
+                  "upgradeDescValues": "1",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11034011143"
                 },
                 {
-                  "upgradeDescFormatted": "SSS ★0 : 피해의 흡혈(25%) 기능 추가",
+                  "upgradeDescFormatted": "SSS ★0 : 흡혈(50%) 추가",
                   "groupGrade": 0,
                   "skillType": "3",
                   "groupTier": 5,
                   "skillLevel": 7,
                   "coolTime": "5.5",
                   "iconImage": "assets/skills/SP0088_1.png",
-                  "rawDesc": "사정거리 내의 가장 멀리 있는 적 1명을 우선하여, 대상의 후방으로 습격, <#CFFF71>{3}회</color>에 걸쳐 공격(피해량: <#CFFF71>{0}%</color> x <#CFFF71>공격력</color>). <#CFFF71>{4}초</color>간 <#CFFF71>은신</color> 획득. 적중 시, 피해의 <#CFFF71>흡혈({6})%</color> 적용. 추가로 피격 대상이 <#CFFF71>{2}</color>이 아닌 경우, 스킬로 주는 피해량에 <#CFFF71>(자신) 피해량 증가({5}%)</color> 효과 적용.",
+                  "rawDesc": "사정거리 내의 가장 멀리 있는 적 1명을 우선하여, 대상의 후방으로 습격, <#CFFF71>{3}회</color>에 걸쳐 공격(피해량: <#CFFF71>{0}%</color> x <#CFFF71>공격력</color>). <#CFFF71>{4}초</color>간 <#CFFF71>은신</color> 획득. 적중 시, <#CFFF71>흡혈({6})%</color> 적용. 추가로 피격 대상이 <#CFFF71>{2}</color>이 아닌 경우, 스킬로 주는 피해량에 <#CFFF71>(자신) 피해량 증가({5}%)</color> 효과 적용.",
                   "factorAttk": 237500,
-                  "formattedDesc": "사정거리 내의 가장 멀리 있는 적 1명을 우선하여, 대상의 후방으로 습격, <#CFFF71>5회</color>에 걸쳐 공격(피해량: <#CFFF71>2375%</color> x <#CFFF71>공격력</color>). <#CFFF71>6초</color>간 <#CFFF71>은신</color> 획득. 적중 시, 피해의 <#CFFF71>흡혈(25)%</color> 적용. 추가로 피격 대상이 <#CFFF71>{2}</color>이 아닌 경우, 스킬로 주는 피해량에 <#CFFF71>(자신) 피해량 증가(250%)</color> 효과 적용.",
+                  "formattedDesc": "사정거리 내의 가장 멀리 있는 적 1명을 우선하여, 대상의 후방으로 습격, <#CFFF71>5회</color>에 걸쳐 공격(피해량: <#CFFF71>2375%</color> x <#CFFF71>공격력</color>). <#CFFF71>6초</color>간 <#CFFF71>은신</color> 획득. 적중 시, <#CFFF71>흡혈(50)%</color> 적용. 추가로 피격 대상이 <#CFFF71>{2}</color>이 아닌 경우, 스킬로 주는 피해량에 <#CFFF71>(자신) 피해량 증가(250%)</color> 효과 적용.",
                   "stageLabel": "SSS 0성",
-                  "descValues": "5|6|250|25"
+                  "descValues": "5|6|250|50",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11034011144",
+                  "upgradeDescTemplate": "SSS ★0 : 흡혈({0}%) 추가",
+                  "upgradeDescValues": "50",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11034011144"
                 }
               ]
             },
@@ -2771,9 +3694,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "iconImage": "assets/skills/SP0089_1.png",
                   "rawDesc": "적 1명에게 <#CFFF71>{3}회</color>에 걸쳐 맹수의 분노 공격(피해량: <#CFFF71>{0}%</color> x <#CFFF71>공격력</color>). 적중 시, 대상을 공중으로 띄운 후 넘어트리고 파티원에게 <#CFFF71>{4}초</color>간 <#CFFF71>(보조) 치명타 확률 증가({5}%)</color> 부여.",
                   "factorAttk": 218500,
-                  "formattedDesc": "적 1명에게 <#CFFF71>5회</color>에 걸쳐 맹수의 분노 공격(피해량: <#CFFF71>2185%</color> x <#CFFF71>공격력</color>). 적중 시, 대상을 공중으로 띄운 후 넘어트리고 파티원에게 <#CFFF71>4초</color>간 <#CFFF71>(보조) 치명타 확률 증가(25%)</color> 부여.",
+                  "formattedDesc": "적 1명에게 <#CFFF71>5회</color>에 걸쳐 맹수의 분노 공격(피해량: <#CFFF71>2185%</color> x <#CFFF71>공격력</color>). 적중 시, 대상을 공중으로 띄운 후 넘어트리고 파티원에게 <#CFFF71>5초</color>간 <#CFFF71>(보조) 치명타 확률 증가(35%)</color> 부여.",
                   "stageLabel": "SS 0성",
-                  "descValues": "5|4|25"
+                  "descValues": "5|5|35",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11034012133"
                 },
                 {
                   "upgradeDescFormatted": "SS ★1 : (보조) 치명타 확률 증가 +5%",
@@ -2785,9 +3711,15 @@ window.GACHA_PET_VIEWER_DATA = {
                   "iconImage": "assets/skills/SP0089_1.png",
                   "rawDesc": "적 1명에게 <#CFFF71>{3}회</color>에 걸쳐 맹수의 분노 공격(피해량: <#CFFF71>{0}%</color> x <#CFFF71>공격력</color>). 적중 시, 대상을 공중으로 띄운 후 넘어트리고 파티원에게 <#CFFF71>{4}초</color>간 <#CFFF71>(보조) 치명타 확률 증가({5}%)</color> 부여.",
                   "factorAttk": 218500,
-                  "formattedDesc": "적 1명에게 <#CFFF71>5회</color>에 걸쳐 맹수의 분노 공격(피해량: <#CFFF71>2185%</color> x <#CFFF71>공격력</color>). 적중 시, 대상을 공중으로 띄운 후 넘어트리고 파티원에게 <#CFFF71>4초</color>간 <#CFFF71>(보조) 치명타 확률 증가(30%)</color> 부여.",
+                  "formattedDesc": "적 1명에게 <#CFFF71>5회</color>에 걸쳐 맹수의 분노 공격(피해량: <#CFFF71>2185%</color> x <#CFFF71>공격력</color>). 적중 시, 대상을 공중으로 띄운 후 넘어트리고 파티원에게 <#CFFF71>5초</color>간 <#CFFF71>(보조) 치명타 확률 증가(40%)</color> 부여.",
                   "stageLabel": "SS 1성",
-                  "descValues": "5|4|30"
+                  "descValues": "5|5|40",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11034012134",
+                  "upgradeDescTemplate": "SS ★1 : (보조) 치명타 확률 증가 +{0}%",
+                  "upgradeDescValues": "5",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11034012134"
                 },
                 {
                   "upgradeDescFormatted": "SS ★5 : 쿨타임 -1초",
@@ -2799,9 +3731,15 @@ window.GACHA_PET_VIEWER_DATA = {
                   "iconImage": "assets/skills/SP0089_1.png",
                   "rawDesc": "적 1명에게 <#CFFF71>{3}회</color>에 걸쳐 맹수의 분노 공격(피해량: <#CFFF71>{0}%</color> x <#CFFF71>공격력</color>). 적중 시, 대상을 공중으로 띄운 후 넘어트리고 파티원에게 <#CFFF71>{4}초</color>간 <#CFFF71>(보조) 치명타 확률 증가({5}%)</color> 부여.",
                   "factorAttk": 218500,
-                  "formattedDesc": "적 1명에게 <#CFFF71>5회</color>에 걸쳐 맹수의 분노 공격(피해량: <#CFFF71>2185%</color> x <#CFFF71>공격력</color>). 적중 시, 대상을 공중으로 띄운 후 넘어트리고 파티원에게 <#CFFF71>4초</color>간 <#CFFF71>(보조) 치명타 확률 증가(30%)</color> 부여.",
+                  "formattedDesc": "적 1명에게 <#CFFF71>5회</color>에 걸쳐 맹수의 분노 공격(피해량: <#CFFF71>2185%</color> x <#CFFF71>공격력</color>). 적중 시, 대상을 공중으로 띄운 후 넘어트리고 파티원에게 <#CFFF71>5초</color>간 <#CFFF71>(보조) 치명타 확률 증가(40%)</color> 부여.",
                   "stageLabel": "SS 5성",
-                  "descValues": "5|4|30"
+                  "descValues": "5|5|40",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11034012138",
+                  "upgradeDescTemplate": "SS ★5 : 쿨타임 -{0}초",
+                  "upgradeDescValues": "1",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11034012138"
                 },
                 {
                   "upgradeDescFormatted": "SS ★7 : 피해량 +610%",
@@ -2813,9 +3751,15 @@ window.GACHA_PET_VIEWER_DATA = {
                   "iconImage": "assets/skills/SP0089_1.png",
                   "rawDesc": "적 1명에게 <#CFFF71>{3}회</color>에 걸쳐 맹수의 분노 공격(피해량: <#CFFF71>{0}%</color> x <#CFFF71>공격력</color>). 적중 시, 대상을 공중으로 띄운 후 넘어트리고 파티원에게 <#CFFF71>{4}초</color>간 <#CFFF71>(보조) 치명타 확률 증가({5}%)</color> 부여.",
                   "factorAttk": 279500,
-                  "formattedDesc": "적 1명에게 <#CFFF71>5회</color>에 걸쳐 맹수의 분노 공격(피해량: <#CFFF71>2795%</color> x <#CFFF71>공격력</color>). 적중 시, 대상을 공중으로 띄운 후 넘어트리고 파티원에게 <#CFFF71>4초</color>간 <#CFFF71>(보조) 치명타 확률 증가(30%)</color> 부여.",
+                  "formattedDesc": "적 1명에게 <#CFFF71>5회</color>에 걸쳐 맹수의 분노 공격(피해량: <#CFFF71>2795%</color> x <#CFFF71>공격력</color>). 적중 시, 대상을 공중으로 띄운 후 넘어트리고 파티원에게 <#CFFF71>5초</color>간 <#CFFF71>(보조) 치명타 확률 증가(40%)</color> 부여.",
                   "stageLabel": "SS 7성",
-                  "descValues": "5|4|30"
+                  "descValues": "5|5|40",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11034012140",
+                  "upgradeDescTemplate": "SS ★7 : 피해량 +{0}%",
+                  "upgradeDescValues": "610",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11034012140"
                 },
                 {
                   "upgradeDescFormatted": "SS ★10 : (보조) 치명타 확률 증가 +5%",
@@ -2827,9 +3771,15 @@ window.GACHA_PET_VIEWER_DATA = {
                   "iconImage": "assets/skills/SP0089_1.png",
                   "rawDesc": "적 1명에게 <#CFFF71>{3}회</color>에 걸쳐 맹수의 분노 공격(피해량: <#CFFF71>{0}%</color> x <#CFFF71>공격력</color>). 적중 시, 대상을 공중으로 띄운 후 넘어트리고 파티원에게 <#CFFF71>{4}초</color>간 <#CFFF71>(보조) 치명타 확률 증가({5}%)</color> 부여.",
                   "factorAttk": 279500,
-                  "formattedDesc": "적 1명에게 <#CFFF71>5회</color>에 걸쳐 맹수의 분노 공격(피해량: <#CFFF71>2795%</color> x <#CFFF71>공격력</color>). 적중 시, 대상을 공중으로 띄운 후 넘어트리고 파티원에게 <#CFFF71>4초</color>간 <#CFFF71>(보조) 치명타 확률 증가(35%)</color> 부여.",
+                  "formattedDesc": "적 1명에게 <#CFFF71>5회</color>에 걸쳐 맹수의 분노 공격(피해량: <#CFFF71>2795%</color> x <#CFFF71>공격력</color>). 적중 시, 대상을 공중으로 띄운 후 넘어트리고 파티원에게 <#CFFF71>5초</color>간 <#CFFF71>(보조) 치명타 확률 증가(45%)</color> 부여.",
                   "stageLabel": "SS 10성",
-                  "descValues": "5|4|35"
+                  "descValues": "5|5|45",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11034012143",
+                  "upgradeDescTemplate": "SS ★10 : (보조) 치명타 확률 증가 +{0}%",
+                  "upgradeDescValues": "5",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11034012143"
                 },
                 {
                   "upgradeDescFormatted": "SSS ★0 : 쿨타임 -2초",
@@ -2841,9 +3791,15 @@ window.GACHA_PET_VIEWER_DATA = {
                   "iconImage": "assets/skills/SP0089_1.png",
                   "rawDesc": "적 1명에게 <#CFFF71>{3}회</color>에 걸쳐 맹수의 분노 공격(피해량: <#CFFF71>{0}%</color> x <#CFFF71>공격력</color>). 적중 시, 대상을 공중으로 띄운 후 넘어트리고 파티원에게 <#CFFF71>{4}초</color>간 <#CFFF71>(보조) 치명타 확률 증가({5}%)</color> 부여.",
                   "factorAttk": 279500,
-                  "formattedDesc": "적 1명에게 <#CFFF71>5회</color>에 걸쳐 맹수의 분노 공격(피해량: <#CFFF71>2795%</color> x <#CFFF71>공격력</color>). 적중 시, 대상을 공중으로 띄운 후 넘어트리고 파티원에게 <#CFFF71>4초</color>간 <#CFFF71>(보조) 치명타 확률 증가(35%)</color> 부여.",
+                  "formattedDesc": "적 1명에게 <#CFFF71>5회</color>에 걸쳐 맹수의 분노 공격(피해량: <#CFFF71>2795%</color> x <#CFFF71>공격력</color>). 적중 시, 대상을 공중으로 띄운 후 넘어트리고 파티원에게 <#CFFF71>5초</color>간 <#CFFF71>(보조) 치명타 확률 증가(45%)</color> 부여.",
                   "stageLabel": "SSS 0성",
-                  "descValues": "5|4|35"
+                  "descValues": "5|5|45",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11034012144",
+                  "upgradeDescTemplate": "SSS ★0 : 쿨타임 -{0}초",
+                  "upgradeDescValues": "2",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11034012144"
                 }
               ]
             },
@@ -2865,7 +3821,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "자신에게 <#CFFF71>(타입)받는 피해 감소({3}%)</color>, <#CFFF71>(타입)치명타 확률 증가({4}%)</color> 적용.",
                   "formattedDesc": "자신에게 <#CFFF71>(타입)받는 피해 감소(20%)</color>, <#CFFF71>(타입)치명타 확률 증가(10%)</color> 적용.",
                   "stageLabel": "SS 0성",
-                  "descValues": "20|10"
+                  "descValues": "20|10",
+                  "factorAttk": 0,
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "23100"
                 },
                 {
                   "upgradeDescFormatted": "SS ★2 : (타입) 치명타 확률 증가 +2%",
@@ -2878,7 +3838,13 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "자신에게 <#CFFF71>(타입)받는 피해 감소({3}%)</color>, <#CFFF71>(타입)치명타 확률 증가({4}%)</color> 적용.",
                   "formattedDesc": "자신에게 <#CFFF71>(타입)받는 피해 감소(20%)</color>, <#CFFF71>(타입)치명타 확률 증가(12%)</color> 적용.",
                   "stageLabel": "SS 2성",
-                  "descValues": "20|12"
+                  "descValues": "20|12",
+                  "factorAttk": 0,
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "23135",
+                  "upgradeDescTemplate": "SS ★2 : (타입) 치명타 확률 증가 +2%",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_23135"
                 },
                 {
                   "upgradeDescFormatted": "SS ★4 : (타입) 받는 피해 감소 +2%",
@@ -2891,7 +3857,13 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "자신에게 <#CFFF71>(타입)받는 피해 감소({3}%)</color>, <#CFFF71>(타입)치명타 확률 증가({4}%)</color> 적용.",
                   "formattedDesc": "자신에게 <#CFFF71>(타입)받는 피해 감소(22%)</color>, <#CFFF71>(타입)치명타 확률 증가(12%)</color> 적용.",
                   "stageLabel": "SS 4성",
-                  "descValues": "22|12"
+                  "descValues": "22|12",
+                  "factorAttk": 0,
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "23137",
+                  "upgradeDescTemplate": "SS ★4 : (타입) 받는 피해 감소 +2%",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_23137"
                 },
                 {
                   "upgradeDescFormatted": "SS ★6 : (타입) 치명타 확률 증가 +2%",
@@ -2904,7 +3876,13 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "자신에게 <#CFFF71>(타입)받는 피해 감소({3}%)</color>, <#CFFF71>(타입)치명타 확률 증가({4}%)</color> 적용.",
                   "formattedDesc": "자신에게 <#CFFF71>(타입)받는 피해 감소(22%)</color>, <#CFFF71>(타입)치명타 확률 증가(14%)</color> 적용.",
                   "stageLabel": "SS 6성",
-                  "descValues": "22|14"
+                  "descValues": "22|14",
+                  "factorAttk": 0,
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "23139",
+                  "upgradeDescTemplate": "SS ★6 : (타입) 치명타 확률 증가 +2%",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_23139"
                 },
                 {
                   "upgradeDescFormatted": "SS ★8 : (타입) 받는 피해 감소 +2%",
@@ -2917,7 +3895,13 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "자신에게 <#CFFF71>(타입)받는 피해 감소({3}%)</color>, <#CFFF71>(타입)치명타 확률 증가({4}%)</color> 적용.",
                   "formattedDesc": "자신에게 <#CFFF71>(타입)받는 피해 감소(24%)</color>, <#CFFF71>(타입)치명타 확률 증가(14%)</color> 적용.",
                   "stageLabel": "SS 8성",
-                  "descValues": "24|14"
+                  "descValues": "24|14",
+                  "factorAttk": 0,
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "23141",
+                  "upgradeDescTemplate": "SS ★8 : (타입) 받는 피해 감소 +2%",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_23141"
                 },
                 {
                   "upgradeDescFormatted": "SSS ★1 : (타입) 받는 피해 감소 +1% / (타입) 치명타 확률 증가 +1%",
@@ -2930,7 +3914,13 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "자신에게 <#CFFF71>(타입)받는 피해 감소({3}%)</color>, <#CFFF71>(타입)치명타 확률 증가({4}%)</color> 적용.",
                   "formattedDesc": "자신에게 <#CFFF71>(타입)받는 피해 감소(25%)</color>, <#CFFF71>(타입)치명타 확률 증가(15%)</color> 적용.",
                   "stageLabel": "SSS 1성",
-                  "descValues": "25|15"
+                  "descValues": "25|15",
+                  "factorAttk": 0,
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "23145",
+                  "upgradeDescTemplate": "SSS ★1 : (타입) 받는 피해 감소 +1% / (타입) 치명타 확률 증가 +1%",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_23145"
                 }
               ]
             }
@@ -2942,7 +3932,7 @@ window.GACHA_PET_VIEWER_DATA = {
             {
               "start": "2026-04-07",
               "end": "2026-04-13",
-              "status": "upcoming",
+              "status": "past",
               "scheduleRule": {
                 "timeType": 4,
                 "openDay": 34,
@@ -2999,10 +3989,14 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "적 1명을 공격(피해량: <#CFFF71>{0}%</color> x <#CFFF71>공격력</color>)",
                   "factorAttk": 18100,
                   "formattedDesc": "적 1명을 공격(피해량: <#CFFF71>181%</color> x <#CFFF71>공격력</color>)",
-                  "stageLabel": "SS 0성"
+                  "stageLabel": "SS 0성",
+                  "descValues": "",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11099010133"
                 },
                 {
-                  "upgradeDescFormatted": "SS ★1 : 피해량 +39%",
+                  "upgradeDescFormatted": "SS ★1 : 피해량 +47%",
                   "groupGrade": 1,
                   "skillType": "1",
                   "groupTier": 4,
@@ -3010,12 +4004,19 @@ window.GACHA_PET_VIEWER_DATA = {
                   "coolTime": "1.7",
                   "iconImage": "assets/skills/SPN0002_3.png",
                   "rawDesc": "적 1명을 공격(피해량: <#CFFF71>{0}%</color> x <#CFFF71>공격력</color>)",
-                  "factorAttk": 22000,
-                  "formattedDesc": "적 1명을 공격(피해량: <#CFFF71>220%</color> x <#CFFF71>공격력</color>)",
-                  "stageLabel": "SS 1성"
+                  "factorAttk": 22800,
+                  "formattedDesc": "적 1명을 공격(피해량: <#CFFF71>228%</color> x <#CFFF71>공격력</color>)",
+                  "stageLabel": "SS 1성",
+                  "descValues": "",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11099010134",
+                  "upgradeDescTemplate": "SS ★1 : 피해량 +{0}%",
+                  "upgradeDescValues": "47",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11099010134"
                 },
                 {
-                  "upgradeDescFormatted": "SS ★3 : 피해량 +47%",
+                  "upgradeDescFormatted": "SS ★3 : 피해량 +56%",
                   "groupGrade": 3,
                   "skillType": "1",
                   "groupTier": 4,
@@ -3023,12 +4024,19 @@ window.GACHA_PET_VIEWER_DATA = {
                   "coolTime": "1.7",
                   "iconImage": "assets/skills/SPN0002_3.png",
                   "rawDesc": "적 1명을 공격(피해량: <#CFFF71>{0}%</color> x <#CFFF71>공격력</color>)",
-                  "factorAttk": 26700,
-                  "formattedDesc": "적 1명을 공격(피해량: <#CFFF71>267%</color> x <#CFFF71>공격력</color>)",
-                  "stageLabel": "SS 3성"
+                  "factorAttk": 28400,
+                  "formattedDesc": "적 1명을 공격(피해량: <#CFFF71>284%</color> x <#CFFF71>공격력</color>)",
+                  "stageLabel": "SS 3성",
+                  "descValues": "",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11099010136",
+                  "upgradeDescTemplate": "SS ★3 : 피해량 +{0}%",
+                  "upgradeDescValues": "56",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11099010136"
                 },
                 {
-                  "upgradeDescFormatted": "SS ★5 : 피해량 +55%",
+                  "upgradeDescFormatted": "SS ★5 : 피해량 +65%",
                   "groupGrade": 5,
                   "skillType": "1",
                   "groupTier": 4,
@@ -3036,12 +4044,19 @@ window.GACHA_PET_VIEWER_DATA = {
                   "coolTime": "1.7",
                   "iconImage": "assets/skills/SPN0002_3.png",
                   "rawDesc": "적 1명을 공격(피해량: <#CFFF71>{0}%</color> x <#CFFF71>공격력</color>)",
-                  "factorAttk": 32200,
-                  "formattedDesc": "적 1명을 공격(피해량: <#CFFF71>322%</color> x <#CFFF71>공격력</color>)",
-                  "stageLabel": "SS 5성"
+                  "factorAttk": 34900,
+                  "formattedDesc": "적 1명을 공격(피해량: <#CFFF71>349%</color> x <#CFFF71>공격력</color>)",
+                  "stageLabel": "SS 5성",
+                  "descValues": "",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11099010138",
+                  "upgradeDescTemplate": "SS ★5 : 피해량 +{0}%",
+                  "upgradeDescValues": "65",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11099010138"
                 },
                 {
-                  "upgradeDescFormatted": "SS ★7 : 피해량 +63%",
+                  "upgradeDescFormatted": "SS ★7 : 피해량 +75%",
                   "groupGrade": 7,
                   "skillType": "1",
                   "groupTier": 4,
@@ -3049,12 +4064,19 @@ window.GACHA_PET_VIEWER_DATA = {
                   "coolTime": "1.7",
                   "iconImage": "assets/skills/SPN0002_3.png",
                   "rawDesc": "적 1명을 공격(피해량: <#CFFF71>{0}%</color> x <#CFFF71>공격력</color>)",
-                  "factorAttk": 38500,
-                  "formattedDesc": "적 1명을 공격(피해량: <#CFFF71>385%</color> x <#CFFF71>공격력</color>)",
-                  "stageLabel": "SS 7성"
+                  "factorAttk": 42400,
+                  "formattedDesc": "적 1명을 공격(피해량: <#CFFF71>424%</color> x <#CFFF71>공격력</color>)",
+                  "stageLabel": "SS 7성",
+                  "descValues": "",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11099010140",
+                  "upgradeDescTemplate": "SS ★7 : 피해량 +{0}%",
+                  "upgradeDescValues": "75",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11099010140"
                 },
                 {
-                  "upgradeDescFormatted": "SSS ★0 : 피해량 +71%",
+                  "upgradeDescFormatted": "SSS ★0 : 피해량 +84%",
                   "groupGrade": 0,
                   "skillType": "1",
                   "groupTier": 5,
@@ -3062,9 +4084,16 @@ window.GACHA_PET_VIEWER_DATA = {
                   "coolTime": "1.7",
                   "iconImage": "assets/skills/SPN0002_3.png",
                   "rawDesc": "적 1명을 공격(피해량: <#CFFF71>{0}%</color> x <#CFFF71>공격력</color>)",
-                  "factorAttk": 45600,
-                  "formattedDesc": "적 1명을 공격(피해량: <#CFFF71>456%</color> x <#CFFF71>공격력</color>)",
-                  "stageLabel": "SSS 0성"
+                  "factorAttk": 50800,
+                  "formattedDesc": "적 1명을 공격(피해량: <#CFFF71>508%</color> x <#CFFF71>공격력</color>)",
+                  "stageLabel": "SSS 0성",
+                  "descValues": "",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11099010144",
+                  "upgradeDescTemplate": "SSS ★0 : 피해량 +{0}%",
+                  "upgradeDescValues": "84",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11099010144"
                 }
               ]
             },
@@ -3085,9 +4114,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "iconImage": "assets/skills/SP0084_3.png",
                   "rawDesc": "적 1명에게 화염 발사(피해량: <#CFFF71>{0}%</color> x <#CFFF71>공격력</color>). 해당 공격에 <#CFFF71>흡혈({3}%)</color> 적용, 적중 시, 대상을 넘어트리고 <#CFFF71>{4}초</color>간 <#CFFF71>반사({5}%)</color> 획득.",
                   "factorAttk": 119500,
-                  "formattedDesc": "적 1명에게 화염 발사(피해량: <#CFFF71>1195%</color> x <#CFFF71>공격력</color>). 해당 공격에 <#CFFF71>흡혈(50%)</color> 적용, 적중 시, 대상을 넘어트리고 <#CFFF71>2초</color>간 <#CFFF71>반사(80%)</color> 획득.",
+                  "formattedDesc": "적 1명에게 화염 발사(피해량: <#CFFF71>1195%</color> x <#CFFF71>공격력</color>). 해당 공격에 <#CFFF71>흡혈(50%)</color> 적용, 적중 시, 대상을 넘어트리고 <#CFFF71>3초</color>간 <#CFFF71>반사(80%)</color> 획득.",
                   "stageLabel": "SS 0성",
-                  "descValues": "50|2|80"
+                  "descValues": "50|3|80",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11099011133"
                 },
                 {
                   "upgradeDescFormatted": "SS ★1 : 반사 +1초",
@@ -3099,12 +4131,18 @@ window.GACHA_PET_VIEWER_DATA = {
                   "iconImage": "assets/skills/SP0084_3.png",
                   "rawDesc": "적 1명에게 화염 발사(피해량: <#CFFF71>{0}%</color> x <#CFFF71>공격력</color>). 해당 공격에 <#CFFF71>흡혈({3}%)</color> 적용, 적중 시, 대상을 넘어트리고 <#CFFF71>{4}초</color>간 <#CFFF71>반사({5}%)</color> 획득.",
                   "factorAttk": 119500,
-                  "formattedDesc": "적 1명에게 화염 발사(피해량: <#CFFF71>1195%</color> x <#CFFF71>공격력</color>). 해당 공격에 <#CFFF71>흡혈(50%)</color> 적용, 적중 시, 대상을 넘어트리고 <#CFFF71>3초</color>간 <#CFFF71>반사(80%)</color> 획득.",
+                  "formattedDesc": "적 1명에게 화염 발사(피해량: <#CFFF71>1195%</color> x <#CFFF71>공격력</color>). 해당 공격에 <#CFFF71>흡혈(50%)</color> 적용, 적중 시, 대상을 넘어트리고 <#CFFF71>4초</color>간 <#CFFF71>반사(80%)</color> 획득.",
                   "stageLabel": "SS 1성",
-                  "descValues": "50|3|80"
+                  "descValues": "50|4|80",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11099011134",
+                  "upgradeDescTemplate": "SS ★1 : 반사 +{0}초",
+                  "upgradeDescValues": "1",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11099011134"
                 },
                 {
-                  "upgradeDescFormatted": "SS ★3 : 피해량 +340%",
+                  "upgradeDescFormatted": "SS ★3 : 피해량 +430%",
                   "groupGrade": 3,
                   "skillType": "3",
                   "groupTier": 4,
@@ -3112,13 +4150,19 @@ window.GACHA_PET_VIEWER_DATA = {
                   "coolTime": "4.5",
                   "iconImage": "assets/skills/SP0084_3.png",
                   "rawDesc": "적 1명에게 화염 발사(피해량: <#CFFF71>{0}%</color> x <#CFFF71>공격력</color>). 해당 공격에 <#CFFF71>흡혈({3}%)</color> 적용, 적중 시, 대상을 넘어트리고 <#CFFF71>{4}초</color>간 <#CFFF71>반사({5}%)</color> 획득.",
-                  "factorAttk": 153500,
-                  "formattedDesc": "적 1명에게 화염 발사(피해량: <#CFFF71>1535%</color> x <#CFFF71>공격력</color>). 해당 공격에 <#CFFF71>흡혈(50%)</color> 적용, 적중 시, 대상을 넘어트리고 <#CFFF71>3초</color>간 <#CFFF71>반사(80%)</color> 획득.",
+                  "factorAttk": 162500,
+                  "formattedDesc": "적 1명에게 화염 발사(피해량: <#CFFF71>1625%</color> x <#CFFF71>공격력</color>). 해당 공격에 <#CFFF71>흡혈(50%)</color> 적용, 적중 시, 대상을 넘어트리고 <#CFFF71>4초</color>간 <#CFFF71>반사(80%)</color> 획득.",
                   "stageLabel": "SS 3성",
-                  "descValues": "50|3|80"
+                  "descValues": "50|4|80",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11099011136",
+                  "upgradeDescTemplate": "SS ★3 : 피해량 +{0}%",
+                  "upgradeDescValues": "430",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11099011136"
                 },
                 {
-                  "upgradeDescFormatted": "SS ★5 : 피해량 +400%",
+                  "upgradeDescFormatted": "SS ★5 : 피해량 +500%",
                   "groupGrade": 5,
                   "skillType": "3",
                   "groupTier": 4,
@@ -3126,10 +4170,16 @@ window.GACHA_PET_VIEWER_DATA = {
                   "coolTime": "4.5",
                   "iconImage": "assets/skills/SP0084_3.png",
                   "rawDesc": "적 1명에게 화염 발사(피해량: <#CFFF71>{0}%</color> x <#CFFF71>공격력</color>). 해당 공격에 <#CFFF71>흡혈({3}%)</color> 적용, 적중 시, 대상을 넘어트리고 <#CFFF71>{4}초</color>간 <#CFFF71>반사({5}%)</color> 획득.",
-                  "factorAttk": 193500,
-                  "formattedDesc": "적 1명에게 화염 발사(피해량: <#CFFF71>1935%</color> x <#CFFF71>공격력</color>). 해당 공격에 <#CFFF71>흡혈(50%)</color> 적용, 적중 시, 대상을 넘어트리고 <#CFFF71>3초</color>간 <#CFFF71>반사(80%)</color> 획득.",
+                  "factorAttk": 212500,
+                  "formattedDesc": "적 1명에게 화염 발사(피해량: <#CFFF71>2125%</color> x <#CFFF71>공격력</color>). 해당 공격에 <#CFFF71>흡혈(50%)</color> 적용, 적중 시, 대상을 넘어트리고 <#CFFF71>4초</color>간 <#CFFF71>반사(80%)</color> 획득.",
                   "stageLabel": "SS 5성",
-                  "descValues": "50|3|80"
+                  "descValues": "50|4|80",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11099011138",
+                  "upgradeDescTemplate": "SS ★5 : 피해량 +{0}%",
+                  "upgradeDescValues": "500",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11099011138"
                 },
                 {
                   "upgradeDescFormatted": "SS ★7 : 체력이 가장 낮은 아군에게 반사(80%) 부여 추가",
@@ -3140,10 +4190,16 @@ window.GACHA_PET_VIEWER_DATA = {
                   "coolTime": "4.5",
                   "iconImage": "assets/skills/SP0084_3.png",
                   "rawDesc": "적 1명에게 화염 발사(피해량: <#CFFF71>{0}%</color> x <#CFFF71>공격력</color>). 해당 공격에 <#CFFF71>흡혈({3}%)</color> 적용, 적중 시, 대상을 넘어트리고 <#CFFF71>{4}초</color>간 <#CFFF71>반사({5}%)</color> 획득, 추가로 체력이 가장 낮은 아군에게 <#CFFF71>반사({6}%)</color> 부여.",
-                  "factorAttk": 193500,
-                  "formattedDesc": "적 1명에게 화염 발사(피해량: <#CFFF71>1935%</color> x <#CFFF71>공격력</color>). 해당 공격에 <#CFFF71>흡혈(50%)</color> 적용, 적중 시, 대상을 넘어트리고 <#CFFF71>3초</color>간 <#CFFF71>반사(80%)</color> 획득, 추가로 체력이 가장 낮은 아군에게 <#CFFF71>반사(80%)</color> 부여.",
+                  "factorAttk": 212500,
+                  "formattedDesc": "적 1명에게 화염 발사(피해량: <#CFFF71>2125%</color> x <#CFFF71>공격력</color>). 해당 공격에 <#CFFF71>흡혈(50%)</color> 적용, 적중 시, 대상을 넘어트리고 <#CFFF71>4초</color>간 <#CFFF71>반사(80%)</color> 획득, 추가로 체력이 가장 낮은 아군에게 <#CFFF71>반사(80%)</color> 부여.",
                   "stageLabel": "SS 7성",
-                  "descValues": "50|3|80|80"
+                  "descValues": "50|4|80|80",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11099011140",
+                  "upgradeDescTemplate": "SS ★7 : 체력이 가장 낮은 아군에게 반사({0}%) 부여 추가",
+                  "upgradeDescValues": "80",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11099011140"
                 },
                 {
                   "upgradeDescFormatted": "SS ★10 : 반사 +30%",
@@ -3154,10 +4210,16 @@ window.GACHA_PET_VIEWER_DATA = {
                   "coolTime": "4.5",
                   "iconImage": "assets/skills/SP0084_3.png",
                   "rawDesc": "적 1명에게 화염 발사(피해량: <#CFFF71>{0}%</color> x <#CFFF71>공격력</color>). 해당 공격에 <#CFFF71>흡혈({3}%)</color> 적용, 적중 시, 대상을 넘어트리고 <#CFFF71>{4}초</color>간 <#CFFF71>반사({5}%)</color> 획득, 추가로 체력이 가장 낮은 아군에게 <#CFFF71>반사({6}%)</color> 부여.",
-                  "factorAttk": 193500,
-                  "formattedDesc": "적 1명에게 화염 발사(피해량: <#CFFF71>1935%</color> x <#CFFF71>공격력</color>). 해당 공격에 <#CFFF71>흡혈(50%)</color> 적용, 적중 시, 대상을 넘어트리고 <#CFFF71>3초</color>간 <#CFFF71>반사(110%)</color> 획득, 추가로 체력이 가장 낮은 아군에게 <#CFFF71>반사(110%)</color> 부여.",
+                  "factorAttk": 212500,
+                  "formattedDesc": "적 1명에게 화염 발사(피해량: <#CFFF71>2125%</color> x <#CFFF71>공격력</color>). 해당 공격에 <#CFFF71>흡혈(50%)</color> 적용, 적중 시, 대상을 넘어트리고 <#CFFF71>4초</color>간 <#CFFF71>반사(110%)</color> 획득, 추가로 체력이 가장 낮은 아군에게 <#CFFF71>반사(110%)</color> 부여.",
                   "stageLabel": "SS 10성",
-                  "descValues": "50|3|110|110"
+                  "descValues": "50|4|110|110",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11099011143",
+                  "upgradeDescTemplate": "SS ★10 : 반사 +{0}%",
+                  "upgradeDescValues": "30",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11099011143"
                 },
                 {
                   "upgradeDescFormatted": "SSS ★0 : 쿨타임 -1초",
@@ -3168,10 +4230,16 @@ window.GACHA_PET_VIEWER_DATA = {
                   "coolTime": "3.5",
                   "iconImage": "assets/skills/SP0084_3.png",
                   "rawDesc": "적 1명에게 화염 발사(피해량: <#CFFF71>{0}%</color> x <#CFFF71>공격력</color>). 해당 공격에 <#CFFF71>흡혈({3}%)</color> 적용, 적중 시, 대상을 넘어트리고 <#CFFF71>{4}초</color>간 <#CFFF71>반사({5}%)</color> 획득, 추가로 체력이 가장 낮은 아군에게 <#CFFF71>반사({6}%)</color> 부여.",
-                  "factorAttk": 193500,
-                  "formattedDesc": "적 1명에게 화염 발사(피해량: <#CFFF71>1935%</color> x <#CFFF71>공격력</color>). 해당 공격에 <#CFFF71>흡혈(50%)</color> 적용, 적중 시, 대상을 넘어트리고 <#CFFF71>3초</color>간 <#CFFF71>반사(110%)</color> 획득, 추가로 체력이 가장 낮은 아군에게 <#CFFF71>반사(110%)</color> 부여.",
+                  "factorAttk": 212500,
+                  "formattedDesc": "적 1명에게 화염 발사(피해량: <#CFFF71>2125%</color> x <#CFFF71>공격력</color>). 해당 공격에 <#CFFF71>흡혈(50%)</color> 적용, 적중 시, 대상을 넘어트리고 <#CFFF71>4초</color>간 <#CFFF71>반사(110%)</color> 획득, 추가로 체력이 가장 낮은 아군에게 <#CFFF71>반사(110%)</color> 부여.",
                   "stageLabel": "SSS 0성",
-                  "descValues": "50|3|110|110"
+                  "descValues": "50|4|110|110",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11099011144",
+                  "upgradeDescTemplate": "SSS ★0 : 쿨타임 -{0}초",
+                  "upgradeDescValues": "1",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11099011144"
                 }
               ]
             },
@@ -3192,12 +4260,15 @@ window.GACHA_PET_VIEWER_DATA = {
                   "iconImage": "assets/skills/SP0085_3.png",
                   "rawDesc": "카미르의 오른쪽 머리가 적 1명에게 불덩이 발사(피해량: <#CFFF71>{0}%</color> x <#CFFF71>공격력</color>). 적중 시, <#CFFF71>{3}초</color>간 <#CFFF71>침묵</color>. <#CFFF71>{4}%</color> 확률로 왼쪽 머리가 각성하여 파티원의 <#CFFF71>스킬 쿨타임 초기화</color>.",
                   "factorAttk": 181500,
-                  "formattedDesc": "카미르의 오른쪽 머리가 적 1명에게 불덩이 발사(피해량: <#CFFF71>1815%</color> x <#CFFF71>공격력</color>). 적중 시, <#CFFF71>3초</color>간 <#CFFF71>침묵</color>. <#CFFF71>30%</color> 확률로 왼쪽 머리가 각성하여 파티원의 <#CFFF71>스킬 쿨타임 초기화</color>.",
+                  "formattedDesc": "카미르의 오른쪽 머리가 적 1명에게 불덩이 발사(피해량: <#CFFF71>1815%</color> x <#CFFF71>공격력</color>). 적중 시, <#CFFF71>4초</color>간 <#CFFF71>침묵</color>. <#CFFF71>40%</color> 확률로 왼쪽 머리가 각성하여 파티원의 <#CFFF71>스킬 쿨타임 초기화</color>.",
                   "stageLabel": "SS 0성",
-                  "descValues": "3|30"
+                  "descValues": "4|40",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11099012133"
                 },
                 {
-                  "upgradeDescFormatted": "SS ★1 : 스킬 쿨타임 초기화 확률 +5%",
+                  "upgradeDescFormatted": "SS ★1 : 스킬 쿨타임 초기화 확률 +10%",
                   "groupGrade": 1,
                   "skillType": "3",
                   "groupTier": 4,
@@ -3206,9 +4277,15 @@ window.GACHA_PET_VIEWER_DATA = {
                   "iconImage": "assets/skills/SP0085_3.png",
                   "rawDesc": "카미르의 오른쪽 머리가 적 1명에게 불덩이 발사(피해량: <#CFFF71>{0}%</color> x <#CFFF71>공격력</color>). 적중 시, <#CFFF71>{3}초</color>간 <#CFFF71>침묵</color>. <#CFFF71>{4}%</color> 확률로 왼쪽 머리가 각성하여 파티원의 <#CFFF71>스킬 쿨타임 초기화</color>.",
                   "factorAttk": 181500,
-                  "formattedDesc": "카미르의 오른쪽 머리가 적 1명에게 불덩이 발사(피해량: <#CFFF71>1815%</color> x <#CFFF71>공격력</color>). 적중 시, <#CFFF71>3초</color>간 <#CFFF71>침묵</color>. <#CFFF71>35%</color> 확률로 왼쪽 머리가 각성하여 파티원의 <#CFFF71>스킬 쿨타임 초기화</color>.",
+                  "formattedDesc": "카미르의 오른쪽 머리가 적 1명에게 불덩이 발사(피해량: <#CFFF71>1815%</color> x <#CFFF71>공격력</color>). 적중 시, <#CFFF71>4초</color>간 <#CFFF71>침묵</color>. <#CFFF71>50%</color> 확률로 왼쪽 머리가 각성하여 파티원의 <#CFFF71>스킬 쿨타임 초기화</color>.",
                   "stageLabel": "SS 1성",
-                  "descValues": "3|35"
+                  "descValues": "4|50",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11099012134",
+                  "upgradeDescTemplate": "SS ★1 : 스킬 쿨타임 초기화 확률 +{0}%",
+                  "upgradeDescValues": "10",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11099012134"
                 },
                 {
                   "upgradeDescFormatted": "SS ★5 : 침묵 +1초",
@@ -3220,12 +4297,18 @@ window.GACHA_PET_VIEWER_DATA = {
                   "iconImage": "assets/skills/SP0085_3.png",
                   "rawDesc": "카미르의 오른쪽 머리가 적 1명에게 불덩이 발사(피해량: <#CFFF71>{0}%</color> x <#CFFF71>공격력</color>). 적중 시, <#CFFF71>{3}초</color>간 <#CFFF71>침묵</color>. <#CFFF71>{4}%</color> 확률로 왼쪽 머리가 각성하여 파티원의 <#CFFF71>스킬 쿨타임 초기화</color>.",
                   "factorAttk": 181500,
-                  "formattedDesc": "카미르의 오른쪽 머리가 적 1명에게 불덩이 발사(피해량: <#CFFF71>1815%</color> x <#CFFF71>공격력</color>). 적중 시, <#CFFF71>4초</color>간 <#CFFF71>침묵</color>. <#CFFF71>35%</color> 확률로 왼쪽 머리가 각성하여 파티원의 <#CFFF71>스킬 쿨타임 초기화</color>.",
+                  "formattedDesc": "카미르의 오른쪽 머리가 적 1명에게 불덩이 발사(피해량: <#CFFF71>1815%</color> x <#CFFF71>공격력</color>). 적중 시, <#CFFF71>5초</color>간 <#CFFF71>침묵</color>. <#CFFF71>50%</color> 확률로 왼쪽 머리가 각성하여 파티원의 <#CFFF71>스킬 쿨타임 초기화</color>.",
                   "stageLabel": "SS 5성",
-                  "descValues": "4|35"
+                  "descValues": "5|50",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11099012138",
+                  "upgradeDescTemplate": "SS ★5 : 침묵 +{0}초",
+                  "upgradeDescValues": "1",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11099012138"
                 },
                 {
-                  "upgradeDescFormatted": "SS ★7 : 피해량 +605%",
+                  "upgradeDescFormatted": "SS ★7 : 피해량 +760%",
                   "groupGrade": 7,
                   "skillType": "3",
                   "groupTier": 4,
@@ -3233,13 +4316,19 @@ window.GACHA_PET_VIEWER_DATA = {
                   "coolTime": "6.5",
                   "iconImage": "assets/skills/SP0085_3.png",
                   "rawDesc": "카미르의 오른쪽 머리가 적 1명에게 불덩이 발사(피해량: <#CFFF71>{0}%</color> x <#CFFF71>공격력</color>). 적중 시, <#CFFF71>{3}초</color>간 <#CFFF71>침묵</color>. <#CFFF71>{4}%</color> 확률로 왼쪽 머리가 각성하여 파티원의 <#CFFF71>스킬 쿨타임 초기화</color>.",
-                  "factorAttk": 242000,
-                  "formattedDesc": "카미르의 오른쪽 머리가 적 1명에게 불덩이 발사(피해량: <#CFFF71>2420%</color> x <#CFFF71>공격력</color>). 적중 시, <#CFFF71>4초</color>간 <#CFFF71>침묵</color>. <#CFFF71>35%</color> 확률로 왼쪽 머리가 각성하여 파티원의 <#CFFF71>스킬 쿨타임 초기화</color>.",
+                  "factorAttk": 257500,
+                  "formattedDesc": "카미르의 오른쪽 머리가 적 1명에게 불덩이 발사(피해량: <#CFFF71>2575%</color> x <#CFFF71>공격력</color>). 적중 시, <#CFFF71>5초</color>간 <#CFFF71>침묵</color>. <#CFFF71>50%</color> 확률로 왼쪽 머리가 각성하여 파티원의 <#CFFF71>스킬 쿨타임 초기화</color>.",
                   "stageLabel": "SS 7성",
-                  "descValues": "4|35"
+                  "descValues": "5|50",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11099012140",
+                  "upgradeDescTemplate": "SS ★7 : 피해량 +{0}%",
+                  "upgradeDescValues": "760",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11099012140"
                 },
                 {
-                  "upgradeDescFormatted": "SS ★10 : 스킬 쿨타임 초기화 확률 +10%",
+                  "upgradeDescFormatted": "SS ★10 : 스킬 쿨타임 초기화 확률 +20%",
                   "groupGrade": 10,
                   "skillType": "3",
                   "groupTier": 4,
@@ -3247,10 +4336,16 @@ window.GACHA_PET_VIEWER_DATA = {
                   "coolTime": "6.5",
                   "iconImage": "assets/skills/SP0085_3.png",
                   "rawDesc": "카미르의 오른쪽 머리가 적 1명에게 불덩이 발사(피해량: <#CFFF71>{0}%</color> x <#CFFF71>공격력</color>). 적중 시, <#CFFF71>{3}초</color>간 <#CFFF71>침묵</color>. <#CFFF71>{4}%</color> 확률로 왼쪽 머리가 각성하여 파티원의 <#CFFF71>스킬 쿨타임 초기화</color>.",
-                  "factorAttk": 242000,
-                  "formattedDesc": "카미르의 오른쪽 머리가 적 1명에게 불덩이 발사(피해량: <#CFFF71>2420%</color> x <#CFFF71>공격력</color>). 적중 시, <#CFFF71>4초</color>간 <#CFFF71>침묵</color>. <#CFFF71>45%</color> 확률로 왼쪽 머리가 각성하여 파티원의 <#CFFF71>스킬 쿨타임 초기화</color>.",
+                  "factorAttk": 257500,
+                  "formattedDesc": "카미르의 오른쪽 머리가 적 1명에게 불덩이 발사(피해량: <#CFFF71>2575%</color> x <#CFFF71>공격력</color>). 적중 시, <#CFFF71>5초</color>간 <#CFFF71>침묵</color>. <#CFFF71>70%</color> 확률로 왼쪽 머리가 각성하여 파티원의 <#CFFF71>스킬 쿨타임 초기화</color>.",
                   "stageLabel": "SS 10성",
-                  "descValues": "4|45"
+                  "descValues": "5|70",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11099012143",
+                  "upgradeDescTemplate": "SS ★10 : 스킬 쿨타임 초기화 확률 +{0}%",
+                  "upgradeDescValues": "20",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11099012143"
                 },
                 {
                   "upgradeDescFormatted": "SSS ★0 : 왼쪽 머리 효과에 6초간 파티원 제어 효과 면역 부여",
@@ -3261,10 +4356,16 @@ window.GACHA_PET_VIEWER_DATA = {
                   "coolTime": "6.5",
                   "iconImage": "assets/skills/SP0085_3.png",
                   "rawDesc": "카미르의 오른쪽 머리가 적 1명에게 불덩이 발사(피해량: <#CFFF71>{0}%</color> x <#CFFF71>공격력</color>). 적중 시, <#CFFF71>{3}초</color>간 <#CFFF71>침묵</color>. <#CFFF71>{4}%</color> 확률로 왼쪽 머리가 각성하여 파티원의 <#CFFF71>스킬 쿨타임 초기화</color>, 추가로 <#CFFF71>{5}초</color>간 <#CFFF71>제어 효과 면역</color> 부여.",
-                  "factorAttk": 242000,
-                  "formattedDesc": "카미르의 오른쪽 머리가 적 1명에게 불덩이 발사(피해량: <#CFFF71>2420%</color> x <#CFFF71>공격력</color>). 적중 시, <#CFFF71>4초</color>간 <#CFFF71>침묵</color>. <#CFFF71>45%</color> 확률로 왼쪽 머리가 각성하여 파티원의 <#CFFF71>스킬 쿨타임 초기화</color>, 추가로 <#CFFF71>3초</color>간 <#CFFF71>제어 효과 면역</color> 부여.",
+                  "factorAttk": 257500,
+                  "formattedDesc": "카미르의 오른쪽 머리가 적 1명에게 불덩이 발사(피해량: <#CFFF71>2575%</color> x <#CFFF71>공격력</color>). 적중 시, <#CFFF71>5초</color>간 <#CFFF71>침묵</color>. <#CFFF71>70%</color> 확률로 왼쪽 머리가 각성하여 파티원의 <#CFFF71>스킬 쿨타임 초기화</color>, 추가로 <#CFFF71>6초</color>간 <#CFFF71>제어 효과 면역</color> 부여.",
                   "stageLabel": "SSS 0성",
-                  "descValues": "4|45|3"
+                  "descValues": "5|70|6",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11099012144",
+                  "upgradeDescTemplate": "SSS ★0 : 왼쪽 머리 효과에 {0}초간 파티원 제어 효과 면역 부여",
+                  "upgradeDescValues": "6",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11099012144"
                 }
               ]
             },
@@ -3286,7 +4387,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "자신에게 <#CFFF71>(타입)공격력 증가({3}%)</color>, <#CFFF71>(타입)명중 증가({4}%)</color> 적용.",
                   "formattedDesc": "자신에게 <#CFFF71>(타입)공격력 증가(10%)</color>, <#CFFF71>(타입)명중 증가(20%)</color> 적용.",
                   "stageLabel": "SS 0성",
-                  "descValues": "10|20"
+                  "descValues": "10|20",
+                  "factorAttk": 0,
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "33100"
                 },
                 {
                   "upgradeDescFormatted": "SS ★2 : (타입) 명중 증가 +2%",
@@ -3299,7 +4404,13 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "자신에게 <#CFFF71>(타입)공격력 증가({3}%)</color>, <#CFFF71>(타입)명중 증가({4}%)</color> 적용.",
                   "formattedDesc": "자신에게 <#CFFF71>(타입)공격력 증가(10%)</color>, <#CFFF71>(타입)명중 증가(22%)</color> 적용.",
                   "stageLabel": "SS 2성",
-                  "descValues": "10|22"
+                  "descValues": "10|22",
+                  "factorAttk": 0,
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "33135",
+                  "upgradeDescTemplate": "SS ★2 : (타입) 명중 증가 +2%",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_33135"
                 },
                 {
                   "upgradeDescFormatted": "SS ★4 : (타입) 공격력 증가 +2%",
@@ -3312,7 +4423,13 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "자신에게 <#CFFF71>(타입)공격력 증가({3}%)</color>, <#CFFF71>(타입)명중 증가({4}%)</color> 적용.",
                   "formattedDesc": "자신에게 <#CFFF71>(타입)공격력 증가(12%)</color>, <#CFFF71>(타입)명중 증가(22%)</color> 적용.",
                   "stageLabel": "SS 4성",
-                  "descValues": "12|22"
+                  "descValues": "12|22",
+                  "factorAttk": 0,
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "33137",
+                  "upgradeDescTemplate": "SS ★4 : (타입) 공격력 증가 +2%",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_33137"
                 },
                 {
                   "upgradeDescFormatted": "SS ★6 : (타입) 명중 증가 +2%",
@@ -3325,7 +4442,13 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "자신에게 <#CFFF71>(타입)공격력 증가({3}%)</color>, <#CFFF71>(타입)명중 증가({4}%)</color> 적용.",
                   "formattedDesc": "자신에게 <#CFFF71>(타입)공격력 증가(12%)</color>, <#CFFF71>(타입)명중 증가(24%)</color> 적용.",
                   "stageLabel": "SS 6성",
-                  "descValues": "12|24"
+                  "descValues": "12|24",
+                  "factorAttk": 0,
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "33139",
+                  "upgradeDescTemplate": "SS ★6 : (타입) 명중 증가 +2%",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_33139"
                 },
                 {
                   "upgradeDescFormatted": "SS ★8 : (타입) 공격력 증가 +2%",
@@ -3338,7 +4461,13 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "자신에게 <#CFFF71>(타입)공격력 증가({3}%)</color>, <#CFFF71>(타입)명중 증가({4}%)</color> 적용.",
                   "formattedDesc": "자신에게 <#CFFF71>(타입)공격력 증가(14%)</color>, <#CFFF71>(타입)명중 증가(24%)</color> 적용.",
                   "stageLabel": "SS 8성",
-                  "descValues": "14|24"
+                  "descValues": "14|24",
+                  "factorAttk": 0,
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "33141",
+                  "upgradeDescTemplate": "SS ★8 : (타입) 공격력 증가 +2%",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_33141"
                 },
                 {
                   "upgradeDescFormatted": "SSS ★1 : (타입) 공격력 증가 +1% / (타입) 명중 증가 +1%",
@@ -3351,7 +4480,13 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "자신에게 <#CFFF71>(타입)공격력 증가({3}%)</color>, <#CFFF71>(타입)명중 증가({4}%)</color> 적용.",
                   "formattedDesc": "자신에게 <#CFFF71>(타입)공격력 증가(15%)</color>, <#CFFF71>(타입)명중 증가(25%)</color> 적용.",
                   "stageLabel": "SSS 1성",
-                  "descValues": "15|25"
+                  "descValues": "15|25",
+                  "factorAttk": 0,
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "33145",
+                  "upgradeDescTemplate": "SSS ★1 : (타입) 공격력 증가 +1% / (타입) 명중 증가 +1%",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_33145"
                 }
               ]
             }
@@ -3363,7 +4498,7 @@ window.GACHA_PET_VIEWER_DATA = {
             {
               "start": "2026-04-14",
               "end": "2026-04-20",
-              "status": "upcoming",
+              "status": "current",
               "scheduleRule": {
                 "timeType": 4,
                 "openDay": 41,
@@ -3420,7 +4555,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "적 1명을 공격(피해량: <#CFFF71>{0}%</color> x <#CFFF71>공격력</color>)",
                   "factorAttk": 21900,
                   "formattedDesc": "적 1명을 공격(피해량: <#CFFF71>219%</color> x <#CFFF71>공격력</color>)",
-                  "stageLabel": "SS 0성"
+                  "stageLabel": "SS 0성",
+                  "descValues": "",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11088010133"
                 },
                 {
                   "upgradeDescFormatted": "SS ★1 : 피해량 +43%",
@@ -3433,7 +4572,14 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "적 1명을 공격(피해량: <#CFFF71>{0}%</color> x <#CFFF71>공격력</color>)",
                   "factorAttk": 26200,
                   "formattedDesc": "적 1명을 공격(피해량: <#CFFF71>262%</color> x <#CFFF71>공격력</color>)",
-                  "stageLabel": "SS 1성"
+                  "stageLabel": "SS 1성",
+                  "descValues": "",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11088010134",
+                  "upgradeDescTemplate": "SS ★1 : 피해량 +{0}%",
+                  "upgradeDescValues": "43",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11088010134"
                 },
                 {
                   "upgradeDescFormatted": "SS ★3 : 피해량 +52%",
@@ -3446,7 +4592,14 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "적 1명을 공격(피해량: <#CFFF71>{0}%</color> x <#CFFF71>공격력</color>)",
                   "factorAttk": 31400,
                   "formattedDesc": "적 1명을 공격(피해량: <#CFFF71>314%</color> x <#CFFF71>공격력</color>)",
-                  "stageLabel": "SS 3성"
+                  "stageLabel": "SS 3성",
+                  "descValues": "",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11088010136",
+                  "upgradeDescTemplate": "SS ★3 : 피해량 +{0}%",
+                  "upgradeDescValues": "52",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11088010136"
                 },
                 {
                   "upgradeDescFormatted": "SS ★5 : 피해량 +61%",
@@ -3459,7 +4612,14 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "적 1명을 공격(피해량: <#CFFF71>{0}%</color> x <#CFFF71>공격력</color>)",
                   "factorAttk": 37500,
                   "formattedDesc": "적 1명을 공격(피해량: <#CFFF71>375%</color> x <#CFFF71>공격력</color>)",
-                  "stageLabel": "SS 5성"
+                  "stageLabel": "SS 5성",
+                  "descValues": "",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11088010138",
+                  "upgradeDescTemplate": "SS ★5 : 피해량 +{0}%",
+                  "upgradeDescValues": "61",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11088010138"
                 },
                 {
                   "upgradeDescFormatted": "SS ★7 : 피해량 +70%",
@@ -3472,7 +4632,14 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "적 1명을 공격(피해량: <#CFFF71>{0}%</color> x <#CFFF71>공격력</color>)",
                   "factorAttk": 44500,
                   "formattedDesc": "적 1명을 공격(피해량: <#CFFF71>445%</color> x <#CFFF71>공격력</color>)",
-                  "stageLabel": "SS 7성"
+                  "stageLabel": "SS 7성",
+                  "descValues": "",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11088010140",
+                  "upgradeDescTemplate": "SS ★7 : 피해량 +{0}%",
+                  "upgradeDescValues": "70",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11088010140"
                 },
                 {
                   "upgradeDescFormatted": "SSS ★0 : 피해량 +78%",
@@ -3485,7 +4652,14 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "적 1명을 공격(피해량: <#CFFF71>{0}%</color> x <#CFFF71>공격력</color>)",
                   "factorAttk": 52300,
                   "formattedDesc": "적 1명을 공격(피해량: <#CFFF71>523%</color> x <#CFFF71>공격력</color>)",
-                  "stageLabel": "SSS 0성"
+                  "stageLabel": "SSS 0성",
+                  "descValues": "",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11088010144",
+                  "upgradeDescTemplate": "SSS ★0 : 피해량 +{0}%",
+                  "upgradeDescValues": "78",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11088010144"
                 }
               ]
             },
@@ -3508,7 +4682,10 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 150500,
                   "formattedDesc": "사거리 내의 근거리형 적 1명을 우선하여, 대상에게 제트 펌프 발사(피해량: <#CFFF71>1505%</color> x <#CFFF71>공격력</color>). 적중 시, 대상을 밀어내고 <#CFFF71>3초</color>간 <#CFFF71>속박</color> 부여. 추가로 <#CFFF71>3초</color>간 <#CFFF71>(자신) 공격력 증가(35%)</color> 획득.",
                   "stageLabel": "SS 0성",
-                  "descValues": "3|3|35"
+                  "descValues": "3|3|35",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11088011133"
                 },
                 {
                   "upgradeDescFormatted": "SS ★1 : (자신) 공격력 증가 +5%",
@@ -3522,7 +4699,13 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 150500,
                   "formattedDesc": "사거리 내의 근거리형 적 1명을 우선하여, 대상에게 제트 펌프 발사(피해량: <#CFFF71>1505%</color> x <#CFFF71>공격력</color>). 적중 시, 대상을 밀어내고 <#CFFF71>3초</color>간 <#CFFF71>속박</color> 부여. 추가로 <#CFFF71>3초</color>간 <#CFFF71>(자신) 공격력 증가(40%)</color> 획득.",
                   "stageLabel": "SS 1성",
-                  "descValues": "3|3|40"
+                  "descValues": "3|3|40",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11088011134",
+                  "upgradeDescTemplate": "SS ★1 : (자신) 공격력 증가 +{0}%",
+                  "upgradeDescValues": "5",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11088011134"
                 },
                 {
                   "upgradeDescFormatted": "SS ★3 : 피해량 +360%",
@@ -3536,7 +4719,13 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 186500,
                   "formattedDesc": "사거리 내의 근거리형 적 1명을 우선하여, 대상에게 제트 펌프 발사(피해량: <#CFFF71>1865%</color> x <#CFFF71>공격력</color>). 적중 시, 대상을 밀어내고 <#CFFF71>3초</color>간 <#CFFF71>속박</color> 부여. 추가로 <#CFFF71>3초</color>간 <#CFFF71>(자신) 공격력 증가(40%)</color> 획득.",
                   "stageLabel": "SS 3성",
-                  "descValues": "3|3|40"
+                  "descValues": "3|3|40",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11088011136",
+                  "upgradeDescTemplate": "SS ★3 : 피해량 +{0}%",
+                  "upgradeDescValues": "360",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11088011136"
                 },
                 {
                   "upgradeDescFormatted": "SS ★5 : 속박 시간 +1초",
@@ -3550,7 +4739,13 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 186500,
                   "formattedDesc": "사거리 내의 근거리형 적 1명을 우선하여, 대상에게 제트 펌프 발사(피해량: <#CFFF71>1865%</color> x <#CFFF71>공격력</color>). 적중 시, 대상을 밀어내고 <#CFFF71>4초</color>간 <#CFFF71>속박</color> 부여. 추가로 <#CFFF71>3초</color>간 <#CFFF71>(자신) 공격력 증가(40%)</color> 획득.",
                   "stageLabel": "SS 5성",
-                  "descValues": "4|3|40"
+                  "descValues": "4|3|40",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11088011138",
+                  "upgradeDescTemplate": "SS ★5 : 속박 시간 +{0}초",
+                  "upgradeDescValues": "1",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11088011138"
                 },
                 {
                   "upgradeDescFormatted": "SS ★7 : 피해량 +480%",
@@ -3564,7 +4759,13 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 234500,
                   "formattedDesc": "사거리 내의 근거리형 적 1명을 우선하여, 대상에게 제트 펌프 발사(피해량: <#CFFF71>2345%</color> x <#CFFF71>공격력</color>). 적중 시, 대상을 밀어내고 <#CFFF71>4초</color>간 <#CFFF71>속박</color> 부여. 추가로 <#CFFF71>3초</color>간 <#CFFF71>(자신) 공격력 증가(40%)</color> 획득.",
                   "stageLabel": "SS 7성",
-                  "descValues": "4|3|40"
+                  "descValues": "4|3|40",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11088011140",
+                  "upgradeDescTemplate": "SS ★7 : 피해량 +{0}%",
+                  "upgradeDescValues": "480",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11088011140"
                 },
                 {
                   "upgradeDescFormatted": "SS ★10 : (자신) 공격력 증가 +10%",
@@ -3578,7 +4779,13 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 234500,
                   "formattedDesc": "사거리 내의 근거리형 적 1명을 우선하여, 대상에게 제트 펌프 발사(피해량: <#CFFF71>2345%</color> x <#CFFF71>공격력</color>). 적중 시, 대상을 밀어내고 <#CFFF71>4초</color>간 <#CFFF71>속박</color> 부여. 추가로 <#CFFF71>3초</color>간 <#CFFF71>(자신) 공격력 증가(50%)</color> 획득.",
                   "stageLabel": "SS 10성",
-                  "descValues": "4|3|50"
+                  "descValues": "4|3|50",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11088011143",
+                  "upgradeDescTemplate": "SS ★10 : (자신) 공격력 증가 +{0}%",
+                  "upgradeDescValues": "10",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11088011143"
                 },
                 {
                   "upgradeDescFormatted": "SSS ★0 : 적중 시, 연쇄 +1회",
@@ -3592,7 +4799,13 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 234500,
                   "formattedDesc": "사거리 내의 근거리형 적 1명을 우선하여, 대상에게 적중 시 <#CFFF71>1회</color> 연쇄하는 제트 펌프 발사(피해량: <#CFFF71>2345%</color> x <#CFFF71>공격력</color>). 적중 시, 대상을 밀어내고 <#CFFF71>4초</color>간 <#CFFF71>속박</color> 부여. 추가로 <#CFFF71>3초</color>간 <#CFFF71>(자신) 공격력 증가(50%)</color> 획득.",
                   "stageLabel": "SSS 0성",
-                  "descValues": "4|3|50|1"
+                  "descValues": "4|3|50|1",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11088011144",
+                  "upgradeDescTemplate": "SSS ★0 : 적중 시, 연쇄 +{0}회",
+                  "upgradeDescValues": "1",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11088011144"
                 }
               ]
             },
@@ -3615,7 +4828,10 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 114000,
                   "formattedDesc": "적의 주변 <#CFFF71>2m</color> 범위에 리나의 노래 발사(피해량: <#CFFF71>1140%</color> x <#CFFF71>공격력</color>). 적중 시, <#CFFF71>50%</color> 확률로 <#CFFF71>3초</color> 간 <#CFFF71>회복 불가</color> 부여. 추가로 파티원에게 <#CFFF71>4초</color>간 <#CFFF71>(보조) 피해량 증가(15%)</color> 부여.",
                   "stageLabel": "SS 0성",
-                  "descValues": "2|50|3|4|15"
+                  "descValues": "2|50|3|4|15",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11088012133"
                 },
                 {
                   "upgradeDescFormatted": "SS ★1 : (보조) 피해량 증가 +5%",
@@ -3629,7 +4845,13 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 114000,
                   "formattedDesc": "적의 주변 <#CFFF71>2m</color> 범위에 리나의 노래 발사(피해량: <#CFFF71>1140%</color> x <#CFFF71>공격력</color>). 적중 시, <#CFFF71>50%</color> 확률로 <#CFFF71>3초</color> 간 <#CFFF71>회복 불가</color> 부여. 추가로 파티원에게 <#CFFF71>4초</color>간 <#CFFF71>(보조) 피해량 증가(20%)</color> 부여.",
                   "stageLabel": "SS 1성",
-                  "descValues": "2|50|3|4|20"
+                  "descValues": "2|50|3|4|20",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11088012134",
+                  "upgradeDescTemplate": "SS ★1 : (보조) 피해량 증가 +{0}%",
+                  "upgradeDescValues": "5",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11088012134"
                 },
                 {
                   "upgradeDescFormatted": "SS ★5 : 쿨타임 -1초",
@@ -3643,7 +4865,13 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 114000,
                   "formattedDesc": "적의 주변 <#CFFF71>2m</color> 범위에 리나의 노래 발사(피해량: <#CFFF71>1140%</color> x <#CFFF71>공격력</color>). 적중 시, <#CFFF71>50%</color> 확률로 <#CFFF71>3초</color> 간 <#CFFF71>회복 불가</color> 부여. 추가로 파티원에게 <#CFFF71>4초</color>간 <#CFFF71>(보조) 피해량 증가(20%)</color> 부여.",
                   "stageLabel": "SS 5성",
-                  "descValues": "2|50|3|4|20"
+                  "descValues": "2|50|3|4|20",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11088012138",
+                  "upgradeDescTemplate": "SS ★5 : 쿨타임 -{0}초",
+                  "upgradeDescValues": "1",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11088012138"
                 },
                 {
                   "upgradeDescFormatted": "SS ★7 : 피해량 +315%",
@@ -3657,7 +4885,13 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 145500,
                   "formattedDesc": "적의 주변 <#CFFF71>2m</color> 범위에 리나의 노래 발사(피해량: <#CFFF71>1455%</color> x <#CFFF71>공격력</color>). 적중 시, <#CFFF71>50%</color> 확률로 <#CFFF71>3초</color> 간 <#CFFF71>회복 불가</color> 부여. 추가로 파티원에게 <#CFFF71>4초</color>간 <#CFFF71>(보조) 피해량 증가(20%)</color> 부여.",
                   "stageLabel": "SS 7성",
-                  "descValues": "2|50|3|4|20"
+                  "descValues": "2|50|3|4|20",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11088012140",
+                  "upgradeDescTemplate": "SS ★7 : 피해량 +{0}%",
+                  "upgradeDescValues": "315",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11088012140"
                 },
                 {
                   "upgradeDescFormatted": "SS ★10 : (보조) 피해량 증가 +10%",
@@ -3671,7 +4905,13 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 145500,
                   "formattedDesc": "적의 주변 <#CFFF71>2m</color> 범위에 리나의 노래 발사(피해량: <#CFFF71>1455%</color> x <#CFFF71>공격력</color>). 적중 시, <#CFFF71>50%</color> 확률로 <#CFFF71>3초</color> 간 <#CFFF71>회복 불가</color> 부여. 추가로 파티원에게 <#CFFF71>4초</color>간 <#CFFF71>(보조) 피해량 증가(30%)</color> 부여.",
                   "stageLabel": "SS 10성",
-                  "descValues": "2|50|3|4|30"
+                  "descValues": "2|50|3|4|30",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11088012143",
+                  "upgradeDescTemplate": "SS ★10 : (보조) 피해량 증가 +{0}%",
+                  "upgradeDescValues": "10",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11088012143"
                 },
                 {
                   "upgradeDescFormatted": "SSS ★0 : 쿨타임 -1초",
@@ -3685,7 +4925,13 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 145500,
                   "formattedDesc": "적의 주변 <#CFFF71>2m</color> 범위에 리나의 노래 발사(피해량: <#CFFF71>1455%</color> x <#CFFF71>공격력</color>). 적중 시, <#CFFF71>50%</color> 확률로 <#CFFF71>3초</color> 간 <#CFFF71>회복 불가</color> 부여. 추가로 파티원에게 <#CFFF71>4초</color>간 <#CFFF71>(보조) 피해량 증가(30%)</color> 부여.",
                   "stageLabel": "SSS 0성",
-                  "descValues": "2|50|3|4|30"
+                  "descValues": "2|50|3|4|30",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11088012144",
+                  "upgradeDescTemplate": "SSS ★0 : 쿨타임 -{0}초",
+                  "upgradeDescValues": "1",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11088012144"
                 }
               ]
             },
@@ -3707,7 +4953,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "자신에게 <#CFFF71>(타입)공격력 증가({3}%)</color>, <#CFFF71>(타입)명중 증가({4}%)</color> 적용.",
                   "formattedDesc": "자신에게 <#CFFF71>(타입)공격력 증가(10%)</color>, <#CFFF71>(타입)명중 증가(20%)</color> 적용.",
                   "stageLabel": "SS 0성",
-                  "descValues": "10|20"
+                  "descValues": "10|20",
+                  "factorAttk": 0,
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "33100"
                 },
                 {
                   "upgradeDescFormatted": "SS ★2 : (타입) 명중 증가 +2%",
@@ -3720,7 +4970,13 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "자신에게 <#CFFF71>(타입)공격력 증가({3}%)</color>, <#CFFF71>(타입)명중 증가({4}%)</color> 적용.",
                   "formattedDesc": "자신에게 <#CFFF71>(타입)공격력 증가(10%)</color>, <#CFFF71>(타입)명중 증가(22%)</color> 적용.",
                   "stageLabel": "SS 2성",
-                  "descValues": "10|22"
+                  "descValues": "10|22",
+                  "factorAttk": 0,
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "33135",
+                  "upgradeDescTemplate": "SS ★2 : (타입) 명중 증가 +2%",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_33135"
                 },
                 {
                   "upgradeDescFormatted": "SS ★4 : (타입) 공격력 증가 +2%",
@@ -3733,7 +4989,13 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "자신에게 <#CFFF71>(타입)공격력 증가({3}%)</color>, <#CFFF71>(타입)명중 증가({4}%)</color> 적용.",
                   "formattedDesc": "자신에게 <#CFFF71>(타입)공격력 증가(12%)</color>, <#CFFF71>(타입)명중 증가(22%)</color> 적용.",
                   "stageLabel": "SS 4성",
-                  "descValues": "12|22"
+                  "descValues": "12|22",
+                  "factorAttk": 0,
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "33137",
+                  "upgradeDescTemplate": "SS ★4 : (타입) 공격력 증가 +2%",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_33137"
                 },
                 {
                   "upgradeDescFormatted": "SS ★6 : (타입) 명중 증가 +2%",
@@ -3746,7 +5008,13 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "자신에게 <#CFFF71>(타입)공격력 증가({3}%)</color>, <#CFFF71>(타입)명중 증가({4}%)</color> 적용.",
                   "formattedDesc": "자신에게 <#CFFF71>(타입)공격력 증가(12%)</color>, <#CFFF71>(타입)명중 증가(24%)</color> 적용.",
                   "stageLabel": "SS 6성",
-                  "descValues": "12|24"
+                  "descValues": "12|24",
+                  "factorAttk": 0,
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "33139",
+                  "upgradeDescTemplate": "SS ★6 : (타입) 명중 증가 +2%",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_33139"
                 },
                 {
                   "upgradeDescFormatted": "SS ★8 : (타입) 공격력 증가 +2%",
@@ -3759,7 +5027,13 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "자신에게 <#CFFF71>(타입)공격력 증가({3}%)</color>, <#CFFF71>(타입)명중 증가({4}%)</color> 적용.",
                   "formattedDesc": "자신에게 <#CFFF71>(타입)공격력 증가(14%)</color>, <#CFFF71>(타입)명중 증가(24%)</color> 적용.",
                   "stageLabel": "SS 8성",
-                  "descValues": "14|24"
+                  "descValues": "14|24",
+                  "factorAttk": 0,
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "33141",
+                  "upgradeDescTemplate": "SS ★8 : (타입) 공격력 증가 +2%",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_33141"
                 },
                 {
                   "upgradeDescFormatted": "SSS ★1 : (타입) 공격력 증가 +1% / (타입) 명중 증가 +1%",
@@ -3772,7 +5046,13 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "자신에게 <#CFFF71>(타입)공격력 증가({3}%)</color>, <#CFFF71>(타입)명중 증가({4}%)</color> 적용.",
                   "formattedDesc": "자신에게 <#CFFF71>(타입)공격력 증가(15%)</color>, <#CFFF71>(타입)명중 증가(25%)</color> 적용.",
                   "stageLabel": "SSS 1성",
-                  "descValues": "15|25"
+                  "descValues": "15|25",
+                  "factorAttk": 0,
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "33145",
+                  "upgradeDescTemplate": "SSS ★1 : (타입) 공격력 증가 +1% / (타입) 명중 증가 +1%",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_33145"
                 }
               ]
             }
@@ -3839,10 +5119,13 @@ window.GACHA_PET_VIEWER_DATA = {
                   "coolTime": "2.1",
                   "iconImage": "assets/skills/SPN0001_1.png",
                   "rawDesc": "적 1명을 공격(피해량: <#CFFF71>{16}%</color> x <#CFFF71>방어력</color>). 적중 시, <#CFFF71>{3}%</color> 확률로 <#CFFF71>{4}초</color> 간 <#CFFF71>보호막 ({5}회)</color> 획득.",
-                  "formattedDesc": "적 1명을 공격(피해량: <#CFFF71>56%</color> x <#CFFF71>방어력</color>). 적중 시, <#CFFF71>30%</color> 확률로 <#CFFF71>3초</color> 간 <#CFFF71>보호막 (3회)</color> 획득.",
+                  "formattedDesc": "적 1명을 공격(피해량: <#CFFF71>56%</color> x <#CFFF71>방어력</color>). 적중 시, <#CFFF71>50%</color> 확률로 <#CFFF71>3초</color> 간 <#CFFF71>보호막 (5회)</color> 획득.",
                   "factorDef": 5600,
                   "stageLabel": "SS 0성",
-                  "descValues": "30|3|3"
+                  "descValues": "50|3|5",
+                  "factorAttk": 0,
+                  "factorHp": 0,
+                  "skillId": "11071010133"
                 },
                 {
                   "upgradeDescFormatted": "SS ★1 : 보호막 +1초",
@@ -3853,10 +5136,16 @@ window.GACHA_PET_VIEWER_DATA = {
                   "coolTime": "2.1",
                   "iconImage": "assets/skills/SPN0001_1.png",
                   "rawDesc": "적 1명을 공격(피해량: <#CFFF71>{16}%</color> x <#CFFF71>방어력</color>). 적중 시, <#CFFF71>{3}%</color> 확률로 <#CFFF71>{4}초</color> 간 <#CFFF71>보호막 ({5}회)</color> 획득.",
-                  "formattedDesc": "적 1명을 공격(피해량: <#CFFF71>56%</color> x <#CFFF71>방어력</color>). 적중 시, <#CFFF71>30%</color> 확률로 <#CFFF71>4초</color> 간 <#CFFF71>보호막 (3회)</color> 획득.",
+                  "formattedDesc": "적 1명을 공격(피해량: <#CFFF71>56%</color> x <#CFFF71>방어력</color>). 적중 시, <#CFFF71>50%</color> 확률로 <#CFFF71>4초</color> 간 <#CFFF71>보호막 (5회)</color> 획득.",
                   "factorDef": 5600,
                   "stageLabel": "SS 1성",
-                  "descValues": "30|4|3"
+                  "descValues": "50|4|5",
+                  "factorAttk": 0,
+                  "factorHp": 0,
+                  "skillId": "11071010134",
+                  "upgradeDescTemplate": "SS ★1 : 보호막 +{0}초",
+                  "upgradeDescValues": "1",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11071010134"
                 },
                 {
                   "upgradeDescFormatted": "SS ★3 : 피해량 +13%",
@@ -3867,13 +5156,19 @@ window.GACHA_PET_VIEWER_DATA = {
                   "coolTime": "2.1",
                   "iconImage": "assets/skills/SPN0001_1.png",
                   "rawDesc": "적 1명을 공격(피해량: <#CFFF71>{16}%</color> x <#CFFF71>방어력</color>). 적중 시, <#CFFF71>{3}%</color> 확률로 <#CFFF71>{4}초</color> 간 <#CFFF71>보호막 ({5}회)</color> 획득.",
-                  "formattedDesc": "적 1명을 공격(피해량: <#CFFF71>69%</color> x <#CFFF71>방어력</color>). 적중 시, <#CFFF71>30%</color> 확률로 <#CFFF71>4초</color> 간 <#CFFF71>보호막 (3회)</color> 획득.",
+                  "formattedDesc": "적 1명을 공격(피해량: <#CFFF71>69%</color> x <#CFFF71>방어력</color>). 적중 시, <#CFFF71>50%</color> 확률로 <#CFFF71>4초</color> 간 <#CFFF71>보호막 (5회)</color> 획득.",
                   "factorDef": 6900,
                   "stageLabel": "SS 3성",
-                  "descValues": "30|4|3"
+                  "descValues": "50|4|5",
+                  "factorAttk": 0,
+                  "factorHp": 0,
+                  "skillId": "11071010136",
+                  "upgradeDescTemplate": "SS ★3 : 피해량 +{0}%",
+                  "upgradeDescValues": "13",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11071010136"
                 },
                 {
-                  "upgradeDescFormatted": "SS ★5 : 보호막 +1회",
+                  "upgradeDescFormatted": "SS ★5 : 보호막 +2회",
                   "groupGrade": 5,
                   "skillType": "1",
                   "groupTier": 4,
@@ -3881,10 +5176,16 @@ window.GACHA_PET_VIEWER_DATA = {
                   "coolTime": "2.1",
                   "iconImage": "assets/skills/SPN0001_1.png",
                   "rawDesc": "적 1명을 공격(피해량: <#CFFF71>{16}%</color> x <#CFFF71>방어력</color>). 적중 시, <#CFFF71>{3}%</color> 확률로 <#CFFF71>{4}초</color> 간 <#CFFF71>보호막 ({5}회)</color> 획득.",
-                  "formattedDesc": "적 1명을 공격(피해량: <#CFFF71>69%</color> x <#CFFF71>방어력</color>). 적중 시, <#CFFF71>30%</color> 확률로 <#CFFF71>4초</color> 간 <#CFFF71>보호막 (4회)</color> 획득.",
+                  "formattedDesc": "적 1명을 공격(피해량: <#CFFF71>69%</color> x <#CFFF71>방어력</color>). 적중 시, <#CFFF71>50%</color> 확률로 <#CFFF71>4초</color> 간 <#CFFF71>보호막 (7회)</color> 획득.",
                   "factorDef": 6900,
                   "stageLabel": "SS 5성",
-                  "descValues": "30|4|4"
+                  "descValues": "50|4|7",
+                  "factorAttk": 0,
+                  "factorHp": 0,
+                  "skillId": "11071010138",
+                  "upgradeDescTemplate": "SS ★5 : 보호막 +{0}회",
+                  "upgradeDescValues": "2",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11071010138"
                 },
                 {
                   "upgradeDescFormatted": "SS ★7 : 피해량 +17%",
@@ -3895,10 +5196,16 @@ window.GACHA_PET_VIEWER_DATA = {
                   "coolTime": "2.1",
                   "iconImage": "assets/skills/SPN0001_1.png",
                   "rawDesc": "적 1명을 공격(피해량: <#CFFF71>{16}%</color> x <#CFFF71>방어력</color>). 적중 시, <#CFFF71>{3}%</color> 확률로 <#CFFF71>{4}초</color> 간 <#CFFF71>보호막 ({5}회)</color> 획득.",
-                  "formattedDesc": "적 1명을 공격(피해량: <#CFFF71>86%</color> x <#CFFF71>방어력</color>). 적중 시, <#CFFF71>30%</color> 확률로 <#CFFF71>4초</color> 간 <#CFFF71>보호막 (4회)</color> 획득.",
+                  "formattedDesc": "적 1명을 공격(피해량: <#CFFF71>86%</color> x <#CFFF71>방어력</color>). 적중 시, <#CFFF71>50%</color> 확률로 <#CFFF71>4초</color> 간 <#CFFF71>보호막 (7회)</color> 획득.",
                   "factorDef": 8600,
                   "stageLabel": "SS 7성",
-                  "descValues": "30|4|4"
+                  "descValues": "50|4|7",
+                  "factorAttk": 0,
+                  "factorHp": 0,
+                  "skillId": "11071010140",
+                  "upgradeDescTemplate": "SS ★7 : 피해량 +{0}%",
+                  "upgradeDescValues": "17",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11071010140"
                 },
                 {
                   "upgradeDescFormatted": "SSS ★0 : 보호막 획득 확률 +20%",
@@ -3909,10 +5216,16 @@ window.GACHA_PET_VIEWER_DATA = {
                   "coolTime": "2.1",
                   "iconImage": "assets/skills/SPN0001_1.png",
                   "rawDesc": "적 1명을 공격(피해량: <#CFFF71>{16}%</color> x <#CFFF71>방어력</color>). 적중 시, <#CFFF71>{3}%</color> 확률로 <#CFFF71>{4}초</color> 간 <#CFFF71>보호막 ({5}회)</color> 획득.",
-                  "formattedDesc": "적 1명을 공격(피해량: <#CFFF71>86%</color> x <#CFFF71>방어력</color>). 적중 시, <#CFFF71>50%</color> 확률로 <#CFFF71>4초</color> 간 <#CFFF71>보호막 (4회)</color> 획득.",
+                  "formattedDesc": "적 1명을 공격(피해량: <#CFFF71>86%</color> x <#CFFF71>방어력</color>). 적중 시, <#CFFF71>70%</color> 확률로 <#CFFF71>4초</color> 간 <#CFFF71>보호막 (7회)</color> 획득.",
                   "factorDef": 8600,
                   "stageLabel": "SSS 0성",
-                  "descValues": "50|4|4"
+                  "descValues": "70|4|7",
+                  "factorAttk": 0,
+                  "factorHp": 0,
+                  "skillId": "11071010144",
+                  "upgradeDescTemplate": "SSS ★0 : 보호막 획득 확률 +{0}%",
+                  "upgradeDescValues": "20",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11071010144"
                 }
               ]
             },
@@ -3932,10 +5245,13 @@ window.GACHA_PET_VIEWER_DATA = {
                   "coolTime": "5.5",
                   "iconImage": "assets/skills/SP0082_1.png",
                   "rawDesc": "적 1명에게 강인한 뿔로 돌진(피해량: <#CFFF71>{16}%</color> x <#CFFF71>방어력</color>)하고, 자신의 주변 <#CFFF71>{3}m</color> 범위에 포효 공격(피해량: <#CFFF71>{16}%</color> x <#CFFF71>방어력</color>). 적중 시, 대상을 당기고 <#CFFF71>{4}초</color>간 <#CFFF71>도발</color> 부여. 추가로 <#CFFF71>(자신) 받는 피해 감소({5}%)</color> 획득.",
-                  "formattedDesc": "적 1명에게 강인한 뿔로 돌진(피해량: <#CFFF71>145%</color> x <#CFFF71>방어력</color>)하고, 자신의 주변 <#CFFF71>3m</color> 범위에 포효 공격(피해량: <#CFFF71>145%</color> x <#CFFF71>방어력</color>). 적중 시, 대상을 당기고 <#CFFF71>3초</color>간 <#CFFF71>도발</color> 부여. 추가로 <#CFFF71>(자신) 받는 피해 감소(50%)</color> 획득.",
+                  "formattedDesc": "적 1명에게 강인한 뿔로 돌진(피해량: <#CFFF71>145%</color> x <#CFFF71>방어력</color>)하고, 자신의 주변 <#CFFF71>3m</color> 범위에 포효 공격(피해량: <#CFFF71>145%</color> x <#CFFF71>방어력</color>). 적중 시, 대상을 당기고 <#CFFF71>4초</color>간 <#CFFF71>도발</color> 부여. 추가로 <#CFFF71>(자신) 받는 피해 감소(50%)</color> 획득.",
                   "factorDef": 14500,
                   "stageLabel": "SS 0성",
-                  "descValues": "3|3|50"
+                  "descValues": "3|4|50",
+                  "factorAttk": 0,
+                  "factorHp": 0,
+                  "skillId": "11071011133"
                 },
                 {
                   "upgradeDescFormatted": "SS ★1 : (자신) 받는 피해 감소 +5%",
@@ -3946,10 +5262,16 @@ window.GACHA_PET_VIEWER_DATA = {
                   "coolTime": "5.5",
                   "iconImage": "assets/skills/SP0082_1.png",
                   "rawDesc": "적 1명에게 강인한 뿔로 돌진(피해량: <#CFFF71>{16}%</color> x <#CFFF71>방어력</color>)하고, 자신의 주변 <#CFFF71>{3}m</color> 범위에 포효 공격(피해량: <#CFFF71>{16}%</color> x <#CFFF71>방어력</color>). 적중 시, 대상을 당기고 <#CFFF71>{4}초</color>간 <#CFFF71>도발</color> 부여. 추가로 <#CFFF71>(자신) 받는 피해 감소({5}%)</color> 획득.",
-                  "formattedDesc": "적 1명에게 강인한 뿔로 돌진(피해량: <#CFFF71>145%</color> x <#CFFF71>방어력</color>)하고, 자신의 주변 <#CFFF71>3m</color> 범위에 포효 공격(피해량: <#CFFF71>145%</color> x <#CFFF71>방어력</color>). 적중 시, 대상을 당기고 <#CFFF71>3초</color>간 <#CFFF71>도발</color> 부여. 추가로 <#CFFF71>(자신) 받는 피해 감소(55%)</color> 획득.",
+                  "formattedDesc": "적 1명에게 강인한 뿔로 돌진(피해량: <#CFFF71>145%</color> x <#CFFF71>방어력</color>)하고, 자신의 주변 <#CFFF71>3m</color> 범위에 포효 공격(피해량: <#CFFF71>145%</color> x <#CFFF71>방어력</color>). 적중 시, 대상을 당기고 <#CFFF71>4초</color>간 <#CFFF71>도발</color> 부여. 추가로 <#CFFF71>(자신) 받는 피해 감소(55%)</color> 획득.",
                   "factorDef": 14500,
                   "stageLabel": "SS 1성",
-                  "descValues": "3|3|55"
+                  "descValues": "3|4|55",
+                  "factorAttk": 0,
+                  "factorHp": 0,
+                  "skillId": "11071011134",
+                  "upgradeDescTemplate": "SS ★1 : (자신) 받는 피해 감소 +{0}%",
+                  "upgradeDescValues": "5",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11071011134"
                 },
                 {
                   "upgradeDescFormatted": "SS ★3 : 피해량 +30%",
@@ -3960,10 +5282,16 @@ window.GACHA_PET_VIEWER_DATA = {
                   "coolTime": "5.5",
                   "iconImage": "assets/skills/SP0082_1.png",
                   "rawDesc": "적 1명에게 강인한 뿔로 돌진(피해량: <#CFFF71>{16}%</color> x <#CFFF71>방어력</color>)하고, 자신의 주변 <#CFFF71>{3}m</color> 범위에 포효 공격(피해량: <#CFFF71>{16}%</color> x <#CFFF71>방어력</color>). 적중 시, 대상을 당기고 <#CFFF71>{4}초</color>간 <#CFFF71>도발</color> 부여. 추가로 <#CFFF71>(자신) 받는 피해 감소({5}%)</color> 획득.",
-                  "formattedDesc": "적 1명에게 강인한 뿔로 돌진(피해량: <#CFFF71>175%</color> x <#CFFF71>방어력</color>)하고, 자신의 주변 <#CFFF71>3m</color> 범위에 포효 공격(피해량: <#CFFF71>175%</color> x <#CFFF71>방어력</color>). 적중 시, 대상을 당기고 <#CFFF71>3초</color>간 <#CFFF71>도발</color> 부여. 추가로 <#CFFF71>(자신) 받는 피해 감소(55%)</color> 획득.",
+                  "formattedDesc": "적 1명에게 강인한 뿔로 돌진(피해량: <#CFFF71>175%</color> x <#CFFF71>방어력</color>)하고, 자신의 주변 <#CFFF71>3m</color> 범위에 포효 공격(피해량: <#CFFF71>175%</color> x <#CFFF71>방어력</color>). 적중 시, 대상을 당기고 <#CFFF71>4초</color>간 <#CFFF71>도발</color> 부여. 추가로 <#CFFF71>(자신) 받는 피해 감소(55%)</color> 획득.",
                   "factorDef": 17500,
                   "stageLabel": "SS 3성",
-                  "descValues": "3|3|55"
+                  "descValues": "3|4|55",
+                  "factorAttk": 0,
+                  "factorHp": 0,
+                  "skillId": "11071011136",
+                  "upgradeDescTemplate": "SS ★3 : 피해량 +{0}%",
+                  "upgradeDescValues": "30",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11071011136"
                 },
                 {
                   "upgradeDescFormatted": "SS ★5 : 포효 범위 +1m",
@@ -3974,10 +5302,16 @@ window.GACHA_PET_VIEWER_DATA = {
                   "coolTime": "5.5",
                   "iconImage": "assets/skills/SP0082_1.png",
                   "rawDesc": "적 1명에게 강인한 뿔로 돌진(피해량: <#CFFF71>{16}%</color> x <#CFFF71>방어력</color>)하고, 자신의 주변 <#CFFF71>{3}m</color> 범위에 포효 공격(피해량: <#CFFF71>{16}%</color> x <#CFFF71>방어력</color>). 적중 시, 대상을 당기고 <#CFFF71>{4}초</color>간 <#CFFF71>도발</color> 부여. 추가로 <#CFFF71>(자신) 받는 피해 감소({5}%)</color> 획득.",
-                  "formattedDesc": "적 1명에게 강인한 뿔로 돌진(피해량: <#CFFF71>175%</color> x <#CFFF71>방어력</color>)하고, 자신의 주변 <#CFFF71>4m</color> 범위에 포효 공격(피해량: <#CFFF71>175%</color> x <#CFFF71>방어력</color>). 적중 시, 대상을 당기고 <#CFFF71>3초</color>간 <#CFFF71>도발</color> 부여. 추가로 <#CFFF71>(자신) 받는 피해 감소(55%)</color> 획득.",
+                  "formattedDesc": "적 1명에게 강인한 뿔로 돌진(피해량: <#CFFF71>175%</color> x <#CFFF71>방어력</color>)하고, 자신의 주변 <#CFFF71>4m</color> 범위에 포효 공격(피해량: <#CFFF71>175%</color> x <#CFFF71>방어력</color>). 적중 시, 대상을 당기고 <#CFFF71>4초</color>간 <#CFFF71>도발</color> 부여. 추가로 <#CFFF71>(자신) 받는 피해 감소(55%)</color> 획득.",
                   "factorDef": 17500,
                   "stageLabel": "SS 5성",
-                  "descValues": "4|3|55"
+                  "descValues": "4|4|55",
+                  "factorAttk": 0,
+                  "factorHp": 0,
+                  "skillId": "11071011138",
+                  "upgradeDescTemplate": "SS ★5 : 포효 범위 +{0}m",
+                  "upgradeDescValues": "1",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11071011138"
                 },
                 {
                   "upgradeDescFormatted": "SS ★7 : 도발 및 (자신) 받는 피해 감소 +1초",
@@ -3988,10 +5322,16 @@ window.GACHA_PET_VIEWER_DATA = {
                   "coolTime": "5.5",
                   "iconImage": "assets/skills/SP0082_1.png",
                   "rawDesc": "적 1명에게 강인한 뿔로 돌진(피해량: <#CFFF71>{16}%</color> x <#CFFF71>방어력</color>)하고, 자신의 주변 <#CFFF71>{3}m</color> 범위에 포효 공격(피해량: <#CFFF71>{16}%</color> x <#CFFF71>방어력</color>). 적중 시, 대상을 당기고 <#CFFF71>{4}초</color>간 <#CFFF71>도발</color> 부여. 추가로 <#CFFF71>(자신) 받는 피해 감소({5}%)</color> 획득.",
-                  "formattedDesc": "적 1명에게 강인한 뿔로 돌진(피해량: <#CFFF71>175%</color> x <#CFFF71>방어력</color>)하고, 자신의 주변 <#CFFF71>4m</color> 범위에 포효 공격(피해량: <#CFFF71>175%</color> x <#CFFF71>방어력</color>). 적중 시, 대상을 당기고 <#CFFF71>4초</color>간 <#CFFF71>도발</color> 부여. 추가로 <#CFFF71>(자신) 받는 피해 감소(55%)</color> 획득.",
+                  "formattedDesc": "적 1명에게 강인한 뿔로 돌진(피해량: <#CFFF71>175%</color> x <#CFFF71>방어력</color>)하고, 자신의 주변 <#CFFF71>4m</color> 범위에 포효 공격(피해량: <#CFFF71>175%</color> x <#CFFF71>방어력</color>). 적중 시, 대상을 당기고 <#CFFF71>5초</color>간 <#CFFF71>도발</color> 부여. 추가로 <#CFFF71>(자신) 받는 피해 감소(55%)</color> 획득.",
                   "factorDef": 17500,
                   "stageLabel": "SS 7성",
-                  "descValues": "4|4|55"
+                  "descValues": "4|5|55",
+                  "factorAttk": 0,
+                  "factorHp": 0,
+                  "skillId": "11071011140",
+                  "upgradeDescTemplate": "SS ★7 : 도발 및 (자신) 받는 피해 감소 +{0}초",
+                  "upgradeDescValues": "1",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11071011140"
                 },
                 {
                   "upgradeDescFormatted": "SS ★10 : (자신) 받는 피해 감소 +10%",
@@ -4002,10 +5342,16 @@ window.GACHA_PET_VIEWER_DATA = {
                   "coolTime": "5.5",
                   "iconImage": "assets/skills/SP0082_1.png",
                   "rawDesc": "적 1명에게 강인한 뿔로 돌진(피해량: <#CFFF71>{16}%</color> x <#CFFF71>방어력</color>)하고, 자신의 주변 <#CFFF71>{3}m</color> 범위에 포효 공격(피해량: <#CFFF71>{16}%</color> x <#CFFF71>방어력</color>). 적중 시, 대상을 당기고 <#CFFF71>{4}초</color>간 <#CFFF71>도발</color> 부여. 추가로 <#CFFF71>(자신) 받는 피해 감소({5}%)</color> 획득.",
-                  "formattedDesc": "적 1명에게 강인한 뿔로 돌진(피해량: <#CFFF71>175%</color> x <#CFFF71>방어력</color>)하고, 자신의 주변 <#CFFF71>4m</color> 범위에 포효 공격(피해량: <#CFFF71>175%</color> x <#CFFF71>방어력</color>). 적중 시, 대상을 당기고 <#CFFF71>4초</color>간 <#CFFF71>도발</color> 부여. 추가로 <#CFFF71>(자신) 받는 피해 감소(65%)</color> 획득.",
+                  "formattedDesc": "적 1명에게 강인한 뿔로 돌진(피해량: <#CFFF71>175%</color> x <#CFFF71>방어력</color>)하고, 자신의 주변 <#CFFF71>4m</color> 범위에 포효 공격(피해량: <#CFFF71>175%</color> x <#CFFF71>방어력</color>). 적중 시, 대상을 당기고 <#CFFF71>5초</color>간 <#CFFF71>도발</color> 부여. 추가로 <#CFFF71>(자신) 받는 피해 감소(65%)</color> 획득.",
                   "factorDef": 17500,
                   "stageLabel": "SS 10성",
-                  "descValues": "4|4|65"
+                  "descValues": "4|5|65",
+                  "factorAttk": 0,
+                  "factorHp": 0,
+                  "skillId": "11071011143",
+                  "upgradeDescTemplate": "SS ★10 : (자신) 받는 피해 감소 +{0}%",
+                  "upgradeDescValues": "10",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11071011143"
                 },
                 {
                   "upgradeDescFormatted": "SSS ★0 : 쿨타임 -1초",
@@ -4016,10 +5362,16 @@ window.GACHA_PET_VIEWER_DATA = {
                   "coolTime": "4.5",
                   "iconImage": "assets/skills/SP0082_1.png",
                   "rawDesc": "적 1명에게 강인한 뿔로 돌진(피해량: <#CFFF71>{16}%</color> x <#CFFF71>방어력</color>)하고, 자신의 주변 <#CFFF71>{3}m</color> 범위에 포효 공격(피해량: <#CFFF71>{16}%</color> x <#CFFF71>방어력</color>). 적중 시, 대상을 당기고 <#CFFF71>{4}초</color>간 <#CFFF71>도발</color> 부여. 추가로 <#CFFF71>(자신) 받는 피해 감소({5}%)</color> 획득.",
-                  "formattedDesc": "적 1명에게 강인한 뿔로 돌진(피해량: <#CFFF71>175%</color> x <#CFFF71>방어력</color>)하고, 자신의 주변 <#CFFF71>4m</color> 범위에 포효 공격(피해량: <#CFFF71>175%</color> x <#CFFF71>방어력</color>). 적중 시, 대상을 당기고 <#CFFF71>4초</color>간 <#CFFF71>도발</color> 부여. 추가로 <#CFFF71>(자신) 받는 피해 감소(65%)</color> 획득.",
+                  "formattedDesc": "적 1명에게 강인한 뿔로 돌진(피해량: <#CFFF71>175%</color> x <#CFFF71>방어력</color>)하고, 자신의 주변 <#CFFF71>4m</color> 범위에 포효 공격(피해량: <#CFFF71>175%</color> x <#CFFF71>방어력</color>). 적중 시, 대상을 당기고 <#CFFF71>5초</color>간 <#CFFF71>도발</color> 부여. 추가로 <#CFFF71>(자신) 받는 피해 감소(65%)</color> 획득.",
                   "factorDef": 17500,
                   "stageLabel": "SSS 0성",
-                  "descValues": "4|4|65"
+                  "descValues": "4|5|65",
+                  "factorAttk": 0,
+                  "factorHp": 0,
+                  "skillId": "11071011144",
+                  "upgradeDescTemplate": "SSS ★0 : 쿨타임 -{0}초",
+                  "upgradeDescValues": "1",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11071011144"
                 }
               ]
             },
@@ -4039,12 +5391,16 @@ window.GACHA_PET_VIEWER_DATA = {
                   "coolTime": "0",
                   "iconImage": "assets/skills/SP0083_1.png",
                   "rawDesc": "전투 시작 시, <#CFFF71>(자신) 방어력 증가({3}%)</color> 획득. 그리고 사망 직전 <#CFFF71>{4}초</color>간 <#CFFF71>의지</color>를 획득.",
-                  "formattedDesc": "전투 시작 시, <#CFFF71>(자신) 방어력 증가(300%)</color> 획득. 그리고 사망 직전 <#CFFF71>6초</color>간 <#CFFF71>의지</color>를 획득.",
+                  "formattedDesc": "전투 시작 시, <#CFFF71>(자신) 방어력 증가(340%)</color> 획득. 그리고 사망 직전 <#CFFF71>7초</color>간 <#CFFF71>의지</color>를 획득.",
                   "stageLabel": "SS 0성",
-                  "descValues": "300|6"
+                  "descValues": "340|7",
+                  "factorAttk": 0,
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11071012133"
                 },
                 {
-                  "upgradeDescFormatted": "SS ★1 : (자신) 방어력 증가 +40%",
+                  "upgradeDescFormatted": "SS ★1 : (자신) 방어력 증가 +60%",
                   "groupGrade": 1,
                   "skillType": "4",
                   "groupTier": 4,
@@ -4052,9 +5408,16 @@ window.GACHA_PET_VIEWER_DATA = {
                   "coolTime": "0",
                   "iconImage": "assets/skills/SP0083_1.png",
                   "rawDesc": "전투 시작 시, <#CFFF71>(자신) 방어력 증가({3}%)</color> 획득. 그리고 사망 직전 <#CFFF71>{4}초</color>간 <#CFFF71>의지</color>를 획득.",
-                  "formattedDesc": "전투 시작 시, <#CFFF71>(자신) 방어력 증가(340%)</color> 획득. 그리고 사망 직전 <#CFFF71>6초</color>간 <#CFFF71>의지</color>를 획득.",
+                  "formattedDesc": "전투 시작 시, <#CFFF71>(자신) 방어력 증가(400%)</color> 획득. 그리고 사망 직전 <#CFFF71>7초</color>간 <#CFFF71>의지</color>를 획득.",
                   "stageLabel": "SS 1성",
-                  "descValues": "340|6"
+                  "descValues": "400|7",
+                  "factorAttk": 0,
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11071012134",
+                  "upgradeDescTemplate": "SS ★1 : (자신) 방어력 증가 +{0}%",
+                  "upgradeDescValues": "60",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11071012134"
                 },
                 {
                   "upgradeDescFormatted": "SS ★5 : 의지 +1초",
@@ -4065,12 +5428,19 @@ window.GACHA_PET_VIEWER_DATA = {
                   "coolTime": "0",
                   "iconImage": "assets/skills/SP0083_1.png",
                   "rawDesc": "전투 시작 시, <#CFFF71>(자신) 방어력 증가({3}%)</color> 획득. 그리고 사망 직전 <#CFFF71>{4}초</color>간 <#CFFF71>의지</color>를 획득.",
-                  "formattedDesc": "전투 시작 시, <#CFFF71>(자신) 방어력 증가(340%)</color> 획득. 그리고 사망 직전 <#CFFF71>7초</color>간 <#CFFF71>의지</color>를 획득.",
+                  "formattedDesc": "전투 시작 시, <#CFFF71>(자신) 방어력 증가(400%)</color> 획득. 그리고 사망 직전 <#CFFF71>8초</color>간 <#CFFF71>의지</color>를 획득.",
                   "stageLabel": "SS 5성",
-                  "descValues": "340|7"
+                  "descValues": "400|8",
+                  "factorAttk": 0,
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11071012138",
+                  "upgradeDescTemplate": "SS ★5 : 의지 +{0}초",
+                  "upgradeDescValues": "1",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11071012138"
                 },
                 {
-                  "upgradeDescFormatted": "SS ★7 : (자신) 방어력 증가 +60%",
+                  "upgradeDescFormatted": "SS ★7 : (자신) 방어력 증가 +80%",
                   "groupGrade": 7,
                   "skillType": "4",
                   "groupTier": 4,
@@ -4078,12 +5448,19 @@ window.GACHA_PET_VIEWER_DATA = {
                   "coolTime": "0",
                   "iconImage": "assets/skills/SP0083_1.png",
                   "rawDesc": "전투 시작 시, <#CFFF71>(자신) 방어력 증가({3}%)</color> 획득. 그리고 사망 직전 <#CFFF71>{4}초</color>간 <#CFFF71>의지</color>를 획득.",
-                  "formattedDesc": "전투 시작 시, <#CFFF71>(자신) 방어력 증가(400%)</color> 획득. 그리고 사망 직전 <#CFFF71>7초</color>간 <#CFFF71>의지</color>를 획득.",
+                  "formattedDesc": "전투 시작 시, <#CFFF71>(자신) 방어력 증가(480%)</color> 획득. 그리고 사망 직전 <#CFFF71>8초</color>간 <#CFFF71>의지</color>를 획득.",
                   "stageLabel": "SS 7성",
-                  "descValues": "400|7"
+                  "descValues": "480|8",
+                  "factorAttk": 0,
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11071012140",
+                  "upgradeDescTemplate": "SS ★7 : (자신) 방어력 증가 +{0}%",
+                  "upgradeDescValues": "80",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11071012140"
                 },
                 {
-                  "upgradeDescFormatted": "SS ★10 : (자신) 방어력 증가 +80%",
+                  "upgradeDescFormatted": "SS ★10 : (자신) 방어력 증가 +100%",
                   "groupGrade": 10,
                   "skillType": "4",
                   "groupTier": 4,
@@ -4091,9 +5468,16 @@ window.GACHA_PET_VIEWER_DATA = {
                   "coolTime": "0",
                   "iconImage": "assets/skills/SP0083_1.png",
                   "rawDesc": "전투 시작 시, <#CFFF71>(자신) 방어력 증가({3}%)</color> 획득. 그리고 사망 직전 <#CFFF71>{4}초</color>간 <#CFFF71>의지</color>를 획득.",
-                  "formattedDesc": "전투 시작 시, <#CFFF71>(자신) 방어력 증가(480%)</color> 획득. 그리고 사망 직전 <#CFFF71>7초</color>간 <#CFFF71>의지</color>를 획득.",
+                  "formattedDesc": "전투 시작 시, <#CFFF71>(자신) 방어력 증가(580%)</color> 획득. 그리고 사망 직전 <#CFFF71>8초</color>간 <#CFFF71>의지</color>를 획득.",
                   "stageLabel": "SS 10성",
-                  "descValues": "480|7"
+                  "descValues": "580|8",
+                  "factorAttk": 0,
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11071012143",
+                  "upgradeDescTemplate": "SS ★10 : (자신) 방어력 증가 +{0}%",
+                  "upgradeDescValues": "100",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11071012143"
                 },
                 {
                   "upgradeDescFormatted": "SSS ★0 : 의지 +2초",
@@ -4104,9 +5488,16 @@ window.GACHA_PET_VIEWER_DATA = {
                   "coolTime": "0",
                   "iconImage": "assets/skills/SP0083_1.png",
                   "rawDesc": "전투 시작 시, <#CFFF71>(자신) 방어력 증가({3}%)</color> 획득. 그리고 사망 직전 <#CFFF71>{4}초</color>간 <#CFFF71>의지</color>를 획득.",
-                  "formattedDesc": "전투 시작 시, <#CFFF71>(자신) 방어력 증가(480%)</color> 획득. 그리고 사망 직전 <#CFFF71>9초</color>간 <#CFFF71>의지</color>를 획득.",
+                  "formattedDesc": "전투 시작 시, <#CFFF71>(자신) 방어력 증가(580%)</color> 획득. 그리고 사망 직전 <#CFFF71>10초</color>간 <#CFFF71>의지</color>를 획득.",
                   "stageLabel": "SSS 0성",
-                  "descValues": "480|9"
+                  "descValues": "580|10",
+                  "factorAttk": 0,
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11071012144",
+                  "upgradeDescTemplate": "SSS ★0 : 의지 +{0}초",
+                  "upgradeDescValues": "2",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11071012144"
                 }
               ]
             },
@@ -4128,7 +5519,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "자신에게 <#CFFF71>(타입)받는 피해 감소({3}%)</color>, <#CFFF71>(타입)방어력 증가({4}%)</color> 적용.",
                   "formattedDesc": "자신에게 <#CFFF71>(타입)받는 피해 감소(30%)</color>, <#CFFF71>(타입)방어력 증가(300%)</color> 적용.",
                   "stageLabel": "SS 0성",
-                  "descValues": "30|300"
+                  "descValues": "30|300",
+                  "factorAttk": 0,
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "13100"
                 },
                 {
                   "upgradeDescFormatted": "SS ★2 : (타입) 방어력 증가 +30%",
@@ -4141,7 +5536,14 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "자신에게 <#CFFF71>(타입)받는 피해 감소({3}%)</color>, <#CFFF71>(타입)방어력 증가({4}%)</color> 적용.",
                   "formattedDesc": "자신에게 <#CFFF71>(타입)받는 피해 감소(30%)</color>, <#CFFF71>(타입)방어력 증가(330%)</color> 적용.",
                   "stageLabel": "SS 2성",
-                  "descValues": "30|330"
+                  "descValues": "30|330",
+                  "factorAttk": 0,
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "13135",
+                  "upgradeDescTemplate": "SS ★2 : (타입) 방어력 증가 +{0}%",
+                  "upgradeDescValues": "30",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_13135"
                 },
                 {
                   "upgradeDescFormatted": "SS ★4 : (타입) 받는 피해 감소 +2%",
@@ -4154,7 +5556,14 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "자신에게 <#CFFF71>(타입)받는 피해 감소({3}%)</color>, <#CFFF71>(타입)방어력 증가({4}%)</color> 적용.",
                   "formattedDesc": "자신에게 <#CFFF71>(타입)받는 피해 감소(32%)</color>, <#CFFF71>(타입)방어력 증가(330%)</color> 적용.",
                   "stageLabel": "SS 4성",
-                  "descValues": "32|330"
+                  "descValues": "32|330",
+                  "factorAttk": 0,
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "13137",
+                  "upgradeDescTemplate": "SS ★4 : (타입) 받는 피해 감소 +{0}%",
+                  "upgradeDescValues": "2",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_13137"
                 },
                 {
                   "upgradeDescFormatted": "SS ★6 : (타입) 방어력 증가 +30%",
@@ -4167,7 +5576,14 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "자신에게 <#CFFF71>(타입)받는 피해 감소({3}%)</color>, <#CFFF71>(타입)방어력 증가({4}%)</color> 적용.",
                   "formattedDesc": "자신에게 <#CFFF71>(타입)받는 피해 감소(32%)</color>, <#CFFF71>(타입)방어력 증가(360%)</color> 적용.",
                   "stageLabel": "SS 6성",
-                  "descValues": "32|360"
+                  "descValues": "32|360",
+                  "factorAttk": 0,
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "13139",
+                  "upgradeDescTemplate": "SS ★6 : (타입) 방어력 증가 +{0}%",
+                  "upgradeDescValues": "30",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_13139"
                 },
                 {
                   "upgradeDescFormatted": "SS ★8 : (타입) 받는 피해 감소 +2%",
@@ -4180,7 +5596,14 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "자신에게 <#CFFF71>(타입)받는 피해 감소({3}%)</color>, <#CFFF71>(타입)방어력 증가({4}%)</color> 적용.",
                   "formattedDesc": "자신에게 <#CFFF71>(타입)받는 피해 감소(34%)</color>, <#CFFF71>(타입)방어력 증가(360%)</color> 적용.",
                   "stageLabel": "SS 8성",
-                  "descValues": "34|360"
+                  "descValues": "34|360",
+                  "factorAttk": 0,
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "13141",
+                  "upgradeDescTemplate": "SS ★8 : (타입) 받는 피해 감소 +{0}%",
+                  "upgradeDescValues": "2",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_13141"
                 },
                 {
                   "upgradeDescFormatted": "SSS ★1 : (타입) 받는 피해 감소 +1% / (타입) 방어력 증가 +40%",
@@ -4193,7 +5616,14 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "자신에게 <#CFFF71>(타입)받는 피해 감소({3}%)</color>, <#CFFF71>(타입)방어력 증가({4}%)</color> 적용.",
                   "formattedDesc": "자신에게 <#CFFF71>(타입)받는 피해 감소(35%)</color>, <#CFFF71>(타입)방어력 증가(400%)</color> 적용.",
                   "stageLabel": "SSS 1성",
-                  "descValues": "35|400"
+                  "descValues": "35|400",
+                  "factorAttk": 0,
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "13145",
+                  "upgradeDescTemplate": "SSS ★1 : (타입) 받는 피해 감소 +{0}% / (타입) 방어력 증가 +{1}%",
+                  "upgradeDescValues": "1|40",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_13145"
                 }
               ]
             }
@@ -4274,7 +5704,10 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 46400,
                   "formattedDesc": "적 1명을 공격(피해량: <#CFFF71>464%</color> x <#CFFF71>공격력</color>) 적중 시, 파티원에게 <#CFFF71>30%</color> 확률로 <#CFFF71>3초</color>간 <#CFFF71>(보조) 회피 증가(9%)</color> 부여.",
                   "stageLabel": "SS 0성",
-                  "descValues": "30|3|9"
+                  "descValues": "30|3|9",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11052010133"
                 },
                 {
                   "upgradeDescFormatted": "SS ★1 : (보조) 회피 증가 +7%",
@@ -4288,7 +5721,13 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 46400,
                   "formattedDesc": "적 1명을 공격(피해량: <#CFFF71>464%</color> x <#CFFF71>공격력</color>) 적중 시, 파티원에게 <#CFFF71>30%</color> 확률로 <#CFFF71>3초</color>간 <#CFFF71>(보조) 회피 증가(16%)</color> 부여.",
                   "stageLabel": "SS 1성",
-                  "descValues": "30|3|16"
+                  "descValues": "30|3|16",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11052010134",
+                  "upgradeDescTemplate": "SS ★1 : (보조) 회피 증가 +{0}%",
+                  "upgradeDescValues": "7",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11052010134"
                 },
                 {
                   "upgradeDescFormatted": "SS ★3 : 피해량 +167%",
@@ -4302,7 +5741,13 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 63100,
                   "formattedDesc": "적 1명을 공격(피해량: <#CFFF71>631%</color> x <#CFFF71>공격력</color>) 적중 시, 파티원에게 <#CFFF71>30%</color> 확률로 <#CFFF71>3초</color>간 <#CFFF71>(보조) 회피 증가(16%)</color> 부여.",
                   "stageLabel": "SS 3성",
-                  "descValues": "30|3|16"
+                  "descValues": "30|3|16",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11052010136",
+                  "upgradeDescTemplate": "SS ★3 : 피해량 +{0}%",
+                  "upgradeDescValues": "167",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11052010136"
                 },
                 {
                   "upgradeDescFormatted": "SS ★5 : (보조) 회피 증가 발동 확률 +20%",
@@ -4316,7 +5761,13 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 63100,
                   "formattedDesc": "적 1명을 공격(피해량: <#CFFF71>631%</color> x <#CFFF71>공격력</color>) 적중 시, 파티원에게 <#CFFF71>50%</color> 확률로 <#CFFF71>3초</color>간 <#CFFF71>(보조) 회피 증가(16%)</color> 부여.",
                   "stageLabel": "SS 5성",
-                  "descValues": "50|3|16"
+                  "descValues": "50|3|16",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11052010138",
+                  "upgradeDescTemplate": "SS ★5 : (보조) 회피 증가 발동 확률 +{0}%",
+                  "upgradeDescValues": "20",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11052010138"
                 },
                 {
                   "upgradeDescFormatted": "SS ★7 : 피해량 +222%",
@@ -4330,7 +5781,13 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 85300,
                   "formattedDesc": "적 1명을 공격(피해량: <#CFFF71>853%</color> x <#CFFF71>공격력</color>) 적중 시, 파티원에게 <#CFFF71>50%</color> 확률로 <#CFFF71>3초</color>간 <#CFFF71>(보조) 회피 증가(16%)</color> 부여.",
                   "stageLabel": "SS 7성",
-                  "descValues": "50|3|16"
+                  "descValues": "50|3|16",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11052010140",
+                  "upgradeDescTemplate": "SS ★7 : 피해량 +{0}%",
+                  "upgradeDescValues": "222",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11052010140"
                 },
                 {
                   "upgradeDescFormatted": "SSS ★0 : (보조) 회피 증가 +9%",
@@ -4344,7 +5801,13 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 85300,
                   "formattedDesc": "적 1명을 공격(피해량: <#CFFF71>853%</color> x <#CFFF71>공격력</color>) 적중 시, 파티원에게 <#CFFF71>50%</color> 확률로 <#CFFF71>3초</color>간 <#CFFF71>(보조) 회피 증가(25%)</color> 부여.",
                   "stageLabel": "SSS 0성",
-                  "descValues": "50|3|25"
+                  "descValues": "50|3|25",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11052010144",
+                  "upgradeDescTemplate": "SSS ★0 : (보조) 회피 증가 +{0}%",
+                  "upgradeDescValues": "9",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11052010144"
                 }
               ]
             },
@@ -4364,9 +5827,13 @@ window.GACHA_PET_VIEWER_DATA = {
                   "coolTime": "4.5",
                   "iconImage": "assets/skills/SP0044_4.png",
                   "rawDesc": "자신의 주변 <#CFFF71>{3}m</color> 범위의 아군에게 회복(회복량: <#CFFF71>{4}%</color> x <#CFFF71>공격력</color>). 대상에게 <#CFFF71>{5}초</color>간 <#CFFF71>넘어트리기 면역</color> 부여하고 <#CFFF71>{6}%</color> 확률로 <#CFFF71>해로운 효과</color> <#CFFF71>{7}개</color> 제거. 추가로 회복시킨 아군의 수마다 자신의 스킬 쿨타임 <#CFFF71>{18}초</color>씩 감소.",
-                  "formattedDesc": "자신의 주변 <#CFFF71>2.5m</color> 범위의 아군에게 회복(회복량: <#CFFF71>600%</color> x <#CFFF71>공격력</color>). 대상에게 <#CFFF71>2초</color>간 <#CFFF71>넘어트리기 면역</color> 부여하고 <#CFFF71>30%</color> 확률로 <#CFFF71>해로운 효과</color> <#CFFF71>1개</color> 제거. 추가로 회복시킨 아군의 수마다 자신의 스킬 쿨타임 <#CFFF71>0.2초</color>씩 감소.",
+                  "formattedDesc": "자신의 주변 <#CFFF71>3m</color> 범위의 아군에게 회복(회복량: <#CFFF71>600%</color> x <#CFFF71>공격력</color>). 대상에게 <#CFFF71>2초</color>간 <#CFFF71>넘어트리기 면역</color> 부여하고 <#CFFF71>30%</color> 확률로 <#CFFF71>해로운 효과</color> <#CFFF71>1개</color> 제거. 추가로 회복시킨 아군의 수마다 자신의 스킬 쿨타임 <#CFFF71>0.2초</color>씩 감소.",
                   "stageLabel": "SS 0성",
-                  "descValues": "2.5|600|2|30|1|0.2"
+                  "descValues": "3|600|2|30|1|0.2",
+                  "factorAttk": 0,
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11052011133"
                 },
                 {
                   "upgradeDescFormatted": "SS ★1 : 해로운 효과 제거 확률 +20%",
@@ -4377,9 +5844,16 @@ window.GACHA_PET_VIEWER_DATA = {
                   "coolTime": "4.5",
                   "iconImage": "assets/skills/SP0044_4.png",
                   "rawDesc": "자신의 주변 <#CFFF71>{3}m</color> 범위의 아군에게 회복(회복량: <#CFFF71>{4}%</color> x <#CFFF71>공격력</color>). 대상에게 <#CFFF71>{5}초</color>간 <#CFFF71>넘어트리기 면역</color> 부여하고 <#CFFF71>{6}%</color> 확률로 <#CFFF71>해로운 효과</color> <#CFFF71>{7}개</color> 제거. 추가로 회복시킨 아군의 수마다 자신의 스킬 쿨타임 <#CFFF71>{18}초</color>씩 감소.",
-                  "formattedDesc": "자신의 주변 <#CFFF71>2.5m</color> 범위의 아군에게 회복(회복량: <#CFFF71>600%</color> x <#CFFF71>공격력</color>). 대상에게 <#CFFF71>2초</color>간 <#CFFF71>넘어트리기 면역</color> 부여하고 <#CFFF71>50%</color> 확률로 <#CFFF71>해로운 효과</color> <#CFFF71>1개</color> 제거. 추가로 회복시킨 아군의 수마다 자신의 스킬 쿨타임 <#CFFF71>0.2초</color>씩 감소.",
+                  "formattedDesc": "자신의 주변 <#CFFF71>3m</color> 범위의 아군에게 회복(회복량: <#CFFF71>600%</color> x <#CFFF71>공격력</color>). 대상에게 <#CFFF71>2초</color>간 <#CFFF71>넘어트리기 면역</color> 부여하고 <#CFFF71>50%</color> 확률로 <#CFFF71>해로운 효과</color> <#CFFF71>1개</color> 제거. 추가로 회복시킨 아군의 수마다 자신의 스킬 쿨타임 <#CFFF71>0.2초</color>씩 감소.",
                   "stageLabel": "SS 1성",
-                  "descValues": "2.5|600|2|50|1|0.2"
+                  "descValues": "3|600|2|50|1|0.2",
+                  "factorAttk": 0,
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11052011134",
+                  "upgradeDescTemplate": "SS ★1 : 해로운 효과 제거 확률 +{0}%",
+                  "upgradeDescValues": "20",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11052011134"
                 },
                 {
                   "upgradeDescFormatted": "SS ★3 : 회복량 +150%",
@@ -4390,12 +5864,19 @@ window.GACHA_PET_VIEWER_DATA = {
                   "coolTime": "4.5",
                   "iconImage": "assets/skills/SP0044_4.png",
                   "rawDesc": "자신의 주변 <#CFFF71>{3}m</color> 범위의 아군에게 회복(회복량: <#CFFF71>{4}%</color> x <#CFFF71>공격력</color>). 대상에게 <#CFFF71>{5}초</color>간 <#CFFF71>넘어트리기 면역</color> 부여하고 <#CFFF71>{6}%</color> 확률로 <#CFFF71>해로운 효과</color> <#CFFF71>{7}개</color> 제거. 추가로 회복시킨 아군의 수마다 자신의 스킬 쿨타임 <#CFFF71>{18}초</color>씩 감소.",
-                  "formattedDesc": "자신의 주변 <#CFFF71>2.5m</color> 범위의 아군에게 회복(회복량: <#CFFF71>750%</color> x <#CFFF71>공격력</color>). 대상에게 <#CFFF71>2초</color>간 <#CFFF71>넘어트리기 면역</color> 부여하고 <#CFFF71>50%</color> 확률로 <#CFFF71>해로운 효과</color> <#CFFF71>1개</color> 제거. 추가로 회복시킨 아군의 수마다 자신의 스킬 쿨타임 <#CFFF71>0.2초</color>씩 감소.",
+                  "formattedDesc": "자신의 주변 <#CFFF71>3m</color> 범위의 아군에게 회복(회복량: <#CFFF71>750%</color> x <#CFFF71>공격력</color>). 대상에게 <#CFFF71>2초</color>간 <#CFFF71>넘어트리기 면역</color> 부여하고 <#CFFF71>50%</color> 확률로 <#CFFF71>해로운 효과</color> <#CFFF71>1개</color> 제거. 추가로 회복시킨 아군의 수마다 자신의 스킬 쿨타임 <#CFFF71>0.2초</color>씩 감소.",
                   "stageLabel": "SS 3성",
-                  "descValues": "2.5|750|2|50|1|0.2"
+                  "descValues": "3|750|2|50|1|0.2",
+                  "factorAttk": 0,
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11052011136",
+                  "upgradeDescTemplate": "SS ★3 : 회복량 +{0}%",
+                  "upgradeDescValues": "150",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11052011136"
                 },
                 {
-                  "upgradeDescFormatted": "SS ★5 : 범위 +0.5m",
+                  "upgradeDescFormatted": "SS ★5 : 범위 +1m",
                   "groupGrade": 5,
                   "skillType": "3",
                   "groupTier": 4,
@@ -4403,9 +5884,16 @@ window.GACHA_PET_VIEWER_DATA = {
                   "coolTime": "4.5",
                   "iconImage": "assets/skills/SP0044_4.png",
                   "rawDesc": "자신의 주변 <#CFFF71>{3}m</color> 범위의 아군에게 회복(회복량: <#CFFF71>{4}%</color> x <#CFFF71>공격력</color>). 대상에게 <#CFFF71>{5}초</color>간 <#CFFF71>넘어트리기 면역</color> 부여하고 <#CFFF71>{6}%</color> 확률로 <#CFFF71>해로운 효과</color> <#CFFF71>{7}개</color> 제거. 추가로 회복시킨 아군의 수마다 자신의 스킬 쿨타임 <#CFFF71>{18}초</color>씩 감소.",
-                  "formattedDesc": "자신의 주변 <#CFFF71>3m</color> 범위의 아군에게 회복(회복량: <#CFFF71>750%</color> x <#CFFF71>공격력</color>). 대상에게 <#CFFF71>2초</color>간 <#CFFF71>넘어트리기 면역</color> 부여하고 <#CFFF71>50%</color> 확률로 <#CFFF71>해로운 효과</color> <#CFFF71>1개</color> 제거. 추가로 회복시킨 아군의 수마다 자신의 스킬 쿨타임 <#CFFF71>0.2초</color>씩 감소.",
+                  "formattedDesc": "자신의 주변 <#CFFF71>4m</color> 범위의 아군에게 회복(회복량: <#CFFF71>750%</color> x <#CFFF71>공격력</color>). 대상에게 <#CFFF71>2초</color>간 <#CFFF71>넘어트리기 면역</color> 부여하고 <#CFFF71>50%</color> 확률로 <#CFFF71>해로운 효과</color> <#CFFF71>1개</color> 제거. 추가로 회복시킨 아군의 수마다 자신의 스킬 쿨타임 <#CFFF71>0.2초</color>씩 감소.",
                   "stageLabel": "SS 5성",
-                  "descValues": "3|750|2|50|1|0.2"
+                  "descValues": "4|750|2|50|1|0.2",
+                  "factorAttk": 0,
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11052011138",
+                  "upgradeDescTemplate": "SS ★5 : 범위 +{0}m",
+                  "upgradeDescValues": "1",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11052011138"
                 },
                 {
                   "upgradeDescFormatted": "SS ★7 : 해로운 효과 제거 확률 +50%",
@@ -4416,9 +5904,16 @@ window.GACHA_PET_VIEWER_DATA = {
                   "coolTime": "4.5",
                   "iconImage": "assets/skills/SP0044_4.png",
                   "rawDesc": "자신의 주변 <#CFFF71>{3}m</color> 범위의 아군에게 회복(회복량: <#CFFF71>{4}%</color> x <#CFFF71>공격력</color>). 대상에게 <#CFFF71>{5}초</color>간 <#CFFF71>넘어트리기 면역</color> 부여하고 <#CFFF71>{6}%</color> 확률로 <#CFFF71>해로운 효과</color> <#CFFF71>{7}개</color> 제거. 추가로 회복시킨 아군의 수마다 자신의 스킬 쿨타임 <#CFFF71>{18}초</color>씩 감소.",
-                  "formattedDesc": "자신의 주변 <#CFFF71>3m</color> 범위의 아군에게 회복(회복량: <#CFFF71>750%</color> x <#CFFF71>공격력</color>). 대상에게 <#CFFF71>2초</color>간 <#CFFF71>넘어트리기 면역</color> 부여하고 <#CFFF71>100%</color> 확률로 <#CFFF71>해로운 효과</color> <#CFFF71>1개</color> 제거. 추가로 회복시킨 아군의 수마다 자신의 스킬 쿨타임 <#CFFF71>0.2초</color>씩 감소.",
+                  "formattedDesc": "자신의 주변 <#CFFF71>4m</color> 범위의 아군에게 회복(회복량: <#CFFF71>750%</color> x <#CFFF71>공격력</color>). 대상에게 <#CFFF71>2초</color>간 <#CFFF71>넘어트리기 면역</color> 부여하고 <#CFFF71>100%</color> 확률로 <#CFFF71>해로운 효과</color> <#CFFF71>1개</color> 제거. 추가로 회복시킨 아군의 수마다 자신의 스킬 쿨타임 <#CFFF71>0.2초</color>씩 감소.",
                   "stageLabel": "SS 7성",
-                  "descValues": "3|750|2|100|1|0.2"
+                  "descValues": "4|750|2|100|1|0.2",
+                  "factorAttk": 0,
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11052011140",
+                  "upgradeDescTemplate": "SS ★7 : 해로운 효과 제거 확률 +{0}%",
+                  "upgradeDescValues": "50",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11052011140"
                 },
                 {
                   "upgradeDescFormatted": "SS ★10 : 회복량 +200%",
@@ -4429,9 +5924,16 @@ window.GACHA_PET_VIEWER_DATA = {
                   "coolTime": "4.5",
                   "iconImage": "assets/skills/SP0044_4.png",
                   "rawDesc": "자신의 주변 <#CFFF71>{3}m</color> 범위의 아군에게 회복(회복량: <#CFFF71>{4}%</color> x <#CFFF71>공격력</color>). 대상에게 <#CFFF71>{5}초</color>간 <#CFFF71>넘어트리기 면역</color> 부여하고 <#CFFF71>{6}%</color> 확률로 <#CFFF71>해로운 효과</color> <#CFFF71>{7}개</color> 제거. 추가로 회복시킨 아군의 수마다 자신의 스킬 쿨타임 <#CFFF71>{18}초</color>씩 감소.",
-                  "formattedDesc": "자신의 주변 <#CFFF71>3m</color> 범위의 아군에게 회복(회복량: <#CFFF71>950%</color> x <#CFFF71>공격력</color>). 대상에게 <#CFFF71>2초</color>간 <#CFFF71>넘어트리기 면역</color> 부여하고 <#CFFF71>100%</color> 확률로 <#CFFF71>해로운 효과</color> <#CFFF71>1개</color> 제거. 추가로 회복시킨 아군의 수마다 자신의 스킬 쿨타임 <#CFFF71>0.2초</color>씩 감소.",
+                  "formattedDesc": "자신의 주변 <#CFFF71>4m</color> 범위의 아군에게 회복(회복량: <#CFFF71>950%</color> x <#CFFF71>공격력</color>). 대상에게 <#CFFF71>2초</color>간 <#CFFF71>넘어트리기 면역</color> 부여하고 <#CFFF71>100%</color> 확률로 <#CFFF71>해로운 효과</color> <#CFFF71>1개</color> 제거. 추가로 회복시킨 아군의 수마다 자신의 스킬 쿨타임 <#CFFF71>0.2초</color>씩 감소.",
                   "stageLabel": "SS 10성",
-                  "descValues": "3|950|2|100|1|0.2"
+                  "descValues": "4|950|2|100|1|0.2",
+                  "factorAttk": 0,
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11052011143",
+                  "upgradeDescTemplate": "SS ★10 : 회복량 +{0}%",
+                  "upgradeDescValues": "200",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11052011143"
                 },
                 {
                   "upgradeDescFormatted": "SSS ★0 : 스킬 쿨타임 감소 +0.1초",
@@ -4442,9 +5944,16 @@ window.GACHA_PET_VIEWER_DATA = {
                   "coolTime": "4.5",
                   "iconImage": "assets/skills/SP0044_4.png",
                   "rawDesc": "자신의 주변 <#CFFF71>{3}m</color> 범위의 아군에게 회복(회복량: <#CFFF71>{4}%</color> x <#CFFF71>공격력</color>). 대상에게 <#CFFF71>{5}초</color>간 <#CFFF71>넘어트리기 면역</color> 부여하고 <#CFFF71>{6}%</color> 확률로 <#CFFF71>해로운 효과</color> <#CFFF71>{7}개</color> 제거. 추가로 회복시킨 아군의 수마다 자신의 스킬 쿨타임 <#CFFF71>{18}초</color>씩 감소.",
-                  "formattedDesc": "자신의 주변 <#CFFF71>3m</color> 범위의 아군에게 회복(회복량: <#CFFF71>950%</color> x <#CFFF71>공격력</color>). 대상에게 <#CFFF71>2초</color>간 <#CFFF71>넘어트리기 면역</color> 부여하고 <#CFFF71>100%</color> 확률로 <#CFFF71>해로운 효과</color> <#CFFF71>1개</color> 제거. 추가로 회복시킨 아군의 수마다 자신의 스킬 쿨타임 <#CFFF71>0.3초</color>씩 감소.",
+                  "formattedDesc": "자신의 주변 <#CFFF71>4m</color> 범위의 아군에게 회복(회복량: <#CFFF71>950%</color> x <#CFFF71>공격력</color>). 대상에게 <#CFFF71>2초</color>간 <#CFFF71>넘어트리기 면역</color> 부여하고 <#CFFF71>100%</color> 확률로 <#CFFF71>해로운 효과</color> <#CFFF71>1개</color> 제거. 추가로 회복시킨 아군의 수마다 자신의 스킬 쿨타임 <#CFFF71>0.3초</color>씩 감소.",
                   "stageLabel": "SSS 0성",
-                  "descValues": "3|950|2|100|1|0.3"
+                  "descValues": "4|950|2|100|1|0.3",
+                  "factorAttk": 0,
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11052011144",
+                  "upgradeDescTemplate": "SSS ★0 : 스킬 쿨타임 감소 +{0}초",
+                  "upgradeDescValues": "0.1",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11052011144"
                 }
               ]
             },
@@ -4466,7 +5975,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "전투 시작 시 사망하기 전까지 파티원에게 <#CFFF71>최대 스킬 쿨타임 감소({3}%)</color> 부여. 사망 시 아군 전체의 <#CFFF71>현재 스킬 쿨타임 감소 ({4}%)</color>.",
                   "formattedDesc": "전투 시작 시 사망하기 전까지 파티원에게 <#CFFF71>최대 스킬 쿨타임 감소(12%)</color> 부여. 사망 시 아군 전체의 <#CFFF71>현재 스킬 쿨타임 감소 (50%)</color>.",
                   "stageLabel": "SS 0성",
-                  "descValues": "12|50"
+                  "descValues": "12|50",
+                  "factorAttk": 0,
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11052012133"
                 },
                 {
                   "upgradeDescFormatted": "SS ★1 : 최대 스킬 쿨타임 감소 +4%",
@@ -4479,7 +5992,14 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "전투 시작 시 사망하기 전까지 파티원에게 <#CFFF71>최대 스킬 쿨타임 감소({3}%)</color> 부여. 사망 시 아군 전체의 <#CFFF71>현재 스킬 쿨타임 감소 ({4}%)</color>.",
                   "formattedDesc": "전투 시작 시 사망하기 전까지 파티원에게 <#CFFF71>최대 스킬 쿨타임 감소(16%)</color> 부여. 사망 시 아군 전체의 <#CFFF71>현재 스킬 쿨타임 감소 (50%)</color>.",
                   "stageLabel": "SS 1성",
-                  "descValues": "16|50"
+                  "descValues": "16|50",
+                  "factorAttk": 0,
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11052012134",
+                  "upgradeDescTemplate": "SS ★1 : 최대 스킬 쿨타임 감소 +{0}%",
+                  "upgradeDescValues": "4",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11052012134"
                 },
                 {
                   "upgradeDescFormatted": "SS ★5 : 현재 스킬 쿨타임 감소 +10%",
@@ -4492,7 +6012,14 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "전투 시작 시 사망하기 전까지 파티원에게 <#CFFF71>최대 스킬 쿨타임 감소({3}%)</color> 부여. 사망 시 아군 전체의 <#CFFF71>현재 스킬 쿨타임 감소 ({4}%)</color>.",
                   "formattedDesc": "전투 시작 시 사망하기 전까지 파티원에게 <#CFFF71>최대 스킬 쿨타임 감소(16%)</color> 부여. 사망 시 아군 전체의 <#CFFF71>현재 스킬 쿨타임 감소 (60%)</color>.",
                   "stageLabel": "SS 5성",
-                  "descValues": "16|60"
+                  "descValues": "16|60",
+                  "factorAttk": 0,
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11052012138",
+                  "upgradeDescTemplate": "SS ★5 : 현재 스킬 쿨타임 감소 +{0}%",
+                  "upgradeDescValues": "10",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11052012138"
                 },
                 {
                   "upgradeDescFormatted": "SS ★7 : 최대 스킬 쿨타임 감소 +4%",
@@ -4505,7 +6032,14 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "전투 시작 시 사망하기 전까지 파티원에게 <#CFFF71>최대 스킬 쿨타임 감소({3}%)</color> 부여. 사망 시 아군 전체의 <#CFFF71>현재 스킬 쿨타임 감소 ({4}%)</color>.",
                   "formattedDesc": "전투 시작 시 사망하기 전까지 파티원에게 <#CFFF71>최대 스킬 쿨타임 감소(20%)</color> 부여. 사망 시 아군 전체의 <#CFFF71>현재 스킬 쿨타임 감소 (60%)</color>.",
                   "stageLabel": "SS 7성",
-                  "descValues": "20|60"
+                  "descValues": "20|60",
+                  "factorAttk": 0,
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11052012140",
+                  "upgradeDescTemplate": "SS ★7 : 최대 스킬 쿨타임 감소 +{0}%",
+                  "upgradeDescValues": "4",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11052012140"
                 },
                 {
                   "upgradeDescFormatted": "SS ★10 : 현재 스킬 쿨타임 감소 +20%",
@@ -4518,7 +6052,14 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "전투 시작 시 사망하기 전까지 파티원에게 <#CFFF71>최대 스킬 쿨타임 감소({3}%)</color> 부여. 사망 시 아군 전체의 <#CFFF71>현재 스킬 쿨타임 감소 ({4}%)</color>.",
                   "formattedDesc": "전투 시작 시 사망하기 전까지 파티원에게 <#CFFF71>최대 스킬 쿨타임 감소(20%)</color> 부여. 사망 시 아군 전체의 <#CFFF71>현재 스킬 쿨타임 감소 (80%)</color>.",
                   "stageLabel": "SS 10성",
-                  "descValues": "20|80"
+                  "descValues": "20|80",
+                  "factorAttk": 0,
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11052012143",
+                  "upgradeDescTemplate": "SS ★10 : 현재 스킬 쿨타임 감소 +{0}%",
+                  "upgradeDescValues": "20",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11052012143"
                 },
                 {
                   "upgradeDescFormatted": "SSS ★0 : 5초간 침묵 면역 부여 추가",
@@ -4531,7 +6072,14 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "전투 시작 시 사망하기 전까지 파티원에게 <#CFFF71>최대 스킬 쿨타임 감소({3}%)</color> 부여. 사망 시 아군 전체의 <#CFFF71>현재 스킬 쿨타임 감소 ({4}%)</color> 와 <#CFFF71>{5}초</color> 간 <#CFFF71>침묵 면역</color> 부여.",
                   "formattedDesc": "전투 시작 시 사망하기 전까지 파티원에게 <#CFFF71>최대 스킬 쿨타임 감소(20%)</color> 부여. 사망 시 아군 전체의 <#CFFF71>현재 스킬 쿨타임 감소 (80%)</color> 와 <#CFFF71>5초</color> 간 <#CFFF71>침묵 면역</color> 부여.",
                   "stageLabel": "SSS 0성",
-                  "descValues": "20|80|5"
+                  "descValues": "20|80|5",
+                  "factorAttk": 0,
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11052012144",
+                  "upgradeDescTemplate": "SSS ★0 : {0}초간 침묵 면역 부여 추가",
+                  "upgradeDescValues": "5",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11052012144"
                 }
               ]
             },
@@ -4553,7 +6101,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "자신에게 <#CFFF71>(타입)회피 증가({3}%)</color>, <#CFFF71>(타입)자연 체력회복 증가({4}%)</color> 적용.",
                   "formattedDesc": "자신에게 <#CFFF71>(타입)회피 증가(15%)</color>, <#CFFF71>(타입)자연 체력회복 증가(20%)</color> 적용.",
                   "stageLabel": "SS 0성",
-                  "descValues": "15|20"
+                  "descValues": "15|20",
+                  "factorAttk": 0,
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "43100"
                 },
                 {
                   "upgradeDescFormatted": "SS ★2 : (타입) 자연 체력회복 증가 +2%",
@@ -4566,7 +6118,13 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "자신에게 <#CFFF71>(타입)회피 증가({3}%)</color>, <#CFFF71>(타입)자연 체력회복 증가({4}%)</color> 적용.",
                   "formattedDesc": "자신에게 <#CFFF71>(타입)회피 증가(15%)</color>, <#CFFF71>(타입)자연 체력회복 증가(22%)</color> 적용.",
                   "stageLabel": "SS 2성",
-                  "descValues": "15|22"
+                  "descValues": "15|22",
+                  "factorAttk": 0,
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "43135",
+                  "upgradeDescTemplate": "SS ★2 : (타입) 자연 체력회복 증가 +2%",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_43135"
                 },
                 {
                   "upgradeDescFormatted": "SS ★4 : (타입) 회피 증가 +2%",
@@ -4579,7 +6137,13 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "자신에게 <#CFFF71>(타입)회피 증가({3}%)</color>, <#CFFF71>(타입)자연 체력회복 증가({4}%)</color> 적용.",
                   "formattedDesc": "자신에게 <#CFFF71>(타입)회피 증가(17%)</color>, <#CFFF71>(타입)자연 체력회복 증가(22%)</color> 적용.",
                   "stageLabel": "SS 4성",
-                  "descValues": "17|22"
+                  "descValues": "17|22",
+                  "factorAttk": 0,
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "43137",
+                  "upgradeDescTemplate": "SS ★4 : (타입) 회피 증가 +2%",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_43137"
                 },
                 {
                   "upgradeDescFormatted": "SS ★6 : (타입) 자연 체력회복 증가 +2%",
@@ -4592,7 +6156,13 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "자신에게 <#CFFF71>(타입)회피 증가({3}%)</color>, <#CFFF71>(타입)자연 체력회복 증가({4}%)</color> 적용.",
                   "formattedDesc": "자신에게 <#CFFF71>(타입)회피 증가(17%)</color>, <#CFFF71>(타입)자연 체력회복 증가(24%)</color> 적용.",
                   "stageLabel": "SS 6성",
-                  "descValues": "17|24"
+                  "descValues": "17|24",
+                  "factorAttk": 0,
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "43139",
+                  "upgradeDescTemplate": "SS ★6 : (타입) 자연 체력회복 증가 +2%",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_43139"
                 },
                 {
                   "upgradeDescFormatted": "SS ★8 : (타입) 회피 증가 +2%",
@@ -4605,7 +6175,13 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "자신에게 <#CFFF71>(타입)회피 증가({3}%)</color>, <#CFFF71>(타입)자연 체력회복 증가({4}%)</color> 적용.",
                   "formattedDesc": "자신에게 <#CFFF71>(타입)회피 증가(19%)</color>, <#CFFF71>(타입)자연 체력회복 증가(24%)</color> 적용.",
                   "stageLabel": "SS 8성",
-                  "descValues": "19|24"
+                  "descValues": "19|24",
+                  "factorAttk": 0,
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "43141",
+                  "upgradeDescTemplate": "SS ★8 : (타입) 회피 증가 +2%",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_43141"
                 },
                 {
                   "upgradeDescFormatted": "SSS ★1 : (타입) 회피 증가 +1% / (타입) 자연 체력회복 증가 +1%",
@@ -4618,7 +6194,13 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "자신에게 <#CFFF71>(타입)회피 증가({3}%)</color>, <#CFFF71>(타입)자연 체력회복 증가({4}%)</color> 적용.",
                   "formattedDesc": "자신에게 <#CFFF71>(타입)회피 증가(20%)</color>, <#CFFF71>(타입)자연 체력회복 증가(25%)</color> 적용.",
                   "stageLabel": "SSS 1성",
-                  "descValues": "20|25"
+                  "descValues": "20|25",
+                  "factorAttk": 0,
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "43145",
+                  "upgradeDescTemplate": "SSS ★1 : (타입) 회피 증가 +1% / (타입) 자연 체력회복 증가 +1%",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_43145"
                 }
               ]
             }
@@ -4696,10 +6278,13 @@ window.GACHA_PET_VIEWER_DATA = {
                   "coolTime": "1.9",
                   "iconImage": "assets/skills/SP0057_3.png",
                   "rawDesc": "적 1명을 공격(피해량: <#CFFF71>{16}%</color> x <#CFFF71>방어력</color>) 적중 시, <#CFFF71>{3}%</color> 확률로 <#CFFF71>{4}초</color>간 <#CFFF71>도발</color> 부여.",
-                  "formattedDesc": "적 1명을 공격(피해량: <#CFFF71>49%</color> x <#CFFF71>방어력</color>) 적중 시, <#CFFF71>20%</color> 확률로 <#CFFF71>2초</color>간 <#CFFF71>도발</color> 부여.",
+                  "formattedDesc": "적 1명을 공격(피해량: <#CFFF71>49%</color> x <#CFFF71>방어력</color>) 적중 시, <#CFFF71>50%</color> 확률로 <#CFFF71>2초</color>간 <#CFFF71>도발</color> 부여.",
                   "factorDef": 4900,
                   "stageLabel": "SS 0성",
-                  "descValues": "20|2"
+                  "descValues": "50|2",
+                  "factorAttk": 0,
+                  "factorHp": 0,
+                  "skillId": "11047010133"
                 },
                 {
                   "upgradeDescFormatted": "SS ★1 : 도발 확률 +10%",
@@ -4710,10 +6295,16 @@ window.GACHA_PET_VIEWER_DATA = {
                   "coolTime": "1.9",
                   "iconImage": "assets/skills/SP0057_3.png",
                   "rawDesc": "적 1명을 공격(피해량: <#CFFF71>{16}%</color> x <#CFFF71>방어력</color>) 적중 시, <#CFFF71>{3}%</color> 확률로 <#CFFF71>{4}초</color>간 <#CFFF71>도발</color> 부여.",
-                  "formattedDesc": "적 1명을 공격(피해량: <#CFFF71>49%</color> x <#CFFF71>방어력</color>) 적중 시, <#CFFF71>30%</color> 확률로 <#CFFF71>2초</color>간 <#CFFF71>도발</color> 부여.",
+                  "formattedDesc": "적 1명을 공격(피해량: <#CFFF71>49%</color> x <#CFFF71>방어력</color>) 적중 시, <#CFFF71>60%</color> 확률로 <#CFFF71>2초</color>간 <#CFFF71>도발</color> 부여.",
                   "factorDef": 4900,
                   "stageLabel": "SS 1성",
-                  "descValues": "30|2"
+                  "descValues": "60|2",
+                  "factorAttk": 0,
+                  "factorHp": 0,
+                  "skillId": "11047010134",
+                  "upgradeDescTemplate": "SS ★1 : 도발 확률 +{0}%",
+                  "upgradeDescValues": "10",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11047010134"
                 },
                 {
                   "upgradeDescFormatted": "SS ★3 : 피해량 +11%",
@@ -4724,10 +6315,16 @@ window.GACHA_PET_VIEWER_DATA = {
                   "coolTime": "1.9",
                   "iconImage": "assets/skills/SP0057_3.png",
                   "rawDesc": "적 1명을 공격(피해량: <#CFFF71>{16}%</color> x <#CFFF71>방어력</color>) 적중 시, <#CFFF71>{3}%</color> 확률로 <#CFFF71>{4}초</color>간 <#CFFF71>도발</color> 부여.",
-                  "formattedDesc": "적 1명을 공격(피해량: <#CFFF71>60%</color> x <#CFFF71>방어력</color>) 적중 시, <#CFFF71>30%</color> 확률로 <#CFFF71>2초</color>간 <#CFFF71>도발</color> 부여.",
+                  "formattedDesc": "적 1명을 공격(피해량: <#CFFF71>60%</color> x <#CFFF71>방어력</color>) 적중 시, <#CFFF71>60%</color> 확률로 <#CFFF71>2초</color>간 <#CFFF71>도발</color> 부여.",
                   "factorDef": 6000,
                   "stageLabel": "SS 3성",
-                  "descValues": "30|2"
+                  "descValues": "60|2",
+                  "factorAttk": 0,
+                  "factorHp": 0,
+                  "skillId": "11047010136",
+                  "upgradeDescTemplate": "SS ★3 : 피해량 +{0}%",
+                  "upgradeDescValues": "11",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11047010136"
                 },
                 {
                   "upgradeDescFormatted": "SS ★5 : 도발 확률 +10%",
@@ -4738,10 +6335,16 @@ window.GACHA_PET_VIEWER_DATA = {
                   "coolTime": "1.9",
                   "iconImage": "assets/skills/SP0057_3.png",
                   "rawDesc": "적 1명을 공격(피해량: <#CFFF71>{16}%</color> x <#CFFF71>방어력</color>) 적중 시, <#CFFF71>{3}%</color> 확률로 <#CFFF71>{4}초</color>간 <#CFFF71>도발</color> 부여.",
-                  "formattedDesc": "적 1명을 공격(피해량: <#CFFF71>60%</color> x <#CFFF71>방어력</color>) 적중 시, <#CFFF71>40%</color> 확률로 <#CFFF71>2초</color>간 <#CFFF71>도발</color> 부여.",
+                  "formattedDesc": "적 1명을 공격(피해량: <#CFFF71>60%</color> x <#CFFF71>방어력</color>) 적중 시, <#CFFF71>70%</color> 확률로 <#CFFF71>2초</color>간 <#CFFF71>도발</color> 부여.",
                   "factorDef": 6000,
                   "stageLabel": "SS 5성",
-                  "descValues": "40|2"
+                  "descValues": "70|2",
+                  "factorAttk": 0,
+                  "factorHp": 0,
+                  "skillId": "11047010138",
+                  "upgradeDescTemplate": "SS ★5 : 도발 확률 +{0}%",
+                  "upgradeDescValues": "10",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11047010138"
                 },
                 {
                   "upgradeDescFormatted": "SS ★7 : 피해량 +15%",
@@ -4752,10 +6355,16 @@ window.GACHA_PET_VIEWER_DATA = {
                   "coolTime": "1.9",
                   "iconImage": "assets/skills/SP0057_3.png",
                   "rawDesc": "적 1명을 공격(피해량: <#CFFF71>{16}%</color> x <#CFFF71>방어력</color>) 적중 시, <#CFFF71>{3}%</color> 확률로 <#CFFF71>{4}초</color>간 <#CFFF71>도발</color> 부여.",
-                  "formattedDesc": "적 1명을 공격(피해량: <#CFFF71>75%</color> x <#CFFF71>방어력</color>) 적중 시, <#CFFF71>40%</color> 확률로 <#CFFF71>2초</color>간 <#CFFF71>도발</color> 부여.",
+                  "formattedDesc": "적 1명을 공격(피해량: <#CFFF71>75%</color> x <#CFFF71>방어력</color>) 적중 시, <#CFFF71>70%</color> 확률로 <#CFFF71>2초</color>간 <#CFFF71>도발</color> 부여.",
                   "factorDef": 7500,
                   "stageLabel": "SS 7성",
-                  "descValues": "40|2"
+                  "descValues": "70|2",
+                  "factorAttk": 0,
+                  "factorHp": 0,
+                  "skillId": "11047010140",
+                  "upgradeDescTemplate": "SS ★7 : 피해량 +{0}%",
+                  "upgradeDescValues": "15",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11047010140"
                 },
                 {
                   "upgradeDescFormatted": "SSS ★0 : 도발 확률 +20%",
@@ -4766,10 +6375,16 @@ window.GACHA_PET_VIEWER_DATA = {
                   "coolTime": "1.9",
                   "iconImage": "assets/skills/SP0057_3.png",
                   "rawDesc": "적 1명을 공격(피해량: <#CFFF71>{16}%</color> x <#CFFF71>방어력</color>) 적중 시, <#CFFF71>{3}%</color> 확률로 <#CFFF71>{4}초</color>간 <#CFFF71>도발</color> 부여.",
-                  "formattedDesc": "적 1명을 공격(피해량: <#CFFF71>75%</color> x <#CFFF71>방어력</color>) 적중 시, <#CFFF71>60%</color> 확률로 <#CFFF71>2초</color>간 <#CFFF71>도발</color> 부여.",
+                  "formattedDesc": "적 1명을 공격(피해량: <#CFFF71>75%</color> x <#CFFF71>방어력</color>) 적중 시, <#CFFF71>90%</color> 확률로 <#CFFF71>2초</color>간 <#CFFF71>도발</color> 부여.",
                   "factorDef": 7500,
                   "stageLabel": "SSS 0성",
-                  "descValues": "60|2"
+                  "descValues": "90|2",
+                  "factorAttk": 0,
+                  "factorHp": 0,
+                  "skillId": "11047010144",
+                  "upgradeDescTemplate": "SSS ★0 : 도발 확률 +{0}%",
+                  "upgradeDescValues": "20",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11047010144"
                 }
               ]
             },
@@ -4789,10 +6404,13 @@ window.GACHA_PET_VIEWER_DATA = {
                   "coolTime": "6",
                   "iconImage": "assets/skills/SP0042_3.png",
                   "rawDesc": "자신의 주변 <#CFFF71>{3}m</color> 범위에 공격(피해량: <#CFFF71>{16}%</color> x <#CFFF71>방어력</color>). 적중 시, 대상에게 공중으로 띄우기 부여. 추가로 <#CFFF71>{4}초</color>간 유지되는 <#CFFF71>왕발자국({5}%)</color>을 생성하고 <#CFFF71>{6}초</color>간 <#CFFF71>(자신) 받는 피해 감소 ({7}%)</color> 획득.",
-                  "formattedDesc": "자신의 주변 <#CFFF71>2m</color> 범위에 공격(피해량: <#CFFF71>205%</color> x <#CFFF71>방어력</color>). 적중 시, 대상에게 공중으로 띄우기 부여. 추가로 <#CFFF71>3초</color>간 유지되는 <#CFFF71>왕발자국(20%)</color>을 생성하고 <#CFFF71>4초</color>간 <#CFFF71>(자신) 받는 피해 감소 (40%)</color> 획득.",
+                  "formattedDesc": "자신의 주변 <#CFFF71>2m</color> 범위에 공격(피해량: <#CFFF71>205%</color> x <#CFFF71>방어력</color>). 적중 시, 대상에게 공중으로 띄우기 부여. 추가로 <#CFFF71>3초</color>간 유지되는 <#CFFF71>왕발자국(20%)</color>을 생성하고 <#CFFF71>4초</color>간 <#CFFF71>(자신) 받는 피해 감소 (45%)</color> 획득.",
                   "factorDef": 20500,
                   "stageLabel": "SS 0성",
-                  "descValues": "2|3|20|4|40"
+                  "descValues": "2|3|20|4|45",
+                  "factorAttk": 0,
+                  "factorHp": 0,
+                  "skillId": "11047011133"
                 },
                 {
                   "upgradeDescFormatted": "SS ★1 : (자신) 받는 피해 감소 +5%",
@@ -4803,10 +6421,16 @@ window.GACHA_PET_VIEWER_DATA = {
                   "coolTime": "6",
                   "iconImage": "assets/skills/SP0042_3.png",
                   "rawDesc": "자신의 주변 <#CFFF71>{3}m</color> 범위에 공격(피해량: <#CFFF71>{16}%</color> x <#CFFF71>방어력</color>). 적중 시, 대상에게 공중으로 띄우기 부여. 추가로 <#CFFF71>{4}초</color>간 유지되는 <#CFFF71>왕발자국({5}%)</color>을 생성하고 <#CFFF71>{6}초</color>간 <#CFFF71>(자신) 받는 피해 감소 ({7}%)</color> 획득.",
-                  "formattedDesc": "자신의 주변 <#CFFF71>2m</color> 범위에 공격(피해량: <#CFFF71>205%</color> x <#CFFF71>방어력</color>). 적중 시, 대상에게 공중으로 띄우기 부여. 추가로 <#CFFF71>3초</color>간 유지되는 <#CFFF71>왕발자국(20%)</color>을 생성하고 <#CFFF71>4초</color>간 <#CFFF71>(자신) 받는 피해 감소 (45%)</color> 획득.",
+                  "formattedDesc": "자신의 주변 <#CFFF71>2m</color> 범위에 공격(피해량: <#CFFF71>205%</color> x <#CFFF71>방어력</color>). 적중 시, 대상에게 공중으로 띄우기 부여. 추가로 <#CFFF71>3초</color>간 유지되는 <#CFFF71>왕발자국(20%)</color>을 생성하고 <#CFFF71>4초</color>간 <#CFFF71>(자신) 받는 피해 감소 (50%)</color> 획득.",
                   "factorDef": 20500,
                   "stageLabel": "SS 1성",
-                  "descValues": "2|3|20|4|45"
+                  "descValues": "2|3|20|4|50",
+                  "factorAttk": 0,
+                  "factorHp": 0,
+                  "skillId": "11047011134",
+                  "upgradeDescTemplate": "SS ★1 : (자신) 받는 피해 감소 +{0}%",
+                  "upgradeDescValues": "5",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11047011134"
                 },
                 {
                   "upgradeDescFormatted": "SS ★3 : 피해량 +45%",
@@ -4817,10 +6441,16 @@ window.GACHA_PET_VIEWER_DATA = {
                   "coolTime": "6",
                   "iconImage": "assets/skills/SP0042_3.png",
                   "rawDesc": "자신의 주변 <#CFFF71>{3}m</color> 범위에 공격(피해량: <#CFFF71>{16}%</color> x <#CFFF71>방어력</color>). 적중 시, 대상에게 공중으로 띄우기 부여. 추가로 <#CFFF71>{4}초</color>간 유지되는 <#CFFF71>왕발자국({5}%)</color>을 생성하고 <#CFFF71>{6}초</color>간 <#CFFF71>(자신) 받는 피해 감소 ({7}%)</color> 획득.",
-                  "formattedDesc": "자신의 주변 <#CFFF71>2m</color> 범위에 공격(피해량: <#CFFF71>250%</color> x <#CFFF71>방어력</color>). 적중 시, 대상에게 공중으로 띄우기 부여. 추가로 <#CFFF71>3초</color>간 유지되는 <#CFFF71>왕발자국(20%)</color>을 생성하고 <#CFFF71>4초</color>간 <#CFFF71>(자신) 받는 피해 감소 (45%)</color> 획득.",
+                  "formattedDesc": "자신의 주변 <#CFFF71>2m</color> 범위에 공격(피해량: <#CFFF71>250%</color> x <#CFFF71>방어력</color>). 적중 시, 대상에게 공중으로 띄우기 부여. 추가로 <#CFFF71>3초</color>간 유지되는 <#CFFF71>왕발자국(20%)</color>을 생성하고 <#CFFF71>4초</color>간 <#CFFF71>(자신) 받는 피해 감소 (50%)</color> 획득.",
                   "factorDef": 25000,
                   "stageLabel": "SS 3성",
-                  "descValues": "2|3|20|4|45"
+                  "descValues": "2|3|20|4|50",
+                  "factorAttk": 0,
+                  "factorHp": 0,
+                  "skillId": "11047011136",
+                  "upgradeDescTemplate": "SS ★3 : 피해량 +{0}%",
+                  "upgradeDescValues": "45",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11047011136"
                 },
                 {
                   "upgradeDescFormatted": "SS ★5 : (자신) 받는 피해 감소 +10%",
@@ -4831,10 +6461,16 @@ window.GACHA_PET_VIEWER_DATA = {
                   "coolTime": "6",
                   "iconImage": "assets/skills/SP0042_3.png",
                   "rawDesc": "자신의 주변 <#CFFF71>{3}m</color> 범위에 공격(피해량: <#CFFF71>{16}%</color> x <#CFFF71>방어력</color>). 적중 시, 대상에게 공중으로 띄우기 부여. 추가로 <#CFFF71>{4}초</color>간 유지되는 <#CFFF71>왕발자국({5}%)</color>을 생성하고 <#CFFF71>{6}초</color>간 <#CFFF71>(자신) 받는 피해 감소 ({7}%)</color> 획득.",
-                  "formattedDesc": "자신의 주변 <#CFFF71>2m</color> 범위에 공격(피해량: <#CFFF71>250%</color> x <#CFFF71>방어력</color>). 적중 시, 대상에게 공중으로 띄우기 부여. 추가로 <#CFFF71>3초</color>간 유지되는 <#CFFF71>왕발자국(20%)</color>을 생성하고 <#CFFF71>4초</color>간 <#CFFF71>(자신) 받는 피해 감소 (55%)</color> 획득.",
+                  "formattedDesc": "자신의 주변 <#CFFF71>2m</color> 범위에 공격(피해량: <#CFFF71>250%</color> x <#CFFF71>방어력</color>). 적중 시, 대상에게 공중으로 띄우기 부여. 추가로 <#CFFF71>3초</color>간 유지되는 <#CFFF71>왕발자국(20%)</color>을 생성하고 <#CFFF71>4초</color>간 <#CFFF71>(자신) 받는 피해 감소 (60%)</color> 획득.",
                   "factorDef": 25000,
                   "stageLabel": "SS 5성",
-                  "descValues": "2|3|20|4|55"
+                  "descValues": "2|3|20|4|60",
+                  "factorAttk": 0,
+                  "factorHp": 0,
+                  "skillId": "11047011138",
+                  "upgradeDescTemplate": "SS ★5 : (자신) 받는 피해 감소 +{0}%",
+                  "upgradeDescValues": "10",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11047011138"
                 },
                 {
                   "upgradeDescFormatted": "SS ★7 : 피해량 +65%",
@@ -4845,10 +6481,16 @@ window.GACHA_PET_VIEWER_DATA = {
                   "coolTime": "6",
                   "iconImage": "assets/skills/SP0042_3.png",
                   "rawDesc": "자신의 주변 <#CFFF71>{3}m</color> 범위에 공격(피해량: <#CFFF71>{16}%</color> x <#CFFF71>방어력</color>). 적중 시, 대상에게 공중으로 띄우기 부여. 추가로 <#CFFF71>{4}초</color>간 유지되는 <#CFFF71>왕발자국({5}%)</color>을 생성하고 <#CFFF71>{6}초</color>간 <#CFFF71>(자신) 받는 피해 감소 ({7}%)</color> 획득.",
-                  "formattedDesc": "자신의 주변 <#CFFF71>2m</color> 범위에 공격(피해량: <#CFFF71>315%</color> x <#CFFF71>방어력</color>). 적중 시, 대상에게 공중으로 띄우기 부여. 추가로 <#CFFF71>3초</color>간 유지되는 <#CFFF71>왕발자국(20%)</color>을 생성하고 <#CFFF71>4초</color>간 <#CFFF71>(자신) 받는 피해 감소 (55%)</color> 획득.",
+                  "formattedDesc": "자신의 주변 <#CFFF71>2m</color> 범위에 공격(피해량: <#CFFF71>315%</color> x <#CFFF71>방어력</color>). 적중 시, 대상에게 공중으로 띄우기 부여. 추가로 <#CFFF71>3초</color>간 유지되는 <#CFFF71>왕발자국(20%)</color>을 생성하고 <#CFFF71>4초</color>간 <#CFFF71>(자신) 받는 피해 감소 (60%)</color> 획득.",
                   "factorDef": 31500,
                   "stageLabel": "SS 7성",
-                  "descValues": "2|3|20|4|55"
+                  "descValues": "2|3|20|4|60",
+                  "factorAttk": 0,
+                  "factorHp": 0,
+                  "skillId": "11047011140",
+                  "upgradeDescTemplate": "SS ★7 : 피해량 +{0}%",
+                  "upgradeDescValues": "65",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11047011140"
                 },
                 {
                   "upgradeDescFormatted": "SS ★10 : 범위 +1m",
@@ -4859,10 +6501,16 @@ window.GACHA_PET_VIEWER_DATA = {
                   "coolTime": "6",
                   "iconImage": "assets/skills/SP0042_3.png",
                   "rawDesc": "자신의 주변 <#CFFF71>{3}m</color> 범위에 공격(피해량: <#CFFF71>{16}%</color> x <#CFFF71>방어력</color>). 적중 시, 대상에게 공중으로 띄우기 부여. 추가로 <#CFFF71>{4}초</color>간 유지되는 <#CFFF71>왕발자국({5}%)</color>을 생성하고 <#CFFF71>{6}초</color>간 <#CFFF71>(자신) 받는 피해 감소 ({7}%)</color> 획득.",
-                  "formattedDesc": "자신의 주변 <#CFFF71>3m</color> 범위에 공격(피해량: <#CFFF71>315%</color> x <#CFFF71>방어력</color>). 적중 시, 대상에게 공중으로 띄우기 부여. 추가로 <#CFFF71>3초</color>간 유지되는 <#CFFF71>왕발자국(20%)</color>을 생성하고 <#CFFF71>4초</color>간 <#CFFF71>(자신) 받는 피해 감소 (55%)</color> 획득.",
+                  "formattedDesc": "자신의 주변 <#CFFF71>3m</color> 범위에 공격(피해량: <#CFFF71>315%</color> x <#CFFF71>방어력</color>). 적중 시, 대상에게 공중으로 띄우기 부여. 추가로 <#CFFF71>3초</color>간 유지되는 <#CFFF71>왕발자국(20%)</color>을 생성하고 <#CFFF71>4초</color>간 <#CFFF71>(자신) 받는 피해 감소 (60%)</color> 획득.",
                   "factorDef": 31500,
                   "stageLabel": "SS 10성",
-                  "descValues": "3|3|20|4|55"
+                  "descValues": "3|3|20|4|60",
+                  "factorAttk": 0,
+                  "factorHp": 0,
+                  "skillId": "11047011143",
+                  "upgradeDescTemplate": "SS ★10 : 범위 +{0}m",
+                  "upgradeDescValues": "1",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11047011143"
                 },
                 {
                   "upgradeDescFormatted": "SSS ★0 : 적중 시, 50% 확률로 기절 2초 추가",
@@ -4873,10 +6521,16 @@ window.GACHA_PET_VIEWER_DATA = {
                   "coolTime": "6",
                   "iconImage": "assets/skills/SP0042_3.png",
                   "rawDesc": "자신의 주변 <#CFFF71>{3}m</color> 범위에 공격(피해량: <#CFFF71>{16}%</color> x <#CFFF71>방어력</color>). 적중 시, 대상을 공중으로 띄우고 <#CFFF71>{18}%</color> 확률로 <#CFFF71>{19}초</color>간 <#CFFF71>기절</color>을 부여. 추가로 <#CFFF71>{4}초</color>간 유지되는 <#CFFF71>왕발자국({5}%)</color>을 생성하고 <#CFFF71>{6}초</color>간 <#CFFF71>(자신) 받는 피해 감소 ({7}%)</color> 획득.",
-                  "formattedDesc": "자신의 주변 <#CFFF71>3m</color> 범위에 공격(피해량: <#CFFF71>315%</color> x <#CFFF71>방어력</color>). 적중 시, 대상을 공중으로 띄우고 <#CFFF71>50%</color> 확률로 <#CFFF71>2초</color>간 <#CFFF71>기절</color>을 부여. 추가로 <#CFFF71>3초</color>간 유지되는 <#CFFF71>왕발자국(20%)</color>을 생성하고 <#CFFF71>4초</color>간 <#CFFF71>(자신) 받는 피해 감소 (55%)</color> 획득.",
+                  "formattedDesc": "자신의 주변 <#CFFF71>3m</color> 범위에 공격(피해량: <#CFFF71>315%</color> x <#CFFF71>방어력</color>). 적중 시, 대상을 공중으로 띄우고 <#CFFF71>50%</color> 확률로 <#CFFF71>2초</color>간 <#CFFF71>기절</color>을 부여. 추가로 <#CFFF71>3초</color>간 유지되는 <#CFFF71>왕발자국(20%)</color>을 생성하고 <#CFFF71>4초</color>간 <#CFFF71>(자신) 받는 피해 감소 (60%)</color> 획득.",
                   "factorDef": 31500,
                   "stageLabel": "SSS 0성",
-                  "descValues": "3|3|20|4|55|50|2"
+                  "descValues": "3|3|20|4|60|50|2",
+                  "factorAttk": 0,
+                  "factorHp": 0,
+                  "skillId": "11047011144",
+                  "upgradeDescTemplate": "SSS ★0 : 적중 시, {0}% 확률로 기절 {1}초 추가",
+                  "upgradeDescValues": "50|2",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11047011144"
                 }
               ]
             },
@@ -4896,10 +6550,13 @@ window.GACHA_PET_VIEWER_DATA = {
                   "coolTime": "3",
                   "iconImage": "assets/skills/SP0026_3.png",
                   "rawDesc": "피해를 <#CFFF71>{3}회</color> 받을 때마다 자신의 주변 <#CFFF71>{4}m</color> 범위에 화염 불길 공격(피해량: <#CFFF71>{16}%</color> x <#CFFF71>방어력</color>). 추가로 <#CFFF71>{5}초</color>간 <#CFFF71>(자신) 방어력 증가 ({6}%)</color> 와 <#CFFF71>넘어트리기 면역</color> 획득. (<#CFFF71>{7}초</color>마다 발동)",
-                  "formattedDesc": "피해를 <#CFFF71>5회</color> 받을 때마다 자신의 주변 <#CFFF71>2m</color> 범위에 화염 불길 공격(피해량: <#CFFF71>105%</color> x <#CFFF71>방어력</color>). 추가로 <#CFFF71>3초</color>간 <#CFFF71>(자신) 방어력 증가 (200%)</color> 와 <#CFFF71>넘어트리기 면역</color> 획득. (<#CFFF71>3초</color>마다 발동)",
+                  "formattedDesc": "피해를 <#CFFF71>5회</color> 받을 때마다 자신의 주변 <#CFFF71>2m</color> 범위에 화염 불길 공격(피해량: <#CFFF71>105%</color> x <#CFFF71>방어력</color>). 추가로 <#CFFF71>3초</color>간 <#CFFF71>(자신) 방어력 증가 (300%)</color> 와 <#CFFF71>넘어트리기 면역</color> 획득. (<#CFFF71>3초</color>마다 발동)",
                   "factorDef": 10500,
                   "stageLabel": "SS 0성",
-                  "descValues": "5|2|3|200|3"
+                  "descValues": "5|2|3|300|3",
+                  "factorAttk": 0,
+                  "factorHp": 0,
+                  "skillId": "11047012133"
                 },
                 {
                   "upgradeDescFormatted": "SS ★1 : (자신) 방어력 증가 +100%",
@@ -4910,10 +6567,16 @@ window.GACHA_PET_VIEWER_DATA = {
                   "coolTime": "3",
                   "iconImage": "assets/skills/SP0026_3.png",
                   "rawDesc": "피해를 <#CFFF71>{3}회</color> 받을 때마다 자신의 주변 <#CFFF71>{4}m</color> 범위에 화염 불길 공격(피해량: <#CFFF71>{16}%</color> x <#CFFF71>방어력</color>). 추가로 <#CFFF71>{5}초</color>간 <#CFFF71>(자신) 방어력 증가 ({6}%)</color> 와 <#CFFF71>넘어트리기 면역</color> 획득. (<#CFFF71>{7}초</color>마다 발동)",
-                  "formattedDesc": "피해를 <#CFFF71>5회</color> 받을 때마다 자신의 주변 <#CFFF71>2m</color> 범위에 화염 불길 공격(피해량: <#CFFF71>105%</color> x <#CFFF71>방어력</color>). 추가로 <#CFFF71>3초</color>간 <#CFFF71>(자신) 방어력 증가 (300%)</color> 와 <#CFFF71>넘어트리기 면역</color> 획득. (<#CFFF71>3초</color>마다 발동)",
+                  "formattedDesc": "피해를 <#CFFF71>5회</color> 받을 때마다 자신의 주변 <#CFFF71>2m</color> 범위에 화염 불길 공격(피해량: <#CFFF71>105%</color> x <#CFFF71>방어력</color>). 추가로 <#CFFF71>3초</color>간 <#CFFF71>(자신) 방어력 증가 (400%)</color> 와 <#CFFF71>넘어트리기 면역</color> 획득. (<#CFFF71>3초</color>마다 발동)",
                   "factorDef": 10500,
                   "stageLabel": "SS 1성",
-                  "descValues": "5|2|3|300|3"
+                  "descValues": "5|2|3|400|3",
+                  "factorAttk": 0,
+                  "factorHp": 0,
+                  "skillId": "11047012134",
+                  "upgradeDescTemplate": "SS ★1 : (자신) 방어력 증가 +{0}%",
+                  "upgradeDescValues": "100",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11047012134"
                 },
                 {
                   "upgradeDescFormatted": "SS ★5 : 피해량 +25%",
@@ -4924,10 +6587,16 @@ window.GACHA_PET_VIEWER_DATA = {
                   "coolTime": "3",
                   "iconImage": "assets/skills/SP0026_3.png",
                   "rawDesc": "피해를 <#CFFF71>{3}회</color> 받을 때마다 자신의 주변 <#CFFF71>{4}m</color> 범위에 화염 불길 공격(피해량: <#CFFF71>{16}%</color> x <#CFFF71>방어력</color>). 추가로 <#CFFF71>{5}초</color>간 <#CFFF71>(자신) 방어력 증가 ({6}%)</color> 와 <#CFFF71>넘어트리기 면역</color> 획득. (<#CFFF71>{7}초</color>마다 발동)",
-                  "formattedDesc": "피해를 <#CFFF71>5회</color> 받을 때마다 자신의 주변 <#CFFF71>2m</color> 범위에 화염 불길 공격(피해량: <#CFFF71>130%</color> x <#CFFF71>방어력</color>). 추가로 <#CFFF71>3초</color>간 <#CFFF71>(자신) 방어력 증가 (300%)</color> 와 <#CFFF71>넘어트리기 면역</color> 획득. (<#CFFF71>3초</color>마다 발동)",
+                  "formattedDesc": "피해를 <#CFFF71>5회</color> 받을 때마다 자신의 주변 <#CFFF71>2m</color> 범위에 화염 불길 공격(피해량: <#CFFF71>130%</color> x <#CFFF71>방어력</color>). 추가로 <#CFFF71>3초</color>간 <#CFFF71>(자신) 방어력 증가 (400%)</color> 와 <#CFFF71>넘어트리기 면역</color> 획득. (<#CFFF71>3초</color>마다 발동)",
                   "factorDef": 13000,
                   "stageLabel": "SS 5성",
-                  "descValues": "5|2|3|300|3"
+                  "descValues": "5|2|3|400|3",
+                  "factorAttk": 0,
+                  "factorHp": 0,
+                  "skillId": "11047012138",
+                  "upgradeDescTemplate": "SS ★5 : 피해량 +{0}%",
+                  "upgradeDescValues": "25",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11047012138"
                 },
                 {
                   "upgradeDescFormatted": "SS ★7 : 발동 간격 -1초",
@@ -4938,13 +6607,19 @@ window.GACHA_PET_VIEWER_DATA = {
                   "coolTime": "2",
                   "iconImage": "assets/skills/SP0026_3.png",
                   "rawDesc": "피해를 <#CFFF71>{3}회</color> 받을 때마다 자신의 주변 <#CFFF71>{4}m</color> 범위에 화염 불길 공격(피해량: <#CFFF71>{16}%</color> x <#CFFF71>방어력</color>). 추가로 <#CFFF71>{5}초</color>간 <#CFFF71>(자신) 방어력 증가 ({6}%)</color> 와 <#CFFF71>넘어트리기 면역</color> 획득. (<#CFFF71>{7}초</color>마다 발동)",
-                  "formattedDesc": "피해를 <#CFFF71>5회</color> 받을 때마다 자신의 주변 <#CFFF71>2m</color> 범위에 화염 불길 공격(피해량: <#CFFF71>130%</color> x <#CFFF71>방어력</color>). 추가로 <#CFFF71>3초</color>간 <#CFFF71>(자신) 방어력 증가 (300%)</color> 와 <#CFFF71>넘어트리기 면역</color> 획득. (<#CFFF71>2초</color>마다 발동)",
+                  "formattedDesc": "피해를 <#CFFF71>5회</color> 받을 때마다 자신의 주변 <#CFFF71>2m</color> 범위에 화염 불길 공격(피해량: <#CFFF71>130%</color> x <#CFFF71>방어력</color>). 추가로 <#CFFF71>3초</color>간 <#CFFF71>(자신) 방어력 증가 (400%)</color> 와 <#CFFF71>넘어트리기 면역</color> 획득. (<#CFFF71>2초</color>마다 발동)",
                   "factorDef": 13000,
                   "stageLabel": "SS 7성",
-                  "descValues": "5|2|3|300|2"
+                  "descValues": "5|2|3|400|2",
+                  "factorAttk": 0,
+                  "factorHp": 0,
+                  "skillId": "11047012140",
+                  "upgradeDescTemplate": "SS ★7 : 발동 간격 -{0}초",
+                  "upgradeDescValues": "1",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11047012140"
                 },
                 {
-                  "upgradeDescFormatted": "SS ★10 : 체력 +10% 회복 추가",
+                  "upgradeDescFormatted": "SS ★10 : 체력 +20% 회복 추가",
                   "groupGrade": 10,
                   "skillType": "6",
                   "groupTier": 4,
@@ -4952,10 +6627,16 @@ window.GACHA_PET_VIEWER_DATA = {
                   "coolTime": "2",
                   "iconImage": "assets/skills/SP0026_3.png",
                   "rawDesc": "피해를 <#CFFF71>{3}회</color> 받을 때마다 자신의 주변 <#CFFF71>{4}m</color> 범위에 화염 불길 공격(피해량: <#CFFF71>{16}%</color> x <#CFFF71>방어력</color>). 추가로 <#CFFF71>{5}초</color>간 <#CFFF71>(자신) 방어력 증가 ({6}%)</color> 와 <#CFFF71>넘어트리기 면역</color> 획득하고 자신의 체력 <#CFFF71>{18}%</color> 회복. (<#CFFF71>{7}초</color>마다 발동)",
-                  "formattedDesc": "피해를 <#CFFF71>5회</color> 받을 때마다 자신의 주변 <#CFFF71>2m</color> 범위에 화염 불길 공격(피해량: <#CFFF71>130%</color> x <#CFFF71>방어력</color>). 추가로 <#CFFF71>3초</color>간 <#CFFF71>(자신) 방어력 증가 (300%)</color> 와 <#CFFF71>넘어트리기 면역</color> 획득하고 자신의 체력 <#CFFF71>10%</color> 회복. (<#CFFF71>2초</color>마다 발동)",
+                  "formattedDesc": "피해를 <#CFFF71>5회</color> 받을 때마다 자신의 주변 <#CFFF71>2m</color> 범위에 화염 불길 공격(피해량: <#CFFF71>130%</color> x <#CFFF71>방어력</color>). 추가로 <#CFFF71>3초</color>간 <#CFFF71>(자신) 방어력 증가 (400%)</color> 와 <#CFFF71>넘어트리기 면역</color> 획득하고 자신의 체력 <#CFFF71>20%</color> 회복. (<#CFFF71>2초</color>마다 발동)",
                   "factorDef": 13000,
                   "stageLabel": "SS 10성",
-                  "descValues": "5|2|3|300|2|10"
+                  "descValues": "5|2|3|400|2|20",
+                  "factorAttk": 0,
+                  "factorHp": 0,
+                  "skillId": "11047012143",
+                  "upgradeDescTemplate": "SS ★10 : 체력 +{0}% 회복 추가",
+                  "upgradeDescValues": "20",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11047012143"
                 },
                 {
                   "upgradeDescFormatted": "SSS ★0 : 넘어트리기 면역을 이동제어 면역으로 변경",
@@ -4966,10 +6647,15 @@ window.GACHA_PET_VIEWER_DATA = {
                   "coolTime": "2",
                   "iconImage": "assets/skills/SP0026_3.png",
                   "rawDesc": "피해를 <#CFFF71>{3}회</color> 받을 때마다 자신의 주변 <#CFFF71>{4}m</color> 범위에 화염 불길 공격(피해량: <#CFFF71>{16}%</color> x <#CFFF71>방어력</color>). 추가로 <#CFFF71>{5}초</color>간 <#CFFF71>(자신) 방어력 증가 ({6}%)</color> 와 <#CFFF71>이동제어 면역</color> 획득하고 자신의 체력 <#CFFF71>{18}%</color> 회복. (<#CFFF71>{7}초</color>마다 발동)",
-                  "formattedDesc": "피해를 <#CFFF71>5회</color> 받을 때마다 자신의 주변 <#CFFF71>2m</color> 범위에 화염 불길 공격(피해량: <#CFFF71>130%</color> x <#CFFF71>방어력</color>). 추가로 <#CFFF71>3초</color>간 <#CFFF71>(자신) 방어력 증가 (300%)</color> 와 <#CFFF71>이동제어 면역</color> 획득하고 자신의 체력 <#CFFF71>10%</color> 회복. (<#CFFF71>2초</color>마다 발동)",
+                  "formattedDesc": "피해를 <#CFFF71>5회</color> 받을 때마다 자신의 주변 <#CFFF71>2m</color> 범위에 화염 불길 공격(피해량: <#CFFF71>130%</color> x <#CFFF71>방어력</color>). 추가로 <#CFFF71>3초</color>간 <#CFFF71>(자신) 방어력 증가 (400%)</color> 와 <#CFFF71>이동제어 면역</color> 획득하고 자신의 체력 <#CFFF71>20%</color> 회복. (<#CFFF71>2초</color>마다 발동)",
                   "factorDef": 13000,
                   "stageLabel": "SSS 0성",
-                  "descValues": "5|2|3|300|2|10"
+                  "descValues": "5|2|3|400|2|20",
+                  "factorAttk": 0,
+                  "factorHp": 0,
+                  "skillId": "11047012144",
+                  "upgradeDescTemplate": "SSS ★0 : 넘어트리기 면역을 이동제어 면역으로 변경",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11047012144"
                 }
               ]
             },
@@ -4991,7 +6677,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "자신에게 <#CFFF71>(타입)받는 피해 감소({3}%)</color>, <#CFFF71>(타입)방어력 증가({4}%)</color> 적용.",
                   "formattedDesc": "자신에게 <#CFFF71>(타입)받는 피해 감소(30%)</color>, <#CFFF71>(타입)방어력 증가(300%)</color> 적용.",
                   "stageLabel": "SS 0성",
-                  "descValues": "30|300"
+                  "descValues": "30|300",
+                  "factorAttk": 0,
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "13100"
                 },
                 {
                   "upgradeDescFormatted": "SS ★2 : (타입) 방어력 증가 +30%",
@@ -5004,7 +6694,14 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "자신에게 <#CFFF71>(타입)받는 피해 감소({3}%)</color>, <#CFFF71>(타입)방어력 증가({4}%)</color> 적용.",
                   "formattedDesc": "자신에게 <#CFFF71>(타입)받는 피해 감소(30%)</color>, <#CFFF71>(타입)방어력 증가(330%)</color> 적용.",
                   "stageLabel": "SS 2성",
-                  "descValues": "30|330"
+                  "descValues": "30|330",
+                  "factorAttk": 0,
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "13135",
+                  "upgradeDescTemplate": "SS ★2 : (타입) 방어력 증가 +{0}%",
+                  "upgradeDescValues": "30",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_13135"
                 },
                 {
                   "upgradeDescFormatted": "SS ★4 : (타입) 받는 피해 감소 +2%",
@@ -5017,7 +6714,14 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "자신에게 <#CFFF71>(타입)받는 피해 감소({3}%)</color>, <#CFFF71>(타입)방어력 증가({4}%)</color> 적용.",
                   "formattedDesc": "자신에게 <#CFFF71>(타입)받는 피해 감소(32%)</color>, <#CFFF71>(타입)방어력 증가(330%)</color> 적용.",
                   "stageLabel": "SS 4성",
-                  "descValues": "32|330"
+                  "descValues": "32|330",
+                  "factorAttk": 0,
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "13137",
+                  "upgradeDescTemplate": "SS ★4 : (타입) 받는 피해 감소 +{0}%",
+                  "upgradeDescValues": "2",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_13137"
                 },
                 {
                   "upgradeDescFormatted": "SS ★6 : (타입) 방어력 증가 +30%",
@@ -5030,7 +6734,14 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "자신에게 <#CFFF71>(타입)받는 피해 감소({3}%)</color>, <#CFFF71>(타입)방어력 증가({4}%)</color> 적용.",
                   "formattedDesc": "자신에게 <#CFFF71>(타입)받는 피해 감소(32%)</color>, <#CFFF71>(타입)방어력 증가(360%)</color> 적용.",
                   "stageLabel": "SS 6성",
-                  "descValues": "32|360"
+                  "descValues": "32|360",
+                  "factorAttk": 0,
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "13139",
+                  "upgradeDescTemplate": "SS ★6 : (타입) 방어력 증가 +{0}%",
+                  "upgradeDescValues": "30",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_13139"
                 },
                 {
                   "upgradeDescFormatted": "SS ★8 : (타입) 받는 피해 감소 +2%",
@@ -5043,7 +6754,14 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "자신에게 <#CFFF71>(타입)받는 피해 감소({3}%)</color>, <#CFFF71>(타입)방어력 증가({4}%)</color> 적용.",
                   "formattedDesc": "자신에게 <#CFFF71>(타입)받는 피해 감소(34%)</color>, <#CFFF71>(타입)방어력 증가(360%)</color> 적용.",
                   "stageLabel": "SS 8성",
-                  "descValues": "34|360"
+                  "descValues": "34|360",
+                  "factorAttk": 0,
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "13141",
+                  "upgradeDescTemplate": "SS ★8 : (타입) 받는 피해 감소 +{0}%",
+                  "upgradeDescValues": "2",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_13141"
                 },
                 {
                   "upgradeDescFormatted": "SSS ★1 : (타입) 받는 피해 감소 +1% / (타입) 방어력 증가 +40%",
@@ -5056,7 +6774,14 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "자신에게 <#CFFF71>(타입)받는 피해 감소({3}%)</color>, <#CFFF71>(타입)방어력 증가({4}%)</color> 적용.",
                   "formattedDesc": "자신에게 <#CFFF71>(타입)받는 피해 감소(35%)</color>, <#CFFF71>(타입)방어력 증가(400%)</color> 적용.",
                   "stageLabel": "SSS 1성",
-                  "descValues": "35|400"
+                  "descValues": "35|400",
+                  "factorAttk": 0,
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "13145",
+                  "upgradeDescTemplate": "SSS ★1 : (타입) 받는 피해 감소 +{0}% / (타입) 방어력 증가 +{1}%",
+                  "upgradeDescValues": "1|40",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_13145"
                 }
               ]
             }
@@ -5135,9 +6860,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "iconImage": "assets/skills/SPN0002_2.png",
                   "rawDesc": "사정거리 내의 <#CFFF71>불 속성</color> 적 1명을 우선하여 공격(피해량: <#CFFF71>{0}%</color> x <#CFFF71>공격력</color>). 대상이 <#CFFF71>축축함</color> 상태이면 일반공격으로 주는 피해량에 <#CFFF71>(자신) 피해량 증가({3}%)</color> 효과 적용. 적중 시, <#CFFF71>{4}%</color> 확률로 <#CFFF71>{5}초</color> 간 침묵 부여.",
                   "factorAttk": 24700,
-                  "formattedDesc": "사정거리 내의 <#CFFF71>불 속성</color> 적 1명을 우선하여 공격(피해량: <#CFFF71>247%</color> x <#CFFF71>공격력</color>). 대상이 <#CFFF71>축축함</color> 상태이면 일반공격으로 주는 피해량에 <#CFFF71>(자신) 피해량 증가(30%)</color> 효과 적용. 적중 시, <#CFFF71>30%</color> 확률로 <#CFFF71>2초</color> 간 침묵 부여.",
+                  "formattedDesc": "사정거리 내의 <#CFFF71>불 속성</color> 적 1명을 우선하여 공격(피해량: <#CFFF71>247%</color> x <#CFFF71>공격력</color>). 대상이 <#CFFF71>축축함</color> 상태이면 일반공격으로 주는 피해량에 <#CFFF71>(자신) 피해량 증가(30%)</color> 효과 적용. 적중 시, <#CFFF71>50%</color> 확률로 <#CFFF71>2초</color> 간 침묵 부여.",
                   "stageLabel": "SS 0성",
-                  "descValues": "30|30|2"
+                  "descValues": "30|50|2",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11036010133"
                 },
                 {
                   "upgradeDescFormatted": "SS ★1 : 피해량 +49%",
@@ -5149,9 +6877,15 @@ window.GACHA_PET_VIEWER_DATA = {
                   "iconImage": "assets/skills/SPN0002_2.png",
                   "rawDesc": "사정거리 내의 <#CFFF71>불 속성</color> 적 1명을 우선하여 공격(피해량: <#CFFF71>{0}%</color> x <#CFFF71>공격력</color>). 대상이 <#CFFF71>축축함</color> 상태이면 일반공격으로 주는 피해량에 <#CFFF71>(자신) 피해량 증가({3}%)</color> 효과 적용. 적중 시, <#CFFF71>{4}%</color> 확률로 <#CFFF71>{5}초</color> 간 침묵 부여.",
                   "factorAttk": 29600,
-                  "formattedDesc": "사정거리 내의 <#CFFF71>불 속성</color> 적 1명을 우선하여 공격(피해량: <#CFFF71>296%</color> x <#CFFF71>공격력</color>). 대상이 <#CFFF71>축축함</color> 상태이면 일반공격으로 주는 피해량에 <#CFFF71>(자신) 피해량 증가(30%)</color> 효과 적용. 적중 시, <#CFFF71>30%</color> 확률로 <#CFFF71>2초</color> 간 침묵 부여.",
+                  "formattedDesc": "사정거리 내의 <#CFFF71>불 속성</color> 적 1명을 우선하여 공격(피해량: <#CFFF71>296%</color> x <#CFFF71>공격력</color>). 대상이 <#CFFF71>축축함</color> 상태이면 일반공격으로 주는 피해량에 <#CFFF71>(자신) 피해량 증가(30%)</color> 효과 적용. 적중 시, <#CFFF71>50%</color> 확률로 <#CFFF71>2초</color> 간 침묵 부여.",
                   "stageLabel": "SS 1성",
-                  "descValues": "30|30|2"
+                  "descValues": "30|50|2",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11036010134",
+                  "upgradeDescTemplate": "SS ★1 : 피해량 +{0}%",
+                  "upgradeDescValues": "49",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11036010134"
                 },
                 {
                   "upgradeDescFormatted": "SS ★3 : 침묵 확률 +20%",
@@ -5163,9 +6897,15 @@ window.GACHA_PET_VIEWER_DATA = {
                   "iconImage": "assets/skills/SPN0002_2.png",
                   "rawDesc": "사정거리 내의 <#CFFF71>불 속성</color> 적 1명을 우선하여 공격(피해량: <#CFFF71>{0}%</color> x <#CFFF71>공격력</color>). 대상이 <#CFFF71>축축함</color> 상태이면 일반공격으로 주는 피해량에 <#CFFF71>(자신) 피해량 증가({3}%)</color> 효과 적용. 적중 시, <#CFFF71>{4}%</color> 확률로 <#CFFF71>{5}초</color> 간 침묵 부여.",
                   "factorAttk": 29600,
-                  "formattedDesc": "사정거리 내의 <#CFFF71>불 속성</color> 적 1명을 우선하여 공격(피해량: <#CFFF71>296%</color> x <#CFFF71>공격력</color>). 대상이 <#CFFF71>축축함</color> 상태이면 일반공격으로 주는 피해량에 <#CFFF71>(자신) 피해량 증가(30%)</color> 효과 적용. 적중 시, <#CFFF71>50%</color> 확률로 <#CFFF71>2초</color> 간 침묵 부여.",
+                  "formattedDesc": "사정거리 내의 <#CFFF71>불 속성</color> 적 1명을 우선하여 공격(피해량: <#CFFF71>296%</color> x <#CFFF71>공격력</color>). 대상이 <#CFFF71>축축함</color> 상태이면 일반공격으로 주는 피해량에 <#CFFF71>(자신) 피해량 증가(30%)</color> 효과 적용. 적중 시, <#CFFF71>70%</color> 확률로 <#CFFF71>2초</color> 간 침묵 부여.",
                   "stageLabel": "SS 3성",
-                  "descValues": "30|50|2"
+                  "descValues": "30|70|2",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11036010136",
+                  "upgradeDescTemplate": "SS ★3 : 침묵 확률 +{0}%",
+                  "upgradeDescValues": "20",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11036010136"
                 },
                 {
                   "upgradeDescFormatted": "SS ★5 : 피해량 +69%",
@@ -5177,9 +6917,15 @@ window.GACHA_PET_VIEWER_DATA = {
                   "iconImage": "assets/skills/SPN0002_2.png",
                   "rawDesc": "사정거리 내의 <#CFFF71>불 속성</color> 적 1명을 우선하여 공격(피해량: <#CFFF71>{0}%</color> x <#CFFF71>공격력</color>). 대상이 <#CFFF71>축축함</color> 상태이면 일반공격으로 주는 피해량에 <#CFFF71>(자신) 피해량 증가({3}%)</color> 효과 적용. 적중 시, <#CFFF71>{4}%</color> 확률로 <#CFFF71>{5}초</color> 간 침묵 부여.",
                   "factorAttk": 36500,
-                  "formattedDesc": "사정거리 내의 <#CFFF71>불 속성</color> 적 1명을 우선하여 공격(피해량: <#CFFF71>365%</color> x <#CFFF71>공격력</color>). 대상이 <#CFFF71>축축함</color> 상태이면 일반공격으로 주는 피해량에 <#CFFF71>(자신) 피해량 증가(30%)</color> 효과 적용. 적중 시, <#CFFF71>50%</color> 확률로 <#CFFF71>2초</color> 간 침묵 부여.",
+                  "formattedDesc": "사정거리 내의 <#CFFF71>불 속성</color> 적 1명을 우선하여 공격(피해량: <#CFFF71>365%</color> x <#CFFF71>공격력</color>). 대상이 <#CFFF71>축축함</color> 상태이면 일반공격으로 주는 피해량에 <#CFFF71>(자신) 피해량 증가(30%)</color> 효과 적용. 적중 시, <#CFFF71>70%</color> 확률로 <#CFFF71>2초</color> 간 침묵 부여.",
                   "stageLabel": "SS 5성",
-                  "descValues": "30|50|2"
+                  "descValues": "30|70|2",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11036010138",
+                  "upgradeDescTemplate": "SS ★5 : 피해량 +{0}%",
+                  "upgradeDescValues": "69",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11036010138"
                 },
                 {
                   "upgradeDescFormatted": "SS ★7 : (자신) 피해량 증가 +20%",
@@ -5191,9 +6937,15 @@ window.GACHA_PET_VIEWER_DATA = {
                   "iconImage": "assets/skills/SPN0002_2.png",
                   "rawDesc": "사정거리 내의 <#CFFF71>불 속성</color> 적 1명을 우선하여 공격(피해량: <#CFFF71>{0}%</color> x <#CFFF71>공격력</color>). 대상이 <#CFFF71>축축함</color> 상태이면 일반공격으로 주는 피해량에 <#CFFF71>(자신) 피해량 증가({3}%)</color> 효과 적용. 적중 시, <#CFFF71>{4}%</color> 확률로 <#CFFF71>{5}초</color> 간 침묵 부여.",
                   "factorAttk": 36500,
-                  "formattedDesc": "사정거리 내의 <#CFFF71>불 속성</color> 적 1명을 우선하여 공격(피해량: <#CFFF71>365%</color> x <#CFFF71>공격력</color>). 대상이 <#CFFF71>축축함</color> 상태이면 일반공격으로 주는 피해량에 <#CFFF71>(자신) 피해량 증가(50%)</color> 효과 적용. 적중 시, <#CFFF71>50%</color> 확률로 <#CFFF71>2초</color> 간 침묵 부여.",
+                  "formattedDesc": "사정거리 내의 <#CFFF71>불 속성</color> 적 1명을 우선하여 공격(피해량: <#CFFF71>365%</color> x <#CFFF71>공격력</color>). 대상이 <#CFFF71>축축함</color> 상태이면 일반공격으로 주는 피해량에 <#CFFF71>(자신) 피해량 증가(50%)</color> 효과 적용. 적중 시, <#CFFF71>70%</color> 확률로 <#CFFF71>2초</color> 간 침묵 부여.",
                   "stageLabel": "SS 7성",
-                  "descValues": "50|50|2"
+                  "descValues": "50|70|2",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11036010140",
+                  "upgradeDescTemplate": "SS ★7 : (자신) 피해량 증가 +{0}%",
+                  "upgradeDescValues": "20",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11036010140"
                 },
                 {
                   "upgradeDescFormatted": "SSS ★0 : 피해량 +88%",
@@ -5205,9 +6957,15 @@ window.GACHA_PET_VIEWER_DATA = {
                   "iconImage": "assets/skills/SPN0002_2.png",
                   "rawDesc": "사정거리 내의 <#CFFF71>불 속성</color> 적 1명을 우선하여 공격(피해량: <#CFFF71>{0}%</color> x <#CFFF71>공격력</color>). 대상이 <#CFFF71>축축함</color> 상태이면 일반공격으로 주는 피해량에 <#CFFF71>(자신) 피해량 증가({3}%)</color> 효과 적용. 적중 시, <#CFFF71>{4}%</color> 확률로 <#CFFF71>{5}초</color> 간 침묵 부여.",
                   "factorAttk": 45300,
-                  "formattedDesc": "사정거리 내의 <#CFFF71>불 속성</color> 적 1명을 우선하여 공격(피해량: <#CFFF71>453%</color> x <#CFFF71>공격력</color>). 대상이 <#CFFF71>축축함</color> 상태이면 일반공격으로 주는 피해량에 <#CFFF71>(자신) 피해량 증가(50%)</color> 효과 적용. 적중 시, <#CFFF71>50%</color> 확률로 <#CFFF71>2초</color> 간 침묵 부여.",
+                  "formattedDesc": "사정거리 내의 <#CFFF71>불 속성</color> 적 1명을 우선하여 공격(피해량: <#CFFF71>453%</color> x <#CFFF71>공격력</color>). 대상이 <#CFFF71>축축함</color> 상태이면 일반공격으로 주는 피해량에 <#CFFF71>(자신) 피해량 증가(50%)</color> 효과 적용. 적중 시, <#CFFF71>70%</color> 확률로 <#CFFF71>2초</color> 간 침묵 부여.",
                   "stageLabel": "SSS 0성",
-                  "descValues": "50|50|2"
+                  "descValues": "50|70|2",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11036010144",
+                  "upgradeDescTemplate": "SSS ★0 : 피해량 +{0}%",
+                  "upgradeDescValues": "88",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11036010144"
                 }
               ]
             },
@@ -5230,7 +6988,10 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 154500,
                   "formattedDesc": "사정거리 내의 <#CFFF71>불 속성</color> 적 1명을 우선하여 물폭탄을 <#CFFF71>3회</color> 발사(피해량: <#CFFF71>1545%</color> x <#CFFF71>공격력</color>). 적중 시, <#CFFF71>3초</color> 간 <#CFFF71>축축함 Lv.1</color> 부여. 치명타 적중 시마다 대상을 넘어트리고 자신의 쿨타임 <#CFFF71>1초</color> 감소.",
                   "stageLabel": "SS 0성",
-                  "descValues": "3|3|1"
+                  "descValues": "3|3|1",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11036011133"
                 },
                 {
                   "upgradeDescFormatted": "SS ★1 : 물폭탄 발사 +1회",
@@ -5244,7 +7005,13 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 154500,
                   "formattedDesc": "사정거리 내의 <#CFFF71>불 속성</color> 적 1명을 우선하여 물폭탄을 <#CFFF71>4회</color> 발사(피해량: <#CFFF71>1545%</color> x <#CFFF71>공격력</color>). 적중 시, <#CFFF71>3초</color> 간 <#CFFF71>축축함 Lv.1</color> 부여. 치명타 적중 시마다 대상을 넘어트리고 자신의 쿨타임 <#CFFF71>1초</color> 감소.",
                   "stageLabel": "SS 1성",
-                  "descValues": "4|3|1"
+                  "descValues": "4|3|1",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11036011134",
+                  "upgradeDescTemplate": "SS ★1 : 물폭탄 발사 +{0}회",
+                  "upgradeDescValues": "1",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11036011134"
                 },
                 {
                   "upgradeDescFormatted": "SS ★3 : 피해량 +370%",
@@ -5258,7 +7025,13 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 191500,
                   "formattedDesc": "사정거리 내의 <#CFFF71>불 속성</color> 적 1명을 우선하여 물폭탄을 <#CFFF71>4회</color> 발사(피해량: <#CFFF71>1915%</color> x <#CFFF71>공격력</color>). 적중 시, <#CFFF71>3초</color> 간 <#CFFF71>축축함 Lv.1</color> 부여. 치명타 적중 시마다 대상을 넘어트리고 자신의 쿨타임 <#CFFF71>1초</color> 감소.",
                   "stageLabel": "SS 3성",
-                  "descValues": "4|3|1"
+                  "descValues": "4|3|1",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11036011136",
+                  "upgradeDescTemplate": "SS ★3 : 피해량 +{0}%",
+                  "upgradeDescValues": "370",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11036011136"
                 },
                 {
                   "upgradeDescFormatted": "SS ★5 : 축축함 Lv.1 +1초",
@@ -5272,7 +7045,13 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 191500,
                   "formattedDesc": "사정거리 내의 <#CFFF71>불 속성</color> 적 1명을 우선하여 물폭탄을 <#CFFF71>4회</color> 발사(피해량: <#CFFF71>1915%</color> x <#CFFF71>공격력</color>). 적중 시, <#CFFF71>4초</color> 간 <#CFFF71>축축함 Lv.1</color> 부여. 치명타 적중 시마다 대상을 넘어트리고 자신의 쿨타임 <#CFFF71>1초</color> 감소.",
                   "stageLabel": "SS 5성",
-                  "descValues": "4|4|1"
+                  "descValues": "4|4|1",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11036011138",
+                  "upgradeDescTemplate": "SS ★5 : 축축함 Lv.1 +{0}초",
+                  "upgradeDescValues": "1",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11036011138"
                 },
                 {
                   "upgradeDescFormatted": "SS ★7 : 피해량 +490%",
@@ -5286,7 +7065,13 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 240500,
                   "formattedDesc": "사정거리 내의 <#CFFF71>불 속성</color> 적 1명을 우선하여 물폭탄을 <#CFFF71>4회</color> 발사(피해량: <#CFFF71>2405%</color> x <#CFFF71>공격력</color>). 적중 시, <#CFFF71>4초</color> 간 <#CFFF71>축축함 Lv.1</color> 부여. 치명타 적중 시마다 대상을 넘어트리고 자신의 쿨타임 <#CFFF71>1초</color> 감소.",
                   "stageLabel": "SS 7성",
-                  "descValues": "4|4|1"
+                  "descValues": "4|4|1",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11036011140",
+                  "upgradeDescTemplate": "SS ★7 : 피해량 +{0}%",
+                  "upgradeDescValues": "490",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11036011140"
                 },
                 {
                   "upgradeDescFormatted": "SS ★10 : 물폭탄 발사 +1회",
@@ -5300,7 +7085,13 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 240500,
                   "formattedDesc": "사정거리 내의 <#CFFF71>불 속성</color> 적 1명을 우선하여 물폭탄을 <#CFFF71>5회</color> 발사(피해량: <#CFFF71>2405%</color> x <#CFFF71>공격력</color>). 적중 시, <#CFFF71>4초</color> 간 <#CFFF71>축축함 Lv.1</color> 부여. 치명타 적중 시마다 대상을 넘어트리고 자신의 쿨타임 <#CFFF71>1초</color> 감소.",
                   "stageLabel": "SS 10성",
-                  "descValues": "5|4|1"
+                  "descValues": "5|4|1",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11036011143",
+                  "upgradeDescTemplate": "SS ★10 : 물폭탄 발사 +{0}회",
+                  "upgradeDescValues": "1",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11036011143"
                 },
                 {
                   "upgradeDescFormatted": "SSS ★0 : 피해량 +615% / 치명타 적중 시마다 파티원의 쿨타임 감소로 변경",
@@ -5314,7 +7105,13 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 302000,
                   "formattedDesc": "사정거리 내의 <#CFFF71>불 속성</color> 적 1명을 우선하여 물폭탄을 <#CFFF71>5회</color> 발사(피해량: <#CFFF71>3020%</color> x <#CFFF71>공격력</color>). 적중 시, <#CFFF71>4초</color> 간 <#CFFF71>축축함 Lv.1</color> 부여. 치명타 적중 시마다 대상을 넘어트리고 파티원의 쿨타임 <#CFFF71>1초</color> 감소.",
                   "stageLabel": "SSS 0성",
-                  "descValues": "5|4|1"
+                  "descValues": "5|4|1",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11036011144",
+                  "upgradeDescTemplate": "SSS ★0 : 피해량 +{0}% / 치명타 적중 시마다 파티원의 쿨타임 감소로 변경",
+                  "upgradeDescValues": "615",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11036011144"
                 }
               ]
             },
@@ -5335,9 +7132,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "iconImage": "assets/skills/SP0054_2.png",
                   "rawDesc": "적 주변 <#CFFF71>{3}m</color> 범위에 <#CFFF71>{4}초</color> 간 유지되는 물기둥를 소환하여 범위 내 적에게 매 초마다 피해(피해량: <#CFFF71>{0}%</color> x <#CFFF71>공격력</color>). 적중 시마다 <#CFFF71>{5}%</color> 확률로 대상을 공중으로 띄우고 대상이 <#CFFF71>축축함</color> 상태이면 스킬로 주는 피해량에 <#CFFF71>(자신) 피해량 증가({6}%)</color>.",
                   "factorAttk": 120500,
-                  "formattedDesc": "적 주변 <#CFFF71>2m</color> 범위에 <#CFFF71>3초</color> 간 유지되는 물기둥를 소환하여 범위 내 적에게 매 초마다 피해(피해량: <#CFFF71>1205%</color> x <#CFFF71>공격력</color>). 적중 시마다 <#CFFF71>50%</color> 확률로 대상을 공중으로 띄우고 대상이 <#CFFF71>축축함</color> 상태이면 스킬로 주는 피해량에 <#CFFF71>(자신) 피해량 증가(70%)</color>.",
+                  "formattedDesc": "적 주변 <#CFFF71>2m</color> 범위에 <#CFFF71>3초</color> 간 유지되는 물기둥를 소환하여 범위 내 적에게 매 초마다 피해(피해량: <#CFFF71>1205%</color> x <#CFFF71>공격력</color>). 적중 시마다 <#CFFF71>50%</color> 확률로 대상을 공중으로 띄우고 대상이 <#CFFF71>축축함</color> 상태이면 스킬로 주는 피해량에 <#CFFF71>(자신) 피해량 증가(100%)</color>.",
                   "stageLabel": "SS 0성",
-                  "descValues": "2|3|50|70"
+                  "descValues": "2|3|50|100",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11036012133"
                 },
                 {
                   "upgradeDescFormatted": "SS ★1 : 피해량 +240%",
@@ -5349,9 +7149,15 @@ window.GACHA_PET_VIEWER_DATA = {
                   "iconImage": "assets/skills/SP0054_2.png",
                   "rawDesc": "적 주변 <#CFFF71>{3}m</color> 범위에 <#CFFF71>{4}초</color> 간 유지되는 물기둥를 소환하여 범위 내 적에게 매 초마다 피해(피해량: <#CFFF71>{0}%</color> x <#CFFF71>공격력</color>). 적중 시마다 <#CFFF71>{5}%</color> 확률로 대상을 공중으로 띄우고 대상이 <#CFFF71>축축함</color> 상태이면 스킬로 주는 피해량에 <#CFFF71>(자신) 피해량 증가({6}%)</color>.",
                   "factorAttk": 144500,
-                  "formattedDesc": "적 주변 <#CFFF71>2m</color> 범위에 <#CFFF71>3초</color> 간 유지되는 물기둥를 소환하여 범위 내 적에게 매 초마다 피해(피해량: <#CFFF71>1445%</color> x <#CFFF71>공격력</color>). 적중 시마다 <#CFFF71>50%</color> 확률로 대상을 공중으로 띄우고 대상이 <#CFFF71>축축함</color> 상태이면 스킬로 주는 피해량에 <#CFFF71>(자신) 피해량 증가(70%)</color>.",
+                  "formattedDesc": "적 주변 <#CFFF71>2m</color> 범위에 <#CFFF71>3초</color> 간 유지되는 물기둥를 소환하여 범위 내 적에게 매 초마다 피해(피해량: <#CFFF71>1445%</color> x <#CFFF71>공격력</color>). 적중 시마다 <#CFFF71>50%</color> 확률로 대상을 공중으로 띄우고 대상이 <#CFFF71>축축함</color> 상태이면 스킬로 주는 피해량에 <#CFFF71>(자신) 피해량 증가(100%)</color>.",
                   "stageLabel": "SS 1성",
-                  "descValues": "2|3|50|70"
+                  "descValues": "2|3|50|100",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11036012134",
+                  "upgradeDescTemplate": "SS ★1 : 피해량 +{0}%",
+                  "upgradeDescValues": "240",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11036012134"
                 },
                 {
                   "upgradeDescFormatted": "SS ★5 : (자신) 피해량 증가 +50%",
@@ -5363,9 +7169,15 @@ window.GACHA_PET_VIEWER_DATA = {
                   "iconImage": "assets/skills/SP0054_2.png",
                   "rawDesc": "적 주변 <#CFFF71>{3}m</color> 범위에 <#CFFF71>{4}초</color> 간 유지되는 물기둥를 소환하여 범위 내 적에게 매 초마다 피해(피해량: <#CFFF71>{0}%</color> x <#CFFF71>공격력</color>). 적중 시마다 <#CFFF71>{5}%</color> 확률로 대상을 공중으로 띄우고 대상이 <#CFFF71>축축함</color> 상태이면 스킬로 주는 피해량에 <#CFFF71>(자신) 피해량 증가({6}%)</color>.",
                   "factorAttk": 144500,
-                  "formattedDesc": "적 주변 <#CFFF71>2m</color> 범위에 <#CFFF71>3초</color> 간 유지되는 물기둥를 소환하여 범위 내 적에게 매 초마다 피해(피해량: <#CFFF71>1445%</color> x <#CFFF71>공격력</color>). 적중 시마다 <#CFFF71>50%</color> 확률로 대상을 공중으로 띄우고 대상이 <#CFFF71>축축함</color> 상태이면 스킬로 주는 피해량에 <#CFFF71>(자신) 피해량 증가(120%)</color>.",
+                  "formattedDesc": "적 주변 <#CFFF71>2m</color> 범위에 <#CFFF71>3초</color> 간 유지되는 물기둥를 소환하여 범위 내 적에게 매 초마다 피해(피해량: <#CFFF71>1445%</color> x <#CFFF71>공격력</color>). 적중 시마다 <#CFFF71>50%</color> 확률로 대상을 공중으로 띄우고 대상이 <#CFFF71>축축함</color> 상태이면 스킬로 주는 피해량에 <#CFFF71>(자신) 피해량 증가(150%)</color>.",
                   "stageLabel": "SS 5성",
-                  "descValues": "2|3|50|120"
+                  "descValues": "2|3|50|150",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11036012138",
+                  "upgradeDescTemplate": "SS ★5 : (자신) 피해량 증가 +{0}%",
+                  "upgradeDescValues": "50",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11036012138"
                 },
                 {
                   "upgradeDescFormatted": "SS ★7 : 피해량 +335%",
@@ -5377,9 +7189,15 @@ window.GACHA_PET_VIEWER_DATA = {
                   "iconImage": "assets/skills/SP0054_2.png",
                   "rawDesc": "적 주변 <#CFFF71>{3}m</color> 범위에 <#CFFF71>{4}초</color> 간 유지되는 물기둥를 소환하여 범위 내 적에게 매 초마다 피해(피해량: <#CFFF71>{0}%</color> x <#CFFF71>공격력</color>). 적중 시마다 <#CFFF71>{5}%</color> 확률로 대상을 공중으로 띄우고 대상이 <#CFFF71>축축함</color> 상태이면 스킬로 주는 피해량에 <#CFFF71>(자신) 피해량 증가({6}%)</color>.",
                   "factorAttk": 178000,
-                  "formattedDesc": "적 주변 <#CFFF71>2m</color> 범위에 <#CFFF71>3초</color> 간 유지되는 물기둥를 소환하여 범위 내 적에게 매 초마다 피해(피해량: <#CFFF71>1780%</color> x <#CFFF71>공격력</color>). 적중 시마다 <#CFFF71>50%</color> 확률로 대상을 공중으로 띄우고 대상이 <#CFFF71>축축함</color> 상태이면 스킬로 주는 피해량에 <#CFFF71>(자신) 피해량 증가(120%)</color>.",
+                  "formattedDesc": "적 주변 <#CFFF71>2m</color> 범위에 <#CFFF71>3초</color> 간 유지되는 물기둥를 소환하여 범위 내 적에게 매 초마다 피해(피해량: <#CFFF71>1780%</color> x <#CFFF71>공격력</color>). 적중 시마다 <#CFFF71>50%</color> 확률로 대상을 공중으로 띄우고 대상이 <#CFFF71>축축함</color> 상태이면 스킬로 주는 피해량에 <#CFFF71>(자신) 피해량 증가(150%)</color>.",
                   "stageLabel": "SS 7성",
-                  "descValues": "2|3|50|120"
+                  "descValues": "2|3|50|150",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11036012140",
+                  "upgradeDescTemplate": "SS ★7 : 피해량 +{0}%",
+                  "upgradeDescValues": "335",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11036012140"
                 },
                 {
                   "upgradeDescFormatted": "SS ★10 : 공중으로 띄우기 확률 +50%",
@@ -5391,9 +7209,15 @@ window.GACHA_PET_VIEWER_DATA = {
                   "iconImage": "assets/skills/SP0054_2.png",
                   "rawDesc": "적 주변 <#CFFF71>{3}m</color> 범위에 <#CFFF71>{4}초</color> 간 유지되는 물기둥를 소환하여 범위 내 적에게 매 초마다 피해(피해량: <#CFFF71>{0}%</color> x <#CFFF71>공격력</color>). 적중 시마다 <#CFFF71>{5}%</color> 확률로 대상을 공중으로 띄우고 대상이 <#CFFF71>축축함</color> 상태이면 스킬로 주는 피해량에 <#CFFF71>(자신) 피해량 증가({6}%)</color>.",
                   "factorAttk": 178000,
-                  "formattedDesc": "적 주변 <#CFFF71>2m</color> 범위에 <#CFFF71>3초</color> 간 유지되는 물기둥를 소환하여 범위 내 적에게 매 초마다 피해(피해량: <#CFFF71>1780%</color> x <#CFFF71>공격력</color>). 적중 시마다 <#CFFF71>100%</color> 확률로 대상을 공중으로 띄우고 대상이 <#CFFF71>축축함</color> 상태이면 스킬로 주는 피해량에 <#CFFF71>(자신) 피해량 증가(120%)</color>.",
+                  "formattedDesc": "적 주변 <#CFFF71>2m</color> 범위에 <#CFFF71>3초</color> 간 유지되는 물기둥를 소환하여 범위 내 적에게 매 초마다 피해(피해량: <#CFFF71>1780%</color> x <#CFFF71>공격력</color>). 적중 시마다 <#CFFF71>100%</color> 확률로 대상을 공중으로 띄우고 대상이 <#CFFF71>축축함</color> 상태이면 스킬로 주는 피해량에 <#CFFF71>(자신) 피해량 증가(150%)</color>.",
                   "stageLabel": "SS 10성",
-                  "descValues": "2|3|100|120"
+                  "descValues": "2|3|100|150",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11036012143",
+                  "upgradeDescTemplate": "SS ★10 : 공중으로 띄우기 확률 +{0}%",
+                  "upgradeDescValues": "50",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11036012143"
                 },
                 {
                   "upgradeDescFormatted": "SSS ★0 : 피해량 +430%",
@@ -5405,9 +7229,15 @@ window.GACHA_PET_VIEWER_DATA = {
                   "iconImage": "assets/skills/SP0054_2.png",
                   "rawDesc": "적 주변 <#CFFF71>{3}m</color> 범위에 <#CFFF71>{4}초</color> 간 유지되는 물기둥를 소환하여 범위 내 적에게 매 초마다 피해(피해량: <#CFFF71>{0}%</color> x <#CFFF71>공격력</color>). 적중 시마다 <#CFFF71>{5}%</color> 확률로 대상을 공중으로 띄우고 대상이 <#CFFF71>축축함</color> 상태이면 스킬로 주는 피해량에 <#CFFF71>(자신) 피해량 증가({6}%)</color>.",
                   "factorAttk": 221000,
-                  "formattedDesc": "적 주변 <#CFFF71>2m</color> 범위에 <#CFFF71>3초</color> 간 유지되는 물기둥를 소환하여 범위 내 적에게 매 초마다 피해(피해량: <#CFFF71>2210%</color> x <#CFFF71>공격력</color>). 적중 시마다 <#CFFF71>100%</color> 확률로 대상을 공중으로 띄우고 대상이 <#CFFF71>축축함</color> 상태이면 스킬로 주는 피해량에 <#CFFF71>(자신) 피해량 증가(120%)</color>.",
+                  "formattedDesc": "적 주변 <#CFFF71>2m</color> 범위에 <#CFFF71>3초</color> 간 유지되는 물기둥를 소환하여 범위 내 적에게 매 초마다 피해(피해량: <#CFFF71>2210%</color> x <#CFFF71>공격력</color>). 적중 시마다 <#CFFF71>100%</color> 확률로 대상을 공중으로 띄우고 대상이 <#CFFF71>축축함</color> 상태이면 스킬로 주는 피해량에 <#CFFF71>(자신) 피해량 증가(150%)</color>.",
                   "stageLabel": "SSS 0성",
-                  "descValues": "2|3|100|120"
+                  "descValues": "2|3|100|150",
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "11036012144",
+                  "upgradeDescTemplate": "SSS ★0 : 피해량 +{0}%",
+                  "upgradeDescValues": "430",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11036012144"
                 }
               ]
             },
@@ -5429,7 +7259,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "자신에게 <#CFFF71>(타입)공격력 증가({3}%)</color>, <#CFFF71>(타입)명중 증가({4}%)</color> 적용.",
                   "formattedDesc": "자신에게 <#CFFF71>(타입)공격력 증가(10%)</color>, <#CFFF71>(타입)명중 증가(20%)</color> 적용.",
                   "stageLabel": "SS 0성",
-                  "descValues": "10|20"
+                  "descValues": "10|20",
+                  "factorAttk": 0,
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "33100"
                 },
                 {
                   "upgradeDescFormatted": "SS ★2 : (타입) 명중 증가 +2%",
@@ -5442,7 +7276,13 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "자신에게 <#CFFF71>(타입)공격력 증가({3}%)</color>, <#CFFF71>(타입)명중 증가({4}%)</color> 적용.",
                   "formattedDesc": "자신에게 <#CFFF71>(타입)공격력 증가(10%)</color>, <#CFFF71>(타입)명중 증가(22%)</color> 적용.",
                   "stageLabel": "SS 2성",
-                  "descValues": "10|22"
+                  "descValues": "10|22",
+                  "factorAttk": 0,
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "33135",
+                  "upgradeDescTemplate": "SS ★2 : (타입) 명중 증가 +2%",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_33135"
                 },
                 {
                   "upgradeDescFormatted": "SS ★4 : (타입) 공격력 증가 +2%",
@@ -5455,7 +7295,13 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "자신에게 <#CFFF71>(타입)공격력 증가({3}%)</color>, <#CFFF71>(타입)명중 증가({4}%)</color> 적용.",
                   "formattedDesc": "자신에게 <#CFFF71>(타입)공격력 증가(12%)</color>, <#CFFF71>(타입)명중 증가(22%)</color> 적용.",
                   "stageLabel": "SS 4성",
-                  "descValues": "12|22"
+                  "descValues": "12|22",
+                  "factorAttk": 0,
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "33137",
+                  "upgradeDescTemplate": "SS ★4 : (타입) 공격력 증가 +2%",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_33137"
                 },
                 {
                   "upgradeDescFormatted": "SS ★6 : (타입) 명중 증가 +2%",
@@ -5468,7 +7314,13 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "자신에게 <#CFFF71>(타입)공격력 증가({3}%)</color>, <#CFFF71>(타입)명중 증가({4}%)</color> 적용.",
                   "formattedDesc": "자신에게 <#CFFF71>(타입)공격력 증가(12%)</color>, <#CFFF71>(타입)명중 증가(24%)</color> 적용.",
                   "stageLabel": "SS 6성",
-                  "descValues": "12|24"
+                  "descValues": "12|24",
+                  "factorAttk": 0,
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "33139",
+                  "upgradeDescTemplate": "SS ★6 : (타입) 명중 증가 +2%",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_33139"
                 },
                 {
                   "upgradeDescFormatted": "SS ★8 : (타입) 공격력 증가 +2%",
@@ -5481,7 +7333,13 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "자신에게 <#CFFF71>(타입)공격력 증가({3}%)</color>, <#CFFF71>(타입)명중 증가({4}%)</color> 적용.",
                   "formattedDesc": "자신에게 <#CFFF71>(타입)공격력 증가(14%)</color>, <#CFFF71>(타입)명중 증가(24%)</color> 적용.",
                   "stageLabel": "SS 8성",
-                  "descValues": "14|24"
+                  "descValues": "14|24",
+                  "factorAttk": 0,
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "33141",
+                  "upgradeDescTemplate": "SS ★8 : (타입) 공격력 증가 +2%",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_33141"
                 },
                 {
                   "upgradeDescFormatted": "SSS ★1 : (타입) 공격력 증가 +1% / (타입) 명중 증가 +1%",
@@ -5494,7 +7352,13 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "자신에게 <#CFFF71>(타입)공격력 증가({3}%)</color>, <#CFFF71>(타입)명중 증가({4}%)</color> 적용.",
                   "formattedDesc": "자신에게 <#CFFF71>(타입)공격력 증가(15%)</color>, <#CFFF71>(타입)명중 증가(25%)</color> 적용.",
                   "stageLabel": "SSS 1성",
-                  "descValues": "15|25"
+                  "descValues": "15|25",
+                  "factorAttk": 0,
+                  "factorDef": 0,
+                  "factorHp": 0,
+                  "skillId": "33145",
+                  "upgradeDescTemplate": "SSS ★1 : (타입) 공격력 증가 +1% / (타입) 명중 증가 +1%",
+                  "upgradeDescTid": "Skill_Upgrade_Desc_33145"
                 }
               ]
             }
@@ -6036,7 +7900,7 @@ window.GACHA_PET_VIEWER_DATA = {
             {
               "start": "2026-04-04",
               "end": "2026-04-10",
-              "status": "current",
+              "status": "past",
               "scheduleRule": {
                 "timeType": 8,
                 "openDay": 27,
@@ -7562,7 +9426,7 @@ window.GACHA_PET_VIEWER_DATA = {
             {
               "start": "2026-04-11",
               "end": "2026-04-17",
-              "status": "upcoming",
+              "status": "current",
               "scheduleRule": {
                 "timeType": 8,
                 "openDay": 34,
@@ -8591,6 +10455,6 @@ window.GACHA_PET_VIEWER_DATA = {
       ]
     }
   ],
-  "generatedAt": "2026-04-04 00:37:16",
-  "today": "2026-04-04"
+  "generatedAt": "2026-04-15 23:17:57",
+  "today": "2026-04-15"
 };

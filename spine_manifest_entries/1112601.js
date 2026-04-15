@@ -1,0 +1,1 @@
+window.GACHA_PET_SPINE_ENTRY_CACHE = window.GACHA_PET_SPINE_ENTRY_CACHE || {};window.GACHA_PET_SPINE_ENTRY_CACHE["1112601"] = {"name":"타이혼","assetKind":"hero","assetName":"Hero_Tyhasif_A","atlasFile":"spine_assets/1112601/Hero_Tyhasif_A.atlas","skeletonFile":"spine_assets/1112601/Hero_Tyhasif_A.json","textureFile":"spine_assets/1112601/Hero_Tyhasif_A.png"};

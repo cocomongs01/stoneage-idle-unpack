@@ -1,0 +1,1 @@
+window.GACHA_PET_SPINE_ENTRY_CACHE = window.GACHA_PET_SPINE_ENTRY_CACHE || {};window.GACHA_PET_SPINE_ENTRY_CACHE["1112501"] = {"name":"킹고르","assetKind":"hero","assetName":"Hero_Kingor_A","atlasFile":"spine_assets/1112501/Hero_Kingor_A.atlas","skeletonFile":"spine_assets/1112501/Hero_Kingor_A.skel","textureFile":"spine_assets/1112501/Hero_Kingor_A.png"};

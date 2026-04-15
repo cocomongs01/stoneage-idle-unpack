@@ -581,7 +581,8 @@ img {
 }
 
 .pet-subfilters {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 0.5rem;
   margin-top: 0.75rem;
   padding: 0.1875rem;
@@ -595,18 +596,39 @@ img {
 }
 
 .pet-subfilter {
-  flex: 1 1 0;
+  min-width: 0;
   min-height: 2.25rem;
-  padding: 0 0.9rem;
+  padding: 0.3rem 0.55rem;
   border: 1px solid transparent;
   border-radius: 999px;
   background: transparent;
   color: rgba(235, 224, 208, 0.7);
   font-size: 0.75rem;
   font-weight: 700;
-  letter-spacing: 0.01em;
+  letter-spacing: 0;
+  line-height: 1.12;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
   transition: background 140ms ease, color 140ms ease, border-color 140ms ease, box-shadow 140ms ease;
+}
+
+.pet-subfilter-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 1.125rem;
+}
+
+.pet-subfilter-label span {
+  display: block;
+}
+
+.pet-subfilter-label.is-split {
+  flex-direction: column;
+  gap: 0.05rem;
 }
 
 .pet-subfilter:hover,
@@ -3923,16 +3945,59 @@ img {
   font-weight: 700;
 }
 
-@media (max-width: 1440px) {
+@media (max-width: 1680px) {
   .hero-panel {
-    --hero-copy-width: 21.25rem;
-    --detail-rail-width: 21.25rem;
+    --hero-copy-width: 18rem;
+    --detail-rail-width: 18.5rem;
     --hero-grid-gap: 1rem;
-    padding-inline: 0.5rem;
+  }
+
+  .hero-panel[data-kind="pet"],
+  .hero-panel[data-kind="weapon"],
+  .hero-panel[data-kind="ride"] {
+    --hero-copy-width: 18rem;
+    --detail-rail-width: 18.5rem;
+    --hero-grid-gap: 1rem;
   }
 
   .focus-top-row {
-    grid-template-columns: minmax(9.375rem, 11.125rem) minmax(0, 1fr);
+    grid-template-columns: minmax(10.5rem, 12.25rem) minmax(0, 1fr);
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .hero-panel[data-kind="pet"] .focus-top-row,
+  .hero-panel[data-kind="weapon"] .focus-top-row,
+  .hero-panel[data-kind="ride"] .focus-top-row {
+    grid-template-columns: minmax(10.5rem, 12.25rem) minmax(0, 1fr);
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .spotlight-copy {
+    width: min(20rem, calc(100% - 2rem));
+    max-width: none;
+  }
+}
+
+@media (max-width: 1440px) {
+  .hero-panel {
+    --hero-copy-width: 17rem;
+    --detail-rail-width: 17.75rem;
+    --hero-grid-gap: 0.875rem;
+    padding-inline: 0.5rem;
+  }
+
+  .hero-panel[data-kind="pet"],
+  .hero-panel[data-kind="weapon"],
+  .hero-panel[data-kind="ride"] {
+    --hero-copy-width: 17rem;
+    --detail-rail-width: 17.75rem;
+    --hero-grid-gap: 0.875rem;
+  }
+
+  .focus-top-row {
+    grid-template-columns: minmax(9.5rem, 11rem) minmax(0, 1fr);
     gap: 0.875rem;
     padding: 0.875rem;
   }
@@ -3940,7 +4005,7 @@ img {
   .hero-panel[data-kind="pet"] .focus-top-row,
   .hero-panel[data-kind="weapon"] .focus-top-row,
   .hero-panel[data-kind="ride"] .focus-top-row {
-    grid-template-columns: minmax(9.375rem, 11.125rem) minmax(0, 1fr);
+    grid-template-columns: minmax(9.5rem, 11rem) minmax(0, 1fr);
     gap: 0.875rem;
     padding: 0.875rem;
   }
