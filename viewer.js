@@ -1894,7 +1894,7 @@
     { x: 88, size: 9, delay: -5.4, duration: 10.8, drift: 20, travel: 214, opacity: 0.5 },
   ];
 
-  const assetVersion = encodeURIComponent(String(window.GACHA_VIEWER_ASSET_VERSION || "20260408-skill-footnotes-11"));
+  const assetVersion = encodeURIComponent(String(window.GACHA_VIEWER_ASSET_VERSION || "20260415-taihon-online-fix-19"));
   const ELEMENT_ICON_BY_KEY = {
     leaf: "assets/ui/HeroType04.png",
     fire: "assets/ui/HeroType02.png",
@@ -4205,6 +4205,7 @@
     { term: "반사", note: "피해를 입을 때마다 공격한 대상에게 받은 피해 일부를 되돌려 줌" },
     { term: "보호막", note: "받는 피해를 정해진 횟수만큼 무효화" },
     { term: "방어막", note: "시전자 체력 또는 공격력 비례로 피해를 흡수" },
+    { term: "네메시스 가호", note: "제어 저항 증가" },
     { term: "수호", note: "시전자가 해당 효과를 받은 대상의 피해를 대신 받음" },
     { term: "부활", note: "사망 상태가 되면 일정 시간 후 최대 체력 비율로 부활" },
     { term: "고급 동결", note: "일정 간격마다 최대 체력 비례 지속 피해" },
@@ -4271,6 +4272,12 @@
         return `내 최대 체력의 ${matchedPercent[1]}%를 소모`;
       }
       return "내 최대 체력의 일부를 소모";
+    }
+    if (entry.term === "네메시스 가호") {
+      if (matchedPercent) {
+        return `제어 저항 ${matchedPercent[1]}% 증가. 제어 효과를 저항할 때마다 저항 수치가 20%씩 감소`;
+      }
+      return "제어 저항 증가. 제어 효과를 저항할 때마다 저항 수치가 감소";
     }
     return entry.note;
   }
