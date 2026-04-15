@@ -1,5 +1,9 @@
 ﻿(function () {
   const data = window.GACHA_PET_VIEWER_DATA;
+  const CHARACTER_META_OVERRIDES = window.GACHA_VIEWER_CHARACTER_META
+    && typeof window.GACHA_VIEWER_CHARACTER_META === "object"
+    ? window.GACHA_VIEWER_CHARACTER_META
+    : {};
   const spineManifest = Object.assign(
     {},
     window.GACHA_PET_SPINE_MANIFEST_INDEX || {},
@@ -521,7 +525,7 @@
   function resolveDynamicRuleStartDateKey(scheduleRule, serverOpenDateKey) {
     if (!scheduleRule || !serverOpenDateKey) return "";
     if (
-      ![2, 4, 8].includes(scheduleRule.timeType)
+      ![2, 4, 8, 10].includes(scheduleRule.timeType)
       || !Number.isFinite(scheduleRule.openDay)
     ) {
       return "";
@@ -530,7 +534,7 @@
       ? (syncCohortEndDateKey(serverOpenDateKey) || serverOpenDateKey)
       : serverOpenDateKey;
     const thresholdDateKey = addDaysToDateKey(dynamicBaselineDateKey, scheduleRule.openDay);
-    if (scheduleRule.timeType === 2) {
+    if (scheduleRule.timeType === 2 || scheduleRule.timeType === 10) {
       return thresholdDateKey;
     }
     if (scheduleRule.timeType === 4) {
@@ -713,7 +717,7 @@
 
     if (normalizedScheduleRule && normalizedServerOpenDateKey) {
       if (
-        [2, 4, 8].includes(normalizedScheduleRule.timeType)
+        [2, 4, 8, 10].includes(normalizedScheduleRule.timeType)
         && Number.isFinite(normalizedScheduleRule.openDay)
       ) {
         resolvedStartDateKey = resolveDynamicRuleStartDateKey(
@@ -949,7 +953,7 @@
             endExclusiveOffsetDays: scheduleWindow.endExclusiveOffsetDays,
             ruleTimeType: scheduleRule?.timeType || 0,
             ruleOpenDay: Number.isFinite(scheduleRule?.openDay) ? scheduleRule.openDay : Number.NaN,
-            autoInferenceSupported: !scheduleRule || scheduleRule.timeType === 2,
+            autoInferenceSupported: !scheduleRule || [2, 10].includes(scheduleRule.timeType),
             resolvedStartDateKey: scheduleWindow.resolvedStartDateKey || "",
             resolvedEndDateKey: scheduleWindow.resolvedEndDateKey || "",
             summary: formatScheduleDisplayRange(
@@ -1541,7 +1545,7 @@
         state.activePetSubgroupKey = getPetSubgroupKeyForItem(currentPet);
       } else {
         const subgroupKey = String(historyState.petSubgroupKey || "");
-        if (subgroupKey === "content" || subgroupKey === "gacha") {
+        if (subgroupKey === "content" || subgroupKey === "gacha" || subgroupKey === "uncategorized") {
           state.activePetSubgroupKey = subgroupKey;
         }
       }
@@ -1674,6 +1678,7 @@
   const HERO_ANIMATION_PHASE_OVERRIDES = {};
   const HERO_ANIMATION_NAME_OVERRIDES = {
     "1103401": "Idle",
+    "1112601": "Idle",
   };
   const HERO_BONE_ROTATION_CORRECTIONS = {};
   const RIDE_SKIN_NAME_OVERRIDES = {};
@@ -1910,8 +1915,18 @@
   };
   const ATTACK_TYPE_BG_ASSET = "assets/ui/TypeClassBg.png";
   const ATTACK_SPEED_ICON_BY_LABEL = {
-    "\uB290\uB9BC": "assets/ui/SpeedType01.png",
+    "\uB9E4\uC6B0\uB290\uB9BC": "assets/ui/SpeedType01.png",
+    "\uB290\uB9BC": "assets/ui/SpeedType02.png",
     "\uBCF4\uD1B5": "assets/ui/SpeedType03.png",
+    "\uBE60\uB984": "assets/ui/SpeedType04.png",
+    "\uB9E4\uC6B0\uBE60\uB984": "assets/ui/SpeedType05.png",
+  };
+  const ATTACK_SPEED_LABEL_BY_TYPE = {
+    1: "\uB9E4\uC6B0\uB290\uB9BC",
+    2: "\uB290\uB9BC",
+    3: "\uBCF4\uD1B5",
+    4: "\uBE60\uB984",
+    5: "\uB9E4\uC6B0\uBE60\uB984",
   };
   const SKILL_TEXT_PLACEHOLDER_OVERRIDES = new Map([
     ["1107901:\uC21C\uD48D \uAC00\uB974\uAE30:2", "\uBC14\uB78C \uC18D\uC131"],
@@ -1927,6 +1942,27 @@
     const normalized = String(path || "").trim();
     if (!normalized) return true;
     return normalized === PLACEHOLDER_PET_ICON || normalized === PLACEHOLDER_PET_BANNER;
+  }
+
+  function characterMetaOverride(value) {
+    const characterId = typeof value === "object" && value
+      ? String(value.characterId || value.viewerId || value.id || "")
+      : String(value || "");
+    if (!characterId) return null;
+    const meta = CHARACTER_META_OVERRIDES[characterId];
+    return meta && typeof meta === "object" ? meta : null;
+  }
+
+  function applyCharacterMetaOverride(entity) {
+    if (!entity || typeof entity !== "object") return entity;
+    const meta = characterMetaOverride(entity);
+    if (!meta) return entity;
+    const attackSpeedType = Number(meta.attackSpeedType);
+    if (Number.isFinite(attackSpeedType) && attackSpeedType > 0) {
+      entity.attackSpeedType = attackSpeedType;
+      entity.attackSpeedLabel = ATTACK_SPEED_LABEL_BY_TYPE[attackSpeedType] || entity.attackSpeedLabel || "";
+    }
+    return entity;
   }
 
   function extraPetAssetPath(characterId, kind) {
@@ -2008,11 +2044,13 @@
   function applyRuntimeSkillTextPatches() {
     (Array.isArray(data.categories) ? data.categories : []).forEach((category) => {
       (category.items || []).forEach((item) => {
+        applyCharacterMetaOverride(item);
         patchEntitySkillTexts(item);
         attachEntitySkillContext(item);
       });
     });
     (Array.isArray(window.GACHA_VIEWER_EXTRA_PETS) ? window.GACHA_VIEWER_EXTRA_PETS : []).forEach((item) => {
+      applyCharacterMetaOverride(item);
       patchEntitySkillTexts(item);
       attachEntitySkillContext(item);
     });
@@ -2022,10 +2060,31 @@
 
   function buildExtraPetPlaceholder(config) {
     const enrichment = EXTRA_PET_ENRICHMENTS.get(String(config.characterId || "")) || {};
+    const runtimeMeta = characterMetaOverride(config.characterId) || {};
+    const resolvedAttackSpeedType = Number(config.attackSpeedType || runtimeMeta.attackSpeedType) || 0;
+    const resolvedSchedules = Array.isArray(config.schedules) && config.schedules.length
+      ? config.schedules
+      : (Array.isArray(enrichment.schedules) ? enrichment.schedules : []);
+    const resolvedScheduleTitleOverride = String(
+      config.scheduleTitleOverride
+      || enrichment.scheduleTitleOverride
+      || "획득 정보"
+    ).trim();
+    const resolvedListMetaLabel = String(
+      config.listMetaLabel
+      || enrichment.listMetaLabel
+      || ""
+    ).trim();
     const detailMetaLabel = String(
-      enrichment.detailMetaLabel
-      || config.detailMetaLabel
+      config.detailMetaLabel
+      || enrichment.detailMetaLabel
       || config.description
+      || ""
+    ).trim();
+    const resolvedPetSubgroupKey = String(
+      config.petSubgroupKey
+      || enrichment.petSubgroupKey
+      || enrichment.subgroupKey
       || ""
     ).trim();
     const derivedStageImage = extraPetAssetPath(config.characterId, "stage");
@@ -2058,18 +2117,24 @@
       name: config.name,
       title: config.title,
       description: config.description,
+      petSubgroupKey: resolvedPetSubgroupKey,
       elementKey: config.elementKey || "",
+      elementLabel: config.elementLabel || "",
       attackTypeKey: config.attackTypeKey || "",
+      attackSpeedType: resolvedAttackSpeedType,
+      attackSpeedLabel: config.attackSpeedLabel || ATTACK_SPEED_LABEL_BY_TYPE[resolvedAttackSpeedType] || "",
       order: config.order,
       skills: Array.isArray(enrichment.skills) ? enrichment.skills : [],
-      schedules: [],
-      scheduleTitleOverride: "획득 정보",
+      schedules: resolvedSchedules,
+      scheduleTitleOverride: resolvedScheduleTitleOverride,
       statusLabel: config.statusLabel,
       statusSummary: config.statusSummary,
       statusTone: config.statusTone || "upcoming",
       acquisitionEntries: Array.isArray(config.acquisitionEntries)
         ? config.acquisitionEntries
         : [],
+      hideStaticArtwork: enrichment.hideStaticArtwork === true,
+      listMetaLabel: resolvedListMetaLabel,
       detailMetaLabel,
       stageImage: resolvedStageImage || PLACEHOLDER_PET_ICON,
       heroIconImage: resolvedHeroIconImage || PLACEHOLDER_PET_ICON,
@@ -2351,6 +2416,67 @@
         },
       ],
     }),
+    buildExtraPetPlaceholder({
+      order: 24,
+      characterId: "1112501",
+      name: "킹고르",
+      title: "미분류 신규 본체",
+      description: "펫 테이블 미등록 / 정식 획득 경로 미확인",
+      elementKey: "water",
+      attackTypeKey: "melee",
+      attackSpeedType: 2,
+      statusLabel: "미분류",
+      statusSummary: "APK 신규 본체 / 캐릭터·스킬·에셋만 확인",
+      statusTone: "upcoming",
+      acquisitionEntries: [
+        {
+          title: "앱 신규 데이터",
+          summary: "캐릭터 / 스킬 / 에셋만 확인",
+          tone: "upcoming",
+        },
+      ],
+    }),
+    buildExtraPetPlaceholder({
+      order: 25,
+      characterId: "1112601",
+      petSubgroupKey: "gacha",
+      name: "타이혼",
+      title: "네메시스의 그림자",
+      description: "",
+      listMetaLabel: "이벤트",
+      detailMetaLabel: "누적소비 이벤트 보상",
+      scheduleTitleOverride: "누적소비 이벤트 일정",
+      schedules: [
+        {
+          start: "2026-04-06",
+          end: "2026-04-12",
+          status: "past",
+        },
+        {
+          start: "2026-05-04",
+          end: "2026-05-10",
+          status: "upcoming",
+        },
+      ],
+      elementKey: "wind",
+      attackTypeKey: "support",
+      attackSpeedType: 4,
+      statusLabel: "이벤트",
+      statusSummary: "누적소비 이벤트 보상",
+      statusTone: "current",
+      acquisitionEntries: [
+        {
+          title: "누적소비 이벤트 보상",
+          summary: "2010 / 2011 이벤트 보상 확인",
+          tone: "event",
+        },
+        {
+          title: "컬렉션",
+          summary: "초월의 사도 등록 확인",
+          tone: "content",
+        },
+      ],
+    }),
     // buildExtraPetPlaceholder({
     //   order: 24,
     //   characterId: "1100201",
@@ -2378,6 +2504,7 @@
   const PET_SUBGROUPS = [
     { key: "gacha", label: "가챠·이벤트" },
     { key: "content", label: "콘텐츠·상점" },
+    { key: "uncategorized", label: "미분류" },
   ];
 
   const CONTENT_SHOP_PET_IDS = new Set([
@@ -2405,6 +2532,22 @@
     "1105201": 90, // 골드로비
     "1104701": 97, // 프라키토스
     "1103601": 104, // 플라티우스
+  });
+  const PET_DISPLAY_ORDER_BY_ID = Object.freeze({
+    "1112601": 1, // 타이혼
+    "1107701": 2, // 블루문
+    "1108501": 3, // 모가로스
+    "1100101": 4, // 얀기로
+    "1112301": 5, // 아모로스
+    "1300201": 6, // 팔케온
+    "1105501": 7, // 디어룬
+    "1103401": 8, // 베르가
+    "1109901": 9, // 카미르
+    "1108801": 10, // 리나펠타
+    "1107101": 11, // 바라쿠스
+    "1105201": 12, // 골드로비
+    "1104701": 13, // 프라키토스
+    "1103601": 14, // 플라티우스
   });
 
   function injectExtraPetPlaceholders() {
@@ -2438,6 +2581,14 @@
 
   function getItems(category = getActiveCategory()) {
     const items = Array.isArray(category?.items) ? category.items : [];
+    if (category?.key === "pet") {
+      return [...items].sort((left, right) => {
+        const leftRank = displayOrderValue(category, left) || Number.MAX_SAFE_INTEGER;
+        const rightRank = displayOrderValue(category, right) || Number.MAX_SAFE_INTEGER;
+        if (leftRank !== rightRank) return leftRank - rightRank;
+        return String(left?.name || "").localeCompare(String(right?.name || ""), "ko");
+      });
+    }
     if (category?.key !== "weapon") {
       return items;
     }
@@ -2452,6 +2603,9 @@
   function displayOrderValue(category, pet) {
     if (category?.key === "weapon") {
       return WEAPON_DISPLAY_ORDER_BY_ID[getEntityId(pet)] || pet.order || 0;
+    }
+    if (category?.key === "pet") {
+      return PET_DISPLAY_ORDER_BY_ID[getEntityId(pet)] || pet.order || 0;
     }
     return pet.order || 0;
   }
@@ -2550,6 +2704,14 @@
   }
 
   function getPetSubgroupKeyForItem(pet) {
+    const explicitSubgroupKey = String(
+      pet?.petSubgroupKey
+      || pet?.subgroupKey
+      || ""
+    ).trim();
+    if (explicitSubgroupKey) {
+      return explicitSubgroupKey;
+    }
     return CONTENT_SHOP_PET_IDS.has(getEntityId(pet)) ? "content" : "gacha";
   }
 
@@ -2780,7 +2942,7 @@
     if (!entryId) return null;
 
     const baseEntry = getManifestEntry(entryId);
-    if (baseEntry && baseEntry.atlasText && baseEntry.skeletonBase64) {
+    if (hasEmbeddedManifestPayload(baseEntry)) {
       return baseEntry;
     }
 
@@ -2810,11 +2972,23 @@
     return baseEntry;
   }
 
+  function hasEmbeddedManifestSkeletonPayload(manifestEntry) {
+    if (!manifestEntry) return false;
+    if (manifestEntry.skeletonBase64 || manifestEntry.skeletonBytes instanceof Uint8Array) {
+      return true;
+    }
+    const skeletonPath = String(manifestEntry.skeletonFile || "");
+    if (/\.json(?:$|\?)/i.test(skeletonPath)) {
+      return Boolean(manifestEntry.skeletonJsonText || manifestEntry.skeletonJsonData);
+    }
+    return false;
+  }
+
   function hasEmbeddedManifestPayload(manifestEntry) {
     if (!manifestEntry) return false;
     return Boolean(
       manifestEntry.atlasText
-        && manifestEntry.skeletonBase64
+        && hasEmbeddedManifestSkeletonPayload(manifestEntry)
         && (manifestEntry.textureDataUri || manifestEntry.textureDataUris)
     );
   }
@@ -2975,6 +3149,51 @@
         manifestEntry.skeletonBytesPromise = null;
       });
     return manifestEntry.skeletonBytesPromise;
+  }
+
+  function getManifestSkeletonData(manifestEntry, attachmentLoader) {
+    if (!manifestEntry || !attachmentLoader) {
+      return Promise.resolve(null);
+    }
+
+    const spineApi = getSpineApi();
+    if (!spineApi) {
+      return Promise.resolve(null);
+    }
+
+    const skeletonPath = String(manifestEntry.skeletonFile || "");
+    if (/\.json(?:$|\?)/i.test(skeletonPath)) {
+      if (manifestEntry.skeletonJsonData) {
+        return Promise.resolve(manifestEntry.skeletonJsonData);
+      }
+      if (manifestEntry.skeletonJsonText) {
+        const json = new spineApi.SkeletonJson(attachmentLoader);
+        manifestEntry.skeletonJsonData = json.readSkeletonData(JSON.parse(manifestEntry.skeletonJsonText || "{}"));
+        return Promise.resolve(manifestEntry.skeletonJsonData);
+      }
+      if (manifestEntry.skeletonJsonDataPromise) {
+        return manifestEntry.skeletonJsonDataPromise;
+      }
+
+      manifestEntry.skeletonJsonDataPromise = fetchSpineTextAsset(skeletonPath)
+        .then((text) => {
+          const json = new spineApi.SkeletonJson(attachmentLoader);
+          manifestEntry.skeletonJsonData = json.readSkeletonData(JSON.parse(text || "{}"));
+          return manifestEntry.skeletonJsonData;
+        })
+        .finally(() => {
+          manifestEntry.skeletonJsonDataPromise = null;
+        });
+      return manifestEntry.skeletonJsonDataPromise;
+    }
+
+    const binary = new spineApi.SkeletonBinary(attachmentLoader);
+    return getManifestSkeletonBytes(manifestEntry).then((skeletonBytes) => {
+      if (!(skeletonBytes instanceof Uint8Array) || !skeletonBytes.length) {
+        throw new Error(`Spine skeleton data unavailable: ${manifestEntry.assetName || "unknown skeleton"}`);
+      }
+      return binary.readSkeletonData(skeletonBytes);
+    });
   }
 
   function ensureManifestEntryLoaded(entityId) {
@@ -3387,6 +3606,38 @@
     });
   }
 
+  function measureViewportSize(element) {
+    if (!element || typeof element.getBoundingClientRect !== "function") {
+      return { width: 0, height: 0 };
+    }
+    const rect = element.getBoundingClientRect();
+    return {
+      width: Math.max(0, Math.floor(rect.width || element.clientWidth || element.offsetWidth || 0)),
+      height: Math.max(0, Math.floor(rect.height || element.clientHeight || element.offsetHeight || 0)),
+    };
+  }
+
+  function getSpinePreviewViewportSize() {
+    const candidates = [
+      elements.spinePreview,
+      elements.spinePreview && elements.spinePreview.parentElement,
+      elements.spotlightMedia,
+    ].filter(Boolean);
+
+    for (const candidate of candidates) {
+      const size = measureViewportSize(candidate);
+      if (size.width > 2 && size.height > 2) {
+        return size;
+      }
+    }
+
+    const fallbackSize = measureViewportSize(elements.spinePreview);
+    return {
+      width: Math.max(2, fallbackSize.width),
+      height: Math.max(2, fallbackSize.height),
+    };
+  }
+
   function destroySpinePreview() {
     if (spineState.layoutRaf) {
       window.cancelAnimationFrame(spineState.layoutRaf);
@@ -3435,9 +3686,9 @@
     const sceneLayoutOverride = isHeroScene
       ? getHeroSceneLayoutOverride(spineState.currentCharacterId)
       : null;
-    const rect = elements.spinePreview.getBoundingClientRect();
-    const width = Math.max(2, Math.floor(rect.width || elements.spinePreview.clientWidth || 0));
-    const height = Math.max(2, Math.floor(rect.height || elements.spinePreview.clientHeight || 0));
+    const viewportSize = getSpinePreviewViewportSize();
+    const width = Math.max(2, viewportSize.width);
+    const height = Math.max(2, viewportSize.height);
     spineState.app.renderer.resize(width, height);
 
     const bounds = spineState.preview.getLocalBounds();
@@ -3598,8 +3849,9 @@
       return false;
     }
 
-    const previewWidth = Math.max(480, elements.spinePreview.clientWidth || 0);
-    const previewHeight = Math.max(240, elements.spinePreview.clientHeight || 0);
+    const previewViewportSize = getSpinePreviewViewportSize();
+    const previewWidth = Math.max(480, previewViewportSize.width || 0);
+    const previewHeight = Math.max(240, previewViewportSize.height || 0);
     const resolution = Math.min(window.devicePixelRatio || 1, 2);
     const app = new window.PIXI.Application({
       width: previewWidth,
@@ -3611,12 +3863,10 @@
     });
 
     const attachmentLoader = new spineApi.AtlasAttachmentLoader(atlas);
-    const binary = new spineApi.SkeletonBinary(attachmentLoader);
-    const skeletonBytes = await getManifestSkeletonBytes(manifestEntry);
-    if (!(skeletonBytes instanceof Uint8Array) || !skeletonBytes.length) {
+    const skeletonData = await getManifestSkeletonData(manifestEntry, attachmentLoader);
+    if (!skeletonData) {
       throw new Error(`Spine skeleton data unavailable: ${manifestEntry.assetName || characterId}`);
     }
-    const skeletonData = binary.readSkeletonData(skeletonBytes);
     const preview = new spineApi.Spine(skeletonData);
     const useStableRideInitialLayout = manifestEntry.assetKind === "ride" && STABLE_RIDE_LAYOUT_IDS[characterId];
     const useManualHeroBoneCorrectionTick = manifestEntry.assetKind === "hero"
@@ -3729,6 +3979,9 @@
         requestSpineLayout();
       });
       spineState.resizeObserver.observe(elements.spinePreview);
+      if (elements.spotlightMedia && elements.spotlightMedia !== elements.spinePreview) {
+        spineState.resizeObserver.observe(elements.spotlightMedia);
+      }
     }
 
     return true;
@@ -4198,7 +4451,13 @@
     const resolvedStartDateKey = dateTimeKeyToDateKey(startDateTimeKey);
     const resolvedEndExclusiveDateKey = dateTimeKeyToDateKey(endExclusiveDateTimeKey);
     const startKey = resolvedStartDateKey || normalizeScheduleDateKey(start);
+    const rawEndKey = normalizeScheduleDateKey(end);
     const endKey = resolvedEndExclusiveDateKey || addDaysToDateKey(normalizeScheduleDateKey(end), 1);
+    const farFutureKey = resolvedEndExclusiveDateKey || rawEndKey;
+    const farFutureYear = Number.parseInt(String(farFutureKey || "").slice(0, 4), 10);
+    if (startKey && Number.isFinite(farFutureYear) && farFutureYear >= 2999) {
+      return `${formatDisplayDateKey(startKey)} ${scheduleDisplayStartTimeLabel()} - 상시`;
+    }
     if (!startKey || !endKey) {
       return formatDateRange(start, end);
     }
@@ -4515,6 +4774,9 @@
     if (pet.attackSpeedLabel) {
       return pet.attackSpeedLabel;
     }
+    if (pet.attackSpeedType && ATTACK_SPEED_LABEL_BY_TYPE[pet.attackSpeedType]) {
+      return ATTACK_SPEED_LABEL_BY_TYPE[pet.attackSpeedType];
+    }
     const byAttackType = {
       melee: "느림",
       defence: "느림",
@@ -4540,7 +4802,13 @@
     return ATTACK_SPEED_ICON_BY_LABEL[displayAttackSpeedLabel(pet)] || "";
   }
 
-  function displayElementLabel(key) {
+  function displayElementLabel(value) {
+    const key = typeof value === "string"
+      ? value
+      : String(value?.elementKey || "");
+    const fallbackLabel = typeof value === "object" && value
+      ? String(value.elementLabel || "").trim()
+      : "";
     switch (key) {
       case "fire":
         return "\uBD88";
@@ -4551,13 +4819,16 @@
       case "leaf":
         return "\uB545";
       default:
-        return "";
+        return fallbackLabel;
     }
   }
 
   function displayAttackSpeedLabel(pet) {
     if (pet.attackSpeedLabel) {
       return pet.attackSpeedLabel;
+    }
+    if (pet.attackSpeedType && ATTACK_SPEED_LABEL_BY_TYPE[pet.attackSpeedType]) {
+      return ATTACK_SPEED_LABEL_BY_TYPE[pet.attackSpeedType];
     }
     const byAttackType = {
       melee: "\uB290\uB9BC",
@@ -4642,6 +4913,9 @@
   }
 
   function stagePortraitAsset(pet) {
+    if (pet.hideStaticArtwork) {
+      return { src: "", kind: "none" };
+    }
     if (pet.kind === "ride") {
       const iconImage = rideIconAsset(pet);
       if (iconImage) return { src: iconImage, kind: "ride" };
@@ -4670,6 +4944,9 @@
   function cardPortraitAsset(pet) {
     if (pet.kind === "ride") {
       return rideDisplayImage(pet);
+    }
+    if (pet.hideStaticArtwork) {
+      return "";
     }
     return pet.portraitImage || pet.bannerImage || pet.heroIconImage || "";
   }
@@ -4804,7 +5081,7 @@
     }
     if (elements.spotlightInfoList) {
       const rows = [];
-      const resolvedElementLabel = displayElementLabel(pet.elementKey);
+      const resolvedElementLabel = displayElementLabel(pet);
       const elementIcon = elementIconAsset(pet);
       const typeLabel = attackTypeLabel(pet);
       const typeIcon = attackTypeIconAsset(pet);
@@ -4949,6 +5226,25 @@
     }
   }
 
+  function petSubgroupLabelHtml(label) {
+    const parts = String(label || "")
+      .split("·")
+      .map((part) => part.trim())
+      .filter(Boolean);
+    if (!parts.length) {
+      return "";
+    }
+    if (parts.length === 1) {
+      return `<span class="pet-subfilter-label"><span>${escapeHtml(parts[0])}</span></span>`;
+    }
+    return `
+      <span class="pet-subfilter-label is-split">
+        <span>${escapeHtml(parts[0])}</span>
+        <span>${escapeHtml(parts.slice(1).join("·"))}</span>
+      </span>
+    `;
+  }
+
   function renderPetSubfilters(category) {
     if (!elements.petSubfilters) {
       return;
@@ -4964,7 +5260,7 @@
       const button = document.createElement("button");
       button.type = "button";
       button.className = `pet-subfilter${state.activePetSubgroupKey === subgroup.key ? " active" : ""}`;
-      button.textContent = subgroup.label;
+      button.innerHTML = petSubgroupLabelHtml(subgroup.label);
       button.setAttribute("aria-pressed", state.activePetSubgroupKey === subgroup.key ? "true" : "false");
       button.addEventListener("click", () => {
         if (state.activePetSubgroupKey === subgroup.key) {
@@ -5094,7 +5390,10 @@
   function renderHero(pet) {
     const category = getActiveCategory();
     const status = getPetStatus(pet);
-    const backdropImage = pet.kind === "ride"
+    const hideStaticArtwork = pet.hideStaticArtwork === true;
+    const backdropImage = hideStaticArtwork
+      ? ""
+      : pet.kind === "ride"
       ? rideDisplayImage(pet)
       : (pet.backdropImage || pet.portraitImage || pet.bannerImage || "");
     const railIconImage = railIconAsset(pet);
@@ -5616,7 +5915,7 @@
       && manifestEntry
       && (manifestEntry.assetKind === "hero" || manifestEntry.assetKind === "pickup")
     );
-    const sceneDefinition = hasHeroScene ? heroInfoSceneDefinition(pet.elementKey || "water") : null;
+    const sceneDefinition = hasHeroScene ? heroInfoSceneDefinition(pet.elementKey || "") : null;
     const rideBannerBackground = rideBannerBackgroundAsset(pet);
     const weaponBannerBackground = weaponBannerBackgroundAsset(pet);
     const mediaBackground = sceneDefinition
@@ -5625,10 +5924,10 @@
         ? (rideBannerBackground || rideDisplayImage(pet))
         : (pet.kind === "weapon"
           ? (weaponBannerBackground || pet.backdropImage || pet.bannerImage || pet.portraitImage || pet.heroIconImage)
-          : (pet.backdropImage || pet.bannerImage || pet.portraitImage || pet.heroIconImage)));
+          : (pet.hideStaticArtwork ? "" : (pet.backdropImage || pet.bannerImage || pet.portraitImage || pet.heroIconImage))));
     const mediaBanner = pet.kind === "ride"
       ? ""
-      : (pet.bannerImage || pet.portraitImage || pet.heroIconImage);
+      : (pet.hideStaticArtwork ? "" : (pet.bannerImage || pet.portraitImage || pet.heroIconImage));
     const useStaticVisual = !sceneDefinition && !manifestEntry;
     const hideStaticBannerOnLive = shouldHideStaticBanner(manifestEntry);
 

@@ -1,0 +1,153 @@
+
+Tyhasif_picup.png
+size: 1055,1055
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+A/arm l_3
+  rotate: true
+  xy: 435, 78
+  size: 189, 155
+  orig: 1025, 1025
+  offset: 466, 444
+  index: -1
+A/arm l_4
+  rotate: true
+  xy: 834, 117
+  size: 201, 221
+  orig: 1025, 1025
+  offset: 451, 284
+  index: -1
+A/arm r_1_1
+  rotate: true
+  xy: 699, 621
+  size: 200, 138
+  orig: 1025, 1025
+  offset: 234, 362
+  index: -1
+A/arm r_1_2
+  rotate: true
+  xy: 590, 1
+  size: 163, 167
+  orig: 1025, 1025
+  offset: 272, 373
+  index: -1
+A/body
+  rotate: false
+  xy: 0, 707
+  size: 359, 348
+  orig: 1025, 1025
+  offset: 373, 272
+  index: -1
+A/eye1
+  rotate: true
+  xy: 281, 677
+  size: 30, 35
+  orig: 1025, 1025
+  offset: 283, 645
+  index: -1
+A/eye2
+  rotate: true
+  xy: 316, 683
+  size: 24, 32
+  orig: 1025, 1025
+  offset: 223, 633
+  index: -1
+A/eyeball
+  rotate: false
+  xy: 0, 52
+  size: 158, 164
+  orig: 1025, 1025
+  offset: 204, 585
+  index: -1
+A/head
+  rotate: true
+  xy: 359, 497
+  size: 324, 340
+  orig: 1025, 1025
+  offset: 185, 465
+  index: -1
+A/horn1
+  rotate: false
+  xy: 359, 821
+  size: 480, 234
+  orig: 1025, 1025
+  offset: 312, 721
+  index: -1
+A/horn2
+  rotate: true
+  xy: 837, 533
+  size: 255, 205
+  orig: 1025, 1025
+  offset: 218, 719
+  index: -1
+A/leg1-1_2
+  rotate: true
+  xy: 281, 267
+  size: 230, 312
+  orig: 1025, 1025
+  offset: 524, 202
+  index: -1
+A/leg1-2
+  rotate: false
+  xy: 757, 1
+  size: 180, 116
+  orig: 1025, 1025
+  offset: 537, 202
+  index: -1
+A/leg1-3_2
+  rotate: false
+  xy: 839, 788
+  size: 206, 267
+  orig: 1025, 1025
+  offset: 525, 50
+  index: -1
+A/leg2-1_2
+  rotate: false
+  xy: 834, 318
+  size: 218, 215
+  orig: 1025, 1025
+  offset: 320, 237
+  index: -1
+A/leg2-2_2
+  rotate: true
+  xy: 699, 454
+  size: 167, 135
+  orig: 1025, 1025
+  offset: 339, 217
+  index: -1
+A/leg2-3_2
+  rotate: true
+  xy: 280, 42
+  size: 225, 155
+  orig: 1025, 1025
+  offset: 289, 121
+  index: -1
+A/mouth
+  rotate: true
+  xy: 0, 442
+  size: 265, 281
+  orig: 1025, 1025
+  offset: 210, 465
+  index: -1
+A/neck
+  rotate: false
+  xy: 0, 216
+  size: 280, 226
+  orig: 1025, 1025
+  offset: 294, 465
+  index: -1
+A/tail1-1_2
+  rotate: true
+  xy: 937, 16
+  size: 101, 95
+  orig: 1025, 1025
+  offset: 745, 653
+  index: -1
+A/tail1-2_2
+  rotate: false
+  xy: 593, 164
+  size: 241, 290
+  orig: 1025, 1025
+  offset: 610, 423
+  index: -1

@@ -1,0 +1,160 @@
+
+Hero_Tyhasif_A.png
+size: 835,835
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+A/arm l_1
+  rotate: true
+  xy: 0, 0
+  size: 71, 153
+  orig: 770, 770
+  offset: 310, 233
+  index: -1
+A/arm l_2
+  rotate: false
+  xy: 585, 64
+  size: 81, 195
+  orig: 770, 770
+  offset: 307, 108
+  index: -1
+A/arm r_1
+  rotate: false
+  xy: 308, 106
+  size: 52, 122
+  orig: 770, 770
+  offset: 255, 234
+  index: -1
+A/arm r_2
+  rotate: true
+  xy: 218, 297
+  size: 56, 153
+  orig: 770, 770
+  offset: 253, 122
+  index: -1
+A/body
+  rotate: true
+  xy: 0, 254
+  size: 284, 218
+  orig: 770, 770
+  offset: 266, 204
+  index: -1
+A/eye1
+  rotate: false
+  xy: 153, 47
+  size: 21, 24
+  orig: 770, 770
+  offset: 165, 407
+  index: -1
+A/eye2
+  rotate: false
+  xy: 153, 27
+  size: 15, 20
+  orig: 770, 770
+  offset: 122, 397
+  index: -1
+A/eyeball
+  rotate: false
+  xy: 666, 140
+  size: 111, 119
+  orig: 770, 770
+  offset: 109, 362
+  index: -1
+A/head
+  rotate: false
+  xy: 372, 588
+  size: 237, 247
+  orig: 770, 770
+  offset: 95, 273
+  index: -1
+A/horn1
+  rotate: true
+  xy: 372, 231
+  size: 357, 178
+  orig: 770, 770
+  offset: 184, 467
+  index: -1
+A/horn2
+  rotate: true
+  xy: 218, 353
+  size: 185, 152
+  orig: 770, 770
+  offset: 116, 463
+  index: -1
+A/leg1-1
+  rotate: true
+  xy: 369, 57
+  size: 174, 216
+  orig: 770, 770
+  offset: 374, 152
+  index: -1
+A/leg1-2
+  rotate: false
+  xy: 666, 62
+  size: 139, 78
+  orig: 770, 770
+  offset: 403, 151
+  index: -1
+A/leg1-3
+  rotate: true
+  xy: 609, 656
+  size: 179, 148
+  orig: 770, 770
+  offset: 364, 51
+  index: -1
+A/leg2-1
+  rotate: false
+  xy: 550, 259
+  size: 160, 156
+  orig: 770, 770
+  offset: 244, 171
+  index: -1
+A/leg2-2
+  rotate: false
+  xy: 715, 547
+  size: 103, 109
+  orig: 770, 770
+  offset: 250, 142
+  index: -1
+A/leg2-3
+  rotate: true
+  xy: 710, 266
+  size: 149, 83
+  orig: 770, 770
+  offset: 213, 83
+  index: -1
+A/mouth
+  rotate: true
+  xy: 0, 71
+  size: 183, 201
+  orig: 770, 770
+  offset: 120, 278
+  index: -1
+A/neck
+  rotate: false
+  xy: 550, 415
+  size: 165, 173
+  orig: 770, 770
+  offset: 214, 306
+  index: -1
+A/rope
+  rotate: false
+  xy: 0, 538
+  size: 372, 297
+  orig: 392, 392
+  offset: 9, 50
+  index: -1
+A/tail1-1
+  rotate: true
+  xy: 308, 228
+  size: 69, 61
+  orig: 770, 770
+  offset: 678, 375
+  index: -1
+A/tail1-2
+  rotate: true
+  xy: 201, 1
+  size: 253, 107
+  orig: 770, 770
+  offset: 492, 292
+  index: -1
