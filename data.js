@@ -536,22 +536,42 @@ window.GACHA_PET_VIEWER_DATA = {
             {
               "start": "2026-03-03",
               "end": "2026-03-09",
-              "status": "past"
+              "status": "past",
+              "scheduleRule": {
+                "timeType": 2,
+                "openDay": 0,
+                "period": 7
+              }
             },
             {
               "start": "2026-03-19",
               "end": "2026-03-25",
-              "status": "past"
+              "status": "past",
+              "scheduleRule": {
+                "timeType": 2,
+                "openDay": 16,
+                "period": 7
+              }
             },
             {
               "start": "2026-04-02",
               "end": "2026-04-08",
-              "status": "past"
+              "status": "past",
+              "scheduleRule": {
+                "timeType": 2,
+                "openDay": 30,
+                "period": 7
+              }
             },
             {
-              "start": "2026-04-20",
-              "end": "2026-04-26",
-              "status": "upcoming"
+              "start": "2026-04-30",
+              "end": "2026-05-06",
+              "status": "upcoming",
+              "scheduleRule": {
+                "timeType": 10,
+                "openDay": 48,
+                "period": 7
+              }
             }
           ],
           "backdropImage": "assets/banners/1107701-banner.png",
