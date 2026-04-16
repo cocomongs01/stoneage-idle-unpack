@@ -530,11 +530,11 @@
     ) {
       return "";
     }
-    const dynamicBaselineDateKey = [4, 8].includes(scheduleRule.timeType)
+    const dynamicBaselineDateKey = [4, 8, 10].includes(scheduleRule.timeType)
       ? (syncCohortEndDateKey(serverOpenDateKey) || serverOpenDateKey)
       : serverOpenDateKey;
     const thresholdDateKey = addDaysToDateKey(dynamicBaselineDateKey, scheduleRule.openDay);
-    if (scheduleRule.timeType === 2 || scheduleRule.timeType === 10) {
+    if (scheduleRule.timeType === 2) {
       return thresholdDateKey;
     }
     if (scheduleRule.timeType === 4) {
@@ -542,6 +542,9 @@
     }
     if (scheduleRule.timeType === 8) {
       return alignDateKeyOnOrAfter(thresholdDateKey, 6);
+    }
+    if (scheduleRule.timeType === 10) {
+      return alignDateKeyOnOrAfter(thresholdDateKey, 4);
     }
     return "";
   }
@@ -953,7 +956,7 @@
             endExclusiveOffsetDays: scheduleWindow.endExclusiveOffsetDays,
             ruleTimeType: scheduleRule?.timeType || 0,
             ruleOpenDay: Number.isFinite(scheduleRule?.openDay) ? scheduleRule.openDay : Number.NaN,
-            autoInferenceSupported: !scheduleRule || [2, 10].includes(scheduleRule.timeType),
+            autoInferenceSupported: !scheduleRule || scheduleRule.timeType === 2,
             resolvedStartDateKey: scheduleWindow.resolvedStartDateKey || "",
             resolvedEndDateKey: scheduleWindow.resolvedEndDateKey || "",
             summary: formatScheduleDisplayRange(
@@ -1130,11 +1133,13 @@
     const ruleTimeType = Number(option?.ruleTimeType);
     const openDay = Number(option?.ruleOpenDay);
     const resolvedStartDateKey = normalizeScheduleDateKey(resolvedStartDateKeyOverride || option?.resolvedStartDateKey || "");
-    if (![4, 8].includes(ruleTimeType) || !Number.isFinite(openDay) || !resolvedStartDateKey) {
+    if (![4, 8, 10].includes(ruleTimeType) || !Number.isFinite(openDay) || !resolvedStartDateKey) {
       return null;
     }
 
-    const targetDayOfWeek = ruleTimeType === 4 ? 2 : 6;
+    const targetDayOfWeek = ruleTimeType === 4
+      ? 2
+      : (ruleTimeType === 8 ? 6 : 4);
     const thresholdDayOfWeek = (1 + ((openDay % 7) + 7)) % 7;
     const alignmentDelta = (targetDayOfWeek - thresholdDayOfWeek + 7) % 7;
     const cohortEndDateKey = addDaysToDateKey(resolvedStartDateKey, -(openDay + alignmentDelta));
@@ -1183,7 +1188,7 @@
     const option = findScheduleCalibrationOptionById(draft.optionId);
     const ruleTimeType = Number(option?.ruleTimeType);
     const durationDays = Number(option?.durationDays);
-    if (![4, 8].includes(ruleTimeType) || !Number.isFinite(durationDays) || durationDays <= 0) {
+    if (![4, 8, 10].includes(ruleTimeType) || !Number.isFinite(durationDays) || durationDays <= 0) {
       return null;
     }
 
@@ -2097,9 +2102,10 @@
     const resolvedHeroIconImage = isExtraPetPlaceholderAsset(enrichment.heroIconImage)
       ? derivedHeroIconImage
       : enrichment.heroIconImage;
-    const resolvedGachaIconImage = isExtraPetPlaceholderAsset(enrichment.gachaIconImage)
-      ? (resolvedHeroIconImage || derivedHeroIconImage)
-      : enrichment.gachaIconImage;
+    const resolvedGachaIconImage = config.gachaIconImage
+      || (isExtraPetPlaceholderAsset(enrichment.gachaIconImage)
+        ? (resolvedHeroIconImage || derivedHeroIconImage)
+        : enrichment.gachaIconImage);
     const resolvedPortraitImage = isExtraPetPlaceholderAsset(enrichment.portraitImage)
       ? derivedPortraitImage
       : enrichment.portraitImage;
@@ -2446,16 +2452,27 @@
       listMetaLabel: "이벤트",
       detailMetaLabel: "누적소비 이벤트 보상",
       scheduleTitleOverride: "누적소비 이벤트 일정",
+      gachaIconImage: "assets/pets/1112601-gachaicon.png?v=20260416-main-widget-02",
       schedules: [
         {
-          start: "2026-04-06",
-          end: "2026-04-12",
-          status: "past",
+          start: "2026-04-16",
+          end: "2026-04-22",
+          status: "current",
+          scheduleRule: {
+            timeType: 10,
+            openDay: 34,
+            period: 7,
+          },
         },
         {
-          start: "2026-05-04",
-          end: "2026-05-10",
+          start: "2026-05-14",
+          end: "2026-05-20",
           status: "upcoming",
+          scheduleRule: {
+            timeType: 10,
+            openDay: 62,
+            period: 7,
+          },
         },
       ],
       elementKey: "wind",
