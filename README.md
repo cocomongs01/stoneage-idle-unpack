@@ -14,16 +14,28 @@ Vercel static deployment bundle for the gacha viewer.
 - `index.html`
 - `viewer.js`
 - `viewer.css`
+- `viewer-mobile.css`
 - `data.js`
-- `spine_manifest.js`
+- `extra_pet_data.js`
+- `added_pet_data.js`
+- `spine_manifest_index.js`
+- `character_meta_overrides.js`
+- `spine_manifest.embedded.js`
+- `spine_manifest_weapon.embedded.js`
+- `pet_pickup_spine_manifest.embedded.js`
+- `spine_manifest_entries/`
+- `spine_manifest_pickup_entries/`
+- `spine_assets/`
+- `spine_assets_pickup/`
 - `assets/`
 - `vendor/`
 
 ## Notes
 
 - The project is self-contained. External `../...` asset paths were removed.
-- Spine previews use embedded texture/skeleton data from `spine_manifest.js`.
-- Only runtime assets remain in `assets/`; probe images and export-time scratch files were removed.
+- Spine previews load `spine_manifest_index.js` first, then lazy-load per-entry chunks and embedded manifests only when needed.
+- Desktop no longer downloads `viewer-mobile.css`; the mobile stylesheet is gated with `media="(max-width: 900px)"`.
+- Debug captures, test artifacts, and local tooling pages are excluded from deployment.
 
 ## Git
 
