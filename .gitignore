@@ -2,6 +2,9 @@
 backups/
 analysis_tools/
 ui_assets/
+test-results/
+_*.png
+_*.html
 *.zip
 *.sln
 *.log
