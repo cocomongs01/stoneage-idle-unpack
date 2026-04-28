@@ -31,7 +31,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "descValues": "20|1",
                   "factorDef": 0,
                   "factorHp": 0,
-                  "skillId": "11077010133"
+                  "skillId": "11077010133",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 55,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★1 : 스킬 쿨타임 증가 발동 확률 +5%",
@@ -51,7 +55,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11077010134",
                   "upgradeDescTemplate": "SS ★1 : 스킬 쿨타임 증가 발동 확률 +{0}%",
                   "upgradeDescValues": "5",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11077010134"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11077010134",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 55,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★3 : 피해량 +56%",
@@ -71,7 +79,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11077010136",
                   "upgradeDescTemplate": "SS ★3 : 피해량 +{0}%",
                   "upgradeDescValues": "56",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11077010136"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11077010136",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 55,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★5 : 스킬 쿨타임 증가 발동 확률 +5%",
@@ -91,7 +103,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11077010138",
                   "upgradeDescTemplate": "SS ★5 : 스킬 쿨타임 증가 발동 확률 +{0}%",
                   "upgradeDescValues": "5",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11077010138"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11077010138",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 55,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★7 : 피해량 +75%",
@@ -111,7 +127,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11077010140",
                   "upgradeDescTemplate": "SS ★7 : 피해량 +{0}%",
                   "upgradeDescValues": "75",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11077010140"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11077010140",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 55,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SSS ★0 : 스킬 쿨타임 증가 +1초",
@@ -131,7 +151,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11077010144",
                   "upgradeDescTemplate": "SSS ★0 : 스킬 쿨타임 증가 +{0}초",
                   "upgradeDescValues": "1",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11077010144"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11077010144",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 55,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 }
               ]
             },
@@ -157,7 +181,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "descValues": "2|2",
                   "factorDef": 0,
                   "factorHp": 0,
-                  "skillId": "11077011133"
+                  "skillId": "11077011133",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 55,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★1 : 이로운 효과 제거 +1개",
@@ -177,7 +205,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11077011134",
                   "upgradeDescTemplate": "SS ★1 : 이로운 효과 제거 +{0}개",
                   "upgradeDescValues": "1",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11077011134"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11077011134",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 55,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★3 : 피해량 +300%",
@@ -197,7 +229,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11077011136",
                   "upgradeDescTemplate": "SS ★3 : 피해량 +{0}%",
                   "upgradeDescValues": "300",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11077011136"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11077011136",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 55,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★5 : 피해량 +350%",
@@ -217,7 +253,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11077011138",
                   "upgradeDescTemplate": "SS ★5 : 피해량 +{0}%",
                   "upgradeDescValues": "350",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11077011138"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11077011138",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 55,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★7 : 이로운 효과 제거 +1개",
@@ -237,7 +277,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11077011140",
                   "upgradeDescTemplate": "SS ★7 : 이로운 효과 제거 +{0}개",
                   "upgradeDescValues": "1",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11077011140"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11077011140",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 55,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★10 : 피해량 +450%",
@@ -257,7 +301,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11077011143",
                   "upgradeDescTemplate": "SS ★10 : 피해량 +{0}%",
                   "upgradeDescValues": "450",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11077011143"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11077011143",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 55,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SSS ★0 : 6초간 침묵 부여 추가",
@@ -277,7 +325,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11077011144",
                   "upgradeDescTemplate": "SSS ★0 : {0}초간 침묵 부여 추가",
                   "upgradeDescValues": "6",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11077011144"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11077011144",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 55,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 }
               ]
             },
@@ -303,7 +355,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "descValues": "8|5",
                   "factorDef": 0,
                   "factorHp": 0,
-                  "skillId": "11077012133"
+                  "skillId": "11077012133",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 55,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★1 : 유혹 +1초",
@@ -323,7 +379,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11077012134",
                   "upgradeDescTemplate": "SS ★1 : 유혹 +{0}초",
                   "upgradeDescValues": "1",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11077012134"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11077012134",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 55,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★5 : 피해량 +635%",
@@ -343,7 +403,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11077012138",
                   "upgradeDescTemplate": "SS ★5 : 피해량 +{0}%",
                   "upgradeDescValues": "635",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11077012138"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11077012138",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 55,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★7 : 유혹 +1초",
@@ -363,7 +427,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11077012140",
                   "upgradeDescTemplate": "SS ★7 : 유혹 +{0}초",
                   "upgradeDescValues": "1",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11077012140"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11077012140",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 55,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★10 : 피해량 +850%",
@@ -383,7 +451,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11077012143",
                   "upgradeDescTemplate": "SS ★10 : 피해량 +{0}%",
                   "upgradeDescValues": "850",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11077012143"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11077012143",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 55,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SSS ★0 : 유혹 당한 대상에게 폭주(30%) 부여 추가",
@@ -403,7 +475,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11077012144",
                   "upgradeDescTemplate": "SSS ★0 : 유혹 당한 대상에게 폭주({0}%) 부여 추가",
                   "upgradeDescValues": "30",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11077012144"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11077012144",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 55,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 }
               ]
             },
@@ -429,7 +505,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "descValues": "10|20",
                   "factorDef": 0,
                   "factorHp": 0,
-                  "skillId": "33100"
+                  "skillId": "33100",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★2 : (타입) 명중 증가 +2%",
@@ -448,7 +528,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorHp": 0,
                   "skillId": "33135",
                   "upgradeDescTemplate": "SS ★2 : (타입) 명중 증가 +2%",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_33135"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_33135",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★4 : (타입) 공격력 증가 +2%",
@@ -467,7 +551,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorHp": 0,
                   "skillId": "33137",
                   "upgradeDescTemplate": "SS ★4 : (타입) 공격력 증가 +2%",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_33137"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_33137",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★6 : (타입) 명중 증가 +2%",
@@ -486,7 +574,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorHp": 0,
                   "skillId": "33139",
                   "upgradeDescTemplate": "SS ★6 : (타입) 명중 증가 +2%",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_33139"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_33139",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★8 : (타입) 공격력 증가 +2%",
@@ -505,7 +597,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorHp": 0,
                   "skillId": "33141",
                   "upgradeDescTemplate": "SS ★8 : (타입) 공격력 증가 +2%",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_33141"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_33141",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SSS ★1 : (타입) 공격력 증가 +1% / (타입) 명중 증가 +1%",
@@ -524,7 +620,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorHp": 0,
                   "skillId": "33145",
                   "upgradeDescTemplate": "SSS ★1 : (타입) 공격력 증가 +1% / (타입) 명중 증가 +1%",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_33145"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_33145",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 }
               ]
             }
@@ -613,7 +713,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "descValues": "",
                   "factorDef": 0,
                   "factorHp": 0,
-                  "skillId": "11085010133"
+                  "skillId": "11085010133",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 20,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★1 : 피해량 +30%",
@@ -633,7 +737,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11085010134",
                   "upgradeDescTemplate": "SS ★1 : 피해량 +{0}%",
                   "upgradeDescValues": "30",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11085010134"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11085010134",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 20,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★3 : 피해량 +36%",
@@ -653,7 +761,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11085010136",
                   "upgradeDescTemplate": "SS ★3 : 피해량 +{0}%",
                   "upgradeDescValues": "36",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11085010136"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11085010136",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 20,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★5 : 피해량 +43%",
@@ -673,7 +785,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11085010138",
                   "upgradeDescTemplate": "SS ★5 : 피해량 +{0}%",
                   "upgradeDescValues": "43",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11085010138"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11085010138",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 20,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★7 : 피해량 +49%",
@@ -693,7 +809,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11085010140",
                   "upgradeDescTemplate": "SS ★7 : 피해량 +{0}%",
                   "upgradeDescValues": "49",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11085010140"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11085010140",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 20,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SSS ★0 : 피해량 +55%",
@@ -713,7 +833,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11085010144",
                   "upgradeDescTemplate": "SSS ★0 : 피해량 +{0}%",
                   "upgradeDescValues": "55",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11085010144"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11085010144",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 20,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 }
               ]
             },
@@ -739,7 +863,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "descValues": "5|3|35",
                   "factorDef": 0,
                   "factorHp": 0,
-                  "skillId": "11085011133"
+                  "skillId": "11085011133",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 20,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★1 : (자신) 공격력 증가 +5%",
@@ -759,7 +887,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11085011134",
                   "upgradeDescTemplate": "SS ★1 : (자신) 공격력 증가 +{0}%",
                   "upgradeDescValues": "5",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11085011134"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11085011134",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 20,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★3 : 피해량 +510%",
@@ -779,7 +911,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11085011136",
                   "upgradeDescTemplate": "SS ★3 : 피해량 +{0}%",
                   "upgradeDescValues": "510",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11085011136"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11085011136",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 20,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★5 : (자신) 공격력 증가 +1초",
@@ -799,7 +935,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11085011138",
                   "upgradeDescTemplate": "SS ★5 : (자신) 공격력 증가 +{0}초",
                   "upgradeDescValues": "1",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11085011138"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11085011138",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 20,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★7 : 피해량 +680%",
@@ -819,7 +959,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11085011140",
                   "upgradeDescTemplate": "SS ★7 : 피해량 +{0}%",
                   "upgradeDescValues": "680",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11085011140"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11085011140",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 20,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★10 : (자신) 공격력 증가 +10%",
@@ -839,7 +983,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11085011143",
                   "upgradeDescTemplate": "SS ★10 : (자신) 공격력 증가 +{0}%",
                   "upgradeDescValues": "10",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11085011143"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11085011143",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 20,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SSS ★0 : 적중 시, 화상(50%) 부여 추가",
@@ -859,7 +1007,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11085011144",
                   "upgradeDescTemplate": "SSS ★0 : 적중 시, 화상({0}%) 부여 추가",
                   "upgradeDescValues": "50",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11085011144"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11085011144",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 20,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 }
               ]
             },
@@ -885,7 +1037,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "descValues": "2|3|3|35|4",
                   "factorDef": 0,
                   "factorHp": 0,
-                  "skillId": "11085012133"
+                  "skillId": "11085012133",
+                  "skillRangeType": 1,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 40,
+                  "skillRangeHeight": 15
                 },
                 {
                   "upgradeDescFormatted": "SS ★1 : 방어력 무시 +5%",
@@ -905,7 +1061,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11085012134",
                   "upgradeDescTemplate": "SS ★1 : 방어력 무시 +{0}%",
                   "upgradeDescValues": "5",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11085012134"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11085012134",
+                  "skillRangeType": 1,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 40,
+                  "skillRangeHeight": 15
                 },
                 {
                   "upgradeDescFormatted": "SS ★5 : 공격 범위의 길이 +1m",
@@ -925,7 +1085,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11085012138",
                   "upgradeDescTemplate": "SS ★5 : 공격 범위의 길이 +{0}m",
                   "upgradeDescValues": "1",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11085012138"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11085012138",
+                  "skillRangeType": 1,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 40,
+                  "skillRangeHeight": 15
                 },
                 {
                   "upgradeDescFormatted": "SS ★7 : 피해량 +310%",
@@ -945,7 +1109,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11085012140",
                   "upgradeDescTemplate": "SS ★7 : 피해량 +{0}%",
                   "upgradeDescValues": "310",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11085012140"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11085012140",
+                  "skillRangeType": 1,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 40,
+                  "skillRangeHeight": 15
                 },
                 {
                   "upgradeDescFormatted": "SS ★10 : 방어력 무시 +10%",
@@ -965,7 +1133,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11085012143",
                   "upgradeDescTemplate": "SS ★10 : 방어력 무시 +{0}%",
                   "upgradeDescValues": "10",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11085012143"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11085012143",
+                  "skillRangeType": 1,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 40,
+                  "skillRangeHeight": 15
                 },
                 {
                   "upgradeDescFormatted": "SSS ★0 : 공격 범위의 폭 +1m",
@@ -985,7 +1157,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11085012144",
                   "upgradeDescTemplate": "SSS ★0 : 공격 범위의 폭 +{0}m",
                   "upgradeDescValues": "1",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11085012144"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11085012144",
+                  "skillRangeType": 1,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 40,
+                  "skillRangeHeight": 15
                 }
               ]
             },
@@ -1011,7 +1187,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 0,
                   "factorDef": 0,
                   "factorHp": 0,
-                  "skillId": "23100"
+                  "skillId": "23100",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★2 : (타입) 치명타 확률 증가 +2%",
@@ -1030,7 +1210,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorHp": 0,
                   "skillId": "23135",
                   "upgradeDescTemplate": "SS ★2 : (타입) 치명타 확률 증가 +2%",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_23135"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_23135",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★4 : (타입) 받는 피해 감소 +2%",
@@ -1049,7 +1233,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorHp": 0,
                   "skillId": "23137",
                   "upgradeDescTemplate": "SS ★4 : (타입) 받는 피해 감소 +2%",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_23137"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_23137",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★6 : (타입) 치명타 확률 증가 +2%",
@@ -1068,7 +1256,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorHp": 0,
                   "skillId": "23139",
                   "upgradeDescTemplate": "SS ★6 : (타입) 치명타 확률 증가 +2%",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_23139"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_23139",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★8 : (타입) 받는 피해 감소 +2%",
@@ -1087,7 +1279,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorHp": 0,
                   "skillId": "23141",
                   "upgradeDescTemplate": "SS ★8 : (타입) 받는 피해 감소 +2%",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_23141"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_23141",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SSS ★1 : (타입) 받는 피해 감소 +1% / (타입) 치명타 확률 증가 +1%",
@@ -1106,7 +1302,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorHp": 0,
                   "skillId": "23145",
                   "upgradeDescTemplate": "SSS ★1 : (타입) 받는 피해 감소 +1% / (타입) 치명타 확률 증가 +1%",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_23145"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_23145",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 }
               ]
             }
@@ -1179,7 +1379,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "descValues": "1|2|3|25|1",
                   "factorDef": 0,
                   "factorHp": 0,
-                  "skillId": "11001010133"
+                  "skillId": "11001010133",
+                  "skillRangeType": 1,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 40,
+                  "skillRangeHeight": 10
                 },
                 {
                   "upgradeDescFormatted": "SS ★1 : 피해량 +40%",
@@ -1199,7 +1403,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11001010134",
                   "upgradeDescTemplate": "SS ★1 : 피해량 +{0}%",
                   "upgradeDescValues": "40",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11001010134"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11001010134",
+                  "skillRangeType": 1,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 40,
+                  "skillRangeHeight": 10
                 },
                 {
                   "upgradeDescFormatted": "SS ★3 : 기절 확률 +10%",
@@ -1219,7 +1427,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11001010136",
                   "upgradeDescTemplate": "SS ★3 : 기절 확률 +{0}%",
                   "upgradeDescValues": "10",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11001010136"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11001010136",
+                  "skillRangeType": 1,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 40,
+                  "skillRangeHeight": 10
                 },
                 {
                   "upgradeDescFormatted": "SS ★5 : 피해량 +55%",
@@ -1239,7 +1451,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11001010138",
                   "upgradeDescTemplate": "SS ★5 : 피해량 +{0}%",
                   "upgradeDescValues": "55",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11001010138"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11001010138",
+                  "skillRangeType": 1,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 40,
+                  "skillRangeHeight": 10
                 },
                 {
                   "upgradeDescFormatted": "SS ★7 : 기절 확률 +15%",
@@ -1259,7 +1475,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11001010140",
                   "upgradeDescTemplate": "SS ★7 : 기절 확률 +{0}%",
                   "upgradeDescValues": "15",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11001010140"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11001010140",
+                  "skillRangeType": 1,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 40,
+                  "skillRangeHeight": 10
                 },
                 {
                   "upgradeDescFormatted": "SSS ★0 : 피해량 +70%",
@@ -1279,7 +1499,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11001010144",
                   "upgradeDescTemplate": "SSS ★0 : 피해량 +{0}%",
                   "upgradeDescValues": "70",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11001010144"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11001010144",
+                  "skillRangeType": 1,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 40,
+                  "skillRangeHeight": 20
                 }
               ]
             },
@@ -1305,7 +1529,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 0,
                   "factorDef": 0,
                   "factorHp": 0,
-                  "skillId": "11001011133"
+                  "skillId": "11001011133",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★1 : (자신) 공격 속도 증가 +5%",
@@ -1325,7 +1553,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11001011134",
                   "upgradeDescTemplate": "SS ★1 : (자신) 공격 속도 증가 +{0}%",
                   "upgradeDescValues": "5",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11001011134"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11001011134",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★3 : (자신) 공격 속도 증가 +1초",
@@ -1345,7 +1577,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11001011136",
                   "upgradeDescTemplate": "SS ★3 : (자신) 공격 속도 증가 +{0}초",
                   "upgradeDescValues": "1",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11001011136"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11001011136",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★5 : 숨 고르기 시간 -1초",
@@ -1365,7 +1601,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11001011138",
                   "upgradeDescTemplate": "SS ★5 : 숨 고르기 시간 -{0}초",
                   "upgradeDescValues": "1",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11001011138"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11001011138",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★7 : (자신) 공격 속도 증가 +5%",
@@ -1385,7 +1625,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11001011140",
                   "upgradeDescTemplate": "SS ★7 : (자신) 공격 속도 증가 +{0}%",
                   "upgradeDescValues": "5",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11001011140"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11001011140",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★10 : (자신) 이동 속도 증가 +12% 추가",
@@ -1405,7 +1649,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11001011143",
                   "upgradeDescTemplate": "SS ★10 : (자신) 이동 속도 증가 +{0}% 추가",
                   "upgradeDescValues": "12",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11001011143"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11001011143",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SSS ★0 : 날카로운 발톱의 공격 폭 +1m",
@@ -1425,7 +1673,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11001011144",
                   "upgradeDescTemplate": "SSS ★0 : 날카로운 발톱의 공격 폭 +{0}m",
                   "upgradeDescValues": "1",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11001011144"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11001011144",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 }
               ]
             },
@@ -1451,7 +1703,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 0,
                   "factorDef": 0,
                   "factorHp": 0,
-                  "skillId": "11001012133"
+                  "skillId": "11001012133",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 20,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★1 : (자신) 공격력 증가 +5%",
@@ -1471,7 +1727,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11001012134",
                   "upgradeDescTemplate": "SS ★1 : (자신) 공격력 증가 +{0}%",
                   "upgradeDescValues": "5",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11001012134"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11001012134",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 20,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★5 : 의지 +2초",
@@ -1491,7 +1751,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11001012138",
                   "upgradeDescTemplate": "SS ★5 : 의지 +{0}초",
                   "upgradeDescValues": "2",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11001012138"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11001012138",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 20,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★7 : (자신) 공격력 증가 +5%",
@@ -1511,7 +1775,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11001012140",
                   "upgradeDescTemplate": "SS ★7 : (자신) 공격력 증가 +{0}%",
                   "upgradeDescValues": "5",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11001012140"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11001012140",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 20,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★10 : (자신) 공격력 증가 +10%",
@@ -1531,7 +1799,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11001012143",
                   "upgradeDescTemplate": "SS ★10 : (자신) 공격력 증가 +{0}%",
                   "upgradeDescValues": "10",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11001012143"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11001012143",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 20,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SSS ★0 : 의지 +2초",
@@ -1551,7 +1823,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11001012144",
                   "upgradeDescTemplate": "SSS ★0 : 의지 +{0}초",
                   "upgradeDescValues": "2",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11001012144"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11001012144",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 20,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 }
               ]
             },
@@ -1577,7 +1853,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 0,
                   "factorDef": 0,
                   "factorHp": 0,
-                  "skillId": "23100"
+                  "skillId": "23100",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★2 : (타입) 치명타 확률 증가 +2%",
@@ -1596,7 +1876,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorHp": 0,
                   "skillId": "23135",
                   "upgradeDescTemplate": "SS ★2 : (타입) 치명타 확률 증가 +2%",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_23135"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_23135",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★4 : (타입) 받는 피해 감소 +2%",
@@ -1615,7 +1899,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorHp": 0,
                   "skillId": "23137",
                   "upgradeDescTemplate": "SS ★4 : (타입) 받는 피해 감소 +2%",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_23137"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_23137",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★6 : (타입) 치명타 확률 증가 +2%",
@@ -1634,7 +1922,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorHp": 0,
                   "skillId": "23139",
                   "upgradeDescTemplate": "SS ★6 : (타입) 치명타 확률 증가 +2%",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_23139"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_23139",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★8 : (타입) 받는 피해 감소 +2%",
@@ -1653,7 +1945,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorHp": 0,
                   "skillId": "23141",
                   "upgradeDescTemplate": "SS ★8 : (타입) 받는 피해 감소 +2%",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_23141"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_23141",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SSS ★1 : (타입) 받는 피해 감소 +1% / (타입) 치명타 확률 증가 +1%",
@@ -1672,7 +1968,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorHp": 0,
                   "skillId": "23145",
                   "upgradeDescTemplate": "SSS ★1 : (타입) 받는 피해 감소 +1% / (타입) 치명타 확률 증가 +1%",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_23145"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_23145",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 }
               ]
             }
@@ -1745,7 +2045,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "descValues": "30|3|100",
                   "factorAttk": 0,
                   "factorHp": 0,
-                  "skillId": "11123010133"
+                  "skillId": "11123010133",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 10,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★1 : (자신) 방어력 증가 +20%",
@@ -1765,7 +2069,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11123010134",
                   "upgradeDescTemplate": "SS ★1 : (자신) 방어력 증가 +{0}%",
                   "upgradeDescValues": "20",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11123010134"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11123010134",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 10,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★3 : 피해량 +10%",
@@ -1785,7 +2093,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11123010136",
                   "upgradeDescTemplate": "SS ★3 : 피해량 +{0}%",
                   "upgradeDescValues": "10",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11123010136"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11123010136",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 10,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★5 : (자신) 방어력 증가 발동 확률 +20%",
@@ -1805,7 +2117,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11123010138",
                   "upgradeDescTemplate": "SS ★5 : (자신) 방어력 증가 발동 확률 +{0}%",
                   "upgradeDescValues": "20",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11123010138"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11123010138",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 10,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★7 : 피해량 +14%",
@@ -1825,7 +2141,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11123010140",
                   "upgradeDescTemplate": "SS ★7 : 피해량 +{0}%",
                   "upgradeDescValues": "14",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11123010140"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11123010140",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 10,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SSS ★0 : (자신) 방어력 증가 +30%",
@@ -1845,7 +2165,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11123010144",
                   "upgradeDescTemplate": "SSS ★0 : (자신) 방어력 증가 +{0}%",
                   "upgradeDescValues": "30",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11123010144"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11123010144",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 10,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 }
               ]
             },
@@ -1871,7 +2195,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 0,
                   "factorDef": 0,
                   "factorHp": 0,
-                  "skillId": "11123011133"
+                  "skillId": "11123011133",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 10,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★1 : (자신) 받는 피해 감소 및 이동제어 면역 +2초",
@@ -1891,7 +2219,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11123011134",
                   "upgradeDescTemplate": "SS ★1 : (자신) 받는 피해 감소 및 이동제어 면역 +{0}초",
                   "upgradeDescValues": "2",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11123011134"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11123011134",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 10,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★3 : 땅 정령 보호막 +2초",
@@ -1911,7 +2243,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11123011136",
                   "upgradeDescTemplate": "SS ★3 : 땅 정령 보호막 +{0}초",
                   "upgradeDescValues": "2",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11123011136"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11123011136",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 10,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★5 : 땅 정령 보호막 +5회",
@@ -1931,7 +2267,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11123011138",
                   "upgradeDescTemplate": "SS ★5 : 땅 정령 보호막 +{0}회",
                   "upgradeDescValues": "5",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11123011138"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11123011138",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 10,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★7 : (자신) 받는 피해 감소 +10%",
@@ -1951,7 +2291,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11123011140",
                   "upgradeDescTemplate": "SS ★7 : (자신) 받는 피해 감소 +{0}%",
                   "upgradeDescValues": "10",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11123011140"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11123011140",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 10,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★10 : 이동제어 면역을 제어 면역으로 변경",
@@ -1970,7 +2314,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorHp": 0,
                   "skillId": "11123011143",
                   "upgradeDescTemplate": "SS ★10 : 이동제어 면역을 제어 면역으로 변경",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11123011143"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11123011143",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 10,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SSS ★0 : (자신) 받는 피해 감소 +15%",
@@ -1990,7 +2338,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11123011144",
                   "upgradeDescTemplate": "SSS ★0 : (자신) 받는 피해 감소 +{0}%",
                   "upgradeDescValues": "15",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11123011144"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11123011144",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 10,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 }
               ]
             },
@@ -2016,7 +2368,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "descValues": "2|3|500|3|5",
                   "factorAttk": 0,
                   "factorHp": 0,
-                  "skillId": "11123012133"
+                  "skillId": "11123012133",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 15,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★1 : 지속 회복량 +2%",
@@ -2036,7 +2392,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11123012134",
                   "upgradeDescTemplate": "SS ★1 : 지속 회복량 +{0}%",
                   "upgradeDescValues": "2",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11123012134"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11123012134",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 15,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★5 : 피해량 +50%",
@@ -2056,7 +2416,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11123012138",
                   "upgradeDescTemplate": "SS ★5 : 피해량 +{0}%",
                   "upgradeDescValues": "50",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11123012138"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11123012138",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 15,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★7 : 도발 및 회복 지속시간 +2초",
@@ -2076,7 +2440,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11123012140",
                   "upgradeDescTemplate": "SS ★7 : 도발 및 회복 지속시간 +{0}초",
                   "upgradeDescValues": "2",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11123012140"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11123012140",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 15,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★10 : 회복량 +300%",
@@ -2096,7 +2464,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11123012143",
                   "upgradeDescTemplate": "SS ★10 : 회복량 +{0}%",
                   "upgradeDescValues": "300",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11123012143"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11123012143",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 15,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SSS ★0 : 공격 범위 +1m",
@@ -2116,7 +2488,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11123012144",
                   "upgradeDescTemplate": "SSS ★0 : 공격 범위 +{0}m",
                   "upgradeDescValues": "1",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11123012144"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11123012144",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 15,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 }
               ]
             },
@@ -2142,7 +2518,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 0,
                   "factorDef": 0,
                   "factorHp": 0,
-                  "skillId": "13100"
+                  "skillId": "13100",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★2 : (타입) 방어력 증가 +30%",
@@ -2162,7 +2542,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "13135",
                   "upgradeDescTemplate": "SS ★2 : (타입) 방어력 증가 +{0}%",
                   "upgradeDescValues": "30",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_13135"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_13135",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★4 : (타입) 받는 피해 감소 +2%",
@@ -2182,7 +2566,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "13137",
                   "upgradeDescTemplate": "SS ★4 : (타입) 받는 피해 감소 +{0}%",
                   "upgradeDescValues": "2",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_13137"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_13137",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★6 : (타입) 방어력 증가 +30%",
@@ -2202,7 +2590,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "13139",
                   "upgradeDescTemplate": "SS ★6 : (타입) 방어력 증가 +{0}%",
                   "upgradeDescValues": "30",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_13139"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_13139",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★8 : (타입) 받는 피해 감소 +2%",
@@ -2222,7 +2614,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "13141",
                   "upgradeDescTemplate": "SS ★8 : (타입) 받는 피해 감소 +{0}%",
                   "upgradeDescValues": "2",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_13141"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_13141",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SSS ★1 : (타입) 받는 피해 감소 +1% / (타입) 방어력 증가 +40%",
@@ -2242,7 +2638,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "13145",
                   "upgradeDescTemplate": "SSS ★1 : (타입) 받는 피해 감소 +{0}% / (타입) 방어력 증가 +{1}%",
                   "upgradeDescValues": "1|40",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_13145"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_13145",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 }
               ]
             }
@@ -2315,7 +2715,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "descValues": "10|2",
                   "factorDef": 0,
                   "factorHp": 0,
-                  "skillId": "13002010133"
+                  "skillId": "13002010133",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 50,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★1 : 피해량 +30%",
@@ -2335,7 +2739,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "13002010134",
                   "upgradeDescTemplate": "SS ★1 : 피해량 +{0}%",
                   "upgradeDescValues": "30",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_13002010134"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_13002010134",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 50,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★3 : 출혈 확률 증가 +10%",
@@ -2355,7 +2763,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "13002010136",
                   "upgradeDescTemplate": "SS ★3 : 출혈 확률 증가 +{0}%",
                   "upgradeDescValues": "10",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_13002010136"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_13002010136",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 50,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★5 : 피해량 +42%",
@@ -2375,7 +2787,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "13002010138",
                   "upgradeDescTemplate": "SS ★5 : 피해량 +{0}%",
                   "upgradeDescValues": "42",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_13002010138"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_13002010138",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 50,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★7 : 출혈 +1초",
@@ -2395,7 +2811,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "13002010140",
                   "upgradeDescTemplate": "SS ★7 : 출혈 +{0}초",
                   "upgradeDescValues": "1",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_13002010140"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_13002010140",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 50,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SSS ★0 : 피해량 +54%",
@@ -2415,7 +2835,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "13002010144",
                   "upgradeDescTemplate": "SSS ★0 : 피해량 +{0}%",
                   "upgradeDescValues": "54",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_13002010144"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_13002010144",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 50,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 }
               ]
             },
@@ -2441,7 +2865,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "descValues": "2|2|2|30",
                   "factorDef": 0,
                   "factorHp": 0,
-                  "skillId": "13002011133"
+                  "skillId": "13002011133",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 50,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★1 : (자신) 공격력 증가 +5%",
@@ -2461,7 +2889,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "13002011134",
                   "upgradeDescTemplate": "SS ★1 : (자신) 공격력 증가 +{0}%",
                   "upgradeDescValues": "5",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_13002011134"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_13002011134",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 50,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★3 : 피해량 +255%",
@@ -2481,7 +2913,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "13002011136",
                   "upgradeDescTemplate": "SS ★3 : 피해량 +{0}%",
                   "upgradeDescValues": "255",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_13002011136"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_13002011136",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 50,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★5 : (자신) 공격력 증가 +1초 / 침묵 +1초",
@@ -2501,7 +2937,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "13002011138",
                   "upgradeDescTemplate": "SS ★5 : (자신) 공격력 증가 +{0}초 / 침묵 +{1}초",
                   "upgradeDescValues": "1|1",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_13002011138"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_13002011138",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 50,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★7 : 피해량 +340%",
@@ -2521,7 +2961,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "13002011140",
                   "upgradeDescTemplate": "SS ★7 : 피해량 +{0}%",
                   "upgradeDescValues": "340",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_13002011140"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_13002011140",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 50,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★10 : 3초간 순발력(20%) 획득 추가",
@@ -2541,7 +2985,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "13002011143",
                   "upgradeDescTemplate": "SS ★10 : {0}초간 순발력({1}%) 획득 추가",
                   "upgradeDescValues": "3|20",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_13002011143"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_13002011143",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 50,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SSS ★0 : (자신) 공격력 증가 +10%",
@@ -2561,7 +3009,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "13002011144",
                   "upgradeDescTemplate": "SSS ★0 : (자신) 공격력 증가 +{0}%",
                   "upgradeDescValues": "10",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_13002011144"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_13002011144",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 50,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 }
               ]
             },
@@ -2587,7 +3039,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "descValues": "3|8|40|3|10",
                   "factorDef": 0,
                   "factorHp": 0,
-                  "skillId": "13002012133"
+                  "skillId": "13002012133",
+                  "skillRangeType": 1,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 140,
+                  "skillRangeHeight": 25
                 },
                 {
                   "upgradeDescFormatted": "SS ★1 : 할퀴기 효과 증가 +10%",
@@ -2607,7 +3063,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "13002012134",
                   "upgradeDescTemplate": "SS ★1 : 할퀴기 효과 증가 +{0}%",
                   "upgradeDescValues": "10",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_13002012134"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_13002012134",
+                  "skillRangeType": 1,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 140,
+                  "skillRangeHeight": 25
                 },
                 {
                   "upgradeDescFormatted": "SS ★5 : 피해량 +175%",
@@ -2627,7 +3087,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "13002012138",
                   "upgradeDescTemplate": "SS ★5 : 피해량 +{0}%",
                   "upgradeDescValues": "175",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_13002012138"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_13002012138",
+                  "skillRangeType": 1,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 140,
+                  "skillRangeHeight": 25
                 },
                 {
                   "upgradeDescFormatted": "SS ★7 : 할퀴기 효과 증가 +10%",
@@ -2647,7 +3111,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "13002012140",
                   "upgradeDescTemplate": "SS ★7 : 할퀴기 효과 증가 +{0}%",
                   "upgradeDescValues": "10",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_13002012140"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_13002012140",
+                  "skillRangeType": 1,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 140,
+                  "skillRangeHeight": 25
                 },
                 {
                   "upgradeDescFormatted": "SS ★10 : 피해량 +230%",
@@ -2667,7 +3135,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "13002012143",
                   "upgradeDescTemplate": "SS ★10 : 피해량 +{0}%",
                   "upgradeDescValues": "230",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_13002012143"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_13002012143",
+                  "skillRangeType": 1,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 140,
+                  "skillRangeHeight": 25
                 },
                 {
                   "upgradeDescFormatted": "SSS ★0 : 넘어트리기 및 할퀴기 확률 증가 +40%",
@@ -2687,7 +3159,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "13002012144",
                   "upgradeDescTemplate": "SSS ★0 : 넘어트리기 및 할퀴기 확률 증가 +{0}%",
                   "upgradeDescValues": "40",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_13002012144"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_13002012144",
+                  "skillRangeType": 1,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 140,
+                  "skillRangeHeight": 25
                 }
               ]
             },
@@ -2713,7 +3189,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 0,
                   "factorDef": 0,
                   "factorHp": 0,
-                  "skillId": "33100"
+                  "skillId": "33100",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★2 : (타입) 명중 증가 +2%",
@@ -2732,7 +3212,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorHp": 0,
                   "skillId": "33135",
                   "upgradeDescTemplate": "SS ★2 : (타입) 명중 증가 +2%",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_33135"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_33135",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★4 : (타입) 공격력 증가 +2%",
@@ -2751,7 +3235,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorHp": 0,
                   "skillId": "33137",
                   "upgradeDescTemplate": "SS ★4 : (타입) 공격력 증가 +2%",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_33137"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_33137",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★6 : (타입) 명중 증가 +2%",
@@ -2770,7 +3258,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorHp": 0,
                   "skillId": "33139",
                   "upgradeDescTemplate": "SS ★6 : (타입) 명중 증가 +2%",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_33139"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_33139",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★8 : (타입) 공격력 증가 +2%",
@@ -2789,7 +3281,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorHp": 0,
                   "skillId": "33141",
                   "upgradeDescTemplate": "SS ★8 : (타입) 공격력 증가 +2%",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_33141"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_33141",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SSS ★1 : (타입) 공격력 증가 +1% / (타입) 명중 증가 +1%",
@@ -2808,7 +3304,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorHp": 0,
                   "skillId": "33145",
                   "upgradeDescTemplate": "SSS ★1 : (타입) 공격력 증가 +1% / (타입) 명중 증가 +1%",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_33145"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_33145",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 }
               ]
             }
@@ -2881,7 +3381,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "descValues": "20|2|10",
                   "factorDef": 0,
                   "factorHp": 0,
-                  "skillId": "11055010133"
+                  "skillId": "11055010133",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 50,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★1 : 피해량 +30%",
@@ -2901,7 +3405,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11055010134",
                   "upgradeDescTemplate": "SS ★1 : 피해량 +{0}%",
                   "upgradeDescValues": "30",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11055010134"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11055010134",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 50,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★3 : 오한 확률 +10%",
@@ -2921,7 +3429,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11055010136",
                   "upgradeDescTemplate": "SS ★3 : 오한 확률 +{0}%",
                   "upgradeDescValues": "10",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11055010136"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11055010136",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 50,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★5 : 오한 증가 +10%",
@@ -2941,7 +3453,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11055010138",
                   "upgradeDescTemplate": "SS ★5 : 오한 증가 +{0}%",
                   "upgradeDescValues": "10",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11055010138"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11055010138",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 50,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★7 : 피해량 +48%",
@@ -2961,7 +3477,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11055010140",
                   "upgradeDescTemplate": "SS ★7 : 피해량 +{0}%",
                   "upgradeDescValues": "48",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11055010140"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11055010140",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 50,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SSS ★0 : 오한 확률 +20%",
@@ -2981,7 +3501,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11055010144",
                   "upgradeDescTemplate": "SSS ★0 : 오한 확률 +{0}%",
                   "upgradeDescValues": "20",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11055010144"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11055010144",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 50,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 }
               ]
             },
@@ -3007,7 +3531,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "descValues": "4|30|3|20",
                   "factorDef": 0,
                   "factorHp": 0,
-                  "skillId": "11055011133"
+                  "skillId": "11055011133",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 50,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★1 : 동결 확률 +20%",
@@ -3027,7 +3555,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11055011134",
                   "upgradeDescTemplate": "SS ★1 : 동결 확률 +{0}%",
                   "upgradeDescValues": "20",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11055011134"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11055011134",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 50,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★3 : 피해량 +105%",
@@ -3047,7 +3579,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11055011136",
                   "upgradeDescTemplate": "SS ★3 : 피해량 +{0}%",
                   "upgradeDescValues": "105",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11055011136"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11055011136",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 50,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★5 : 체력 회복 +10%",
@@ -3067,7 +3603,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11055011138",
                   "upgradeDescTemplate": "SS ★5 : 체력 회복 +{0}%",
                   "upgradeDescValues": "10",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11055011138"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11055011138",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 50,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★7 : 연쇄 횟수 +1회",
@@ -3087,7 +3627,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11055011140",
                   "upgradeDescTemplate": "SS ★7 : 연쇄 횟수 +{0}회",
                   "upgradeDescValues": "1",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11055011140"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11055011140",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 50,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★10 : 해로운 효과 2개 제거 추가",
@@ -3107,7 +3651,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11055011143",
                   "upgradeDescTemplate": "SS ★10 : 해로운 효과 {0}개 제거 추가",
                   "upgradeDescValues": "2",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11055011143"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11055011143",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 50,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SSS ★0 : 연쇄 횟수 +2회",
@@ -3127,7 +3675,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11055011144",
                   "upgradeDescTemplate": "SSS ★0 : 연쇄 횟수 +{0}회",
                   "upgradeDescValues": "2",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11055011144"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11055011144",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 50,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 }
               ]
             },
@@ -3153,7 +3705,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "descValues": "300|3|2",
                   "factorDef": 0,
                   "factorHp": 0,
-                  "skillId": "11055012133"
+                  "skillId": "11055012133",
+                  "skillRangeType": 1,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 100,
+                  "skillRangeHeight": 35
                 },
                 {
                   "upgradeDescFormatted": "SS ★1 : 보호막 +1회",
@@ -3173,7 +3729,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11055012134",
                   "upgradeDescTemplate": "SS ★1 : 보호막 +{0}회",
                   "upgradeDescValues": "1",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11055012134"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11055012134",
+                  "skillRangeType": 1,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 100,
+                  "skillRangeHeight": 35
                 },
                 {
                   "upgradeDescFormatted": "SS ★5 : 피해량 +145%",
@@ -3193,7 +3753,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11055012138",
                   "upgradeDescTemplate": "SS ★5 : 피해량 +{0}%",
                   "upgradeDescValues": "145",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11055012138"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11055012138",
+                  "skillRangeType": 1,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 100,
+                  "skillRangeHeight": 35
                 },
                 {
                   "upgradeDescFormatted": "SS ★7 : 보호막 및 당기기 면역 +2초",
@@ -3213,7 +3777,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11055012140",
                   "upgradeDescTemplate": "SS ★7 : 보호막 및 당기기 면역 +{0}초",
                   "upgradeDescValues": "2",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11055012140"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11055012140",
+                  "skillRangeType": 1,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 100,
+                  "skillRangeHeight": 35
                 },
                 {
                   "upgradeDescFormatted": "SS ★10 : 7초간 명중 감소(20%) 추가",
@@ -3233,7 +3801,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11055012143",
                   "upgradeDescTemplate": "SS ★10 : {0}초간 명중 감소({1}%) 추가",
                   "upgradeDescValues": "7|20",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11055012143"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11055012143",
+                  "skillRangeType": 1,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 100,
+                  "skillRangeHeight": 35
                 },
                 {
                   "upgradeDescFormatted": "SSS ★0 : 회복량 +150%",
@@ -3253,7 +3825,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11055012144",
                   "upgradeDescTemplate": "SSS ★0 : 회복량 +{0}%",
                   "upgradeDescValues": "150",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11055012144"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11055012144",
+                  "skillRangeType": 1,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 100,
+                  "skillRangeHeight": 35
                 }
               ]
             },
@@ -3279,7 +3855,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 0,
                   "factorDef": 0,
                   "factorHp": 0,
-                  "skillId": "43100"
+                  "skillId": "43100",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★2 : (타입) 자연 체력회복 증가 +2%",
@@ -3298,7 +3878,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorHp": 0,
                   "skillId": "43135",
                   "upgradeDescTemplate": "SS ★2 : (타입) 자연 체력회복 증가 +2%",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_43135"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_43135",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★4 : (타입) 회피 증가 +2%",
@@ -3317,7 +3901,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorHp": 0,
                   "skillId": "43137",
                   "upgradeDescTemplate": "SS ★4 : (타입) 회피 증가 +2%",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_43137"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_43137",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★6 : (타입) 자연 체력회복 증가 +2%",
@@ -3336,7 +3924,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorHp": 0,
                   "skillId": "43139",
                   "upgradeDescTemplate": "SS ★6 : (타입) 자연 체력회복 증가 +2%",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_43139"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_43139",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★8 : (타입) 회피 증가 +2%",
@@ -3355,7 +3947,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorHp": 0,
                   "skillId": "43141",
                   "upgradeDescTemplate": "SS ★8 : (타입) 회피 증가 +2%",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_43141"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_43141",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SSS ★1 : (타입) 회피 증가 +1% / (타입) 자연 체력회복 증가 +1%",
@@ -3374,7 +3970,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorHp": 0,
                   "skillId": "43145",
                   "upgradeDescTemplate": "SSS ★1 : (타입) 회피 증가 +1% / (타입) 자연 체력회복 증가 +1%",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_43145"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_43145",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 }
               ]
             }
@@ -3447,7 +4047,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "descValues": "50|2",
                   "factorDef": 0,
                   "factorHp": 0,
-                  "skillId": "11034010133"
+                  "skillId": "11034010133",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 20,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★1 : 피해량 +40%",
@@ -3467,7 +4071,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11034010134",
                   "upgradeDescTemplate": "SS ★1 : 피해량 +{0}%",
                   "upgradeDescValues": "40",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11034010134"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11034010134",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 20,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★3 : 피해량 +48%",
@@ -3487,7 +4095,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11034010136",
                   "upgradeDescTemplate": "SS ★3 : 피해량 +{0}%",
                   "upgradeDescValues": "48",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11034010136"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11034010136",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 20,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★5 : 침묵 확률 +30%",
@@ -3507,7 +4119,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11034010138",
                   "upgradeDescTemplate": "SS ★5 : 침묵 확률 +{0}%",
                   "upgradeDescValues": "30",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11034010138"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11034010138",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 20,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★7 : 피해량 +64%",
@@ -3527,7 +4143,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11034010140",
                   "upgradeDescTemplate": "SS ★7 : 피해량 +{0}%",
                   "upgradeDescValues": "64",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11034010140"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11034010140",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 20,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SSS ★0 : 침묵 +1초",
@@ -3547,7 +4167,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11034010144",
                   "upgradeDescTemplate": "SSS ★0 : 침묵 +{0}초",
                   "upgradeDescValues": "1",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11034010144"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11034010144",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 20,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 }
               ]
             },
@@ -3573,7 +4197,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "descValues": "5|4|200",
                   "factorDef": 0,
                   "factorHp": 0,
-                  "skillId": "11034011133"
+                  "skillId": "11034011133",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 45,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★1 : 은신 +1초",
@@ -3593,7 +4221,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11034011134",
                   "upgradeDescTemplate": "SS ★1 : 은신 +{0}초",
                   "upgradeDescValues": "1",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11034011134"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11034011134",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 45,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★3 : 피해량 +365%",
@@ -3613,7 +4245,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11034011136",
                   "upgradeDescTemplate": "SS ★3 : 피해량 +{0}%",
                   "upgradeDescValues": "365",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11034011136"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11034011136",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 45,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★5 : 방어형이 아닌 대상에게의 (자신) 피해량 증가 +50%",
@@ -3633,7 +4269,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11034011138",
                   "upgradeDescTemplate": "SS ★5 : 방어형이 아닌 대상에게의 (자신) 피해량 증가 +{0}%",
                   "upgradeDescValues": "50",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11034011138"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11034011138",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 45,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★7 : 피해량 +485%",
@@ -3653,7 +4293,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11034011140",
                   "upgradeDescTemplate": "SS ★7 : 피해량 +{0}%",
                   "upgradeDescValues": "485",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11034011140"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11034011140",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 45,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★10 : 은신 +1초",
@@ -3673,7 +4317,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11034011143",
                   "upgradeDescTemplate": "SS ★10 : 은신 +{0}초",
                   "upgradeDescValues": "1",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11034011143"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11034011143",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 45,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SSS ★0 : 흡혈(50%) 추가",
@@ -3693,7 +4341,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11034011144",
                   "upgradeDescTemplate": "SSS ★0 : 흡혈({0}%) 추가",
                   "upgradeDescValues": "50",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11034011144"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11034011144",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 45,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 }
               ]
             },
@@ -3719,7 +4371,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "descValues": "5|5|35",
                   "factorDef": 0,
                   "factorHp": 0,
-                  "skillId": "11034012133"
+                  "skillId": "11034012133",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 20,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★1 : (보조) 치명타 확률 증가 +5%",
@@ -3739,7 +4395,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11034012134",
                   "upgradeDescTemplate": "SS ★1 : (보조) 치명타 확률 증가 +{0}%",
                   "upgradeDescValues": "5",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11034012134"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11034012134",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 20,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★5 : 쿨타임 -1초",
@@ -3759,7 +4419,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11034012138",
                   "upgradeDescTemplate": "SS ★5 : 쿨타임 -{0}초",
                   "upgradeDescValues": "1",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11034012138"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11034012138",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 20,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★7 : 피해량 +610%",
@@ -3779,7 +4443,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11034012140",
                   "upgradeDescTemplate": "SS ★7 : 피해량 +{0}%",
                   "upgradeDescValues": "610",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11034012140"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11034012140",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 20,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★10 : (보조) 치명타 확률 증가 +5%",
@@ -3799,7 +4467,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11034012143",
                   "upgradeDescTemplate": "SS ★10 : (보조) 치명타 확률 증가 +{0}%",
                   "upgradeDescValues": "5",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11034012143"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11034012143",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 20,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SSS ★0 : 쿨타임 -2초",
@@ -3819,7 +4491,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11034012144",
                   "upgradeDescTemplate": "SSS ★0 : 쿨타임 -{0}초",
                   "upgradeDescValues": "2",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11034012144"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11034012144",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 20,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 }
               ]
             },
@@ -3845,7 +4521,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 0,
                   "factorDef": 0,
                   "factorHp": 0,
-                  "skillId": "23100"
+                  "skillId": "23100",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★2 : (타입) 치명타 확률 증가 +2%",
@@ -3864,7 +4544,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorHp": 0,
                   "skillId": "23135",
                   "upgradeDescTemplate": "SS ★2 : (타입) 치명타 확률 증가 +2%",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_23135"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_23135",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★4 : (타입) 받는 피해 감소 +2%",
@@ -3883,7 +4567,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorHp": 0,
                   "skillId": "23137",
                   "upgradeDescTemplate": "SS ★4 : (타입) 받는 피해 감소 +2%",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_23137"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_23137",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★6 : (타입) 치명타 확률 증가 +2%",
@@ -3902,7 +4590,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorHp": 0,
                   "skillId": "23139",
                   "upgradeDescTemplate": "SS ★6 : (타입) 치명타 확률 증가 +2%",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_23139"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_23139",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★8 : (타입) 받는 피해 감소 +2%",
@@ -3921,7 +4613,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorHp": 0,
                   "skillId": "23141",
                   "upgradeDescTemplate": "SS ★8 : (타입) 받는 피해 감소 +2%",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_23141"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_23141",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SSS ★1 : (타입) 받는 피해 감소 +1% / (타입) 치명타 확률 증가 +1%",
@@ -3940,7 +4636,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorHp": 0,
                   "skillId": "23145",
                   "upgradeDescTemplate": "SSS ★1 : (타입) 받는 피해 감소 +1% / (타입) 치명타 확률 증가 +1%",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_23145"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_23145",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 }
               ]
             }
@@ -4013,7 +4713,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "descValues": "",
                   "factorDef": 0,
                   "factorHp": 0,
-                  "skillId": "11099010133"
+                  "skillId": "11099010133",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 45,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★1 : 피해량 +47%",
@@ -4033,7 +4737,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11099010134",
                   "upgradeDescTemplate": "SS ★1 : 피해량 +{0}%",
                   "upgradeDescValues": "47",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11099010134"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11099010134",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 45,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★3 : 피해량 +56%",
@@ -4053,7 +4761,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11099010136",
                   "upgradeDescTemplate": "SS ★3 : 피해량 +{0}%",
                   "upgradeDescValues": "56",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11099010136"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11099010136",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 45,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★5 : 피해량 +65%",
@@ -4073,7 +4785,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11099010138",
                   "upgradeDescTemplate": "SS ★5 : 피해량 +{0}%",
                   "upgradeDescValues": "65",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11099010138"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11099010138",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 45,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★7 : 피해량 +75%",
@@ -4093,7 +4809,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11099010140",
                   "upgradeDescTemplate": "SS ★7 : 피해량 +{0}%",
                   "upgradeDescValues": "75",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11099010140"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11099010140",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 45,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SSS ★0 : 피해량 +84%",
@@ -4113,7 +4833,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11099010144",
                   "upgradeDescTemplate": "SSS ★0 : 피해량 +{0}%",
                   "upgradeDescValues": "84",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11099010144"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11099010144",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 45,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 }
               ]
             },
@@ -4139,7 +4863,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "descValues": "50|3|80",
                   "factorDef": 0,
                   "factorHp": 0,
-                  "skillId": "11099011133"
+                  "skillId": "11099011133",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 45,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★1 : 반사 +1초",
@@ -4159,7 +4887,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11099011134",
                   "upgradeDescTemplate": "SS ★1 : 반사 +{0}초",
                   "upgradeDescValues": "1",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11099011134"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11099011134",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 45,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★3 : 피해량 +430%",
@@ -4179,7 +4911,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11099011136",
                   "upgradeDescTemplate": "SS ★3 : 피해량 +{0}%",
                   "upgradeDescValues": "430",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11099011136"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11099011136",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 45,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★5 : 피해량 +500%",
@@ -4199,7 +4935,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11099011138",
                   "upgradeDescTemplate": "SS ★5 : 피해량 +{0}%",
                   "upgradeDescValues": "500",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11099011138"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11099011138",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 45,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★7 : 체력이 가장 낮은 아군에게 반사(80%) 부여 추가",
@@ -4219,7 +4959,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11099011140",
                   "upgradeDescTemplate": "SS ★7 : 체력이 가장 낮은 아군에게 반사({0}%) 부여 추가",
                   "upgradeDescValues": "80",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11099011140"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11099011140",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 45,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★10 : 반사 +30%",
@@ -4239,7 +4983,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11099011143",
                   "upgradeDescTemplate": "SS ★10 : 반사 +{0}%",
                   "upgradeDescValues": "30",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11099011143"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11099011143",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 45,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SSS ★0 : 쿨타임 -1초",
@@ -4259,7 +5007,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11099011144",
                   "upgradeDescTemplate": "SSS ★0 : 쿨타임 -{0}초",
                   "upgradeDescValues": "1",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11099011144"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11099011144",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 45,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 }
               ]
             },
@@ -4285,7 +5037,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "descValues": "4|40",
                   "factorDef": 0,
                   "factorHp": 0,
-                  "skillId": "11099012133"
+                  "skillId": "11099012133",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 45,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★1 : 스킬 쿨타임 초기화 확률 +10%",
@@ -4305,7 +5061,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11099012134",
                   "upgradeDescTemplate": "SS ★1 : 스킬 쿨타임 초기화 확률 +{0}%",
                   "upgradeDescValues": "10",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11099012134"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11099012134",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 45,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★5 : 침묵 +1초",
@@ -4325,7 +5085,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11099012138",
                   "upgradeDescTemplate": "SS ★5 : 침묵 +{0}초",
                   "upgradeDescValues": "1",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11099012138"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11099012138",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 45,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★7 : 피해량 +760%",
@@ -4345,7 +5109,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11099012140",
                   "upgradeDescTemplate": "SS ★7 : 피해량 +{0}%",
                   "upgradeDescValues": "760",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11099012140"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11099012140",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 45,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★10 : 스킬 쿨타임 초기화 확률 +20%",
@@ -4365,7 +5133,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11099012143",
                   "upgradeDescTemplate": "SS ★10 : 스킬 쿨타임 초기화 확률 +{0}%",
                   "upgradeDescValues": "20",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11099012143"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11099012143",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 45,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SSS ★0 : 왼쪽 머리 효과에 6초간 파티원 제어 효과 면역 부여",
@@ -4385,7 +5157,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11099012144",
                   "upgradeDescTemplate": "SSS ★0 : 왼쪽 머리 효과에 {0}초간 파티원 제어 효과 면역 부여",
                   "upgradeDescValues": "6",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11099012144"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11099012144",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 45,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 }
               ]
             },
@@ -4411,7 +5187,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 0,
                   "factorDef": 0,
                   "factorHp": 0,
-                  "skillId": "33100"
+                  "skillId": "33100",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★2 : (타입) 명중 증가 +2%",
@@ -4430,7 +5210,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorHp": 0,
                   "skillId": "33135",
                   "upgradeDescTemplate": "SS ★2 : (타입) 명중 증가 +2%",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_33135"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_33135",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★4 : (타입) 공격력 증가 +2%",
@@ -4449,7 +5233,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorHp": 0,
                   "skillId": "33137",
                   "upgradeDescTemplate": "SS ★4 : (타입) 공격력 증가 +2%",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_33137"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_33137",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★6 : (타입) 명중 증가 +2%",
@@ -4468,7 +5256,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorHp": 0,
                   "skillId": "33139",
                   "upgradeDescTemplate": "SS ★6 : (타입) 명중 증가 +2%",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_33139"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_33139",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★8 : (타입) 공격력 증가 +2%",
@@ -4487,7 +5279,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorHp": 0,
                   "skillId": "33141",
                   "upgradeDescTemplate": "SS ★8 : (타입) 공격력 증가 +2%",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_33141"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_33141",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SSS ★1 : (타입) 공격력 증가 +1% / (타입) 명중 증가 +1%",
@@ -4506,7 +5302,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorHp": 0,
                   "skillId": "33145",
                   "upgradeDescTemplate": "SSS ★1 : (타입) 공격력 증가 +1% / (타입) 명중 증가 +1%",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_33145"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_33145",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 }
               ]
             }
@@ -4579,7 +5379,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "descValues": "",
                   "factorDef": 0,
                   "factorHp": 0,
-                  "skillId": "11088010133"
+                  "skillId": "11088010133",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 45,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★1 : 피해량 +43%",
@@ -4599,7 +5403,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11088010134",
                   "upgradeDescTemplate": "SS ★1 : 피해량 +{0}%",
                   "upgradeDescValues": "43",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11088010134"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11088010134",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 45,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★3 : 피해량 +52%",
@@ -4619,7 +5427,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11088010136",
                   "upgradeDescTemplate": "SS ★3 : 피해량 +{0}%",
                   "upgradeDescValues": "52",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11088010136"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11088010136",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 45,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★5 : 피해량 +61%",
@@ -4639,7 +5451,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11088010138",
                   "upgradeDescTemplate": "SS ★5 : 피해량 +{0}%",
                   "upgradeDescValues": "61",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11088010138"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11088010138",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 45,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★7 : 피해량 +70%",
@@ -4659,7 +5475,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11088010140",
                   "upgradeDescTemplate": "SS ★7 : 피해량 +{0}%",
                   "upgradeDescValues": "70",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11088010140"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11088010140",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 45,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SSS ★0 : 피해량 +78%",
@@ -4679,7 +5499,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11088010144",
                   "upgradeDescTemplate": "SSS ★0 : 피해량 +{0}%",
                   "upgradeDescValues": "78",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11088010144"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11088010144",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 45,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 }
               ]
             },
@@ -4705,7 +5529,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "descValues": "3|3|35",
                   "factorDef": 0,
                   "factorHp": 0,
-                  "skillId": "11088011133"
+                  "skillId": "11088011133",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 60,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★1 : (자신) 공격력 증가 +5%",
@@ -4725,7 +5553,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11088011134",
                   "upgradeDescTemplate": "SS ★1 : (자신) 공격력 증가 +{0}%",
                   "upgradeDescValues": "5",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11088011134"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11088011134",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 60,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★3 : 피해량 +360%",
@@ -4745,7 +5577,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11088011136",
                   "upgradeDescTemplate": "SS ★3 : 피해량 +{0}%",
                   "upgradeDescValues": "360",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11088011136"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11088011136",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 60,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★5 : 속박 시간 +1초",
@@ -4765,7 +5601,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11088011138",
                   "upgradeDescTemplate": "SS ★5 : 속박 시간 +{0}초",
                   "upgradeDescValues": "1",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11088011138"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11088011138",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 60,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★7 : 피해량 +480%",
@@ -4785,7 +5625,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11088011140",
                   "upgradeDescTemplate": "SS ★7 : 피해량 +{0}%",
                   "upgradeDescValues": "480",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11088011140"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11088011140",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 60,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★10 : (자신) 공격력 증가 +10%",
@@ -4805,7 +5649,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11088011143",
                   "upgradeDescTemplate": "SS ★10 : (자신) 공격력 증가 +{0}%",
                   "upgradeDescValues": "10",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11088011143"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11088011143",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 60,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SSS ★0 : 적중 시, 연쇄 +1회",
@@ -4825,7 +5673,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11088011144",
                   "upgradeDescTemplate": "SSS ★0 : 적중 시, 연쇄 +{0}회",
                   "upgradeDescValues": "1",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11088011144"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11088011144",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 60,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 }
               ]
             },
@@ -4851,7 +5703,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "descValues": "2|50|3|4|15",
                   "factorDef": 0,
                   "factorHp": 0,
-                  "skillId": "11088012133"
+                  "skillId": "11088012133",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 55,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★1 : (보조) 피해량 증가 +5%",
@@ -4871,7 +5727,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11088012134",
                   "upgradeDescTemplate": "SS ★1 : (보조) 피해량 증가 +{0}%",
                   "upgradeDescValues": "5",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11088012134"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11088012134",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 55,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★5 : 쿨타임 -1초",
@@ -4891,7 +5751,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11088012138",
                   "upgradeDescTemplate": "SS ★5 : 쿨타임 -{0}초",
                   "upgradeDescValues": "1",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11088012138"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11088012138",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 55,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★7 : 피해량 +315%",
@@ -4911,7 +5775,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11088012140",
                   "upgradeDescTemplate": "SS ★7 : 피해량 +{0}%",
                   "upgradeDescValues": "315",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11088012140"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11088012140",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 55,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★10 : (보조) 피해량 증가 +10%",
@@ -4931,7 +5799,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11088012143",
                   "upgradeDescTemplate": "SS ★10 : (보조) 피해량 증가 +{0}%",
                   "upgradeDescValues": "10",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11088012143"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11088012143",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 55,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SSS ★0 : 쿨타임 -1초",
@@ -4951,7 +5823,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11088012144",
                   "upgradeDescTemplate": "SSS ★0 : 쿨타임 -{0}초",
                   "upgradeDescValues": "1",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11088012144"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11088012144",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 55,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 }
               ]
             },
@@ -4977,7 +5853,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 0,
                   "factorDef": 0,
                   "factorHp": 0,
-                  "skillId": "33100"
+                  "skillId": "33100",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★2 : (타입) 명중 증가 +2%",
@@ -4996,7 +5876,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorHp": 0,
                   "skillId": "33135",
                   "upgradeDescTemplate": "SS ★2 : (타입) 명중 증가 +2%",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_33135"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_33135",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★4 : (타입) 공격력 증가 +2%",
@@ -5015,7 +5899,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorHp": 0,
                   "skillId": "33137",
                   "upgradeDescTemplate": "SS ★4 : (타입) 공격력 증가 +2%",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_33137"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_33137",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★6 : (타입) 명중 증가 +2%",
@@ -5034,7 +5922,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorHp": 0,
                   "skillId": "33139",
                   "upgradeDescTemplate": "SS ★6 : (타입) 명중 증가 +2%",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_33139"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_33139",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★8 : (타입) 공격력 증가 +2%",
@@ -5053,7 +5945,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorHp": 0,
                   "skillId": "33141",
                   "upgradeDescTemplate": "SS ★8 : (타입) 공격력 증가 +2%",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_33141"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_33141",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SSS ★1 : (타입) 공격력 증가 +1% / (타입) 명중 증가 +1%",
@@ -5072,7 +5968,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorHp": 0,
                   "skillId": "33145",
                   "upgradeDescTemplate": "SSS ★1 : (타입) 공격력 증가 +1% / (타입) 명중 증가 +1%",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_33145"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_33145",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 }
               ]
             }
@@ -5145,7 +6045,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "descValues": "50|3|5",
                   "factorAttk": 0,
                   "factorHp": 0,
-                  "skillId": "11071010133"
+                  "skillId": "11071010133",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 10,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★1 : 보호막 +1초",
@@ -5165,7 +6069,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11071010134",
                   "upgradeDescTemplate": "SS ★1 : 보호막 +{0}초",
                   "upgradeDescValues": "1",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11071010134"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11071010134",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 10,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★3 : 피해량 +13%",
@@ -5185,7 +6093,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11071010136",
                   "upgradeDescTemplate": "SS ★3 : 피해량 +{0}%",
                   "upgradeDescValues": "13",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11071010136"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11071010136",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 10,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★5 : 보호막 +2회",
@@ -5205,7 +6117,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11071010138",
                   "upgradeDescTemplate": "SS ★5 : 보호막 +{0}회",
                   "upgradeDescValues": "2",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11071010138"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11071010138",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 10,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★7 : 피해량 +17%",
@@ -5225,7 +6141,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11071010140",
                   "upgradeDescTemplate": "SS ★7 : 피해량 +{0}%",
                   "upgradeDescValues": "17",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11071010140"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11071010140",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 10,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SSS ★0 : 보호막 획득 확률 +20%",
@@ -5245,7 +6165,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11071010144",
                   "upgradeDescTemplate": "SSS ★0 : 보호막 획득 확률 +{0}%",
                   "upgradeDescValues": "20",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11071010144"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11071010144",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 10,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 }
               ]
             },
@@ -5271,7 +6195,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "descValues": "3|4|50",
                   "factorAttk": 0,
                   "factorHp": 0,
-                  "skillId": "11071011133"
+                  "skillId": "11071011133",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 15,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★1 : (자신) 받는 피해 감소 +5%",
@@ -5291,7 +6219,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11071011134",
                   "upgradeDescTemplate": "SS ★1 : (자신) 받는 피해 감소 +{0}%",
                   "upgradeDescValues": "5",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11071011134"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11071011134",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 15,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★3 : 피해량 +30%",
@@ -5311,7 +6243,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11071011136",
                   "upgradeDescTemplate": "SS ★3 : 피해량 +{0}%",
                   "upgradeDescValues": "30",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11071011136"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11071011136",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 15,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★5 : 포효 범위 +1m",
@@ -5331,7 +6267,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11071011138",
                   "upgradeDescTemplate": "SS ★5 : 포효 범위 +{0}m",
                   "upgradeDescValues": "1",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11071011138"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11071011138",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 15,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★7 : 도발 및 (자신) 받는 피해 감소 +1초",
@@ -5351,7 +6291,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11071011140",
                   "upgradeDescTemplate": "SS ★7 : 도발 및 (자신) 받는 피해 감소 +{0}초",
                   "upgradeDescValues": "1",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11071011140"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11071011140",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 15,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★10 : (자신) 받는 피해 감소 +10%",
@@ -5371,7 +6315,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11071011143",
                   "upgradeDescTemplate": "SS ★10 : (자신) 받는 피해 감소 +{0}%",
                   "upgradeDescValues": "10",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11071011143"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11071011143",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 15,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SSS ★0 : 쿨타임 -1초",
@@ -5391,7 +6339,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11071011144",
                   "upgradeDescTemplate": "SSS ★0 : 쿨타임 -{0}초",
                   "upgradeDescValues": "1",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11071011144"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11071011144",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 15,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 }
               ]
             },
@@ -5417,7 +6369,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 0,
                   "factorDef": 0,
                   "factorHp": 0,
-                  "skillId": "11071012133"
+                  "skillId": "11071012133",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 15,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★1 : (자신) 방어력 증가 +60%",
@@ -5437,7 +6393,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11071012134",
                   "upgradeDescTemplate": "SS ★1 : (자신) 방어력 증가 +{0}%",
                   "upgradeDescValues": "60",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11071012134"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11071012134",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 15,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★5 : 의지 +1초",
@@ -5457,7 +6417,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11071012138",
                   "upgradeDescTemplate": "SS ★5 : 의지 +{0}초",
                   "upgradeDescValues": "1",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11071012138"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11071012138",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 15,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★7 : (자신) 방어력 증가 +80%",
@@ -5477,7 +6441,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11071012140",
                   "upgradeDescTemplate": "SS ★7 : (자신) 방어력 증가 +{0}%",
                   "upgradeDescValues": "80",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11071012140"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11071012140",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 15,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★10 : (자신) 방어력 증가 +100%",
@@ -5497,7 +6465,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11071012143",
                   "upgradeDescTemplate": "SS ★10 : (자신) 방어력 증가 +{0}%",
                   "upgradeDescValues": "100",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11071012143"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11071012143",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 15,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SSS ★0 : 의지 +2초",
@@ -5517,7 +6489,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11071012144",
                   "upgradeDescTemplate": "SSS ★0 : 의지 +{0}초",
                   "upgradeDescValues": "2",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11071012144"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11071012144",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 15,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 }
               ]
             },
@@ -5543,7 +6519,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 0,
                   "factorDef": 0,
                   "factorHp": 0,
-                  "skillId": "13100"
+                  "skillId": "13100",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★2 : (타입) 방어력 증가 +30%",
@@ -5563,7 +6543,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "13135",
                   "upgradeDescTemplate": "SS ★2 : (타입) 방어력 증가 +{0}%",
                   "upgradeDescValues": "30",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_13135"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_13135",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★4 : (타입) 받는 피해 감소 +2%",
@@ -5583,7 +6567,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "13137",
                   "upgradeDescTemplate": "SS ★4 : (타입) 받는 피해 감소 +{0}%",
                   "upgradeDescValues": "2",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_13137"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_13137",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★6 : (타입) 방어력 증가 +30%",
@@ -5603,7 +6591,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "13139",
                   "upgradeDescTemplate": "SS ★6 : (타입) 방어력 증가 +{0}%",
                   "upgradeDescValues": "30",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_13139"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_13139",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★8 : (타입) 받는 피해 감소 +2%",
@@ -5623,7 +6615,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "13141",
                   "upgradeDescTemplate": "SS ★8 : (타입) 받는 피해 감소 +{0}%",
                   "upgradeDescValues": "2",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_13141"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_13141",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SSS ★1 : (타입) 받는 피해 감소 +1% / (타입) 방어력 증가 +40%",
@@ -5643,7 +6639,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "13145",
                   "upgradeDescTemplate": "SSS ★1 : (타입) 받는 피해 감소 +{0}% / (타입) 방어력 증가 +{1}%",
                   "upgradeDescValues": "1|40",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_13145"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_13145",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 }
               ]
             }
@@ -5727,7 +6727,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "descValues": "30|3|9",
                   "factorDef": 0,
                   "factorHp": 0,
-                  "skillId": "11052010133"
+                  "skillId": "11052010133",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 40,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★1 : (보조) 회피 증가 +7%",
@@ -5747,7 +6751,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11052010134",
                   "upgradeDescTemplate": "SS ★1 : (보조) 회피 증가 +{0}%",
                   "upgradeDescValues": "7",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11052010134"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11052010134",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 40,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★3 : 피해량 +167%",
@@ -5767,7 +6775,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11052010136",
                   "upgradeDescTemplate": "SS ★3 : 피해량 +{0}%",
                   "upgradeDescValues": "167",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11052010136"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11052010136",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 40,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★5 : (보조) 회피 증가 발동 확률 +20%",
@@ -5787,7 +6799,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11052010138",
                   "upgradeDescTemplate": "SS ★5 : (보조) 회피 증가 발동 확률 +{0}%",
                   "upgradeDescValues": "20",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11052010138"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11052010138",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 40,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★7 : 피해량 +222%",
@@ -5807,7 +6823,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11052010140",
                   "upgradeDescTemplate": "SS ★7 : 피해량 +{0}%",
                   "upgradeDescValues": "222",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11052010140"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11052010140",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 40,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SSS ★0 : (보조) 회피 증가 +9%",
@@ -5827,7 +6847,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11052010144",
                   "upgradeDescTemplate": "SSS ★0 : (보조) 회피 증가 +{0}%",
                   "upgradeDescValues": "9",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11052010144"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11052010144",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 40,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 }
               ]
             },
@@ -5853,7 +6877,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 0,
                   "factorDef": 0,
                   "factorHp": 0,
-                  "skillId": "11052011133"
+                  "skillId": "11052011133",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 40,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★1 : 해로운 효과 제거 확률 +20%",
@@ -5873,7 +6901,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11052011134",
                   "upgradeDescTemplate": "SS ★1 : 해로운 효과 제거 확률 +{0}%",
                   "upgradeDescValues": "20",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11052011134"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11052011134",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 40,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★3 : 회복량 +150%",
@@ -5893,7 +6925,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11052011136",
                   "upgradeDescTemplate": "SS ★3 : 회복량 +{0}%",
                   "upgradeDescValues": "150",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11052011136"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11052011136",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 40,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★5 : 범위 +1m",
@@ -5913,7 +6949,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11052011138",
                   "upgradeDescTemplate": "SS ★5 : 범위 +{0}m",
                   "upgradeDescValues": "1",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11052011138"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11052011138",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 40,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★7 : 해로운 효과 제거 확률 +50%",
@@ -5933,7 +6973,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11052011140",
                   "upgradeDescTemplate": "SS ★7 : 해로운 효과 제거 확률 +{0}%",
                   "upgradeDescValues": "50",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11052011140"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11052011140",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 40,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★10 : 회복량 +200%",
@@ -5953,7 +6997,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11052011143",
                   "upgradeDescTemplate": "SS ★10 : 회복량 +{0}%",
                   "upgradeDescValues": "200",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11052011143"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11052011143",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 40,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SSS ★0 : 스킬 쿨타임 감소 +0.1초",
@@ -5973,7 +7021,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11052011144",
                   "upgradeDescTemplate": "SSS ★0 : 스킬 쿨타임 감소 +{0}초",
                   "upgradeDescValues": "0.1",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11052011144"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11052011144",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 40,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 }
               ]
             },
@@ -5999,7 +7051,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 0,
                   "factorDef": 0,
                   "factorHp": 0,
-                  "skillId": "11052012133"
+                  "skillId": "11052012133",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★1 : 최대 스킬 쿨타임 감소 +4%",
@@ -6019,7 +7075,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11052012134",
                   "upgradeDescTemplate": "SS ★1 : 최대 스킬 쿨타임 감소 +{0}%",
                   "upgradeDescValues": "4",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11052012134"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11052012134",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★5 : 현재 스킬 쿨타임 감소 +10%",
@@ -6039,7 +7099,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11052012138",
                   "upgradeDescTemplate": "SS ★5 : 현재 스킬 쿨타임 감소 +{0}%",
                   "upgradeDescValues": "10",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11052012138"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11052012138",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★7 : 최대 스킬 쿨타임 감소 +4%",
@@ -6059,7 +7123,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11052012140",
                   "upgradeDescTemplate": "SS ★7 : 최대 스킬 쿨타임 감소 +{0}%",
                   "upgradeDescValues": "4",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11052012140"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11052012140",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★10 : 현재 스킬 쿨타임 감소 +20%",
@@ -6079,7 +7147,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11052012143",
                   "upgradeDescTemplate": "SS ★10 : 현재 스킬 쿨타임 감소 +{0}%",
                   "upgradeDescValues": "20",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11052012143"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11052012143",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SSS ★0 : 5초간 침묵 면역 부여 추가",
@@ -6099,7 +7171,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11052012144",
                   "upgradeDescTemplate": "SSS ★0 : {0}초간 침묵 면역 부여 추가",
                   "upgradeDescValues": "5",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11052012144"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11052012144",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 }
               ]
             },
@@ -6125,7 +7201,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 0,
                   "factorDef": 0,
                   "factorHp": 0,
-                  "skillId": "43100"
+                  "skillId": "43100",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★2 : (타입) 자연 체력회복 증가 +2%",
@@ -6144,7 +7224,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorHp": 0,
                   "skillId": "43135",
                   "upgradeDescTemplate": "SS ★2 : (타입) 자연 체력회복 증가 +2%",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_43135"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_43135",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★4 : (타입) 회피 증가 +2%",
@@ -6163,7 +7247,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorHp": 0,
                   "skillId": "43137",
                   "upgradeDescTemplate": "SS ★4 : (타입) 회피 증가 +2%",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_43137"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_43137",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★6 : (타입) 자연 체력회복 증가 +2%",
@@ -6182,7 +7270,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorHp": 0,
                   "skillId": "43139",
                   "upgradeDescTemplate": "SS ★6 : (타입) 자연 체력회복 증가 +2%",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_43139"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_43139",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★8 : (타입) 회피 증가 +2%",
@@ -6201,7 +7293,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorHp": 0,
                   "skillId": "43141",
                   "upgradeDescTemplate": "SS ★8 : (타입) 회피 증가 +2%",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_43141"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_43141",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SSS ★1 : (타입) 회피 증가 +1% / (타입) 자연 체력회복 증가 +1%",
@@ -6220,7 +7316,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorHp": 0,
                   "skillId": "43145",
                   "upgradeDescTemplate": "SSS ★1 : (타입) 회피 증가 +1% / (타입) 자연 체력회복 증가 +1%",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_43145"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_43145",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 }
               ]
             }
@@ -6304,7 +7404,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "descValues": "50|2",
                   "factorAttk": 0,
                   "factorHp": 0,
-                  "skillId": "11047010133"
+                  "skillId": "11047010133",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 10,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★1 : 도발 확률 +10%",
@@ -6324,7 +7428,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11047010134",
                   "upgradeDescTemplate": "SS ★1 : 도발 확률 +{0}%",
                   "upgradeDescValues": "10",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11047010134"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11047010134",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 10,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★3 : 피해량 +11%",
@@ -6344,7 +7452,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11047010136",
                   "upgradeDescTemplate": "SS ★3 : 피해량 +{0}%",
                   "upgradeDescValues": "11",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11047010136"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11047010136",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 10,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★5 : 도발 확률 +10%",
@@ -6364,7 +7476,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11047010138",
                   "upgradeDescTemplate": "SS ★5 : 도발 확률 +{0}%",
                   "upgradeDescValues": "10",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11047010138"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11047010138",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 10,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★7 : 피해량 +15%",
@@ -6384,7 +7500,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11047010140",
                   "upgradeDescTemplate": "SS ★7 : 피해량 +{0}%",
                   "upgradeDescValues": "15",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11047010140"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11047010140",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 10,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SSS ★0 : 도발 확률 +20%",
@@ -6404,7 +7524,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11047010144",
                   "upgradeDescTemplate": "SSS ★0 : 도발 확률 +{0}%",
                   "upgradeDescValues": "20",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11047010144"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11047010144",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 10,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 }
               ]
             },
@@ -6430,7 +7554,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "descValues": "2|3|20|4|45",
                   "factorAttk": 0,
                   "factorHp": 0,
-                  "skillId": "11047011133"
+                  "skillId": "11047011133",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 15,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★1 : (자신) 받는 피해 감소 +5%",
@@ -6450,7 +7578,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11047011134",
                   "upgradeDescTemplate": "SS ★1 : (자신) 받는 피해 감소 +{0}%",
                   "upgradeDescValues": "5",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11047011134"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11047011134",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 15,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★3 : 피해량 +45%",
@@ -6470,7 +7602,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11047011136",
                   "upgradeDescTemplate": "SS ★3 : 피해량 +{0}%",
                   "upgradeDescValues": "45",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11047011136"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11047011136",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 15,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★5 : (자신) 받는 피해 감소 +10%",
@@ -6490,7 +7626,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11047011138",
                   "upgradeDescTemplate": "SS ★5 : (자신) 받는 피해 감소 +{0}%",
                   "upgradeDescValues": "10",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11047011138"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11047011138",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 15,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★7 : 피해량 +65%",
@@ -6510,7 +7650,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11047011140",
                   "upgradeDescTemplate": "SS ★7 : 피해량 +{0}%",
                   "upgradeDescValues": "65",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11047011140"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11047011140",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 15,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★10 : 범위 +1m",
@@ -6530,7 +7674,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11047011143",
                   "upgradeDescTemplate": "SS ★10 : 범위 +{0}m",
                   "upgradeDescValues": "1",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11047011143"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11047011143",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 15,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SSS ★0 : 적중 시, 50% 확률로 기절 2초 추가",
@@ -6550,7 +7698,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11047011144",
                   "upgradeDescTemplate": "SSS ★0 : 적중 시, {0}% 확률로 기절 {1}초 추가",
                   "upgradeDescValues": "50|2",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11047011144"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11047011144",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 15,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 }
               ]
             },
@@ -6576,7 +7728,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "descValues": "5|2|3|300|3",
                   "factorAttk": 0,
                   "factorHp": 0,
-                  "skillId": "11047012133"
+                  "skillId": "11047012133",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 15,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★1 : (자신) 방어력 증가 +100%",
@@ -6596,7 +7752,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11047012134",
                   "upgradeDescTemplate": "SS ★1 : (자신) 방어력 증가 +{0}%",
                   "upgradeDescValues": "100",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11047012134"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11047012134",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 15,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★5 : 피해량 +25%",
@@ -6616,7 +7776,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11047012138",
                   "upgradeDescTemplate": "SS ★5 : 피해량 +{0}%",
                   "upgradeDescValues": "25",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11047012138"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11047012138",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 15,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★7 : 발동 간격 -1초",
@@ -6636,7 +7800,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11047012140",
                   "upgradeDescTemplate": "SS ★7 : 발동 간격 -{0}초",
                   "upgradeDescValues": "1",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11047012140"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11047012140",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 15,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★10 : 체력 +20% 회복 추가",
@@ -6656,7 +7824,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11047012143",
                   "upgradeDescTemplate": "SS ★10 : 체력 +{0}% 회복 추가",
                   "upgradeDescValues": "20",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11047012143"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11047012143",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 15,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SSS ★0 : 넘어트리기 면역을 이동제어 면역으로 변경",
@@ -6675,7 +7847,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorHp": 0,
                   "skillId": "11047012144",
                   "upgradeDescTemplate": "SSS ★0 : 넘어트리기 면역을 이동제어 면역으로 변경",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11047012144"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11047012144",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 15,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 }
               ]
             },
@@ -6701,7 +7877,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 0,
                   "factorDef": 0,
                   "factorHp": 0,
-                  "skillId": "13100"
+                  "skillId": "13100",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★2 : (타입) 방어력 증가 +30%",
@@ -6721,7 +7901,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "13135",
                   "upgradeDescTemplate": "SS ★2 : (타입) 방어력 증가 +{0}%",
                   "upgradeDescValues": "30",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_13135"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_13135",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★4 : (타입) 받는 피해 감소 +2%",
@@ -6741,7 +7925,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "13137",
                   "upgradeDescTemplate": "SS ★4 : (타입) 받는 피해 감소 +{0}%",
                   "upgradeDescValues": "2",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_13137"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_13137",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★6 : (타입) 방어력 증가 +30%",
@@ -6761,7 +7949,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "13139",
                   "upgradeDescTemplate": "SS ★6 : (타입) 방어력 증가 +{0}%",
                   "upgradeDescValues": "30",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_13139"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_13139",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★8 : (타입) 받는 피해 감소 +2%",
@@ -6781,7 +7973,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "13141",
                   "upgradeDescTemplate": "SS ★8 : (타입) 받는 피해 감소 +{0}%",
                   "upgradeDescValues": "2",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_13141"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_13141",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SSS ★1 : (타입) 받는 피해 감소 +1% / (타입) 방어력 증가 +40%",
@@ -6801,7 +7997,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "13145",
                   "upgradeDescTemplate": "SSS ★1 : (타입) 받는 피해 감소 +{0}% / (타입) 방어력 증가 +{1}%",
                   "upgradeDescValues": "1|40",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_13145"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_13145",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 }
               ]
             }
@@ -6885,7 +8085,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "descValues": "30|50|2",
                   "factorDef": 0,
                   "factorHp": 0,
-                  "skillId": "11036010133"
+                  "skillId": "11036010133",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 55,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★1 : 피해량 +49%",
@@ -6905,7 +8109,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11036010134",
                   "upgradeDescTemplate": "SS ★1 : 피해량 +{0}%",
                   "upgradeDescValues": "49",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11036010134"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11036010134",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 55,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★3 : 침묵 확률 +20%",
@@ -6925,7 +8133,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11036010136",
                   "upgradeDescTemplate": "SS ★3 : 침묵 확률 +{0}%",
                   "upgradeDescValues": "20",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11036010136"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11036010136",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 55,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★5 : 피해량 +69%",
@@ -6945,7 +8157,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11036010138",
                   "upgradeDescTemplate": "SS ★5 : 피해량 +{0}%",
                   "upgradeDescValues": "69",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11036010138"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11036010138",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 55,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★7 : (자신) 피해량 증가 +20%",
@@ -6965,7 +8181,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11036010140",
                   "upgradeDescTemplate": "SS ★7 : (자신) 피해량 증가 +{0}%",
                   "upgradeDescValues": "20",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11036010140"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11036010140",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 55,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SSS ★0 : 피해량 +88%",
@@ -6985,7 +8205,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11036010144",
                   "upgradeDescTemplate": "SSS ★0 : 피해량 +{0}%",
                   "upgradeDescValues": "88",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11036010144"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11036010144",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 55,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 }
               ]
             },
@@ -7011,7 +8235,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "descValues": "3|3|1",
                   "factorDef": 0,
                   "factorHp": 0,
-                  "skillId": "11036011133"
+                  "skillId": "11036011133",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 55,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★1 : 물폭탄 발사 +1회",
@@ -7031,7 +8259,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11036011134",
                   "upgradeDescTemplate": "SS ★1 : 물폭탄 발사 +{0}회",
                   "upgradeDescValues": "1",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11036011134"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11036011134",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 55,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★3 : 피해량 +370%",
@@ -7051,7 +8283,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11036011136",
                   "upgradeDescTemplate": "SS ★3 : 피해량 +{0}%",
                   "upgradeDescValues": "370",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11036011136"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11036011136",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 55,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★5 : 축축함 Lv.1 +1초",
@@ -7071,7 +8307,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11036011138",
                   "upgradeDescTemplate": "SS ★5 : 축축함 Lv.1 +{0}초",
                   "upgradeDescValues": "1",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11036011138"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11036011138",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 55,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★7 : 피해량 +490%",
@@ -7091,7 +8331,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11036011140",
                   "upgradeDescTemplate": "SS ★7 : 피해량 +{0}%",
                   "upgradeDescValues": "490",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11036011140"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11036011140",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 55,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★10 : 물폭탄 발사 +1회",
@@ -7111,7 +8355,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11036011143",
                   "upgradeDescTemplate": "SS ★10 : 물폭탄 발사 +{0}회",
                   "upgradeDescValues": "1",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11036011143"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11036011143",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 55,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SSS ★0 : 피해량 +615% / 치명타 적중 시마다 파티원의 쿨타임 감소로 변경",
@@ -7131,7 +8379,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11036011144",
                   "upgradeDescTemplate": "SSS ★0 : 피해량 +{0}% / 치명타 적중 시마다 파티원의 쿨타임 감소로 변경",
                   "upgradeDescValues": "615",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11036011144"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11036011144",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 55,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 }
               ]
             },
@@ -7157,7 +8409,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "descValues": "2|3|50|100",
                   "factorDef": 0,
                   "factorHp": 0,
-                  "skillId": "11036012133"
+                  "skillId": "11036012133",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 55,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★1 : 피해량 +240%",
@@ -7177,7 +8433,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11036012134",
                   "upgradeDescTemplate": "SS ★1 : 피해량 +{0}%",
                   "upgradeDescValues": "240",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11036012134"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11036012134",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 55,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★5 : (자신) 피해량 증가 +50%",
@@ -7197,7 +8457,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11036012138",
                   "upgradeDescTemplate": "SS ★5 : (자신) 피해량 증가 +{0}%",
                   "upgradeDescValues": "50",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11036012138"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11036012138",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 55,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★7 : 피해량 +335%",
@@ -7217,7 +8481,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11036012140",
                   "upgradeDescTemplate": "SS ★7 : 피해량 +{0}%",
                   "upgradeDescValues": "335",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11036012140"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11036012140",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 55,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★10 : 공중으로 띄우기 확률 +50%",
@@ -7237,7 +8505,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11036012143",
                   "upgradeDescTemplate": "SS ★10 : 공중으로 띄우기 확률 +{0}%",
                   "upgradeDescValues": "50",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11036012143"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11036012143",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 55,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SSS ★0 : 피해량 +430%",
@@ -7257,7 +8529,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillId": "11036012144",
                   "upgradeDescTemplate": "SSS ★0 : 피해량 +{0}%",
                   "upgradeDescValues": "430",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_11036012144"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_11036012144",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 55,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 }
               ]
             },
@@ -7283,7 +8559,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 0,
                   "factorDef": 0,
                   "factorHp": 0,
-                  "skillId": "33100"
+                  "skillId": "33100",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★2 : (타입) 명중 증가 +2%",
@@ -7302,7 +8582,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorHp": 0,
                   "skillId": "33135",
                   "upgradeDescTemplate": "SS ★2 : (타입) 명중 증가 +2%",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_33135"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_33135",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★4 : (타입) 공격력 증가 +2%",
@@ -7321,7 +8605,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorHp": 0,
                   "skillId": "33137",
                   "upgradeDescTemplate": "SS ★4 : (타입) 공격력 증가 +2%",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_33137"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_33137",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★6 : (타입) 명중 증가 +2%",
@@ -7340,7 +8628,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorHp": 0,
                   "skillId": "33139",
                   "upgradeDescTemplate": "SS ★6 : (타입) 명중 증가 +2%",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_33139"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_33139",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SS ★8 : (타입) 공격력 증가 +2%",
@@ -7359,7 +8651,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorHp": 0,
                   "skillId": "33141",
                   "upgradeDescTemplate": "SS ★8 : (타입) 공격력 증가 +2%",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_33141"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_33141",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "SSS ★1 : (타입) 공격력 증가 +1% / (타입) 명중 증가 +1%",
@@ -7378,7 +8674,11 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorHp": 0,
                   "skillId": "33145",
                   "upgradeDescTemplate": "SSS ★1 : (타입) 공격력 증가 +1% / (타입) 명중 증가 +1%",
-                  "upgradeDescTid": "Skill_Upgrade_Desc_33145"
+                  "upgradeDescTid": "Skill_Upgrade_Desc_33145",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 }
               ]
             }

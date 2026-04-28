@@ -4499,7 +4499,25 @@
     return 20;
   }
 
+  function stripSkillTags(value) {
+    return String(value || "").replace(/<[^>]*>/g, "");
+  }
+
   function inferSkillRangeValue(pet, skill, variant) {
+    const rangeType = Number.parseInt(String(variant.skillRangeType ?? ""), 10);
+    const explicitRange = Number.parseInt(String(variant.skillRangeRadius ?? ""), 10);
+    if (rangeType === 1) {
+      const explicitWidth = Number.parseInt(String(variant.skillRangeWidth ?? ""), 10);
+      if (Number.isFinite(explicitWidth) && explicitWidth > 0) return Math.round(explicitWidth / 2);
+
+      const plainDesc = stripSkillTags(variant.formattedDesc || variant.rawDesc || "");
+      const widthMeterMatch = plainDesc.match(/폭\s*(\d+(?:\.\d+)?)m/);
+      if (widthMeterMatch) {
+        return Math.round(Number.parseFloat(widthMeterMatch[1]) * 10);
+      }
+    }
+    if (Number.isFinite(explicitRange)) return explicitRange;
+
     const skillName = String(skill.name || "");
     if (skillName.includes("전문가")) return 0;
 
