@@ -8767,7 +8767,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "적 1명을 공격(피해량: <#CFFF71>{0}%</color> x <#CFFF71>공격력</color>)",
                   "factorAttk": 13000,
                   "formattedDesc": "적 1명을 공격(피해량: <#CFFF71>130%</color> x <#CFFF71>공격력</color>)",
-                  "stageLabel": "0성"
+                  "stageLabel": "0성",
+                  "skillId": "2200000070144",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 20,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 }
               ]
             },
@@ -8791,7 +8796,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 172500,
                   "formattedDesc": "사정거리 내의 적 조련사 1명을 우선하여, 대상과 주변 <#CFFF71>3m</color> 범위에 태양의 검 소환하여 <#CFFF71>4회</color>에 걸쳐 공격(피해량 : <#CFFF71>1725%</color> x <#CFFF71>공격력</color>). 적중 시, 대상을 공중으로 띄우고 <#CFFF71>5초</color>간 <#CFFF71>화상(태양의 검)</color> 부여. (전투 시작 <#CFFF71>5초</color> 후 최초 시전)",
                   "stageLabel": "0성",
-                  "descValues": "3|4|5|5"
+                  "descValues": "3|4|5|5",
+                  "skillId": "2200000071144",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 45,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "★1 : 화상(태양의 검) +1초",
@@ -8806,7 +8816,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 172500,
                   "formattedDesc": "사정거리 내의 적 조련사 1명을 우선하여, 대상과 주변 <#CFFF71>3m</color> 범위에 태양의 검 소환하여 <#CFFF71>4회</color>에 걸쳐 공격(피해량 : <#CFFF71>1725%</color> x <#CFFF71>공격력</color>). 적중 시, 대상을 공중으로 띄우고 <#CFFF71>6초</color>간 <#CFFF71>화상(태양의 검)</color> 부여. (전투 시작 <#CFFF71>5초</color> 후 최초 시전)",
                   "stageLabel": "1성",
-                  "descValues": "3|4|6|5"
+                  "descValues": "3|4|6|5",
+                  "skillId": "2200000071145",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 45,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "★3 : 피해량 +1115%",
@@ -8821,7 +8836,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 284000,
                   "formattedDesc": "사정거리 내의 적 조련사 1명을 우선하여, 대상과 주변 <#CFFF71>3m</color> 범위에 태양의 검 소환하여 <#CFFF71>4회</color>에 걸쳐 공격(피해량 : <#CFFF71>2840%</color> x <#CFFF71>공격력</color>). 적중 시, 대상을 공중으로 띄우고 <#CFFF71>6초</color>간 <#CFFF71>화상(태양의 검)</color> 부여. (전투 시작 <#CFFF71>5초</color> 후 최초 시전)",
                   "stageLabel": "3성",
-                  "descValues": "3|4|6|5"
+                  "descValues": "3|4|6|5",
+                  "skillId": "2200000071147",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 45,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "★5 : 쿨타임 -1초 / 최초 시전 -1초",
@@ -8836,7 +8856,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 284000,
                   "formattedDesc": "사정거리 내의 적 조련사 1명을 우선하여, 대상과 주변 <#CFFF71>3m</color> 범위에 태양의 검 소환하여 <#CFFF71>4회</color>에 걸쳐 공격(피해량 : <#CFFF71>2840%</color> x <#CFFF71>공격력</color>). 적중 시, 대상을 공중으로 띄우고 <#CFFF71>6초</color>간 <#CFFF71>화상(태양의 검)</color> 부여. (전투 시작 <#CFFF71>4초</color> 후 최초 시전)",
                   "stageLabel": "5성",
-                  "descValues": "3|4|6|4"
+                  "descValues": "3|4|6|4",
+                  "skillId": "2200000071149",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 45,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "★7 : 피해량 +1490%",
@@ -8851,7 +8876,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 433000,
                   "formattedDesc": "사정거리 내의 적 조련사 1명을 우선하여, 대상과 주변 <#CFFF71>3m</color> 범위에 태양의 검 소환하여 <#CFFF71>4회</color>에 걸쳐 공격(피해량 : <#CFFF71>4330%</color> x <#CFFF71>공격력</color>). 적중 시, 대상을 공중으로 띄우고 <#CFFF71>6초</color>간 <#CFFF71>화상(태양의 검)</color> 부여. (전투 시작 <#CFFF71>4초</color> 후 최초 시전)",
                   "stageLabel": "7성",
-                  "descValues": "3|4|6|4"
+                  "descValues": "3|4|6|4",
+                  "skillId": "2200000071151",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 45,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "★10 : 쿨타임 -1초 / 화상(태양의 검) +1초",
@@ -8866,7 +8896,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 433000,
                   "formattedDesc": "사정거리 내의 적 조련사 1명을 우선하여, 대상과 주변 <#CFFF71>3m</color> 범위에 태양의 검 소환하여 <#CFFF71>4회</color>에 걸쳐 공격(피해량 : <#CFFF71>4330%</color> x <#CFFF71>공격력</color>). 적중 시, 대상을 공중으로 띄우고 <#CFFF71>7초</color>간 <#CFFF71>화상(태양의 검)</color> 부여. (전투 시작 <#CFFF71>4초</color> 후 최초 시전)",
                   "stageLabel": "10성",
-                  "descValues": "3|4|7|4"
+                  "descValues": "3|4|7|4",
+                  "skillId": "2200000071154",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 45,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 }
               ]
             }
@@ -8938,7 +8973,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "적 1명을 공격(피해량: <#CFFF71>{0}%</color> x <#CFFF71>공격력</color>)",
                   "factorAttk": 12000,
                   "formattedDesc": "적 1명을 공격(피해량: <#CFFF71>120%</color> x <#CFFF71>공격력</color>)",
-                  "stageLabel": "0성"
+                  "stageLabel": "0성",
+                  "skillId": "2200000100144",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 35,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 }
               ]
             },
@@ -8962,7 +9002,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 161000,
                   "formattedDesc": "사정거리 내의 적 조련사 1명을 우선하여, 대상과 주변 <#CFFF71>3m</color> 범위에 폭발하는 대해의 창을 소환(피해량: <#CFFF71>1610%</color> x <#CFFF71>공격력</color>)하고, 적중 시, 대상을 공중으로 띄우고 <#CFFF71>30%</color> 확률로 추가 공격(피해량: <#CFFF71>500%</color> x <#CFFF71>공격력</color>) 적용. (전투 시작 <#CFFF71>6초</color> 후 최초 시전)",
                   "stageLabel": "0성",
-                  "descValues": "3|30|500|6"
+                  "descValues": "3|30|500|6",
+                  "skillId": "2200000101144",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 55,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "★1 : 추가 공격 발동 확률 +5%",
@@ -8977,7 +9022,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 161000,
                   "formattedDesc": "사정거리 내의 적 조련사 1명을 우선하여, 대상과 주변 <#CFFF71>3m</color> 범위에 폭발하는 대해의 창을 소환(피해량: <#CFFF71>1610%</color> x <#CFFF71>공격력</color>)하고, 적중 시, 대상을 공중으로 띄우고 <#CFFF71>35%</color> 확률로 추가 공격(피해량: <#CFFF71>500%</color> x <#CFFF71>공격력</color>) 적용. (전투 시작 <#CFFF71>6초</color> 후 최초 시전)",
                   "stageLabel": "1성",
-                  "descValues": "3|35|500|6"
+                  "descValues": "3|35|500|6",
+                  "skillId": "2200000101145",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 55,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "★3 : 피해량 +1040%",
@@ -8992,7 +9042,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 265000,
                   "formattedDesc": "사정거리 내의 적 조련사 1명을 우선하여, 대상과 주변 <#CFFF71>3m</color> 범위에 폭발하는 대해의 창을 소환(피해량: <#CFFF71>2650%</color> x <#CFFF71>공격력</color>)하고, 적중 시, 대상을 공중으로 띄우고 <#CFFF71>35%</color> 확률로 추가 공격(피해량: <#CFFF71>500%</color> x <#CFFF71>공격력</color>) 적용. (전투 시작 <#CFFF71>6초</color> 후 최초 시전)",
                   "stageLabel": "3성",
-                  "descValues": "3|35|500|6"
+                  "descValues": "3|35|500|6",
+                  "skillId": "2200000101147",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 55,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "★5 : 쿨타임 -1초 / 최초 시전 -1초",
@@ -9007,7 +9062,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 265000,
                   "formattedDesc": "사정거리 내의 적 조련사 1명을 우선하여, 대상과 주변 <#CFFF71>3m</color> 범위에 폭발하는 대해의 창을 소환(피해량: <#CFFF71>2650%</color> x <#CFFF71>공격력</color>)하고, 적중 시, 대상을 공중으로 띄우고 <#CFFF71>35%</color> 확률로 추가 공격(피해량: <#CFFF71>500%</color> x <#CFFF71>공격력</color>) 적용. (전투 시작 <#CFFF71>5초</color> 후 최초 시전)",
                   "stageLabel": "5성",
-                  "descValues": "3|35|500|5"
+                  "descValues": "3|35|500|5",
+                  "skillId": "2200000101149",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 55,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "★7 : 피해량 +1390%",
@@ -9022,7 +9082,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 404000,
                   "formattedDesc": "사정거리 내의 적 조련사 1명을 우선하여, 대상과 주변 <#CFFF71>3m</color> 범위에 폭발하는 대해의 창을 소환(피해량: <#CFFF71>4040%</color> x <#CFFF71>공격력</color>)하고, 적중 시, 대상을 공중으로 띄우고 <#CFFF71>35%</color> 확률로 추가 공격(피해량: <#CFFF71>500%</color> x <#CFFF71>공격력</color>) 적용. (전투 시작 <#CFFF71>5초</color> 후 최초 시전)",
                   "stageLabel": "7성",
-                  "descValues": "3|35|500|5"
+                  "descValues": "3|35|500|5",
+                  "skillId": "2200000101151",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 55,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "★10 : 쿨타임 -1초 / 추가 공격 발동 확률 +10%",
@@ -9037,7 +9102,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 404000,
                   "formattedDesc": "사정거리 내의 적 조련사 1명을 우선하여, 대상과 주변 <#CFFF71>3m</color> 범위에 폭발하는 대해의 창을 소환(피해량: <#CFFF71>4040%</color> x <#CFFF71>공격력</color>)하고, 적중 시, 대상을 공중으로 띄우고 <#CFFF71>45%</color> 확률로 추가 공격(피해량: <#CFFF71>500%</color> x <#CFFF71>공격력</color>) 적용. (전투 시작 <#CFFF71>5초</color> 후 최초 시전)",
                   "stageLabel": "10성",
-                  "descValues": "3|45|500|5"
+                  "descValues": "3|45|500|5",
+                  "skillId": "2200000101154",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 55,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 }
               ]
             }
@@ -9109,7 +9179,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "적 1명을 공격(피해량: <#CFFF71>{0}%</color> x <#CFFF71>공격력</color>)",
                   "factorAttk": 9500,
                   "formattedDesc": "적 1명을 공격(피해량: <#CFFF71>95%</color> x <#CFFF71>공격력</color>)",
-                  "stageLabel": "0성"
+                  "stageLabel": "0성",
+                  "skillId": "2200000090144",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 45,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 }
               ]
             },
@@ -9133,7 +9208,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 126500,
                   "formattedDesc": "사정거리 내의 근거리형 적 조련사 1명을 우선하여, 대상과 주변 <#CFFF71>3m</color> 범위에 <#CFFF71>4회</color>에 걸쳐 피해를 입히는 천둥의 칼날 소환(피해량: <#CFFF71>1265%</color> x <#CFFF71>공격력</color>). 마지막 공격 적중 시, 대상을 넘어트리고 <#CFFF71>6초</color>간 <#CFFF71>회복 불가</color>를 부여하고, <#CFFF71>50%</color> 확률로 <#CFFF71>이로운 효과 2개</color> 제거. (전투 시작 <#CFFF71>6초</color> 후 최초 시전)",
                   "stageLabel": "0성",
-                  "descValues": "3|4|6|50|2|6"
+                  "descValues": "3|4|6|50|2|6",
+                  "skillId": "2200000091144",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 55,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "★1 : 이로운 효과 제거 발동 확률 +20%",
@@ -9148,7 +9228,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 126500,
                   "formattedDesc": "사정거리 내의 근거리형 적 조련사 1명을 우선하여, 대상과 주변 <#CFFF71>3m</color> 범위에 <#CFFF71>4회</color>에 걸쳐 피해를 입히는 천둥의 칼날 소환(피해량: <#CFFF71>1265%</color> x <#CFFF71>공격력</color>). 마지막 공격 적중 시, 대상을 넘어트리고 <#CFFF71>6초</color>간 <#CFFF71>회복 불가</color>를 부여하고, <#CFFF71>70%</color> 확률로 <#CFFF71>이로운 효과 2개</color> 제거. (전투 시작 <#CFFF71>6초</color> 후 최초 시전)",
                   "stageLabel": "1성",
-                  "descValues": "3|4|6|70|2|6"
+                  "descValues": "3|4|6|70|2|6",
+                  "skillId": "2200000091145",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 55,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "★3 : 피해량 +815%",
@@ -9163,7 +9248,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 208000,
                   "formattedDesc": "사정거리 내의 근거리형 적 조련사 1명을 우선하여, 대상과 주변 <#CFFF71>3m</color> 범위에 <#CFFF71>4회</color>에 걸쳐 피해를 입히는 천둥의 칼날 소환(피해량: <#CFFF71>2080%</color> x <#CFFF71>공격력</color>). 마지막 공격 적중 시, 대상을 넘어트리고 <#CFFF71>6초</color>간 <#CFFF71>회복 불가</color>를 부여하고, <#CFFF71>70%</color> 확률로 <#CFFF71>이로운 효과 2개</color> 제거. (전투 시작 <#CFFF71>6초</color> 후 최초 시전)",
                   "stageLabel": "3성",
-                  "descValues": "3|4|6|70|2|6"
+                  "descValues": "3|4|6|70|2|6",
+                  "skillId": "2200000091147",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 55,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "★5 : 쿨타임 -1초 / 최초 시전 -1초",
@@ -9178,7 +9268,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 208000,
                   "formattedDesc": "사정거리 내의 근거리형 적 조련사 1명을 우선하여, 대상과 주변 <#CFFF71>3m</color> 범위에 <#CFFF71>4회</color>에 걸쳐 피해를 입히는 천둥의 칼날 소환(피해량: <#CFFF71>2080%</color> x <#CFFF71>공격력</color>). 마지막 공격 적중 시, 대상을 넘어트리고 <#CFFF71>6초</color>간 <#CFFF71>회복 불가</color>를 부여하고, <#CFFF71>70%</color> 확률로 <#CFFF71>이로운 효과 2개</color> 제거. (전투 시작 <#CFFF71>5초</color> 후 최초 시전)",
                   "stageLabel": "5성",
-                  "descValues": "3|4|6|70|2|5"
+                  "descValues": "3|4|6|70|2|5",
+                  "skillId": "2200000091149",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 55,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "★7 : 피해량 +1090%",
@@ -9193,7 +9288,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 317000,
                   "formattedDesc": "사정거리 내의 근거리형 적 조련사 1명을 우선하여, 대상과 주변 <#CFFF71>3m</color> 범위에 <#CFFF71>4회</color>에 걸쳐 피해를 입히는 천둥의 칼날 소환(피해량: <#CFFF71>3170%</color> x <#CFFF71>공격력</color>). 마지막 공격 적중 시, 대상을 넘어트리고 <#CFFF71>6초</color>간 <#CFFF71>회복 불가</color>를 부여하고, <#CFFF71>70%</color> 확률로 <#CFFF71>이로운 효과 2개</color> 제거. (전투 시작 <#CFFF71>5초</color> 후 최초 시전)",
                   "stageLabel": "7성",
-                  "descValues": "3|4|6|70|2|5"
+                  "descValues": "3|4|6|70|2|5",
+                  "skillId": "2200000091151",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 55,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "★10 : 쿨타임 -1초 / 이로운 효과 제거 +1개",
@@ -9208,7 +9308,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 317000,
                   "formattedDesc": "사정거리 내의 근거리형 적 조련사 1명을 우선하여, 대상과 주변 <#CFFF71>3m</color> 범위에 <#CFFF71>4회</color>에 걸쳐 피해를 입히는 천둥의 칼날 소환(피해량: <#CFFF71>3170%</color> x <#CFFF71>공격력</color>). 마지막 공격 적중 시, 대상을 넘어트리고 <#CFFF71>6초</color>간 <#CFFF71>회복 불가</color>를 부여하고, <#CFFF71>70%</color> 확률로 <#CFFF71>이로운 효과 3개</color> 제거. (전투 시작 <#CFFF71>5초</color> 후 최초 시전)",
                   "stageLabel": "10성",
-                  "descValues": "3|4|6|70|3|5"
+                  "descValues": "3|4|6|70|3|5",
+                  "skillId": "2200000091154",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 55,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 }
               ]
             }
@@ -9280,7 +9385,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "적 1명을 공격(피해량: <#CFFF71>{16}%</color> x <#CFFF71>방어력</color>)",
                   "formattedDesc": "적 1명을 공격(피해량: <#CFFF71>25%</color> x <#CFFF71>방어력</color>)",
                   "factorDef": 2500,
-                  "stageLabel": "0성"
+                  "stageLabel": "0성",
+                  "skillId": "2200000110144",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 15,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 }
               ]
             },
@@ -9304,7 +9414,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "formattedDesc": "사정거리 내의 적 조련사 1명을 우선하여, 대상과 주변 <#CFFF71>3m</color> 범위에 지글지글 슬래시 발사(피해량: <#CFFF71>345%</color> x <#CFFF71>방어력</color>). 적중 시, 대상을 밀어내고 <#CFFF71>4초</color>간 <#CFFF71>(무기)공격력 감소(16%)</color>를 부여. 추가로 자신에게 <#CFFF71>5초</color>간 <#CFFF71>거대화 (20%)</color> 부여. (전투 시작 <#CFFF71>4초</color> 후 최초 시전)",
                   "factorDef": 34500,
                   "stageLabel": "0성",
-                  "descValues": "3|4|16|5|20|4"
+                  "descValues": "3|4|16|5|20|4",
+                  "skillId": "2200000111144",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 45,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "★1 : (무기) 공격력 감소 +4% / (무기) 공격력 감소 +1초",
@@ -9319,7 +9434,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "formattedDesc": "사정거리 내의 적 조련사 1명을 우선하여, 대상과 주변 <#CFFF71>3m</color> 범위에 지글지글 슬래시 발사(피해량: <#CFFF71>345%</color> x <#CFFF71>방어력</color>). 적중 시, 대상을 밀어내고 <#CFFF71>4초</color>간 <#CFFF71>(무기)공격력 감소(20%)</color>를 부여. 추가로 자신에게 <#CFFF71>5초</color>간 <#CFFF71>거대화 (20%)</color> 부여. (전투 시작 <#CFFF71>4초</color> 후 최초 시전)",
                   "factorDef": 34500,
                   "stageLabel": "1성",
-                  "descValues": "3|4|20|5|20|4"
+                  "descValues": "3|4|20|5|20|4",
+                  "skillId": "2200000111145",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 45,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "★3 : 피해량 +220%",
@@ -9334,7 +9454,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "formattedDesc": "사정거리 내의 적 조련사 1명을 우선하여, 대상과 주변 <#CFFF71>3m</color> 범위에 지글지글 슬래시 발사(피해량: <#CFFF71>565%</color> x <#CFFF71>방어력</color>). 적중 시, 대상을 밀어내고 <#CFFF71>5초</color>간 <#CFFF71>(무기)공격력 감소(20%)</color>를 부여. 추가로 자신에게 <#CFFF71>5초</color>간 <#CFFF71>거대화 (20%)</color> 부여. (전투 시작 <#CFFF71>4초</color> 후 최초 시전)",
                   "factorDef": 56500,
                   "stageLabel": "3성",
-                  "descValues": "3|5|20|5|20|4"
+                  "descValues": "3|5|20|5|20|4",
+                  "skillId": "2200000111147",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 45,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "★5 : 쿨타임 -1초 / 최초 시전 -1초",
@@ -9349,7 +9474,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "formattedDesc": "사정거리 내의 적 조련사 1명을 우선하여, 대상과 주변 <#CFFF71>3m</color> 범위에 지글지글 슬래시 발사(피해량: <#CFFF71>565%</color> x <#CFFF71>방어력</color>). 적중 시, 대상을 밀어내고 <#CFFF71>5초</color>간 <#CFFF71>(무기)공격력 감소(20%)</color>를 부여. 추가로 자신에게 <#CFFF71>5초</color>간 <#CFFF71>거대화 (20%)</color> 부여. (전투 시작 <#CFFF71>3초</color> 후 최초 시전)",
                   "factorDef": 56500,
                   "stageLabel": "5성",
-                  "descValues": "3|5|20|5|20|3"
+                  "descValues": "3|5|20|5|20|3",
+                  "skillId": "2200000111149",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 45,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "★7 : 피해량 +295%",
@@ -9364,7 +9494,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "formattedDesc": "사정거리 내의 적 조련사 1명을 우선하여, 대상과 주변 <#CFFF71>3m</color> 범위에 지글지글 슬래시 발사(피해량: <#CFFF71>860%</color> x <#CFFF71>방어력</color>). 적중 시, 대상을 밀어내고 <#CFFF71>6초</color>간 <#CFFF71>(무기)공격력 감소(20%)</color>를 부여. 추가로 자신에게 <#CFFF71>5초</color>간 <#CFFF71>거대화 (20%)</color> 부여. (전투 시작 <#CFFF71>3초</color> 후 최초 시전)",
                   "factorDef": 86000,
                   "stageLabel": "7성",
-                  "descValues": "3|6|20|5|20|3"
+                  "descValues": "3|6|20|5|20|3",
+                  "skillId": "2200000111151",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 45,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "★10 : 쿨타임 -1초 / (무기) 공격력 감소 +5%",
@@ -9379,7 +9514,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "formattedDesc": "사정거리 내의 적 조련사 1명을 우선하여, 대상과 주변 <#CFFF71>3m</color> 범위에 지글지글 슬래시 발사(피해량: <#CFFF71>860%</color> x <#CFFF71>방어력</color>). 적중 시, 대상을 밀어내고 <#CFFF71>6초</color>간 <#CFFF71>(무기)공격력 감소(25%)</color>를 부여. 추가로 자신에게 <#CFFF71>5초</color>간 <#CFFF71>거대화 (20%)</color> 부여. (전투 시작 <#CFFF71>3초</color> 후 최초 시전)",
                   "factorDef": 86000,
                   "stageLabel": "10성",
-                  "descValues": "3|6|25|5|20|3"
+                  "descValues": "3|6|25|5|20|3",
+                  "skillId": "2200000111154",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 45,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 }
               ]
             }
@@ -9451,7 +9591,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "적 1명을 공격(피해량: <#CFFF71>{0}%</color> x <#CFFF71>공격력</color>)",
                   "factorAttk": 13000,
                   "formattedDesc": "적 1명을 공격(피해량: <#CFFF71>130%</color> x <#CFFF71>공격력</color>)",
-                  "stageLabel": "0성"
+                  "stageLabel": "0성",
+                  "skillId": "2200000120144",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 20,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 }
               ]
             },
@@ -9475,7 +9620,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 244500,
                   "formattedDesc": "사정거리 내의 적 조련사 1명을 우선하여, 대상과 주변 <#CFFF71>1.5m</color> 범위에 <#CFFF71>6회</color>에 걸쳐 피해를 입히는 태고의 손길 공격(피해량: <#CFFF71>2445%</color> x <#CFFF71>공격력</color>). 마지막 공격 적중 시, 대상을 넘어트리고 <#CFFF71>6초</color>간 <#CFFF71>맹독(근원의 손톱)</color> 부여, 추가로 대상이 <#CFFF71>조련사</color>인 경우, 스킬로 주는 피해량에 <#CFFF71> (무기) 피해량 증가(50%)</color> 적용. (전투 시작 <#CFFF71>5초</color> 후 최초 시전)",
                   "stageLabel": "0성",
-                  "descValues": "1.5|6|6|50|5"
+                  "descValues": "1.5|6|6|50|5",
+                  "skillId": "2200000121144",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 45,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "★1 : (무기) 피해량 증가 +20%",
@@ -9490,7 +9640,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 244500,
                   "formattedDesc": "사정거리 내의 적 조련사 1명을 우선하여, 대상과 주변 <#CFFF71>1.5m</color> 범위에 <#CFFF71>6회</color>에 걸쳐 피해를 입히는 태고의 손길 공격(피해량: <#CFFF71>2445%</color> x <#CFFF71>공격력</color>). 마지막 공격 적중 시, 대상을 넘어트리고 <#CFFF71>6초</color>간 <#CFFF71>맹독(근원의 손톱)</color> 부여, 추가로 대상이 <#CFFF71>조련사</color>인 경우, 스킬로 주는 피해량에 <#CFFF71> (무기) 피해량 증가(70%)</color> 적용. (전투 시작 <#CFFF71>5초</color> 후 최초 시전)",
                   "stageLabel": "1성",
-                  "descValues": "1.5|6|6|70|5"
+                  "descValues": "1.5|6|6|70|5",
+                  "skillId": "2200000121145",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 45,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "★3 : 피해량 +1580%",
@@ -9505,7 +9660,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 402500,
                   "formattedDesc": "사정거리 내의 적 조련사 1명을 우선하여, 대상과 주변 <#CFFF71>1.5m</color> 범위에 <#CFFF71>6회</color>에 걸쳐 피해를 입히는 태고의 손길 공격(피해량: <#CFFF71>4025%</color> x <#CFFF71>공격력</color>). 마지막 공격 적중 시, 대상을 넘어트리고 <#CFFF71>6초</color>간 <#CFFF71>맹독(근원의 손톱)</color> 부여, 추가로 대상이 <#CFFF71>조련사</color>인 경우, 스킬로 주는 피해량에 <#CFFF71> (무기) 피해량 증가(70%)</color> 적용. (전투 시작 <#CFFF71>5초</color> 후 최초 시전)",
                   "stageLabel": "3성",
-                  "descValues": "1.5|6|6|70|5"
+                  "descValues": "1.5|6|6|70|5",
+                  "skillId": "2200000121147",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 45,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "★5 : 쿨타임 -1초 / 최초 시전 -1초",
@@ -9520,7 +9680,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 402500,
                   "formattedDesc": "사정거리 내의 적 조련사 1명을 우선하여, 대상과 주변 <#CFFF71>1.5m</color> 범위에 <#CFFF71>6회</color>에 걸쳐 피해를 입히는 태고의 손길 공격(피해량: <#CFFF71>4025%</color> x <#CFFF71>공격력</color>). 마지막 공격 적중 시, 대상을 넘어트리고 <#CFFF71>6초</color>간 <#CFFF71>맹독(근원의 손톱)</color> 부여, 추가로 대상이 <#CFFF71>조련사</color>인 경우, 스킬로 주는 피해량에 <#CFFF71> (무기) 피해량 증가(70%)</color> 적용. (전투 시작 <#CFFF71>4초</color> 후 최초 시전)",
                   "stageLabel": "5성",
-                  "descValues": "1.5|6|6|70|4"
+                  "descValues": "1.5|6|6|70|4",
+                  "skillId": "2200000121149",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 45,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "★7 : 피해량 +2110%",
@@ -9535,7 +9700,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 613500,
                   "formattedDesc": "사정거리 내의 적 조련사 1명을 우선하여, 대상과 주변 <#CFFF71>1.5m</color> 범위에 <#CFFF71>6회</color>에 걸쳐 피해를 입히는 태고의 손길 공격(피해량: <#CFFF71>6135%</color> x <#CFFF71>공격력</color>). 마지막 공격 적중 시, 대상을 넘어트리고 <#CFFF71>6초</color>간 <#CFFF71>맹독(근원의 손톱)</color> 부여, 추가로 대상이 <#CFFF71>조련사</color>인 경우, 스킬로 주는 피해량에 <#CFFF71> (무기) 피해량 증가(70%)</color> 적용. (전투 시작 <#CFFF71>4초</color> 후 최초 시전)",
                   "stageLabel": "7성",
-                  "descValues": "1.5|6|6|70|4"
+                  "descValues": "1.5|6|6|70|4",
+                  "skillId": "2200000121151",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 45,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "★10 : 쿨타임 -1초 / (무기) 피해량 증가 +30%",
@@ -9550,7 +9720,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 613500,
                   "formattedDesc": "사정거리 내의 적 조련사 1명을 우선하여, 대상과 주변 <#CFFF71>1.5m</color> 범위에 <#CFFF71>6회</color>에 걸쳐 피해를 입히는 태고의 손길 공격(피해량: <#CFFF71>6135%</color> x <#CFFF71>공격력</color>). 마지막 공격 적중 시, 대상을 넘어트리고 <#CFFF71>6초</color>간 <#CFFF71>맹독(근원의 손톱)</color> 부여, 추가로 대상이 <#CFFF71>조련사</color>인 경우, 스킬로 주는 피해량에 <#CFFF71> (무기) 피해량 증가(100%)</color> 적용. (전투 시작 <#CFFF71>4초</color> 후 최초 시전)",
                   "stageLabel": "10성",
-                  "descValues": "1.5|6|6|100|4"
+                  "descValues": "1.5|6|6|100|4",
+                  "skillId": "2200000121154",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 45,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 }
               ]
             }
@@ -9622,7 +9797,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "적 1명을 공격(피해량: <#CFFF71>{0}%</color> x <#CFFF71>공격력</color>)",
                   "factorAttk": 12000,
                   "formattedDesc": "적 1명을 공격(피해량: <#CFFF71>120%</color> x <#CFFF71>공격력</color>)",
-                  "stageLabel": "0성"
+                  "stageLabel": "0성",
+                  "skillId": "2200000080144",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 35,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 }
               ]
             },
@@ -9646,7 +9826,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 177000,
                   "formattedDesc": "사정거리 내의 적 조련사 1명을 우선하여, 대상과 주변 <#CFFF71>3m</color> 범위에 5회에 걸쳐 피해를 주는 화염의 날개 발사(피해량: <#CFFF71>1770%</color> x <#CFFF71>공격력</color>). 마지막 공격 적중 시, 대상을 넘어트리고 <#CFFF71>50%</color>확률로 <#CFFF71>6초</color>간 <#CFFF71>불새의 저주(16%)</color> 부여. (전투 시작 <#CFFF71>6초</color> 후 최초 시전)",
                   "stageLabel": "0성",
-                  "descValues": "3|5|50|6|16|6"
+                  "descValues": "3|5|50|6|16|6",
+                  "skillId": "2200000081144",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 60,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "★1 : 불새의 저주 효과 +9%",
@@ -9661,7 +9846,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 177000,
                   "formattedDesc": "사정거리 내의 적 조련사 1명을 우선하여, 대상과 주변 <#CFFF71>3m</color> 범위에 5회에 걸쳐 피해를 주는 화염의 날개 발사(피해량: <#CFFF71>1770%</color> x <#CFFF71>공격력</color>). 마지막 공격 적중 시, 대상을 넘어트리고 <#CFFF71>50%</color>확률로 <#CFFF71>6초</color>간 <#CFFF71>불새의 저주(25%)</color> 부여. (전투 시작 <#CFFF71>6초</color> 후 최초 시전)",
                   "stageLabel": "1성",
-                  "descValues": "3|5|50|6|25|6"
+                  "descValues": "3|5|50|6|25|6",
+                  "skillId": "2200000081145",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 60,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "★3 : 피해량 +1145%",
@@ -9676,7 +9866,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 291500,
                   "formattedDesc": "사정거리 내의 적 조련사 1명을 우선하여, 대상과 주변 <#CFFF71>3m</color> 범위에 5회에 걸쳐 피해를 주는 화염의 날개 발사(피해량: <#CFFF71>2915%</color> x <#CFFF71>공격력</color>). 마지막 공격 적중 시, 대상을 넘어트리고 <#CFFF71>50%</color>확률로 <#CFFF71>6초</color>간 <#CFFF71>불새의 저주(25%)</color> 부여. (전투 시작 <#CFFF71>6초</color> 후 최초 시전)",
                   "stageLabel": "3성",
-                  "descValues": "3|5|50|6|25|6"
+                  "descValues": "3|5|50|6|25|6",
+                  "skillId": "2200000081147",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 60,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "★5 : 쿨타임 -1초 / 최초 시전 -1초",
@@ -9691,7 +9886,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 291500,
                   "formattedDesc": "사정거리 내의 적 조련사 1명을 우선하여, 대상과 주변 <#CFFF71>3m</color> 범위에 5회에 걸쳐 피해를 주는 화염의 날개 발사(피해량: <#CFFF71>2915%</color> x <#CFFF71>공격력</color>). 마지막 공격 적중 시, 대상을 넘어트리고 <#CFFF71>50%</color>확률로 <#CFFF71>6초</color>간 <#CFFF71>불새의 저주(25%)</color> 부여. (전투 시작 <#CFFF71>5초</color> 후 최초 시전)",
                   "stageLabel": "5성",
-                  "descValues": "3|5|50|6|25|5"
+                  "descValues": "3|5|50|6|25|5",
+                  "skillId": "2200000081149",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 60,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "★7 : 피해량 +1525%",
@@ -9706,7 +9906,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 444000,
                   "formattedDesc": "사정거리 내의 적 조련사 1명을 우선하여, 대상과 주변 <#CFFF71>3m</color> 범위에 5회에 걸쳐 피해를 주는 화염의 날개 발사(피해량: <#CFFF71>4440%</color> x <#CFFF71>공격력</color>). 마지막 공격 적중 시, 대상을 넘어트리고 <#CFFF71>50%</color>확률로 <#CFFF71>6초</color>간 <#CFFF71>불새의 저주(25%)</color> 부여. (전투 시작 <#CFFF71>5초</color> 후 최초 시전)",
                   "stageLabel": "7성",
-                  "descValues": "3|5|50|6|25|5"
+                  "descValues": "3|5|50|6|25|5",
+                  "skillId": "2200000081151",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 60,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "★10 : 쿨타임 -1초 / 불새의 저주 효과 +10%",
@@ -9721,7 +9926,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 444000,
                   "formattedDesc": "사정거리 내의 적 조련사 1명을 우선하여, 대상과 주변 <#CFFF71>3m</color> 범위에 5회에 걸쳐 피해를 주는 화염의 날개 발사(피해량: <#CFFF71>4440%</color> x <#CFFF71>공격력</color>). 마지막 공격 적중 시, 대상을 넘어트리고 <#CFFF71>50%</color>확률로 <#CFFF71>6초</color>간 <#CFFF71>불새의 저주(35%)</color> 부여. (전투 시작 <#CFFF71>5초</color> 후 최초 시전)",
                   "stageLabel": "10성",
-                  "descValues": "3|5|50|6|35|5"
+                  "descValues": "3|5|50|6|35|5",
+                  "skillId": "2200000081154",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 60,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 }
               ]
             }
@@ -9802,7 +10012,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 14400,
                   "formattedDesc": "사정거리 내의 근거리형 적 1명을 우선하여, 대상에게 공격(피해량: <#CFFF71>144%</color> x <#CFFF71>공격력</color>). 적중 시, <#CFFF71>3초</color>간 <#CFFF71>(탑승) 방어력 감소(16%)</color> 부여.",
                   "stageLabel": "0성",
-                  "descValues": "3|16"
+                  "descValues": "3|16",
+                  "skillId": "2000000130144",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 20,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "★1 : (탑승) 방어력 감소 +4%",
@@ -9817,7 +10032,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 14400,
                   "formattedDesc": "사정거리 내의 근거리형 적 1명을 우선하여, 대상에게 공격(피해량: <#CFFF71>144%</color> x <#CFFF71>공격력</color>). 적중 시, <#CFFF71>3초</color>간 <#CFFF71>(탑승) 방어력 감소(20%)</color> 부여.",
                   "stageLabel": "1성",
-                  "descValues": "3|20"
+                  "descValues": "3|20",
+                  "skillId": "2000000130145",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 20,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "★3 : 피해량 +23%",
@@ -9832,7 +10052,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 16700,
                   "formattedDesc": "사정거리 내의 근거리형 적 1명을 우선하여, 대상에게 공격(피해량: <#CFFF71>167%</color> x <#CFFF71>공격력</color>). 적중 시, <#CFFF71>3초</color>간 <#CFFF71>(탑승) 방어력 감소(20%)</color> 부여.",
                   "stageLabel": "3성",
-                  "descValues": "3|20"
+                  "descValues": "3|20",
+                  "skillId": "2000000130147",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 20,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "★5 : (탑승) 방어력 감소 +5%",
@@ -9847,7 +10072,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 16700,
                   "formattedDesc": "사정거리 내의 근거리형 적 1명을 우선하여, 대상에게 공격(피해량: <#CFFF71>167%</color> x <#CFFF71>공격력</color>). 적중 시, <#CFFF71>3초</color>간 <#CFFF71>(탑승) 방어력 감소(25%)</color> 부여.",
                   "stageLabel": "5성",
-                  "descValues": "3|25"
+                  "descValues": "3|25",
+                  "skillId": "2000000130149",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 20,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "★7 : 피해량 +26%",
@@ -9862,7 +10092,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 19300,
                   "formattedDesc": "사정거리 내의 근거리형 적 1명을 우선하여, 대상에게 공격(피해량: <#CFFF71>193%</color> x <#CFFF71>공격력</color>). 적중 시, <#CFFF71>3초</color>간 <#CFFF71>(탑승) 방어력 감소(25%)</color> 부여.",
                   "stageLabel": "7성",
-                  "descValues": "3|25"
+                  "descValues": "3|25",
+                  "skillId": "2000000130151",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 20,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "★10 : (탑승) 방어력 감소 +5%",
@@ -9877,7 +10112,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 19300,
                   "formattedDesc": "사정거리 내의 근거리형 적 1명을 우선하여, 대상에게 공격(피해량: <#CFFF71>193%</color> x <#CFFF71>공격력</color>). 적중 시, <#CFFF71>3초</color>간 <#CFFF71>(탑승) 방어력 감소(30%)</color> 부여.",
                   "stageLabel": "10성",
-                  "descValues": "3|30"
+                  "descValues": "3|30",
+                  "skillId": "2000000130154",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 20,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 }
               ]
             },
@@ -9900,7 +10140,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "전투 시작 시, 파티원에게 <#CFFF71>(탑승) 공격 속도 증가({3}%)</color>, <#CFFF71>(탑승) 방어력 증가({4}%)</color>, <#CFFF71>(탑승) 체력 증가({5}%)</color> 부여. 탑승 조련사가 사망하면, <#CFFF71>1회</color> <#CFFF71>부활({6}%)</color>.",
                   "formattedDesc": "전투 시작 시, 파티원에게 <#CFFF71>(탑승) 공격 속도 증가(12%)</color>, <#CFFF71>(탑승) 방어력 증가(80%)</color>, <#CFFF71>(탑승) 체력 증가(150%)</color> 부여. 탑승 조련사가 사망하면, <#CFFF71>1회</color> <#CFFF71>부활(50%)</color>.",
                   "stageLabel": "0성",
-                  "descValues": "12|80|150|50"
+                  "descValues": "12|80|150|50",
+                  "skillId": "2000000131144",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 45,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "★1 : (탑승) 공격 속도 증가 +4% / (탑승) 방어력 증가 +50%",
@@ -9914,7 +10159,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "전투 시작 시, 파티원에게 <#CFFF71>(탑승) 공격 속도 증가({3}%)</color>, <#CFFF71>(탑승) 방어력 증가({4}%)</color>, <#CFFF71>(탑승) 체력 증가({5}%)</color> 부여. 탑승 조련사가 사망하면, <#CFFF71>1회</color> <#CFFF71>부활({6}%)</color>.",
                   "formattedDesc": "전투 시작 시, 파티원에게 <#CFFF71>(탑승) 공격 속도 증가(16%)</color>, <#CFFF71>(탑승) 방어력 증가(130%)</color>, <#CFFF71>(탑승) 체력 증가(150%)</color> 부여. 탑승 조련사가 사망하면, <#CFFF71>1회</color> <#CFFF71>부활(50%)</color>.",
                   "stageLabel": "1성",
-                  "descValues": "16|130|150|50"
+                  "descValues": "16|130|150|50",
+                  "skillId": "2000000131145",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 45,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "★3 : (탑승) 체력 증가 +100% / 부활 시, 체력 +20%",
@@ -9928,7 +10178,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "전투 시작 시, 파티원에게 <#CFFF71>(탑승) 공격 속도 증가({3}%)</color>, <#CFFF71>(탑승) 방어력 증가({4}%)</color>, <#CFFF71>(탑승) 체력 증가({5}%)</color> 부여. 탑승 조련사가 사망하면, <#CFFF71>1회</color> <#CFFF71>부활({6}%)</color>.",
                   "formattedDesc": "전투 시작 시, 파티원에게 <#CFFF71>(탑승) 공격 속도 증가(16%)</color>, <#CFFF71>(탑승) 방어력 증가(130%)</color>, <#CFFF71>(탑승) 체력 증가(250%)</color> 부여. 탑승 조련사가 사망하면, <#CFFF71>1회</color> <#CFFF71>부활(70%)</color>.",
                   "stageLabel": "3성",
-                  "descValues": "16|130|250|70"
+                  "descValues": "16|130|250|70",
+                  "skillId": "2000000131147",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 45,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "★5 : (탑승) 공격 속도 증가 +4% / (탑승) 방어력 증가 +70%",
@@ -9942,7 +10197,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "전투 시작 시, 파티원에게 <#CFFF71>(탑승) 공격 속도 증가({3}%)</color>, <#CFFF71>(탑승) 방어력 증가({4}%)</color>, <#CFFF71>(탑승) 체력 증가({5}%)</color> 부여. 탑승 조련사가 사망하면, <#CFFF71>1회</color> <#CFFF71>부활({6}%)</color>.",
                   "formattedDesc": "전투 시작 시, 파티원에게 <#CFFF71>(탑승) 공격 속도 증가(20%)</color>, <#CFFF71>(탑승) 방어력 증가(200%)</color>, <#CFFF71>(탑승) 체력 증가(250%)</color> 부여. 탑승 조련사가 사망하면, <#CFFF71>1회</color> <#CFFF71>부활(70%)</color>.",
                   "stageLabel": "5성",
-                  "descValues": "20|200|250|70"
+                  "descValues": "20|200|250|70",
+                  "skillId": "2000000131149",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 45,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "★7 : (탑승) 체력 증가 +150% / 부활 시, 체력 +20%",
@@ -9956,7 +10216,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "전투 시작 시, 파티원에게 <#CFFF71>(탑승) 공격 속도 증가({3}%)</color>, <#CFFF71>(탑승) 방어력 증가({4}%)</color>, <#CFFF71>(탑승) 체력 증가({5}%)</color> 부여. 탑승 조련사가 사망하면, <#CFFF71>1회</color> <#CFFF71>부활({6}%)</color>.",
                   "formattedDesc": "전투 시작 시, 파티원에게 <#CFFF71>(탑승) 공격 속도 증가(20%)</color>, <#CFFF71>(탑승) 방어력 증가(200%)</color>, <#CFFF71>(탑승) 체력 증가(400%)</color> 부여. 탑승 조련사가 사망하면, <#CFFF71>1회</color> <#CFFF71>부활(90%)</color>.",
                   "stageLabel": "7성",
-                  "descValues": "20|200|400|90"
+                  "descValues": "20|200|400|90",
+                  "skillId": "2000000131151",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 45,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "★10 : (탑승) 공격 속도 증가 +5% / 부활 시, 체력 +10%",
@@ -9970,7 +10235,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "전투 시작 시, 파티원에게 <#CFFF71>(탑승) 공격 속도 증가({3}%)</color>, <#CFFF71>(탑승) 방어력 증가({4}%)</color>, <#CFFF71>(탑승) 체력 증가({5}%)</color> 부여. 탑승 조련사가 사망하면, <#CFFF71>1회</color> <#CFFF71>부활({6}%)</color>.",
                   "formattedDesc": "전투 시작 시, 파티원에게 <#CFFF71>(탑승) 공격 속도 증가(25%)</color>, <#CFFF71>(탑승) 방어력 증가(200%)</color>, <#CFFF71>(탑승) 체력 증가(400%)</color> 부여. 탑승 조련사가 사망하면, <#CFFF71>1회</color> <#CFFF71>부활(100%)</color>.",
                   "stageLabel": "10성",
-                  "descValues": "25|200|400|100"
+                  "descValues": "25|200|400|100",
+                  "skillId": "2000000131154",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 45,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 }
               ]
             },
@@ -9993,7 +10263,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "자신에게 <#CFFF71>(타입)받는 피해 감소({3}%)</color>, <#CFFF71>(타입)치명타 확률 증가({4}%)</color> 적용.",
                   "formattedDesc": "자신에게 <#CFFF71>(타입)받는 피해 감소(20%)</color>, <#CFFF71>(타입)치명타 확률 증가(10%)</color> 적용.",
                   "stageLabel": "0성",
-                  "descValues": "20|10"
+                  "descValues": "20|10",
+                  "skillId": "20213100",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "★2 : (타입) 치명타 확률 증가 +2%",
@@ -10007,7 +10282,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "자신에게 <#CFFF71>(타입)받는 피해 감소({3}%)</color>, <#CFFF71>(타입)치명타 확률 증가({4}%)</color> 적용.",
                   "formattedDesc": "자신에게 <#CFFF71>(타입)받는 피해 감소(20%)</color>, <#CFFF71>(타입)치명타 확률 증가(12%)</color> 적용.",
                   "stageLabel": "2성",
-                  "descValues": "20|12"
+                  "descValues": "20|12",
+                  "skillId": "20223135",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "★4 : (타입) 받는 피해 감소 +2%",
@@ -10021,7 +10301,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "자신에게 <#CFFF71>(타입)받는 피해 감소({3}%)</color>, <#CFFF71>(타입)치명타 확률 증가({4}%)</color> 적용.",
                   "formattedDesc": "자신에게 <#CFFF71>(타입)받는 피해 감소(22%)</color>, <#CFFF71>(타입)치명타 확률 증가(12%)</color> 적용.",
                   "stageLabel": "4성",
-                  "descValues": "22|12"
+                  "descValues": "22|12",
+                  "skillId": "20233137",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "★6 : (타입) 치명타 확률 증가 +2%",
@@ -10035,7 +10320,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "자신에게 <#CFFF71>(타입)받는 피해 감소({3}%)</color>, <#CFFF71>(타입)치명타 확률 증가({4}%)</color> 적용.",
                   "formattedDesc": "자신에게 <#CFFF71>(타입)받는 피해 감소(22%)</color>, <#CFFF71>(타입)치명타 확률 증가(14%)</color> 적용.",
                   "stageLabel": "6성",
-                  "descValues": "22|14"
+                  "descValues": "22|14",
+                  "skillId": "20243139",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "★8 : (타입) 받는 피해 감소 +2%",
@@ -10049,7 +10339,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "자신에게 <#CFFF71>(타입)받는 피해 감소({3}%)</color>, <#CFFF71>(타입)치명타 확률 증가({4}%)</color> 적용.",
                   "formattedDesc": "자신에게 <#CFFF71>(타입)받는 피해 감소(24%)</color>, <#CFFF71>(타입)치명타 확률 증가(14%)</color> 적용.",
                   "stageLabel": "8성",
-                  "descValues": "24|14"
+                  "descValues": "24|14",
+                  "skillId": "20253141",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "★10 : (타입) 받는 피해 감소 +1% / (타입) 치명타 확률 증가 +1%",
@@ -10063,7 +10358,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "자신에게 <#CFFF71>(타입)받는 피해 감소({3}%)</color>, <#CFFF71>(타입)치명타 확률 증가({4}%)</color> 적용.",
                   "formattedDesc": "자신에게 <#CFFF71>(타입)받는 피해 감소(25%)</color>, <#CFFF71>(타입)치명타 확률 증가(15%)</color> 적용.",
                   "stageLabel": "10성",
-                  "descValues": "25|15"
+                  "descValues": "25|15",
+                  "skillId": "20263145",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 }
               ]
             }
@@ -10137,7 +10437,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "formattedDesc": "사정거리 내의 근거리형 적 1명을 우선하여, 대상에게 공격(피해량: <#CFFF71>160%</color> x <#CFFF71>방어력</color>). 적중 시, 자신에게 <#CFFF71>15%</color> 확률로 <#CFFF71>3초</color>간 <#CFFF71>보호막(2회)</color> 부여.",
                   "factorDef": 16000,
                   "stageLabel": "0성",
-                  "descValues": "15|3|2"
+                  "descValues": "15|3|2",
+                  "skillId": "2000000120144",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 20,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "★1 : 보호막 생성 확률 +10%",
@@ -10152,7 +10457,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "formattedDesc": "사정거리 내의 근거리형 적 1명을 우선하여, 대상에게 공격(피해량: <#CFFF71>160%</color> x <#CFFF71>방어력</color>). 적중 시, 자신에게 <#CFFF71>25%</color> 확률로 <#CFFF71>3초</color>간 <#CFFF71>보호막(2회)</color> 부여.",
                   "factorDef": 16000,
                   "stageLabel": "1성",
-                  "descValues": "25|3|2"
+                  "descValues": "25|3|2",
+                  "skillId": "2000000120145",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 20,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "★3 : 피해량 +25%",
@@ -10167,7 +10477,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "formattedDesc": "사정거리 내의 근거리형 적 1명을 우선하여, 대상에게 공격(피해량: <#CFFF71>185%</color> x <#CFFF71>방어력</color>). 적중 시, 자신에게 <#CFFF71>25%</color> 확률로 <#CFFF71>3초</color>간 <#CFFF71>보호막(2회)</color> 부여.",
                   "factorDef": 18500,
                   "stageLabel": "3성",
-                  "descValues": "25|3|2"
+                  "descValues": "25|3|2",
+                  "skillId": "2000000120147",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 20,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "★5 : 보호막 생성 확률 +10%",
@@ -10182,7 +10497,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "formattedDesc": "사정거리 내의 근거리형 적 1명을 우선하여, 대상에게 공격(피해량: <#CFFF71>185%</color> x <#CFFF71>방어력</color>). 적중 시, 자신에게 <#CFFF71>35%</color> 확률로 <#CFFF71>3초</color>간 <#CFFF71>보호막(2회)</color> 부여.",
                   "factorDef": 18500,
                   "stageLabel": "5성",
-                  "descValues": "35|3|2"
+                  "descValues": "35|3|2",
+                  "skillId": "2000000120149",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 20,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "★7 : 피해량 +29%",
@@ -10197,7 +10517,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "formattedDesc": "사정거리 내의 근거리형 적 1명을 우선하여, 대상에게 공격(피해량: <#CFFF71>214%</color> x <#CFFF71>방어력</color>). 적중 시, 자신에게 <#CFFF71>35%</color> 확률로 <#CFFF71>3초</color>간 <#CFFF71>보호막(2회)</color> 부여.",
                   "factorDef": 21400,
                   "stageLabel": "7성",
-                  "descValues": "35|3|2"
+                  "descValues": "35|3|2",
+                  "skillId": "2000000120151",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 20,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "★10 : 보호막 +1회",
@@ -10212,7 +10537,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "formattedDesc": "사정거리 내의 근거리형 적 1명을 우선하여, 대상에게 공격(피해량: <#CFFF71>214%</color> x <#CFFF71>방어력</color>). 적중 시, 자신에게 <#CFFF71>35%</color> 확률로 <#CFFF71>3초</color>간 <#CFFF71>보호막(3회)</color> 부여.",
                   "factorDef": 21400,
                   "stageLabel": "10성",
-                  "descValues": "35|3|3"
+                  "descValues": "35|3|3",
+                  "skillId": "2000000120154",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 20,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 }
               ]
             },
@@ -10235,7 +10565,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "전투 시작 시, 파티원에게 <#CFFF71>(탑승) 회피 증가({3}%)</color>, <#CFFF71>(탑승) 방어력 증가({4}%)</color>, <#CFFF71>(탑승) 체력 증가({5}%)</color> 부여. 탑승 조련사가 사망 직전 <#CFFF71>{6}초</color>간 <#CFFF71>의지</color> 획득.",
                   "formattedDesc": "전투 시작 시, 파티원에게 <#CFFF71>(탑승) 회피 증가(20%)</color>, <#CFFF71>(탑승) 방어력 증가(80%)</color>, <#CFFF71>(탑승) 체력 증가(150%)</color> 부여. 탑승 조련사가 사망 직전 <#CFFF71>3초</color>간 <#CFFF71>의지</color> 획득.",
                   "stageLabel": "0성",
-                  "descValues": "20|80|150|3"
+                  "descValues": "20|80|150|3",
+                  "skillId": "2000000121144",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 45,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "★1 : (탑승) 회피 증가 +5% / (탑승) 방어력 증가 +50%",
@@ -10249,7 +10584,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "전투 시작 시, 파티원에게 <#CFFF71>(탑승) 회피 증가({3}%)</color>, <#CFFF71>(탑승) 방어력 증가({4}%)</color>, <#CFFF71>(탑승) 체력 증가({5}%)</color> 부여. 탑승 조련사가 사망 직전 <#CFFF71>{6}초</color>간 <#CFFF71>의지</color> 획득.",
                   "formattedDesc": "전투 시작 시, 파티원에게 <#CFFF71>(탑승) 회피 증가(25%)</color>, <#CFFF71>(탑승) 방어력 증가(130%)</color>, <#CFFF71>(탑승) 체력 증가(150%)</color> 부여. 탑승 조련사가 사망 직전 <#CFFF71>3초</color>간 <#CFFF71>의지</color> 획득.",
                   "stageLabel": "1성",
-                  "descValues": "25|130|150|3"
+                  "descValues": "25|130|150|3",
+                  "skillId": "2000000121145",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 45,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "★3 : (탑승) 체력 증가 +100% / 의지 +1초",
@@ -10263,7 +10603,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "전투 시작 시, 파티원에게 <#CFFF71>(탑승) 회피 증가({3}%)</color>, <#CFFF71>(탑승) 방어력 증가({4}%)</color>, <#CFFF71>(탑승) 체력 증가({5}%)</color> 부여. 탑승 조련사가 사망 직전 <#CFFF71>{6}초</color>간 <#CFFF71>의지</color> 획득.",
                   "formattedDesc": "전투 시작 시, 파티원에게 <#CFFF71>(탑승) 회피 증가(25%)</color>, <#CFFF71>(탑승) 방어력 증가(130%)</color>, <#CFFF71>(탑승) 체력 증가(250%)</color> 부여. 탑승 조련사가 사망 직전 <#CFFF71>4초</color>간 <#CFFF71>의지</color> 획득.",
                   "stageLabel": "3성",
-                  "descValues": "25|130|250|4"
+                  "descValues": "25|130|250|4",
+                  "skillId": "2000000121147",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 45,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "★5 : (탑승) 회피 증가 +5% / (탑승) 방어력 증가 +70%",
@@ -10277,7 +10622,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "전투 시작 시, 파티원에게 <#CFFF71>(탑승) 회피 증가({3}%)</color>, <#CFFF71>(탑승) 방어력 증가({4}%)</color>, <#CFFF71>(탑승) 체력 증가({5}%)</color> 부여. 탑승 조련사가 사망 직전 <#CFFF71>{6}초</color>간 <#CFFF71>의지</color> 획득.",
                   "formattedDesc": "전투 시작 시, 파티원에게 <#CFFF71>(탑승) 회피 증가(30%)</color>, <#CFFF71>(탑승) 방어력 증가(200%)</color>, <#CFFF71>(탑승) 체력 증가(250%)</color> 부여. 탑승 조련사가 사망 직전 <#CFFF71>4초</color>간 <#CFFF71>의지</color> 획득.",
                   "stageLabel": "5성",
-                  "descValues": "30|200|250|4"
+                  "descValues": "30|200|250|4",
+                  "skillId": "2000000121149",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 45,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "★7 : (탑승) 체력 증가 +150% / 의지 +1초",
@@ -10291,7 +10641,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "전투 시작 시, 파티원에게 <#CFFF71>(탑승) 회피 증가({3}%)</color>, <#CFFF71>(탑승) 방어력 증가({4}%)</color>, <#CFFF71>(탑승) 체력 증가({5}%)</color> 부여. 탑승 조련사가 사망 직전 <#CFFF71>{6}초</color>간 <#CFFF71>의지</color> 획득.",
                   "formattedDesc": "전투 시작 시, 파티원에게 <#CFFF71>(탑승) 회피 증가(30%)</color>, <#CFFF71>(탑승) 방어력 증가(200%)</color>, <#CFFF71>(탑승) 체력 증가(400%)</color> 부여. 탑승 조련사가 사망 직전 <#CFFF71>5초</color>간 <#CFFF71>의지</color> 획득.",
                   "stageLabel": "7성",
-                  "descValues": "30|200|400|5"
+                  "descValues": "30|200|400|5",
+                  "skillId": "2000000121151",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 45,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "★10 : (탑승) 회피 증가 +5% / 의지 +1초",
@@ -10305,7 +10660,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "전투 시작 시, 파티원에게 <#CFFF71>(탑승) 회피 증가({3}%)</color>, <#CFFF71>(탑승) 방어력 증가({4}%)</color>, <#CFFF71>(탑승) 체력 증가({5}%)</color> 부여. 탑승 조련사가 사망 직전 <#CFFF71>{6}초</color>간 <#CFFF71>의지</color> 획득.",
                   "formattedDesc": "전투 시작 시, 파티원에게 <#CFFF71>(탑승) 회피 증가(35%)</color>, <#CFFF71>(탑승) 방어력 증가(200%)</color>, <#CFFF71>(탑승) 체력 증가(400%)</color> 부여. 탑승 조련사가 사망 직전 <#CFFF71>6초</color>간 <#CFFF71>의지</color> 획득.",
                   "stageLabel": "10성",
-                  "descValues": "35|200|400|6"
+                  "descValues": "35|200|400|6",
+                  "skillId": "2000000121154",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 45,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 }
               ]
             },
@@ -10328,7 +10688,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "자신에게 <#CFFF71>(타입)받는 피해 감소({3}%)</color>, <#CFFF71>(타입)방어력 증가({4}%)</color> 적용.",
                   "formattedDesc": "자신에게 <#CFFF71>(타입)받는 피해 감소(30%)</color>, <#CFFF71>(타입)방어력 증가(300%)</color> 적용.",
                   "stageLabel": "0성",
-                  "descValues": "30|300"
+                  "descValues": "30|300",
+                  "skillId": "20113100",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "★2 : (타입) 방어력 증가 +30%",
@@ -10342,7 +10707,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "자신에게 <#CFFF71>(타입)받는 피해 감소({3}%)</color>, <#CFFF71>(타입)방어력 증가({4}%)</color> 적용.",
                   "formattedDesc": "자신에게 <#CFFF71>(타입)받는 피해 감소(30%)</color>, <#CFFF71>(타입)방어력 증가(330%)</color> 적용.",
                   "stageLabel": "2성",
-                  "descValues": "30|330"
+                  "descValues": "30|330",
+                  "skillId": "20123135",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "★4 : (타입) 받는 피해 감소 +2%",
@@ -10356,7 +10726,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "자신에게 <#CFFF71>(타입)받는 피해 감소({3}%)</color>, <#CFFF71>(타입)방어력 증가({4}%)</color> 적용.",
                   "formattedDesc": "자신에게 <#CFFF71>(타입)받는 피해 감소(32%)</color>, <#CFFF71>(타입)방어력 증가(330%)</color> 적용.",
                   "stageLabel": "4성",
-                  "descValues": "32|330"
+                  "descValues": "32|330",
+                  "skillId": "20133137",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "★6 : (타입) 방어력 증가 +30%",
@@ -10370,7 +10745,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "자신에게 <#CFFF71>(타입)받는 피해 감소({3}%)</color>, <#CFFF71>(타입)방어력 증가({4}%)</color> 적용.",
                   "formattedDesc": "자신에게 <#CFFF71>(타입)받는 피해 감소(32%)</color>, <#CFFF71>(타입)방어력 증가(360%)</color> 적용.",
                   "stageLabel": "6성",
-                  "descValues": "32|360"
+                  "descValues": "32|360",
+                  "skillId": "20143139",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "★8 : (타입) 받는 피해 감소 +2%",
@@ -10384,7 +10764,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "자신에게 <#CFFF71>(타입)받는 피해 감소({3}%)</color>, <#CFFF71>(타입)방어력 증가({4}%)</color> 적용.",
                   "formattedDesc": "자신에게 <#CFFF71>(타입)받는 피해 감소(34%)</color>, <#CFFF71>(타입)방어력 증가(360%)</color> 적용.",
                   "stageLabel": "8성",
-                  "descValues": "34|360"
+                  "descValues": "34|360",
+                  "skillId": "20153141",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "★10 : (타입) 받는 피해 감소 +1 / (타입) 방어력 증가 +40%",
@@ -10398,7 +10783,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "자신에게 <#CFFF71>(타입)받는 피해 감소({3}%)</color>, <#CFFF71>(타입)방어력 증가({4}%)</color> 적용.",
                   "formattedDesc": "자신에게 <#CFFF71>(타입)받는 피해 감소(35%)</color>, <#CFFF71>(타입)방어력 증가(400%)</color> 적용.",
                   "stageLabel": "10성",
-                  "descValues": "35|400"
+                  "descValues": "35|400",
+                  "skillId": "20163145",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 }
               ]
             }
@@ -10472,7 +10862,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 12900,
                   "formattedDesc": "사정거리 내의 원거리형 적 1명을 우선하여, 대상에게 공격(피해량: <#CFFF71>129%</color> x <#CFFF71>공격력</color>). 적중 시, <#CFFF71>15%</color> 확률로 <#CFFF71>이로운 효과</color> <#CFFF71>1개</color> 제거.",
                   "stageLabel": "0성",
-                  "descValues": "15|1"
+                  "descValues": "15|1",
+                  "skillId": "2000000140144",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 60,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "★1 : 이로운 효과 제거 발동 확률 +10%",
@@ -10487,7 +10882,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 12900,
                   "formattedDesc": "사정거리 내의 원거리형 적 1명을 우선하여, 대상에게 공격(피해량: <#CFFF71>129%</color> x <#CFFF71>공격력</color>). 적중 시, <#CFFF71>25%</color> 확률로 <#CFFF71>이로운 효과</color> <#CFFF71>1개</color> 제거.",
                   "stageLabel": "1성",
-                  "descValues": "25|1"
+                  "descValues": "25|1",
+                  "skillId": "2000000140145",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 60,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "★3 : 피해량 +20%",
@@ -10502,7 +10902,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 14900,
                   "formattedDesc": "사정거리 내의 원거리형 적 1명을 우선하여, 대상에게 공격(피해량: <#CFFF71>149%</color> x <#CFFF71>공격력</color>). 적중 시, <#CFFF71>25%</color> 확률로 <#CFFF71>이로운 효과</color> <#CFFF71>1개</color> 제거.",
                   "stageLabel": "3성",
-                  "descValues": "25|1"
+                  "descValues": "25|1",
+                  "skillId": "2000000140147",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 60,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "★5 : 이로운 효과 제거 발동 확률 +10%",
@@ -10517,7 +10922,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 14900,
                   "formattedDesc": "사정거리 내의 원거리형 적 1명을 우선하여, 대상에게 공격(피해량: <#CFFF71>149%</color> x <#CFFF71>공격력</color>). 적중 시, <#CFFF71>35%</color> 확률로 <#CFFF71>이로운 효과</color> <#CFFF71>1개</color> 제거.",
                   "stageLabel": "5성",
-                  "descValues": "35|1"
+                  "descValues": "35|1",
+                  "skillId": "2000000140149",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 60,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "★7 : 피해량 +23%",
@@ -10532,7 +10942,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 17200,
                   "formattedDesc": "사정거리 내의 원거리형 적 1명을 우선하여, 대상에게 공격(피해량: <#CFFF71>172%</color> x <#CFFF71>공격력</color>). 적중 시, <#CFFF71>35%</color> 확률로 <#CFFF71>이로운 효과</color> <#CFFF71>1개</color> 제거.",
                   "stageLabel": "7성",
-                  "descValues": "35|1"
+                  "descValues": "35|1",
+                  "skillId": "2000000140151",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 60,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "★10 : 이로운 효과 제거 +1개",
@@ -10547,7 +10962,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 17200,
                   "formattedDesc": "사정거리 내의 원거리형 적 1명을 우선하여, 대상에게 공격(피해량: <#CFFF71>172%</color> x <#CFFF71>공격력</color>). 적중 시, <#CFFF71>35%</color> 확률로 <#CFFF71>이로운 효과</color> <#CFFF71>2개</color> 제거.",
                   "stageLabel": "10성",
-                  "descValues": "35|2"
+                  "descValues": "35|2",
+                  "skillId": "2000000140154",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 60,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 }
               ]
             },
@@ -10570,7 +10990,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "전투 시작 시, 파티원에게 <#CFFF71>(탑승) 치명타 확률 증가({3}%)</color>, <#CFFF71>(탑승) 방어력 증가({4}%)</color>, <#CFFF71>(탑승) 체력 증가({5}%)</color> 부여. 탑승 조련사에게 <#CFFF71>(탑승) 받는 피해 감소({6}%)</color> 부여.",
                   "formattedDesc": "전투 시작 시, 파티원에게 <#CFFF71>(탑승) 치명타 확률 증가(12%)</color>, <#CFFF71>(탑승) 방어력 증가(80%)</color>, <#CFFF71>(탑승) 체력 증가(150%)</color> 부여. 탑승 조련사에게 <#CFFF71>(탑승) 받는 피해 감소(20%)</color> 부여.",
                   "stageLabel": "0성",
-                  "descValues": "12|80|150|20"
+                  "descValues": "12|80|150|20",
+                  "skillId": "2000000141144",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 45,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "★1 : (탑승) 치명타 확률 증가 +4% / (탑승) 방어력 증가 +50%",
@@ -10584,7 +11009,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "전투 시작 시, 파티원에게 <#CFFF71>(탑승) 치명타 확률 증가({3}%)</color>, <#CFFF71>(탑승) 방어력 증가({4}%)</color>, <#CFFF71>(탑승) 체력 증가({5}%)</color> 부여. 탑승 조련사에게 <#CFFF71>(탑승) 받는 피해 감소({6}%)</color> 부여.",
                   "formattedDesc": "전투 시작 시, 파티원에게 <#CFFF71>(탑승) 치명타 확률 증가(16%)</color>, <#CFFF71>(탑승) 방어력 증가(130%)</color>, <#CFFF71>(탑승) 체력 증가(150%)</color> 부여. 탑승 조련사에게 <#CFFF71>(탑승) 받는 피해 감소(20%)</color> 부여.",
                   "stageLabel": "1성",
-                  "descValues": "16|130|150|20"
+                  "descValues": "16|130|150|20",
+                  "skillId": "2000000141145",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 45,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "★3 : (탑승) 체력 증가 +100% / (탑승) 받는 피해 감소 +5%",
@@ -10598,7 +11028,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "전투 시작 시, 파티원에게 <#CFFF71>(탑승) 치명타 확률 증가({3}%)</color>, <#CFFF71>(탑승) 방어력 증가({4}%)</color>, <#CFFF71>(탑승) 체력 증가({5}%)</color> 부여. 탑승 조련사에게 <#CFFF71>(탑승) 받는 피해 감소({6}%)</color> 부여.",
                   "formattedDesc": "전투 시작 시, 파티원에게 <#CFFF71>(탑승) 치명타 확률 증가(16%)</color>, <#CFFF71>(탑승) 방어력 증가(130%)</color>, <#CFFF71>(탑승) 체력 증가(250%)</color> 부여. 탑승 조련사에게 <#CFFF71>(탑승) 받는 피해 감소(25%)</color> 부여.",
                   "stageLabel": "3성",
-                  "descValues": "16|130|250|25"
+                  "descValues": "16|130|250|25",
+                  "skillId": "2000000141147",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 45,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "★5 : (탑승) 치명타 확률 증가 +4% / (탑승) 방어력 증가 +70%",
@@ -10612,7 +11047,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "전투 시작 시, 파티원에게 <#CFFF71>(탑승) 치명타 확률 증가({3}%)</color>, <#CFFF71>(탑승) 방어력 증가({4}%)</color>, <#CFFF71>(탑승) 체력 증가({5}%)</color> 부여. 탑승 조련사에게 <#CFFF71>(탑승) 받는 피해 감소({6}%)</color> 부여.",
                   "formattedDesc": "전투 시작 시, 파티원에게 <#CFFF71>(탑승) 치명타 확률 증가(20%)</color>, <#CFFF71>(탑승) 방어력 증가(200%)</color>, <#CFFF71>(탑승) 체력 증가(250%)</color> 부여. 탑승 조련사에게 <#CFFF71>(탑승) 받는 피해 감소(25%)</color> 부여.",
                   "stageLabel": "5성",
-                  "descValues": "20|200|250|25"
+                  "descValues": "20|200|250|25",
+                  "skillId": "2000000141149",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 45,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "★7 : (탑승) 체력 증가 +150% / (탑승) 받는 피해 감소 +5%",
@@ -10626,7 +11066,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "전투 시작 시, 파티원에게 <#CFFF71>(탑승) 치명타 확률 증가({3}%)</color>, <#CFFF71>(탑승) 방어력 증가({4}%)</color>, <#CFFF71>(탑승) 체력 증가({5}%)</color> 부여. 탑승 조련사에게 <#CFFF71>(탑승) 받는 피해 감소({6}%)</color> 부여.",
                   "formattedDesc": "전투 시작 시, 파티원에게 <#CFFF71>(탑승) 치명타 확률 증가(20%)</color>, <#CFFF71>(탑승) 방어력 증가(200%)</color>, <#CFFF71>(탑승) 체력 증가(400%)</color> 부여. 탑승 조련사에게 <#CFFF71>(탑승) 받는 피해 감소(30%)</color> 부여.",
                   "stageLabel": "7성",
-                  "descValues": "20|200|400|30"
+                  "descValues": "20|200|400|30",
+                  "skillId": "2000000141151",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 45,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "★10 : (탑승) 치명타 확률 증가 +5% / (탑승) 받는 피해 감소 +5%",
@@ -10640,7 +11085,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "전투 시작 시, 파티원에게 <#CFFF71>(탑승) 치명타 확률 증가({3}%)</color>, <#CFFF71>(탑승) 방어력 증가({4}%)</color>, <#CFFF71>(탑승) 체력 증가({5}%)</color> 부여. 탑승 조련사에게 <#CFFF71>(탑승) 받는 피해 감소({6}%)</color> 부여.",
                   "formattedDesc": "전투 시작 시, 파티원에게 <#CFFF71>(탑승) 치명타 확률 증가(25%)</color>, <#CFFF71>(탑승) 방어력 증가(200%)</color>, <#CFFF71>(탑승) 체력 증가(400%)</color> 부여. 탑승 조련사에게 <#CFFF71>(탑승) 받는 피해 감소(35%)</color> 부여.",
                   "stageLabel": "10성",
-                  "descValues": "25|200|400|35"
+                  "descValues": "25|200|400|35",
+                  "skillId": "2000000141154",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 45,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 }
               ]
             },
@@ -10663,7 +11113,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "자신에게 <#CFFF71>(타입)공격력 증가({3}%)</color>, <#CFFF71>(타입)명중 증가({4}%)</color> 적용.",
                   "formattedDesc": "자신에게 <#CFFF71>(타입)공격력 증가(10%)</color>, <#CFFF71>(타입)명중 증가(20%)</color> 적용.",
                   "stageLabel": "0성",
-                  "descValues": "10|20"
+                  "descValues": "10|20",
+                  "skillId": "20313100",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "★2 : (타입) 명중 증가 +2%",
@@ -10677,7 +11132,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "자신에게 <#CFFF71>(타입)공격력 증가({3}%)</color>, <#CFFF71>(타입)명중 증가({4}%)</color> 적용.",
                   "formattedDesc": "자신에게 <#CFFF71>(타입)공격력 증가(10%)</color>, <#CFFF71>(타입)명중 증가(22%)</color> 적용.",
                   "stageLabel": "2성",
-                  "descValues": "10|22"
+                  "descValues": "10|22",
+                  "skillId": "20323135",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "★4 : (타입) 공격력 증가 +2%",
@@ -10691,7 +11151,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "자신에게 <#CFFF71>(타입)공격력 증가({3}%)</color>, <#CFFF71>(타입)명중 증가({4}%)</color> 적용.",
                   "formattedDesc": "자신에게 <#CFFF71>(타입)공격력 증가(12%)</color>, <#CFFF71>(타입)명중 증가(22%)</color> 적용.",
                   "stageLabel": "4성",
-                  "descValues": "12|22"
+                  "descValues": "12|22",
+                  "skillId": "20333137",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "★6 : (타입) 명중 증가 +2%",
@@ -10705,7 +11170,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "자신에게 <#CFFF71>(타입)공격력 증가({3}%)</color>, <#CFFF71>(타입)명중 증가({4}%)</color> 적용.",
                   "formattedDesc": "자신에게 <#CFFF71>(타입)공격력 증가(12%)</color>, <#CFFF71>(타입)명중 증가(24%)</color> 적용.",
                   "stageLabel": "6성",
-                  "descValues": "12|24"
+                  "descValues": "12|24",
+                  "skillId": "20343139",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "★8 : (타입) 공격력 증가 +2%",
@@ -10719,7 +11189,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "자신에게 <#CFFF71>(타입)공격력 증가({3}%)</color>, <#CFFF71>(타입)명중 증가({4}%)</color> 적용.",
                   "formattedDesc": "자신에게 <#CFFF71>(타입)공격력 증가(14%)</color>, <#CFFF71>(타입)명중 증가(24%)</color> 적용.",
                   "stageLabel": "8성",
-                  "descValues": "14|24"
+                  "descValues": "14|24",
+                  "skillId": "20353141",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "★10 : (타입) 공격력 증가 +1% / (타입) 명중 증가 +1%",
@@ -10733,7 +11208,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "자신에게 <#CFFF71>(타입)공격력 증가({3}%)</color>, <#CFFF71>(타입)명중 증가({4}%)</color> 적용.",
                   "formattedDesc": "자신에게 <#CFFF71>(타입)공격력 증가(15%)</color>, <#CFFF71>(타입)명중 증가(25%)</color> 적용.",
                   "stageLabel": "10성",
-                  "descValues": "15|25"
+                  "descValues": "15|25",
+                  "skillId": "20363145",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 }
               ]
             }
@@ -10807,7 +11287,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 14400,
                   "formattedDesc": "사정거리 내의 근거리형 적 1명을 우선하여, 대상에게 공격(피해량: <#CFFF71>144%</color> x <#CFFF71>공격력</color>). 적중 시, 자신에게 <#CFFF71>30%</color> 확률로 <#CFFF71>5초</color>간 <#CFFF71>(탑승) 공격력 증가(5%, 최대 5회 중첩)</color> 부여.",
                   "stageLabel": "0성",
-                  "descValues": "30|5|5|5"
+                  "descValues": "30|5|5|5",
+                  "skillId": "2000000050144",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 45,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "★1 : (탑승) 공격력 증가 +2%",
@@ -10822,7 +11307,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 14400,
                   "formattedDesc": "사정거리 내의 근거리형 적 1명을 우선하여, 대상에게 공격(피해량: <#CFFF71>144%</color> x <#CFFF71>공격력</color>). 적중 시, 자신에게 <#CFFF71>30%</color> 확률로 <#CFFF71>5초</color>간 <#CFFF71>(탑승) 공격력 증가(7%, 최대 5회 중첩)</color> 부여.",
                   "stageLabel": "1성",
-                  "descValues": "30|5|7|5"
+                  "descValues": "30|5|7|5",
+                  "skillId": "2000000050145",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 45,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "★3 : 피해량 +23%",
@@ -10837,7 +11327,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 16700,
                   "formattedDesc": "사정거리 내의 근거리형 적 1명을 우선하여, 대상에게 공격(피해량: <#CFFF71>167%</color> x <#CFFF71>공격력</color>). 적중 시, 자신에게 <#CFFF71>30%</color> 확률로 <#CFFF71>5초</color>간 <#CFFF71>(탑승) 공격력 증가(7%, 최대 5회 중첩)</color> 부여.",
                   "stageLabel": "3성",
-                  "descValues": "30|5|7|5"
+                  "descValues": "30|5|7|5",
+                  "skillId": "2000000050147",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 45,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "★5 : (탑승) 공격력 증가 +5%",
@@ -10852,7 +11347,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 16700,
                   "formattedDesc": "사정거리 내의 근거리형 적 1명을 우선하여, 대상에게 공격(피해량: <#CFFF71>167%</color> x <#CFFF71>공격력</color>). 적중 시, 자신에게 <#CFFF71>30%</color> 확률로 <#CFFF71>5초</color>간 <#CFFF71>(탑승) 공격력 증가(12%, 최대 5회 중첩)</color> 부여.",
                   "stageLabel": "5성",
-                  "descValues": "30|5|12|5"
+                  "descValues": "30|5|12|5",
+                  "skillId": "2000000050149",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 45,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "★7 : 피해량 +26%",
@@ -10867,7 +11367,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 19300,
                   "formattedDesc": "사정거리 내의 근거리형 적 1명을 우선하여, 대상에게 공격(피해량: <#CFFF71>193%</color> x <#CFFF71>공격력</color>). 적중 시, 자신에게 <#CFFF71>30%</color> 확률로 <#CFFF71>5초</color>간 <#CFFF71>(탑승) 공격력 증가(12%, 최대 5회 중첩)</color> 부여.",
                   "stageLabel": "7성",
-                  "descValues": "30|5|12|5"
+                  "descValues": "30|5|12|5",
+                  "skillId": "2000000050151",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 45,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "★10 : (탑승) 공격력 증가 발동 확률 +20%",
@@ -10882,7 +11387,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 19300,
                   "formattedDesc": "사정거리 내의 근거리형 적 1명을 우선하여, 대상에게 공격(피해량: <#CFFF71>193%</color> x <#CFFF71>공격력</color>). 적중 시, 자신에게 <#CFFF71>50%</color> 확률로 <#CFFF71>5초</color>간 <#CFFF71>(탑승) 공격력 증가(12%, 최대 5회 중첩)</color> 부여.",
                   "stageLabel": "10성",
-                  "descValues": "50|5|12|5"
+                  "descValues": "50|5|12|5",
+                  "skillId": "2000000050154",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 45,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 }
               ]
             },
@@ -10905,7 +11415,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "전투 시작 시, 파티원에게 <#CFFF71>(탑승) 치명타 피해 증가({3}%)</color>, <#CFFF71>(탑승) 방어력 증가({4}%)</color>, <#CFFF71>(탑승) 체력 증가({5}%)</color> 부여. 조련사가 최대 체력의 <#CFFF71>{6}%</color> 피해를 입을 때마다 자신의 <#CFFF71>스킬 쿨타임 초기화</color>.",
                   "formattedDesc": "전투 시작 시, 파티원에게 <#CFFF71>(탑승) 치명타 피해 증가(12%)</color>, <#CFFF71>(탑승) 방어력 증가(80%)</color>, <#CFFF71>(탑승) 체력 증가(150%)</color> 부여. 조련사가 최대 체력의 <#CFFF71>40%</color> 피해를 입을 때마다 자신의 <#CFFF71>스킬 쿨타임 초기화</color>.",
                   "stageLabel": "0성",
-                  "descValues": "12|80|150|40"
+                  "descValues": "12|80|150|40",
+                  "skillId": "2000000051144",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 45,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "★1 : (탑승) 치명타 피해 증가 +4% / (탑승) 방어력 증가 +50%",
@@ -10919,7 +11434,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "전투 시작 시, 파티원에게 <#CFFF71>(탑승) 치명타 피해 증가({3}%)</color>, <#CFFF71>(탑승) 방어력 증가({4}%)</color>, <#CFFF71>(탑승) 체력 증가({5}%)</color> 부여. 조련사가 최대 체력의 <#CFFF71>{6}%</color> 피해를 입을 때마다 자신의 <#CFFF71>스킬 쿨타임 초기화</color>.",
                   "formattedDesc": "전투 시작 시, 파티원에게 <#CFFF71>(탑승) 치명타 피해 증가(16%)</color>, <#CFFF71>(탑승) 방어력 증가(130%)</color>, <#CFFF71>(탑승) 체력 증가(150%)</color> 부여. 조련사가 최대 체력의 <#CFFF71>40%</color> 피해를 입을 때마다 자신의 <#CFFF71>스킬 쿨타임 초기화</color>.",
                   "stageLabel": "1성",
-                  "descValues": "16|130|150|40"
+                  "descValues": "16|130|150|40",
+                  "skillId": "2000000051145",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 45,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "★3 : (탑승) 치명타 피해 증가 +4% / (탑승) 체력 증가 +100%",
@@ -10933,7 +11453,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "전투 시작 시, 파티원에게 <#CFFF71>(탑승) 치명타 피해 증가({3}%)</color>, <#CFFF71>(탑승) 방어력 증가({4}%)</color>, <#CFFF71>(탑승) 체력 증가({5}%)</color> 부여. 조련사가 최대 체력의 <#CFFF71>{6}%</color> 피해를 입을 때마다 자신의 <#CFFF71>스킬 쿨타임 초기화</color>.",
                   "formattedDesc": "전투 시작 시, 파티원에게 <#CFFF71>(탑승) 치명타 피해 증가(20%)</color>, <#CFFF71>(탑승) 방어력 증가(130%)</color>, <#CFFF71>(탑승) 체력 증가(250%)</color> 부여. 조련사가 최대 체력의 <#CFFF71>40%</color> 피해를 입을 때마다 자신의 <#CFFF71>스킬 쿨타임 초기화</color>.",
                   "stageLabel": "3성",
-                  "descValues": "20|130|250|40"
+                  "descValues": "20|130|250|40",
+                  "skillId": "2000000051147",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 45,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "★5 : (탑승) 치명타 피해 증가 +5% / (탑승) 방어력 증가 +70%",
@@ -10947,7 +11472,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "전투 시작 시, 파티원에게 <#CFFF71>(탑승) 치명타 피해 증가({3}%)</color>, <#CFFF71>(탑승) 방어력 증가({4}%)</color>, <#CFFF71>(탑승) 체력 증가({5}%)</color> 부여. 조련사가 최대 체력의 <#CFFF71>{6}%</color> 피해를 입을 때마다 자신의 <#CFFF71>스킬 쿨타임 초기화</color>.",
                   "formattedDesc": "전투 시작 시, 파티원에게 <#CFFF71>(탑승) 치명타 피해 증가(25%)</color>, <#CFFF71>(탑승) 방어력 증가(200%)</color>, <#CFFF71>(탑승) 체력 증가(250%)</color> 부여. 조련사가 최대 체력의 <#CFFF71>40%</color> 피해를 입을 때마다 자신의 <#CFFF71>스킬 쿨타임 초기화</color>.",
                   "stageLabel": "5성",
-                  "descValues": "25|200|250|40"
+                  "descValues": "25|200|250|40",
+                  "skillId": "2000000051149",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 45,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "★7 : (탑승) 치명타 피해 증가 +5% / (탑승) 체력 증가 +150%",
@@ -10961,7 +11491,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "전투 시작 시, 파티원에게 <#CFFF71>(탑승) 치명타 피해 증가({3}%)</color>, <#CFFF71>(탑승) 방어력 증가({4}%)</color>, <#CFFF71>(탑승) 체력 증가({5}%)</color> 부여. 조련사가 최대 체력의 <#CFFF71>{6}%</color> 피해를 입을 때마다 자신의 <#CFFF71>스킬 쿨타임 초기화</color>.",
                   "formattedDesc": "전투 시작 시, 파티원에게 <#CFFF71>(탑승) 치명타 피해 증가(30%)</color>, <#CFFF71>(탑승) 방어력 증가(200%)</color>, <#CFFF71>(탑승) 체력 증가(400%)</color> 부여. 조련사가 최대 체력의 <#CFFF71>40%</color> 피해를 입을 때마다 자신의 <#CFFF71>스킬 쿨타임 초기화</color>.",
                   "stageLabel": "7성",
-                  "descValues": "30|200|400|40"
+                  "descValues": "30|200|400|40",
+                  "skillId": "2000000051151",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 45,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "★10 : (탑승) 치명타 피해 증가 +10%",
@@ -10975,7 +11510,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "전투 시작 시, 파티원에게 <#CFFF71>(탑승) 치명타 피해 증가({3}%)</color>, <#CFFF71>(탑승) 방어력 증가({4}%)</color>, <#CFFF71>(탑승) 체력 증가({5}%)</color> 부여. 조련사가 최대 체력의 <#CFFF71>{6}%</color> 피해를 입을 때마다 자신의 <#CFFF71>스킬 쿨타임 초기화</color>.",
                   "formattedDesc": "전투 시작 시, 파티원에게 <#CFFF71>(탑승) 치명타 피해 증가(40%)</color>, <#CFFF71>(탑승) 방어력 증가(200%)</color>, <#CFFF71>(탑승) 체력 증가(400%)</color> 부여. 조련사가 최대 체력의 <#CFFF71>40%</color> 피해를 입을 때마다 자신의 <#CFFF71>스킬 쿨타임 초기화</color>.",
                   "stageLabel": "10성",
-                  "descValues": "40|200|400|40"
+                  "descValues": "40|200|400|40",
+                  "skillId": "2000000051154",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 45,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 }
               ]
             },
@@ -10998,7 +11538,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "자신에게 <#CFFF71>(타입)공격력 증가({3}%)</color>, <#CFFF71>(타입)명중 증가({4}%)</color> 적용.",
                   "formattedDesc": "자신에게 <#CFFF71>(타입)공격력 증가(10%)</color>, <#CFFF71>(타입)명중 증가(20%)</color> 적용.",
                   "stageLabel": "0성",
-                  "descValues": "10|20"
+                  "descValues": "10|20",
+                  "skillId": "20313100",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "★2 : (타입) 명중 증가 +2%",
@@ -11012,7 +11557,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "자신에게 <#CFFF71>(타입)공격력 증가({3}%)</color>, <#CFFF71>(타입)명중 증가({4}%)</color> 적용.",
                   "formattedDesc": "자신에게 <#CFFF71>(타입)공격력 증가(10%)</color>, <#CFFF71>(타입)명중 증가(22%)</color> 적용.",
                   "stageLabel": "2성",
-                  "descValues": "10|22"
+                  "descValues": "10|22",
+                  "skillId": "20323135",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "★4 : (타입) 공격력 증가 +2%",
@@ -11026,7 +11576,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "자신에게 <#CFFF71>(타입)공격력 증가({3}%)</color>, <#CFFF71>(타입)명중 증가({4}%)</color> 적용.",
                   "formattedDesc": "자신에게 <#CFFF71>(타입)공격력 증가(12%)</color>, <#CFFF71>(타입)명중 증가(22%)</color> 적용.",
                   "stageLabel": "4성",
-                  "descValues": "12|22"
+                  "descValues": "12|22",
+                  "skillId": "20333137",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "★6 : (타입) 명중 증가 +2%",
@@ -11040,7 +11595,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "자신에게 <#CFFF71>(타입)공격력 증가({3}%)</color>, <#CFFF71>(타입)명중 증가({4}%)</color> 적용.",
                   "formattedDesc": "자신에게 <#CFFF71>(타입)공격력 증가(12%)</color>, <#CFFF71>(타입)명중 증가(24%)</color> 적용.",
                   "stageLabel": "6성",
-                  "descValues": "12|24"
+                  "descValues": "12|24",
+                  "skillId": "20343139",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "★8 : (타입) 공격력 증가 +2%",
@@ -11054,7 +11614,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "자신에게 <#CFFF71>(타입)공격력 증가({3}%)</color>, <#CFFF71>(타입)명중 증가({4}%)</color> 적용.",
                   "formattedDesc": "자신에게 <#CFFF71>(타입)공격력 증가(14%)</color>, <#CFFF71>(타입)명중 증가(24%)</color> 적용.",
                   "stageLabel": "8성",
-                  "descValues": "14|24"
+                  "descValues": "14|24",
+                  "skillId": "20353141",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "★10 : (타입) 공격력 증가 +1% / (타입) 명중 증가 +1%",
@@ -11068,7 +11633,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "자신에게 <#CFFF71>(타입)공격력 증가({3}%)</color>, <#CFFF71>(타입)명중 증가({4}%)</color> 적용.",
                   "formattedDesc": "자신에게 <#CFFF71>(타입)공격력 증가(15%)</color>, <#CFFF71>(타입)명중 증가(25%)</color> 적용.",
                   "stageLabel": "10성",
-                  "descValues": "15|25"
+                  "descValues": "15|25",
+                  "skillId": "20363145",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 }
               ]
             }
@@ -11124,7 +11694,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 12900,
                   "formattedDesc": "사정거리 내의 지원형 적 1명을 우선하여, 대상에게 공격(피해량: <#CFFF71>129%</color> x <#CFFF71>공격력</color>). 적중 시, <#CFFF71>15%</color> 확률로 <#CFFF71>3초</color>간 <#CFFF71>침묵</color> 부여.",
                   "stageLabel": "0성",
-                  "descValues": "15|3"
+                  "descValues": "15|3",
+                  "skillId": "2000000090144",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 60,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "★1 : 침묵 부여 발동 확률 +10%",
@@ -11139,7 +11714,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 12900,
                   "formattedDesc": "사정거리 내의 지원형 적 1명을 우선하여, 대상에게 공격(피해량: <#CFFF71>129%</color> x <#CFFF71>공격력</color>). 적중 시, <#CFFF71>25%</color> 확률로 <#CFFF71>3초</color>간 <#CFFF71>침묵</color> 부여.",
                   "stageLabel": "1성",
-                  "descValues": "25|3"
+                  "descValues": "25|3",
+                  "skillId": "2000000090145",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 60,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "★3 : 피해량 +20%",
@@ -11154,7 +11734,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 14900,
                   "formattedDesc": "사정거리 내의 지원형 적 1명을 우선하여, 대상에게 공격(피해량: <#CFFF71>149%</color> x <#CFFF71>공격력</color>). 적중 시, <#CFFF71>25%</color> 확률로 <#CFFF71>3초</color>간 <#CFFF71>침묵</color> 부여.",
                   "stageLabel": "3성",
-                  "descValues": "25|3"
+                  "descValues": "25|3",
+                  "skillId": "2000000090147",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 60,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "★5 : 침묵 부여 발동 확률 +10%",
@@ -11169,7 +11754,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 14900,
                   "formattedDesc": "사정거리 내의 지원형 적 1명을 우선하여, 대상에게 공격(피해량: <#CFFF71>149%</color> x <#CFFF71>공격력</color>). 적중 시, <#CFFF71>35%</color> 확률로 <#CFFF71>3초</color>간 <#CFFF71>침묵</color> 부여.",
                   "stageLabel": "5성",
-                  "descValues": "35|3"
+                  "descValues": "35|3",
+                  "skillId": "2000000090149",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 60,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "★7 : 피해량 +23%",
@@ -11184,7 +11774,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 17200,
                   "formattedDesc": "사정거리 내의 지원형 적 1명을 우선하여, 대상에게 공격(피해량: <#CFFF71>172%</color> x <#CFFF71>공격력</color>). 적중 시, <#CFFF71>35%</color> 확률로 <#CFFF71>3초</color>간 <#CFFF71>침묵</color> 부여.",
                   "stageLabel": "7성",
-                  "descValues": "35|3"
+                  "descValues": "35|3",
+                  "skillId": "2000000090151",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 60,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "★10 : 침묵 효과 +2초",
@@ -11199,7 +11794,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 17200,
                   "formattedDesc": "사정거리 내의 지원형 적 1명을 우선하여, 대상에게 공격(피해량: <#CFFF71>172%</color> x <#CFFF71>공격력</color>). 적중 시, <#CFFF71>35%</color> 확률로 <#CFFF71>5초</color>간 <#CFFF71>침묵</color> 부여.",
                   "stageLabel": "10성",
-                  "descValues": "35|5"
+                  "descValues": "35|5",
+                  "skillId": "2000000090154",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 60,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 }
               ]
             },
@@ -11222,7 +11822,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "전투 시작 시, 파티원에게 <#CFFF71>(탑승) 군중 제어 저항({3}%)</color>, <#CFFF71>(탑승) 방어력 증가({4}%)</color>, <#CFFF71>(탑승) 체력 증가({5}%)</color> 부여. 탑승 조련사에게 <#CFFF71>최대 쿨타임 감소({6}%)</color> 부여.",
                   "formattedDesc": "전투 시작 시, 파티원에게 <#CFFF71>(탑승) 군중 제어 저항(25%)</color>, <#CFFF71>(탑승) 방어력 증가(80%)</color>, <#CFFF71>(탑승) 체력 증가(150%)</color> 부여. 탑승 조련사에게 <#CFFF71>최대 쿨타임 감소(12%)</color> 부여.",
                   "stageLabel": "0성",
-                  "descValues": "25|80|150|12"
+                  "descValues": "25|80|150|12",
+                  "skillId": "2000000091144",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 45,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "★1 : (탑승) 군중 제어 저항 +10% / (탑승) 방어력 증가 +50%",
@@ -11236,7 +11841,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "전투 시작 시, 파티원에게 <#CFFF71>(탑승) 군중 제어 저항({3}%)</color>, <#CFFF71>(탑승) 방어력 증가({4}%)</color>, <#CFFF71>(탑승) 체력 증가({5}%)</color> 부여. 탑승 조련사에게 <#CFFF71>최대 쿨타임 감소({6}%)</color> 부여.",
                   "formattedDesc": "전투 시작 시, 파티원에게 <#CFFF71>(탑승) 군중 제어 저항(35%)</color>, <#CFFF71>(탑승) 방어력 증가(130%)</color>, <#CFFF71>(탑승) 체력 증가(150%)</color> 부여. 탑승 조련사에게 <#CFFF71>최대 쿨타임 감소(12%)</color> 부여.",
                   "stageLabel": "1성",
-                  "descValues": "35|130|150|12"
+                  "descValues": "35|130|150|12",
+                  "skillId": "2000000091145",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 45,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "★3 : (탑승) 체력 증가 +100% / 최대 쿨타임 감소 +4%",
@@ -11250,7 +11860,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "전투 시작 시, 파티원에게 <#CFFF71>(탑승) 군중 제어 저항({3}%)</color>, <#CFFF71>(탑승) 방어력 증가({4}%)</color>, <#CFFF71>(탑승) 체력 증가({5}%)</color> 부여. 탑승 조련사에게 <#CFFF71>최대 쿨타임 감소({6}%)</color> 부여.",
                   "formattedDesc": "전투 시작 시, 파티원에게 <#CFFF71>(탑승) 군중 제어 저항(35%)</color>, <#CFFF71>(탑승) 방어력 증가(130%)</color>, <#CFFF71>(탑승) 체력 증가(250%)</color> 부여. 탑승 조련사에게 <#CFFF71>최대 쿨타임 감소(16%)</color> 부여.",
                   "stageLabel": "3성",
-                  "descValues": "35|130|250|16"
+                  "descValues": "35|130|250|16",
+                  "skillId": "2000000091147",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 45,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "★5 : (탑승) 군중 제어 저항 +10% / (탑승) 방어력 증가 +70%",
@@ -11264,7 +11879,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "전투 시작 시, 파티원에게 <#CFFF71>(탑승) 군중 제어 저항({3}%)</color>, <#CFFF71>(탑승) 방어력 증가({4}%)</color>, <#CFFF71>(탑승) 체력 증가({5}%)</color> 부여. 탑승 조련사에게 <#CFFF71>최대 쿨타임 감소({6}%)</color> 부여.",
                   "formattedDesc": "전투 시작 시, 파티원에게 <#CFFF71>(탑승) 군중 제어 저항(45%)</color>, <#CFFF71>(탑승) 방어력 증가(200%)</color>, <#CFFF71>(탑승) 체력 증가(250%)</color> 부여. 탑승 조련사에게 <#CFFF71>최대 쿨타임 감소(16%)</color> 부여.",
                   "stageLabel": "5성",
-                  "descValues": "45|200|250|16"
+                  "descValues": "45|200|250|16",
+                  "skillId": "2000000091149",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 45,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "★7 : (탑승) 체력 증가 +150% / 최대 쿨타임 감소 +4%",
@@ -11278,7 +11898,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "전투 시작 시, 파티원에게 <#CFFF71>(탑승) 군중 제어 저항({3}%)</color>, <#CFFF71>(탑승) 방어력 증가({4}%)</color>, <#CFFF71>(탑승) 체력 증가({5}%)</color> 부여. 탑승 조련사에게 <#CFFF71>최대 쿨타임 감소({6}%)</color> 부여.",
                   "formattedDesc": "전투 시작 시, 파티원에게 <#CFFF71>(탑승) 군중 제어 저항(45%)</color>, <#CFFF71>(탑승) 방어력 증가(200%)</color>, <#CFFF71>(탑승) 체력 증가(400%)</color> 부여. 탑승 조련사에게 <#CFFF71>최대 쿨타임 감소(20%)</color> 부여.",
                   "stageLabel": "7성",
-                  "descValues": "45|200|400|20"
+                  "descValues": "45|200|400|20",
+                  "skillId": "2000000091151",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 45,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "★10 : (탑승) 군중 제어 저항 +5% / 최대 쿨타임 감소 +5%",
@@ -11292,7 +11917,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "전투 시작 시, 파티원에게 <#CFFF71>(탑승) 군중 제어 저항({3}%)</color>, <#CFFF71>(탑승) 방어력 증가({4}%)</color>, <#CFFF71>(탑승) 체력 증가({5}%)</color> 부여. 탑승 조련사에게 <#CFFF71>최대 쿨타임 감소({6}%)</color> 부여.",
                   "formattedDesc": "전투 시작 시, 파티원에게 <#CFFF71>(탑승) 군중 제어 저항(50%)</color>, <#CFFF71>(탑승) 방어력 증가(200%)</color>, <#CFFF71>(탑승) 체력 증가(400%)</color> 부여. 탑승 조련사에게 <#CFFF71>최대 쿨타임 감소(25%)</color> 부여.",
                   "stageLabel": "10성",
-                  "descValues": "50|200|400|25"
+                  "descValues": "50|200|400|25",
+                  "skillId": "2000000091154",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 45,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 }
               ]
             },
@@ -11315,7 +11945,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "자신에게 <#CFFF71>(타입)회피 증가({3}%)</color>, <#CFFF71>(타입)자연 체력회복 증가({4}%)</color> 적용.",
                   "formattedDesc": "자신에게 <#CFFF71>(타입)회피 증가(15%)</color>, <#CFFF71>(타입)자연 체력회복 증가(20%)</color> 적용.",
                   "stageLabel": "0성",
-                  "descValues": "15|20"
+                  "descValues": "15|20",
+                  "skillId": "20413100",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "★2 : (타입) 자연 체력회복 증가 +2%",
@@ -11329,7 +11964,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "자신에게 <#CFFF71>(타입)회피 증가({3}%)</color>, <#CFFF71>(타입)자연 체력회복 증가({4}%)</color> 적용.",
                   "formattedDesc": "자신에게 <#CFFF71>(타입)회피 증가(15%)</color>, <#CFFF71>(타입)자연 체력회복 증가(22%)</color> 적용.",
                   "stageLabel": "2성",
-                  "descValues": "15|22"
+                  "descValues": "15|22",
+                  "skillId": "20423135",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "★4 : (타입) 회피 증가 +2%",
@@ -11343,7 +11983,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "자신에게 <#CFFF71>(타입)회피 증가({3}%)</color>, <#CFFF71>(타입)자연 체력회복 증가({4}%)</color> 적용.",
                   "formattedDesc": "자신에게 <#CFFF71>(타입)회피 증가(17%)</color>, <#CFFF71>(타입)자연 체력회복 증가(22%)</color> 적용.",
                   "stageLabel": "4성",
-                  "descValues": "17|22"
+                  "descValues": "17|22",
+                  "skillId": "20433137",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "★6 : (타입) 자연 체력회복 증가 +2%",
@@ -11357,7 +12002,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "자신에게 <#CFFF71>(타입)회피 증가({3}%)</color>, <#CFFF71>(타입)자연 체력회복 증가({4}%)</color> 적용.",
                   "formattedDesc": "자신에게 <#CFFF71>(타입)회피 증가(17%)</color>, <#CFFF71>(타입)자연 체력회복 증가(24%)</color> 적용.",
                   "stageLabel": "6성",
-                  "descValues": "17|24"
+                  "descValues": "17|24",
+                  "skillId": "20443139",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "★8 : (타입) 회피 증가 +2%",
@@ -11371,7 +12021,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "자신에게 <#CFFF71>(타입)회피 증가({3}%)</color>, <#CFFF71>(타입)자연 체력회복 증가({4}%)</color> 적용.",
                   "formattedDesc": "자신에게 <#CFFF71>(타입)회피 증가(19%)</color>, <#CFFF71>(타입)자연 체력회복 증가(24%)</color> 적용.",
                   "stageLabel": "8성",
-                  "descValues": "19|24"
+                  "descValues": "19|24",
+                  "skillId": "20453141",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "★10 : (타입) 회피 증가 +1% / (타입) 자연 체력회복 증가 +1%",
@@ -11385,7 +12040,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "자신에게 <#CFFF71>(타입)회피 증가({3}%)</color>, <#CFFF71>(타입)자연 체력회복 증가({4}%)</color> 적용.",
                   "formattedDesc": "자신에게 <#CFFF71>(타입)회피 증가(20%)</color>, <#CFFF71>(타입)자연 체력회복 증가(25%)</color> 적용.",
                   "stageLabel": "10성",
-                  "descValues": "20|25"
+                  "descValues": "20|25",
+                  "skillId": "20463145",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 }
               ]
             }
@@ -11459,7 +12119,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 14400,
                   "formattedDesc": "사정거리 내의 지원형 적 1명을 우선하여, 대상에게 공격(피해량: <#CFFF71>144%</color> x <#CFFF71>공격력</color>). 적중 시, <#CFFF71>15%</color> 확률로 <#CFFF71>3초</color>간 <#CFFF71>회복 불가</color> 부여.",
                   "stageLabel": "0성",
-                  "descValues": "15|3"
+                  "descValues": "15|3",
+                  "skillId": "2000000100144",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 20,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "★1 : 회복 불가 부여 발동 확률 +10%",
@@ -11474,7 +12139,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 14400,
                   "formattedDesc": "사정거리 내의 지원형 적 1명을 우선하여, 대상에게 공격(피해량: <#CFFF71>144%</color> x <#CFFF71>공격력</color>). 적중 시, <#CFFF71>25%</color> 확률로 <#CFFF71>3초</color>간 <#CFFF71>회복 불가</color> 부여.",
                   "stageLabel": "1성",
-                  "descValues": "25|3"
+                  "descValues": "25|3",
+                  "skillId": "2000000100145",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 20,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "★3 : 피해량 +23%",
@@ -11489,7 +12159,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 16700,
                   "formattedDesc": "사정거리 내의 지원형 적 1명을 우선하여, 대상에게 공격(피해량: <#CFFF71>167%</color> x <#CFFF71>공격력</color>). 적중 시, <#CFFF71>25%</color> 확률로 <#CFFF71>3초</color>간 <#CFFF71>회복 불가</color> 부여.",
                   "stageLabel": "3성",
-                  "descValues": "25|3"
+                  "descValues": "25|3",
+                  "skillId": "2000000100147",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 20,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "★5 : 회복 불가 부여 발동 확률 +10%",
@@ -11504,7 +12179,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 16700,
                   "formattedDesc": "사정거리 내의 지원형 적 1명을 우선하여, 대상에게 공격(피해량: <#CFFF71>167%</color> x <#CFFF71>공격력</color>). 적중 시, <#CFFF71>35%</color> 확률로 <#CFFF71>3초</color>간 <#CFFF71>회복 불가</color> 부여.",
                   "stageLabel": "5성",
-                  "descValues": "35|3"
+                  "descValues": "35|3",
+                  "skillId": "2000000100149",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 20,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "★7 : 피해량 +26%",
@@ -11519,7 +12199,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 19300,
                   "formattedDesc": "사정거리 내의 지원형 적 1명을 우선하여, 대상에게 공격(피해량: <#CFFF71>193%</color> x <#CFFF71>공격력</color>). 적중 시, <#CFFF71>35%</color> 확률로 <#CFFF71>3초</color>간 <#CFFF71>회복 불가</color> 부여.",
                   "stageLabel": "7성",
-                  "descValues": "35|3"
+                  "descValues": "35|3",
+                  "skillId": "2000000100151",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 20,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "★10 : 회복 불가 +2초",
@@ -11534,7 +12219,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "factorAttk": 19300,
                   "formattedDesc": "사정거리 내의 지원형 적 1명을 우선하여, 대상에게 공격(피해량: <#CFFF71>193%</color> x <#CFFF71>공격력</color>). 적중 시, <#CFFF71>35%</color> 확률로 <#CFFF71>5초</color>간 <#CFFF71>회복 불가</color> 부여.",
                   "stageLabel": "10성",
-                  "descValues": "35|5"
+                  "descValues": "35|5",
+                  "skillId": "2000000100154",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 20,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 }
               ]
             },
@@ -11557,7 +12247,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "전투 시작 시, 파티원에게 <#CFFF71>(탑승) 공격력 증가({3}%)</color>, <#CFFF71>(탑승) 방어력 증가({4}%)</color>, <#CFFF71>(탑승) 체력 증가({5}%)</color> 부여. 탑승 조련사에게 <#CFFF71>흡혈({6}%)</color> 부여.",
                   "formattedDesc": "전투 시작 시, 파티원에게 <#CFFF71>(탑승) 공격력 증가(20%)</color>, <#CFFF71>(탑승) 방어력 증가(80%)</color>, <#CFFF71>(탑승) 체력 증가(150%)</color> 부여. 탑승 조련사에게 <#CFFF71>흡혈(20%)</color> 부여.",
                   "stageLabel": "0성",
-                  "descValues": "20|80|150|20"
+                  "descValues": "20|80|150|20",
+                  "skillId": "2000000101144",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 45,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "★1 : (탑승) 공격력 증가 +10% / (탑승) 방어력 증가 +50%",
@@ -11571,7 +12266,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "전투 시작 시, 파티원에게 <#CFFF71>(탑승) 공격력 증가({3}%)</color>, <#CFFF71>(탑승) 방어력 증가({4}%)</color>, <#CFFF71>(탑승) 체력 증가({5}%)</color> 부여. 탑승 조련사에게 <#CFFF71>흡혈({6}%)</color> 부여.",
                   "formattedDesc": "전투 시작 시, 파티원에게 <#CFFF71>(탑승) 공격력 증가(30%)</color>, <#CFFF71>(탑승) 방어력 증가(130%)</color>, <#CFFF71>(탑승) 체력 증가(150%)</color> 부여. 탑승 조련사에게 <#CFFF71>흡혈(20%)</color> 부여.",
                   "stageLabel": "1성",
-                  "descValues": "30|130|150|20"
+                  "descValues": "30|130|150|20",
+                  "skillId": "2000000101145",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 45,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "★3 : (탑승) 체력 증가 +100% / 흡혈 +5%",
@@ -11585,7 +12285,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "전투 시작 시, 파티원에게 <#CFFF71>(탑승) 공격력 증가({3}%)</color>, <#CFFF71>(탑승) 방어력 증가({4}%)</color>, <#CFFF71>(탑승) 체력 증가({5}%)</color> 부여. 탑승 조련사에게 <#CFFF71>흡혈({6}%)</color> 부여.",
                   "formattedDesc": "전투 시작 시, 파티원에게 <#CFFF71>(탑승) 공격력 증가(30%)</color>, <#CFFF71>(탑승) 방어력 증가(130%)</color>, <#CFFF71>(탑승) 체력 증가(250%)</color> 부여. 탑승 조련사에게 <#CFFF71>흡혈(25%)</color> 부여.",
                   "stageLabel": "3성",
-                  "descValues": "30|130|250|25"
+                  "descValues": "30|130|250|25",
+                  "skillId": "2000000101147",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 45,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "★5 : (탑승) 공격력 증가 +10% / (탑승) 방어력 증가 +70%",
@@ -11599,7 +12304,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "전투 시작 시, 파티원에게 <#CFFF71>(탑승) 공격력 증가({3}%)</color>, <#CFFF71>(탑승) 방어력 증가({4}%)</color>, <#CFFF71>(탑승) 체력 증가({5}%)</color> 부여. 탑승 조련사에게 <#CFFF71>흡혈({6}%)</color> 부여.",
                   "formattedDesc": "전투 시작 시, 파티원에게 <#CFFF71>(탑승) 공격력 증가(40%)</color>, <#CFFF71>(탑승) 방어력 증가(200%)</color>, <#CFFF71>(탑승) 체력 증가(250%)</color> 부여. 탑승 조련사에게 <#CFFF71>흡혈(25%)</color> 부여.",
                   "stageLabel": "5성",
-                  "descValues": "40|200|250|25"
+                  "descValues": "40|200|250|25",
+                  "skillId": "2000000101149",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 45,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "★7 : (탑승) 체력 증가 +150% / 흡혈 +5%",
@@ -11613,7 +12323,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "전투 시작 시, 파티원에게 <#CFFF71>(탑승) 공격력 증가({3}%)</color>, <#CFFF71>(탑승) 방어력 증가({4}%)</color>, <#CFFF71>(탑승) 체력 증가({5}%)</color> 부여. 탑승 조련사에게 <#CFFF71>흡혈({6}%)</color> 부여.",
                   "formattedDesc": "전투 시작 시, 파티원에게 <#CFFF71>(탑승) 공격력 증가(40%)</color>, <#CFFF71>(탑승) 방어력 증가(200%)</color>, <#CFFF71>(탑승) 체력 증가(400%)</color> 부여. 탑승 조련사에게 <#CFFF71>흡혈(30%)</color> 부여.",
                   "stageLabel": "7성",
-                  "descValues": "40|200|400|30"
+                  "descValues": "40|200|400|30",
+                  "skillId": "2000000101151",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 45,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "★10 : (탑승) 공격력 증가 +10% / 흡혈 +5%",
@@ -11627,7 +12342,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "전투 시작 시, 파티원에게 <#CFFF71>(탑승) 공격력 증가({3}%)</color>, <#CFFF71>(탑승) 방어력 증가({4}%)</color>, <#CFFF71>(탑승) 체력 증가({5}%)</color> 부여. 탑승 조련사에게 <#CFFF71>흡혈({6}%)</color> 부여.",
                   "formattedDesc": "전투 시작 시, 파티원에게 <#CFFF71>(탑승) 공격력 증가(50%)</color>, <#CFFF71>(탑승) 방어력 증가(200%)</color>, <#CFFF71>(탑승) 체력 증가(400%)</color> 부여. 탑승 조련사에게 <#CFFF71>흡혈(35%)</color> 부여.",
                   "stageLabel": "10성",
-                  "descValues": "50|200|400|35"
+                  "descValues": "50|200|400|35",
+                  "skillId": "2000000101154",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 45,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 }
               ]
             },
@@ -11650,7 +12370,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "자신에게 <#CFFF71>(타입)받는 피해 감소({3}%)</color>, <#CFFF71>(타입)치명타 확률 증가({4}%)</color> 적용.",
                   "formattedDesc": "자신에게 <#CFFF71>(타입)받는 피해 감소(20%)</color>, <#CFFF71>(타입)치명타 확률 증가(10%)</color> 적용.",
                   "stageLabel": "0성",
-                  "descValues": "20|10"
+                  "descValues": "20|10",
+                  "skillId": "20213100",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "★2 : (타입) 치명타 확률 증가 +2%",
@@ -11664,7 +12389,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "자신에게 <#CFFF71>(타입)받는 피해 감소({3}%)</color>, <#CFFF71>(타입)치명타 확률 증가({4}%)</color> 적용.",
                   "formattedDesc": "자신에게 <#CFFF71>(타입)받는 피해 감소(20%)</color>, <#CFFF71>(타입)치명타 확률 증가(12%)</color> 적용.",
                   "stageLabel": "2성",
-                  "descValues": "20|12"
+                  "descValues": "20|12",
+                  "skillId": "20223135",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "★4 : (타입) 받는 피해 감소 +2%",
@@ -11678,7 +12408,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "자신에게 <#CFFF71>(타입)받는 피해 감소({3}%)</color>, <#CFFF71>(타입)치명타 확률 증가({4}%)</color> 적용.",
                   "formattedDesc": "자신에게 <#CFFF71>(타입)받는 피해 감소(22%)</color>, <#CFFF71>(타입)치명타 확률 증가(12%)</color> 적용.",
                   "stageLabel": "4성",
-                  "descValues": "22|12"
+                  "descValues": "22|12",
+                  "skillId": "20233137",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "★6 : (타입) 치명타 확률 증가 +2%",
@@ -11692,7 +12427,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "자신에게 <#CFFF71>(타입)받는 피해 감소({3}%)</color>, <#CFFF71>(타입)치명타 확률 증가({4}%)</color> 적용.",
                   "formattedDesc": "자신에게 <#CFFF71>(타입)받는 피해 감소(22%)</color>, <#CFFF71>(타입)치명타 확률 증가(14%)</color> 적용.",
                   "stageLabel": "6성",
-                  "descValues": "22|14"
+                  "descValues": "22|14",
+                  "skillId": "20243139",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "★8 : (타입) 받는 피해 감소 +2%",
@@ -11706,7 +12446,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "자신에게 <#CFFF71>(타입)받는 피해 감소({3}%)</color>, <#CFFF71>(타입)치명타 확률 증가({4}%)</color> 적용.",
                   "formattedDesc": "자신에게 <#CFFF71>(타입)받는 피해 감소(24%)</color>, <#CFFF71>(타입)치명타 확률 증가(14%)</color> 적용.",
                   "stageLabel": "8성",
-                  "descValues": "24|14"
+                  "descValues": "24|14",
+                  "skillId": "20253141",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 },
                 {
                   "upgradeDescFormatted": "★10 : (타입) 받는 피해 감소 +1% / (타입) 치명타 확률 증가 +1%",
@@ -11720,7 +12465,12 @@ window.GACHA_PET_VIEWER_DATA = {
                   "rawDesc": "자신에게 <#CFFF71>(타입)받는 피해 감소({3}%)</color>, <#CFFF71>(타입)치명타 확률 증가({4}%)</color> 적용.",
                   "formattedDesc": "자신에게 <#CFFF71>(타입)받는 피해 감소(25%)</color>, <#CFFF71>(타입)치명타 확률 증가(15%)</color> 적용.",
                   "stageLabel": "10성",
-                  "descValues": "25|15"
+                  "descValues": "25|15",
+                  "skillId": "20263145",
+                  "skillRangeType": 0,
+                  "skillRangeRadius": 0,
+                  "skillRangeWidth": 0,
+                  "skillRangeHeight": 0
                 }
               ]
             }
