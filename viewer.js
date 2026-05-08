@@ -2001,6 +2001,17 @@
     return raw.replace(/추가 공격/g, "추가 피해");
   }
 
+  function normalizeRuntimeSkillCopy(text) {
+    const raw = String(text || "");
+    if (!raw) return raw;
+    return raw
+      .replace(/최대\s*스킬\s*쿨타임/g, "기본 스킬 쿨타임")
+      .replace(/최대\s*쿨타임/g, "기본 스킬 쿨타임")
+      .replace(/현재\s*쿨타임/g, "현재 스킬 쿨타임")
+      .replace(/(현재|기본) 스킬 쿨타임의/g, "$1 스킬 쿨타임")
+      .replace(/(현재|기본) 스킬 쿨타임 감소\s+\(/g, "$1 스킬 쿨타임 감소(");
+  }
+
   function patchEntitySkillTexts(entity) {
     if (!entity || !Array.isArray(entity.skills)) return;
     entity.skills.forEach((skill) => {
@@ -2013,8 +2024,10 @@
         });
       skill.variants.forEach((variant) => {
         if (!variant) return;
-        variant.rawDesc = replaceLucySeaSpearCopy(variant.rawDesc);
-        variant.formattedDesc = replaceLucySeaSpearCopy(variant.formattedDesc);
+        variant.rawDesc = normalizeRuntimeSkillCopy(replaceLucySeaSpearCopy(variant.rawDesc));
+        variant.formattedDesc = normalizeRuntimeSkillCopy(replaceLucySeaSpearCopy(variant.formattedDesc));
+        variant.upgradeDescTemplate = normalizeRuntimeSkillCopy(variant.upgradeDescTemplate);
+        variant.upgradeDescFormatted = normalizeRuntimeSkillCopy(variant.upgradeDescFormatted);
         if (seaSpearFamily) {
           variant.upgradeDescFormatted = replaceLucySeaSpearUpgradeCopy(variant.upgradeDescFormatted);
         }
@@ -4181,7 +4194,7 @@
     { term: "잡기 면역", note: "잡기 면역" },
     { term: "넘기기 면역", note: "넘기기 면역" },
     { term: "현재 스킬 쿨타임 초기화", note: "현재 스킬 쿨타임을 초기화" },
-    { term: "최대 스킬 쿨타임 감소", note: "최대 스킬 쿨타임 감소" },
+    { term: "기본 스킬 쿨타임 감소", note: "기본 스킬 쿨타임 감소" },
     { term: "현재 스킬 쿨타임 감소", note: "현재 스킬 쿨타임 감소" },
     { term: "최대 체력 비례형 피해", note: "대상의 최대 체력 비례 피해" },
     { term: "피해 차단(방어형)", note: "방어형이 주는 피해 차단" },
