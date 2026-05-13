@@ -525,7 +525,7 @@
   function resolveDynamicRuleStartDateKey(scheduleRule, serverOpenDateKey) {
     if (!scheduleRule || !serverOpenDateKey) return "";
     if (
-      ![2, 4, 8, 10].includes(scheduleRule.timeType)
+      ![2, 4, 8, 9, 10].includes(scheduleRule.timeType)
       || !Number.isFinite(scheduleRule.openDay)
     ) {
       return "";
@@ -542,6 +542,9 @@
     }
     if (scheduleRule.timeType === 8) {
       return alignDateKeyOnOrAfter(thresholdDateKey, 6);
+    }
+    if (scheduleRule.timeType === 9) {
+      return alignDateKeyOnOrAfter(thresholdDateKey, 2);
     }
     if (scheduleRule.timeType === 10) {
       return alignDateKeyOnOrAfter(thresholdDateKey, 4);
@@ -720,7 +723,7 @@
 
     if (normalizedScheduleRule && normalizedServerOpenDateKey) {
       if (
-        [2, 4, 8, 10].includes(normalizedScheduleRule.timeType)
+        [2, 4, 8, 9, 10].includes(normalizedScheduleRule.timeType)
         && Number.isFinite(normalizedScheduleRule.openDay)
       ) {
         resolvedStartDateKey = resolveDynamicRuleStartDateKey(
