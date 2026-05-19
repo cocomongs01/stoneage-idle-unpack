@@ -3541,11 +3541,13 @@
     return String(pageName || "").replace(/\\/g, "/").replace(/^.*\//, "");
   }
 
-  function resolveManifestTextureSource(manifestEntry, pageName) {
+  function resolveManifestTextureSource(manifestEntry, pageName, options = {}) {
     const normalizedPageName = normalizeAtlasPageName(pageName);
     const preferEmbedded = isFileProtocol();
+    const preferWebp = options.preferWebp !== false;
     const textureDataUris = manifestEntry && manifestEntry.textureDataUris;
     const textureFiles = manifestEntry && manifestEntry.textureFiles;
+    const textureWebpFiles = manifestEntry && manifestEntry.textureWebpFiles;
 
     const lookupValue = (valueSet) => {
       if (!valueSet) return "";
@@ -3577,6 +3579,15 @@
       if (embedded) {
         return embedded;
       }
+    }
+
+    const webpPath = preferWebp
+      ? textureWebpFiles
+        ? lookupValue(textureWebpFiles)
+        : manifestEntry.textureWebpFile || ""
+      : "";
+    if (webpPath) {
+      return assetUrl(webpPath);
     }
 
     const filePath = lookupValue(textureFiles);
@@ -3995,30 +4006,40 @@
         atlasText,
         (pageName, callback) => {
           const resolvedTextureUrl = resolveManifestTextureSource(manifestEntry, pageName) || textureUrl;
-          const baseTexture = window.PIXI.BaseTexture.from(resolvedTextureUrl);
-          if (baseTexture.valid) {
-            callback(baseTexture);
-            return;
-          }
+          const fallbackTextureUrl = resolveManifestTextureSource(manifestEntry, pageName, { preferWebp: false }) || textureUrl;
 
-          const cleanup = () => {
-            baseTexture.off("loaded", onLoaded);
-            baseTexture.off("error", onError);
+          const loadBaseTexture = (sourceUrl, allowFallback) => {
+            const baseTexture = window.PIXI.BaseTexture.from(sourceUrl);
+            if (baseTexture.valid) {
+              callback(baseTexture);
+              return;
+            }
+
+            const cleanup = () => {
+              baseTexture.off("loaded", onLoaded);
+              baseTexture.off("error", onError);
+            };
+
+            const onLoaded = () => {
+              cleanup();
+              callback(baseTexture);
+            };
+
+            const onError = (error) => {
+              cleanup();
+              if (allowFallback && fallbackTextureUrl && fallbackTextureUrl !== sourceUrl) {
+                loadBaseTexture(fallbackTextureUrl, false);
+                return;
+              }
+              callback(null);
+              finishReject(error instanceof Error ? error : new Error(`Texture load failed: ${sourceUrl}`));
+            };
+
+            baseTexture.once("loaded", onLoaded);
+            baseTexture.once("error", onError);
           };
 
-          const onLoaded = () => {
-            cleanup();
-            callback(baseTexture);
-          };
-
-          const onError = (error) => {
-            cleanup();
-            callback(null);
-            finishReject(error instanceof Error ? error : new Error(`Texture load failed: ${resolvedTextureUrl}`));
-          };
-
-          baseTexture.once("loaded", onLoaded);
-          baseTexture.once("error", onError);
+          loadBaseTexture(resolvedTextureUrl, true);
         },
         (atlas) => {
           if (!atlas) {
@@ -6343,7 +6364,6 @@
       return;
     }
 
-    setMobileLoading("spine-preview", true);
     Promise.all([
       ensureManifestEntryLoaded(entityId),
       ensureSpineRuntimeLoaded(),
