@@ -32,6 +32,7 @@
     scheduleBlockSubtext: document.getElementById("scheduleBlockSubtext"),
     scheduleList: document.getElementById("scheduleList"),
     scheduleAdjustButton: document.getElementById("scheduleAdjustButton"),
+    railPastToggle: document.getElementById("railPastToggle"),
     scheduleAdjustModal: document.getElementById("scheduleAdjustModal"),
     scheduleAdjustBackdrop: document.getElementById("scheduleAdjustBackdrop"),
     scheduleAdjustDialog: document.getElementById("scheduleAdjustDialog"),
@@ -118,6 +119,7 @@
     selectedVariantBySkillKey: {},
     selectedWeaponEquipmentSetKeyByEntityId: {},
     scheduleCalibration: null,
+    showPastRailItems: false,
     mobileView: "detail",
     mobileVariantScrollBySkillKey: {},
     mobileViewportScrollByView: { rail: 0, detail: 0 },
@@ -652,6 +654,7 @@
   }
 
   function shouldAutoOpenScheduleCalibration() {
+    if (pageParams.get("calibrate") !== "1") return false;
     if (isMobileLayout()) return false;
     if (state.scheduleCalibration && state.scheduleCalibration.mode === "custom") return false;
     try {
@@ -1550,8 +1553,10 @@
         state.activePetSubgroupKey = getPetSubgroupKeyForItem(currentPet);
       } else {
         const subgroupKey = String(historyState.petSubgroupKey || "");
-        if (subgroupKey === "content" || subgroupKey === "gacha" || subgroupKey === "uncategorized") {
+        if (subgroupKey === "content" || subgroupKey === "gacha") {
           state.activePetSubgroupKey = subgroupKey;
+        } else {
+          state.activePetSubgroupKey = "gacha";
         }
       }
     }
@@ -1697,11 +1702,19 @@
     "1106": Object.freeze({ badge: "HIT", label: "\uBA85\uC911(%)" }),
     "1107": Object.freeze({ badge: "EVA", label: "\uD68C\uD53C(%)" }),
     "1109": Object.freeze({ badge: "CRT", label: "\uCE58\uBA85\uD0C0 \uD655\uB960(%)" }),
+    "1120": Object.freeze({ badge: "SCR", label: "\uC288\uD37C \uCE58\uBA85\uD0C0 \uD655\uB960(%)", percentMultiplier: 0.01 }),
+    "1122": Object.freeze({ badge: "SCD", label: "\uC288\uD37C \uCE58\uBA85\uD0C0 \uD53C\uD574(%)", percentMultiplier: 0.01 }),
   });
   const RIDE_OWNED_EFFECT_STATE_META = Object.freeze({
     "1101": Object.freeze({ badge: "HP", label: "\uCCB4\uB825(%)" }),
     "1103": Object.freeze({ badge: "DEF", label: "\uBC29\uC5B4\uB825(%)" }),
     "1107": Object.freeze({ badge: "EVA", label: "\uD68C\uD53C(%)" }),
+    "1151": Object.freeze({ badge: "SIL", label: "\uCE68\uBB35 \uC800\uD56D(%)", percentMultiplier: 0.01 }),
+    "1153": Object.freeze({ badge: "AIR", label: "\uB744\uC6B0\uAE30 \uC800\uD56D(%)", percentMultiplier: 0.01 }),
+    "1155": Object.freeze({ badge: "GRP", label: "\uC81C\uC555 \uC800\uD56D(%)", percentMultiplier: 0.01 }),
+    "1167": Object.freeze({ badge: "PUS", label: "\uBC00\uC5B4\uB0B4\uAE30 \uC800\uD56D(%)", percentMultiplier: 0.01 }),
+    "1168": Object.freeze({ badge: "KND", label: "\uB118\uC5B4\uD2B8\uB9AC\uAE30 \uC800\uD56D(%)", percentMultiplier: 0.01 }),
+    "1169": Object.freeze({ badge: "PUL", label: "\uB2F9\uAE30\uAE30 \uC800\uD56D(%)", percentMultiplier: 0.01 }),
   });
   const WEAPON_OWNED_EFFECT_ROWS_BY_ID = Object.freeze({
     "220000007": Object.freeze([
@@ -1728,33 +1741,57 @@
       Object.freeze({ linkedId: "1102", value: 1 }),
       Object.freeze({ linkedId: "1106", value: 1 }),
     ]),
+    "220000037": Object.freeze([
+      Object.freeze({ linkedId: "1102", value: 1 }),
+      Object.freeze({ linkedId: "1120", value: 1 }),
+    ]),
+    "220000038": Object.freeze([
+      Object.freeze({ linkedId: "1102", value: 1 }),
+      Object.freeze({ linkedId: "1122", value: 1 }),
+    ]),
+    "220000039": Object.freeze([
+      Object.freeze({ linkedId: "1102", value: 1 }),
+      Object.freeze({ linkedId: "1122", value: 1 }),
+    ]),
+    "220000040": Object.freeze([
+      Object.freeze({ linkedId: "1102", value: 1 }),
+      Object.freeze({ linkedId: "1120", value: 1 }),
+    ]),
+    "220000041": Object.freeze([
+      Object.freeze({ linkedId: "1102", value: 1 }),
+      Object.freeze({ linkedId: "1122", value: 1 }),
+    ]),
+    "220000042": Object.freeze([
+      Object.freeze({ linkedId: "1102", value: 1 }),
+      Object.freeze({ linkedId: "1120", value: 1 }),
+    ]),
   });
   const WEAPON_OWNED_EFFECT_WEIGHTS_BY_TIER = Object.freeze({
     "4": Object.freeze({
-      "0": Object.freeze({ "1101": 0.2, "1102": 0.1, "1103": 0.2, "1106": 0.1, "1107": 0.1, "1109": 0 }),
-      "1": Object.freeze({ "1101": 0.3, "1102": 0.15, "1103": 0.3, "1106": 0.15, "1107": 0.15, "1109": 0.025 }),
-      "2": Object.freeze({ "1101": 0.4, "1102": 0.2, "1103": 0.4, "1106": 0.2, "1107": 0.2, "1109": 0.05 }),
-      "3": Object.freeze({ "1101": 0.5, "1102": 0.25, "1103": 0.5, "1106": 0.25, "1107": 0.25, "1109": 0.075 }),
-      "4": Object.freeze({ "1101": 0.6, "1102": 0.3, "1103": 0.6, "1106": 0.3, "1107": 0.3, "1109": 0.1 }),
-      "5": Object.freeze({ "1101": 0.8, "1102": 0.4, "1103": 0.8, "1106": 0.4, "1107": 0.4, "1109": 0.125 }),
-      "6": Object.freeze({ "1101": 0.9, "1102": 0.45, "1103": 0.9, "1106": 0.45, "1107": 0.45, "1109": 0.15 }),
-      "7": Object.freeze({ "1101": 1, "1102": 0.5, "1103": 1, "1106": 0.5, "1107": 0.5, "1109": 0.175 }),
-      "8": Object.freeze({ "1101": 1.1, "1102": 0.55, "1103": 1.1, "1106": 0.55, "1107": 0.55, "1109": 0.2 }),
-      "9": Object.freeze({ "1101": 1.2, "1102": 0.6, "1103": 1.2, "1106": 0.6, "1107": 0.6, "1109": 0.225 }),
-      "10": Object.freeze({ "1101": 1.4, "1102": 0.7, "1103": 1.4, "1106": 0.7, "1107": 0.7, "1109": 0.25 }),
+      "0": Object.freeze({ "1101": 0.2, "1102": 0.1, "1103": 0.2, "1106": 0.1, "1107": 0.1, "1109": 0, "1120": 0, "1122": 0 }),
+      "1": Object.freeze({ "1101": 0.3, "1102": 0.15, "1103": 0.3, "1106": 0.15, "1107": 0.15, "1109": 0.025, "1120": 25, "1122": 500 }),
+      "2": Object.freeze({ "1101": 0.4, "1102": 0.2, "1103": 0.4, "1106": 0.2, "1107": 0.2, "1109": 0.05, "1120": 50, "1122": 1000 }),
+      "3": Object.freeze({ "1101": 0.5, "1102": 0.25, "1103": 0.5, "1106": 0.25, "1107": 0.25, "1109": 0.075, "1120": 75, "1122": 1500 }),
+      "4": Object.freeze({ "1101": 0.6, "1102": 0.3, "1103": 0.6, "1106": 0.3, "1107": 0.3, "1109": 0.1, "1120": 100, "1122": 2000 }),
+      "5": Object.freeze({ "1101": 0.8, "1102": 0.4, "1103": 0.8, "1106": 0.4, "1107": 0.4, "1109": 0.125, "1120": 125, "1122": 2500 }),
+      "6": Object.freeze({ "1101": 0.9, "1102": 0.45, "1103": 0.9, "1106": 0.45, "1107": 0.45, "1109": 0.15, "1120": 150, "1122": 3000 }),
+      "7": Object.freeze({ "1101": 1, "1102": 0.5, "1103": 1, "1106": 0.5, "1107": 0.5, "1109": 0.175, "1120": 175, "1122": 3500 }),
+      "8": Object.freeze({ "1101": 1.1, "1102": 0.55, "1103": 1.1, "1106": 0.55, "1107": 0.55, "1109": 0.2, "1120": 200, "1122": 4000 }),
+      "9": Object.freeze({ "1101": 1.2, "1102": 0.6, "1103": 1.2, "1106": 0.6, "1107": 0.6, "1109": 0.225, "1120": 225, "1122": 4500 }),
+      "10": Object.freeze({ "1101": 1.4, "1102": 0.7, "1103": 1.4, "1106": 0.7, "1107": 0.7, "1109": 0.25, "1120": 250, "1122": 5000 }),
     }),
     "5": Object.freeze({
-      "0": Object.freeze({ "1101": 1.2, "1102": 0.6, "1103": 1.2, "1106": 0.6, "1107": 0.6, "1109": 0.08 }),
-      "1": Object.freeze({ "1101": 2, "1102": 1, "1103": 2, "1106": 1, "1107": 1, "1109": 0.085 }),
-      "2": Object.freeze({ "1101": 2.6, "1102": 1.3, "1103": 2.6, "1106": 1.3, "1107": 1.3, "1109": 0.09 }),
-      "3": Object.freeze({ "1101": 3.2, "1102": 1.6, "1103": 3.2, "1106": 1.6, "1107": 1.6, "1109": 0.095 }),
-      "4": Object.freeze({ "1101": 3.6, "1102": 1.8, "1103": 3.6, "1106": 1.8, "1107": 1.8, "1109": 0.1 }),
-      "5": Object.freeze({ "1101": 4.6, "1102": 2.3, "1103": 4.6, "1106": 2.3, "1107": 2.3, "1109": 0.105 }),
-      "6": Object.freeze({ "1101": 5.4, "1102": 2.7, "1103": 5.4, "1106": 2.7, "1107": 2.7, "1109": 0.11 }),
-      "7": Object.freeze({ "1101": 6, "1102": 3, "1103": 6, "1106": 3, "1107": 3, "1109": 0.115 }),
-      "8": Object.freeze({ "1101": 6.6, "1102": 3.3, "1103": 6.6, "1106": 3.3, "1107": 3.3, "1109": 0.12 }),
-      "9": Object.freeze({ "1101": 7, "1102": 3.5, "1103": 7, "1106": 3.5, "1107": 3.5, "1109": 0.125 }),
-      "10": Object.freeze({ "1101": 8, "1102": 4, "1103": 8, "1106": 4, "1107": 4, "1109": 0.13 }),
+      "0": Object.freeze({ "1101": 1.2, "1102": 0.6, "1103": 1.2, "1106": 0.6, "1107": 0.6, "1109": 0.08, "1120": 80, "1122": 1600 }),
+      "1": Object.freeze({ "1101": 2, "1102": 1, "1103": 2, "1106": 1, "1107": 1, "1109": 0.085, "1120": 85, "1122": 1700 }),
+      "2": Object.freeze({ "1101": 2.6, "1102": 1.3, "1103": 2.6, "1106": 1.3, "1107": 1.3, "1109": 0.09, "1120": 90, "1122": 1800 }),
+      "3": Object.freeze({ "1101": 3.2, "1102": 1.6, "1103": 3.2, "1106": 1.6, "1107": 1.6, "1109": 0.095, "1120": 95, "1122": 1900 }),
+      "4": Object.freeze({ "1101": 3.6, "1102": 1.8, "1103": 3.6, "1106": 1.8, "1107": 1.8, "1109": 0.1, "1120": 100, "1122": 2000 }),
+      "5": Object.freeze({ "1101": 4.6, "1102": 2.3, "1103": 4.6, "1106": 2.3, "1107": 2.3, "1109": 0.105, "1120": 105, "1122": 2100 }),
+      "6": Object.freeze({ "1101": 5.4, "1102": 2.7, "1103": 5.4, "1106": 2.7, "1107": 2.7, "1109": 0.11, "1120": 110, "1122": 2200 }),
+      "7": Object.freeze({ "1101": 6, "1102": 3, "1103": 6, "1106": 3, "1107": 3, "1109": 0.115, "1120": 115, "1122": 2300 }),
+      "8": Object.freeze({ "1101": 6.6, "1102": 3.3, "1103": 6.6, "1106": 3.3, "1107": 3.3, "1109": 0.12, "1120": 120, "1122": 2400 }),
+      "9": Object.freeze({ "1101": 7, "1102": 3.5, "1103": 7, "1106": 3.5, "1107": 3.5, "1109": 0.125, "1120": 125, "1122": 2500 }),
+      "10": Object.freeze({ "1101": 8, "1102": 4, "1103": 8, "1106": 4, "1107": 4, "1109": 0.13, "1120": 130, "1122": 2600 }),
     }),
   });
   const RIDE_OWNED_EFFECT_ROWS_BY_ID = Object.freeze({
@@ -1782,20 +1819,50 @@
       Object.freeze({ linkedId: "1103", value: 1 }),
       Object.freeze({ linkedId: "1107", value: 1 }),
     ]),
+    "200000023": Object.freeze([
+      Object.freeze({ linkedId: "1101", value: 1.25 }),
+      Object.freeze({ linkedId: "1103", value: 1 }),
+      Object.freeze({ linkedId: "1168", value: 1 }),
+    ]),
+    "200000024": Object.freeze([
+      Object.freeze({ linkedId: "1101", value: 1.25 }),
+      Object.freeze({ linkedId: "1103", value: 1 }),
+      Object.freeze({ linkedId: "1169", value: 1 }),
+    ]),
+    "200000025": Object.freeze([
+      Object.freeze({ linkedId: "1101", value: 1.25 }),
+      Object.freeze({ linkedId: "1103", value: 1 }),
+      Object.freeze({ linkedId: "1153", value: 1 }),
+    ]),
+    "200000026": Object.freeze([
+      Object.freeze({ linkedId: "1101", value: 1.25 }),
+      Object.freeze({ linkedId: "1103", value: 1 }),
+      Object.freeze({ linkedId: "1151", value: 1 }),
+    ]),
+    "200000027": Object.freeze([
+      Object.freeze({ linkedId: "1101", value: 1.25 }),
+      Object.freeze({ linkedId: "1103", value: 1 }),
+      Object.freeze({ linkedId: "1155", value: 1 }),
+    ]),
+    "200000028": Object.freeze([
+      Object.freeze({ linkedId: "1101", value: 1.25 }),
+      Object.freeze({ linkedId: "1103", value: 1 }),
+      Object.freeze({ linkedId: "1167", value: 1 }),
+    ]),
   });
   const RIDE_OWNED_EFFECT_WEIGHTS_BY_TIER = Object.freeze({
     "5": Object.freeze({
-      "0": Object.freeze({ "1101": 1.2, "1102": 0.6, "1103": 1.2, "1106": 0.6, "1107": 0.6, "1109": 0.005 }),
-      "1": Object.freeze({ "1101": 2, "1102": 1, "1103": 2, "1106": 1, "1107": 1, "1109": 0.013 }),
-      "2": Object.freeze({ "1101": 2.6, "1102": 1.3, "1103": 2.6, "1106": 1.3, "1107": 1.3, "1109": 0.026 }),
-      "3": Object.freeze({ "1101": 3.2, "1102": 1.6, "1103": 3.2, "1106": 1.6, "1107": 1.6, "1109": 0.039 }),
-      "4": Object.freeze({ "1101": 3.6, "1102": 1.8, "1103": 3.6, "1106": 1.8, "1107": 1.8, "1109": 0.052 }),
-      "5": Object.freeze({ "1101": 4.6, "1102": 2.3, "1103": 4.6, "1106": 2.3, "1107": 2.3, "1109": 0.065 }),
-      "6": Object.freeze({ "1101": 5.4, "1102": 2.7, "1103": 5.4, "1106": 2.7, "1107": 2.7, "1109": 0.078 }),
-      "7": Object.freeze({ "1101": 6, "1102": 3, "1103": 6, "1106": 3, "1107": 3, "1109": 0.091 }),
-      "8": Object.freeze({ "1101": 6.6, "1102": 3.3, "1103": 6.6, "1106": 3.3, "1107": 3.3, "1109": 0.104 }),
-      "9": Object.freeze({ "1101": 7, "1102": 3.5, "1103": 7, "1106": 3.5, "1107": 3.5, "1109": 0.117 }),
-      "10": Object.freeze({ "1101": 8, "1102": 4, "1103": 8, "1106": 4, "1107": 4, "1109": 0.13 }),
+      "0": Object.freeze({ "1101": 1.2, "1102": 0.6, "1103": 1.2, "1106": 0.6, "1107": 0.6, "1109": 0.08, "1151": 500, "1153": 1000, "1155": 1000, "1167": 1000, "1168": 1000, "1169": 1000 }),
+      "1": Object.freeze({ "1101": 2, "1102": 1, "1103": 2, "1106": 1, "1107": 1, "1109": 0.085, "1151": 550, "1153": 1100, "1155": 1100, "1167": 1100, "1168": 1100, "1169": 1100 }),
+      "2": Object.freeze({ "1101": 2.6, "1102": 1.3, "1103": 2.6, "1106": 1.3, "1107": 1.3, "1109": 0.09, "1151": 600, "1153": 1200, "1155": 1200, "1167": 1200, "1168": 1200, "1169": 1200 }),
+      "3": Object.freeze({ "1101": 3.2, "1102": 1.6, "1103": 3.2, "1106": 1.6, "1107": 1.6, "1109": 0.095, "1151": 650, "1153": 1300, "1155": 1300, "1167": 1300, "1168": 1300, "1169": 1300 }),
+      "4": Object.freeze({ "1101": 3.6, "1102": 1.8, "1103": 3.6, "1106": 1.8, "1107": 1.8, "1109": 0.1, "1151": 700, "1153": 1400, "1155": 1400, "1167": 1400, "1168": 1400, "1169": 1400 }),
+      "5": Object.freeze({ "1101": 4.6, "1102": 2.3, "1103": 4.6, "1106": 2.3, "1107": 2.3, "1109": 0.105, "1151": 750, "1153": 1500, "1155": 1500, "1167": 1500, "1168": 1500, "1169": 1500 }),
+      "6": Object.freeze({ "1101": 5.4, "1102": 2.7, "1103": 5.4, "1106": 2.7, "1107": 2.7, "1109": 0.11, "1151": 800, "1153": 1600, "1155": 1600, "1167": 1600, "1168": 1600, "1169": 1600 }),
+      "7": Object.freeze({ "1101": 6, "1102": 3, "1103": 6, "1106": 3, "1107": 3, "1109": 0.115, "1151": 850, "1153": 1700, "1155": 1700, "1167": 1700, "1168": 1700, "1169": 1700 }),
+      "8": Object.freeze({ "1101": 6.6, "1102": 3.3, "1103": 6.6, "1106": 3.3, "1107": 3.3, "1109": 0.12, "1151": 900, "1153": 1800, "1155": 1800, "1167": 1800, "1168": 1800, "1169": 1800 }),
+      "9": Object.freeze({ "1101": 7, "1102": 3.5, "1103": 7, "1106": 3.5, "1107": 3.5, "1109": 0.125, "1151": 950, "1153": 1900, "1155": 1900, "1167": 1900, "1168": 1900, "1169": 1900 }),
+      "10": Object.freeze({ "1101": 8, "1102": 4, "1103": 8, "1106": 4, "1107": 4, "1109": 0.13, "1151": 1000, "1153": 2000, "1155": 2000, "1167": 2000, "1168": 2000, "1169": 2000 }),
     }),
   });
   const HERO_SCENE_LAYOUT_OVERRIDES = {
@@ -1813,6 +1880,12 @@
     "220000010": "Weapon/W10010",
     "220000011": "Weapon/W10011",
     "220000012": "Weapon/W10012",
+    "220000037": "Weapon/W10073",
+    "220000038": "Weapon/W10080",
+    "220000039": "Weapon/W10069",
+    "220000040": "Weapon/W10070",
+    "220000041": "Weapon/W10083",
+    "220000042": "Weapon/W10078",
   });
   const DEFAULT_WEAPON_EQUIPMENT_SET_KEY_BY_ID = Object.freeze({
     "220000007": "woodland-warrior",
@@ -1821,6 +1894,12 @@
     "220000010": "quiet-lotus",
     "220000011": "woodland-warrior",
     "220000012": "quiet-lotus",
+    "220000037": "woodland-warrior",
+    "220000038": "quiet-lotus",
+    "220000039": "woodland-warrior",
+    "220000040": "quiet-lotus",
+    "220000041": "woodland-warrior",
+    "220000042": "quiet-lotus",
   });
   const WEAPON_EQUIPMENT_SETS = Object.freeze([
     Object.freeze({
@@ -1856,6 +1935,12 @@
     "220000010": Object.freeze({ scaleMultiplier: 0.8, offsetXRatio: 0.17, offsetYRatio: 0.015 }),
     "220000011": Object.freeze({ scaleMultiplier: 0.82, offsetXRatio: 0.15, offsetYRatio: 0.015 }),
     "220000012": Object.freeze({ scaleMultiplier: 0.84, offsetXRatio: 0.14, offsetYRatio: 0.02 }),
+    "220000037": Object.freeze({ scaleMultiplier: 0.8, offsetXRatio: 0.16, offsetYRatio: 0.01 }),
+    "220000038": Object.freeze({ scaleMultiplier: 0.82, offsetXRatio: 0.15, offsetYRatio: 0.015 }),
+    "220000039": Object.freeze({ scaleMultiplier: 0.82, offsetXRatio: 0.145, offsetYRatio: 0.015 }),
+    "220000040": Object.freeze({ scaleMultiplier: 0.8, offsetXRatio: 0.17, offsetYRatio: 0.015 }),
+    "220000041": Object.freeze({ scaleMultiplier: 0.82, offsetXRatio: 0.15, offsetYRatio: 0.015 }),
+    "220000042": Object.freeze({ scaleMultiplier: 0.84, offsetXRatio: 0.14, offsetYRatio: 0.02 }),
   };
   const DEFAULT_RIDE_SPINE_LAYOUT_OPTIONS = {
     "200000009": Object.freeze({ offsetYRatio: 0 }),
@@ -1870,6 +1955,12 @@
     "220000011", // Uba
     "220000012", // Sara
     "220000008", // Ann
+    "220000037", // Woody
+    "220000039", // Pobi
+    "220000040", // Lucy
+    "220000041", // Uba
+    "220000042", // Sara
+    "220000038", // Ann
   ]);
   const WEAPON_DISPLAY_ORDER_BY_ID = Object.freeze(
     WEAPON_DISPLAY_SEQUENCE.reduce((accumulator, id, index) => {
@@ -1884,6 +1975,12 @@
     "220000010": "assets/backgrounds/weapons/weapons_bg_water.webp",
     "220000011": "assets/backgrounds/weapons/weapons_bg_leaf.webp",
     "220000012": "assets/backgrounds/weapons/weapons_bg_fire.webp",
+    "220000037": "assets/backgrounds/weapons/weapons_bg_fire.webp",
+    "220000038": "assets/backgrounds/weapons/weapons_bg_fire.webp",
+    "220000039": "assets/backgrounds/weapons/weapons_bg_water.webp",
+    "220000040": "assets/backgrounds/weapons/weapons_bg_water.webp",
+    "220000041": "assets/backgrounds/weapons/weapons_bg_leaf.webp",
+    "220000042": "assets/backgrounds/weapons/weapons_bg_wind.webp",
   });
 
   const SCENE_EMBER_LAYOUT = [
@@ -1936,6 +2033,7 @@
   const SKILL_TEXT_PLACEHOLDER_OVERRIDES = new Map([
     ["1107901:\uC21C\uD48D \uAC00\uB974\uAE30:2", "\uBC14\uB78C \uC18D\uC131"],
     ["1103901:\uBC29\uC6B8\uAC10\uC625:2", "\uBB3C \uC18D\uC131"],
+    ["1112601:\uC758\uAE30 \uC18C\uCE68:2", "\uC9C0\uC815\uB41C"],
   ]);
   const EXTRA_PET_ENRICHMENTS = new Map(
     (Array.isArray(window.GACHA_VIEWER_EXTRA_PETS) ? window.GACHA_VIEWER_EXTRA_PETS : [])
@@ -2436,27 +2534,7 @@
       ],
     }),
     buildExtraPetPlaceholder({
-      order: 24,
-      characterId: "1112501",
-      name: "킹고르",
-      title: "미분류 신규 본체",
-      description: "펫 테이블 미등록 / 정식 획득 경로 미확인",
-      elementKey: "water",
-      attackTypeKey: "melee",
-      attackSpeedType: 2,
-      statusLabel: "미분류",
-      statusSummary: "APK 신규 본체 / 캐릭터·스킬·에셋만 확인",
-      statusTone: "upcoming",
-      acquisitionEntries: [
-        {
-          title: "앱 신규 데이터",
-          summary: "캐릭터 / 스킬 / 에셋만 확인",
-          tone: "upcoming",
-        },
-      ],
-    }),
-    buildExtraPetPlaceholder({
-      order: 25,
+      order: 27,
       characterId: "1112601",
       petSubgroupKey: "gacha",
       name: "타이혼",
@@ -2487,6 +2565,72 @@
             period: 7,
           },
         },
+        {
+          start: "2026-06-20",
+          end: "2026-06-26",
+          status: "upcoming",
+          scheduleRule: {
+            timeType: 5,
+            start: "2026-06-20",
+            end: "2026-06-26",
+            openDay: 83,
+          },
+        },
+        {
+          start: "2026-08-01",
+          end: "2026-08-07",
+          status: "upcoming",
+          scheduleRule: {
+            timeType: 5,
+            start: "2026-08-01",
+            end: "2026-08-07",
+            openDay: 83,
+          },
+        },
+        {
+          start: "2026-09-12",
+          end: "2026-09-18",
+          status: "upcoming",
+          scheduleRule: {
+            timeType: 5,
+            start: "2026-09-12",
+            end: "2026-09-18",
+            openDay: 83,
+          },
+        },
+        {
+          start: "2026-10-24",
+          end: "2026-10-30",
+          status: "upcoming",
+          scheduleRule: {
+            timeType: 5,
+            start: "2026-10-24",
+            end: "2026-10-30",
+            openDay: 83,
+          },
+        },
+        {
+          start: "2026-12-05",
+          end: "2026-12-11",
+          status: "upcoming",
+          scheduleRule: {
+            timeType: 5,
+            start: "2026-12-05",
+            end: "2026-12-11",
+            openDay: 83,
+          },
+        },
+        {
+          start: "2027-01-16",
+          end: "2027-01-22",
+          status: "upcoming",
+          scheduleRule: {
+            timeType: 5,
+            start: "2027-01-16",
+            end: "2027-01-22",
+            openDay: 83,
+          },
+        },
       ],
       elementKey: "wind",
       attackTypeKey: "support",
@@ -2507,34 +2651,11 @@
         },
       ],
     }),
-    // buildExtraPetPlaceholder({
-    //   order: 24,
-    //   characterId: "1100201",
-    //   name: "극호",
-    //   title: "산군의 위엄",
-    //   description: "미확인/숨김 SS 펫",
-    //   attackTypeKey: "melee",
-    //   statusLabel: "미확인",
-    //   statusSummary: "미확인 또는 숨김 처리된 SS 펫입니다.",
-    //   statusTone: "past",
-    // }),
-    // buildExtraPetPlaceholder({
-    //   order: 25,
-    //   characterId: "1112401",
-    //   name: "킹우리",
-    //   title: "꼬마 돼지들의 왕",
-    //   description: "미확인/숨김 SS 펫",
-    //   attackTypeKey: "support",
-    //   statusLabel: "미확인",
-    //   statusSummary: "미확인 또는 숨김 처리된 SS 펫입니다.",
-    //   statusTone: "past",
-    // }),
   ];
 
   const PET_SUBGROUPS = [
     { key: "gacha", label: "가챠·이벤트" },
     { key: "content", label: "콘텐츠·상점" },
-    { key: "uncategorized", label: "미분류" },
   ];
 
   const CONTENT_SHOP_PET_IDS = new Set([
@@ -2562,6 +2683,9 @@
     "1105201": 90, // 골드로비
     "1104701": 97, // 프라키토스
     "1103601": 104, // 플라티우스
+    "1112501": 111, // 킹고르
+    "1100201": 118, // 극호
+    "1112401": 125, // 킹우리
   });
   const PET_DISPLAY_ORDER_BY_ID = Object.freeze({
     "1112601": 1, // 타이혼
@@ -2578,6 +2702,9 @@
     "1105201": 12, // 골드로비
     "1104701": 13, // 프라키토스
     "1103601": 14, // 플라티우스
+    "1112501": 15, // 킹고르
+    "1100201": 16, // 극호
+    "1112401": 17, // 킹우리
   });
 
   function injectExtraPetPlaceholders() {
@@ -2739,7 +2866,7 @@
       || pet?.subgroupKey
       || ""
     ).trim();
-    if (explicitSubgroupKey) {
+    if (explicitSubgroupKey === "content" || explicitSubgroupKey === "gacha") {
       return explicitSubgroupKey;
     }
     return CONTENT_SHOP_PET_IDS.has(getEntityId(pet)) ? "content" : "gacha";
@@ -2747,11 +2874,29 @@
 
   function getDisplayItems(category = getActiveCategory(), petSubgroupKey = state.activePetSubgroupKey) {
     const items = getItems(category);
+    const filterEndedItems = (list) => state.showPastRailItems
+      ? list
+      : list.filter((item) => !isEndedRailItem(item));
+    if (category?.key !== "pet") {
+      return filterEndedItems(items);
+    }
+    const filteredItems = items.filter((item) => getPetSubgroupKeyForItem(item) === petSubgroupKey);
+    const groupedItems = filteredItems.length ? filteredItems : items;
+    return filterEndedItems(groupedItems);
+  }
+
+  function getRailFilterBaseItems(category = getActiveCategory()) {
+    const items = getItems(category);
     if (category?.key !== "pet") {
       return items;
     }
-    const filteredItems = items.filter((item) => getPetSubgroupKeyForItem(item) === petSubgroupKey);
+    const filteredItems = items.filter((item) => getPetSubgroupKeyForItem(item) === state.activePetSubgroupKey);
     return filteredItems.length ? filteredItems : items;
+  }
+
+  function isEndedRailItem(item) {
+    const hasSchedule = Array.isArray(item?.schedules) && item.schedules.length > 0;
+    return hasSchedule && getPetStatus(item).tone === "past";
   }
 
   function syncPetSubgroupSelection(category = getActiveCategory()) {
@@ -2765,6 +2910,24 @@
     }
     const currentItem = getCurrentItem(category);
     if (currentItem && getPetSubgroupKeyForItem(currentItem) === state.activePetSubgroupKey) {
+      return;
+    }
+    const preferredIndex = clamp(findPreferredIndex(displayItems), 0, displayItems.length - 1);
+    const nextItem = displayItems[preferredIndex] || displayItems[0];
+    const nextIndex = allItems.findIndex((item) => getEntityId(item) === getEntityId(nextItem));
+    if (nextIndex >= 0) {
+      state.selectedIndexByCategory[category.key] = nextIndex;
+    }
+  }
+
+  function syncRailVisibleSelection(category = getActiveCategory()) {
+    const allItems = getItems(category);
+    const displayItems = getDisplayItems(category);
+    if (!allItems.length || !displayItems.length) {
+      return;
+    }
+    const currentItem = getCurrentItem(category);
+    if (currentItem && displayItems.some((item) => getEntityId(item) === getEntityId(currentItem))) {
       return;
     }
     const preferredIndex = clamp(findPreferredIndex(displayItems), 0, displayItems.length - 1);
@@ -3335,8 +3498,8 @@
           /^ani1$/i,
         ]
       : [
-          /idle[_ -]?big/i,
           /^idle$/i,
+          /idle[_ -]?big/i,
           /idle/i,
           /active[_ -]?a/i,
           /appear[_ -]?big/i,
@@ -4112,6 +4275,12 @@
     ) {
       resolved = resolved.replace(/\{2\}/g, "방어형");
     }
+    if (
+      /\{2\}/.test(resolved)
+      && /탑승 조련사에게[\s\S]*\{2\}[\s\S]*적에 대한/.test(context)
+    ) {
+      resolved = resolved.replace(/\{2\}/g, "지정된");
+    }
 
     return resolved;
   }
@@ -4194,8 +4363,9 @@
     { term: "잡기 면역", note: "잡기 면역" },
     { term: "넘기기 면역", note: "넘기기 면역" },
     { term: "현재 스킬 쿨타임 초기화", note: "현재 스킬 쿨타임을 초기화" },
-    { term: "기본 스킬 쿨타임 감소", note: "기본 스킬 쿨타임 감소" },
-    { term: "현재 스킬 쿨타임 감소", note: "현재 스킬 쿨타임 감소" },
+    { term: "최대 쿨타임 감소", note: "기본 스킬 쿨타임 감소" },
+    { term: "기본 스킬 쿨타임 감소", note: "기본 스킬의 최대 쿨타임 감소" },
+    { term: "현재 스킬 쿨타임 감소", note: "현재 적용 중인 스킬 쿨타임 감소" },
     { term: "최대 체력 비례형 피해", note: "대상의 최대 체력 비례 피해" },
     { term: "피해 차단(방어형)", note: "방어형이 주는 피해 차단" },
     { term: "피해 차단(근거리형)", note: "근거리형이 주는 피해 차단" },
@@ -4207,17 +4377,47 @@
     { term: "오한", note: "이동 속도, 공격 속도 감소" },
     { term: "왕발자국", note: "공격 속도, 이동 속도, 명중 감소" },
     { term: "거대화", note: "대상 거대화 및 최종 공격력, 방어력, 체력 증가" },
+    { term: "폭주", note: "대상 거대화 및 최종 공격력, 공격 속도 증가" },
     { term: "순발력", note: "회피, 공격 속도, 이동 속도 증가" },
+    { term: "공격력 증가", note: "공격력을 증가" },
+    { term: "방어력 증가", note: "방어력을 증가" },
+    { term: "명중 증가", note: "명중을 증가" },
+    { term: "회피 증가", note: "회피를 증가" },
+    { term: "공격 속도 증가", note: "공격 속도를 증가" },
+    { term: "이동 속도 증가", note: "이동 속도를 증가" },
+    { term: "슈퍼 치명타 확률 증가", note: "슈퍼 치명타 확률을 증가" },
+    { term: "슈퍼 치명타 피해 증가", note: "슈퍼 치명타 피해를 증가" },
+    { term: "치명타 확률 증가", note: "치명타 확률을 증가" },
+    { term: "치명타 피해 증가", note: "치명타 피해를 증가" },
+    { term: "치명타 저항 증가", note: "치명타 저항을 증가" },
+    { term: "자연 체력회복 증가", note: "자연 체력회복을 증가" },
+    { term: "체력 최대값 증가", note: "체력 최대값을 증가" },
+    { term: "피해량 증가", note: "스킬로 주는 피해량을 증가" },
+    { term: "받는 지속 피해 증가", note: "받는 지속 피해를 증가" },
+    { term: "받는 피해 감소", note: "받는 피해를 감소" },
+    { term: "받는 범위 피해 감소", note: "받는 범위 피해를 감소" },
+    { term: "공격력 감소", note: "공격력을 감소" },
+    { term: "방어력 감소", note: "방어력을 감소" },
+    { term: "명중 감소", note: "명중을 감소" },
     { term: "할퀴기", note: "받는 지속 피해, 받는 치명타 피해 증가" },
-    { term: "그을림", note: "일정 간격마다 공격력 비례 지속 피해" },
-    { term: "혹한의 칼날", note: "공격 속도, 이동 속도 감소" },
+    { term: "격노", note: "받는 범위 피해 8% 감소, 최종 피해량 10% 증가. 최대 10회 중첩" },
+    { term: "단단한 껍질", note: "치명타 저항 증가, 받는 추가 및 지속 피해 감소" },
+    { term: "도려내기", note: "해제 불가 상처를 남겨 1초마다 공격력 비례 피해" },
+    { term: "그을림", note: "성급/스킬에 따라 1초마다 공격력의 10~30% 피해" },
+    { term: "혹한의 칼날", note: "공격 속도, 이동 속도 30% 감소, 0.75초 후부터 1초마다 공격력의 4% 피해" },
     { term: "부패한 대지", note: "1초마다 공격력의 20% 피해" },
     { term: "뜨거운 기운", note: "1초마다 최대 체력의 3% 피해" },
     { term: "화상(태양의 검)", note: "1초마다 공격력의 50% 피해" },
     { term: "불새의 저주", note: "1초마다 공격력의 50% 피해, (무기) 공격력, 명중 감소" },
     { term: "맹독(근원의 손톱)", note: "1초마다 공격력의 70% 피해" },
+    { term: "모래 폭풍", note: "최종 명중 50% 감소, 0.75초 후부터 1초마다 공격력의 300% 피해" },
+    { term: "심해의 수압", note: "현재 스킬 쿨타임 2초 증가, 0.75초 후부터 1초마다 공격력의 400% 피해" },
+    { term: "천상의 심판", note: "회복 불가, 이로운 효과 3개 무작위 제거, 0.75초 후부터 1초마다 공격력의 200% 피해" },
+    { term: "천상의 가호", note: "시전자 체력의 50%만큼 피해 흡수" },
     { term: "추가 피해", note: "추가 피해를 줍니다." },
     { term: "체력 소모", note: "내 최대 체력의 일부를 소모" },
+    { term: "체력 회복", note: "체력을 회복" },
+    { term: "즉시 회복", note: "스킬 적용 시 즉시 체력 회복" },
     { term: "회복 불가", note: "회복 불가" },
     { term: "침묵", note: "스킬 불가" },
     { term: "수면", note: "공격 불가, 이동 불가, 스킬 불가. 피해를 받으면 수면이 해제됩니다." },
@@ -4254,7 +4454,38 @@
   }
 
   function resolveSkillFootnoteNote(entry, source, index) {
-    const matchedPercent = String(source || "").slice(index).match(/^[^(]*\((\d+)%\)/);
+    const sourceFromTerm = String(source || "").slice(index);
+    const matchedPercent = sourceFromTerm.match(/^[^(]*\((\d+)%\)/)
+      || sourceFromTerm.match(/^[^\d%]*(\d+)%/);
+    const percentValue = matchedPercent ? matchedPercent[1] : "";
+    const statChangeNotes = {
+      "공격력 증가": ["공격력", "증가"],
+      "방어력 증가": ["방어력", "증가"],
+      "명중 증가": ["명중", "증가"],
+      "회피 증가": ["회피", "증가"],
+      "공격 속도 증가": ["공격 속도", "증가"],
+      "이동 속도 증가": ["이동 속도", "증가"],
+      "슈퍼 치명타 확률 증가": ["슈퍼 치명타 확률", "증가"],
+      "슈퍼 치명타 피해 증가": ["슈퍼 치명타 피해", "증가"],
+      "치명타 확률 증가": ["치명타 확률", "증가"],
+      "치명타 피해 증가": ["치명타 피해", "증가"],
+      "치명타 저항 증가": ["치명타 저항", "증가"],
+      "자연 체력회복 증가": ["자연 체력회복", "증가"],
+      "체력 최대값 증가": ["체력 최대값", "증가"],
+      "피해량 증가": ["스킬로 주는 피해량", "증가"],
+      "받는 지속 피해 증가": ["받는 지속 피해", "증가"],
+      "받는 피해 감소": ["받는 피해", "감소"],
+      "받는 범위 피해 감소": ["받는 범위 피해", "감소"],
+      "공격력 감소": ["공격력", "감소"],
+      "방어력 감소": ["방어력", "감소"],
+      "명중 감소": ["명중", "감소"],
+    };
+    const statChangeNote = statChangeNotes[entry.term];
+    if (statChangeNote) {
+      return percentValue
+        ? `${statChangeNote[0]} ${percentValue}% ${statChangeNote[1]}`
+        : `${statChangeNote[0]} ${statChangeNote[1]}`;
+    }
     if (entry.term === "오한") {
       if (matchedPercent) {
         return `이동 속도, 공격 속도 ${matchedPercent[1]}% 감소`;
@@ -4273,6 +4504,12 @@
       }
       return "대상 거대화 및 최종 공격력, 방어력, 체력 증가";
     }
+    if (entry.term === "폭주") {
+      if (matchedPercent) {
+        return `대상 거대화 및 최종 공격력, 공격 속도 ${matchedPercent[1]}% 증가`;
+      }
+      return "대상 거대화 및 최종 공격력, 공격 속도 증가";
+    }
     if (entry.term === "순발력") {
       if (matchedPercent) {
         return `회피, 공격 속도, 이동 속도 ${matchedPercent[1]}% 증가`;
@@ -4285,11 +4522,23 @@
       }
       return "받는 지속 피해, 받는 치명타 피해 증가";
     }
+    if (entry.term === "단단한 껍질") {
+      if (matchedPercent) {
+        return `치명타 저항 ${matchedPercent[1]}% 증가, 받는 추가 및 지속 피해 ${matchedPercent[1]}% 감소. 발동할 때마다 각각 2%씩 감소`;
+      }
+      return "치명타 저항 증가, 받는 추가 및 지속 피해 감소. 발동할 때마다 수치 감소";
+    }
+    if (entry.term === "도려내기") {
+      if (matchedPercent) {
+        return `해제 불가 상처를 남겨 1초마다 공격력의 ${matchedPercent[1]}% 피해`;
+      }
+      return "해제 불가 상처를 남겨 1초마다 공격력 비례 피해";
+    }
     if (entry.term === "혹한의 칼날") {
       if (matchedPercent) {
-        return `공격 속도, 이동 속도 ${matchedPercent[1]}% 감소`;
+        return `공격 속도, 이동 속도 ${matchedPercent[1]}% 감소, 0.75초 후부터 1초마다 공격력의 4% 피해`;
       }
-      return "공격 속도, 이동 속도 감소";
+      return entry.note;
     }
     if (entry.term === "불새의 저주") {
       if (matchedPercent) {
@@ -4319,6 +4568,19 @@
     const matches = [];
     SKILL_EFFECT_FOOTNOTE_DEFS.forEach((entry) => {
       if (isRedundantSkillFootnote(entry)) return;
+      if (entry.term === "체력 회복") {
+        const healPattern = /체력\s*(\d+)%\s*회복/g;
+        let healMatch = null;
+        while ((healMatch = healPattern.exec(source)) !== null) {
+          matches.push({
+            ...entry,
+            note: `체력 ${healMatch[1]}% 회복`,
+            index: healMatch.index,
+            end: healMatch.index + healMatch[0].length,
+          });
+        }
+        return;
+      }
       let fromIndex = 0;
       while (fromIndex < source.length) {
         const index = source.indexOf(entry.term, fromIndex);
@@ -4637,10 +4899,19 @@
   function findPreferredIndex(items) {
     if (!items.length) return 0;
     const currentDateTimeKey = getTimeZoneDateTimeKey();
-    const currentIndex = items.findIndex((item) => getResolvedSchedules(item, currentDateTimeKey).some((schedule) => schedule.resolvedStatus === "current"));
-    if (currentIndex >= 0) return currentIndex;
-    const upcomingIndex = items.findIndex((item) => getResolvedSchedules(item, currentDateTimeKey).some((schedule) => schedule.resolvedStatus === "upcoming"));
-    return upcomingIndex >= 0 ? upcomingIndex : 0;
+    const indexedItems = items.map((item, index) => ({ item, index }));
+    const skillItems = indexedItems.filter(({ item }) => hasDisplayableSkills(item));
+    const preferredItems = skillItems.length ? skillItems : indexedItems;
+    const currentEntry = preferredItems.find(({ item }) => getResolvedSchedules(item, currentDateTimeKey).some((schedule) => schedule.resolvedStatus === "current"));
+    if (currentEntry) return currentEntry.index;
+    const upcomingEntry = preferredItems.find(({ item }) => getResolvedSchedules(item, currentDateTimeKey).some((schedule) => schedule.resolvedStatus === "upcoming"));
+    if (upcomingEntry) return upcomingEntry.index;
+    return preferredItems[0]?.index || 0;
+  }
+
+  function hasDisplayableSkills(item) {
+    return Array.isArray(item?.skills)
+      && item.skills.some((skill) => Array.isArray(skill?.variants) && skill.variants.length > 0);
   }
 
   function findInitialSelection() {
@@ -4718,6 +4989,11 @@
     return `${text}%`;
   }
 
+  function formatOwnedEffectValue(value, meta) {
+    const multiplier = Number(meta && meta.percentMultiplier);
+    return formatOwnedEffectPercent(value * (Number.isFinite(multiplier) ? multiplier : 100));
+  }
+
   function selectedWeaponOwnedEffectVariant(pet) {
     const selectedSkill = getSelectedSkill(pet);
     return selectedSkill ? getSelectedVariant(pet, selectedSkill).data : null;
@@ -4742,7 +5018,7 @@
       return {
         badge: meta.badge || String(entry.linkedId || ""),
         label: meta.label || String(entry.linkedId || ""),
-        value: formatOwnedEffectPercent(value * weight * 100),
+        value: formatOwnedEffectValue(value * weight, meta),
       };
     }).filter(Boolean);
   }
@@ -4771,7 +5047,7 @@
       return {
         badge: meta.badge || String(entry.linkedId || ""),
         label: meta.label || String(entry.linkedId || ""),
-        value: formatOwnedEffectPercent(value * weight * 100),
+        value: formatOwnedEffectValue(value * weight, meta),
       };
     }).filter(Boolean);
   }
@@ -5234,7 +5510,6 @@
       const row = document.createElement("div");
       row.className = "portrait-owned-effect-entry";
       row.innerHTML = `
-        <span class="portrait-owned-effect-badge">${escapeHtml(entry.badge || "")}</span>
         <strong class="portrait-owned-effect-label">${escapeHtml(entry.label || "-")}</strong>
         <span class="portrait-owned-effect-value">${escapeHtml(entry.value || "-")}</span>
       `;
@@ -5335,6 +5610,18 @@
     });
   }
 
+  function renderRailPastToggle(category) {
+    if (!elements.railPastToggle) {
+      return;
+    }
+    const endedCount = getRailFilterBaseItems(category).filter((item) => isEndedRailItem(item)).length;
+    elements.railPastToggle.hidden = endedCount === 0;
+    elements.railPastToggle.textContent = state.showPastRailItems
+      ? `종료 항목 숨기기 (${endedCount})`
+      : `종료 항목 보기 (${endedCount})`;
+    elements.railPastToggle.setAttribute("aria-pressed", state.showPastRailItems ? "true" : "false");
+  }
+
   function renderPetList() {
     const category = getActiveCategory();
     const allItems = getItems(category);
@@ -5342,7 +5629,13 @@
     const currentIndex = getCurrentIndex(category);
     renderRailHeader(category);
     renderPetSubfilters(category);
+    renderRailPastToggle(category);
     elements.petList.innerHTML = "";
+
+    if (!items.length) {
+      elements.petList.innerHTML = `<div class="pet-list-empty">${state.showPastRailItems ? "표시할 항목이 없습니다." : "종료 항목이 숨겨져 있습니다."}</div>`;
+      return;
+    }
 
       items.forEach((pet) => {
         const actualIndex = allItems.findIndex((item) => getEntityId(item) === getEntityId(pet));
@@ -5565,6 +5858,7 @@
       button.addEventListener("click", () => {
         state.selectedSkillKeyByPet[getEntityId(pet)] = key;
         renderSkillPanels(pet);
+        renderOwnedEffectCard(pet);
       });
 
       const badge = createSkillBadge(skill, variant, false, false);
@@ -5683,6 +5977,7 @@
         if (state.selectedSkillKeyByPet[getEntityId(pet)] === key) return;
         state.selectedSkillKeyByPet[getEntityId(pet)] = key;
         renderSkillPanels(pet);
+        renderOwnedEffectCard(pet);
       });
 
       const badge = createSkillBadge(skill, variant, isActive, false);
@@ -5925,11 +6220,13 @@
   function selectVariant(pet, skill, index) {
     state.selectedVariantBySkillKey[getSkillKey(pet, skill)] = clamp(index, 0, skill.variants.length - 1);
     renderSkillPanels(pet);
+    renderOwnedEffectCard(pet);
   }
 
   function render() {
     syncMobileLayout();
     syncPetSubgroupSelection();
+    syncRailVisibleSelection();
     const pet = getCurrentItem();
     if (!pet) {
       return;
@@ -5960,6 +6257,13 @@
     }
     lastScheduleStatusTickKey = nextTickKey;
     render();
+  }
+
+  function isExpectedSpineFallbackError(error) {
+    const message = String(error && error.message ? error.message : error || "");
+    return message.includes("Spine manifest data unavailable")
+      || message.includes("Spine manifest chunk missing data")
+      || message.includes("Spine skeleton data unavailable");
   }
 
   function renderSpotlightMedia(pet) {
@@ -6051,12 +6355,16 @@
         return mountSpinePreview(entityId, loadedManifestEntry, spineState.loadToken);
       })
       .catch((error) => {
-        console.warn(`Spine preview failed for ${entityId}.`, error);
+        const hasFallbackVisual = Boolean(mediaBanner || mediaBackground);
+        if (!hasFallbackVisual || !isExpectedSpineFallbackError(error)) {
+          console.warn(`Spine preview failed for ${entityId}.`, error);
+        }
         destroySpinePreview();
         spineState.mode = "fallback";
         elements.bannerImage.hidden = !Boolean(mediaBanner) || Boolean(sceneDefinition);
         if (elements.spotlightMedia) {
           elements.spotlightMedia.classList.remove("has-live-spine");
+          elements.spotlightMedia.classList.toggle("has-static-visual", hasFallbackVisual && !sceneDefinition);
         }
       })
       .finally(() => {
@@ -6171,6 +6479,13 @@
 
     elements.scheduleAdjustButton.addEventListener("touchend", cancelScheduleAdjustLongPress, { passive: true });
     elements.scheduleAdjustButton.addEventListener("touchcancel", cancelScheduleAdjustLongPress, { passive: true });
+  }
+
+  if (elements.railPastToggle) {
+    elements.railPastToggle.addEventListener("click", () => {
+      state.showPastRailItems = !state.showPastRailItems;
+      render();
+    });
   }
 
   if (elements.scheduleAdjustSelect) {

@@ -37,6 +37,11 @@ Vercel static deployment bundle for the gacha viewer.
 - Desktop no longer downloads `viewer-mobile.css`; the mobile stylesheet is gated with `media="(max-width: 900px)"`.
 - Debug captures, test artifacts, and local tooling pages are excluded from deployment.
 
+## Validation
+
+- Run `node tools/validate_text_encoding.js` before publishing or committing UI/data text changes.
+- A local pre-commit hook runs the same check and fails on invalid UTF-8, replacement characters, and common Korean mojibake patterns.
+
 ## Git
 
 - Repository already initialized with `main`.

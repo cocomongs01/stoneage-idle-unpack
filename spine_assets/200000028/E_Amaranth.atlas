@@ -1,0 +1,244 @@
+
+E_Amaranth.png
+size: 907,907
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+A/body
+  rotate: true
+  xy: 0, 381
+  size: 288, 198
+  orig: 513, 513
+  offset: 80, 141
+  index: -1
+A/body acc
+  rotate: true
+  xy: 378, 50
+  size: 86, 142
+  orig: 513, 513
+  offset: 148, 167
+  index: -1
+A/body acc2
+  rotate: false
+  xy: 546, 390
+  size: 209, 169
+  orig: 513, 513
+  offset: 150, 143
+  index: -1
+A/eye
+  rotate: false
+  xy: 378, 145
+  size: 20, 21
+  orig: 513, 513
+  offset: 59, 285
+  index: -1
+A/eyeball
+  rotate: false
+  xy: 717, 40
+  size: 55, 53
+  orig: 513, 513
+  offset: 47, 264
+  index: -1
+A/face2
+  rotate: true
+  xy: 426, 136
+  size: 117, 137
+  orig: 513, 513
+  offset: 14, 228
+  index: -1
+A/head_lower
+  rotate: true
+  xy: 198, 579
+  size: 90, 76
+  orig: 513, 513
+  offset: 34, 229
+  index: -1
+A/helmet1
+  rotate: true
+  xy: 563, 136
+  size: 118, 140
+  orig: 513, 513
+  offset: 1, 263
+  index: -1
+A/helmet2
+  rotate: false
+  xy: 292, 11
+  size: 81, 47
+  orig: 513, 513
+  offset: 89, 283
+  index: -1
+A/legl_1
+  rotate: false
+  xy: 626, 32
+  size: 91, 104
+  orig: 513, 513
+  offset: 274, 155
+  index: -1
+A/legl_2
+  rotate: false
+  xy: 717, 93
+  size: 72, 67
+  orig: 513, 513
+  offset: 283, 157
+  index: -1
+A/legl_3
+  rotate: true
+  xy: 520, 38
+  size: 98, 106
+  orig: 513, 513
+  offset: 267, 100
+  index: -1
+A/legl_3 acc
+  rotate: false
+  xy: 213, 3
+  size: 79, 55
+  orig: 513, 513
+  offset: 282, 112
+  index: -1
+A/legr_1
+  rotate: true
+  xy: 692, 254
+  size: 87, 102
+  orig: 513, 513
+  offset: 171, 161
+  index: -1
+A/legr_2
+  rotate: false
+  xy: 794, 277
+  size: 77, 64
+  orig: 513, 513
+  offset: 170, 163
+  index: -1
+A/legr_3
+  rotate: true
+  xy: 703, 160
+  size: 94, 90
+  orig: 513, 513
+  offset: 161, 116
+  index: -1
+A/legr_3 acc
+  rotate: false
+  xy: 373, 0
+  size: 75, 50
+  orig: 513, 513
+  offset: 178, 127
+  index: -1
+A/neck
+  rotate: true
+  xy: 426, 253
+  size: 145, 120
+  orig: 513, 513
+  offset: 81, 218
+  index: -1
+A/rope
+  rotate: false
+  xy: 636, 705
+  size: 255, 202
+  orig: 261, 261
+  offset: 1, 34
+  index: -1
+A/tail
+  rotate: true
+  xy: 416, 398
+  size: 151, 130
+  orig: 513, 513
+  offset: 337, 161
+  index: -1
+A/taill acc
+  rotate: true
+  xy: 794, 226
+  size: 51, 52
+  orig: 513, 513
+  offset: 402, 161
+  index: -1
+A/whisker l
+  rotate: false
+  xy: 282, 776
+  size: 354, 131
+  orig: 513, 513
+  offset: 104, 270
+  index: -1
+A/whisker l acc
+  rotate: false
+  xy: 214, 58
+  size: 164, 108
+  orig: 513, 513
+  offset: 228, 291
+  index: -1
+A/whisker r
+  rotate: false
+  xy: 0, 1
+  size: 213, 110
+  orig: 513, 513
+  offset: 51, 283
+  index: -1
+A/whisker r acc
+  rotate: false
+  xy: 533, 708
+  size: 76, 68
+  orig: 513, 513
+  offset: 115, 314
+  index: -1
+A/wing l 1
+  rotate: true
+  xy: 282, 549
+  size: 227, 251
+  orig: 513, 513
+  offset: 240, 253
+  index: -1
+A/wing l 1 acc
+  rotate: true
+  xy: 198, 391
+  size: 158, 218
+  orig: 513, 513
+  offset: 237, 253
+  index: -1
+A/wing l 2
+  rotate: true
+  xy: 0, 111
+  size: 270, 214
+  orig: 513, 513
+  offset: 232, 120
+  index: -1
+A/wing l 3
+  rotate: false
+  xy: 0, 669
+  size: 282, 238
+  orig: 513, 513
+  offset: 231, 49
+  index: -1
+A/wing l 3 acc
+  rotate: false
+  xy: 214, 166
+  size: 212, 225
+  orig: 513, 513
+  offset: 231, 58
+  index: -1
+A/wing r2
+  rotate: true
+  xy: 761, 541
+  size: 164, 146
+  orig: 513, 513
+  offset: 119, 164
+  index: -1
+A/wing r2 acc
+  rotate: false
+  xy: 546, 254
+  size: 146, 136
+  orig: 513, 513
+  offset: 116, 177
+  index: -1
+A/wing r3
+  rotate: true
+  xy: 533, 559
+  size: 146, 228
+  orig: 513, 513
+  offset: 82, 58
+  index: -1
+A/wing r3 acc
+  rotate: false
+  xy: 755, 341
+  size: 136, 200
+  orig: 513, 513
+  offset: 77, 86
+  index: -1

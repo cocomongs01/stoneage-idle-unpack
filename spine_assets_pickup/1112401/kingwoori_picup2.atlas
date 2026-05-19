@@ -1,0 +1,314 @@
+
+kingwoori_picup2.png
+size: 1479,1479
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+A/acc
+  rotate: true
+  xy: 365, 660
+  size: 189, 125
+  orig: 615, 677
+  offset: 169, 471
+  index: -1
+A/arm l2_1
+  rotate: true
+  xy: 275, 486
+  size: 140, 187
+  orig: 615, 677
+  offset: 87, 57
+  index: -1
+A/arm l_1
+  rotate: true
+  xy: 1317, 180
+  size: 104, 126
+  orig: 615, 677
+  offset: 92, 68
+  index: -1
+A/arm l_2
+  rotate: false
+  xy: 1258, 284
+  size: 129, 108
+  orig: 615, 677
+  offset: 92, 106
+  index: -1
+A/arm l_3
+  rotate: false
+  xy: 0, 484
+  size: 134, 137
+  orig: 615, 677
+  offset: 89, 112
+  index: -1
+A/arm r2_1
+  rotate: false
+  xy: 490, 664
+  size: 140, 185
+  orig: 615, 677
+  offset: 316, 57
+  index: -1
+A/arm r_!
+  rotate: true
+  xy: 1317, 78
+  size: 102, 125
+  orig: 615, 677
+  offset: 306, 75
+  index: -1
+A/arm r_2
+  rotate: true
+  xy: 1145, 109
+  size: 134, 113
+  orig: 615, 677
+  offset: 306, 97
+  index: -1
+A/arm r_3
+  rotate: true
+  xy: 134, 486
+  size: 135, 141
+  orig: 615, 677
+  offset: 319, 108
+  index: -1
+A/body
+  rotate: false
+  xy: 0, 28
+  size: 490, 456
+  orig: 615, 677
+  offset: 57, 81
+  index: -1
+A/ear_l
+  rotate: true
+  xy: 1388, 795
+  size: 69, 91
+  orig: 615, 677
+  offset: 93, 483
+  index: -1
+A/ear_r
+  rotate: true
+  xy: 924, 400
+  size: 84, 95
+  orig: 615, 677
+  offset: 374, 475
+  index: -1
+A/eyel_1
+  rotate: true
+  xy: 700, 495
+  size: 95, 72
+  orig: 615, 677
+  offset: 282, 387
+  index: -1
+A/eyel_2
+  rotate: true
+  xy: 607, 16
+  size: 32, 51
+  orig: 615, 677
+  offset: 311, 377
+  index: -1
+A/eyer_1
+  rotate: false
+  xy: 1388, 721
+  size: 90, 74
+  orig: 615, 677
+  offset: 115, 391
+  index: -1
+A/eyer_2
+  rotate: true
+  xy: 658, 17
+  size: 31, 50
+  orig: 615, 677
+  offset: 148, 376
+  index: -1
+A/face
+  rotate: false
+  xy: 490, 48
+  size: 434, 436
+  orig: 615, 677
+  offset: 51, 155
+  index: -1
+A/horn_1
+  rotate: true
+  xy: 630, 590
+  size: 132, 146
+  orig: 615, 677
+  offset: 228, 490
+  index: -1
+A/horn_2
+  rotate: false
+  xy: 1041, 243
+  size: 131, 150
+  orig: 615, 677
+  offset: 282, 458
+  index: -1
+A/horn_3
+  rotate: true
+  xy: 630, 722
+  size: 127, 147
+  orig: 615, 677
+  offset: 341, 430
+  index: -1
+A/leg l_1
+  rotate: false
+  xy: 924, 83
+  size: 113, 155
+  orig: 615, 677
+  offset: 414, 119
+  index: -1
+A/leg l_2
+  rotate: false
+  xy: 1019, 400
+  size: 95, 84
+  orig: 615, 677
+  offset: 416, 119
+  index: -1
+A/leg l_3
+  rotate: false
+  xy: 1388, 393
+  size: 86, 110
+  orig: 615, 677
+  offset: 427, 76
+  index: -1
+A/leg r_1
+  rotate: false
+  xy: 1037, 85
+  size: 108, 153
+  orig: 615, 677
+  offset: 176, 113
+  index: -1
+A/leg r_2
+  rotate: true
+  xy: 1388, 624
+  size: 97, 89
+  orig: 615, 677
+  offset: 177, 110
+  index: -1
+A/leg r_3
+  rotate: false
+  xy: 1388, 503
+  size: 86, 121
+  orig: 615, 677
+  offset: 193, 68
+  index: -1
+A/nose
+  rotate: true
+  xy: 778, 864
+  size: 615, 677
+  orig: 615, 677
+  offset: 0, 0
+  index: -1
+A/tail
+  rotate: true
+  xy: 1190, 2
+  size: 107, 127
+  orig: 615, 677
+  offset: 451, 415
+  index: -1
+A/teeth l
+  rotate: true
+  xy: 554, 485
+  size: 105, 146
+  orig: 615, 677
+  offset: 312, 231
+  index: -1
+A/teeth r
+  rotate: false
+  xy: 924, 238
+  size: 117, 155
+  orig: 615, 677
+  offset: 54, 223
+  index: -1
+A/tree1
+  rotate: false
+  xy: 778, 484
+  size: 610, 380
+  orig: 901, 1064
+  offset: 207, 30
+  index: -1
+A/tree2
+  rotate: false
+  xy: 0, 849
+  size: 778, 630
+  orig: 901, 1064
+  offset: 83, 434
+  index: -1
+A/tree_acc1
+  rotate: false
+  xy: 1063, 8
+  size: 127, 77
+  orig: 901, 1064
+  offset: 700, 393
+  index: -1
+A/tree_acc10
+  rotate: true
+  xy: 1114, 412
+  size: 72, 138
+  orig: 901, 1064
+  offset: 440, 310
+  index: -1
+A/tree_acc11
+  rotate: false
+  xy: 0, 621
+  size: 163, 228
+  orig: 901, 1064
+  offset: 558, 348
+  index: -1
+A/tree_acc2
+  rotate: false
+  xy: 490, 11
+  size: 117, 37
+  orig: 901, 1064
+  offset: 679, 263
+  index: -1
+A/tree_acc3
+  rotate: true
+  xy: 0, 1
+  size: 27, 42
+  orig: 901, 1064
+  offset: 714, 320
+  index: -1
+A/tree_acc4
+  rotate: false
+  xy: 42, 3
+  size: 59, 25
+  orig: 901, 1064
+  offset: 268, 237
+  index: -1
+A/tree_acc5
+  rotate: true
+  xy: 554, 594
+  size: 70, 56
+  orig: 901, 1064
+  offset: 616, 206
+  index: -1
+A/tree_acc6
+  rotate: false
+  xy: 1387, 330
+  size: 92, 63
+  orig: 901, 1064
+  offset: 261, 475
+  index: -1
+A/tree_acc7
+  rotate: true
+  xy: 924, 4
+  size: 79, 139
+  orig: 901, 1064
+  offset: 460, 189
+  index: -1
+A/tree_acc8
+  rotate: false
+  xy: 462, 497
+  size: 92, 163
+  orig: 901, 1064
+  offset: 485, 375
+  index: -1
+A/tree_acc9
+  rotate: true
+  xy: 163, 626
+  size: 223, 202
+  orig: 901, 1064
+  offset: 196, 282
+  index: -1
+A/tree_acc9_1
+  rotate: true
+  xy: 1252, 392
+  size: 92, 135
+  orig: 901, 1064
+  offset: 351, 400
+  index: -1

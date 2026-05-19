@@ -1,0 +1,202 @@
+
+E_Prichius_A.png
+size: 634,634
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+A/anklet_L
+  rotate: true
+  xy: 394, 58
+  size: 81, 56
+  orig: 513, 513
+  offset: 264, 39
+  index: -1
+A/arm_L_1
+  rotate: false
+  xy: 284, 139
+  size: 86, 108
+  orig: 513, 513
+  offset: 184, 69
+  index: -1
+A/arm_L_2
+  rotate: true
+  xy: 284, 60
+  size: 79, 110
+  orig: 513, 513
+  offset: 186, 14
+  index: -1
+A/arm_R_1
+  rotate: false
+  xy: 518, 527
+  size: 96, 107
+  orig: 513, 513
+  offset: 105, 76
+  index: -1
+A/arm_R_2
+  rotate: false
+  xy: 450, 134
+  size: 78, 109
+  orig: 513, 513
+  offset: 118, 22
+  index: -1
+A/body
+  rotate: false
+  xy: 0, 413
+  size: 264, 221
+  orig: 513, 513
+  offset: 103, 40
+  index: -1
+A/body belt
+  rotate: true
+  xy: 409, 243
+  size: 142, 95
+  orig: 513, 513
+  offset: 98, 113
+  index: -1
+A/body_saddle
+  rotate: false
+  xy: 261, 247
+  size: 148, 139
+  orig: 513, 513
+  offset: 194, 118
+  index: -1
+A/eye
+  rotate: true
+  xy: 520, 385
+  size: 13, 14
+  orig: 513, 513
+  offset: 117, 353
+  index: -1
+A/eyeball
+  rotate: false
+  xy: 568, 157
+  size: 39, 41
+  orig: 513, 513
+  offset: 106, 341
+  index: -1
+A/face
+  rotate: true
+  xy: 520, 398
+  size: 129, 97
+  orig: 513, 513
+  offset: 45, 303
+  index: -1
+A/hair_1
+  rotate: true
+  xy: 275, 0
+  size: 57, 86
+  orig: 513, 513
+  offset: 90, 361
+  index: -1
+A/hair_2
+  rotate: false
+  xy: 0, 0
+  size: 61, 76
+  orig: 513, 513
+  offset: 127, 355
+  index: -1
+A/hair_3
+  rotate: false
+  xy: 528, 149
+  size: 40, 49
+  orig: 513, 513
+  offset: 157, 331
+  index: -1
+A/helmet
+  rotate: false
+  xy: 176, 6
+  size: 99, 66
+  orig: 513, 513
+  offset: 70, 353
+  index: -1
+A/helmet_feather
+  rotate: false
+  xy: 264, 386
+  size: 157, 141
+  orig: 513, 513
+  offset: 79, 347
+  index: -1
+A/helmet_side
+  rotate: true
+  xy: 61, 6
+  size: 70, 115
+  orig: 513, 513
+  offset: 140, 261
+  index: -1
+A/jaw
+  rotate: true
+  xy: 200, 72
+  size: 135, 84
+  orig: 513, 513
+  offset: 51, 295
+  index: -1
+A/leg_L_1
+  rotate: false
+  xy: 370, 139
+  size: 80, 104
+  orig: 513, 513
+  offset: 270, 60
+  index: -1
+A/leg_L_2
+  rotate: true
+  xy: 450, 57
+  size: 77, 91
+  orig: 513, 513
+  offset: 266, 16
+  index: -1
+A/leg_R_1
+  rotate: false
+  xy: 504, 285
+  size: 78, 100
+  orig: 513, 513
+  offset: 209, 72
+  index: -1
+A/leg_R_2
+  rotate: false
+  xy: 528, 198
+  size: 79, 87
+  orig: 513, 513
+  offset: 204, 31
+  index: -1
+A/neck
+  rotate: true
+  xy: 264, 527
+  size: 107, 254
+  orig: 513, 513
+  offset: 89, 105
+  index: -1
+A/necklace
+  rotate: false
+  xy: 421, 385
+  size: 99, 142
+  orig: 513, 513
+  offset: 77, 108
+  index: -1
+A/rope
+  rotate: false
+  xy: 0, 207
+  size: 261, 206
+  orig: 261, 261
+  offset: 0, 32
+  index: -1
+A/tail
+  rotate: false
+  xy: 0, 76
+  size: 200, 131
+  orig: 513, 513
+  offset: 291, 48
+  index: -1
+A/wrist decoration_L
+  rotate: false
+  xy: 361, 0
+  size: 80, 58
+  orig: 513, 513
+  offset: 188, 37
+  index: -1
+A/wrist decoration_R
+  rotate: false
+  xy: 441, 5
+  size: 75, 52
+  orig: 513, 513
+  offset: 121, 41
+  index: -1

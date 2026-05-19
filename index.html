@@ -1,11 +1,11 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="ko">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Gacha Viewer</title>
   <script>
-    window.GACHA_VIEWER_ASSET_VERSION = "20260508-runtime-patch-01";
+    window.GACHA_VIEWER_ASSET_VERSION = "20260519-runtime-patch-39";
   </script>
   <script>
     (function () {
@@ -34,14 +34,14 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Gothic+A1:wght@400;500;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="viewer.css?v=20260508-runtime-patch-01">
-  <link rel="stylesheet" href="viewer-mobile.css?v=20260508-runtime-patch-01" media="(max-width: 900px)">
-  <script defer src="data.js?v=20260508-runtime-patch-01"></script>
-  <script defer src="extra_pet_data.js?v=20260508-runtime-patch-01"></script>
-  <script defer src="added_pet_data.js?v=20260508-runtime-patch-01"></script>
-  <script defer src="spine_manifest_index.js?v=20260508-runtime-patch-01"></script>
-  <script defer src="character_meta_overrides.js?v=20260508-runtime-patch-01"></script>
-  <script defer src="viewer.js?v=20260508-runtime-patch-01"></script>
+  <link rel="stylesheet" href="viewer.css?v=20260519-runtime-patch-39">
+  <link rel="stylesheet" href="viewer-mobile.css?v=20260519-runtime-patch-39" media="(max-width: 900px)">
+  <script defer src="data.js?v=20260519-runtime-patch-39"></script>
+  <script defer src="extra_pet_data.js?v=20260519-runtime-patch-39"></script>
+  <script defer src="added_pet_data.js?v=20260519-runtime-patch-39"></script>
+  <script defer src="spine_manifest_index.js?v=20260519-runtime-patch-39"></script>
+  <script defer src="character_meta_overrides.js?v=20260519-runtime-patch-39"></script>
+  <script defer src="viewer.js?v=20260519-runtime-patch-39"></script>
 </head>
 <body>
   <script>
@@ -73,6 +73,9 @@
       </div>
       <div class="collection-tabs" id="collectionTabs"></div>
       <div class="pet-subfilters" id="petSubfilters" hidden></div>
+      <button class="rail-past-toggle" id="railPastToggle" type="button" aria-pressed="false" hidden>
+        종료 항목 보기
+      </button>
       <div class="pet-list" id="petList"></div>
     </aside>
 

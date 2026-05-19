@@ -1,0 +1,188 @@
+
+Hero_Kingwoori_A.png
+size: 713,713
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+A/arm_l
+  rotate: true
+  xy: 406, 271
+  size: 108, 156
+  orig: 601, 513
+  offset: 261, 15
+  index: -1
+A/arm_r
+  rotate: false
+  xy: 316, 244
+  size: 90, 147
+  orig: 601, 513
+  offset: 154, 23
+  index: -1
+A/body
+  rotate: false
+  xy: 0, 391
+  size: 407, 322
+  orig: 601, 513
+  offset: 100, 36
+  index: -1
+A/ear l
+  rotate: false
+  xy: 244, 5
+  size: 78, 76
+  orig: 601, 513
+  offset: 246, 333
+  index: -1
+A/ear_r
+  rotate: false
+  xy: 655, 588
+  size: 53, 73
+  orig: 601, 513
+  offset: 100, 344
+  index: -1
+A/eye r
+  rotate: true
+  xy: 406, 246
+  size: 25, 36
+  orig: 601, 513
+  offset: 185, 276
+  index: -1
+A/eye_l
+  rotate: true
+  xy: 682, 257
+  size: 19, 31
+  orig: 601, 513
+  offset: 92, 288
+  index: -1
+A/eyebrow_l
+  rotate: false
+  xy: 519, 25
+  size: 18, 34
+  orig: 601, 513
+  offset: 97, 306
+  index: -1
+A/eyebrow_r
+  rotate: false
+  xy: 652, 276
+  size: 60, 30
+  orig: 601, 513
+  offset: 172, 301
+  index: -1
+A/face
+  rotate: false
+  xy: 0, 81
+  size: 316, 310
+  orig: 601, 513
+  offset: 62, 116
+  index: -1
+A/flower
+  rotate: false
+  xy: 108, 11
+  size: 136, 70
+  orig: 601, 513
+  offset: 135, 365
+  index: -1
+A/horn_1
+  rotate: false
+  xy: 562, 271
+  size: 90, 108
+  orig: 601, 513
+  offset: 150, 170
+  index: -1
+A/horn_1_1
+  rotate: false
+  xy: 606, 394
+  size: 92, 121
+  orig: 601, 513
+  offset: 22, 168
+  index: -1
+A/horn_2
+  rotate: false
+  xy: 447, 146
+  size: 118, 125
+  orig: 601, 513
+  offset: 235, 311
+  index: -1
+A/horn_3
+  rotate: false
+  xy: 565, 147
+  size: 117, 124
+  orig: 601, 513
+  offset: 300, 279
+  index: -1
+A/horn_4
+  rotate: false
+  xy: 322, 6
+  size: 108, 106
+  orig: 601, 513
+  offset: 357, 262
+  index: -1
+A/leg_l_1
+  rotate: false
+  xy: 447, 59
+  size: 96, 87
+  orig: 601, 513
+  offset: 386, 56
+  index: -1
+A/leg_l_2
+  rotate: true
+  xy: 655, 531
+  size: 57, 53
+  orig: 601, 513
+  offset: 418, 22
+  index: -1
+A/leg_l_3
+  rotate: false
+  xy: 430, 0
+  size: 89, 59
+  orig: 601, 513
+  offset: 386, 51
+  index: -1
+A/leg_r_1
+  rotate: false
+  xy: 543, 58
+  size: 96, 88
+  orig: 601, 513
+  offset: 292, 59
+  index: -1
+A/leg_r_2
+  rotate: false
+  xy: 655, 661
+  size: 58, 52
+  orig: 601, 513
+  offset: 325, 26
+  index: -1
+A/leg_r_3
+  rotate: true
+  xy: 652, 306
+  size: 88, 60
+  orig: 601, 513
+  offset: 293, 54
+  index: -1
+A/nose
+  rotate: true
+  xy: 316, 112
+  size: 132, 131
+  orig: 601, 513
+  offset: 56, 188
+  index: -1
+A/red_line
+  rotate: false
+  xy: 407, 379
+  size: 199, 136
+  orig: 601, 513
+  offset: 301, 185
+  index: -1
+A/rope
+  rotate: false
+  xy: 407, 515
+  size: 248, 198
+  orig: 261, 261
+  offset: 6, 33
+  index: -1
+A/tail
+  rotate: true
+  xy: 0, 0
+  size: 81, 108
+  orig: 601, 513
+  offset: 451, 244
+  index: -1
