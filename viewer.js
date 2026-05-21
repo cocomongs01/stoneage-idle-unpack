@@ -14,6 +14,7 @@
     appShell: document.getElementById("appShell"),
     petRail: document.getElementById("petRail"),
     stage: document.getElementById("stagePanel"),
+    railPrimaryActions: document.getElementById("railPrimaryActions"),
     collectionTabs: document.getElementById("collectionTabs"),
     petSubfilters: document.getElementById("petSubfilters"),
     petList: document.getElementById("petList"),
@@ -123,6 +124,21 @@
     mobileView: "detail",
     mobileVariantScrollBySkillKey: {},
     mobileViewportScrollByView: { rail: 0, detail: 0 },
+    rouletteCalculator: {
+      kind: "weapon",
+      currentPulls: 0,
+      ownedTickets: 0,
+      carriedTickets: 0,
+      missionCompletedDays: 0,
+      todayMissionTickets: 0,
+      missedMissionTickets: 0,
+      missionDays: 14,
+      waitMissionDays: 0,
+      includeBlueGemSupply: true,
+      considerNextCycle: true,
+      purchasedOptions: {},
+      availableOptions: {},
+    },
   };
 
   const spineState = {
@@ -185,6 +201,7 @@
   const activePressTargetByPointerId = new Map();
   const MOBILE_PRESSABLE_SELECTOR = [
     ".collection-tab",
+    ".rail-calculator-action",
     ".pet-subfilter",
     ".pet-item",
     ".mobile-menu-toggle",
@@ -194,10 +211,76 @@
     ".mobile-variant-chip",
     ".skill-button",
     ".variant-preview-entry",
+    ".roulette-calculator-button",
+    ".roulette-calculator-kind",
+    ".roulette-calculator-preset",
+    ".roulette-calculator-back",
   ].join(", ");
   const PLACEHOLDER_PET_ICON = "assets/pets/ss-pet-placeholder.svg";
   const PLACEHOLDER_PET_BANNER = "assets/banners/ss-pet-placeholder-banner.svg";
   const EXTRA_PET_DETAIL_META_LABEL = "기본 정보만 우선 수록";
+  const ROULETTE_CALCULATOR_CATEGORY_KEY = "rouletteCalculator";
+  const ROULETTE_CALCULATOR_CATEGORY = Object.freeze({
+    key: ROULETTE_CALCULATOR_CATEGORY_KEY,
+    label: "계산기",
+    railTitle: "룰렛 계산기",
+    railCopy: "무기와 탈것 티켓 누적, 미션, 핫딜 기준으로 500회 최저가를 계산합니다.",
+  });
+  const ROULETTE_TARGET_PULLS = 500;
+  const ROULETTE_MISSION_TICKETS_PER_DAY = 10;
+  const ROULETTE_MAX_MISSION_DAYS = 14;
+  const ROULETTE_BLUE_GEM_SUPPLY_TICKETS = 10;
+  const ROULETTE_KIND_META = Object.freeze({
+    weapon: Object.freeze({ key: "weapon", label: "무기", ticketLabel: "무기 룰렛 티켓", genericLabel: "무기 룰렛 패키지" }),
+    ride: Object.freeze({ key: "ride", label: "탈것", ticketLabel: "탑승펫 룰렛 티켓", genericLabel: "탑승펫 룰렛 패키지" }),
+  });
+  const ROULETTE_OPENING_SPECIALS = Object.freeze([
+    Object.freeze({ key: "special1", label: "오픈 기념 특가 I", tickets: 15, cost: 3000, order: 10 }),
+    Object.freeze({ key: "special2", label: "오픈 기념 특가 II", tickets: 25, cost: 6000, order: 20 }),
+    Object.freeze({ key: "special3", label: "오픈 기념 특가 III", tickets: 50, cost: 12000, order: 30 }),
+  ]);
+  const ROULETTE_HOTDEALS = Object.freeze([
+    Object.freeze({ key: "hot100", label: "100회 기념 핫딜", threshold: 100, tickets: 50, cost: 15000, order: 100 }),
+    Object.freeze({ key: "hot200", label: "200회 기념 핫딜", threshold: 200, tickets: 90, cost: 39000, order: 200 }),
+  ]);
+  const ROULETTE_NEXT_HOTDEAL = Object.freeze({
+    key: "hot500",
+    label: "500회 기념 핫딜",
+    threshold: 500,
+    tickets: 250,
+    cost: 119000,
+  });
+  const ROULETTE_GENERIC_PACKAGES = Object.freeze([
+    Object.freeze({ key: "package1", roman: "I", tickets: 4, cost: 1500, maxCount: 1, order: 300 }),
+    Object.freeze({ key: "package2", roman: "II", tickets: 8, cost: 4400, maxCount: 1, order: 310 }),
+    Object.freeze({ key: "package3", roman: "III", tickets: 20, cost: 9900, maxCount: 1, order: 320 }),
+    Object.freeze({ key: "package4", roman: "IV", tickets: 42, cost: 25000, maxCount: 1, order: 330 }),
+    Object.freeze({ key: "package5", roman: "V", tickets: 65, cost: 45000, maxCount: 2, order: 340 }),
+    Object.freeze({ key: "package6", roman: "VI", tickets: 130, cost: 99000, maxCount: 4, order: 350 }),
+  ]);
+  const ROULETTE_AVAILABLE_OPTION_KEYS = Object.freeze([
+    "special1",
+    "special2",
+    "special3",
+    "hot100",
+    "hot200",
+    "genericPackages",
+    "hot500",
+  ]);
+  const ROULETTE_PURCHASED_OPTION_KEYS = Object.freeze([
+    "special1",
+    "special2",
+    "special3",
+    "hot100",
+    "hot200",
+    "hot500",
+    "package1",
+    "package2",
+    "package3",
+    "package4",
+    "package5",
+    "package6",
+  ]);
 
   function isMobileLayout() {
     return Boolean(mobileViewportQuery && mobileViewportQuery.matches);
@@ -1536,11 +1619,16 @@
   function applyMobileViewerHistoryState(historyState) {
     if (!isMobileViewerHistoryState(historyState)) return false;
 
-    const categories = getCategories();
+    const categories = getNavigationCategories();
     const nextCategory = categories.find((category) => category.key === String(historyState.categoryKey || "")) || categories[0];
     if (!nextCategory) return false;
 
     state.activeCategoryKey = nextCategory.key;
+
+    if (isRouletteCalculatorCategory(nextCategory)) {
+      state.mobileView = historyState.mobileView === "rail" ? "rail" : "detail";
+      return true;
+    }
 
     const requestedItem = findItemLocationByEntityId(historyState.itemId);
     if (requestedItem && requestedItem.categoryKey === nextCategory.key) {
@@ -1661,7 +1749,7 @@
     const mobile = isMobileLayout();
     if (mobile) {
       if (!wasMobileLayout || forceReset || (state.mobileView !== "rail" && state.mobileView !== "detail")) {
-        state.mobileView = "rail";
+        state.mobileView = isRouletteCalculatorCategory(state.activeCategoryKey) ? "detail" : "rail";
       }
     } else {
       state.mobileView = "detail";
@@ -2731,7 +2819,19 @@
     return Array.isArray(data.categories) ? data.categories : [];
   }
 
+  function isRouletteCalculatorCategory(categoryOrKey) {
+    const key = typeof categoryOrKey === "string" ? categoryOrKey : categoryOrKey?.key;
+    return key === ROULETTE_CALCULATOR_CATEGORY_KEY;
+  }
+
+  function getNavigationCategories() {
+    return [...getCategories(), ROULETTE_CALCULATOR_CATEGORY];
+  }
+
   function getActiveCategory() {
+    if (isRouletteCalculatorCategory(state.activeCategoryKey)) {
+      return ROULETTE_CALCULATOR_CATEGORY;
+    }
     const categories = getCategories();
     return categories.find((category) => category.key === state.activeCategoryKey) || categories[0];
   }
@@ -2950,10 +3050,1024 @@
   }
 
   function escapeHtml(text) {
-    return String(text || "")
+    return String(text == null ? "" : text)
       .replace(/&/g, "&amp;")
       .replace(/</g, "&lt;")
       .replace(/>/g, "&gt;");
+  }
+
+  function formatInteger(value) {
+    const numeric = Number(value);
+    const safeValue = Number.isFinite(numeric) ? Math.round(numeric) : 0;
+    return safeValue.toLocaleString("ko-KR");
+  }
+
+  function formatWon(value) {
+    return `${formatInteger(value)}원`;
+  }
+
+  function normalizeIntegerInput(value, fallback = 0, min = 0, max = 9999) {
+    const numeric = Number.parseInt(String(value ?? "").replace(/[^\d-]/g, ""), 10);
+    const safeValue = Number.isFinite(numeric) ? numeric : fallback;
+    return clamp(safeValue, min, max);
+  }
+
+  function defaultRouletteAvailableOptions() {
+    return ROULETTE_AVAILABLE_OPTION_KEYS.reduce((result, key) => {
+      result[key] = true;
+      return result;
+    }, {});
+  }
+
+  function defaultRoulettePurchasedOptions() {
+    return ROULETTE_PURCHASED_OPTION_KEYS.reduce((result, key) => {
+      result[key] = 0;
+      return result;
+    }, {});
+  }
+
+  function rouletteOptionMaxCount(key) {
+    const packageOption = ROULETTE_GENERIC_PACKAGES.find((option) => option.key === key);
+    if (packageOption) return Math.max(1, packageOption.maxCount || 1);
+    if (ROULETTE_OPENING_SPECIALS.some((option) => option.key === key)) return 1;
+    if (ROULETTE_HOTDEALS.some((option) => option.key === key)) return 1;
+    if (ROULETTE_NEXT_HOTDEAL.key === key) return 1;
+    return 1;
+  }
+
+  function normalizeRoulettePurchasedOptions(purchasedOptions, legacyAvailableOptions) {
+    const normalized = defaultRoulettePurchasedOptions();
+    ROULETTE_PURCHASED_OPTION_KEYS.forEach((key) => {
+      const maxCount = rouletteOptionMaxCount(key);
+      normalized[key] = normalizeIntegerInput(purchasedOptions?.[key], 0, 0, maxCount);
+      if (legacyAvailableOptions && legacyAvailableOptions[key] === false) {
+        normalized[key] = maxCount;
+      }
+      if (legacyAvailableOptions && key.startsWith("package") && legacyAvailableOptions.genericPackages === false) {
+        normalized[key] = maxCount;
+      }
+    });
+    return normalized;
+  }
+
+  function roulettePurchasedCount(calculator, key) {
+    return normalizeIntegerInput(
+      calculator?.purchasedOptions?.[key],
+      0,
+      0,
+      rouletteOptionMaxCount(key),
+    );
+  }
+
+  function roulettePurchasedSummary(calculator) {
+    const entries = [
+      ...ROULETTE_OPENING_SPECIALS,
+      ...ROULETTE_HOTDEALS,
+      ROULETTE_NEXT_HOTDEAL,
+      ...ROULETTE_GENERIC_PACKAGES,
+    ];
+    return entries.reduce((summary, option) => {
+      const count = roulettePurchasedCount(calculator, option.key);
+      if (count <= 0) return summary;
+      summary.count += count;
+      summary.tickets += (option.tickets || 0) * count;
+      summary.cost += (option.cost || 0) * count;
+      return summary;
+    }, { count: 0, tickets: 0, cost: 0 });
+  }
+
+  function roulettePurchasedCurrentTickets(calculator) {
+    const currentRouletteOptions = [
+      ...ROULETTE_OPENING_SPECIALS,
+      ...ROULETTE_HOTDEALS,
+      ...ROULETTE_GENERIC_PACKAGES,
+    ];
+    return currentRouletteOptions.reduce((sum, option) => (
+      sum + (roulettePurchasedCount(calculator, option.key) * (option.tickets || 0))
+    ), 0);
+  }
+
+  function roulettePurchasedSummaryLabel(calculator) {
+    const summary = roulettePurchasedSummary(calculator);
+    if (summary.count <= 0) {
+      return "이미 구매 0개";
+    }
+    return `이미 구매 ${formatInteger(summary.count)}개 · ${formatInteger(summary.tickets)}장 상품 추가비용 제외`;
+  }
+
+  function dateKeyDiffDays(startDateKey, endDateKey) {
+    const start = normalizeScheduleDateKey(startDateKey);
+    const end = normalizeScheduleDateKey(endDateKey);
+    if (!start || !end) return Number.NaN;
+    const startTimestamp = dateTimeKeyToTimestamp(`${start} 00:00:00`);
+    const endTimestamp = dateTimeKeyToTimestamp(`${end} 00:00:00`);
+    if (!Number.isFinite(startTimestamp) || !Number.isFinite(endTimestamp)) {
+      return Number.NaN;
+    }
+    return Math.round((endTimestamp - startTimestamp) / DAY_MS);
+  }
+
+  function rouletteMissionEventInfo(kind) {
+    const categoryKey = kind === "ride" ? "ride" : "weapon";
+    const category = getCategories().find((item) => item && item.key === categoryKey);
+    const nowKey = getTimeZoneDateTimeKey();
+    const nowTimestamp = dateTimeKeyToTimestamp(nowKey);
+    if (!category || !Number.isFinite(nowTimestamp)) {
+      return {
+        active: false,
+        label: "일정 미확인",
+        eventDay: 1,
+        totalDays: ROULETTE_MAX_MISSION_DAYS,
+        remainingFutureDays: ROULETTE_MAX_MISSION_DAYS,
+      };
+    }
+
+    const currentEntry = getItems(category)
+      .map((item) => ({
+        item,
+        schedule: getResolvedSchedules(item, nowKey).find((schedule) => schedule.resolvedStatus === "current") || null,
+      }))
+      .find((entry) => entry.schedule);
+
+    if (!currentEntry) {
+      return {
+        active: false,
+        label: "진행 중 일정 없음",
+        eventDay: 1,
+        totalDays: ROULETTE_MAX_MISSION_DAYS,
+        remainingFutureDays: ROULETTE_MAX_MISSION_DAYS,
+      };
+    }
+
+    const startKey = currentEntry.schedule.resolvedStartDateTimeKey || "";
+    const endExclusiveKey = currentEntry.schedule.resolvedEndExclusiveDateTimeKey || "";
+    const startTimestamp = dateTimeKeyToTimestamp(startKey);
+    const endTimestamp = dateTimeKeyToTimestamp(endExclusiveKey);
+    const totalDaysByTimestamp = Number.isFinite(startTimestamp) && Number.isFinite(endTimestamp)
+      ? Math.max(1, Math.round((endTimestamp - startTimestamp) / DAY_MS))
+      : ROULETTE_MAX_MISSION_DAYS;
+    const totalDays = clamp(totalDaysByTimestamp, 1, ROULETTE_MAX_MISSION_DAYS);
+    const elapsedDays = Number.isFinite(startTimestamp)
+      ? clamp(Math.floor((nowTimestamp - startTimestamp) / DAY_MS), 0, totalDays - 1)
+      : 0;
+    const eventDay = clamp(elapsedDays + 1, 1, totalDays);
+    const remainingFutureDays = Math.max(0, totalDays - eventDay);
+
+    return {
+      active: true,
+      label: `${currentEntry.item?.name || rouletteKindMeta(categoryKey).label} ${eventDay}일차`,
+      itemName: currentEntry.item?.name || "",
+      eventDay,
+      totalDays,
+      remainingFutureDays,
+      startDateTimeKey: startKey,
+      endExclusiveDateTimeKey: endExclusiveKey,
+    };
+  }
+
+  function normalizeRouletteCalculatorState() {
+    const calculator = state.rouletteCalculator || {};
+    const availableOptions = Object.assign(
+      defaultRouletteAvailableOptions(),
+      calculator.availableOptions || {},
+    );
+
+    ROULETTE_AVAILABLE_OPTION_KEYS.forEach((key) => {
+      availableOptions[key] = availableOptions[key] !== false;
+    });
+    const purchasedOptions = normalizeRoulettePurchasedOptions(calculator.purchasedOptions, availableOptions);
+
+    const kind = calculator.kind === "ride" ? "ride" : "weapon";
+    const eventInfo = rouletteMissionEventInfo(kind);
+    const missionCompletedDays = normalizeIntegerInput(calculator.missionCompletedDays, 0, 0, ROULETTE_MAX_MISSION_DAYS);
+    const todayMissionTickets = 0;
+    const missedMissionTickets = normalizeIntegerInput(
+      calculator.missedMissionTickets,
+      0,
+      0,
+      ROULETTE_MAX_MISSION_DAYS * ROULETTE_MISSION_TICKETS_PER_DAY,
+    );
+    const missionDays = Math.max(0, ROULETTE_MAX_MISSION_DAYS - missionCompletedDays);
+    const waitMissionDays = normalizeIntegerInput(calculator.waitMissionDays, 0, 0, missionDays);
+
+    state.rouletteCalculator = {
+      kind,
+      currentPulls: normalizeIntegerInput(calculator.currentPulls, 0, 0, ROULETTE_TARGET_PULLS),
+      ownedTickets: normalizeIntegerInput(calculator.ownedTickets, 0, 0, 9999),
+      carriedTickets: normalizeIntegerInput(calculator.carriedTickets, 0, 0, 9999),
+      missionCompletedDays,
+      todayMissionTickets,
+      missedMissionTickets,
+      missionDays,
+      waitMissionDays,
+      eventInfo,
+      includeBlueGemSupply: calculator.includeBlueGemSupply !== false,
+      considerNextCycle: calculator.considerNextCycle !== false,
+      purchasedOptions,
+      availableOptions,
+    };
+    return state.rouletteCalculator;
+  }
+
+  function rouletteKindMeta(kind) {
+    return ROULETTE_KIND_META[kind === "ride" ? "ride" : "weapon"];
+  }
+
+  function roulettePackageLabel(option, kind) {
+    const meta = rouletteKindMeta(kind);
+    return `${meta.genericLabel} ${option.roman}`;
+  }
+
+  function rouletteCurrentTickets(calculator) {
+    return normalizeIntegerInput(calculator.ownedTickets, 0, 0, 9999)
+      + normalizeIntegerInput(calculator.carriedTickets, 0, 0, 9999);
+  }
+
+  function rouletteMissionTicketsForWait(calculator, waitMissionDays = calculator.waitMissionDays) {
+    const missionDays = normalizeIntegerInput(calculator.missionDays, 0, 0, ROULETTE_MAX_MISSION_DAYS);
+    const completedDays = normalizeIntegerInput(calculator.missionCompletedDays, 0, 0, ROULETTE_MAX_MISSION_DAYS);
+    const clampedWaitDays = clamp(
+      normalizeIntegerInput(waitMissionDays, 0, 0, missionDays),
+      0,
+      missionDays,
+    );
+    const plannedMissionTickets = (completedDays * ROULETTE_MISSION_TICKETS_PER_DAY)
+      + normalizeIntegerInput(
+      calculator.todayMissionTickets,
+      0,
+      0,
+      ROULETTE_MISSION_TICKETS_PER_DAY,
+    )
+      + (clampedWaitDays * ROULETTE_MISSION_TICKETS_PER_DAY);
+    const missedMissionTickets = normalizeIntegerInput(
+      calculator.missedMissionTickets,
+      0,
+      0,
+      ROULETTE_MAX_MISSION_DAYS * ROULETTE_MISSION_TICKETS_PER_DAY,
+    );
+    return Math.max(0, plannedMissionTickets - missedMissionTickets);
+  }
+
+  function rouletteBaseTickets(calculator) {
+    return rouletteCurrentTickets(calculator)
+      + rouletteMissionTicketsForWait(calculator)
+      + roulettePurchasedCurrentTickets(calculator)
+      + (calculator.includeBlueGemSupply ? ROULETTE_BLUE_GEM_SUPPLY_TICKETS : 0);
+  }
+
+  function rouletteStartOptions(calculator) {
+    const options = [];
+    ROULETTE_OPENING_SPECIALS.forEach((option) => {
+      if (roulettePurchasedCount(calculator, option.key) > 0) return;
+      options.push({
+        key: option.key,
+        label: option.label,
+        tickets: option.tickets,
+        cost: option.cost,
+        order: option.order,
+        type: "purchase",
+      });
+    });
+
+    ROULETTE_GENERIC_PACKAGES.forEach((option) => {
+      const maxCount = Math.max(1, option.maxCount || 1);
+      const remainingCount = Math.max(0, maxCount - roulettePurchasedCount(calculator, option.key));
+      for (let index = 1; index <= remainingCount; index += 1) {
+        options.push({
+          key: `${option.key}-${index}`,
+          label: roulettePackageLabel(option, calculator.kind),
+          tickets: option.tickets,
+          cost: option.cost,
+          order: option.order + index / 10,
+          type: "purchase",
+        });
+      }
+    });
+
+    return options;
+  }
+
+  function selectedOptionsFromMask(options, mask) {
+    const selected = [];
+    for (let index = 0; index < options.length; index += 1) {
+      if (mask & (1 << index)) {
+        selected.push(options[index]);
+      }
+    }
+    return selected;
+  }
+
+  function rouletteAvailableHotdeals(calculator) {
+    return ROULETTE_HOTDEALS.filter((hotdeal) => roulettePurchasedCount(calculator, hotdeal.key) <= 0);
+  }
+
+  function simulateRoulettePlan(calculator, startOptions, hotdealOptions) {
+    const targetPulls = ROULETTE_TARGET_PULLS;
+    let pulls = calculator.currentPulls;
+    let tickets = rouletteBaseTickets(calculator);
+    let cost = 0;
+    const steps = [];
+
+    startOptions
+      .slice()
+      .sort((left, right) => (left.order || 0) - (right.order || 0))
+      .forEach((option) => {
+        tickets += option.tickets;
+        cost += option.cost;
+        steps.push({
+          type: "purchase",
+          label: option.label,
+          tickets: option.tickets,
+          cost: option.cost,
+        });
+      });
+
+    const pullTo = (threshold) => {
+      const safeThreshold = clamp(threshold, pulls, targetPulls);
+      const needed = safeThreshold - pulls;
+      if (needed <= 0) return true;
+      if (tickets < needed) return false;
+      tickets -= needed;
+      pulls += needed;
+      steps.push({
+        type: "pull",
+        label: `${safeThreshold}회까지 진행`,
+        tickets: -needed,
+        cost: 0,
+      });
+      return true;
+    };
+
+    hotdealOptions
+      .slice()
+      .sort((left, right) => left.threshold - right.threshold)
+      .forEach((hotdeal) => {
+        if (pulls > targetPulls) return;
+        if (!pullTo(hotdeal.threshold)) {
+          pulls = Number.NaN;
+          return;
+        }
+        tickets += hotdeal.tickets;
+        cost += hotdeal.cost;
+        steps.push({
+          type: "purchase",
+          label: hotdeal.label,
+          tickets: hotdeal.tickets,
+          cost: hotdeal.cost,
+        });
+      });
+
+    if (!Number.isFinite(pulls)) {
+      return null;
+    }
+
+    if (!pullTo(targetPulls)) {
+      return null;
+    }
+
+    return {
+      cost,
+      leftoverTickets: tickets,
+      steps,
+      totalTickets: rouletteBaseTickets(calculator)
+        + startOptions.reduce((sum, option) => sum + option.tickets, 0)
+        + hotdealOptions.reduce((sum, option) => sum + option.tickets, 0),
+    };
+  }
+
+  function compareRoulettePlans(left, right) {
+    if (!right) return -1;
+    if (!left) return 1;
+    if (left.cost !== right.cost) return left.cost - right.cost;
+    if (left.leftoverTickets !== right.leftoverTickets) return left.leftoverTickets - right.leftoverTickets;
+    return left.steps.length - right.steps.length;
+  }
+
+  function calculateRouletteBestPlan(inputCalculator) {
+    const calculator = normalizeRouletteCalculatorSnapshot(inputCalculator);
+    const startOptions = rouletteStartOptions(calculator);
+    const hotdeals = rouletteAvailableHotdeals(calculator);
+    const startMaskLimit = 1 << startOptions.length;
+    const hotMaskLimit = 1 << hotdeals.length;
+    let bestPlan = null;
+
+    for (let startMask = 0; startMask < startMaskLimit; startMask += 1) {
+      const selectedStartOptions = selectedOptionsFromMask(startOptions, startMask);
+      for (let hotMask = 0; hotMask < hotMaskLimit; hotMask += 1) {
+        const selectedHotdeals = selectedOptionsFromMask(hotdeals, hotMask);
+        const plan = simulateRoulettePlan(calculator, selectedStartOptions, selectedHotdeals);
+        if (plan && compareRoulettePlans(plan, bestPlan) < 0) {
+          bestPlan = plan;
+        }
+      }
+    }
+
+    return bestPlan;
+  }
+
+  function normalizeRouletteCalculatorSnapshot(inputCalculator) {
+    const current = inputCalculator || {};
+    const availableOptions = Object.assign(defaultRouletteAvailableOptions(), current.availableOptions || {});
+    ROULETTE_AVAILABLE_OPTION_KEYS.forEach((key) => {
+      availableOptions[key] = availableOptions[key] !== false;
+    });
+    const purchasedOptions = normalizeRoulettePurchasedOptions(current.purchasedOptions, availableOptions);
+    const missionCompletedDays = normalizeIntegerInput(current.missionCompletedDays, 0, 0, ROULETTE_MAX_MISSION_DAYS);
+    const missionDays = Number.isFinite(Number(current.missionDays))
+      ? normalizeIntegerInput(current.missionDays, ROULETTE_MAX_MISSION_DAYS, 0, ROULETTE_MAX_MISSION_DAYS)
+      : Math.max(0, ROULETTE_MAX_MISSION_DAYS - missionCompletedDays);
+    const waitMissionDays = normalizeIntegerInput(current.waitMissionDays, 0, 0, missionDays);
+    const todayMissionTickets = normalizeIntegerInput(current.todayMissionTickets, 0, 0, ROULETTE_MISSION_TICKETS_PER_DAY);
+    const missedMissionTickets = normalizeIntegerInput(
+      current.missedMissionTickets,
+      0,
+      0,
+      ROULETTE_MAX_MISSION_DAYS * ROULETTE_MISSION_TICKETS_PER_DAY,
+    );
+
+    return {
+      kind: current.kind === "ride" ? "ride" : "weapon",
+      currentPulls: normalizeIntegerInput(current.currentPulls, 0, 0, ROULETTE_TARGET_PULLS),
+      ownedTickets: normalizeIntegerInput(current.ownedTickets, 0, 0, 9999),
+      carriedTickets: normalizeIntegerInput(current.carriedTickets, 0, 0, 9999),
+      missionCompletedDays,
+      todayMissionTickets,
+      missedMissionTickets,
+      missionDays,
+      waitMissionDays,
+      includeBlueGemSupply: current.includeBlueGemSupply !== false,
+      considerNextCycle: current.considerNextCycle !== false,
+      purchasedOptions,
+      availableOptions,
+    };
+  }
+
+  function rouletteStepMeta(step) {
+    if (step.type === "pull") {
+      return {
+        amount: `${formatInteger(Math.abs(step.tickets))}장 사용`,
+        cost: "진행",
+      };
+    }
+    return {
+      amount: `+${formatInteger(step.tickets)}장`,
+      cost: formatWon(step.cost),
+    };
+  }
+
+  function roulettePlanStepsHtml(plan) {
+    if (!plan || !plan.steps.length) {
+      return `
+        <div class="roulette-calculator-empty">
+          <strong>추가 현금 구매 없음</strong>
+          <span>보유 티켓과 미션 티켓만으로 500회까지 도달합니다.</span>
+        </div>
+      `;
+    }
+    return `
+      <ol class="roulette-calculator-steps">
+        ${plan.steps.map((step, index) => {
+          const meta = rouletteStepMeta(step);
+          return `
+            <li class="roulette-calculator-step" data-step-type="${escapeHtml(step.type)}">
+              <span class="roulette-calculator-step-index">${index + 1}</span>
+              <span class="roulette-calculator-step-copy">
+                <strong>${escapeHtml(step.label)}</strong>
+                <small>${escapeHtml(meta.amount)}</small>
+              </span>
+              <span class="roulette-calculator-step-cost">${escapeHtml(meta.cost)}</span>
+            </li>
+          `;
+        }).join("")}
+      </ol>
+    `;
+  }
+
+  function rouletteComparisonPlan(calculator) {
+    if (rouletteCurrentTickets(calculator) <= 0) {
+      return null;
+    }
+    return calculateRouletteBestPlan({
+      ...calculator,
+      ownedTickets: 0,
+      carriedTickets: 0,
+    });
+  }
+
+  function rouletteNextCycleSummary(calculator, currentPlan) {
+    if (!calculator.considerNextCycle || !currentPlan) {
+      return null;
+    }
+    const hot500Purchased = roulettePurchasedCount(calculator, ROULETTE_NEXT_HOTDEAL.key) > 0;
+    const hotdealCost = hot500Purchased ? 0 : ROULETTE_NEXT_HOTDEAL.cost;
+    const nextCarriedTickets = currentPlan.leftoverTickets + ROULETTE_NEXT_HOTDEAL.tickets;
+    const nextCalculator = normalizeRouletteCalculatorSnapshot({
+      ...calculator,
+      currentPulls: 0,
+      ownedTickets: nextCarriedTickets,
+      carriedTickets: 0,
+      todayMissionTickets: 0,
+      missedMissionTickets: 0,
+      missionDays: ROULETTE_MAX_MISSION_DAYS,
+      waitMissionDays: ROULETTE_MAX_MISSION_DAYS,
+      includeBlueGemSupply: calculator.includeBlueGemSupply,
+      considerNextCycle: false,
+      purchasedOptions: {
+        ...defaultRoulettePurchasedOptions(),
+        [ROULETTE_NEXT_HOTDEAL.key]: 1,
+      },
+      availableOptions: {
+        ...calculator.availableOptions,
+        hot500: false,
+      },
+    });
+    const nextPlan = calculateRouletteBestPlan(nextCalculator);
+    return {
+      nextCarriedTickets,
+      nextPlan,
+      hotdealCost,
+      hotdealTickets: ROULETTE_NEXT_HOTDEAL.tickets,
+      hotdealPurchased: hot500Purchased,
+      combinedCost: currentPlan.cost + hotdealCost + (nextPlan ? nextPlan.cost : 0),
+    };
+  }
+
+  function rouletteMissionDayPlans(calculator) {
+    const maxDays = normalizeIntegerInput(calculator.missionDays, ROULETTE_MAX_MISSION_DAYS, 0, ROULETTE_MAX_MISSION_DAYS);
+    const rows = [];
+    let bestRow = null;
+
+    for (let day = 0; day <= maxDays; day += 1) {
+      const dayCalculator = normalizeRouletteCalculatorSnapshot({
+        ...calculator,
+        waitMissionDays: day,
+        considerNextCycle: false,
+      });
+      const plan = calculateRouletteBestPlan(dayCalculator);
+      const row = {
+        day,
+        label: day === 0 ? "오늘" : `+${day}일`,
+        missionTickets: rouletteMissionTicketsForWait(calculator, day),
+        plan,
+      };
+      rows.push(row);
+      if (plan && (!bestRow || plan.cost < bestRow.plan.cost || (plan.cost === bestRow.plan.cost && day < bestRow.day))) {
+        bestRow = row;
+      }
+    }
+
+    return { rows, bestRow };
+  }
+
+  function rouletteMissionDayPlansHtml(calculator) {
+    const { rows, bestRow } = rouletteMissionDayPlans(calculator);
+    if (!rows.length) return "";
+    return `
+      <section class="roulette-calculator-block">
+        <div class="roulette-calculator-block-head">
+          <div>
+            <p class="section-label">일자별 최저가</p>
+            <h3>남은 미션 티켓 반영</h3>
+          </div>
+          ${bestRow?.plan ? `<strong>${escapeHtml(bestRow.label)} ${escapeHtml(formatWon(bestRow.plan.cost))}</strong>` : ""}
+        </div>
+        <div class="roulette-calculator-day-grid">
+          ${rows.map((row) => {
+            const isBest = bestRow && row.day === bestRow.day;
+            const plan = row.plan;
+            return `
+              <div class="roulette-calculator-day${isBest ? " is-selected is-best" : ""}">
+                <span class="roulette-calculator-day-label">${escapeHtml(row.label)}</span>
+                <strong>${plan ? escapeHtml(formatWon(plan.cost)) : "불가"}</strong>
+                <small>미션 +${escapeHtml(formatInteger(row.missionTickets))}장${plan ? ` · 남음 ${escapeHtml(formatInteger(plan.leftoverTickets))}장` : ""}</small>
+              </div>
+            `;
+          }).join("")}
+        </div>
+      </section>
+    `;
+  }
+
+  function rouletteRecommendedPlanInfo(calculator) {
+    const { bestRow } = rouletteMissionDayPlans(calculator);
+    const waitDays = bestRow ? bestRow.day : 0;
+    const recommendedCalculator = normalizeRouletteCalculatorSnapshot({
+      ...calculator,
+      waitMissionDays: waitDays,
+    });
+    return {
+      waitDays,
+      waitLabel: waitDays === 0 ? "오늘" : `+${waitDays}일`,
+      calculator: recommendedCalculator,
+      plan: bestRow?.plan || calculateRouletteBestPlan(recommendedCalculator),
+    };
+  }
+
+  function rouletteCalculatorResultHtml(calculator) {
+    const recommended = rouletteRecommendedPlanInfo(calculator);
+    const recommendedCalculator = recommended.calculator;
+    const plan = recommended.plan;
+    const comparisonPlan = rouletteComparisonPlan(recommendedCalculator);
+    const nextSummary = rouletteNextCycleSummary(recommendedCalculator, plan);
+    const baseTickets = rouletteBaseTickets(recommendedCalculator);
+    const remainingPulls = Math.max(0, ROULETTE_TARGET_PULLS - recommendedCalculator.currentPulls);
+    const missingBeforePurchase = Math.max(0, remainingPulls - baseTickets);
+    const compareDiff = comparisonPlan && plan ? comparisonPlan.cost - plan.cost : 0;
+    const missionTickets = rouletteMissionTicketsForWait(recommendedCalculator);
+
+    if (!plan) {
+      return `
+        <div class="roulette-calculator-result-grid">
+          <section class="roulette-calculator-result-card is-wide">
+            <p class="section-label">계산 불가</p>
+            <h3>아직 구매하지 않은 상품만으로 500회까지 도달할 수 없습니다.</h3>
+            <p class="roulette-calculator-muted">현재 보유 티켓이나 이미 구매한 상품 체크를 다시 확인하세요.</p>
+          </section>
+        </div>
+      `;
+    }
+
+    return `
+      <div class="roulette-calculator-result-grid">
+        <section class="roulette-calculator-result-card">
+          <p class="section-label">추천 추가 현금</p>
+          <h3>${escapeHtml(formatWon(plan.cost))}</h3>
+          <span>${escapeHtml(recommended.waitLabel)} 기준 · ${escapeHtml(formatInteger(plan.leftoverTickets))}장 남음</span>
+        </section>
+        <section class="roulette-calculator-result-card">
+          <p class="section-label">자동 추천 시점</p>
+          <h3>${escapeHtml(recommended.waitLabel)}</h3>
+          <span>미션 ${escapeHtml(formatInteger(missionTickets))}장 반영 · 부족분 ${escapeHtml(formatInteger(missingBeforePurchase))}장</span>
+        </section>
+        <section class="roulette-calculator-result-card">
+          <p class="section-label">보유 티켓 차이</p>
+          <h3>${comparisonPlan ? escapeHtml(formatWon(Math.max(0, compareDiff))) : "-"}</h3>
+          <span>${comparisonPlan ? `보유 0장 기준 ${escapeHtml(formatWon(comparisonPlan.cost))}` : "보유 티켓 입력 시 비교"}</span>
+        </section>
+      </div>
+      <section class="roulette-calculator-block">
+        <div class="roulette-calculator-block-head">
+          <div>
+            <p class="section-label">자동 추천 구매 순서</p>
+            <h3>이번 룰렛 500회</h3>
+          </div>
+          <strong>${escapeHtml(formatWon(plan.cost))}</strong>
+        </div>
+        ${roulettePlanStepsHtml(plan)}
+      </section>
+      ${rouletteMissionDayPlansHtml(calculator)}
+      ${nextSummary ? `
+        <section class="roulette-calculator-block">
+          <div class="roulette-calculator-block-head">
+            <div>
+              <p class="section-label">다음 같은 종류까지 고려</p>
+              <h3>${escapeHtml(ROULETTE_NEXT_HOTDEAL.label)} ${nextSummary.hotdealPurchased ? "이미 구매 반영" : "누적용"}</h3>
+            </div>
+            <strong>${nextSummary.hotdealCost > 0 ? "+" : ""}${escapeHtml(formatWon(nextSummary.hotdealCost))}</strong>
+          </div>
+          <div class="roulette-calculator-next-grid">
+            <span><strong>다음 시작 보유</strong>${escapeHtml(formatInteger(nextSummary.nextCarriedTickets))}장</span>
+            <span><strong>다음 500회 추가</strong>${nextSummary.nextPlan ? escapeHtml(formatWon(nextSummary.nextPlan.cost)) : "-"}</span>
+            <span><strong>2회차 합산</strong>${escapeHtml(formatWon(nextSummary.combinedCost))}</span>
+          </div>
+        </section>
+      ` : ""}
+    `;
+  }
+
+  function ensureRouletteCalculatorPanel() {
+    if (elements.calculatorPanel) {
+      return elements.calculatorPanel;
+    }
+    const panel = document.createElement("section");
+    panel.className = "roulette-calculator-panel";
+    panel.hidden = true;
+    panel.setAttribute("aria-label", "룰렛 최저가 계산기");
+    if (elements.stage) {
+      elements.stage.appendChild(panel);
+    }
+    elements.calculatorPanel = panel;
+    return panel;
+  }
+
+  function setRouletteCalculatorField(field, value) {
+    const calculator = normalizeRouletteCalculatorState();
+    if (field === "kind") {
+      calculator.kind = value === "ride" ? "ride" : "weapon";
+    } else if (field === "currentPulls") {
+      calculator.currentPulls = normalizeIntegerInput(value, calculator.currentPulls, 0, ROULETTE_TARGET_PULLS);
+    } else if (field === "ownedTickets") {
+      calculator.ownedTickets = normalizeIntegerInput(value, calculator.ownedTickets, 0, 9999);
+    } else if (field === "carriedTickets") {
+      calculator.carriedTickets = normalizeIntegerInput(value, calculator.carriedTickets, 0, 9999);
+    } else if (field === "missionCompletedDays") {
+      calculator.missionCompletedDays = normalizeIntegerInput(value, calculator.missionCompletedDays, 0, ROULETTE_MAX_MISSION_DAYS);
+      calculator.missionDays = Math.max(0, ROULETTE_MAX_MISSION_DAYS - calculator.missionCompletedDays);
+      calculator.waitMissionDays = 0;
+    } else if (field === "todayMissionTickets") {
+      calculator.todayMissionTickets = normalizeIntegerInput(value, calculator.todayMissionTickets, 0, ROULETTE_MISSION_TICKETS_PER_DAY);
+    } else if (field === "missedMissionTickets") {
+      calculator.missedMissionTickets = normalizeIntegerInput(
+        value,
+        calculator.missedMissionTickets,
+        0,
+        ROULETTE_MAX_MISSION_DAYS * ROULETTE_MISSION_TICKETS_PER_DAY,
+      );
+    } else if (field === "missionDays") {
+      calculator.missionDays = normalizeIntegerInput(value, calculator.missionDays, 0, ROULETTE_MAX_MISSION_DAYS);
+      calculator.waitMissionDays = clamp(calculator.waitMissionDays, 0, calculator.missionDays);
+    } else if (field === "waitMissionDays") {
+      calculator.waitMissionDays = normalizeIntegerInput(value, calculator.waitMissionDays, 0, calculator.missionDays);
+    } else if (field === "includeBlueGemSupply") {
+      calculator.includeBlueGemSupply = Boolean(value);
+    } else if (field === "considerNextCycle") {
+      calculator.considerNextCycle = Boolean(value);
+    }
+  }
+
+  function updateRouletteCalculatorResult() {
+    const panel = ensureRouletteCalculatorPanel();
+    const calculator = normalizeRouletteCalculatorState();
+    const result = panel.querySelector("[data-roulette-result]");
+    const summary = panel.querySelector("[data-roulette-summary]");
+    const railSummary = elements.petList ? elements.petList.querySelector("[data-roulette-rail-summary]") : null;
+    const recommended = rouletteRecommendedPlanInfo(calculator);
+    const plan = recommended.plan;
+    const baseTickets = rouletteBaseTickets(recommended.calculator);
+    const resultHtml = rouletteCalculatorResultHtml(calculator);
+    const purchasedLabel = roulettePurchasedSummaryLabel(calculator);
+    const summaryText = plan
+      ? `${recommended.waitLabel} ${formatWon(plan.cost)} · ${formatInteger(plan.leftoverTickets)}장 남음`
+      : "계산 불가";
+
+    if (result) {
+      result.innerHTML = resultHtml;
+    }
+    if (summary) {
+      summary.innerHTML = `
+        <span><strong>${escapeHtml(rouletteKindMeta(calculator.kind).label)}</strong></span>
+        <span>기본 확보 ${escapeHtml(formatInteger(baseTickets))}장</span>
+        <span>${escapeHtml(purchasedLabel)}</span>
+        <span>${escapeHtml(summaryText)}</span>
+      `;
+    }
+    if (railSummary) {
+      railSummary.textContent = summaryText;
+    }
+  }
+
+  function roulettePurchasedOptionControlHtml(key, label, calculator) {
+    const maxCount = rouletteOptionMaxCount(key);
+    const purchasedCount = roulettePurchasedCount(calculator, key);
+    if (maxCount <= 1) {
+      return `
+        <label class="roulette-calculator-check">
+          <input type="checkbox" data-roulette-purchased-option="${escapeHtml(key)}" ${purchasedCount > 0 ? "checked" : ""}>
+          <span>${escapeHtml(label)}</span>
+        </label>
+      `;
+    }
+    return `
+      <label class="roulette-calculator-purchased-count">
+        <span>${escapeHtml(label)}</span>
+        <input type="number" min="0" max="${escapeHtml(maxCount)}" inputmode="numeric" data-roulette-purchased-option="${escapeHtml(key)}" value="${escapeHtml(purchasedCount)}">
+      </label>
+    `;
+  }
+
+  function roulettePurchasedOptionsHtml(calculator) {
+    const purchasedOptions = [
+      ...ROULETTE_OPENING_SPECIALS.map((option) => ({
+        key: option.key,
+        label: option.label,
+      })),
+      ...ROULETTE_HOTDEALS.map((option) => ({
+        key: option.key,
+        label: option.label,
+      })),
+      {
+        key: ROULETTE_NEXT_HOTDEAL.key,
+        label: ROULETTE_NEXT_HOTDEAL.label,
+      },
+      ...ROULETTE_GENERIC_PACKAGES.map((option) => ({
+        key: option.key,
+        label: roulettePackageLabel(option, calculator.kind),
+      })),
+    ];
+    return purchasedOptions
+      .map((option) => roulettePurchasedOptionControlHtml(option.key, option.label, calculator))
+      .join("");
+  }
+
+  function renderRouletteCalculatorRail(calculator) {
+    renderRailHeader(ROULETTE_CALCULATOR_CATEGORY);
+    if (elements.petSubfilters) {
+      elements.petSubfilters.hidden = true;
+      elements.petSubfilters.innerHTML = "";
+    }
+    if (elements.railPastToggle) {
+      elements.railPastToggle.hidden = true;
+    }
+    if (!elements.petList) return;
+    elements.petList.innerHTML = `
+      <div class="roulette-calculator-rail-card">
+        <strong>${escapeHtml(rouletteKindMeta(calculator.kind).label)} 500회 기준</strong>
+        <span data-roulette-rail-summary>계산 중</span>
+      </div>
+      <button class="roulette-calculator-preset" type="button" data-roulette-preset="fresh">
+        0장 시작 기준
+      </button>
+      <button class="roulette-calculator-preset" type="button" data-roulette-preset="carry250">
+        250장 예시 기준
+      </button>
+    `;
+    elements.petList.querySelectorAll("[data-roulette-preset]").forEach((button) => {
+      button.addEventListener("click", () => {
+        applyRoulettePreset(button.dataset.roulettePreset || "");
+      });
+    });
+  }
+
+  function applyRoulettePreset(preset) {
+    const calculator = normalizeRouletteCalculatorState();
+    if (preset === "carry250") {
+      calculator.currentPulls = 0;
+      calculator.ownedTickets = 250;
+      calculator.carriedTickets = 0;
+      calculator.missionCompletedDays = 0;
+      calculator.todayMissionTickets = 0;
+      calculator.missedMissionTickets = 0;
+      calculator.missionDays = ROULETTE_MAX_MISSION_DAYS;
+      calculator.waitMissionDays = 0;
+      calculator.includeBlueGemSupply = true;
+      calculator.considerNextCycle = true;
+      calculator.purchasedOptions = defaultRoulettePurchasedOptions();
+    } else if (preset === "fresh") {
+      calculator.currentPulls = 0;
+      calculator.ownedTickets = 0;
+      calculator.carriedTickets = 0;
+      calculator.missionCompletedDays = 0;
+      calculator.todayMissionTickets = 0;
+      calculator.missedMissionTickets = 0;
+      calculator.missionDays = ROULETTE_MAX_MISSION_DAYS;
+      calculator.waitMissionDays = 0;
+      calculator.includeBlueGemSupply = true;
+      calculator.considerNextCycle = false;
+      calculator.purchasedOptions = defaultRoulettePurchasedOptions();
+    }
+    renderRouletteCalculator();
+  }
+
+  function renderRouletteCalculator() {
+    const calculator = normalizeRouletteCalculatorState();
+    const panel = ensureRouletteCalculatorPanel();
+    const meta = rouletteKindMeta(calculator.kind);
+
+    if (elements.heroPanel) {
+      elements.heroPanel.hidden = true;
+    }
+    if (elements.stage) {
+      elements.stage.classList.add("has-roulette-calculator");
+    }
+    panel.hidden = false;
+    renderRouletteCalculatorRail(calculator);
+
+    panel.innerHTML = `
+      <button class="mobile-menu-toggle mobile-menu-toggle-detail roulette-calculator-back" type="button" data-roulette-action="show-rail" aria-label="목록 열기">
+        <span class="mobile-menu-toggle-bars" aria-hidden="true"></span>
+      </button>
+      <div class="roulette-calculator-shell">
+        <section class="roulette-calculator-block roulette-calculator-controls">
+          <div class="roulette-calculator-title">
+            <p class="eyebrow">Roulette Optimizer</p>
+            <h2>룰렛 최저가 계산기</h2>
+          </div>
+          <div class="roulette-calculator-kind-row" role="group" aria-label="룰렛 종류">
+            ${Object.values(ROULETTE_KIND_META).map((kindMeta) => `
+              <button class="roulette-calculator-kind${calculator.kind === kindMeta.key ? " is-active" : ""}" type="button" data-roulette-kind="${escapeHtml(kindMeta.key)}">
+                ${escapeHtml(kindMeta.label)}
+              </button>
+            `).join("")}
+          </div>
+          <div class="roulette-calculator-input-grid">
+            <label>
+              <span>현재 진행 횟수</span>
+              <input type="number" min="0" max="500" inputmode="numeric" data-roulette-field="currentPulls" value="${escapeHtml(calculator.currentPulls)}">
+            </label>
+            <label>
+              <span>현재 보유 티켓</span>
+              <input type="number" min="0" inputmode="numeric" data-roulette-field="ownedTickets" value="${escapeHtml(calculator.ownedTickets)}">
+            </label>
+            <label>
+              <span>미션 완료 일차</span>
+              <input type="number" min="0" max="${ROULETTE_MAX_MISSION_DAYS}" inputmode="numeric" data-roulette-field="missionCompletedDays" value="${escapeHtml(calculator.missionCompletedDays)}">
+            </label>
+            <label>
+              <span>놓친 미션 티켓</span>
+              <input type="number" min="0" max="${ROULETTE_MAX_MISSION_DAYS * ROULETTE_MISSION_TICKETS_PER_DAY}" inputmode="numeric" data-roulette-field="missedMissionTickets" value="${escapeHtml(calculator.missedMissionTickets)}">
+            </label>
+          </div>
+          <p class="roulette-calculator-auto-note">
+            미션 완료 ${escapeHtml(formatInteger(calculator.missionCompletedDays))}일차는 이미 확보한 티켓으로 반영합니다. 남은 ${escapeHtml(formatInteger(calculator.missionDays))}일도 10장씩 비교하고, 놓친 미션 티켓 ${escapeHtml(formatInteger(calculator.missedMissionTickets))}장은 전체 미션 확보분에서 차감합니다.
+          </p>
+          <details class="roulette-calculator-advanced">
+            <summary>상세 옵션</summary>
+            <div class="roulette-calculator-check-grid">
+              <label class="roulette-calculator-check">
+                <input type="checkbox" data-roulette-field="includeBlueGemSupply" ${calculator.includeBlueGemSupply ? "checked" : ""}>
+                <span>2500 블루젬 보급 10장 포함</span>
+              </label>
+              <label class="roulette-calculator-check">
+                <input type="checkbox" data-roulette-field="considerNextCycle" ${calculator.considerNextCycle ? "checked" : ""}>
+                <span>다음 같은 종류까지 계산</span>
+              </label>
+            </div>
+            <div class="roulette-calculator-option-group">
+              <p class="section-label">이미 구매한 상품</p>
+              <div class="roulette-calculator-auto-note">
+                체크하거나 수량을 넣은 상품은 이미 구매 완료로 처리합니다. 해당 티켓은 확보분에 포함하고, 가격은 추가 현금에 더하지 않으며, 같은 상품은 다시 추천하지 않습니다.
+              </div>
+              <div class="roulette-calculator-purchased-grid">
+                ${roulettePurchasedOptionsHtml(calculator)}
+              </div>
+            </div>
+          </details>
+          <div class="roulette-calculator-preset-row">
+            <button class="roulette-calculator-preset" type="button" data-roulette-preset="fresh">0장 시작</button>
+            <button class="roulette-calculator-preset" type="button" data-roulette-preset="carry250">250장 예시</button>
+          </div>
+        </section>
+        <section class="roulette-calculator-output">
+          <div class="roulette-calculator-summary" data-roulette-summary>
+            <span><strong>${escapeHtml(meta.label)}</strong></span>
+          </div>
+          <div data-roulette-result></div>
+        </section>
+      </div>
+    `;
+
+    panel.querySelectorAll("[data-roulette-kind]").forEach((button) => {
+      button.addEventListener("click", () => {
+        setRouletteCalculatorField("kind", button.dataset.rouletteKind || "weapon");
+        renderRouletteCalculator();
+      });
+    });
+
+    panel.querySelectorAll("[data-roulette-field]").forEach((field) => {
+      const fieldName = field.dataset.rouletteField || "";
+      const updateField = () => {
+        if (field.type === "checkbox") {
+          setRouletteCalculatorField(fieldName, field.checked);
+        } else {
+          setRouletteCalculatorField(fieldName, field.value);
+        }
+        updateRouletteCalculatorResult();
+      };
+      field.addEventListener("input", updateField);
+      field.addEventListener("change", updateField);
+    });
+
+    panel.querySelectorAll("[data-roulette-purchased-option]").forEach((field) => {
+      const updatePurchasedOption = () => {
+        const key = field.dataset.roulettePurchasedOption || "";
+        const calculatorState = normalizeRouletteCalculatorState();
+        if (key) {
+          const maxCount = rouletteOptionMaxCount(key);
+          calculatorState.purchasedOptions[key] = field.type === "checkbox"
+            ? (field.checked ? 1 : 0)
+            : normalizeIntegerInput(field.value, calculatorState.purchasedOptions[key], 0, maxCount);
+        }
+        updateRouletteCalculatorResult();
+      };
+      field.addEventListener("input", updatePurchasedOption);
+      field.addEventListener("change", updatePurchasedOption);
+    });
+
+    panel.querySelectorAll("[data-roulette-preset]").forEach((button) => {
+      button.addEventListener("click", () => {
+        applyRoulettePreset(button.dataset.roulettePreset || "");
+      });
+    });
+
+    const backButton = panel.querySelector("[data-roulette-action='show-rail']");
+    if (backButton) {
+      backButton.addEventListener("click", () => setMobileView("rail", { resetRailScroll: false }));
+    }
+
+    updateRouletteCalculatorResult();
+  }
+
+  function hideRouletteCalculator() {
+    if (elements.calculatorPanel) {
+      elements.calculatorPanel.hidden = true;
+      elements.calculatorPanel.innerHTML = "";
+    }
+    if (elements.stage) {
+      elements.stage.classList.remove("has-roulette-calculator");
+    }
+    if (elements.heroPanel) {
+      elements.heroPanel.hidden = false;
+    }
   }
 
   function assetUrl(path) {
@@ -2966,14 +4080,11 @@
   function resolveOptimizedAssetPath(path) {
     const normalizedPath = String(path || "").replace(/\\/g, "/");
     if (!normalizedPath) return "";
-    if (/^assets\/pets\/[^/]+-portrait\.png$/i.test(normalizedPath)) {
-      return normalizedPath.replace(/\.png$/i, ".webp");
-    }
-    if (/^assets\/backgrounds\/weapons\/[^/]+\.png$/i.test(normalizedPath)) {
-      return normalizedPath.replace(/\.png$/i, ".webp");
-    }
-    if (/^assets\/backgrounds\/hero_info_full\/HeroInfo_Background_Type_[^/]+\.png$/i.test(normalizedPath)) {
-      return normalizedPath.replace(/\.png$/i, ".webp");
+    const match = normalizedPath.match(/^([^?#]+)([?#].*)?$/);
+    const pathname = match ? match[1] : normalizedPath;
+    const suffix = match && match[2] ? match[2] : "";
+    if (/^(?:assets|spine_assets|spine_assets_pickup)\//i.test(pathname) && /\.png$/i.test(pathname)) {
+      return `${pathname.replace(/\.png$/i, ".webp")}${suffix}`;
     }
     return normalizedPath;
   }
@@ -3197,48 +4308,6 @@
     return hasAtlas && hasSkeleton;
   }
 
-  function legacyManifestSrcForEntry(manifestMeta) {
-    if (!manifestMeta) return "";
-    if (manifestMeta.assetKind === "weapon") {
-      return "spine_manifest_weapon.embedded.js";
-    }
-    if (manifestMeta.assetKind === "pickup") {
-      return "pet_pickup_spine_manifest.embedded.js";
-    }
-    return "spine_manifest.embedded.js";
-  }
-
-  function ensureLegacyManifestLoaded(entityId, manifestMeta) {
-    const entryId = String(entityId || "");
-    if (!entryId || !manifestMeta) {
-      return Promise.resolve(getLoadedManifestEntry(entryId));
-    }
-
-    const src = legacyManifestSrcForEntry(manifestMeta);
-    if (!src) {
-      return Promise.resolve(getLoadedManifestEntry(entryId));
-    }
-
-    const promiseKey = `${manifestMeta.assetKind || "unknown"}:${src}`;
-    const pendingLoad = spineManifestLoadPromises.get(promiseKey);
-    if (pendingLoad) {
-      return pendingLoad.then(() => getLoadedManifestEntry(entryId));
-    }
-
-    const loadPromise = loadRuntimeScript(assetUrl(src))
-      .catch((error) => {
-        spineManifestLoadPromises.delete(promiseKey);
-        throw error;
-      });
-
-    spineManifestLoadPromises.set(promiseKey, loadPromise);
-    return loadPromise
-      .then(() => getLoadedManifestEntry(entryId))
-      .finally(() => {
-        spineManifestLoadPromises.delete(promiseKey);
-      });
-  }
-
   function fetchSpineTextAsset(assetPath) {
     const normalizedPath = String(assetPath || "").replace(/\\/g, "/");
     if (!normalizedPath) {
@@ -3394,13 +4463,9 @@
     if (!entryId) {
       return Promise.resolve(null);
     }
-    const preferEmbeddedPayload = isFileProtocol();
 
     const loadedEntry = getLoadedManifestEntry(entryId);
-    if (
-      (preferEmbeddedPayload && hasEmbeddedManifestPayload(loadedEntry))
-      || (!preferEmbeddedPayload && hasManifestSpinePayload(loadedEntry))
-    ) {
+    if (hasManifestSpinePayload(loadedEntry)) {
       return Promise.resolve(loadedEntry);
     }
 
@@ -3417,25 +4482,13 @@
     const loadPromise = loadRuntimeScript(assetUrl(manifestMeta.chunkSrc))
       .then(() => {
         const nextEntry = getLoadedManifestEntry(entryId);
-        if (
-          (preferEmbeddedPayload && !hasEmbeddedManifestPayload(nextEntry))
-          || (!preferEmbeddedPayload && !hasManifestSpinePayload(nextEntry))
-        ) {
+        if (!hasManifestSpinePayload(nextEntry)) {
           throw new Error(`Spine manifest chunk missing data: ${entryId}`);
         }
         return nextEntry;
       })
-      .catch((error) => {
-        if (!preferEmbeddedPayload) {
-          throw error;
-        }
-        return ensureLegacyManifestLoaded(entryId, manifestMeta);
-      })
       .then((nextEntry) => {
-        if (
-          (preferEmbeddedPayload && !hasEmbeddedManifestPayload(nextEntry))
-          || (!preferEmbeddedPayload && !hasManifestSpinePayload(nextEntry))
-        ) {
+        if (!hasManifestSpinePayload(nextEntry)) {
           throw new Error(`Spine manifest data unavailable: ${entryId}`);
         }
         return nextEntry;
@@ -3533,17 +4586,12 @@
     return chooseAnimationName(spineData, assetKind);
   }
 
-  function isFileProtocol() {
-    return window.location.protocol === "file:";
-  }
-
   function normalizeAtlasPageName(pageName) {
     return String(pageName || "").replace(/\\/g, "/").replace(/^.*\//, "");
   }
 
   function resolveManifestTextureSource(manifestEntry, pageName, options = {}) {
     const normalizedPageName = normalizeAtlasPageName(pageName);
-    const preferEmbedded = isFileProtocol();
     const preferWebp = options.preferWebp !== false;
     const textureDataUris = manifestEntry && manifestEntry.textureDataUris;
     const textureFiles = manifestEntry && manifestEntry.textureFiles;
@@ -3573,13 +4621,6 @@
       }
       return "";
     };
-
-    if (preferEmbedded) {
-      const embedded = lookupValue(textureDataUris) || manifestEntry.textureDataUri || "";
-      if (embedded) {
-        return embedded;
-      }
-    }
 
     const webpPath = preferWebp
       ? textureWebpFiles
@@ -4936,6 +5977,11 @@
   }
 
   function findInitialSelection() {
+    const requestedView = String(pageParams.get("view") || pageParams.get("category") || "").trim();
+    if (requestedView === ROULETTE_CALCULATOR_CATEGORY_KEY || requestedView.toLowerCase() === "calculator") {
+      return { categoryKey: ROULETTE_CALCULATOR_CATEGORY_KEY, index: 0 };
+    }
+
     const requestedId = pageParams.get("pet") || pageParams.get("item") || pageParams.get("id");
     const categories = getCategories();
 
@@ -5541,6 +6587,28 @@
   function renderCollectionTabs() {
     if (!elements.collectionTabs) return;
     const activeCategory = getActiveCategory();
+    const calculatorActive = isRouletteCalculatorCategory(activeCategory);
+    if (elements.railPrimaryActions) {
+      elements.railPrimaryActions.innerHTML = "";
+      const calculatorButton = document.createElement("button");
+      calculatorButton.type = "button";
+      calculatorButton.className = `rail-calculator-action${calculatorActive ? " active" : ""}`;
+      calculatorButton.textContent = ROULETTE_CALCULATOR_CATEGORY.label;
+      calculatorButton.addEventListener("click", () => {
+        if (isMobileLayout()) {
+          setMobileLoading("view-transition", true);
+        }
+        state.activeCategoryKey = ROULETTE_CALCULATOR_CATEGORY_KEY;
+        if (isMobileLayout()) {
+          state.mobileView = "detail";
+        }
+        render();
+        if (isMobileLayout()) {
+          finishMobileLoadingSoon("view-transition");
+        }
+      });
+      elements.railPrimaryActions.appendChild(calculatorButton);
+    }
     elements.collectionTabs.innerHTML = "";
 
     getCategories().forEach((category) => {
@@ -6246,6 +7314,15 @@
 
   function render() {
     syncMobileLayout();
+    if (isRouletteCalculatorCategory(state.activeCategoryKey)) {
+      renderCollectionTabs();
+      renderRouletteCalculator();
+      if (isMobileLayout()) {
+        syncMobileViewerHistory("replace");
+      }
+      return;
+    }
+    hideRouletteCalculator();
     syncPetSubgroupSelection();
     syncRailVisibleSelection();
     const pet = getCurrentItem();
@@ -6277,6 +7354,10 @@
       return;
     }
     lastScheduleStatusTickKey = nextTickKey;
+    if (isRouletteCalculatorCategory(state.activeCategoryKey)) {
+      updateRouletteCalculatorResult();
+      return;
+    }
     render();
   }
 

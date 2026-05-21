@@ -18,7 +18,10 @@ test-results/
 debug_bootstrap.html
 spine_capture.html
 _*.png
+verify_*.png
+verify_ride_spine/
 _*.html
+*.embedded.js
 spine_manifest.js
 spine_manifest_weapon.js
 pet_pickup_spine_manifest.js

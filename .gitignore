@@ -4,7 +4,10 @@ analysis_tools/
 ui_assets/
 test-results/
 _*.png
+verify_*.png
+verify_ride_spine/
 _*.html
+*.embedded.js
 *.zip
 *.sln
 *.log
