@@ -226,6 +226,7 @@
     railTitle: "룰렛 계산기",
     railCopy: "무기와 탈것 티켓 누적, 미션, 핫딜 기준으로 500회 최저가를 계산합니다.",
   });
+  const ROULETTE_CALCULATOR_ENABLED = false;
   const ROULETTE_TARGET_PULLS = 500;
   const ROULETTE_MISSION_TICKETS_PER_DAY = 10;
   const ROULETTE_MAX_MISSION_DAYS = 14;
@@ -2821,11 +2822,13 @@
 
   function isRouletteCalculatorCategory(categoryOrKey) {
     const key = typeof categoryOrKey === "string" ? categoryOrKey : categoryOrKey?.key;
-    return key === ROULETTE_CALCULATOR_CATEGORY_KEY;
+    return ROULETTE_CALCULATOR_ENABLED && key === ROULETTE_CALCULATOR_CATEGORY_KEY;
   }
 
   function getNavigationCategories() {
-    return [...getCategories(), ROULETTE_CALCULATOR_CATEGORY];
+    return ROULETTE_CALCULATOR_ENABLED
+      ? [...getCategories(), ROULETTE_CALCULATOR_CATEGORY]
+      : getCategories();
   }
 
   function getActiveCategory() {
@@ -5978,7 +5981,10 @@
 
   function findInitialSelection() {
     const requestedView = String(pageParams.get("view") || pageParams.get("category") || "").trim();
-    if (requestedView === ROULETTE_CALCULATOR_CATEGORY_KEY || requestedView.toLowerCase() === "calculator") {
+    if (
+      ROULETTE_CALCULATOR_ENABLED
+      && (requestedView === ROULETTE_CALCULATOR_CATEGORY_KEY || requestedView.toLowerCase() === "calculator")
+    ) {
       return { categoryKey: ROULETTE_CALCULATOR_CATEGORY_KEY, index: 0 };
     }
 
@@ -6590,24 +6596,26 @@
     const calculatorActive = isRouletteCalculatorCategory(activeCategory);
     if (elements.railPrimaryActions) {
       elements.railPrimaryActions.innerHTML = "";
-      const calculatorButton = document.createElement("button");
-      calculatorButton.type = "button";
-      calculatorButton.className = `rail-calculator-action${calculatorActive ? " active" : ""}`;
-      calculatorButton.textContent = ROULETTE_CALCULATOR_CATEGORY.label;
-      calculatorButton.addEventListener("click", () => {
-        if (isMobileLayout()) {
-          setMobileLoading("view-transition", true);
-        }
-        state.activeCategoryKey = ROULETTE_CALCULATOR_CATEGORY_KEY;
-        if (isMobileLayout()) {
-          state.mobileView = "detail";
-        }
-        render();
-        if (isMobileLayout()) {
-          finishMobileLoadingSoon("view-transition");
-        }
-      });
-      elements.railPrimaryActions.appendChild(calculatorButton);
+      if (ROULETTE_CALCULATOR_ENABLED) {
+        const calculatorButton = document.createElement("button");
+        calculatorButton.type = "button";
+        calculatorButton.className = `rail-calculator-action${calculatorActive ? " active" : ""}`;
+        calculatorButton.textContent = ROULETTE_CALCULATOR_CATEGORY.label;
+        calculatorButton.addEventListener("click", () => {
+          if (isMobileLayout()) {
+            setMobileLoading("view-transition", true);
+          }
+          state.activeCategoryKey = ROULETTE_CALCULATOR_CATEGORY_KEY;
+          if (isMobileLayout()) {
+            state.mobileView = "detail";
+          }
+          render();
+          if (isMobileLayout()) {
+            finishMobileLoadingSoon("view-transition");
+          }
+        });
+        elements.railPrimaryActions.appendChild(calculatorButton);
+      }
     }
     elements.collectionTabs.innerHTML = "";
 
