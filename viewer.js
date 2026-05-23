@@ -5718,9 +5718,6 @@
     if (skill?.slotType === "Basic" || skill?.tone === "basic" || Number(skill?.slotIndex) === 0) {
       return "basic";
     }
-    if (firstSkillType === "7") {
-      return "aura";
-    }
     if (skill?.tone === "passive" || firstSkillType === "4" || firstSkillType === "5" || Number(skill?.slotIndex) >= 3) {
       return "passive";
     }
