@@ -6813,13 +6813,48 @@
       return;
     }
 
-    schedules.slice(0, 6).forEach((item) => {
+    const currentSchedules = schedules.filter((item) => item.resolvedStatus === "current");
+    const upcomingSchedules = schedules.filter((item) => item.resolvedStatus === "upcoming");
+    const pastSchedules = schedules
+      .filter((item) => item.resolvedStatus === "past")
+      .slice()
+      .reverse();
+    const activeSchedules = [...currentSchedules, ...upcomingSchedules];
+    const visibleSchedules = activeSchedules.length
+      ? activeSchedules.slice(0, 6)
+      : pastSchedules.slice(0, 6);
+    const hiddenPastSchedules = activeSchedules.length
+      ? pastSchedules
+      : pastSchedules.slice(6);
+
+    visibleSchedules.forEach((item) => {
       const statusMeta = resolveScheduleToneMeta(item, currentDateTimeKey);
       const block = document.createElement("div");
       block.className = `schedule-item ${statusMeta.tone}`;
       block.innerHTML = `<strong>${escapeHtml(formatScheduleDisplayRange(item.start, item.end, item.resolvedStartDateTimeKey, item.resolvedEndExclusiveDateTimeKey))}</strong><span>${escapeHtml(statusMeta.scheduleLabel)}</span>`;
       elements.scheduleList.appendChild(block);
     });
+
+    if (hiddenPastSchedules.length) {
+      const history = document.createElement("details");
+      history.className = "schedule-history";
+      history.innerHTML = `
+        <summary>
+          <span>종료 일정 보기</span>
+          <small>${escapeHtml(String(hiddenPastSchedules.length))}개</small>
+        </summary>
+        <div class="schedule-history-list"></div>
+      `;
+      const historyList = history.querySelector(".schedule-history-list");
+      hiddenPastSchedules.forEach((item) => {
+        const statusMeta = resolveScheduleToneMeta(item, currentDateTimeKey);
+        const block = document.createElement("div");
+        block.className = `schedule-item ${statusMeta.tone}`;
+        block.innerHTML = `<strong>${escapeHtml(formatScheduleDisplayRange(item.start, item.end, item.resolvedStartDateTimeKey, item.resolvedEndExclusiveDateTimeKey))}</strong><span>${escapeHtml(statusMeta.scheduleLabel)}</span>`;
+        historyList.appendChild(block);
+      });
+      elements.scheduleList.appendChild(history);
+    }
 
     if (generalSummonStatus) {
       const block = document.createElement("div");

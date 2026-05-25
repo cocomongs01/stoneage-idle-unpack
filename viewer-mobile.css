@@ -823,6 +823,20 @@
     border-radius: 0.875rem;
   }
 
+  body.mobile-layout .schedule-history summary {
+    min-height: 2.5rem;
+    padding: 0 0.6875rem;
+    border-radius: 0.8125rem;
+  }
+
+  body.mobile-layout .schedule-history summary span {
+    font-size: 0.75rem;
+  }
+
+  body.mobile-layout .schedule-history summary small {
+    font-size: 0.6875rem;
+  }
+
   body.mobile-layout .schedule-item strong {
     font-size: 0.8125rem;
   }

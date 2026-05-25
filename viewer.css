@@ -2394,6 +2394,61 @@ img {
   gap: 0.625rem;
 }
 
+.schedule-history {
+  display: grid;
+  gap: 0.625rem;
+}
+
+.schedule-history summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  min-height: 2.75rem;
+  padding: 0 0.875rem;
+  border-radius: 0.875rem;
+  border: 1px solid rgba(197, 142, 116, 0.26);
+  background: rgba(28, 20, 16, 0.72);
+  color: #f0d1c2;
+  cursor: pointer;
+  list-style: none;
+}
+
+.schedule-history summary::-webkit-details-marker {
+  display: none;
+}
+
+.schedule-history summary::after {
+  content: "";
+  width: 0.5rem;
+  height: 0.5rem;
+  border-right: 2px solid rgba(240, 209, 194, 0.78);
+  border-bottom: 2px solid rgba(240, 209, 194, 0.78);
+  transform: rotate(45deg);
+  transition: transform 0.18s ease;
+}
+
+.schedule-history[open] summary::after {
+  transform: rotate(225deg);
+}
+
+.schedule-history summary span {
+  font-size: 0.8125rem;
+  font-weight: 800;
+}
+
+.schedule-history summary small {
+  margin-left: auto;
+  color: rgba(240, 209, 194, 0.72);
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.schedule-history-list {
+  display: grid;
+  gap: 0.625rem;
+}
+
 .schedule-item {
   display: grid;
   gap: 0.5rem;
