@@ -685,32 +685,12 @@ window.GACHA_PET_VIEWER_DATA = {
               }
             },
             {
-              "start": "2026-04-16",
-              "end": "2026-04-22",
-              "status": "past",
-              "scheduleRule": {
-                "timeType": 10,
-                "openDay": 34,
-                "period": 7
-              }
-            },
-            {
               "start": "2026-04-30",
               "end": "2026-05-06",
               "status": "past",
               "scheduleRule": {
                 "timeType": 10,
                 "openDay": 48,
-                "period": 7
-              }
-            },
-            {
-              "start": "2026-05-14",
-              "end": "2026-05-20",
-              "status": "current",
-              "scheduleRule": {
-                "timeType": 10,
-                "openDay": 62,
                 "period": 7
               }
             },
@@ -722,17 +702,6 @@ window.GACHA_PET_VIEWER_DATA = {
                 "timeType": 5,
                 "start": "2026-06-06",
                 "end": "2026-06-12",
-                "openDay": 83
-              }
-            },
-            {
-              "start": "2026-06-20",
-              "end": "2026-06-26",
-              "status": "upcoming",
-              "scheduleRule": {
-                "timeType": 5,
-                "start": "2026-06-20",
-                "end": "2026-06-26",
                 "openDay": 83
               }
             },
@@ -759,17 +728,6 @@ window.GACHA_PET_VIEWER_DATA = {
               }
             },
             {
-              "start": "2026-08-01",
-              "end": "2026-08-07",
-              "status": "upcoming",
-              "scheduleRule": {
-                "timeType": 5,
-                "start": "2026-08-01",
-                "end": "2026-08-07",
-                "openDay": 83
-              }
-            },
-            {
               "start": "2026-08-15",
               "end": "2026-08-21",
               "status": "upcoming",
@@ -788,17 +746,6 @@ window.GACHA_PET_VIEWER_DATA = {
                 "timeType": 5,
                 "start": "2026-08-29",
                 "end": "2026-09-04",
-                "openDay": 83
-              }
-            },
-            {
-              "start": "2026-09-12",
-              "end": "2026-09-18",
-              "status": "upcoming",
-              "scheduleRule": {
-                "timeType": 5,
-                "start": "2026-09-12",
-                "end": "2026-09-18",
                 "openDay": 83
               }
             },
@@ -825,17 +772,6 @@ window.GACHA_PET_VIEWER_DATA = {
               }
             },
             {
-              "start": "2026-10-24",
-              "end": "2026-10-30",
-              "status": "upcoming",
-              "scheduleRule": {
-                "timeType": 5,
-                "start": "2026-10-24",
-                "end": "2026-10-30",
-                "openDay": 83
-              }
-            },
-            {
               "start": "2026-11-07",
               "end": "2026-11-13",
               "status": "upcoming",
@@ -858,17 +794,6 @@ window.GACHA_PET_VIEWER_DATA = {
               }
             },
             {
-              "start": "2026-12-05",
-              "end": "2026-12-11",
-              "status": "upcoming",
-              "scheduleRule": {
-                "timeType": 5,
-                "start": "2026-12-05",
-                "end": "2026-12-11",
-                "openDay": 83
-              }
-            },
-            {
               "start": "2026-12-19",
               "end": "2026-12-25",
               "status": "upcoming",
@@ -887,17 +812,6 @@ window.GACHA_PET_VIEWER_DATA = {
                 "timeType": 5,
                 "start": "2027-01-02",
                 "end": "2027-01-08",
-                "openDay": 83
-              }
-            },
-            {
-              "start": "2027-01-16",
-              "end": "2027-01-22",
-              "status": "upcoming",
-              "scheduleRule": {
-                "timeType": 5,
-                "start": "2027-01-16",
-                "end": "2027-01-22",
                 "openDay": 83
               }
             }

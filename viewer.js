@@ -2124,6 +2124,35 @@
     ["1103901:\uBC29\uC6B8\uAC10\uC625:2", "\uBB3C \uC18D\uC131"],
     ["1112601:\uC758\uAE30 \uC18C\uCE68:2", "\uC9C0\uC815\uB41C"],
   ]);
+  const CUMULATIVE_EVENT_REWARD_SCHEDULE_KEYS = new Map([
+    ["1107701", new Set([
+      "2026-03-03..2026-03-09",
+      "2026-03-19..2026-03-25",
+      "2026-04-02..2026-04-08",
+      "2026-04-30..2026-05-06",
+      "2026-06-06..2026-06-12",
+      "2026-07-04..2026-07-10",
+      "2026-07-18..2026-07-24",
+      "2026-08-15..2026-08-21",
+      "2026-08-29..2026-09-04",
+      "2026-09-26..2026-10-02",
+      "2026-10-10..2026-10-16",
+      "2026-11-07..2026-11-13",
+      "2026-11-21..2026-11-27",
+      "2026-12-19..2026-12-25",
+      "2027-01-02..2027-01-08",
+    ])],
+    ["1112601", new Set([
+      "2026-04-16..2026-04-22",
+      "2026-05-14..2026-05-20",
+      "2026-06-20..2026-06-26",
+      "2026-08-01..2026-08-07",
+      "2026-09-12..2026-09-18",
+      "2026-10-24..2026-10-30",
+      "2026-12-05..2026-12-11",
+      "2027-01-16..2027-01-22",
+    ])],
+  ]);
   const EXTRA_PET_ENRICHMENTS = new Map(
     (Array.isArray(window.GACHA_VIEWER_EXTRA_PETS) ? window.GACHA_VIEWER_EXTRA_PETS : [])
       .map((entry) => [String(entry?.characterId || entry?.viewerId || ""), entry])
@@ -2218,6 +2247,38 @@
         if (seaSpearFamily) {
           variant.upgradeDescFormatted = replaceLucySeaSpearUpgradeCopy(variant.upgradeDescFormatted);
         }
+      });
+    });
+  }
+
+  function eventRewardScheduleKey(schedule) {
+    const rule = schedule?.scheduleRule || {};
+    const start = normalizeScheduleDateKey(rule.start || schedule?.start);
+    const end = normalizeScheduleDateKey(rule.end || schedule?.end);
+    return start && end ? `${start}..${end}` : "";
+  }
+
+  function patchCumulativeEventRewardSchedules(entity) {
+    if (!entity || !Array.isArray(entity.schedules)) return;
+    const entityId = String(entity.characterId || entity.viewerId || entity.id || "");
+    const allowedScheduleKeys = CUMULATIVE_EVENT_REWARD_SCHEDULE_KEYS.get(entityId);
+    if (!allowedScheduleKeys) return;
+
+    const seenScheduleKeys = new Set();
+    entity.schedules = entity.schedules.filter((schedule) => {
+      const scheduleKey = eventRewardScheduleKey(schedule);
+      if (!allowedScheduleKeys.has(scheduleKey) || seenScheduleKeys.has(scheduleKey)) {
+        return false;
+      }
+      seenScheduleKeys.add(scheduleKey);
+      return true;
+    });
+  }
+
+  function applyEventRewardSchedulePatches() {
+    getCategories().forEach((category) => {
+      getItems(category).forEach((item) => {
+        patchCumulativeEventRewardSchedules(item);
       });
     });
   }
@@ -7729,6 +7790,7 @@
   });
 
   injectExtraPetPlaceholders();
+  applyEventRewardSchedulePatches();
   state.scheduleCalibration = loadScheduleCalibration();
   const initialSelection = findInitialSelection();
   state.activeCategoryKey = initialSelection.categoryKey;
