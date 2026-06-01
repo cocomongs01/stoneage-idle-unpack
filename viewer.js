@@ -2454,7 +2454,7 @@
       name: "고대군주 쟈쟈코",
       title: "고대의 군주",
       description: "천공의 탑 연계 SS 펫",
-      elementKey: "leaf",
+      elementKey: "wind",
       attackTypeKey: "support",
       statusLabel: "상점형",
       statusSummary: "천공의 탑 영웅의 증표 상점",
@@ -2518,7 +2518,7 @@
       name: "성기사 포베이",
       title: "성스러운 기사단",
       description: "고급 진주 상점 SS 펫",
-      elementKey: "leaf",
+      elementKey: "wind",
       attackTypeKey: "melee",
       statusLabel: "상점형",
       statusSummary: "원시왕 고급 진주 상점",
@@ -6312,13 +6312,7 @@
     if (pet.attackSpeedType && ATTACK_SPEED_LABEL_BY_TYPE[pet.attackSpeedType]) {
       return ATTACK_SPEED_LABEL_BY_TYPE[pet.attackSpeedType];
     }
-    const byAttackType = {
-      melee: "느림",
-      defence: "느림",
-      ranged: "보통",
-      support: "보통",
-    };
-    return byAttackType[pet.attackTypeKey] || "";
+    return "";
   }
 
   function elementIconAsset(pet) {
@@ -6365,13 +6359,7 @@
     if (pet.attackSpeedType && ATTACK_SPEED_LABEL_BY_TYPE[pet.attackSpeedType]) {
       return ATTACK_SPEED_LABEL_BY_TYPE[pet.attackSpeedType];
     }
-    const byAttackType = {
-      melee: "\uB290\uB9BC",
-      defence: "\uB290\uB9BC",
-      ranged: "\uBCF4\uD1B5",
-      support: "\uBCF4\uD1B5",
-    };
-    return byAttackType[pet.attackTypeKey] || "";
+    return "";
   }
 
   function stageDisplayLabel(variant) {

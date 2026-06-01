@@ -7608,7 +7608,7 @@ window.GACHA_PET_VIEWER_DATA = {
           ],
           "attackTypeKey": "support",
           "title": "질풍의 신수",
-          "elementKey": "leaf",
+          "elementKey": "wind",
           "schedules": [
             {
               "start": "2026-05-05",
@@ -18558,7 +18558,7 @@ window.GACHA_PET_VIEWER_DATA = {
           "attackTypeKey": "melee",
           "statusSummary": "룰렛 오픈",
           "title": "탑승펫",
-          "elementKey": "leaf",
+          "elementKey": "fire",
           "schedules": [
             {
               "start": "2026-08-04",
