@@ -1836,10 +1836,10 @@ window.GACHA_PET_VIEWER_DATA = {
               ]
             },
             {
-              "slotLabel": "패시브 스킬",
+              "slotLabel": "액티브 스킬",
               "name": "멈추지 않아",
-              "tone": "passive",
-              "slotType": "Passive",
+              "tone": "active",
+              "slotType": "Active",
               "initialVariantIndex": 0,
               "slotIndex": 2,
               "variants": [
@@ -3499,13 +3499,13 @@ window.GACHA_PET_VIEWER_DATA = {
               }
             },
             {
-              "start": "2026-07-07",
-              "end": "2026-07-20",
+              "start": "2026-07-14",
+              "end": "2026-07-27",
               "status": "upcoming",
               "scheduleRule": {
                 "timeType": 5,
-                "start": "2026-07-07",
-                "end": "2026-07-20",
+                "start": "2026-07-14",
+                "end": "2026-07-27",
                 "openDay": 83,
                 "syncAnchor": {
                   "timeType": 4,
@@ -4186,13 +4186,13 @@ window.GACHA_PET_VIEWER_DATA = {
               }
             },
             {
-              "start": "2026-07-21",
-              "end": "2026-08-03",
+              "start": "2026-07-28",
+              "end": "2026-08-10",
               "status": "upcoming",
               "scheduleRule": {
                 "timeType": 5,
-                "start": "2026-07-21",
-                "end": "2026-08-03",
+                "start": "2026-07-28",
+                "end": "2026-08-10",
                 "openDay": 83,
                 "syncAnchor": {
                   "timeType": 4,
@@ -4873,13 +4873,13 @@ window.GACHA_PET_VIEWER_DATA = {
               }
             },
             {
-              "start": "2026-08-04",
-              "end": "2026-08-17",
+              "start": "2026-08-11",
+              "end": "2026-08-24",
               "status": "upcoming",
               "scheduleRule": {
                 "timeType": 5,
-                "start": "2026-08-04",
-                "end": "2026-08-17",
+                "start": "2026-08-11",
+                "end": "2026-08-24",
                 "openDay": 83,
                 "syncAnchor": {
                   "timeType": 4,
@@ -5552,7 +5552,7 @@ window.GACHA_PET_VIEWER_DATA = {
             {
               "start": "2026-04-14",
               "end": "2026-04-20",
-              "status": "current",
+              "status": "past",
               "scheduleRule": {
                 "timeType": 4,
                 "openDay": 41,
@@ -5560,13 +5560,13 @@ window.GACHA_PET_VIEWER_DATA = {
               }
             },
             {
-              "start": "2026-08-18",
-              "end": "2026-08-31",
+              "start": "2026-08-25",
+              "end": "2026-09-07",
               "status": "upcoming",
               "scheduleRule": {
                 "timeType": 5,
-                "start": "2026-08-18",
-                "end": "2026-08-31",
+                "start": "2026-08-25",
+                "end": "2026-09-07",
                 "openDay": 83,
                 "syncAnchor": {
                   "timeType": 4,
@@ -6239,7 +6239,7 @@ window.GACHA_PET_VIEWER_DATA = {
             {
               "start": "2026-04-21",
               "end": "2026-04-27",
-              "status": "upcoming",
+              "status": "past",
               "scheduleRule": {
                 "timeType": 4,
                 "openDay": 48,
@@ -6247,13 +6247,13 @@ window.GACHA_PET_VIEWER_DATA = {
               }
             },
             {
-              "start": "2026-09-01",
-              "end": "2026-09-14",
+              "start": "2026-09-08",
+              "end": "2026-09-21",
               "status": "upcoming",
               "scheduleRule": {
                 "timeType": 5,
-                "start": "2026-09-01",
-                "end": "2026-09-14",
+                "start": "2026-09-08",
+                "end": "2026-09-21",
                 "openDay": 83,
                 "syncAnchor": {
                   "timeType": 4,
@@ -6611,10 +6611,10 @@ window.GACHA_PET_VIEWER_DATA = {
               ]
             },
             {
-              "slotLabel": "패시브 스킬",
+              "slotLabel": "액티브 스킬",
               "name": "불패신화",
-              "tone": "passive",
-              "slotType": "Passive",
+              "tone": "active",
+              "slotType": "Active",
               "initialVariantIndex": 0,
               "slotIndex": 2,
               "variants": [
@@ -6937,7 +6937,7 @@ window.GACHA_PET_VIEWER_DATA = {
             {
               "start": "2026-04-28",
               "end": "2026-05-04",
-              "status": "upcoming",
+              "status": "past",
               "scheduleRule": {
                 "timeType": 4,
                 "openDay": 55,
@@ -6945,13 +6945,13 @@ window.GACHA_PET_VIEWER_DATA = {
               }
             },
             {
-              "start": "2026-09-15",
-              "end": "2026-09-28",
+              "start": "2026-09-22",
+              "end": "2026-10-05",
               "status": "upcoming",
               "scheduleRule": {
                 "timeType": 5,
-                "start": "2026-09-15",
-                "end": "2026-09-28",
+                "start": "2026-09-22",
+                "end": "2026-10-05",
                 "openDay": 83,
                 "syncAnchor": {
                   "timeType": 4,
@@ -7635,7 +7635,7 @@ window.GACHA_PET_VIEWER_DATA = {
             {
               "start": "2026-05-05",
               "end": "2026-05-11",
-              "status": "upcoming",
+              "status": "past",
               "scheduleRule": {
                 "timeType": 4,
                 "openDay": 62,
@@ -7643,13 +7643,13 @@ window.GACHA_PET_VIEWER_DATA = {
               }
             },
             {
-              "start": "2026-09-29",
-              "end": "2026-10-12",
+              "start": "2026-10-06",
+              "end": "2026-10-19",
               "status": "upcoming",
               "scheduleRule": {
                 "timeType": 5,
-                "start": "2026-09-29",
-                "end": "2026-10-12",
+                "start": "2026-10-06",
+                "end": "2026-10-19",
                 "openDay": 83,
                 "syncAnchor": {
                   "timeType": 4,
@@ -8333,7 +8333,7 @@ window.GACHA_PET_VIEWER_DATA = {
             {
               "start": "2026-05-12",
               "end": "2026-05-18",
-              "status": "upcoming",
+              "status": "past",
               "scheduleRule": {
                 "timeType": 4,
                 "openDay": 69,
@@ -8341,13 +8341,13 @@ window.GACHA_PET_VIEWER_DATA = {
               }
             },
             {
-              "start": "2026-10-13",
-              "end": "2026-10-26",
+              "start": "2026-10-20",
+              "end": "2026-11-02",
               "status": "upcoming",
               "scheduleRule": {
                 "timeType": 5,
-                "start": "2026-10-13",
-                "end": "2026-10-26",
+                "start": "2026-10-20",
+                "end": "2026-11-02",
                 "openDay": 83,
                 "syncAnchor": {
                   "timeType": 4,
@@ -9031,7 +9031,7 @@ window.GACHA_PET_VIEWER_DATA = {
             {
               "start": "2026-05-19",
               "end": "2026-05-25",
-              "status": "upcoming",
+              "status": "past",
               "scheduleRule": {
                 "timeType": 4,
                 "openDay": 76,
@@ -9039,13 +9039,13 @@ window.GACHA_PET_VIEWER_DATA = {
               }
             },
             {
-              "start": "2026-10-27",
-              "end": "2026-11-09",
+              "start": "2026-11-03",
+              "end": "2026-11-16",
               "status": "upcoming",
               "scheduleRule": {
                 "timeType": 5,
-                "start": "2026-10-27",
-                "end": "2026-11-09",
+                "start": "2026-11-03",
+                "end": "2026-11-16",
                 "openDay": 83,
                 "syncAnchor": {
                   "timeType": 4,
@@ -9426,9 +9426,9 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillType": "3",
                   "coolTime": "7.5",
                   "iconImage": "assets/skills/SP0017_2.png",
-                  "rawDesc": "사정거리 내의 가장 멀리 있는 적 1명에게 돌진 후 자신의 주변 <#CFFF71>{3}m</color> 범위에 지진 공격(피해량: <#CFFF71>{0}%</color> x <#CFFF71>공격력</color>). 적중 시, 대상에게 넘어트리기와 <#CFFF71>{4}초</color>간 <#CFFF71>(보조) 공격력 감소({5}%)</color> 부여하고 <#CFFF71>{6}%</color> 확률로 <#CFFF71>{7}초</color>간 <#CFFF71>격노</color> 획득.",
-                  "formattedDesc": "사정거리 내의 가장 멀리 있는 적 1명에게 돌진 후 자신의 주변 <#CFFF71>3m</color> 범위에 지진 공격(피해량: <#CFFF71>910%</color> x <#CFFF71>공격력</color>). 적중 시, 대상에게 넘어트리기와 <#CFFF71>3초</color>간 <#CFFF71>(보조) 공격력 감소(20%)</color> 부여하고 <#CFFF71>30%</color> 확률로 <#CFFF71>10초</color>간 <#CFFF71>격노</color> 획득.",
-                  "descValues": "3|3|20|30|10",
+                  "rawDesc": "사정거리 내의 가장 멀리 있는 적 1명에게 돌진 후 자신의 주변 <#CFFF71>{3}m</color> 범위에 지진 공격(피해량: <#CFFF71>{0}%</color> x <#CFFF71>공격력</color>). 적중 시, 대상에게 넘어트리기와 <#CFFF71>{4}초</color>간 <#CFFF71>(보조) 공격력 감소({5}%)</color> 부여하고 <#CFFF71>{6}초</color>간 <#CFFF71>격노</color> 획득 및 적중 시마다 <#CFFF71>격노</color> 추가 획득.",
+                  "formattedDesc": "사정거리 내의 가장 멀리 있는 적 1명에게 돌진 후 자신의 주변 <#CFFF71>3m</color> 범위에 지진 공격(피해량: <#CFFF71>910%</color> x <#CFFF71>공격력</color>). 적중 시, 대상에게 넘어트리기와 <#CFFF71>3초</color>간 <#CFFF71>(보조) 공격력 감소(20%)</color> 부여하고 <#CFFF71>10초</color>간 <#CFFF71>격노</color> 획득 및 적중 시마다 <#CFFF71>격노</color> 추가 획득.",
+                  "descValues": "3|3|20|10",
                   "upgradeDescFormatted": "",
                   "factorAttk": 91000,
                   "factorDef": 0,
@@ -9448,10 +9448,10 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillType": "3",
                   "coolTime": "7.5",
                   "iconImage": "assets/skills/SP0017_2.png",
-                  "rawDesc": "사정거리 내의 가장 멀리 있는 적 1명에게 돌진 후 자신의 주변 <#CFFF71>{3}m</color> 범위에 지진 공격(피해량: <#CFFF71>{0}%</color> x <#CFFF71>공격력</color>). 적중 시, 대상에게 넘어트리기와 <#CFFF71>{4}초</color>간 <#CFFF71>(보조) 공격력 감소({5}%)</color> 부여하고 <#CFFF71>{6}%</color> 확률로 <#CFFF71>{7}초</color>간 <#CFFF71>격노</color> 획득.",
-                  "formattedDesc": "사정거리 내의 가장 멀리 있는 적 1명에게 돌진 후 자신의 주변 <#CFFF71>3m</color> 범위에 지진 공격(피해량: <#CFFF71>1090%</color> x <#CFFF71>공격력</color>). 적중 시, 대상에게 넘어트리기와 <#CFFF71>3초</color>간 <#CFFF71>(보조) 공격력 감소(20%)</color> 부여하고 <#CFFF71>40%</color> 확률로 <#CFFF71>10초</color>간 <#CFFF71>격노</color> 획득.",
-                  "descValues": "3|3|20|40|10",
-                  "upgradeDescFormatted": "SS ★1 : 피해량 +180% / 격노 획득 확률 +10%",
+                  "rawDesc": "사정거리 내의 가장 멀리 있는 적 1명에게 돌진 후 자신의 주변 <#CFFF71>{3}m</color> 범위에 지진 공격(피해량: <#CFFF71>{0}%</color> x <#CFFF71>공격력</color>). 적중 시, 대상에게 넘어트리기와 <#CFFF71>{4}초</color>간 <#CFFF71>(보조) 공격력 감소({5}%)</color> 부여하고 <#CFFF71>{6}초</color>간 <#CFFF71>격노</color> 획득 및 적중 시마다 <#CFFF71>격노</color> 추가 획득.",
+                  "formattedDesc": "사정거리 내의 가장 멀리 있는 적 1명에게 돌진 후 자신의 주변 <#CFFF71>3m</color> 범위에 지진 공격(피해량: <#CFFF71>1090%</color> x <#CFFF71>공격력</color>). 적중 시, 대상에게 넘어트리기와 <#CFFF71>4초</color>간 <#CFFF71>(보조) 공격력 감소(20%)</color> 부여하고 <#CFFF71>10초</color>간 <#CFFF71>격노</color> 획득 및 적중 시마다 <#CFFF71>격노</color> 추가 획득.",
+                  "descValues": "3|4|20|10",
+                  "upgradeDescFormatted": "SS ★1 : 피해량 +180% / (보조) 공격력 감소 +1초",
                   "factorAttk": 109000,
                   "factorDef": 0,
                   "factorHp": 0,
@@ -9460,8 +9460,8 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillRangeWidth": 0,
                   "skillRangeHeight": 0,
                   "skillId": "11125012134",
-                  "upgradeDescTemplate": "SS ★1 : 피해량 +{0}% / 격노 획득 확률 +{1}%",
-                  "upgradeDescValues": "180|10",
+                  "upgradeDescTemplate": "SS ★1 : 피해량 +{0}% / (보조) 공격력 감소 +{1}초",
+                  "upgradeDescValues": "180|1",
                   "upgradeDescTid": "Skill_Upgrade_Desc_11125012134"
                 },
                 {
@@ -9473,9 +9473,9 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillType": "3",
                   "coolTime": "7.5",
                   "iconImage": "assets/skills/SP0017_2.png",
-                  "rawDesc": "사정거리 내의 가장 멀리 있는 적 1명에게 돌진 후 자신의 주변 <#CFFF71>{3}m</color> 범위에 지진 공격(피해량: <#CFFF71>{0}%</color> x <#CFFF71>공격력</color>). 적중 시, 대상에게 넘어트리기와 <#CFFF71>{4}초</color>간 <#CFFF71>(보조) 공격력 감소({5}%)</color> 부여하고 <#CFFF71>{6}%</color> 확률로 <#CFFF71>{7}초</color>간 <#CFFF71>격노</color> 획득. (전투 시작 <#CFFF71>{18}초</color> 후 최초 시전)",
-                  "formattedDesc": "사정거리 내의 가장 멀리 있는 적 1명에게 돌진 후 자신의 주변 <#CFFF71>3m</color> 범위에 지진 공격(피해량: <#CFFF71>1090%</color> x <#CFFF71>공격력</color>). 적중 시, 대상에게 넘어트리기와 <#CFFF71>3초</color>간 <#CFFF71>(보조) 공격력 감소(20%)</color> 부여하고 <#CFFF71>40%</color> 확률로 <#CFFF71>10초</color>간 <#CFFF71>격노</color> 획득. (전투 시작 <#CFFF71>4초</color> 후 최초 시전)",
-                  "descValues": "3|3|20|40|10|4",
+                  "rawDesc": "사정거리 내의 가장 멀리 있는 적 1명에게 돌진 후 자신의 주변 <#CFFF71>{3}m</color> 범위에 지진 공격(피해량: <#CFFF71>{0}%</color> x <#CFFF71>공격력</color>). 적중 시, 대상에게 넘어트리기와 <#CFFF71>{4}초</color>간 <#CFFF71>(보조) 공격력 감소({5}%)</color> 부여하고 <#CFFF71>{6}초</color>간 <#CFFF71>격노</color> 획득 및 적중 시마다 <#CFFF71>격노</color> 추가 획득. (전투 시작 <#CFFF71>{7}초</color> 후 최초 시전)",
+                  "formattedDesc": "사정거리 내의 가장 멀리 있는 적 1명에게 돌진 후 자신의 주변 <#CFFF71>3m</color> 범위에 지진 공격(피해량: <#CFFF71>1090%</color> x <#CFFF71>공격력</color>). 적중 시, 대상에게 넘어트리기와 <#CFFF71>4초</color>간 <#CFFF71>(보조) 공격력 감소(20%)</color> 부여하고 <#CFFF71>10초</color>간 <#CFFF71>격노</color> 획득 및 적중 시마다 <#CFFF71>격노</color> 추가 획득. (전투 시작 <#CFFF71>4초</color> 후 최초 시전)",
+                  "descValues": "3|4|20|10|4",
                   "upgradeDescFormatted": "SS ★5 : 전투 시작 4초 후 최초 시전 추가",
                   "factorAttk": 109000,
                   "factorDef": 0,
@@ -9498,10 +9498,10 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillType": "3",
                   "coolTime": "7.5",
                   "iconImage": "assets/skills/SP0017_2.png",
-                  "rawDesc": "사정거리 내의 가장 멀리 있는 적 1명에게 돌진 후 자신의 주변 <#CFFF71>{3}m</color> 범위에 지진 공격(피해량: <#CFFF71>{0}%</color> x <#CFFF71>공격력</color>). 적중 시, 대상에게 넘어트리기와 <#CFFF71>{4}초</color>간 <#CFFF71>(보조) 공격력 감소({5}%)</color> 부여하고 <#CFFF71>{6}%</color> 확률로 <#CFFF71>{7}초</color>간 <#CFFF71>격노</color> 획득. (전투 시작 <#CFFF71>{18}초</color> 후 최초 시전)",
-                  "formattedDesc": "사정거리 내의 가장 멀리 있는 적 1명에게 돌진 후 자신의 주변 <#CFFF71>3m</color> 범위에 지진 공격(피해량: <#CFFF71>1090%</color> x <#CFFF71>공격력</color>). 적중 시, 대상에게 넘어트리기와 <#CFFF71>4초</color>간 <#CFFF71>(보조) 공격력 감소(30%)</color> 부여하고 <#CFFF71>40%</color> 확률로 <#CFFF71>10초</color>간 <#CFFF71>격노</color> 획득. (전투 시작 <#CFFF71>4초</color> 후 최초 시전)",
-                  "descValues": "3|4|30|40|10|4",
-                  "upgradeDescFormatted": "SS ★7 : (보조) 공격력 감소 +1초 / (보조) 공격력 감소 +10%",
+                  "rawDesc": "사정거리 내의 가장 멀리 있는 적 1명에게 돌진 후 자신의 주변 <#CFFF71>{3}m</color> 범위에 지진 공격(피해량: <#CFFF71>{0}%</color> x <#CFFF71>공격력</color>). 적중 시, 대상에게 넘어트리기와 <#CFFF71>{4}초</color>간 <#CFFF71>(보조) 공격력 감소({5}%)</color> 부여하고 <#CFFF71>{6}초</color>간 <#CFFF71>격노</color> 획득 및 적중 시마다 <#CFFF71>격노</color> 추가 획득. (전투 시작 <#CFFF71>{7}초</color> 후 최초 시전)",
+                  "formattedDesc": "사정거리 내의 가장 멀리 있는 적 1명에게 돌진 후 자신의 주변 <#CFFF71>3m</color> 범위에 지진 공격(피해량: <#CFFF71>1090%</color> x <#CFFF71>공격력</color>). 적중 시, 대상에게 넘어트리기와 <#CFFF71>5초</color>간 <#CFFF71>(보조) 공격력 감소(25%)</color> 부여하고 <#CFFF71>10초</color>간 <#CFFF71>격노</color> 획득 및 적중 시마다 <#CFFF71>격노</color> 추가 획득. (전투 시작 <#CFFF71>4초</color> 후 최초 시전)",
+                  "descValues": "3|5|25|10|4",
+                  "upgradeDescFormatted": "SS ★7 : (보조) 공격력 감소 +1초 / (보조) 공격력 감소 +5%",
                   "factorAttk": 109000,
                   "factorDef": 0,
                   "factorHp": 0,
@@ -9511,7 +9511,7 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillRangeHeight": 0,
                   "skillId": "11125012140",
                   "upgradeDescTemplate": "SS ★7 : (보조) 공격력 감소 +{0}초 / (보조) 공격력 감소 +{1}%",
-                  "upgradeDescValues": "1|10",
+                  "upgradeDescValues": "1|5",
                   "upgradeDescTid": "Skill_Upgrade_Desc_11125012140"
                 },
                 {
@@ -9523,10 +9523,10 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillType": "3",
                   "coolTime": "7.5",
                   "iconImage": "assets/skills/SP0017_2.png",
-                  "rawDesc": "사정거리 내의 가장 멀리 있는 적 1명에게 돌진 후 자신의 주변 <#CFFF71>{3}m</color> 범위에 지진 공격(피해량: <#CFFF71>{0}%</color> x <#CFFF71>공격력</color>). 적중 시, 대상에게 넘어트리기와 <#CFFF71>{4}초</color>간 <#CFFF71>(보조) 공격력 감소({5}%)</color> 부여하고 <#CFFF71>{6}%</color> 확률로 <#CFFF71>{7}초</color>간 <#CFFF71>격노</color> 획득. (전투 시작 <#CFFF71>{18}초</color> 후 최초 시전)",
-                  "formattedDesc": "사정거리 내의 가장 멀리 있는 적 1명에게 돌진 후 자신의 주변 <#CFFF71>3m</color> 범위에 지진 공격(피해량: <#CFFF71>1380%</color> x <#CFFF71>공격력</color>). 적중 시, 대상에게 넘어트리기와 <#CFFF71>4초</color>간 <#CFFF71>(보조) 공격력 감소(30%)</color> 부여하고 <#CFFF71>50%</color> 확률로 <#CFFF71>10초</color>간 <#CFFF71>격노</color> 획득. (전투 시작 <#CFFF71>4초</color> 후 최초 시전)",
-                  "descValues": "3|4|30|50|10|4",
-                  "upgradeDescFormatted": "SS ★10 : 피해량 +290% / 격노 획득 확률 +10%",
+                  "rawDesc": "사정거리 내의 가장 멀리 있는 적 1명에게 돌진 후 자신의 주변 <#CFFF71>{3}m</color> 범위에 지진 공격(피해량: <#CFFF71>{0}%</color> x <#CFFF71>공격력</color>). 적중 시, 대상에게 넘어트리기와 <#CFFF71>{4}초</color>간 <#CFFF71>(보조) 공격력 감소({5}%)</color> 부여하고 <#CFFF71>{6}초</color>간 <#CFFF71>격노</color> 획득 및 적중 시마다 <#CFFF71>격노</color> 추가 획득. (전투 시작 <#CFFF71>{7}초</color> 후 최초 시전)",
+                  "formattedDesc": "사정거리 내의 가장 멀리 있는 적 1명에게 돌진 후 자신의 주변 <#CFFF71>3m</color> 범위에 지진 공격(피해량: <#CFFF71>1380%</color> x <#CFFF71>공격력</color>). 적중 시, 대상에게 넘어트리기와 <#CFFF71>5초</color>간 <#CFFF71>(보조) 공격력 감소(30%)</color> 부여하고 <#CFFF71>10초</color>간 <#CFFF71>격노</color> 획득 및 적중 시마다 <#CFFF71>격노</color> 추가 획득. (전투 시작 <#CFFF71>4초</color> 후 최초 시전)",
+                  "descValues": "3|5|30|10|4",
+                  "upgradeDescFormatted": "SS ★10 : 피해량 +290% / (보조) 공격력 감소 +5%",
                   "factorAttk": 138000,
                   "factorDef": 0,
                   "factorHp": 0,
@@ -9535,8 +9535,8 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillRangeWidth": 0,
                   "skillRangeHeight": 0,
                   "skillId": "11125012143",
-                  "upgradeDescTemplate": "SS ★10 : 피해량 +{0}% / 격노 획득 확률 +{1}%",
-                  "upgradeDescValues": "290|10",
+                  "upgradeDescTemplate": "SS ★10 : 피해량 +{0}% / (보조) 공격력 감소 +{1}%",
+                  "upgradeDescValues": "290|5",
                   "upgradeDescTid": "Skill_Upgrade_Desc_11125012143"
                 },
                 {
@@ -9548,9 +9548,9 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillType": "3",
                   "coolTime": "7.5",
                   "iconImage": "assets/skills/SP0017_2.png",
-                  "rawDesc": "사정거리 내의 가장 멀리 있는 적 1명에게 돌진 후 자신의 주변 <#CFFF71>{3}m</color> 범위에 지진 공격(피해량: <#CFFF71>{0}%</color> x <#CFFF71>공격력</color>). 적중 시, 대상에게 넘어트리기와 <#CFFF71>{4}초</color>간 <#CFFF71>(보조) 공격력 감소({5}%)</color> 부여하고 <#CFFF71>{6}%</color> 확률로 <#CFFF71>{7}초</color>간 <#CFFF71>격노</color> 획득. 추가로 <#CFFF71>{19}초</color>간 <#CFFF71>의지</color> 획득. (전투 시작 <#CFFF71>{18}초</color> 후 최초 시전)",
-                  "formattedDesc": "사정거리 내의 가장 멀리 있는 적 1명에게 돌진 후 자신의 주변 <#CFFF71>3m</color> 범위에 지진 공격(피해량: <#CFFF71>1380%</color> x <#CFFF71>공격력</color>). 적중 시, 대상에게 넘어트리기와 <#CFFF71>4초</color>간 <#CFFF71>(보조) 공격력 감소(30%)</color> 부여하고 <#CFFF71>50%</color> 확률로 <#CFFF71>10초</color>간 <#CFFF71>격노</color> 획득. 추가로 <#CFFF71>5초</color>간 <#CFFF71>의지</color> 획득. (전투 시작 <#CFFF71>4초</color> 후 최초 시전)",
-                  "descValues": "3|4|30|50|10|4|5",
+                  "rawDesc": "사정거리 내의 가장 멀리 있는 적 1명에게 돌진 후 자신의 주변 <#CFFF71>{3}m</color> 범위에 지진 공격(피해량: <#CFFF71>{0}%</color> x <#CFFF71>공격력</color>). 적중 시, 대상에게 넘어트리기와 <#CFFF71>{4}초</color>간 <#CFFF71>(보조) 공격력 감소({5}%)</color> 부여하고 <#CFFF71>{6}초</color>간 <#CFFF71>격노</color> 획득 및 적중 시마다 <#CFFF71>격노</color> 추가 획득. 추가로 <#CFFF71>{18}초</color>간 <#CFFF71>의지</color> 획득. (전투 시작 <#CFFF71>{7}초</color> 후 최초 시전)",
+                  "formattedDesc": "사정거리 내의 가장 멀리 있는 적 1명에게 돌진 후 자신의 주변 <#CFFF71>3m</color> 범위에 지진 공격(피해량: <#CFFF71>1380%</color> x <#CFFF71>공격력</color>). 적중 시, 대상에게 넘어트리기와 <#CFFF71>5초</color>간 <#CFFF71>(보조) 공격력 감소(30%)</color> 부여하고 <#CFFF71>10초</color>간 <#CFFF71>격노</color> 획득 및 적중 시마다 <#CFFF71>격노</color> 추가 획득. 추가로 <#CFFF71>5초</color>간 <#CFFF71>의지</color> 획득. (전투 시작 <#CFFF71>4초</color> 후 최초 시전)",
+                  "descValues": "3|5|30|10|4|5",
                   "upgradeDescFormatted": "SSS ★0 : 5초간 의지 획득 추가",
                   "factorAttk": 138000,
                   "factorDef": 0,
@@ -9731,7 +9731,13 @@ window.GACHA_PET_VIEWER_DATA = {
                 "timeType": 5,
                 "start": "2026-06-02",
                 "end": "2026-06-15",
-                "openDay": 83
+                "openDay": 83,
+                "syncAnchor": {
+                  "timeType": 4,
+                  "openDay": 27,
+                  "period": 7,
+                  "start": "2026-03-31"
+                }
               }
             }
           ],
@@ -10410,7 +10416,13 @@ window.GACHA_PET_VIEWER_DATA = {
                 "timeType": 5,
                 "start": "2026-06-16",
                 "end": "2026-06-29",
-                "openDay": 83
+                "openDay": 83,
+                "syncAnchor": {
+                  "timeType": 4,
+                  "openDay": 27,
+                  "period": 7,
+                  "start": "2026-03-31"
+                }
               }
             }
           ],
@@ -11089,7 +11101,13 @@ window.GACHA_PET_VIEWER_DATA = {
                 "timeType": 5,
                 "start": "2026-06-30",
                 "end": "2026-07-13",
-                "openDay": 83
+                "openDay": 83,
+                "syncAnchor": {
+                  "timeType": 4,
+                  "openDay": 27,
+                  "period": 7,
+                  "start": "2026-03-31"
+                }
               }
             }
           ],
@@ -12448,7 +12466,7 @@ window.GACHA_PET_VIEWER_DATA = {
             {
               "start": "2026-05-16",
               "end": "2026-05-22",
-              "status": "current",
+              "status": "past",
               "scheduleRule": {
                 "timeType": 8,
                 "openDay": 69,
@@ -12679,15 +12697,14 @@ window.GACHA_PET_VIEWER_DATA = {
           "elementKey": "fire",
           "schedules": [
             {
-              "start": "2026-06-02",
-              "end": "2026-06-15",
+              "start": "2026-06-23",
+              "end": "2026-07-06",
               "status": "upcoming",
               "scheduleRule": {
-                "timeType": 5,
-                "start": "2026-06-02",
-                "end": "2026-06-15",
-                "openDay": 90,
-                "period": 7,
+                "timeType": 9,
+                "start": "2026-06-23",
+                "end": "2026-07-06",
+                "openDay": 83,
                 "syncAnchor": {
                   "timeType": 8,
                   "openDay": 27,
@@ -12920,15 +12937,14 @@ window.GACHA_PET_VIEWER_DATA = {
           "elementKey": "water",
           "schedules": [
             {
-              "start": "2026-06-30",
-              "end": "2026-07-13",
+              "start": "2026-07-21",
+              "end": "2026-08-03",
               "status": "upcoming",
               "scheduleRule": {
-                "timeType": 5,
-                "start": "2026-06-30",
-                "end": "2026-07-13",
-                "openDay": 90,
-                "period": 7,
+                "timeType": 9,
+                "start": "2026-07-21",
+                "end": "2026-08-03",
+                "openDay": 83,
                 "syncAnchor": {
                   "timeType": 8,
                   "openDay": 27,
@@ -13161,15 +13177,14 @@ window.GACHA_PET_VIEWER_DATA = {
           "elementKey": "water",
           "schedules": [
             {
-              "start": "2026-07-28",
-              "end": "2026-08-10",
+              "start": "2026-11-10",
+              "end": "2026-11-23",
               "status": "upcoming",
               "scheduleRule": {
-                "timeType": 5,
-                "start": "2026-07-28",
-                "end": "2026-08-10",
-                "openDay": 90,
-                "period": 7,
+                "timeType": 9,
+                "start": "2026-11-10",
+                "end": "2026-11-23",
+                "openDay": 83,
                 "syncAnchor": {
                   "timeType": 8,
                   "openDay": 27,
@@ -13402,15 +13417,14 @@ window.GACHA_PET_VIEWER_DATA = {
           "elementKey": "leaf",
           "schedules": [
             {
-              "start": "2026-08-25",
-              "end": "2026-09-07",
+              "start": "2026-08-18",
+              "end": "2026-08-31",
               "status": "upcoming",
               "scheduleRule": {
                 "timeType": 5,
-                "start": "2026-08-25",
-                "end": "2026-09-07",
-                "openDay": 90,
-                "period": 7,
+                "start": "2026-08-18",
+                "end": "2026-08-31",
+                "openDay": 83,
                 "syncAnchor": {
                   "timeType": 8,
                   "openDay": 27,
@@ -13643,15 +13657,14 @@ window.GACHA_PET_VIEWER_DATA = {
           "elementKey": "wind",
           "schedules": [
             {
-              "start": "2026-09-22",
-              "end": "2026-10-05",
+              "start": "2026-09-15",
+              "end": "2026-09-28",
               "status": "upcoming",
               "scheduleRule": {
                 "timeType": 5,
-                "start": "2026-09-22",
-                "end": "2026-10-05",
-                "openDay": 90,
-                "period": 7,
+                "start": "2026-09-15",
+                "end": "2026-09-28",
+                "openDay": 83,
                 "syncAnchor": {
                   "timeType": 8,
                   "openDay": 27,
@@ -13884,15 +13897,14 @@ window.GACHA_PET_VIEWER_DATA = {
           "elementKey": "fire",
           "schedules": [
             {
-              "start": "2026-10-20",
-              "end": "2026-11-02",
+              "start": "2026-10-13",
+              "end": "2026-10-26",
               "status": "upcoming",
               "scheduleRule": {
                 "timeType": 5,
-                "start": "2026-10-20",
-                "end": "2026-11-02",
-                "openDay": 90,
-                "period": 7,
+                "start": "2026-10-13",
+                "end": "2026-10-26",
+                "openDay": 83,
                 "syncAnchor": {
                   "timeType": 8,
                   "openDay": 27,
@@ -16974,11 +16986,28 @@ window.GACHA_PET_VIEWER_DATA = {
             {
               "start": "2026-05-23",
               "end": "2026-05-29",
-              "status": "upcoming",
+              "status": "past",
               "scheduleRule": {
                 "timeType": 8,
                 "openDay": 76,
                 "period": 7
+              }
+            },
+            {
+              "start": "2026-05-23",
+              "end": "2026-06-05",
+              "status": "current",
+              "scheduleRule": {
+                "timeType": 9,
+                "start": "2026-05-23",
+                "end": "2026-06-05",
+                "openDay": 83,
+                "syncAnchor": {
+                  "timeType": 8,
+                  "openDay": 34,
+                  "period": 7,
+                  "start": "2026-04-11"
+                }
               }
             }
           ],
@@ -17179,15 +17208,15 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillLevel": 1,
                   "coolTime": "0",
                   "iconImage": "assets/skills/SP0042_2.png",
-                  "rawDesc": "전투 시작 시, 파티원에게 <#CFFF71>단단한 껍질({3}%)</color>, <#CFFF71>(탑승) 받는 범위 피해 감소({4}%)</color>, <#CFFF71>(탑승) 체력 최대값 증가({5}%)</color> 및 <#CFFF71>즉시 회복</color> 부여. 추가로 탑승 조련사에게 <#CFFF71>{2}</color> 적에 대한 <#CFFF71>(탑승) 받는 피해 감소({6}%)</color> 부여.",
-                  "formattedDesc": "전투 시작 시, 파티원에게 <#CFFF71>단단한 껍질(30%)</color>, <#CFFF71>(탑승) 받는 범위 피해 감소(25%)</color>, <#CFFF71>(탑승) 체력 최대값 증가(200%)</color> 및 <#CFFF71>즉시 회복</color> 부여. 추가로 탑승 조련사에게 <#CFFF71>{2}</color> 적에 대한 <#CFFF71>(탑승) 받는 피해 감소(20%)</color> 부여.",
+                  "rawDesc": "전투 시작 시, 파티원에게 <#CFFF71>단단한 껍질({3}%)</color>, <#CFFF71>(탑승) 받는 범위 피해 감소({4}%)</color>, <#CFFF71>(탑승) 체력 최대값 증가({5}%)</color> 및 <#CFFF71>즉시 회복</color> 부여. 추가로 탑승 조련사에게 <#CFFF71>보호막({6}회)</color> 부여.",
+                  "formattedDesc": "전투 시작 시, 파티원에게 <#CFFF71>단단한 껍질(30%)</color>, <#CFFF71>(탑승) 받는 범위 피해 감소(25%)</color>, <#CFFF71>(탑승) 체력 최대값 증가(200%)</color> 및 <#CFFF71>즉시 회복</color> 부여. 추가로 탑승 조련사에게 <#CFFF71>보호막(2회)</color> 부여.",
                   "stageLabel": "0성",
                   "skillId": "2000000231144",
                   "skillRangeType": 0,
                   "skillRangeRadius": 45,
                   "skillRangeWidth": 0,
                   "skillRangeHeight": 0,
-                  "descValues": "30|25|200|20",
+                  "descValues": "30|25|200|2",
                   "factorAttk": 0,
                   "name": "전투 의지",
                   "factorDef": 0,
@@ -17205,20 +17234,20 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillLevel": 2,
                   "coolTime": "0",
                   "iconImage": "assets/skills/SP0042_2.png",
-                  "rawDesc": "전투 시작 시, 파티원에게 <#CFFF71>단단한 껍질({3}%)</color>, <#CFFF71>(탑승) 받는 범위 피해 감소({4}%)</color>, <#CFFF71>(탑승) 체력 최대값 증가({5}%)</color> 및 <#CFFF71>즉시 회복</color> 부여. 추가로 탑승 조련사에게 <#CFFF71>{2}</color> 적에 대한 <#CFFF71>(탑승) 받는 피해 감소({6}%)</color> 부여.",
-                  "formattedDesc": "전투 시작 시, 파티원에게 <#CFFF71>단단한 껍질(40%)</color>, <#CFFF71>(탑승) 받는 범위 피해 감소(25%)</color>, <#CFFF71>(탑승) 체력 최대값 증가(200%)</color> 및 <#CFFF71>즉시 회복</color> 부여. 추가로 탑승 조련사에게 <#CFFF71>{2}</color> 적에 대한 <#CFFF71>(탑승) 받는 피해 감소(25%)</color> 부여.",
+                  "rawDesc": "전투 시작 시, 파티원에게 <#CFFF71>단단한 껍질({3}%)</color>, <#CFFF71>(탑승) 받는 범위 피해 감소({4}%)</color>, <#CFFF71>(탑승) 체력 최대값 증가({5}%)</color> 및 <#CFFF71>즉시 회복</color> 부여. 추가로 탑승 조련사에게 <#CFFF71>보호막({6}회)</color> 부여.",
+                  "formattedDesc": "전투 시작 시, 파티원에게 <#CFFF71>단단한 껍질(40%)</color>, <#CFFF71>(탑승) 받는 범위 피해 감소(25%)</color>, <#CFFF71>(탑승) 체력 최대값 증가(200%)</color> 및 <#CFFF71>즉시 회복</color> 부여. 추가로 탑승 조련사에게 <#CFFF71>보호막(3회)</color> 부여.",
                   "stageLabel": "1성",
                   "skillId": "2000000231145",
                   "skillRangeType": 0,
                   "skillRangeRadius": 45,
                   "skillRangeWidth": 0,
                   "skillRangeHeight": 0,
-                  "descValues": "40|25|200|25",
+                  "descValues": "40|25|200|3",
                   "factorAttk": 0,
-                  "upgradeDescFormatted": "★1 : 단단한 껍질 +10% / (탑승) 받는 피해 감소 +5%",
+                  "upgradeDescFormatted": "★1 : 단단한 껍질 +10% / 보호막 +1회",
                   "name": "전투 의지",
-                  "upgradeDescTemplate": "★1 : 단단한 껍질 +{0}% / (탑승) 받는 피해 감소 +{1}%",
-                  "upgradeDescValues": "10|5",
+                  "upgradeDescTemplate": "★1 : 단단한 껍질 +{0}% / 보호막 +{1}회",
+                  "upgradeDescValues": "10|1",
                   "upgradeDescTid": "Skill_Upgrade_Desc_2000000231145",
                   "factorDef": 0,
                   "factorHp": 0
@@ -17231,15 +17260,15 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillLevel": 3,
                   "coolTime": "0",
                   "iconImage": "assets/skills/SP0042_2.png",
-                  "rawDesc": "전투 시작 시, 파티원에게 <#CFFF71>단단한 껍질({3}%)</color>, <#CFFF71>(탑승) 받는 범위 피해 감소({4}%)</color>, <#CFFF71>(탑승) 체력 최대값 증가({5}%)</color> 및 <#CFFF71>즉시 회복</color> 부여. 추가로 탑승 조련사에게 <#CFFF71>{2}</color> 적에 대한 <#CFFF71>(탑승) 받는 피해 감소({6}%)</color> 부여.",
-                  "formattedDesc": "전투 시작 시, 파티원에게 <#CFFF71>단단한 껍질(40%)</color>, <#CFFF71>(탑승) 받는 범위 피해 감소(30%)</color>, <#CFFF71>(탑승) 체력 최대값 증가(300%)</color> 및 <#CFFF71>즉시 회복</color> 부여. 추가로 탑승 조련사에게 <#CFFF71>{2}</color> 적에 대한 <#CFFF71>(탑승) 받는 피해 감소(25%)</color> 부여.",
+                  "rawDesc": "전투 시작 시, 파티원에게 <#CFFF71>단단한 껍질({3}%)</color>, <#CFFF71>(탑승) 받는 범위 피해 감소({4}%)</color>, <#CFFF71>(탑승) 체력 최대값 증가({5}%)</color> 및 <#CFFF71>즉시 회복</color> 부여. 추가로 탑승 조련사에게 <#CFFF71>보호막({6}회)</color> 부여.",
+                  "formattedDesc": "전투 시작 시, 파티원에게 <#CFFF71>단단한 껍질(40%)</color>, <#CFFF71>(탑승) 받는 범위 피해 감소(30%)</color>, <#CFFF71>(탑승) 체력 최대값 증가(300%)</color> 및 <#CFFF71>즉시 회복</color> 부여. 추가로 탑승 조련사에게 <#CFFF71>보호막(3회)</color> 부여.",
                   "stageLabel": "3성",
                   "skillId": "2000000231147",
                   "skillRangeType": 0,
                   "skillRangeRadius": 45,
                   "skillRangeWidth": 0,
                   "skillRangeHeight": 0,
-                  "descValues": "40|30|300|25",
+                  "descValues": "40|30|300|3",
                   "factorAttk": 0,
                   "upgradeDescFormatted": "★3 : (탑승) 받는 범위 피해 감소 +5% / (탑승) 체력 최대값 증가 +100%",
                   "name": "전투 의지",
@@ -17257,20 +17286,20 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillLevel": 4,
                   "coolTime": "0",
                   "iconImage": "assets/skills/SP0042_2.png",
-                  "rawDesc": "전투 시작 시, 파티원에게 <#CFFF71>단단한 껍질({3}%)</color>, <#CFFF71>(탑승) 받는 범위 피해 감소({4}%)</color>, <#CFFF71>(탑승) 체력 최대값 증가({5}%)</color> 및 <#CFFF71>즉시 회복</color> 부여. 추가로 탑승 조련사에게 <#CFFF71>{2}</color> 적에 대한 <#CFFF71>(탑승) 받는 피해 감소({6}%)</color> 부여.",
-                  "formattedDesc": "전투 시작 시, 파티원에게 <#CFFF71>단단한 껍질(50%)</color>, <#CFFF71>(탑승) 받는 범위 피해 감소(30%)</color>, <#CFFF71>(탑승) 체력 최대값 증가(300%)</color> 및 <#CFFF71>즉시 회복</color> 부여. 추가로 탑승 조련사에게 <#CFFF71>{2}</color> 적에 대한 <#CFFF71>(탑승) 받는 피해 감소(30%)</color> 부여.",
+                  "rawDesc": "전투 시작 시, 파티원에게 <#CFFF71>단단한 껍질({3}%)</color>, <#CFFF71>(탑승) 받는 범위 피해 감소({4}%)</color>, <#CFFF71>(탑승) 체력 최대값 증가({5}%)</color> 및 <#CFFF71>즉시 회복</color> 부여. 추가로 탑승 조련사에게 <#CFFF71>보호막({6}회)</color> 부여.",
+                  "formattedDesc": "전투 시작 시, 파티원에게 <#CFFF71>단단한 껍질(50%)</color>, <#CFFF71>(탑승) 받는 범위 피해 감소(30%)</color>, <#CFFF71>(탑승) 체력 최대값 증가(300%)</color> 및 <#CFFF71>즉시 회복</color> 부여. 추가로 탑승 조련사에게 <#CFFF71>보호막(4회)</color> 부여.",
                   "stageLabel": "5성",
                   "skillId": "2000000231149",
                   "skillRangeType": 0,
                   "skillRangeRadius": 45,
                   "skillRangeWidth": 0,
                   "skillRangeHeight": 0,
-                  "descValues": "50|30|300|30",
+                  "descValues": "50|30|300|4",
                   "factorAttk": 0,
-                  "upgradeDescFormatted": "★5 : 단단한 껍질 +10% / (탑승) 받는 피해 감소 +5%",
+                  "upgradeDescFormatted": "★5 : 단단한 껍질 +10% / 보호막 +1회",
                   "name": "전투 의지",
-                  "upgradeDescTemplate": "★5 : 단단한 껍질 +{0}% / (탑승) 받는 피해 감소 +{1}%",
-                  "upgradeDescValues": "10|5",
+                  "upgradeDescTemplate": "★5 : 단단한 껍질 +{0}% / 보호막 +{1}회",
+                  "upgradeDescValues": "10|1",
                   "upgradeDescTid": "Skill_Upgrade_Desc_2000000231149",
                   "factorDef": 0,
                   "factorHp": 0
@@ -17283,15 +17312,15 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillLevel": 5,
                   "coolTime": "0",
                   "iconImage": "assets/skills/SP0042_2.png",
-                  "rawDesc": "전투 시작 시, 파티원에게 <#CFFF71>단단한 껍질({3}%)</color>, <#CFFF71>(탑승) 받는 범위 피해 감소({4}%)</color>, <#CFFF71>(탑승) 체력 최대값 증가({5}%)</color> 및 <#CFFF71>즉시 회복</color> 부여. 추가로 탑승 조련사에게 <#CFFF71>{2}</color> 적에 대한 <#CFFF71>(탑승) 받는 피해 감소({6}%)</color> 부여.",
-                  "formattedDesc": "전투 시작 시, 파티원에게 <#CFFF71>단단한 껍질(50%)</color>, <#CFFF71>(탑승) 받는 범위 피해 감소(40%)</color>, <#CFFF71>(탑승) 체력 최대값 증가(450%)</color> 및 <#CFFF71>즉시 회복</color> 부여. 추가로 탑승 조련사에게 <#CFFF71>{2}</color> 적에 대한 <#CFFF71>(탑승) 받는 피해 감소(30%)</color> 부여.",
+                  "rawDesc": "전투 시작 시, 파티원에게 <#CFFF71>단단한 껍질({3}%)</color>, <#CFFF71>(탑승) 받는 범위 피해 감소({4}%)</color>, <#CFFF71>(탑승) 체력 최대값 증가({5}%)</color> 및 <#CFFF71>즉시 회복</color> 부여. 추가로 탑승 조련사에게 <#CFFF71>보호막({6}회)</color> 부여.",
+                  "formattedDesc": "전투 시작 시, 파티원에게 <#CFFF71>단단한 껍질(50%)</color>, <#CFFF71>(탑승) 받는 범위 피해 감소(40%)</color>, <#CFFF71>(탑승) 체력 최대값 증가(450%)</color> 및 <#CFFF71>즉시 회복</color> 부여. 추가로 탑승 조련사에게 <#CFFF71>보호막(4회)</color> 부여.",
                   "stageLabel": "7성",
                   "skillId": "2000000231151",
                   "skillRangeType": 0,
                   "skillRangeRadius": 45,
                   "skillRangeWidth": 0,
                   "skillRangeHeight": 0,
-                  "descValues": "50|40|450|30",
+                  "descValues": "50|40|450|4",
                   "factorAttk": 0,
                   "upgradeDescFormatted": "★7 : (탑승) 받는 범위 피해 감소 +10% / (탑승) 체력 최대값 증가 +150%",
                   "name": "전투 의지",
@@ -17309,20 +17338,20 @@ window.GACHA_PET_VIEWER_DATA = {
                   "skillLevel": 6,
                   "coolTime": "0",
                   "iconImage": "assets/skills/SP0042_2.png",
-                  "rawDesc": "전투 시작 시, 파티원에게 <#CFFF71>단단한 껍질({3}%)</color>, <#CFFF71>(탑승) 받는 범위 피해 감소({4}%)</color>, <#CFFF71>(탑승) 체력 최대값 증가({5}%)</color> 및 <#CFFF71>즉시 회복</color> 부여. 추가로 탑승 조련사에게 <#CFFF71>{2}</color> 적에 대한 <#CFFF71>(탑승) 받는 피해 감소({6}%)</color> 부여.",
-                  "formattedDesc": "전투 시작 시, 파티원에게 <#CFFF71>단단한 껍질(60%)</color>, <#CFFF71>(탑승) 받는 범위 피해 감소(40%)</color>, <#CFFF71>(탑승) 체력 최대값 증가(450%)</color> 및 <#CFFF71>즉시 회복</color> 부여. 추가로 탑승 조련사에게 <#CFFF71>{2}</color> 적에 대한 <#CFFF71>(탑승) 받는 피해 감소(40%)</color> 부여.",
+                  "rawDesc": "전투 시작 시, 파티원에게 <#CFFF71>단단한 껍질({3}%)</color>, <#CFFF71>(탑승) 받는 범위 피해 감소({4}%)</color>, <#CFFF71>(탑승) 체력 최대값 증가({5}%)</color> 및 <#CFFF71>즉시 회복</color> 부여. 추가로 탑승 조련사에게 <#CFFF71>보호막({6}회)</color> 부여.",
+                  "formattedDesc": "전투 시작 시, 파티원에게 <#CFFF71>단단한 껍질(60%)</color>, <#CFFF71>(탑승) 받는 범위 피해 감소(40%)</color>, <#CFFF71>(탑승) 체력 최대값 증가(450%)</color> 및 <#CFFF71>즉시 회복</color> 부여. 추가로 탑승 조련사에게 <#CFFF71>보호막(5회)</color> 부여.",
                   "stageLabel": "10성",
                   "skillId": "2000000231154",
                   "skillRangeType": 0,
                   "skillRangeRadius": 45,
                   "skillRangeWidth": 0,
                   "skillRangeHeight": 0,
-                  "descValues": "60|40|450|40",
+                  "descValues": "60|40|450|5",
                   "factorAttk": 0,
-                  "upgradeDescFormatted": "★10 : 단단한 껍질 +10% / (탑승) 받는 피해 감소 +10%",
+                  "upgradeDescFormatted": "★10 : 단단한 껍질 +10% / 보호막 +1회",
                   "name": "전투 의지",
-                  "upgradeDescTemplate": "★10 : 단단한 껍질 +{0}% / (탑승) 받는 피해 감소 +{1}%",
-                  "upgradeDescValues": "10|10",
+                  "upgradeDescTemplate": "★10 : 단단한 껍질 +{0}% / 보호막 +{1}회",
+                  "upgradeDescValues": "10|1",
                   "upgradeDescTid": "Skill_Upgrade_Desc_2000000231154",
                   "factorDef": 0,
                   "factorHp": 0
@@ -17502,15 +17531,14 @@ window.GACHA_PET_VIEWER_DATA = {
           "elementKey": "water",
           "schedules": [
             {
-              "start": "2026-06-16",
-              "end": "2026-06-29",
+              "start": "2026-06-09",
+              "end": "2026-06-22",
               "status": "upcoming",
               "scheduleRule": {
-                "timeType": 5,
-                "start": "2026-06-16",
-                "end": "2026-06-29",
-                "openDay": 90,
-                "period": 7,
+                "timeType": 9,
+                "start": "2026-06-09",
+                "end": "2026-06-22",
+                "openDay": 83,
                 "syncAnchor": {
                   "timeType": 8,
                   "openDay": 34,
@@ -18040,15 +18068,14 @@ window.GACHA_PET_VIEWER_DATA = {
           "elementKey": "fire",
           "schedules": [
             {
-              "start": "2026-07-14",
-              "end": "2026-07-27",
+              "start": "2026-07-07",
+              "end": "2026-07-20",
               "status": "upcoming",
               "scheduleRule": {
-                "timeType": 5,
-                "start": "2026-07-14",
-                "end": "2026-07-27",
-                "openDay": 90,
-                "period": 7,
+                "timeType": 9,
+                "start": "2026-07-07",
+                "end": "2026-07-20",
+                "openDay": 83,
                 "syncAnchor": {
                   "timeType": 8,
                   "openDay": 34,
@@ -18578,15 +18605,14 @@ window.GACHA_PET_VIEWER_DATA = {
           "elementKey": "leaf",
           "schedules": [
             {
-              "start": "2026-08-11",
-              "end": "2026-08-24",
+              "start": "2026-08-04",
+              "end": "2026-08-17",
               "status": "upcoming",
               "scheduleRule": {
-                "timeType": 5,
-                "start": "2026-08-11",
-                "end": "2026-08-24",
-                "openDay": 90,
-                "period": 7,
+                "timeType": 9,
+                "start": "2026-08-04",
+                "end": "2026-08-17",
+                "openDay": 83,
                 "syncAnchor": {
                   "timeType": 8,
                   "openDay": 34,
@@ -19116,15 +19142,14 @@ window.GACHA_PET_VIEWER_DATA = {
           "elementKey": "leaf",
           "schedules": [
             {
-              "start": "2026-09-08",
-              "end": "2026-09-21",
+              "start": "2026-09-01",
+              "end": "2026-09-14",
               "status": "upcoming",
               "scheduleRule": {
                 "timeType": 5,
-                "start": "2026-09-08",
-                "end": "2026-09-21",
-                "openDay": 90,
-                "period": 7,
+                "start": "2026-09-01",
+                "end": "2026-09-14",
+                "openDay": 83,
                 "syncAnchor": {
                   "timeType": 8,
                   "openDay": 34,
@@ -19654,15 +19679,14 @@ window.GACHA_PET_VIEWER_DATA = {
           "elementKey": "wind",
           "schedules": [
             {
-              "start": "2026-10-06",
-              "end": "2026-10-19",
+              "start": "2026-10-27",
+              "end": "2026-11-09",
               "status": "upcoming",
               "scheduleRule": {
                 "timeType": 5,
-                "start": "2026-10-06",
-                "end": "2026-10-19",
-                "openDay": 90,
-                "period": 7,
+                "start": "2026-10-27",
+                "end": "2026-11-09",
+                "openDay": 83,
                 "syncAnchor": {
                   "timeType": 8,
                   "openDay": 34,
@@ -20192,15 +20216,14 @@ window.GACHA_PET_VIEWER_DATA = {
           "elementKey": "water",
           "schedules": [
             {
-              "start": "2026-11-03",
-              "end": "2026-11-16",
+              "start": "2026-09-29",
+              "end": "2026-10-12",
               "status": "upcoming",
               "scheduleRule": {
                 "timeType": 5,
-                "start": "2026-11-03",
-                "end": "2026-11-16",
-                "openDay": 90,
-                "period": 7,
+                "start": "2026-09-29",
+                "end": "2026-10-12",
+                "openDay": 83,
                 "syncAnchor": {
                   "timeType": 8,
                   "openDay": 34,
@@ -20226,6 +20249,6 @@ window.GACHA_PET_VIEWER_DATA = {
       ]
     }
   ],
-  "generatedAt": "2026-05-21 00:00:00",
-  "today": "2026-05-21"
+  "generatedAt": "2026-06-01 12:01:42",
+  "today": "2026-06-01"
 };
