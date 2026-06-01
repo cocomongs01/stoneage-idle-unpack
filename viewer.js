@@ -616,10 +616,7 @@
     ) {
       return "";
     }
-    const dynamicBaselineDateKey = [4, 8, 10].includes(scheduleRule.timeType)
-      ? (syncCohortEndDateKey(serverOpenDateKey) || serverOpenDateKey)
-      : serverOpenDateKey;
-    const thresholdDateKey = addDaysToDateKey(dynamicBaselineDateKey, scheduleRule.openDay);
+    const thresholdDateKey = addDaysToDateKey(serverOpenDateKey, scheduleRule.openDay);
     if (scheduleRule.timeType === 2) {
       return thresholdDateKey;
     }
@@ -631,6 +628,24 @@
     }
     if (scheduleRule.timeType === 10) {
       return alignDateKeyOnOrAfter(thresholdDateKey, 4);
+    }
+    return "";
+  }
+
+  function resolveStartEndRuleOpenDateKey(scheduleRule, serverOpenDateKey) {
+    if (!scheduleRule || !serverOpenDateKey) return "";
+    if (
+      ![5, 9].includes(scheduleRule.timeType)
+      || !Number.isFinite(scheduleRule.openDay)
+    ) {
+      return "";
+    }
+    const thresholdDateKey = addDaysToDateKey(serverOpenDateKey, scheduleRule.openDay);
+    if (scheduleRule.timeType === 5) {
+      return alignDateKeyOnOrAfter(thresholdDateKey, 2);
+    }
+    if (scheduleRule.timeType === 9) {
+      return alignDateKeyOnOrAfter(thresholdDateKey, 6);
     }
     return "";
   }
@@ -827,6 +842,18 @@
       ) {
         resolvedStartDateKey = normalizedScheduleRule.start;
         resolvedEndExclusiveDateKey = addDaysToDateKey(normalizedScheduleRule.end, 1);
+        const openDateKey = resolveStartEndRuleOpenDateKey(
+          normalizedScheduleRule,
+          normalizedServerOpenDateKey,
+        );
+        if (openDateKey) {
+          if (normalizedScheduleRule.end < openDateKey) {
+            resolvedStartDateKey = "";
+            resolvedEndExclusiveDateKey = "";
+          } else if (resolvedStartDateKey < openDateKey) {
+            resolvedStartDateKey = openDateKey;
+          }
+        }
         if (normalizedScheduleRule.syncAnchor?.start) {
           const resolvedAnchorStartDateKey = resolveDynamicRuleStartDateKey(
             normalizedScheduleRule.syncAnchor,

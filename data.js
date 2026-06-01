@@ -6924,17 +6924,6 @@ window.GACHA_PET_VIEWER_DATA = {
           "elementKey": "leaf",
           "schedules": [
             {
-              "start": "2026-02-03",
-              "end": "2026-02-09",
-              "status": "past",
-              "scheduleRule": {
-                "timeType": 5,
-                "start": "2026-02-03",
-                "end": "2026-02-09",
-                "openDay": 83
-              }
-            },
-            {
               "start": "2026-04-28",
               "end": "2026-05-04",
               "status": "past",
@@ -7621,17 +7610,6 @@ window.GACHA_PET_VIEWER_DATA = {
           "title": "질풍의 신수",
           "elementKey": "leaf",
           "schedules": [
-            {
-              "start": "2026-02-10",
-              "end": "2026-02-16",
-              "status": "past",
-              "scheduleRule": {
-                "timeType": 5,
-                "start": "2026-02-10",
-                "end": "2026-02-16",
-                "openDay": 83
-              }
-            },
             {
               "start": "2026-05-05",
               "end": "2026-05-11",
@@ -8320,17 +8298,6 @@ window.GACHA_PET_VIEWER_DATA = {
           "elementKey": "fire",
           "schedules": [
             {
-              "start": "2026-02-17",
-              "end": "2026-02-23",
-              "status": "past",
-              "scheduleRule": {
-                "timeType": 5,
-                "start": "2026-02-17",
-                "end": "2026-02-23",
-                "openDay": 83
-              }
-            },
-            {
               "start": "2026-05-12",
               "end": "2026-05-18",
               "status": "past",
@@ -9017,17 +8984,6 @@ window.GACHA_PET_VIEWER_DATA = {
           "title": "심해의 신수",
           "elementKey": "water",
           "schedules": [
-            {
-              "start": "2026-02-24",
-              "end": "2026-03-02",
-              "status": "past",
-              "scheduleRule": {
-                "timeType": 5,
-                "start": "2026-02-24",
-                "end": "2026-03-02",
-                "openDay": 83
-              }
-            },
             {
               "start": "2026-05-19",
               "end": "2026-05-25",
@@ -16994,12 +16950,12 @@ window.GACHA_PET_VIEWER_DATA = {
               }
             },
             {
-              "start": "2026-05-23",
+              "start": "2026-05-30",
               "end": "2026-06-05",
               "status": "current",
               "scheduleRule": {
                 "timeType": 9,
-                "start": "2026-05-23",
+                "start": "2026-05-30",
                 "end": "2026-06-05",
                 "openDay": 83,
                 "syncAnchor": {
@@ -20249,6 +20205,6 @@ window.GACHA_PET_VIEWER_DATA = {
       ]
     }
   ],
-  "generatedAt": "2026-06-01 12:01:42",
+  "generatedAt": "2026-06-01 12:33:17",
   "today": "2026-06-01"
 };
