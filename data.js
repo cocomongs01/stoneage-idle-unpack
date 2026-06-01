@@ -17481,7 +17481,7 @@ window.GACHA_PET_VIEWER_DATA = {
               ]
             }
           ],
-          "attackTypeKey": "ranged",
+          "attackTypeKey": "melee",
           "statusSummary": "룰렛 오픈",
           "title": "탑승펫",
           "elementKey": "water",
@@ -19092,7 +19092,7 @@ window.GACHA_PET_VIEWER_DATA = {
               ]
             }
           ],
-          "attackTypeKey": "melee",
+          "attackTypeKey": "support",
           "statusSummary": "룰렛 오픈",
           "title": "탑승펫",
           "elementKey": "leaf",
