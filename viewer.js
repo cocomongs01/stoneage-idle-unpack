@@ -999,7 +999,15 @@
       .map((item) => ({
         ...item,
         resolvedStatus: resolveScheduleStatus(item, currentDateTimeKey),
-      }));
+      }))
+      .sort((left, right) => {
+        const leftStart = left.resolvedStartDateTimeKey || "";
+        const rightStart = right.resolvedStartDateTimeKey || "";
+        if (leftStart !== rightStart) return leftStart.localeCompare(rightStart);
+        const leftEnd = left.resolvedEndExclusiveDateTimeKey || "";
+        const rightEnd = right.resolvedEndExclusiveDateTimeKey || "";
+        return leftEnd.localeCompare(rightEnd);
+      });
   }
 
   function scheduleCategoryLabel(category) {
@@ -2929,26 +2937,57 @@
 
   function getItems(category = getActiveCategory()) {
     const items = Array.isArray(category?.items) ? category.items : [];
-    if (category?.key === "pet") {
-      return [...items].sort((left, right) => {
-        const leftRank = displayOrderValue(category, left) || Number.MAX_SAFE_INTEGER;
-        const rightRank = displayOrderValue(category, right) || Number.MAX_SAFE_INTEGER;
-        if (leftRank !== rightRank) return leftRank - rightRank;
-        return String(left?.name || "").localeCompare(String(right?.name || ""), "ko");
-      });
-    }
-    if (category?.key !== "weapon") {
-      return items;
-    }
+    const currentDateTimeKey = getTimeZoneDateTimeKey();
     return [...items].sort((left, right) => {
-      const leftRank = WEAPON_DISPLAY_ORDER_BY_ID[getEntityId(left)] || Number.MAX_SAFE_INTEGER;
-      const rightRank = WEAPON_DISPLAY_ORDER_BY_ID[getEntityId(right)] || Number.MAX_SAFE_INTEGER;
+      const leftScheduleRank = itemScheduleSortInfo(left, currentDateTimeKey);
+      const rightScheduleRank = itemScheduleSortInfo(right, currentDateTimeKey);
+      if (leftScheduleRank.group !== rightScheduleRank.group) {
+        return leftScheduleRank.group - rightScheduleRank.group;
+      }
+      if (leftScheduleRank.dateTimeKey !== rightScheduleRank.dateTimeKey) {
+        return leftScheduleRank.dateTimeKey.localeCompare(rightScheduleRank.dateTimeKey);
+      }
+      const leftRank = fallbackDisplayOrderValue(category, left) || Number.MAX_SAFE_INTEGER;
+      const rightRank = fallbackDisplayOrderValue(category, right) || Number.MAX_SAFE_INTEGER;
       if (leftRank !== rightRank) return leftRank - rightRank;
       return String(left?.name || "").localeCompare(String(right?.name || ""), "ko");
     });
   }
 
-  function displayOrderValue(category, pet) {
+  function itemScheduleSortInfo(item, currentDateTimeKey = getTimeZoneDateTimeKey()) {
+    const schedules = getResolvedSchedules(item, currentDateTimeKey);
+    const current = schedules.find((schedule) => schedule.resolvedStatus === "current");
+    if (current) {
+      return {
+        group: 0,
+        dateTimeKey: current.resolvedStartDateTimeKey || "",
+      };
+    }
+
+    const upcoming = schedules.find((schedule) => schedule.resolvedStatus === "upcoming");
+    if (upcoming) {
+      return {
+        group: 1,
+        dateTimeKey: upcoming.resolvedStartDateTimeKey || "",
+      };
+    }
+
+    const pastSchedules = schedules.filter((schedule) => schedule.resolvedStatus === "past");
+    const past = pastSchedules[pastSchedules.length - 1];
+    if (past) {
+      return {
+        group: 2,
+        dateTimeKey: past.resolvedStartDateTimeKey || "",
+      };
+    }
+
+    return {
+      group: 3,
+      dateTimeKey: "",
+    };
+  }
+
+  function fallbackDisplayOrderValue(category, pet) {
     if (category?.key === "weapon") {
       return WEAPON_DISPLAY_ORDER_BY_ID[getEntityId(pet)] || pet.order || 0;
     }
@@ -2956,6 +2995,13 @@
       return PET_DISPLAY_ORDER_BY_ID[getEntityId(pet)] || pet.order || 0;
     }
     return pet.order || 0;
+  }
+
+  function displayOrderValue(category, pet) {
+    const entityId = getEntityId(pet);
+    const sortedItems = getItems(category);
+    const sortedIndex = sortedItems.findIndex((item) => getEntityId(item) === entityId);
+    return sortedIndex >= 0 ? sortedIndex + 1 : fallbackDisplayOrderValue(category, pet);
   }
 
   function getEntityId(pet) {
