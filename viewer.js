@@ -530,6 +530,40 @@
     return `${normalizedDateKey} ${normalizedSourceDateTimeKey.slice(11)}`;
   }
 
+  function addSecondsToDateTimeKey(dateTimeKey, secondOffset) {
+    const timestamp = dateTimeKeyToTimestamp(dateTimeKey);
+    if (!Number.isFinite(timestamp)) return "";
+    return timestampToDateTimeKey(timestamp + (Number(secondOffset || 0) * 1000));
+  }
+
+  function addHoursToDateTimeKey(dateTimeKey, hourOffset) {
+    return addSecondsToDateTimeKey(dateTimeKey, Number(hourOffset || 0) * 60 * 60);
+  }
+
+  function tableTimeToDisplayDateTimeKey(dateTimeKey) {
+    return addHoursToDateTimeKey(dateTimeKey, 9);
+  }
+
+  function displayTimeToTableDateTimeKey(dateTimeKey) {
+    return addHoursToDateTimeKey(dateTimeKey, -9);
+  }
+
+  function tableDateStartDateTimeKey(dateKey) {
+    const normalizedDateKey = normalizeScheduleDateKey(dateKey);
+    return normalizedDateKey ? `${normalizedDateKey} 00:00:00` : "";
+  }
+
+  function tableDateEndDateTimeKey(dateKey) {
+    const normalizedDateKey = normalizeScheduleDateKey(dateKey);
+    return normalizedDateKey ? `${normalizedDateKey} 23:59:59` : "";
+  }
+
+  function maxDateTimeKey(left, right) {
+    if (!left) return right || "";
+    if (!right) return left || "";
+    return left >= right ? left : right;
+  }
+
   function dateKeyDayOfWeek(dateKey) {
     const normalizedDateKey = normalizeScheduleDateKey(dateKey);
     if (!normalizedDateKey) return Number.NaN;
@@ -537,31 +571,28 @@
     return new Date(Date.UTC(year, month - 1, day)).getUTCDay();
   }
 
-  function alignDateKeyOnOrAfter(dateKey, targetDayOfWeek) {
+  function resolveOpenDayWeekDateKey(dateKey, targetDayOfWeek, timeSettingType) {
     const normalizedDateKey = normalizeScheduleDateKey(dateKey);
     if (!normalizedDateKey) return "";
     const currentDayOfWeek = dateKeyDayOfWeek(normalizedDateKey);
     if (!Number.isFinite(currentDayOfWeek)) return "";
-    const dayOffset = (targetDayOfWeek - currentDayOfWeek + 7) % 7;
+    const type = Number(timeSettingType);
+    const isSundayType = type === 14 || type === 19;
+    const dayOffset = currentDayOfWeek === 0 && !isSundayType
+      ? targetDayOfWeek
+      : targetDayOfWeek - currentDayOfWeek + 7;
     return addDaysToDateKey(normalizedDateKey, dayOffset);
   }
 
-  function alignDateKeyOnOrBefore(dateKey, targetDayOfWeek) {
-    const normalizedDateKey = normalizeScheduleDateKey(dateKey);
-    if (!normalizedDateKey) return "";
-    const currentDayOfWeek = dateKeyDayOfWeek(normalizedDateKey);
-    if (!Number.isFinite(currentDayOfWeek)) return "";
-    const dayOffset = (currentDayOfWeek - targetDayOfWeek + 7) % 7;
-    return addDaysToDateKey(normalizedDateKey, -dayOffset);
-  }
-
-  function syncCohortStartDateKey(serverOpenDateKey) {
-    return alignDateKeyOnOrBefore(serverOpenDateKey, 2);
-  }
-
-  function syncCohortEndDateKey(serverOpenDateKey) {
-    const cohortStartDateKey = syncCohortStartDateKey(serverOpenDateKey);
-    return cohortStartDateKey ? addDaysToDateKey(cohortStartDateKey, 6) : "";
+  function resolveOpenDayWeekDateTimeKey(dateTimeKey, targetDayOfWeek, timeSettingType) {
+    const normalizedDateTimeKey = normalizeDateTimeKey(dateTimeKey);
+    if (!normalizedDateTimeKey) return "";
+    const resolvedDateKey = resolveOpenDayWeekDateKey(
+      dateTimeKeyToDateKey(normalizedDateTimeKey),
+      targetDayOfWeek,
+      timeSettingType,
+    );
+    return resolvedDateKey ? `${resolvedDateKey} ${normalizedDateTimeKey.slice(11)}` : "";
   }
 
   function normalizeScheduleRule(scheduleRule) {
@@ -587,67 +618,161 @@
     if (normalizedEnd) {
       normalizedRule.end = normalizedEnd;
     }
-    if (scheduleRule.syncAnchor && typeof scheduleRule.syncAnchor === "object") {
-      const anchorTimeType = Number.parseInt(scheduleRule.syncAnchor.timeType, 10);
-      const anchorOpenDay = Number.parseInt(scheduleRule.syncAnchor.openDay, 10);
-      const anchorPeriod = Number.parseInt(scheduleRule.syncAnchor.period, 10);
-      const anchorStart = normalizeScheduleDateKey(scheduleRule.syncAnchor.start);
-      if (
-        Number.isFinite(anchorTimeType)
-        && Number.isFinite(anchorOpenDay)
-        && anchorStart
-      ) {
-        normalizedRule.syncAnchor = {
-          timeType: anchorTimeType,
-          openDay: anchorOpenDay,
-          period: Number.isFinite(anchorPeriod) ? Math.max(1, anchorPeriod) : 1,
-          start: anchorStart,
-        };
-      }
-    }
     return normalizedRule;
   }
 
   function resolveDynamicRuleStartDateKey(scheduleRule, serverOpenDateKey) {
     if (!scheduleRule || !serverOpenDateKey) return "";
+    const timeType = Number(scheduleRule.timeType);
     if (
-      ![2, 4, 8, 10].includes(scheduleRule.timeType)
+      timeType !== 2 && !isOpenDayPeriodTimeSetting(timeType)
       || !Number.isFinite(scheduleRule.openDay)
     ) {
       return "";
     }
     const thresholdDateKey = addDaysToDateKey(serverOpenDateKey, scheduleRule.openDay);
-    if (scheduleRule.timeType === 2) {
+    if (timeType === 2) {
       return thresholdDateKey;
     }
-    if (scheduleRule.timeType === 4) {
-      return alignDateKeyOnOrAfter(thresholdDateKey, 2);
-    }
-    if (scheduleRule.timeType === 8) {
-      return alignDateKeyOnOrAfter(thresholdDateKey, 6);
-    }
-    if (scheduleRule.timeType === 10) {
-      return alignDateKeyOnOrAfter(thresholdDateKey, 4);
+    if (isOpenDayPeriodTimeSetting(timeType)) {
+      const weekday = timeSettingWeekday(timeType);
+      return Number.isFinite(weekday)
+        ? resolveOpenDayWeekDateKey(thresholdDateKey, weekday, timeType)
+        : "";
     }
     return "";
   }
 
-  function resolveStartEndRuleOpenDateKey(scheduleRule, serverOpenDateKey) {
-    if (!scheduleRule || !serverOpenDateKey) return "";
-    if (
-      ![5, 9].includes(scheduleRule.timeType)
-      || !Number.isFinite(scheduleRule.openDay)
-    ) {
-      return "";
+  function timeSettingWeekday(timeSettingType) {
+    switch (Number(timeSettingType)) {
+      case 4:
+      case 5:
+        return 2; // Tuesday
+      case 8:
+      case 9:
+        return 6; // Saturday
+      case 10:
+      case 17:
+        return 4; // Thursday
+      case 11:
+      case 15:
+        return 1; // Monday
+      case 12:
+      case 16:
+        return 3; // Wednesday
+      case 13:
+      case 18:
+        return 5; // Friday
+      case 14:
+      case 19:
+        return 0; // Sunday
+      default:
+        return Number.NaN;
     }
-    const thresholdDateKey = addDaysToDateKey(serverOpenDateKey, scheduleRule.openDay);
-    if (scheduleRule.timeType === 5) {
-      return alignDateKeyOnOrAfter(thresholdDateKey, 2);
+  }
+
+  function isOpenDayPeriodTimeSetting(timeSettingType) {
+    return [4, 8, 10, 11, 12, 13, 14].includes(Number(timeSettingType));
+  }
+
+  function isOpenDayStartEndTimeSetting(timeSettingType) {
+    return [5, 9, 15, 16, 17, 18, 19].includes(Number(timeSettingType));
+  }
+
+  function tableTimeInfoStartDateTimeKey(schedule, scheduleRule) {
+    const explicitStart = normalizeDateTimeKey(scheduleRule?.start || schedule?.start || "");
+    if (explicitStart) return explicitStart;
+    return tableDateStartDateTimeKey(scheduleRule?.start || schedule?.start || "");
+  }
+
+  function tableTimeInfoEndDateTimeKey(schedule, scheduleRule) {
+    const explicitEnd = normalizeDateTimeKey(scheduleRule?.end || schedule?.end || "");
+    if (explicitEnd) return explicitEnd;
+    return tableDateEndDateTimeKey(scheduleRule?.end || schedule?.end || "");
+  }
+
+  function resolveTableTimeInfoWindow(schedule, serverOpenDateTimeKey = getActiveServerOpenDateTimeKey()) {
+    const scheduleRule = normalizeScheduleRule(schedule?.scheduleRule);
+    const normalizedServerOpenDisplayKey = normalizeDateTimeKey(serverOpenDateTimeKey)
+      || KR1_SERVER_OPEN_DATE_TIME_KEY;
+    const serverOpenTableKey = displayTimeToTableDateTimeKey(normalizedServerOpenDisplayKey);
+    const tableStartKey = tableTimeInfoStartDateTimeKey(schedule, scheduleRule);
+    const tableEndKey = tableTimeInfoEndDateTimeKey(schedule, scheduleRule);
+    const tableEndExclusiveKey = tableEndKey ? addSecondsToDateTimeKey(tableEndKey, 1) : "";
+    const type = Number(scheduleRule?.timeType);
+
+    let resolvedStartTableKey = "";
+    let resolvedEndExclusiveTableKey = "";
+    let visible = true;
+
+    if (scheduleRule && Number.isFinite(type)) {
+      if (type === 1) {
+        resolvedStartTableKey = tableStartKey;
+        resolvedEndExclusiveTableKey = tableEndExclusiveKey;
+      } else if (type === 2) {
+        const periodDays = Math.max(1, Number(scheduleRule.period) || 1);
+        resolvedStartTableKey = Number.isFinite(scheduleRule.openDay)
+          ? addDaysToDateTimeKey(serverOpenTableKey, scheduleRule.openDay)
+          : "";
+        resolvedEndExclusiveTableKey = resolvedStartTableKey
+          ? addDaysToDateTimeKey(resolvedStartTableKey, periodDays)
+          : "";
+      } else if (type === 6) {
+        const openTableKey = Number.isFinite(scheduleRule.openDay)
+          ? addDaysToDateTimeKey(serverOpenTableKey, scheduleRule.openDay)
+          : "";
+        resolvedStartTableKey = maxDateTimeKey(tableStartKey, openTableKey);
+        resolvedEndExclusiveTableKey = tableEndExclusiveKey;
+      } else if (isOpenDayPeriodTimeSetting(type)) {
+        const weekday = timeSettingWeekday(type);
+        const periodDays = Math.max(1, Number(scheduleRule.period) || 1);
+        const thresholdTableKey = Number.isFinite(scheduleRule.openDay)
+          ? addDaysToDateTimeKey(serverOpenTableKey, scheduleRule.openDay)
+          : "";
+        resolvedStartTableKey = Number.isFinite(weekday)
+          ? resolveOpenDayWeekDateTimeKey(thresholdTableKey, weekday, type)
+          : "";
+        resolvedEndExclusiveTableKey = resolvedStartTableKey
+          ? addDaysToDateTimeKey(resolvedStartTableKey, periodDays)
+          : "";
+      } else if (isOpenDayStartEndTimeSetting(type)) {
+        const weekday = timeSettingWeekday(type);
+        const thresholdTableKey = Number.isFinite(scheduleRule.openDay)
+          ? addDaysToDateTimeKey(serverOpenTableKey, scheduleRule.openDay)
+          : "";
+        const openTableKey = Number.isFinite(weekday)
+          ? resolveOpenDayWeekDateTimeKey(thresholdTableKey, weekday, type)
+          : "";
+        if (openTableKey && tableEndKey && tableEndKey < openTableKey) {
+          visible = false;
+        } else {
+          resolvedStartTableKey = maxDateTimeKey(tableStartKey, openTableKey);
+          resolvedEndExclusiveTableKey = tableEndExclusiveKey;
+        }
+      } else {
+        resolvedStartTableKey = tableStartKey;
+        resolvedEndExclusiveTableKey = tableEndExclusiveKey;
+      }
+    } else {
+      resolvedStartTableKey = tableStartKey;
+      resolvedEndExclusiveTableKey = tableEndExclusiveKey;
     }
-    if (scheduleRule.timeType === 9) {
-      return alignDateKeyOnOrAfter(thresholdDateKey, 6);
-    }
-    return "";
+
+    const resolvedStartDateTimeKey = resolvedStartTableKey
+      ? tableTimeToDisplayDateTimeKey(resolvedStartTableKey)
+      : "";
+    const resolvedEndExclusiveDateTimeKey = resolvedEndExclusiveTableKey
+      ? tableTimeToDisplayDateTimeKey(resolvedEndExclusiveTableKey)
+      : "";
+
+    return {
+      scheduleRule,
+      resolvedStartDateTimeKey,
+      resolvedEndExclusiveDateTimeKey,
+      resolvedStartDateKey: dateTimeKeyToDateKey(resolvedStartDateTimeKey),
+      resolvedEndExclusiveDateKey: dateTimeKeyToDateKey(resolvedEndExclusiveDateTimeKey),
+      visible,
+    };
   }
 
   function dateKeyDayOffset(baseDateKey, targetDateKey) {
@@ -814,91 +939,33 @@
       : "past";
     const offsetInfo = scheduleOffsetInfo(schedule);
     const normalizedServerOpenKey = normalizeDateTimeKey(serverOpenDateTimeKey) || KR1_SERVER_OPEN_DATE_TIME_KEY;
-    const normalizedScheduleRule = normalizeScheduleRule(schedule?.scheduleRule);
-    const normalizedServerOpenDateKey = dateTimeKeyToDateKey(normalizedServerOpenKey);
-
-    let resolvedStartDateKey = "";
-    let resolvedEndExclusiveDateKey = "";
-
-    if (normalizedScheduleRule && normalizedServerOpenDateKey) {
-      if (
-        [2, 4, 8, 10].includes(normalizedScheduleRule.timeType)
-        && Number.isFinite(normalizedScheduleRule.openDay)
-      ) {
-        resolvedStartDateKey = resolveDynamicRuleStartDateKey(
-          normalizedScheduleRule,
-          normalizedServerOpenDateKey,
-        );
-        if (resolvedStartDateKey) {
-          resolvedEndExclusiveDateKey = addDaysToDateKey(
-            resolvedStartDateKey,
-            Math.max(1, normalizedScheduleRule.period || 1),
-          );
-        }
-      } else if (
-        [5, 9].includes(normalizedScheduleRule.timeType)
-        && normalizedScheduleRule.start
-        && normalizedScheduleRule.end
-      ) {
-        resolvedStartDateKey = normalizedScheduleRule.start;
-        resolvedEndExclusiveDateKey = addDaysToDateKey(normalizedScheduleRule.end, 1);
-        const openDateKey = resolveStartEndRuleOpenDateKey(
-          normalizedScheduleRule,
-          normalizedServerOpenDateKey,
-        );
-        if (openDateKey) {
-          if (normalizedScheduleRule.end < openDateKey) {
-            resolvedStartDateKey = "";
-            resolvedEndExclusiveDateKey = "";
-          } else if (resolvedStartDateKey < openDateKey) {
-            resolvedStartDateKey = openDateKey;
-          }
-        }
-        if (normalizedScheduleRule.syncAnchor?.start) {
-          const resolvedAnchorStartDateKey = resolveDynamicRuleStartDateKey(
-            normalizedScheduleRule.syncAnchor,
-            normalizedServerOpenDateKey,
-          );
-          const anchorShiftDays = dateKeyDayOffset(
-            normalizedScheduleRule.syncAnchor.start,
-            resolvedAnchorStartDateKey,
-          );
-          if (Number.isFinite(anchorShiftDays) && anchorShiftDays !== 0) {
-            resolvedStartDateKey = addDaysToDateKey(resolvedStartDateKey, anchorShiftDays);
-            resolvedEndExclusiveDateKey = addDaysToDateKey(
-              resolvedEndExclusiveDateKey,
-              anchorShiftDays,
-            );
-          }
-        }
-      }
-    }
-
-    const resolvedStartDateTimeKey = resolvedStartDateKey
-      ? dateKeyToDateTimeKey(resolvedStartDateKey, normalizedServerOpenKey)
-      : (Number.isFinite(offsetInfo.startOffsetDays)
-        ? addDaysToDateTimeKey(normalizedServerOpenKey, offsetInfo.startOffsetDays)
-        : "");
-    const fallbackEndExclusiveDateTimeKey = Number.isFinite(offsetInfo.endExclusiveOffsetDays)
-      ? addDaysToDateTimeKey(normalizedServerOpenKey, offsetInfo.endExclusiveOffsetDays)
-      : "";
-    const resolvedEndExclusiveDateTimeKey = resolvedEndExclusiveDateKey
-      ? dateKeyToDateTimeKey(resolvedEndExclusiveDateKey, normalizedServerOpenKey)
-      : fallbackEndExclusiveDateTimeKey;
-
-    resolvedStartDateKey = dateTimeKeyToDateKey(resolvedStartDateTimeKey);
-    resolvedEndExclusiveDateKey = dateTimeKeyToDateKey(resolvedEndExclusiveDateTimeKey);
+    const resolvedTimeInfo = resolveTableTimeInfoWindow(schedule, normalizedServerOpenKey);
+    const resolvedStartDateTimeKey = resolvedTimeInfo.resolvedStartDateTimeKey;
+    const resolvedEndExclusiveDateTimeKey = resolvedTimeInfo.resolvedEndExclusiveDateTimeKey;
+    const resolvedStartDateKey = resolvedTimeInfo.resolvedStartDateKey;
+    const resolvedEndExclusiveDateKey = resolvedTimeInfo.resolvedEndExclusiveDateKey;
     const resolvedEndDateKey = resolvedEndExclusiveDateKey ? addDaysToDateKey(resolvedEndExclusiveDateKey, -1) : "";
+    const baselineOpenDateKey = getBaselineServerOpenDateKey();
+    const resolvedStartOffsetDays = resolvedStartDateKey
+      ? dateKeyDayOffset(baselineOpenDateKey, resolvedStartDateKey)
+      : offsetInfo.startOffsetDays;
+    const resolvedEndExclusiveOffsetDays = resolvedEndExclusiveDateKey
+      ? dateKeyDayOffset(baselineOpenDateKey, resolvedEndExclusiveDateKey)
+      : offsetInfo.endExclusiveOffsetDays;
 
     return {
       ...offsetInfo,
-      scheduleRule: normalizedScheduleRule,
+      scheduleRule: resolvedTimeInfo.scheduleRule,
       fallbackStatus,
       resolvedStartDateTimeKey,
       resolvedEndExclusiveDateTimeKey,
       resolvedStartDateKey,
       resolvedEndDateKey,
-      visible: resolvedEndExclusiveDateTimeKey
+      startOffsetDays: resolvedStartOffsetDays,
+      endExclusiveOffsetDays: resolvedEndExclusiveOffsetDays,
+      visible: !resolvedTimeInfo.visible
+        ? false
+        : resolvedEndExclusiveDateTimeKey
         ? resolvedEndExclusiveDateTimeKey > normalizedServerOpenKey
         : (resolvedStartDateTimeKey ? resolvedStartDateTimeKey >= normalizedServerOpenKey : true),
     };
@@ -1255,23 +1322,32 @@
     const ruleTimeType = Number(option?.ruleTimeType);
     const openDay = Number(option?.ruleOpenDay);
     const resolvedStartDateKey = normalizeScheduleDateKey(resolvedStartDateKeyOverride || option?.resolvedStartDateKey || "");
-    if (![4, 8, 10].includes(ruleTimeType) || !Number.isFinite(openDay) || !resolvedStartDateKey) {
+    const weekday = timeSettingWeekday(ruleTimeType);
+    if (!isOpenDayPeriodTimeSetting(ruleTimeType) || !Number.isFinite(openDay) || !Number.isFinite(weekday) || !resolvedStartDateKey) {
       return null;
     }
 
-    const targetDayOfWeek = ruleTimeType === 4
-      ? 2
-      : (ruleTimeType === 8 ? 6 : 4);
-    const thresholdDayOfWeek = (1 + ((openDay % 7) + 7)) % 7;
-    const alignmentDelta = (targetDayOfWeek - thresholdDayOfWeek + 7) % 7;
-    const cohortEndDateKey = addDaysToDateKey(resolvedStartDateKey, -(openDay + alignmentDelta));
-    const cohortStartDateKey = addDaysToDateKey(cohortEndDateKey, -6);
-    if (!cohortStartDateKey || !cohortEndDateKey) {
+    const matchedServerOpenDateKeys = [];
+    for (let offset = -13; offset <= 0; offset += 1) {
+      const thresholdDateKey = addDaysToDateKey(resolvedStartDateKey, offset);
+      const candidateStartDateKey = resolveOpenDayWeekDateKey(thresholdDateKey, weekday, ruleTimeType);
+      if (candidateStartDateKey !== resolvedStartDateKey) continue;
+      const serverOpenDateKey = addDaysToDateKey(thresholdDateKey, -openDay);
+      if (serverOpenDateKey) {
+        matchedServerOpenDateKeys.push(serverOpenDateKey);
+      }
+    }
+    if (!matchedServerOpenDateKeys.length) {
       return null;
     }
+    matchedServerOpenDateKeys.sort();
+    const serverOpenStartDateKey = matchedServerOpenDateKeys[0];
+    const serverOpenEndDateKey = matchedServerOpenDateKeys[matchedServerOpenDateKeys.length - 1];
+
     return {
-      startDateKey: cohortStartDateKey,
-      endDateKey: cohortEndDateKey,
+      startDateKey: serverOpenStartDateKey,
+      endDateKey: serverOpenEndDateKey,
+      applyDateKey: serverOpenEndDateKey,
     };
   }
 
@@ -1310,7 +1386,7 @@
     const option = findScheduleCalibrationOptionById(draft.optionId);
     const ruleTimeType = Number(option?.ruleTimeType);
     const durationDays = Number(option?.durationDays);
-    if (![4, 8, 10].includes(ruleTimeType) || !Number.isFinite(durationDays) || durationDays <= 0) {
+    if (!isOpenDayPeriodTimeSetting(ruleTimeType) || !Number.isFinite(durationDays) || durationDays <= 0) {
       return null;
     }
 
@@ -1338,7 +1414,7 @@
       inferredEndExclusiveDateTimeKey,
       inferredResolvedStartDateKey,
       syncCohortRange,
-      serverOpenDateTimeKey: dateKeyToDateTimeKey(syncCohortRange.startDateKey, KR1_SERVER_OPEN_DATE_TIME_KEY),
+      serverOpenDateTimeKey: dateKeyToDateTimeKey(syncCohortRange.applyDateKey, KR1_SERVER_OPEN_DATE_TIME_KEY),
       currentDateTimeKey,
     };
   }
@@ -1359,8 +1435,8 @@
     const inferenceCopy = option.autoInferenceSupported
       ? "오픈 초기 일정은 남은 시간 기준 자동 계산이 가능합니다."
       : (syncCohortRange
-        ? `동기화 일정이라 정확한 서버 오픈일은 확정하기 어렵지만, 남은 시간으로 같은 주차의 첫 오픈일 ${formatDisplayDateKey(syncCohortRange.startDateKey)} 부터 계산할 수 있습니다.`
-        : "동기화 일정은 남은 시간 기준으로 같은 주차 첫 오픈일만 계산할 수 있습니다.");
+        ? `동기화 일정이라 정확한 서버 오픈일은 범위로 계산됩니다. 적용 가능 범위는 ${formatDisplayDateKey(syncCohortRange.startDateKey)} - ${formatDisplayDateKey(syncCohortRange.endDateKey)}입니다.`
+        : "동기화 일정은 남은 시간 기준으로 서버 오픈일 범위를 계산할 수 있습니다.");
     elements.scheduleAdjustSelectedSummary.innerHTML = `
       <strong>진행중 이벤트</strong>
       <span>${escapeHtml(option.label)}</span>
@@ -1394,13 +1470,13 @@
       const syncCohortRange = inferSyncCohortRange(option);
       if (option && option.autoInferenceSupported === false && syncCohortRange) {
         elements.scheduleAdjustPreviewCopy.innerHTML = `
-          <strong>추정 첫 오픈일:</strong> ${escapeHtml(formatDisplayDateKey(syncCohortRange.startDateKey))}<br>
-          <strong>추정 오픈 주차:</strong> ${escapeHtml(`${formatDisplayDateKey(syncCohortRange.startDateKey)} - ${formatDisplayDateKey(syncCohortRange.endDateKey)}`)}<br>
-          <strong>안내:</strong> 남은 시간을 입력하면 같은 주차의 첫 오픈일을 기준으로 적용합니다.
+          <strong>계산 가능 서버 오픈 범위:</strong> ${escapeHtml(`${formatDisplayDateKey(syncCohortRange.startDateKey)} - ${formatDisplayDateKey(syncCohortRange.endDateKey)}`)}<br>
+          <strong>적용 예정 기준일:</strong> ${escapeHtml(formatDisplayDateKey(syncCohortRange.applyDateKey))}<br>
+          <strong>안내:</strong> 남은 시간을 입력하면 이 범위 안에서 일정이 맞는 기준일을 적용합니다.
         `;
       } else {
         elements.scheduleAdjustPreviewCopy.textContent = option && option.autoInferenceSupported === false
-          ? "선택한 일정은 동기화 규칙입니다. 남은 시간을 입력하면 같은 주차의 첫 오픈일을 계산합니다."
+          ? "선택한 일정은 동기화 규칙입니다. 남은 시간을 입력하면 서버 오픈일 범위를 계산합니다."
           : "진행중 이벤트를 고르고 남은 시간을 입력하면 서버 오픈일을 계산합니다.";
       }
       if (elements.scheduleAdjustConfirm) {
@@ -1411,8 +1487,8 @@
 
     if (result.mode === "sync-first-open") {
       elements.scheduleAdjustPreviewCopy.innerHTML = `
-        <strong>계산된 첫 오픈일:</strong> ${escapeHtml(formatDisplayDateTimeKey(result.serverOpenDateTimeKey))}<br>
-        <strong>추정 오픈 주차:</strong> ${escapeHtml(`${formatDisplayDateKey(result.syncCohortRange.startDateKey)} - ${formatDisplayDateKey(result.syncCohortRange.endDateKey)}`)}<br>
+        <strong>적용 서버 오픈 기준:</strong> ${escapeHtml(formatDisplayDateTimeKey(result.serverOpenDateTimeKey))}<br>
+        <strong>계산 가능 서버 오픈 범위:</strong> ${escapeHtml(`${formatDisplayDateKey(result.syncCohortRange.startDateKey)} - ${formatDisplayDateKey(result.syncCohortRange.endDateKey)}`)}<br>
         <strong>진행중 이벤트:</strong> ${escapeHtml(result.option.label)}<br>
         <strong>입력 남은 시간:</strong> ${escapeHtml(durationLabelFromDraft(readScheduleCalibrationDraft()))}<br>
         <strong>기준 종료 시각:</strong> ${escapeHtml(formatDisplayDateTimeKey(result.inferredEndExclusiveDateTimeKey))}
