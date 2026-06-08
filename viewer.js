@@ -5799,9 +5799,9 @@
     }
     if (entry.term === "단단한 껍질") {
       if (matchedPercent) {
-        return `치명타 저항 ${matchedPercent[1]}% 증가, 받는 추가 및 지속 피해 ${matchedPercent[1]}% 감소. 발동할 때마다 각각 2%씩 감소`;
+        return `치명타 저항 ${matchedPercent[1]}% 증가, 받는 추가 및 지속 피해 ${matchedPercent[1]}% 감소`;
       }
-      return "치명타 저항 증가, 받는 추가 및 지속 피해 감소. 발동할 때마다 수치 감소";
+      return "치명타 저항 증가, 받는 추가 및 지속 피해 감소";
     }
     if (entry.term === "도려내기") {
       if (matchedPercent) {
