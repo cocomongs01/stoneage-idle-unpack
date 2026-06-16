@@ -2199,6 +2199,7 @@
   const assetVersion = encodeURIComponent(String(window.GACHA_VIEWER_ASSET_VERSION || "20260415-taihon-online-fix-19"));
   const ELEMENT_ICON_BY_KEY = {
     leaf: "assets/ui/HeroType04.png",
+    earth: "assets/ui/HeroType04.png",
     fire: "assets/ui/HeroType02.png",
     water: "assets/ui/HeroType01.png",
     wind: "assets/ui/HeroType03.png",
@@ -2231,9 +2232,13 @@
     5: "\uB9E4\uC6B0\uBE60\uB984",
   };
   const SKILL_TEXT_PLACEHOLDER_OVERRIDES = new Map([
-    ["1107901:\uC21C\uD48D \uAC00\uB974\uAE30:2", "\uBC14\uB78C \uC18D\uC131"],
-    ["1103901:\uBC29\uC6B8\uAC10\uC625:2", "\uBB3C \uC18D\uC131"],
-    ["1112601:\uC758\uAE30 \uC18C\uCE68:2", "\uC9C0\uC815\uB41C"],
+    ["1107901:\uC21C\uD48D \uAC00\uB974\uAE30:2", "\uC6D0\uAC70\uB9AC\uD615"],
+    ["1103901:\uBC29\uC6B8\uAC10\uC625:2", "\uADFC\uAC70\uB9AC\uD615"],
+    ["1112601:\uC758\uAE30 \uC18C\uCE68:2", "\uBC29\uC5B4\uD615"],
+    ["1204301:\uC751\uC6D0\uD558\uAE30:2", "\uBC29\uC5B4\uD615"],
+    ["1204301:\uC751\uC6D0\uB2E8\uC7A5:2", "\uBC29\uC5B4\uD615"],
+    ["1300501:\uBD88\uAF43\uB180\uC774:2", "\uADFC\uAC70\uB9AC\uD615"],
+    ["1300501:\uD68C\uBCF5\uC758 \uBD88\uAE38:2", "\uADFC\uAC70\uB9AC\uD615"],
   ]);
   const CUMULATIVE_EVENT_REWARD_SCHEDULE_KEYS = new Map([
     ["1107701", new Set([
@@ -2285,8 +2290,20 @@
     return meta && typeof meta === "object" ? meta : null;
   }
 
+  function normalizeEntityElementKey(entity) {
+    if (!entity || typeof entity !== "object") return entity;
+    if (String(entity.elementKey || "").trim() === "earth") {
+      entity.elementKey = "leaf";
+      if (!String(entity.elementLabel || "").trim()) {
+        entity.elementLabel = "땅";
+      }
+    }
+    return entity;
+  }
+
   function applyCharacterMetaOverride(entity) {
     if (!entity || typeof entity !== "object") return entity;
+    normalizeEntityElementKey(entity);
     const meta = characterMetaOverride(entity);
     if (!meta) return entity;
     const attackSpeedType = Number(meta.attackSpeedType);
@@ -2362,6 +2379,63 @@
     });
   }
 
+  const SECOND_GEN_WEAPON_STAGE_GRADE_BY_SUFFIX = new Map([
+    ["1144", 0],
+    ["1145", 1],
+    ["1147", 3],
+    ["1149", 5],
+    ["1151", 7],
+    ["1154", 10],
+  ]);
+
+  function normalizedVariantStageMeta(variant) {
+    const entityId = String(variant?.entityContext?.characterId || "");
+    const entityKind = String(variant?.entityContext?.entityKind || "");
+    const skillId = String(variant?.skillId || "");
+    const suffix = skillId.slice(-4);
+    if ((entityKind === "weapon" || entityId.startsWith("220"))
+      && SECOND_GEN_WEAPON_STAGE_GRADE_BY_SUFFIX.has(suffix)) {
+      const grade = SECOND_GEN_WEAPON_STAGE_GRADE_BY_SUFFIX.get(suffix);
+      return {
+        frameTier: 5,
+        groupTier: 0,
+        groupGrade: grade,
+        stageLabel: `${grade}성`,
+      };
+    }
+    return {
+      frameTier: Number(variant?.frameTier || 0),
+      groupTier: Number(variant?.groupTier || 0),
+      groupGrade: Number(variant?.groupGrade || 0),
+      stageLabel: String(variant?.stageLabel || "").trim(),
+    };
+  }
+
+  function patchSecondGenWeaponStageVariants(entity) {
+    const entityId = String(entity?.characterId || entity?.viewerId || "");
+    if ((entity?.kind !== "weapon" && !entityId.startsWith("220"))) {
+      return;
+    }
+    if (!Array.isArray(entity?.skills)) return;
+
+    entity.skills.forEach((skill) => {
+      if (!skill || !Array.isArray(skill.variants)) return;
+      skill.variants.forEach((variant) => {
+        const skillId = String(variant?.skillId || "");
+        const suffix = skillId.slice(-4);
+        if (!SECOND_GEN_WEAPON_STAGE_GRADE_BY_SUFFIX.has(suffix)) {
+          return;
+        }
+
+        const normalizedGrade = SECOND_GEN_WEAPON_STAGE_GRADE_BY_SUFFIX.get(suffix);
+        variant.frameTier = 5;
+        variant.groupTier = 0;
+        variant.groupGrade = normalizedGrade;
+        variant.stageLabel = `${normalizedGrade}성`;
+      });
+    });
+  }
+
   function eventRewardScheduleKey(schedule) {
     const rule = schedule?.scheduleRule || {};
     const start = normalizeScheduleDateKey(rule.start || schedule?.start);
@@ -2399,6 +2473,7 @@
     const baseContext = {
       characterId: String(entity.characterId || entity.viewerId || entity.id || ""),
       entityName: String(entity.name || entity.title || ""),
+      entityKind: String(entity.kind || ""),
       elementKey: String(entity.elementKey || ""),
       attackTypeKey: String(entity.attackTypeKey || ""),
     };
@@ -2423,12 +2498,14 @@
       (category.items || []).forEach((item) => {
         applyCharacterMetaOverride(item);
         patchEntitySkillTexts(item);
+        patchSecondGenWeaponStageVariants(item);
         attachEntitySkillContext(item);
       });
     });
     (Array.isArray(window.GACHA_VIEWER_EXTRA_PETS) ? window.GACHA_VIEWER_EXTRA_PETS : []).forEach((item) => {
       applyCharacterMetaOverride(item);
       patchEntitySkillTexts(item);
+      patchSecondGenWeaponStageVariants(item);
       attachEntitySkillContext(item);
     });
   }
@@ -3030,7 +3107,27 @@
     });
   }
 
+  function isCumulativeEventRailItem(item) {
+    return String(item?.listMetaLabel || "").trim() === "이벤트"
+      || String(item?.detailMetaLabel || "").includes("누적소비")
+      || String(item?.scheduleTitleOverride || "").includes("누적소비");
+  }
+
   function itemScheduleSortInfo(item, currentDateTimeKey = getTimeZoneDateTimeKey()) {
+    if (isCumulativeEventRailItem(item)) {
+      return {
+        group: -1,
+        dateTimeKey: "",
+      };
+    }
+
+    if (item?.railSortBottom === true) {
+      return {
+        group: 9,
+        dateTimeKey: "9999-12-31 23:59:59",
+      };
+    }
+
     const schedules = getResolvedSchedules(item, currentDateTimeKey);
     const current = schedules.find((schedule) => schedule.resolvedStatus === "current");
     if (current) {
@@ -4526,6 +4623,9 @@
     if (!normalizedPath) {
       return Promise.resolve("");
     }
+    if (window.location && window.location.protocol === "file:") {
+      return Promise.reject(new Error("Spine file protocol fetch unsupported"));
+    }
 
     const promiseKey = `text:${normalizedPath}`;
     const pendingLoad = spineResourceTextPromises.get(promiseKey);
@@ -4552,6 +4652,9 @@
     const normalizedPath = String(assetPath || "").replace(/\\/g, "/");
     if (!normalizedPath) {
       return Promise.resolve(null);
+    }
+    if (window.location && window.location.protocol === "file:") {
+      return Promise.reject(new Error("Spine file protocol fetch unsupported"));
     }
 
     const promiseKey = `binary:${normalizedPath}`;
@@ -4809,6 +4912,27 @@
     const textureDataUris = manifestEntry && manifestEntry.textureDataUris;
     const textureFiles = manifestEntry && manifestEntry.textureFiles;
     const textureWebpFiles = manifestEntry && manifestEntry.textureWebpFiles;
+    const fallbackTextureIndex = Array.isArray(textureFiles)
+      ? textureFiles.findIndex((filePath) => normalizeAtlasPageName(filePath) === normalizedPageName)
+      : -1;
+
+    const deriveWebpTexturePath = () => {
+      if (fallbackTextureIndex >= 0 && Array.isArray(textureFiles)) {
+        const matchedTextureFile = textureFiles[fallbackTextureIndex];
+        if (matchedTextureFile) {
+          return resolveOptimizedAssetPath(matchedTextureFile);
+        }
+      }
+      if (manifestEntry && manifestEntry.textureFile) {
+        const basePath = manifestEntry.textureFile.replace(/\\/g, "/");
+        const baseDir = basePath.replace(/[^/]+$/, "");
+        const resolvedPagePath = !pageName || normalizeAtlasPageName(basePath) === normalizedPageName
+          ? basePath
+          : `${baseDir}${normalizedPageName}`;
+        return resolveOptimizedAssetPath(resolvedPagePath);
+      }
+      return "";
+    };
 
     const lookupValue = (valueSet) => {
       if (!valueSet) return "";
@@ -4817,9 +4941,8 @@
       }
       if (Array.isArray(valueSet)) {
         if (Array.isArray(textureFiles) && textureFiles.length === valueSet.length) {
-          const matchedIndex = textureFiles.findIndex((filePath) => normalizeAtlasPageName(filePath) === normalizedPageName);
-          if (matchedIndex >= 0) {
-            return valueSet[matchedIndex] || "";
+          if (fallbackTextureIndex >= 0) {
+            return valueSet[fallbackTextureIndex] || "";
           }
         }
         if (valueSet.length === 1) return valueSet[0] || "";
@@ -4840,8 +4963,8 @@
         ? lookupValue(textureWebpFiles)
         : manifestEntry.textureWebpFile || ""
       : "";
-    if (webpPath) {
-      return assetUrl(webpPath);
+    if (webpPath || (preferWebp && deriveWebpTexturePath())) {
+      return assetUrl(webpPath || deriveWebpTexturePath());
     }
 
     const filePath = lookupValue(textureFiles);
@@ -5584,9 +5707,9 @@
   function buildSkillDescription(variant) {
     const rawTemplate = String(variant?.rawDesc || "").trim();
     const formattedTemplate = String(variant?.formattedDesc || "").trim();
-    const preferredTemplate = rawTemplate && !hasBrokenGeneratedText(rawTemplate)
-      ? rawTemplate
-      : formattedTemplate;
+    const preferredTemplate = formattedTemplate && !hasBrokenGeneratedText(formattedTemplate)
+      ? formattedTemplate
+      : rawTemplate;
     if (!preferredTemplate) return "";
 
     const primaryDescription = replaceKnownSkillDescTextPlaceholders(
@@ -5651,6 +5774,10 @@
     { term: "축축함 Lv.2", note: "회피, 이동 속도, 공격 속도를 감소. 그리고 기분이 나쁩니다." },
     { term: "오한", note: "이동 속도, 공격 속도 감소" },
     { term: "왕발자국", note: "공격 속도, 이동 속도, 명중 감소" },
+    { term: "암살 표식", note: "구루마루의 표창 투척 피해 증가 조건" },
+    { term: "찢어진 상처", note: "테라탄의 치명적인 발톱 피해 증가 조건" },
+    { term: "치명적인 상처", note: "테라탄의 숨통 끊기 피해 증가 조건" },
+    { term: "저주받은 상처", note: "테라탄의 날 선 발톱 피해 증가 조건" },
     { term: "거대화", note: "대상 거대화 및 최종 공격력, 방어력, 체력 증가" },
     { term: "폭주", note: "대상 거대화 및 최종 공격력, 공격 속도 증가" },
     { term: "순발력", note: "회피, 공격 속도, 이동 속도 증가" },
@@ -5948,12 +6075,13 @@
   }
 
   function resolvedStageLabel(variant) {
-    const raw = String(variant?.stageLabel || "").trim();
+    const normalizedMeta = normalizedVariantStageMeta(variant);
+    const raw = String(normalizedMeta.stageLabel || "").trim();
     if (raw && !hasBrokenGeneratedText(raw)) {
       return raw;
     }
-    const tier = Number(variant?.frameTier || variant?.groupTier || 0);
-    const grade = Number(variant?.groupGrade || 0);
+    const tier = Number(normalizedMeta.frameTier || normalizedMeta.groupTier || 0);
+    const grade = Number(normalizedMeta.groupGrade || 0);
     const prefix = tier >= 5 ? "SSS" : "SS";
     return `${prefix} ${Number.isFinite(grade) ? grade : 0}성`;
   }
@@ -6281,8 +6409,9 @@
 
   function weaponOwnedEffectStats(pet) {
     const variant = selectedWeaponOwnedEffectVariant(pet);
-    const tier = Number((variant && (variant.frameTier || variant.groupTier)) || 0);
-    const grade = Number((variant && variant.groupGrade) || 0);
+    const meta = normalizedVariantStageMeta(variant);
+    const tier = Number((meta && (meta.frameTier || meta.groupTier)) || 0);
+    const grade = Number((meta && meta.groupGrade) || 0);
     const rows = WEAPON_OWNED_EFFECT_ROWS_BY_ID[getEntityId(pet)] || [];
     const weights = (WEAPON_OWNED_EFFECT_WEIGHTS_BY_TIER[String(tier)] || {})[String(grade)] || null;
     if (!weights) {
@@ -6310,8 +6439,9 @@
 
   function rideOwnedEffectStats(pet) {
     const variant = selectedRideOwnedEffectVariant(pet);
-    const tier = Number((variant && (variant.frameTier || variant.groupTier)) || 0);
-    const grade = Number((variant && variant.groupGrade) || 0);
+    const meta = normalizedVariantStageMeta(variant);
+    const tier = Number((meta && (meta.frameTier || meta.groupTier)) || 0);
+    const grade = Number((meta && meta.groupGrade) || 0);
     const rows = RIDE_OWNED_EFFECT_ROWS_BY_ID[getEntityId(pet)] || [];
     const weights = (RIDE_OWNED_EFFECT_WEIGHTS_BY_TIER[String(tier)] || {})[String(grade)] || null;
     if (!weights) {
@@ -6421,6 +6551,7 @@
         return "\uBB3C";
       case "wind":
         return "\uBC14\uB78C";
+      case "earth":
       case "leaf":
         return "\uB545";
       default:
@@ -6450,14 +6581,16 @@
   }
 
   function stageFrameAsset(pet, variant) {
-    if (Number(variant.frameTier || variant.groupTier || 0) >= 5) {
+    const meta = normalizedVariantStageMeta(variant);
+    if (Number(meta.frameTier || meta.groupTier || 0) >= 5) {
       return "assets/ui/stage_frame_sss.png";
     }
     return "assets/ui/stage_frame_ss.png";
   }
 
   function spotlightGradeBadgeAsset(variant) {
-    return Number(variant.frameTier || variant.groupTier || 0) >= 5
+    const meta = normalizedVariantStageMeta(variant);
+    return Number(meta.frameTier || meta.groupTier || 0) >= 5
       ? "assets/ui/JGrade_5.png"
       : "assets/ui/JGrade_4.png";
   }
@@ -6551,7 +6684,8 @@
   }
 
   function stageStarsMarkup(variant) {
-    const grade = Number(variant.groupGrade || 0);
+    const meta = normalizedVariantStageMeta(variant);
+    const grade = Number(meta.groupGrade || 0);
     const stars = [];
 
     if (grade <= 0) {
@@ -7603,7 +7737,8 @@
     const message = String(error && error.message ? error.message : error || "");
     return message.includes("Spine manifest data unavailable")
       || message.includes("Spine manifest chunk missing data")
-      || message.includes("Spine skeleton data unavailable");
+      || message.includes("Spine skeleton data unavailable")
+      || message.includes("Spine file protocol fetch unsupported");
   }
 
   function renderSpotlightMedia(pet) {

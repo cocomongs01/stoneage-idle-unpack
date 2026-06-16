@@ -1,0 +1,237 @@
+
+Hero_Teratan_A.png
+size: 959,959
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+A/arm l_1
+  rotate: true
+  xy: 539, 288
+  size: 196, 148
+  orig: 718, 718
+  offset: 222, 115
+  index: -1
+A/arm l_2
+  rotate: false
+  xy: 0, 0
+  size: 148, 139
+  orig: 718, 718
+  offset: 268, 220
+  index: -1
+A/arm l_3
+  rotate: true
+  xy: 533, 142
+  size: 146, 172
+  orig: 718, 718
+  offset: 188, 24
+  index: -1
+A/arm r_2
+  rotate: false
+  xy: 418, 13
+  size: 113, 126
+  orig: 718, 718
+  offset: 91, 162
+  index: -1
+A/arm r_3
+  rotate: true
+  xy: 531, 14
+  size: 125, 160
+  orig: 718, 718
+  offset: 54, 66
+  index: -1
+A/arm r_4
+  rotate: false
+  xy: 597, 484
+  size: 93, 104
+  orig: 718, 718
+  offset: 163, 252
+  index: -1
+A/baody2
+  rotate: false
+  xy: 339, 317
+  size: 200, 174
+  orig: 718, 718
+  offset: 304, 228
+  index: -1
+A/body 1
+  rotate: false
+  xy: 716, 792
+  size: 241, 167
+  orig: 718, 718
+  offset: 191, 263
+  index: -1
+A/ear l
+  rotate: false
+  xy: 148, 7
+  size: 77, 101
+  orig: 718, 718
+  offset: 193, 364
+  index: -1
+A/ear r
+  rotate: true
+  xy: 0, 270
+  size: 86, 72
+  orig: 718, 718
+  offset: 78, 367
+  index: -1
+A/eye
+  rotate: false
+  xy: 339, 766
+  size: 19, 19
+  orig: 718, 718
+  offset: 180, 325
+  index: -1
+A/eyeball
+  rotate: true
+  xy: 645, 672
+  size: 54, 55
+  orig: 718, 718
+  offset: 166, 310
+  index: -1
+A/hair 1
+  rotate: false
+  xy: 225, 19
+  size: 112, 89
+  orig: 718, 718
+  offset: 111, 308
+  index: -1
+A/hair 2
+  rotate: false
+  xy: 339, 598
+  size: 306, 128
+  orig: 718, 718
+  offset: 224, 346
+  index: -1
+A/hair 3
+  rotate: false
+  xy: 0, 785
+  size: 371, 174
+  orig: 718, 718
+  offset: 215, 390
+  index: -1
+A/hair 4
+  rotate: false
+  xy: 339, 491
+  size: 258, 107
+  orig: 718, 718
+  offset: 240, 313
+  index: -1
+A/hair 5
+  rotate: false
+  xy: 371, 726
+  size: 345, 233
+  orig: 718, 718
+  offset: 168, 374
+  index: -1
+A/hair 6
+  rotate: false
+  xy: 716, 657
+  size: 231, 135
+  orig: 718, 718
+  offset: 255, 393
+  index: -1
+A/hair 7
+  rotate: true
+  xy: 0, 514
+  size: 271, 339
+  orig: 718, 718
+  offset: 105, 335
+  index: -1
+A/hair 8
+  rotate: false
+  xy: 0, 356
+  size: 219, 158
+  orig: 718, 718
+  offset: 214, 467
+  index: -1
+A/hand l
+  rotate: true
+  xy: 780, 202
+  size: 193, 173
+  orig: 718, 718
+  offset: 146, 16
+  index: -1
+A/hand r
+  rotate: true
+  xy: 148, 108
+  size: 161, 189
+  orig: 718, 718
+  offset: 21, 49
+  index: -1
+A/head 1
+  rotate: false
+  xy: 338, 139
+  size: 195, 178
+  orig: 718, 718
+  offset: 72, 217
+  index: -1
+A/head 2
+  rotate: false
+  xy: 219, 269
+  size: 119, 143
+  orig: 718, 718
+  offset: 147, 205
+  index: -1
+A/leg l_1
+  rotate: false
+  xy: 856, 49
+  size: 92, 153
+  orig: 718, 718
+  offset: 413, 164
+  index: -1
+A/leg l_2
+  rotate: true
+  xy: 72, 250
+  size: 106, 75
+  orig: 718, 718
+  offset: 414, 156
+  index: -1
+A/leg l_3
+  rotate: true
+  xy: 219, 412
+  size: 102, 120
+  orig: 718, 718
+  offset: 464, 118
+  index: -1
+A/leg l_4
+  rotate: false
+  xy: 691, 18
+  size: 165, 124
+  orig: 718, 718
+  offset: 399, 46
+  index: -1
+A/leg r_1
+  rotate: true
+  xy: 0, 140
+  size: 110, 108
+  orig: 718, 718
+  offset: 330, 177
+  index: -1
+A/leg r_2
+  rotate: true
+  xy: 645, 588
+  size: 84, 45
+  orig: 718, 718
+  offset: 334, 173
+  index: -1
+A/leg r_3
+  rotate: false
+  xy: 687, 295
+  size: 93, 100
+  orig: 718, 718
+  offset: 331, 119
+  index: -1
+A/leg r_4
+  rotate: true
+  xy: 337, 2
+  size: 137, 81
+  orig: 718, 718
+  offset: 263, 87
+  index: -1
+A/tail
+  rotate: true
+  xy: 690, 395
+  size: 262, 267
+  orig: 718, 718
+  offset: 448, 233
+  index: -1

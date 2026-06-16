@@ -1,0 +1,209 @@
+
+NPC_Jupy_A.png
+size: 1179,1179
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+A/arm_L_1
+  rotate: false
+  xy: 1063, 668
+  size: 109, 163
+  orig: 1026, 1026
+  offset: 240, 222
+  index: -1
+A/arm_L_2
+  rotate: false
+  xy: 1050, 831
+  size: 112, 169
+  orig: 1026, 1026
+  offset: 235, 111
+  index: -1
+A/arm_L_3
+  rotate: true
+  xy: 1076, 238
+  size: 111, 87
+  orig: 1026, 1026
+  offset: 213, 92
+  index: -1
+A/arm_r_1
+  rotate: false
+  xy: 1063, 527
+  size: 112, 141
+  orig: 1026, 1026
+  offset: 164, 221
+  index: -1
+A/arm_r_2
+  rotate: true
+  xy: 117, 3
+  size: 95, 151
+  orig: 1026, 1026
+  offset: 181, 129
+  index: -1
+A/arm_r_3
+  rotate: false
+  xy: 594, 17
+  size: 101, 73
+  orig: 1026, 1026
+  offset: 167, 108
+  index: -1
+A/body
+  rotate: false
+  xy: 491, 556
+  size: 361, 252
+  orig: 1026, 1026
+  offset: 144, 241
+  index: -1
+A/ear l
+  rotate: false
+  xy: 715, 336
+  size: 317, 187
+  orig: 1026, 1026
+  offset: 265, 541
+  index: -1
+A/ear r
+  rotate: true
+  xy: 1032, 349
+  size: 174, 147
+  orig: 1026, 1026
+  offset: 6, 607
+  index: -1
+A/eye L
+  rotate: true
+  xy: 1076, 171
+  size: 67, 84
+  orig: 1026, 1026
+  offset: 172, 550
+  index: -1
+A/eye R
+  rotate: false
+  xy: 1126, 109
+  size: 44, 62
+  orig: 1026, 1026
+  offset: 70, 573
+  index: -1
+A/eye ball  l
+  rotate: false
+  xy: 964, 46
+  size: 121, 124
+  orig: 1026, 1026
+  offset: 149, 537
+  index: -1
+A/eye ball  r
+  rotate: false
+  xy: 1085, 81
+  size: 41, 90
+  orig: 1026, 1026
+  offset: 72, 558
+  index: -1
+A/fur
+  rotate: false
+  xy: 852, 523
+  size: 211, 285
+  orig: 1026, 1026
+  offset: 119, 233
+  index: -1
+A/hair
+  rotate: false
+  xy: 715, 170
+  size: 251, 166
+  orig: 1026, 1026
+  offset: 73, 638
+  index: -1
+A/hair 2
+  rotate: false
+  xy: 697, 37
+  size: 146, 133
+  orig: 1026, 1026
+  offset: 290, 438
+  index: -1
+A/hand
+  rotate: false
+  xy: 365, 245
+  size: 350, 311
+  orig: 1026, 1026
+  offset: 37, 443
+  index: -1
+A/jaw
+  rotate: false
+  xy: 365, 90
+  size: 332, 155
+  orig: 1026, 1026
+  offset: 32, 438
+  index: -1
+A/leg_L_1
+  rotate: false
+  xy: 1050, 1000
+  size: 127, 179
+  orig: 1026, 1026
+  offset: 394, 216
+  index: -1
+A/leg_L_2
+  rotate: false
+  xy: 365, 569
+  size: 117, 96
+  orig: 1026, 1026
+  offset: 429, 190
+  index: -1
+A/leg_L_3
+  rotate: true
+  xy: 359, 21
+  size: 69, 128
+  orig: 1026, 1026
+  offset: 477, 120
+  index: -1
+A/leg_L_4
+  rotate: false
+  xy: 268, 25
+  size: 91, 73
+  orig: 1026, 1026
+  offset: 453, 102
+  index: -1
+A/leg_r_1
+  rotate: false
+  xy: 966, 173
+  size: 110, 163
+  orig: 1026, 1026
+  offset: 335, 230
+  index: -1
+A/leg_r_2
+  rotate: true
+  xy: 843, 42
+  size: 128, 121
+  orig: 1026, 1026
+  offset: 335, 207
+  index: -1
+A/leg_r_3
+  rotate: true
+  xy: 0, 0
+  size: 98, 117
+  orig: 1026, 1026
+  offset: 365, 141
+  index: -1
+A/leg_r_4
+  rotate: false
+  xy: 487, 14
+  size: 107, 76
+  orig: 1026, 1026
+  offset: 336, 120
+  index: -1
+A/tail 1
+  rotate: false
+  xy: 491, 808
+  size: 559, 371
+  orig: 1026, 1026
+  offset: 447, 219
+  index: -1
+A/tail 2
+  rotate: true
+  xy: 0, 98
+  size: 567, 365
+  orig: 1026, 1026
+  offset: 421, 358
+  index: -1
+A/tail 3
+  rotate: false
+  xy: 0, 665
+  size: 491, 514
+  orig: 1026, 1026
+  offset: 354, 365
+  index: -1

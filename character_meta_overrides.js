@@ -60,6 +60,7 @@ window.GACHA_VIEWER_CHARACTER_META = {
   "1112401": { attackSpeedType: 2 },
   "1112501": { attackSpeedType: 2 },
   "1112601": { attackSpeedType: 4 },
+  "1113801": { attackSpeedType: 5 },
   "1200101": { attackSpeedType: 3 },
   "1200801": { attackSpeedType: 4 },
   "1201101": { attackSpeedType: 5 },
