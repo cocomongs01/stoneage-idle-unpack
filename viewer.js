@@ -6179,6 +6179,21 @@
   }
 
   function formatScheduleDisplayRange(start, end, startDateTimeKey = "", endExclusiveDateTimeKey = "") {
+    const explicitStartDateTimeKey = normalizeDateTimeKey(start);
+    const explicitEndDateTimeKey = normalizeDateTimeKey(end);
+    if (explicitStartDateTimeKey || explicitEndDateTimeKey) {
+      const exactStartKey = normalizeDateTimeKey(startDateTimeKey) || explicitStartDateTimeKey;
+      const exactEndInclusiveKey = normalizeDateTimeKey(endExclusiveDateTimeKey)
+        ? addSecondsToDateTimeKey(endExclusiveDateTimeKey, -1)
+        : explicitEndDateTimeKey;
+      if (exactStartKey && exactEndInclusiveKey) {
+        return `${formatDisplayDateTimeKey(exactStartKey)} - ${formatDisplayDateTimeKey(exactEndInclusiveKey)}`;
+      }
+      if (exactStartKey) {
+        return `${formatDisplayDateTimeKey(exactStartKey)} - 상시`;
+      }
+    }
+
     const resolvedStartDateKey = dateTimeKeyToDateKey(startDateTimeKey);
     const resolvedEndExclusiveDateKey = dateTimeKeyToDateKey(endExclusiveDateTimeKey);
     const startKey = resolvedStartDateKey || normalizeScheduleDateKey(start);
