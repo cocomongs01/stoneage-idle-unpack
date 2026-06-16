@@ -603,6 +603,8 @@
     const normalizedRule = { timeType: parsedTimeType };
     const parsedOpenDay = Number.parseInt(scheduleRule.openDay, 10);
     const parsedPeriod = Number.parseInt(scheduleRule.period, 10);
+    const normalizedStartDateTime = normalizeDateTimeKey(scheduleRule.start);
+    const normalizedEndDateTime = normalizeDateTimeKey(scheduleRule.end);
     const normalizedStart = normalizeScheduleDateKey(scheduleRule.start);
     const normalizedEnd = normalizeScheduleDateKey(scheduleRule.end);
 
@@ -612,11 +614,23 @@
     if (Number.isFinite(parsedPeriod)) {
       normalizedRule.period = Math.max(1, parsedPeriod);
     }
+    if (normalizedStartDateTime) {
+      normalizedRule.startDateTime = normalizedStartDateTime;
+    }
+    if (normalizedEndDateTime) {
+      normalizedRule.endDateTime = normalizedEndDateTime;
+    }
     if (normalizedStart) {
       normalizedRule.start = normalizedStart;
     }
     if (normalizedEnd) {
       normalizedRule.end = normalizedEnd;
+    }
+    if (scheduleRule.syncAnchor && typeof scheduleRule.syncAnchor === "object") {
+      const normalizedSyncAnchor = normalizeScheduleRule(scheduleRule.syncAnchor);
+      if (normalizedSyncAnchor) {
+        normalizedRule.syncAnchor = normalizedSyncAnchor;
+      }
     }
     return normalizedRule;
   }
@@ -680,13 +694,13 @@
   }
 
   function tableTimeInfoStartDateTimeKey(schedule, scheduleRule) {
-    const explicitStart = normalizeDateTimeKey(scheduleRule?.start || schedule?.start || "");
+    const explicitStart = normalizeDateTimeKey(scheduleRule?.startDateTime || scheduleRule?.start || schedule?.start || "");
     if (explicitStart) return explicitStart;
     return tableDateStartDateTimeKey(scheduleRule?.start || schedule?.start || "");
   }
 
   function tableTimeInfoEndDateTimeKey(schedule, scheduleRule) {
-    const explicitEnd = normalizeDateTimeKey(scheduleRule?.end || schedule?.end || "");
+    const explicitEnd = normalizeDateTimeKey(scheduleRule?.endDateTime || scheduleRule?.end || schedule?.end || "");
     if (explicitEnd) return explicitEnd;
     return tableDateEndDateTimeKey(scheduleRule?.end || schedule?.end || "");
   }
