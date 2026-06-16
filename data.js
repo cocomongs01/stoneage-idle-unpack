@@ -13670,12 +13670,12 @@ window.GACHA_PET_VIEWER_DATA = {
           "schedules": [
             {
               "start": "2026-06-10",
-              "end": "2026-06-22",
+              "end": "2026-06-16",
               "status": "current",
               "scheduleRule": {
                 "timeType": 5,
                 "start": "2026-06-10",
-                "end": "2026-06-22",
+                "end": "2026-06-16",
                 "openDay": 83,
                 "syncAnchor": {
                   "timeType": 4,
@@ -13699,7 +13699,7 @@ window.GACHA_PET_VIEWER_DATA = {
           "viewerId": "1300201-9001",
           "id": "1300201-9001",
           "listMetaLabel": "복각",
-          "scheduleTitleOverride": "복각 픽업/미션 일정",
+          "scheduleTitleOverride": "복각 픽업 일정",
           "petSubgroupKey": "gacha",
           "acquisitionEntries": [
             {
