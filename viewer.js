@@ -2443,21 +2443,53 @@
     return start && end ? `${start}..${end}` : "";
   }
 
+  function buildCumulativeEventRewardSchedule(scheduleKey, currentDateTimeKey = getTimeZoneDateTimeKey()) {
+    const [rawStart = "", rawEnd = ""] = String(scheduleKey || "").split("..");
+    const start = normalizeScheduleDateKey(rawStart);
+    const end = normalizeScheduleDateKey(rawEnd);
+    if (!start || !end) return null;
+
+    const startDateTimeKey = dateKeyToDateTimeKey(start, KR1_RESET_HOUR);
+    const endExclusiveDateTimeKey = dateKeyToDateTimeKey(addDaysToDateKey(end, 1), KR1_RESET_HOUR);
+    let status = "past";
+    if (startDateTimeKey && currentDateTimeKey < startDateTimeKey) {
+      status = "upcoming";
+    } else if (endExclusiveDateTimeKey && currentDateTimeKey < endExclusiveDateTimeKey) {
+      status = "current";
+    }
+
+    return { start, end, status };
+  }
+
   function patchCumulativeEventRewardSchedules(entity) {
-    if (!entity || !Array.isArray(entity.schedules)) return;
+    if (!entity) return;
     const entityId = String(entity.characterId || entity.viewerId || entity.id || "");
     const allowedScheduleKeys = CUMULATIVE_EVENT_REWARD_SCHEDULE_KEYS.get(entityId);
     if (!allowedScheduleKeys) return;
 
-    const seenScheduleKeys = new Set();
-    entity.schedules = entity.schedules.filter((schedule) => {
+    const currentDateTimeKey = getTimeZoneDateTimeKey();
+    const scheduleByKey = new Map();
+    const sourceSchedules = Array.isArray(entity.schedules) ? entity.schedules : [];
+
+    sourceSchedules.forEach((schedule) => {
       const scheduleKey = eventRewardScheduleKey(schedule);
-      if (!allowedScheduleKeys.has(scheduleKey) || seenScheduleKeys.has(scheduleKey)) {
-        return false;
+      if (!allowedScheduleKeys.has(scheduleKey) || scheduleByKey.has(scheduleKey)) {
+        return;
       }
-      seenScheduleKeys.add(scheduleKey);
-      return true;
+      scheduleByKey.set(scheduleKey, schedule);
     });
+
+    allowedScheduleKeys.forEach((scheduleKey) => {
+      if (scheduleByKey.has(scheduleKey)) return;
+      const generatedSchedule = buildCumulativeEventRewardSchedule(scheduleKey, currentDateTimeKey);
+      if (generatedSchedule) {
+        scheduleByKey.set(scheduleKey, generatedSchedule);
+      }
+    });
+
+    entity.schedules = [...scheduleByKey.entries()]
+      .sort((left, right) => left[0].localeCompare(right[0]))
+      .map(([, schedule]) => schedule);
   }
 
   function applyEventRewardSchedulePatches() {
