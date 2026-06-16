@@ -13669,13 +13669,13 @@ window.GACHA_PET_VIEWER_DATA = {
           "elementKey": "wind",
           "schedules": [
             {
-              "start": "2026-06-10",
-              "end": "2026-06-16",
+              "start": "2026-06-10 00:00:00",
+              "end": "2026-06-15 23:59:59",
               "status": "current",
               "scheduleRule": {
                 "timeType": 5,
-                "start": "2026-06-10",
-                "end": "2026-06-16",
+                "start": "2026-06-10 00:00:00",
+                "end": "2026-06-15 23:59:59",
                 "openDay": 83,
                 "syncAnchor": {
                   "timeType": 4,
