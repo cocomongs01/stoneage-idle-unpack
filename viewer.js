@@ -2922,8 +2922,8 @@
       characterId: "1112601",
       petSubgroupKey: "gacha",
       name: "타이혼",
-      title: "네메시스의 그림자",
-      description: "",
+      title: "초월의 사도",
+      description: "네메시스의 그림자",
       listMetaLabel: "이벤트",
       detailMetaLabel: "누적소비 이벤트 보상",
       scheduleTitleOverride: "누적소비 이벤트 일정",
@@ -7305,7 +7305,11 @@
       elements.petMetaLabel.textContent = metaLabel;
       elements.petMetaLabel.hidden = !metaLabel;
     }
-    elements.petDesc.textContent = pet.description || "";
+    if (elements.petDesc) {
+      const isPetDescriptionVisible = (pet.kind || "pet") === "pet" && Boolean(String(pet.description || "").trim());
+      elements.petDesc.textContent = isPetDescriptionVisible ? pet.description : "";
+      elements.petDesc.hidden = !isPetDescriptionVisible;
+    }
     if (elements.scheduleSummary) {
       elements.scheduleSummary.textContent = status.summary || "";
     }

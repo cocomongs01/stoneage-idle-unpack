@@ -30,6 +30,9 @@
   --radius-md: 16px;
   --font-body: "Gothic A1", "Malgun Gothic", "Apple SD Gothic Neo", sans-serif;
   --font-display: "Do Hyeon", "Malgun Gothic", "Apple SD Gothic Neo", sans-serif;
+  --pc-shell-max-width: 160rem;
+  --pc-rail-width: clamp(18.75rem, 16vw, 21.25rem);
+  --layout-viewport-height: 100vh;
 }
 
 .hero-panel[data-kind="weapon"] {
@@ -505,9 +508,12 @@ img {
 
 .app-shell {
   display: grid;
-  grid-template-columns: clamp(260px, 25vw, 340px) minmax(0, 1fr);
+  grid-template-columns: var(--pc-rail-width) minmax(0, 1fr);
   gap: 0;
-  min-height: 100vh;
+  width: min(100%, var(--pc-shell-max-width));
+  margin-inline: auto;
+  height: var(--layout-viewport-height);
+  min-height: 0;
 }
 
 .pet-rail,
@@ -706,10 +712,13 @@ img {
 .pet-list {
   display: grid;
   gap: 0.75rem;
+  flex: 1 1 auto;
   margin-top: 0.875rem;
   min-height: 0;
+  align-content: start;
   overflow-y: auto;
   overflow-x: hidden;
+  scrollbar-gutter: stable;
   padding: 0.125rem;
 }
 
@@ -1552,9 +1561,12 @@ img {
   flex-direction: column;
   gap: 1.25rem;
   align-content: start;
+  max-height: calc(var(--layout-viewport-height) - 1.5rem);
   padding: 1.25rem 1.25rem 1.375rem;
   border-radius: var(--radius-xl);
-  overflow: visible;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-gutter: stable;
   background: var(--bg-glass);
   backdrop-filter: blur(16px);
   border: var(--border-glass);
@@ -3537,6 +3549,12 @@ img {
     linear-gradient(180deg, transparent 58%, rgba(0, 0, 0, 0.34) 100%);
 }
 
+.spotlight-media.has-live-spine.has-pet-scene {
+  width: 100%;
+  max-width: 100%;
+  aspect-ratio: 2.95 / 1;
+}
+
 .spotlight-media.has-live-spine .banner-ribbon {
   object-fit: cover;
   opacity: 0.28;
@@ -3927,6 +3945,7 @@ img {
 .variant-preview-list::-webkit-scrollbar,
 .variant-grid::-webkit-scrollbar,
 .pet-list::-webkit-scrollbar,
+.hero-copy::-webkit-scrollbar,
 .desc-card::-webkit-scrollbar {
   width: 0.625rem;
   height: 0.625rem;
@@ -3936,6 +3955,7 @@ img {
 .variant-preview-list::-webkit-scrollbar-thumb,
 .variant-grid::-webkit-scrollbar-thumb,
 .pet-list::-webkit-scrollbar-thumb,
+.hero-copy::-webkit-scrollbar-thumb,
 .desc-card::-webkit-scrollbar-thumb {
   border: 2px solid transparent;
   border-radius: 999px;
@@ -4624,6 +4644,16 @@ img {
   font-weight: 700;
 }
 
+@media (min-width: 3000px) and (min-height: 1600px) {
+  :root {
+    font-size: 18px;
+  }
+
+  .app-shell {
+    min-height: calc(100vh / 1.125);
+  }
+}
+
 @media (max-width: 1680px) {
   .hero-panel {
     --hero-copy-width: 18rem;
@@ -4692,6 +4722,56 @@ img {
   .spotlight-copy {
     width: min(21.25rem, calc(100% - 2.25rem));
     max-width: none;
+  }
+}
+
+@media (min-width: 1281px) and (max-width: 2080px) {
+  :root {
+    --pc-compact-scale: 0.75;
+    --layout-viewport-height: calc(100vh / var(--pc-compact-scale));
+    font-size: 17px;
+  }
+
+  body {
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  .app-shell {
+    width: min(calc(100% / var(--pc-compact-scale)), var(--pc-shell-max-width));
+    height: var(--layout-viewport-height);
+    min-height: 0;
+    margin-inline: 0;
+    transform: scale(var(--pc-compact-scale));
+    transform-origin: top left;
+  }
+
+  .hero-panel,
+  .hero-panel[data-kind="pet"],
+  .hero-panel[data-kind="weapon"],
+  .hero-panel[data-kind="ride"] {
+    --hero-copy-width: 23rem;
+    --detail-rail-width: 23rem;
+    --hero-grid-gap: 1.25rem;
+  }
+
+  .hero-grid {
+    grid-template-columns: var(--hero-copy-width) minmax(0, 1fr) var(--detail-rail-width);
+    gap: var(--hero-grid-gap);
+  }
+
+  .spotlight-card {
+    min-height: 0;
+  }
+
+  .spotlight-media.has-live-spine.has-pet-scene {
+    aspect-ratio: 2.95 / 1;
+    min-height: 0;
+  }
+
+  .spotlight-copy {
+    left: 1.25rem;
+    bottom: 1.25rem;
   }
 }
 

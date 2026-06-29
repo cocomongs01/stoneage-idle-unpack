@@ -9561,7 +9561,7 @@ window.GACHA_PET_VIEWER_DATA = {
             }
           ],
           "attackTypeKey": "melee",
-          "title": "야생의 서막",
+          "title": "격노의 신수",
           "elementKey": "water",
           "schedules": [
             {
@@ -9583,7 +9583,7 @@ window.GACHA_PET_VIEWER_DATA = {
             }
           ],
           "backdropImage": "assets/banners/1112501-banner.png",
-          "description": "야생의 서막",
+          "description": "대지를 뒤흔드는 폭군",
           "bannerImage": "assets/banners/1112501-banner.png",
           "heroIconImage": "assets/pets/1112501-heroicon.png",
           "kind": "pet",
@@ -10246,7 +10246,7 @@ window.GACHA_PET_VIEWER_DATA = {
             }
           ],
           "attackTypeKey": "melee",
-          "title": "야생의 서막",
+          "title": "열상의 신수",
           "elementKey": "wind",
           "schedules": [
             {
@@ -10268,7 +10268,7 @@ window.GACHA_PET_VIEWER_DATA = {
             }
           ],
           "backdropImage": "assets/banners/1100201-banner.png",
-          "description": "산군의 위엄",
+          "description": "상처를 도려내는 발톱",
           "bannerImage": "assets/banners/1100201-banner.png",
           "heroIconImage": "assets/pets/1100201-heroicon.png",
           "kind": "pet",
@@ -10931,7 +10931,7 @@ window.GACHA_PET_VIEWER_DATA = {
             }
           ],
           "attackTypeKey": "support",
-          "title": "야생의 서막",
+          "title": "화합의 신수",
           "elementKey": "fire",
           "schedules": [
             {
